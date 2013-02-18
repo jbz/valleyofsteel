@@ -1,0 +1,294 @@
+Valley of Steel game design notes
+
+
+===>  CURRENT PROBLEMS
+
+
+GENERAL:
+
+Clock thinks that the failure to pick up an object after trying to put things in the backpack to make room fails when it's closed should be more explicit that you haven't taken the object.
+
+THERE ARE TOO MANY BROADCAST CHIP/TRASH CANS:  only need 3 to win (other than car key) and there are more than that, so you never need to do the food court trash puzzle!
+
+FIXED Trying to 'attach' (probably to 'combine', too) something which isn't in the component table borks because it doesn't have an item-id property, and putting a check for that in the 'check combining' rule doesn't seem to stop this
+
+Undo is enabled globally.  Change this?  (extensions to manage it or use global 'use undo prevention')
+
+FIXED EVERYTHING takes a minute.  Some things maybe shouldn't?  Getting inventory, looking at the watch, at least.
+
+FIXED (via global error msg)  - 'Use' verb is totally borked for everything. :-(
+
+FIXED KleinBlaster problem - the Memory chip doesn't need to be programmed to make a KleinBlaster. :-(  Maybe have programming the chip'swap it' for a different chip type? (no, just have programming write the correct item-id)
+
+Need verb 'solder' for combining.  Maybe understand as 'attach'?
+
+Maybe 'cutting' should just work if you have the knife, rather than asking what you want to cut it with?  But would that mess up tag removal etc?
+
+WHERE DO YOU GET DISPOSABLE CAMERAS?
+
+
+Puzzle idea - have to mod nametag on torn jacket to get onto platform?
+
+
+GREEN RESIDENTIAL:
+
+FIXED.  -No way of knowing possible directions to travel.  (Use Exit Lister by Gavin Lambert extension? (TRIED) Or rewrite descriptions? Some things, like security gate outside apartment, will be 'left out of' Exit Lister when maybe you don't want that to happen)
+
+[MICROWAVE] Microwave is confusing - can't use control, have to know the magic command 'microwave'.  Can't activate it either since it's a device.  Is it worth changing this whole thing to a device with a timed activation?  The panel is hard, too - looking at 'warning sticker' looks at the sticker on the cryopack, not the panel.  Trying to 'press button' turns on the soldering iron via button, not the microwave.  REENGINEER.  Add'l - maybe have to unplug oven to hack it? Possible, not necessary.  ALSO:  'open panel with tool' doesn't work, but 'open panel' does if holding the tool. Ugh.  'open panel with knife' gives 'can't unlock' message.  Also:  'component slot' doesn't work, just 'panel' does, but it's described as 'component slot.'  
+
+[LAPTOP] Clock says interacting with laptop is 'clunky', maybe polish descriptions?  Maybe change commands?
+
+- FIXED? Car key.  You can't 'open' it with or without the knife.  'Open' tries to unlock.  Ugh.  You can only 'cut' it.  Maybe change description to describe it as a rubberized, sealed unit? Discouraging 'open' and etc?
+
+- Security gate outside apt - make it an object(door)?, so player can try to unlock and open it, etc?
+
+- Coffee - going into thermos as object, not liquid.  Should be in a cup, pourable into thermos, and it should short out any chip in the thermos. OR: should be eliminated?
+
+- Drug den - need more clues that it's a place player should go.  Maybe hear/see activity from behind the fence?  Also:  "REPORT THINGS" posters around game as a hint?
+
+- Fence should be a scenery/backdrop object, not a description ghost.
+
+- You can't examine the dog in front of the other house because it doesn't exist. :-P
+
+- MORE INFO ABOUT MITSUI-KLEIN BOTTLES NEEDED IN HOME
+
+- FRY MEMORY AND BROADCAST USED IN HACKING OVEN? DONE.
+
+
+TRANSIT:
+
+-'enter capsule' doesn't work!  Doh.  FIXED
+
+
+
+PORTABLE USEFUL PROPS (Location/source(s))
+
+=>RFID Chips (sources: car key, cell phone, anti-theft tags)
+=>Flash Units (sources: holocamera, disposable cameras, cell phones)
+=>Anti-theft tags (various - steal by placing in Faraday Jar to exit)
+=>Soldering Iron (Home, workbench)
+=>Multitool (Home, workbench)
+=>Wirecutter/Tag Remover (Garb-oh, sales drawer)
+=>Thermos (Home, kitchen:  "This stainless steel vacuum flask...")
+=>Holocamera (Police station at ID counter, chained down, use wirecutter, SUSPICIOUS-stolen)
+=>Lens Case (Lenscrafter machine)
+=>Contact Lens (Lenscrafter machine, property of 'idValid' if made from right person)
+=>Cryopack (Hospital pathology department/lab)
+=>Sampling Plate (broken hand scanner?)
+=>Facemask (Home, closet?)
+=>Breaching Charge (Drug raid, SUSPICIOUS)
+=>Fire Axe (Maintenance Closet, SUSPICIOUS)
+=>Disposable Cameras (Store?)
+=>Mit-Klein Bottle (part of every person, can be working or broken)
+=>Descender
+
+
+PORTABLE RANDOM ITEMS (Location/source(s))
+
+=>Fire Extinguisher (Bouncelift vestibule)
+=>Mop (in maintenance closet)
+=>Bucket (in maintenance closet)
+=>Some Mail (Home) NOT USED - mail is scenery.
+
+SCENERY PROPS
+
+=>Theft-scan doors (check for anti-theft tags in inventory unless in Faraday Jar) DONE
+=>Automatic Doors (Already built, with eye scanners) DONE
+=>Station Plaques (built) DONE
+=>Public Surveillance Notices (built) DONE
+=>Microwave Oven (Home, kitchen) DONE
+=>Computer (Home, office) DONE
+=>Newspaper DONE
+
+
+CONDITIONS:
+=> DONE: Carry knife openly when surveilled gets you arrested.
+=> DONE: Dropping antitheft tag in Garb-oh gets you arrested.
+=> DONE: Being surveilled while fugitive gets you arrested.
+
+
+PUZZLES: (in rough order)
+
+
+=> DONE!  Get into Transit (when you enter Transit, your MitKlein will be scanned == GameEnder)
+	-Get car key (front entry)
+	-Get knife
+	-Cut open car key
+	-Take Broadcast and Memory chips out
+	-Download kill sequence onto memory chip
+		-put memory chip in chipslot on laptop
+	-Hack microwave
+		-Get Multitool
+		-Open microwave side panel with multitool
+		-Insert Broadcast chip and Memory chip into side panel
+	-Push button with door of microwave open and side panel hacked
+	-BZZZZZT!  Win. Also:  Microwave side panel fries, it's out of game.
+	
+			
+=> DONE! Get Blue Jacket and Tag Remover 
+	Get Tag Remover
+		-Take clothing in Garb-Oh
+		-Put clothing in another customer's bag (start SHOPLIFTING SCENE)
+		-When other customer leaves, alarm goes off, possible to get behind counter
+		-Go behind counter, open drawer, get tag tool
+	-Take blue jacket
+	-Remove tag with tool
+	-Leave!
+
+=> DONE! Get Access to Reserve Bank: Create False ID Contact Lens
+	-Find store selling cosmetic lenses
+	-Find high resolution holocamera (DONE)
+		-Go to police station
+		-Wait for/get cops to leave waiting area
+		-Cut cord on ID camera with anti-theft tool, take ID camera (DONE)
+	-Find advertisement for Bistro Paris (location in Reserve Bank!) w/hi-rez pic of owner
+	-Take holopic of owner's eye (DONE)
+	-Connect camera to lenscrafter machine 
+	-Get lens in lens case!
+
+=> DONE! Getting Anti-theft tags
+	-Take them off objects with tagtool
+	-Put them in steel thermos
+	-Walk out theft-scan door
+
+=> DONE! Get Memory chips
+	-Memory chips in each anti-theft tag
+
+=> DONE! Get receive chip?
+	-Crazy guy wandering subway!  Carrying dead old-school pager, checks it to see if jesus has called him yet!  Convince him to give you pager, inside of which is receive chip! Maybe you trade him your modern phone for it?
+
+=> DONE! Get Flitter Key
+	-[Find 'receive chip']
+	-[Find a memory chip]
+	-put receive and memory in car key
+	-stand in location when donut cop gets back into his police flitter
+	-replace receive chip with broadcast chip
+	-voila, flitterkey! (player is flitterEnabled)
+
+=> DONE! Get tear gas grenade
+	-After Garb-Oh theft scene (planting on another customer): DONE
+	-Police flitter parked near Garb-oh (cop getting donuts) DONE
+	-[Get Flitter Key]
+	-enter flitter
+	-get tear gar grenade.
+
+=> DONE! Get Broadcast chips
+	-Broadcast chips in each trash can solar panel
+
+=> DONE! Get broadcast chip from Food Court trash can
+	-Find Tear Gas
+	-Get into Maintenance Closet (NOT DONE)
+	-Find Facemask by opening cabinet marked SOLVENTS (NOT DONE)
+	-Go to center of food court (trash can)
+	-Drop tear gas
+	-Have 1 turn to put on mask or END OF LINE
+	-Open solar panel, take chip
+	-Go NW (ONLY, wearing mask in surveilled area = END OF LINE)
+	-WIN.  Drop mask here or in closet or restroom.
+	
+=> DONE! Get breaching charge!
+	-Get through fence in Green Commercial one (Sub puzzle?)
+	-Find drug market in abandoned house
+	-Find a police officer
+	-Report drug den
+	-NEXT TIME PLAYER GOES TO ABANDONED HOUSE:
+		-Scene where SWAT puts two breaching charges on the door
+		-"A breaching charge" detonates
+		-SWAT storms the house
+		-After 5 to ten turns, house is empty, fence is ripped down
+		-If player explores, find the door in the house
+		-Find unexploded breaching charge attached to door!
+		
+		
+=> DONE! Get Descender
+	-Get Cable spool(?) - attached to powered platform in lift lobby - make it only gettable at night maybe?  Using tool?
+	-Get harness DONE (in police flitter)
+	-Combine
+
+
+=> Get access to hospital ER (tissue generator)
+	
+=> Get palm skin sample
+	-Find sampling plate in AMBULANCE DONE
+		-SUB PUZZLE - GETTING INTO AMBULANCE  DONE
+	-Put sampling plate on Bank ATM
+	-Find Rodriguez who works at Reserve Bank spacescraper (in bar?)
+	-Buy him a drink to make friends?
+	-Listen to story about ripped uniform they're going to make him pay huge $ for at end of week
+	-Steal blue jacket from Garb-Oh (which looks like his)
+		-SUB PUZZLE - GETTING JACKET
+	-Offer him jacket, he'll insist on paying something
+	-Follow him to bank ATM
+	-Watch him try to get money transfer, be forced to use palm scanner
+	-Get sampling plate
+	-Find tissue generator in hospital
+	-Attach sampling plate to tissue generator
+	-Find cryopack (dead)
+	-Put cryopack in tissue generator (which charges it)
+	-GET SKIN SAMPLE! (in cryopack)
+
+
+
+
+=> DONE! Create ID bombs
+	-Find disposable camera (Green Commercial One?)
+	-Open camera
+	-Get Memory Chip
+	-Get Broadcast Chip
+	-Find soldering iron (home?)
+	-Program Memory chips using computer
+	-Combine Memory Chip and Broadcast Chip form Klein Blaster
+	-Combine Klein blaster with open camera to form ID bomb
+
+
+			
+
+=> DONE! Endgame
+	-Wear descender
+	-Tie cable to railing in Atrium Balcony
+	-Go down, start automatically descending.
+	-Throw at least three ID Bombs for success!
+	-END GAME SUCCESSFULLY OR IN ARREST!
+	
+
+
+TABLES?
+
+=> News Items!
+	Don't know how to implement this, precisely, yet - but a table of news items (linking to E2
+	stories and other stuff, that gives URLs in Starship Troopers "Would you like to know more?"
+	style!
+	
+	Items:
+		-Jet Fighter
+		-Happy Birthday from Planet Motherfucker
+		-Your iPod and your Privacy
+		-My Own Private Waco
+		-Another gray face for your new war
+		-Possible artificial intelligence breakthrough -> Cain Enable
+		-War stalemated in northern winter -> The Future like a Corpse in Snow		
+		-Ad for dating/love -> We Can Meet her for you wholesale
+		-Book review for new scifi blockbuster -> Fine Structure
+		-Movie Poster -> Ra (Sam's thing)
+
+=> Graffiti!
+	Don't know how to implement this either yet - but a table of graffitid stuff that can be found 
+	around the game.
+	
+	Items:
+		-Stick figure with signal strength icon -> Most Excellent Snow Sky
+		-Mirrorshades -> Angel cycle
+		-HISTORY IS A LIE -> SPECWEAPS
+		-THE TOWERS -> Dropwatch
+		-A television -> My TV Vision
+		-Superman -> Metro City Chronicles
+		-Imp -> I figured things would be okay once the werewolf started to cry
+		
+=> Other E2 things to get in somehow? 
+
+	-i am a robot.
+	-SOY! SOY! SOY!..etc  (on a box of soy in a store?)
+
+
+
+
