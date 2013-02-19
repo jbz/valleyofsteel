@@ -6,6 +6,8 @@ Valley of Steel game design notes
 
 GENERAL:
 
+Trash Can:  Vandalizing *one* trash can solar panel makes them *ALL* describe as being vandalised.  Also, the 'vandalised' description says the panel is empty even if it's not.
+
 Clock thinks that the failure to pick up an object after trying to put things in the backpack to make room fails when it's closed should be more explicit that you haven't taken the object.
 
 THERE ARE TOO MANY BROADCAST CHIP/TRASH CANS:  only need 3 to win (other than car key) and there are more than that, so you never need to do the food court trash puzzle!

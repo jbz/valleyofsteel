@@ -82,7 +82,7 @@ To decide whether player is handvalid:
 	unless the skin sample is valid, decide no;
 	decide yes.
 
-To decide whether player surveilled:
+To decide whether player is surveilled:
 	if the location is panopticon, decide yes;
 	decide no.
 	
@@ -199,7 +199,7 @@ This is the take visual actions out of world rule: if acting instant, rule succe
 [Every turn rules]
 Every turn:
 	 if the suspicionState of the player is fugitive:
-		if player surveilled:
+		if player is surveilled:
 			unless the location is gassed:
 				say "Police, having spotted you, swarm into the area! You are tackled and handcuffed before you can react![line break]";
 				end the story saying "You have been arrested.";
@@ -210,7 +210,7 @@ Every turn:
 
 Every turn:
 	if the player is wearing the Gas Mask:
-		if player surveilled:
+		if player is surveilled:
 			if the location is safe:
 				say "Policemen rush into the area and grab you.  Wearing gas masks in public is against Homeland Security regulations!";
 				end the story saying "You have been arrested!"
@@ -232,7 +232,7 @@ Every turn:
 			say "Billowing clouds of tear gas and smoke make it difficult to see."
 
 Every turn:
-	if player surveilled:
+	if player is surveilled:
 		if the player is carrying the knife:
 			say "Police surveillance spots you openly carrying your knife, which is classified as a weapon.  Police rush in!";
 			end the story saying "You have been arrested!".
@@ -283,7 +283,7 @@ At the time when autodoors close:
 		say "The automatic door slides closed.";
 		now the door is closed.
 		
-After looking when player surveilled, say "There is a Public Surveillance Notice here."
+After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
 
 [Roberto's movement rules]
@@ -369,7 +369,7 @@ Understand "paper" as the newspaper.
 An ID bomb is a kind of explosive. An ID bomb has a timer 1.  An ID bomb can be working or fried.  An ID bomb is usually working. An ID bomb has some text called item-id.  An ID bomb always has item-id "M5". An ID bomb has some text called fryDescription.  The fryDescription of an ID bomb is usually "There is a series of bright sparking flashes and a puff of smoke as the ID bomb begins to melt![line break]".  The description is "A small ID bomb with a single button. [if disarmed]The arming LED is dark.[else if armed]The arming LED is blinking green at shortening intervals![else if inert]The ID bomb is now a chunk of burnt and useless circuitry.[end if]". 
 
 After dropping an id bomb:
-	if the player surveilled:
+	if the player is surveilled:
 		the player incriminates in 1 turn from now.
 
 A memory chip is a kind of component.  A memory chip is usually portable.  A memory chip is tiny. A memory chip can be either blank or programmed.  A memory chip is usually blank. A memory chip usually has item-id "M0". A memory chip has some text called Contents. The Contents of a memory chip is usually "blank". A memory chip can be working or fried.  A memory chip is usually working. A memory chip has some text called fryDescription.  The fryDescription of a memory chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." The description of a memory chip is "This is a standard Memory chip- a small solid-state data storage device about the size of a coin.  Data can be stored to a Memory chip by most electronic devices and computers.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released.[otherwise if programmed]   This memory chip has been programmed with the payload of a Klein-blaster virus.  If there was a way to transmit this payload to nearby MitKlein encapsulations, you'd really have something powerful."
@@ -434,7 +434,7 @@ The Tear Gas grenade is in the police flitter. The Tear Gas grenade is an explos
 
 The Gas Mask is on the wall rack.  The Gas Mask is wearable.  The description of the Gas Mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing." 
 
-There is a blue jacket on the racks.  The blue jacket is a jacket. The description is "A dark blue jacket, very bland cut.  You almost expect to see a name sewn on the front at the breast in gold thread.  It's probably three sizes too large for you."
+There is a blue jacket on the racks.  The blue jacket is a jacket. The description is "A dark blue jacket, very bland cut, with black snap closures and side pockets.  You almost expect to see a name sewn on the front at the breast in gold thread.  It's probably a size too large for you."
 
 There is a red jacket on the racks.  The red jacket is a jacket. The description is "This jacket is a wine red sports coat.  You had thought this style vanished in the 1970s, but here it is.  It is several sizes too small for you."
 
@@ -486,7 +486,7 @@ Check switching on the phone:
 	
 
 [pager]
-The pager is a container.  The pager is closed.  The pager is small. The pager is openable.  The description of the pager is "It looks like a pretty old-school radio pager.  It also looks like it isn't working; the display is fogged over, there are no lights on it, and one of the two buttons on the front is missing.[if closed] There is a small sliding panel on the back, possibly for a battery.[otherwise]  A small sliding compartment on the back is open."
+The pager is a container.  The pager is closed.  The pager is small. The pager is openable.  The description of the pager is "It looks like a pretty old-school radio pager.  It also looks like it isn't working; the display is fogged over, there are no lights on it, and one of the two buttons on the front is missing. There is a small sliding panel on the back[if closed].[otherwise], which is open."
 
 Check inserting into the pager:
 	unless the noun is the receive chip, say "That won't go in there." instead.
@@ -669,22 +669,22 @@ The Public Surveillance Notice is a backdrop.  The description of A Public Surve
 Instead of taking the Public Surveillance Notice, say "That's firmly mounted in place, by law."
 
 [trash cans]
-A trash can is a kind of container.  A trash can is fixed in place.  A trash can is openable. A trash can is usually closed.  A trash can is usually assembled. The description of a trash can is "Painted industrial dark green, the [location] trash can awaits its daily diet of rubbish.  There is a solar panel on it; presumably it reports back to a central system when it is full.[if the solar panel is disassembled]  The solar panel on the can lid has been pried back, and an empty slot is visible.  Vandals!"
+A trash can is a kind of container.  A trash can is fixed in place.  A trash can is openable. A trash can is usually closed.  A trash can is usually assembled. The description of a trash can is "Painted industrial dark green, the [location] trash can awaits its daily diet of rubbish.  There is a solar panel on it; presumably it reports back to a central system when it is full.[if the solar panel enclosed by the location is open]  The solar panel on the can lid has been pried back.  Vandals!"
 A rubbish is a kind of thing.  A rubbish is fixed in place.  A rubbish is in every trash can.  The indefinite article is "some". The description of a rubbish is "All you'd expect from a cheap public trash can."
 Instead of taking the rubbish, say "It's too disgusting to touch."
-A solar panel is a kind of container.  A solar panel is always scenery.  A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description is "A small (8x8cm) solar panel, apparently powering some unit embedded in the trash can."
+A solar panel is a kind of container.  [A solar panel is always scenery.]  A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the lid, apparently powering something embedded in the trash can.[if open]  This one has been pried back.[end if]"
 
-Instead of opening a solar panel:
+Check opening a solar panel:
 	if the noun is disassembled, say "That's already been opened." instead;
 	unless the player is carrying the multitool, say "You don't have anything to open it with." instead;
-	say "You pry open the solar panel with the multitool, ignoring the cracking sounds.";
+	say "You pry loose the solar panel with the multitool, ignoring the cracking sounds.";
 	now the noun is disassembled;
 	now the noun is openable;
 	now the noun is not scenery;
-	now the noun is open;
-	if the player surveilled:
+	if the player is surveilled:
 		unless the location is gassed:
-			the player incriminates in 1 turn from now.
+			the player incriminates in 1 turn from now;
+	continue the action.
 
 Check inserting into a solar panel:
 	Unless the noun is tiny, say "That won't fit!" instead.
@@ -1157,12 +1157,12 @@ Report arming:
 		say "[The noun] beeps in your hand. The arming LED begins to blink ominously!";
 	otherwise if the noun is the Breaching Charge:
 		say "You pull the arming tab out and drop it, arming the Breaching Charge.";
-		if player surveilled:
+		if player is surveilled:
 			the player incriminates in one turn from now;
 	otherwise if the noun is the Tear Gas grenade:
 		say "You pull the pin on the Tear gas grenade and drop it as it begins to hiss!";
 		move the Tear Gas grenade to the location;
-		[if player surveilled:
+		[if player is surveilled:
 			the player incriminates in one turn from now.]
 
 
@@ -1505,6 +1505,7 @@ headline	url	newsstory
 "Winter settles in over our military positions in the mountains."	"http://bit.ly/xO9ijg"	"Fighting has been slowed by the onset of a heavier-than-expected winter snow season in the Corderilla Oriental mountains.  Trench lines have been set up, and both sides have settled in for a vigilant if slower winter."
 "New Mit-Klein Data Sold To Dating Company!"	"http://bit.ly/yir9ea"	"New venture promises to utilize Mitsui-Klein transaction and telemetry data to match clients with ideal partners.  'We would never intrude on our clients' privacy, ' the CTO stated.  'It is possible that data has been deanonymized before it reaches us, but we would never utilize that data for our financial gain.'"
 "Fine Structure is this month's ebook best seller!"	"http://bit.ly/wdEurc"	"Science Fiction novel reaches record sales.  Author unavailable for comment, but publisher and readers pleased!"
+"Giant combat robot found in student flat in Britain."	"http://bit.ly/WIYQXy"	"Authorities cannot fathom who left the 7-story-tall combat mecha folded in a basement."
 
 Table of Graffiti
 image	url
@@ -1515,6 +1516,9 @@ image	url
 "a small figure, flying, wearing a cape."	"http://bit.ly/fknhZE"
 "a small imp giving you the finger!"	"http://bit.ly/ya9fSZ"
 "a crude drawing of the Twin Towers with the word 'REALLY?'"	"http://bit.ly/yvwYxd"
+"a crude robotic figure reaching up pleadingly."	"http://bit.ly/WIYD6J"
+"the scrawled words [bold type]THIS IS JIMMY FULL OF BLOOD[roman type]"	"http://bit.ly/WIZc0k"
+
 
 Table of Gizmos
 component		item-id 
@@ -1538,7 +1542,7 @@ component list	result
 Section 10 - NPCs
 
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
-Roberto Velez is a man.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and well-tanned skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
+Roberto Velez is a man.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
 
 To say tagged details:
 	if the nametag is part of the torn jacket, say " and his name on a tag clipped to the breast".
@@ -1674,6 +1678,7 @@ Topic		Response
 "phone"	"It would be much nicer if I had a phone of my own."
 "police/officer/cops"	"Them! (his brow furrows).  They…sometimes I think they're here to prevent me 	carrying out my missions.  I have to stay away from them…"
 "subway/transit"	"I like it in the Transit system in winter.  It's warm."
+"who"	"My name is Ponyfriend.  Ponyfriend Chunky.  I'm…I'm…(he shakes himself suddenly)…I'm sorry, what were you saying?"
 
 
 Ponyfriending is a recurring scene.  Ponyfriending begins when the location contains Ponyfriend Chunky.  Ponyfriending ends when the location does not contain Ponyfriend Chunky.
@@ -2019,7 +2024,7 @@ Chapter 3 - Green Commercial
 
 Section 3 - Map
 
-Green Commercial Platform is a transitStation.  The stationName of Green Commercial Platform is "Green Commercial One".  The stationNumber of Green Commercial Platform is 2. The description of Green Commercial Platform is "Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors, with each person turning their head to the right as they approach for the eye scanner to verify their identity before opening the portal long enough for them to slip through.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty.[end if]". 
+Green Commercial Platform is a transitStation.  The stationName of Green Commercial Platform is "Green Commercial One".  The stationNumber of Green Commercial Platform is 2. The description of Green Commercial Platform is "Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty.[end if]". 
 Instead of going north in Green Commercial Platform, say "You can't go into the Transit Web![line break]".
 
 The Green Commercial Station door is south of Green Commercial Platform and below Green Commercial Station.  The Green Commercial Station door is an autodoor.  The Green Commercial Station door is closed.
@@ -2066,7 +2071,7 @@ The NanoMart is east of Green Commercial Plaza North and northeast of Green Comm
 The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  The Proletariat Bar is blind. The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar."
 
 The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
-There is a trash can in the Proletariat restroom.
+The Proletariat trash can is a trash can in the Proletariat restroom.
 The Bar mirror is here.  The Bar mirror is a mirror.  The description is "This is a cheap but sturdy mirror, attached to the wall.  Its surface is nearly covered (except for a spot in the center, where you can see your own face) with scratches and permanent marker scrawls.  One graffito catches your eye near the bottom, but you'd have to look closely to make it out fully."
 
 The Green Commercial Bistro Paris is west of Green Commercial Plaza Center and southwest of Green Commercial Plaza North and northwest of Green Commercial Plaza South.  The description is "This is a branch of the popular lunch and coffee shop Bistro Paris.  Counter service is available for pastries, drinks and light sandwiches. There are a few tables near the front for sit-down meals.  A restroom is to the west.  On the north wall, opposite the service counter, is a collection of Paris-themed prints.  In the center is a large holoportrait of the chain's owner, Zuzu, and a sign claiming that the Bistro Paris has restaurants here, in the Reserve Bank Spacescraper, and in London."
