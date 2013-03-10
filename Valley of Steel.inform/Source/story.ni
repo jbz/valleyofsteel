@@ -45,6 +45,7 @@ Index map with Top of Service Bouncelift mapped west of Bouncelift Vestibule.
 Index map with Bouncelift Vestibule mapped west of Office Corridor.
 Index map with Seating Area mapped east of Office Corridor.
 Index map with Lift Lobby mapped east of Bottom of Service Bouncelift.
+Index map with Transit Capsule mapped east of Reserve Bank Station.
 
 [Extensions]
 Include Exit Lister by Gavin Lambert.
@@ -70,6 +71,10 @@ Definition: a memory chip is keyed:
 		if the car key encloses the receive chip:
 			decide yes;
 	decide no.
+
+Definition: a thing is matched if it is listed in the multiple object list.
+
+
 
 [Decision rules]
 
@@ -102,8 +107,8 @@ To decide whether the side panel is hacked:
 	decide yes.
 	
 To decide whether the player is harnessed:
-	unless the player is wearing the descender, decide no;
-	unless the cable is part of the railing, decide no;
+	unless the player encloses the descender, decide no;
+	unless the cable is tied, decide no;
 	decide yes.
 
 To decide whether the player is flitterEnabled:
@@ -122,19 +127,26 @@ To decide whether Drug Market is unraided:
 	decide yes.
 
 To decide whether the metal door is charged:
-	if the location of the Breaching Charge is Drug Den:
+	if the breaching charge is supported by the metal door:
+		decide yes;
+[	if the location of the Breaching Charge is Drug Den:
 		unless the player is carrying the Breaching Charge:
 			decide yes;
 		otherwise:
-			decide no;
-	decide no.
+			decide no;]
+	otherwise:
+		decide no.
 
 To decide whether the player is thieving:	
 	repeat with T running through the list of antitheft tags enclosed by the player:
 		unless T is inside the thermos:
 			unless T is disassembled, decide yes;
 	decide no.
-
+	
+To decide whether (item - a thing) interests (character - a person):
+	if the character has the item, no;
+	if the character is Ponyfriend Chunky and the item is the phone, yes;
+	no.
 
 
 [Values and kinds and properties]
@@ -145,11 +157,10 @@ A person has a suspicionState.  A person is usually clear.
 
 A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
 
-[A tool is a kind of thing.  A tool is always portable.]
-
 A room can be panopticon or blind.  A room is usually panopticon.
 A room can be gassed or safe.  A room is usually safe.
 A room can be mapped or unmapped.  A room is usually mapped.
+A room can be breached or unbreached.  A room is usually unbreached.
 
 the newsIndex is a number that varies.
 the tempIndex is a number that varies.
@@ -162,16 +173,52 @@ Things can be tiny, small, medium, or large (this is its size property).  Things
 
 transitTurn is a number that varies.
 
+[these are for and-attach and and-combine]
+group-attach-complete is a truth state that varies.
+group-combine-complete is a truth state that varies.
+
+
+
 Section 3 - 'Every Turn' Rules, Timed Events and Global Rules
 
 [Global rule overrides]
 
-the block giving rule is not listed in the check giving it to rules.
-	
-To decide whether (item - a thing) interests (character - a person):
-	if the character has the item, no;
-	if the character is Ponyfriend Chunky and the item is the phone, yes;
-	no.
+The list notable events rule is listed last in the carry out looking rulebook.
+
+This is the list notable events rule:
+	if the player is flitterEnabled:
+		if the location contains the Ambulance:
+			now the ambulance is unlocked;
+			say "The ambulance flashes its lights twice as the locklarm unlocks the back.";
+		if the location contains the Police Flitter:
+			now the police flitter is unlocked;
+			say "The police flitter flashes its lights twice as the locklarm disengages.".
+
+Before reading a command: 
+	now group-attach-complete is false;
+	now group-combine-complete is false.
+
+The carefully announce items from multiple object lists rule is listed instead of the announce items from multiple object lists rule in the action-processing rules.
+
+This is the carefully announce items from multiple object lists rule:
+	if and-attaching:
+		do nothing;
+	else if and-combining:
+		do nothing;
+	otherwise:
+		abide by the announce items from multiple object lists rule.
+
+The block giving rule is not listed in the check giving it to rules.
+
+The revised can’t insert what’s not held rule is listed instead of the can't insert what's not held rule in the check inserting it into rules.
+
+Check an actor inserting something into (this is the revised can’t insert what’s not held rule):
+	if the actor is carrying the noun, continue the action;
+	if the actor is wearing the noun, continue the action;
+	if the player encloses the noun:
+		if the noun is touchable, continue the action;
+	if the noun is touchable, continue the action;
+	stop the action.
 
 Check giving (this is the polite refusal of unwanted objects rule):
 	unless the noun interests the second noun:
@@ -184,10 +231,14 @@ Check giving (this is the polite refusal of unwanted objects rule):
 	continue the action.
 
 
-[
-Report taking an object (called the noun):
-	if action fails, say "You leave [the noun] where it is." instead.
-]
+
+The explosive residue rule is listed after the room description body text rule in the carry out looking rules.
+
+This is the explosive residue rule:
+	if the location is breached:
+		say "There are the unmistakable signs of a blast.  Scarring and burn marks are everywhere, and a choking smell of explosives residues hangs in the air.[line break]".
+
+
 
 [Zero-time actions]
 Examining something is acting instant. Looking is acting instant.  Taking inventory is acting instant. Taking is acting instant.
@@ -203,10 +254,7 @@ Every turn:
 			unless the location is gassed:
 				say "Police, having spotted you, swarm into the area! You are tackled and handcuffed before you can react![line break]";
 				end the story saying "You have been arrested.";
-[	if the player is suspect:
-		if player surveilled:
-			say "You hunch down into your collar at the thought of the police observing you."
-]
+
 
 Every turn:
 	if the player is wearing the Gas Mask:
@@ -233,8 +281,8 @@ Every turn:
 
 Every turn:
 	if player is surveilled:
-		if the player is carrying the knife:
-			say "Police surveillance spots you openly carrying your knife, which is classified as a weapon.  Police rush in!";
+		if the player is carrying the knife or the player is carrying the fire axe:
+			say "Security surveillance spots you openly carrying a weapon.  Police rush in!";
 			end the story saying "You have been arrested!".
 
 At the time when an explosion occurs:
@@ -250,12 +298,15 @@ At the time when an explosion occurs:
 			if the location of the Breaching Charge is the location:
 				say "There is a flash of light - but before you can see anything else, the fireball from the Breaching Charge crushes and burns you![line break]";
 				end the story saying "You have died.";
-			otherwise if the Breaching Charge is in an adjacent room:
-				say "There is a loud [bold type]BOOM[roman type] from nearby! The floor shakes.";
-				remove the Breaching Charge from play;
+			otherwise if the location of the Breaching Charge is an adjacent room:
+				say "There is a loud [bold type]BOOM[roman type] from nearby! The floor shakes.[line break]";
 			otherwise:
 				say "There is an explosion from some distance off![line break]";
-				remove the Breaching Charge from play;
+			if the observation window supports the breaching charge:
+				now the observation window is broken;
+				change east exit of the Seating Area to the Atrium Ledge;
+			now the location of the Breaching Charge is breached;
+			remove the Breaching Charge from play;
 		otherwise if the activeMunition is the Tear Gas grenade:
 			if the location of the Tear Gas grenade is the location:
 				say "With a bang and an enormous hiss, the gas grenade goes off and fills the area with a cloud of opaque smoke and tear gas!";
@@ -274,7 +325,7 @@ At the time when the tear gas dissipates:
 		
 
 At the time when the player incriminates:
-	say "You're pretty sure the police saw you do that.  They'll be looking for you now.";
+	say "You're pretty sure the police are looking for you now.";
 	now the suspicionState of the player is fugitive.
 	
 
@@ -286,20 +337,6 @@ At the time when autodoors close:
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
 
-[Roberto's movement rules]
-At the time when boozing starts:
-	if Roberto Velez is off-stage:
-		if the location is The Proletariat Bar:
-			say "The door opens.  [if Roberto Velez is unknown]A medium man in a blue trade uniform[otherwise] Roberto Velez[end if] comes in, orders a beer and sits down at a table.";
-		move Roberto Velez to The Proletariat Bar;
-		snoozing starts at 8:00 PM.
-		
-At the time when snoozing starts:
-	if Roberto Velez is in The Proletariat Bar:
-		if the location is The Proletariat Bar:
-			say "Roberto stands up, stretches, pays his bill and ambles out.";
-		remove Roberto Velez from play;
-		boozing starts at 2:00 PM.
 
 
 Section 4 - Test Code - Not for release
@@ -316,22 +353,13 @@ Report bomb surveying:
 Station checking is an action applying to nothing.
 Understand "station check" as station checking.
 Report station checking:
-	say "The capsule is presently [the station of the Capsule]. | The current Transit System is: [Transit System]."
+	say "The capsule is presently in [the station of the Capsule]. [paragraph break]The current Transit System is: [Transit System]."
 
 Entraining is an action applying to nothing.
 Understand "entraining" as entraining.
 Report entraining:
 	say "The list of entrained rooms is [list of entrained rooms]."
 
-
-Copping is an action applying to nothing.
-Understand "copme" as copping.
-
-Carry out copping:  
-	move Officer Prescott to the location.
-	
-Report copping:
-	say "Officer Prescott appears, looking confused!"
 
 
 Section 5 - Portable Objects (non-Scenery)
@@ -373,25 +401,27 @@ After dropping an id bomb:
 		the player incriminates in 1 turn from now.
 
 A memory chip is a kind of component.  A memory chip is usually portable.  A memory chip is tiny. A memory chip can be either blank or programmed.  A memory chip is usually blank. A memory chip usually has item-id "M0". A memory chip has some text called Contents. The Contents of a memory chip is usually "blank". A memory chip can be working or fried.  A memory chip is usually working. A memory chip has some text called fryDescription.  The fryDescription of a memory chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." The description of a memory chip is "This is a standard Memory chip- a small solid-state data storage device about the size of a coin.  Data can be stored to a Memory chip by most electronic devices and computers.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released.[otherwise if programmed]   This memory chip has been programmed with the payload of a Klein-blaster virus.  If there was a way to transmit this payload to nearby MitKlein encapsulations, you'd really have something powerful."
-Understand the programmed property as describing a memory chip.
+Understand the blank property as describing a memory chip.
 
-A broadcast chip is a kind of component.  A broadcast chip is usually portable.  A broadcast chip can be working or fried. A broadcast chip is usually working. A broadcast chip always has item-id "M1". A broadcast chip has some text called fryDescription.  The fryDescription of a broadcast chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." A broadcast chip is tiny.  The description of a broadcast chip is "This is a broadcast chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics these days.  Usually powered by small batteries in phones or car keys, these generally have a range of a few meters.  There are leads on the chip for connecting a data source and a power source.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released."
+A broadcast chip is a kind of component.  A broadcast chip is usually portable.  A broadcast chip is tiny. A broadcast chip can be working or fried. A broadcast chip is usually working. A broadcast chip always has item-id "M1". A broadcast chip has some text called fryDescription.  The fryDescription of a broadcast chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." A broadcast chip is tiny.  The description of a broadcast chip is "This is a broadcast chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics these days.  Usually powered by small batteries in phones or car keys, these generally have a range of a few meters.  There are leads on the chip for connecting a data source and a power source.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released."
 
-An antitheft tag is a kind of container.  An antitheft tag is portable.  An antitheft tag is usually closed and assembled. An antitheft tag can be working or fried.  An antitheft tag is usually working. An antitheft tag has some text called fryDescription.  The fryDescription of an antitheft tag is usually "There is a hissing noise. The plastic of the antitheft tag begins to melt." An antitheft tag is always small. An antitheft tag has a carrying capacity 1. A memory chip is in every antitheft tag. The description of an antitheft tag is "This is a small, nondescript black plastic tag, perhaps a centimeter thick and four by four centimeters square, with a security loop for attaching it to products.[if disassembled]  This tag has been pried open.[otherwise if fried] The tag has melted slightly.  Inside you can see what looks like the remains of some electronics, but the whole mess is melted together now."
+An antitheft tag is a kind of container.  An antitheft tag is portable.  An antitheft tag is small. An antitheft tag is usually closed and assembled. An antitheft tag can be working or fried.  An antitheft tag is usually working. An antitheft tag has some text called fryDescription.  The fryDescription of an antitheft tag is usually "There is a hissing noise. The plastic of the antitheft tag begins to melt." An antitheft tag is always small. An antitheft tag has a carrying capacity 1. A memory chip is in every antitheft tag. The description of an antitheft tag is "This is a small, nondescript black plastic tag, perhaps a centimeter thick and four by four centimeters square, with a security loop for attaching it to products.[if disassembled]  This tag has been pried open.[otherwise if fried] The tag has melted slightly.  Inside you can see what looks like the remains of some electronics, but the whole mess is melted together now."
 
 An antitheft tag is part of every garment.
 
 Rule for printing room description details of an antitheft tag: stop.
 
-Instead of opening an antitheft tag:
+Understand "tags" as antitheft tags.
+
+Check opening an antitheft tag:
 	if the noun is fried, say "There's nothing to open. This tag has been melted into a single mass." instead;
 	if the noun is disassembled, say "That's already been opened." instead;
 	unless the player is carrying the knife, say "You don't have anything to open it with." instead;
 	say "You cut open the antitheft tag with your knife.";
 	now the noun is disassembled;
 	now the noun is openable;
-	now the noun is open.
-
+	continue the action.
+	
 Check inserting into an antitheft tag:
 	Unless the second noun is tiny, say "That won't fit!" instead.
 
@@ -406,14 +436,14 @@ Check taking an antitheft tag:
 
 Check cutting an antitheft tag:
 	if the noun is part of a garment, say "What do you want to cut that off with?" instead;
-	unless the player is carrying the knife, say "You don't have anything to cut that with." instead;
+	unless the player encloses the knife, say "You don't have anything to cut that with." instead;
 	try opening the noun instead.
 	
 
 A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the Kleinhacking signal.  It needs a power source to perform its task."
 
 
-A disposable camera is a kind of component. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It offers a timer and a built-in flash."
+A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos."
 
 
 
@@ -428,11 +458,11 @@ Instead of examining the MitKlein, say "You can't see any such thing." instead.
 The backpack is a player's holdall. The backpack is wearable. The player is wearing the backpack. The backpack is a container.  It is open. The description is "A black rip-stop backpack which you normally use for toting tools and books."
 Understand "pack" as the backpack.
 
-The receive chip is a component.  The receive chip is in the pager.  The receive chip can be working or fried.  The receive chip is working.  The receive chip has some text called fryDescription.  The fryDescription of the receive chip is "There is a sizzling noise. The chip is now scorched and smoking slightly."  The receive chip is tiny.  The description of the receive chip is "This is a receive chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics that need to receive distant broadcasts, able to pull in signals from beyond a few meters.  There are leads on the chip for connecting data lines and a power source.[if fried] This chip is blackened and schorced; the magic smoke appears to have been released."
+The receive chip is a component.  The receive chip is in the pager.  The receive chip is tiny. The receive chip can be working or fried.  The receive chip is working.  The receive chip has some text called fryDescription.  The fryDescription of the receive chip is "There is a sizzling noise. The chip is now scorched and smoking slightly."  The receive chip is tiny.  The description of the receive chip is "This is a receive chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics that need to receive distant broadcasts, able to pull in signals from beyond a few meters.  There are leads on the chip for connecting data lines and a power source.[if fried] This chip is blackened and schorced; the magic smoke appears to have been released."
 
-The Tear Gas grenade is in the police flitter. The Tear Gas grenade is an explosive.  The Tear Gas grenade has a timer 1.  The Tear Gas grenade can be working or fried.  The Tear Gas grenade is working.  The description of the Tear Gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'." [TESTING][LOCATION]
+The Tear Gas grenade is in the police flitter. The Tear Gas grenade is an explosive.  The Tear Gas grenade is small. The Tear Gas grenade has a timer 1.  The Tear Gas grenade can be working or fried.  The Tear Gas grenade is working.  The description of the Tear Gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'." [TESTING][LOCATION]
 
-The Gas Mask is on the wall rack.  The Gas Mask is wearable.  The description of the Gas Mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing." 
+The gas mask is on the wall rack.  The gas mask is wearable.  The description of the gas mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing." 
 
 There is a blue jacket on the racks.  The blue jacket is a jacket. The description is "A dark blue jacket, very bland cut, with black snap closures and side pockets.  You almost expect to see a name sewn on the front at the breast in gold thread.  It's probably a size too large for you."
 
@@ -446,20 +476,26 @@ There is a blue pair of pants on the racks.  The blue pair of pants is a pair of
 
 There is a brown pair of pants on the racks. The brown pair of pants is a pair of pants. The description is "Brown dungarees are never really in style, ergo they can't ever really be out of style either."  
 
-The Breaching Charge is an explosive.  The Breaching Charge has a timer 4.  The description of the Breaching Charge is "[if disarmed]A gray-green brick of blasting plastic, soft and slightly tacky.  There is a detonator integrated into one side of the brick; an arming tab extends out, waiting to be pulled.[otherwise]A menacing-looking block of blasting plastic.  The detonater is hissing slightly.  The arming tab has been pulled."
-The Breaching Charge is in the Drug Den.
+The breaching charge is an explosive.  The Breaching Charge has a timer 4.  The description of the Breaching Charge is "[if disarmed]A gray-green brick of blasting plastic, soft and slightly tacky.  There is a detonator integrated into one side of the brick; an arming tab extends out, waiting to be pulled.[otherwise]A menacing-looking block of blasting plastic.  The detonator is hissing slightly.  The arming tab has been pulled."
+Understand "charge" as the breaching charge.
+
+The breaching charge is on the metal door.
 
 The Fire Axe is on the wall rack.  The description is "Made of metal and painted red save for the blade, this one-piece tool is for emergency use by safety personnel."
 Instead of inserting the Fire Axe into the backpack, say "The axe is far too large to fit in there."
 
-The fire extinguisher is in the Bouncelift Vestibule.  The fire extinguisher is portable.  The fire extinguisher can be working or fried.  The fire extinguisher is working. The description is "A large, heavy metal cylinder with fire safety instructions written on it which read 'POINT AT FIRE.  PULL PIN.'"
-Instead of inserting the fire extinguisher into the backpack, say "The extinguisher is far too large to fit in there."
-[BFR: Handle using the Fire Extinguisher!]
+After taking the Fire Axe for the first time:
+	say "This axe is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
 
-The multitool is on the workbench.  The description is "Your pocket multitool.  Has various pliers, blades and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched your name, address and 'BUSINESS REPLY MAIL' onto it."
+
+[The fire extinguisher is in the Bouncelift Vestibule.  The fire extinguisher is portable.  The fire extinguisher can be working or fried.  The fire extinguisher is working. The description is "A large, heavy metal cylinder with fire safety instructions written on it which read 'POINT AT FIRE.  PULL PIN.'"
+Instead of inserting the fire extinguisher into the backpack, say "The extinguisher is far too large to fit in there."
+[BFR: Handle using the Fire Extinguisher!]]
+
+The multitool is on the workbench.  The multitool is small. The description is "Your pocket multitool.  Has various pliers, blades and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched your name, address and 'BUSINESS REPLY MAIL' onto it."
 Understand "tool" as the multitool.
 
-The watch is wearable.  The watch is on the bedside table. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
+The watch is wearable.  The watch is small. The watch is on the bedside table. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
 
 Understand "put on" as wearing.
 
@@ -495,7 +531,7 @@ Check switching on the pager:
 	say "It's stone dead." instead.
 	
 Check cutting the pager:
-	say "It's fairly slick.  You'd just hurt yourself." instead.
+	say "It's quite hard and slick.  You'd just hurt yourself." instead.
 	
 Before opening the pager:
 	unless the player is carrying the pager, try silently taking the pager;
@@ -506,7 +542,9 @@ The cryopack is a container.   The cryopack is in the Hospital Lab.  The cryopac
 
 After opening the cryopack: 
 	if the cryopack is operating:
-		now the cryopack is dead.
+		say "A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up.";
+		now the cryopack is dead;
+	continue the action.
 
 The warning sticker is part of the cryopack. The warning sticker is scenery.  The description of the warning sticker is "WARNING: This is a single-use cryogenic transport pack.  Opening the cryopack will disrupt the superconductor charge and disable the cryopack until it is recharged for its next use."
 Understand "instructions sticker" as the warning sticker while the cryopack is visible.
@@ -515,9 +553,9 @@ Understand "instructions" as the warning sticker while the cryopack is visible.
 The skin sample is a biosample.  The skin sample is wearable.  The skin sample can be valid or invalid. The skin sample is invalid. The skin sample can be frozen, warm, slightly green or decomposing (this is its freshness property). The skin sample is frozen. The description of the skin sample is "Disgusting - but also kind of neat.  This is a small [freshness] oblong of human skin, perhaps four by eight centimeters.  One side is clearly the 'outside' - folds and wrinkles are visible.  The other side is rough and appears to contain cauterized blood vessels."
 Before wearing the skin sample, say "Fortunately it's sticky enough to adhere to your palm."
 
-The biogen feedstock is a biosample.  The description of the biogen feedstock is "This is a small cube of material which resembles freeze-dried beef.  It is a standard supply unit for biotech synthesizers."
+The biogen feedstock is a biosample.  The biogen feedstock is in the feed slot. The description of the biogen feedstock is "This is a small cube of material which resembles freeze-dried beef.  It is a standard supply unit for biotech synthesizers."
 
-The lens case is a container.  The lens case is in the delivery slot. The lens case has carrying capacity 1. The lens case is openable.  The lens case is closed and transparent.  The description of the lens case is "A small clear plastic cylinder, full of preservative liquid."
+The lens case is a container.  The lens case is in the delivery slot. The lens case is small. The lens case has carrying capacity 1. The lens case is openable.  The lens case is closed and transparent.  The description of the lens case is "A small clear plastic cylinder, full of preservative liquid."
 
 Check inserting into the lens case:
 	unless the noun is the contact lens, say "That won't go in there!" instead;
@@ -531,7 +569,7 @@ Instead of dropping the contact lens:
 	
 The tissue sampler is in the ambulance.  The tissue sampler is portable.  The tissue sampler has some text called tissueDonor.  The tissueDonor is "blank". The description is "This is a tissue sampler, used by hospital and emergency medical technicians for scanning skin or tissue in order to permit a tissue generator to produce compatible skin grafts. It is flat and translucent, and is intended to be laid against the skin to be replicated."
 
-The coffee is in the refrigerator.  The coffee is a thing.  The coffee is edible. The coffee is portable.  The coffee can be either hot or cold.  The coffee is cold.  The coffee has some text called the cookDescription.  The cookDescription is "Steam begins to rise from the coffee."  The description is "The remains of your morning coffee in a convenient takeaway cup.[if cold]  It's cold.  Nothing worse than cold coffee.[otherwise]  It is just shy of too hot.  Perfect."
+The coffee is in the refrigerator.  The coffee is a thing.  The coffee is small. The coffee is edible. The coffee is portable.  The coffee can be either hot or cold.  The coffee is cold.  The coffee has some text called the cookDescription.  The cookDescription is "Steam begins to rise from the coffee."  The description is "The remains of your morning coffee in a convenient takeaway cup.[if cold]  It's cold.  Nothing worse than cold coffee.[otherwise]  It is just shy of too hot.  Perfect."
 
 Instead of drinking the coffee:
 	unless the coffee is hot, say "Ugh.  Cold coffee is undrinkable." instead;
@@ -540,17 +578,15 @@ Instead of drinking the coffee:
 
 The thermos is a container.  The thermos is in the Kitchen.  The thermos is openable and closed.  The thermos is portable.  The thermos has carrying capacity The description is "A stainless steel vacuum flask, this all-metal thermos excels at keeping hot things hot."
 
-The flitterkey is a thing.  The flitterkey can be either working or fried.  The flitterkey is working.  The flitterkey has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the ballistic plastic of the flitter key begins to melt."  The description is "the flitterkey is a scuffed, hardened ballistic plastic transponder.[if fried] It looks like it has been partially melted; scorched electronics poke through the uneven plastic shell."
+The flitterkey is a thing.  The flitterkey is small. The flitterkey can be either working or fried.  The flitterkey is working.  The flitterkey has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the ballistic plastic of the flitter key begins to melt."  The description is "the flitterkey is a scuffed, hardened ballistic plastic transponder.[if fried] It looks like it has been partially melted; scorched electronics poke through the uneven plastic shell."
 
-The car key is a container.  The car key is unopenable. The car key is closed.  The car key has carrying capacity 2.  The car key can be either working or fried.  The car key is working. The car key has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the rubberized plastic of the car key begins to melt." The description is "The 'key' is really a small rubberized, sealed plastic transponder which automatically unlocks the car when you're near it.  It won't do much of anything at the moment, however, since your car has been in the shop for three days.[if fried]  It may not do anything ever again, in fact; it looks like it has melted slightly.  Some electronic bits can be seen in the mass of deformed plastic.[otherwise if open] The plastic has been cut away from one end of the key, revealing two component slots."
+[car key]
+The car key is a container.  The car key is small. The car key is unopenable. The car key is closed.  The car key has carrying capacity 2.  The car key can be either working or fried.  The car key is working. The car key has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the rubberized plastic of the car key begins to melt." The description is "The 'key' is really a small rubberized, sealed plastic transponder which automatically unlocks the car when you're near it.  It won't do much of anything at the moment, however, since your car has been in the shop for three days.[if fried]  It may not do anything ever again, in fact; it looks like it has melted slightly.  Some electronic bits can be seen in the mass of deformed plastic.[otherwise if open] The plastic has been cut away from one end of the key, revealing two component slots."
 
-[car key rules]
 Rule for printing room description details of the closed car key: stop.
 
 In the car key is a broadcast chip.
 In the car key is a memory chip.
-
-Understand "cut [something] with [something]" as cutting it with.
 
 Carry out cutting the car key with something:
 	if the noun is fried, say "The key is melted into a single mass." instead;
@@ -558,8 +594,8 @@ Carry out cutting the car key with something:
 	if the second noun is the knife:
 		say "You carefully cut open the car keys with your knife and peel back the rubber to reveal [a list of things in car key].";
 		now the noun is disassembled;
-		now the noun is openable;
 		now the noun is open;
+		now the noun is unopenable;
 	otherwise:
 		say "What do you want to cut it with?" instead.		
 
@@ -567,7 +603,8 @@ instead of cutting the car key:
 	say "What do you want to cut it with?" instead.
 
 Check inserting into the car key:
-	Unless the noun is tiny, say "That won't fit!" instead.
+	Unless the noun is tiny, say "That won't fit!" instead;
+	continue the action.
 
 Instead of closing the car key:
 	if the noun is closed:
@@ -576,18 +613,22 @@ Instead of closing the car key:
 		say "The plastic appears to be cut away. The damage looks permanent." instead.
 
 Instead of unlocking the car key with the knife:
-	try cutting the car key with the knife instead;
-	continue the action.
+	try cutting the car key with the knife instead.
 
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely chained down to the countertop to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
-The camera chain is part of the ID camera.
+
+[ID camera]
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely chained down to the countertop to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
 
 Understand "the chain" as the camera chain.
 
-Check cutting the camera chain:
+Check cutting the camera chain with something:
 	if the second noun is the tag remover or the player is carrying the tag remover:
 		say "Looking around quickly, you snip through the ID chain with the tag remover!";
 		now the ID camera is portable instead;
+	otherwise:
+		 say "You have nothing which will cut that." instead.
+
 		
 Check taking the ID camera:
 	if the ID camera is fixed in place:
@@ -596,9 +637,9 @@ Check taking the ID camera:
 		continue the action.
 
 
-The tag remover is in the sales drawer.  The tag remover is a thing.  The description is "This is a combination antitheft tag remover and wirecutter, useful for removing antitheft tags or pesky labels from products."
+The tag remover is in the sales drawer.  The tag remover is a thing.  The tag remover is small. The description is "This is a combination antitheft tag remover and wirecutter, useful for removing antitheft tags or pesky labels from products."
 
-The knife is on the workbench.  The knife is a thing. The printed name of the knife is "lockblade knife".  The description is "This is a battered but extremely sharp folding lockblade knife.  You've had it for years.  It's a wonder you haven't lost it to the TSA yet."
+The knife is on the workbench.  The knife is a thing. The knife is small. The printed name of the knife is "lockblade knife".  The description is "This is a battered but extremely sharp folding lockblade knife.  You've had it for years.  It's a wonder you haven't lost it to the TSA yet."
 
 After taking the knife for the first time:
 	say "This knife is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
@@ -606,16 +647,19 @@ After taking the knife for the first time:
 Check opening the knife:
 	say "You flip the blade open and stare at it for a few seconds, mesmerized by the clean steel, before closing it since you don't have a task for it right now." instead;
 
-The soldering iron is a device.  The soldering iron is on the workbench. The soldering iron is portable.  The soldering iron is switched off.  The description is "Your portable soldering iron.  It uses a sealed battery rather than requiring a power connection.[if switched on]  An LED on it is lit red, and the tip is quite hot."
+The soldering iron is a device.  The soldering iron is on the workbench. The soldering iron is small. The soldering iron is portable.  The soldering iron is switched off.  The description is "Your portable soldering iron.  It uses a sealed battery rather than requiring a power connection.[if switched on]  An LED on it is lit red, and the tip is quite hot."
 
 Before inserting the soldering iron into:
 	if the soldering iron is switched on, say "That's dangerous.  You might want to switch the soldering iron off first." instead.
+	
+Check switching on the soldering iron:
+	if the soldering iron is switched on, try switching off the soldering iron instead.
 
-The solder is a thing. The solder is on the workbench.  The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted pool of useless solder."
+The solder is a thing. The solder is on the workbench.  The solder is small. The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted pool of useless solder."
 
 [laptop]
 The laptop is on the workbench.  The laptop is medium.   The description is "Your laptop is a fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
-The screen is part of the laptop.  The screen is scenery.  The description is "You read the screen with slightly bleary eyes.  Apparently, you managed to locate what you've been looking for for months- a file which claims to be a binary payload which, if broadcast into a person's Mitsui-Klein Encapsulation, can wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners!"
+The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes.  Apparently, you managed to locate what you've been looking for for months- a file which claims to be a binary payload which, if broadcast into a person's Mitsui-Klein Encapsulation, can wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners!"
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data [if empty]but no storage is available.[otherwise] to the Memory chip in the slot."
 
 Understand "download slot" as the chipslot.
@@ -641,17 +685,22 @@ The harness is a component.  The harness is in the Police Flitter. The item-id o
 The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, it seems to have a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is enclosed by the powered platform]  It is attached to the platform's winch frame with several locking clamps."
 
 The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight."
-The cable is a part of the descender.  The cable can be tied or untied.  The description is "A spool of extremely strong cable attached to the descender with a spliced-in carabiner at the end.[if tied]  One end of the cable is looped around the balcony rail and attached with the carabiner."
+The cable is a part of the descender.  The cable can be tied or untied.  The description is "A spool of extremely strong cable attached to the descender with a spliced-in carabiner at the end.[if tied]  One end of the cable is looped around the scarred tree and attached with the carabiner."
 
 Before tying the cable to something:
-	unless the second noun is the railing:
-		say "You can't tie the cable to that." instead.
+	unless the second noun is the scarred tree:
+		say "You can't tie the cable to that." instead;
+	say "You pass the cable around the tree and through the carabiner at the end and pull it tight, firmly attaching the cable to the tree.";
+	now the cable is tied;
+	stop.
+	
 
-Instead of tying the cable to the railing:
-	now the cable is part of the railing;
-	say "You pass the cable spool around the railing and through the splice loop at the end and pull it tight, firmly attaching the cable to the railing.";
-	now the cable is tied. 
-			
+The Maintenance camera is a disposable camera. The Maintenance camera is in the Utility Closet.  "A scuffed disposable camera with a building property sticker on it is here.  Written on it in marker are the words 'DOCUMENT ALL MAINTENANCE ITEMS.'"
+
+The lost camera is a disposable camera.  The Lost camera is in Government Square North.  "It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here."
+
+The medical camera is a disposable camera.  The Medical camera is in the Ambulance.  "A cheap camera, no doubt used to document injuries or accident scenes, is here."
+
 
 
 Section 6 - Fixed/Scenery Objects
@@ -672,11 +721,12 @@ Instead of taking the Public Surveillance Notice, say "That's firmly mounted in 
 A trash can is a kind of container.  A trash can is fixed in place.  A trash can is openable. A trash can is usually closed.  A trash can is usually assembled. The description of a trash can is "Painted industrial dark green, the [location] trash can awaits its daily diet of rubbish.  There is a solar panel on it; presumably it reports back to a central system when it is full.[if the solar panel enclosed by the location is open]  The solar panel on the can lid has been pried back.  Vandals!"
 A rubbish is a kind of thing.  A rubbish is fixed in place.  A rubbish is in every trash can.  The indefinite article is "some". The description of a rubbish is "All you'd expect from a cheap public trash can."
 Instead of taking the rubbish, say "It's too disgusting to touch."
-A solar panel is a kind of container.  [A solar panel is always scenery.]  A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the lid, apparently powering something embedded in the trash can.[if open]  This one has been pried back.[end if]"
+A solar panel is a kind of container.   A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the lid, apparently powering something embedded beneath in the trash can.[if open]  This one has been pried back.[end if]"
 
 Check opening a solar panel:
 	if the noun is disassembled, say "That's already been opened." instead;
 	unless the player is carrying the multitool, say "You don't have anything to open it with." instead;
+	[unless the second noun is the multitool, say "What do you want to open it with?" instead;]
 	say "You pry loose the solar panel with the multitool, ignoring the cracking sounds.";
 	now the noun is disassembled;
 	now the noun is openable;
@@ -685,6 +735,7 @@ Check opening a solar panel:
 		unless the location is gassed:
 			the player incriminates in 1 turn from now;
 	continue the action.
+
 
 Check inserting into a solar panel:
 	Unless the noun is tiny, say "That won't fit!" instead.
@@ -729,6 +780,7 @@ Instead of switching off an activate button which is part of a switched on devic
 	try switching off the machine.
 	
 Understand "activate [something]" as switching on.
+Understand "deactivate [something]" as switching off.
 
 One activate button is part of every device.
 
@@ -737,7 +789,7 @@ One activate button is part of every device.
 
 The mailbox is a container.  The mailbox is fixed in place.  The mailbox is openable. The mailbox is closed.  The description is "Postal Service standard mailbox.  Yours will open to your fingerprint."
 Instead of opening the mailbox:
-	say "You touch your finger to the lockplate, and the mailbox swings open.";
+	say "You touch your finger to the lockplate, and the mailbox swings open[unless the mailbox is empty], revealing [a list of things inside the mailbox].";
 	now the noun is open.
 
 
@@ -751,17 +803,35 @@ Check inserting into the refrigerator:
 
 
 [microwave]
-The microwave oven is a container.  The microwave oven is in the Kitchen.  The microwave oven is transparent and fixed in place.  The microwave oven is openable and closed.  The microwave oven can be working or fried.  The microwave oven is working. The carrying capacity of the microwave oven is 1. The description is "A microwave oven of perhaps a cubic foot capacity.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'ON') on the front. A side panel sports a lurid warning.[if the side panel is open]  The service panel is bent open on the side."
+The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'ACTIVATE') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
 
-The side panel is part of the microwave oven.  The side panel is a container.  The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1. The side panel is closed.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure being electrocuted, irradiated and (as far as you can tell) being stung by bees after opening the panel.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for perhaps a couple of small components inside it.  It's possible the circuit board controlling the magnetron in this microwave was designed for something else.[otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
+The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
+
+The side panel is part of the microwave oven.  The side panel is a container.  The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1. The side panel is closed.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for perhaps a couple of small components inside it.  It's possible the circuit board controlling the magnetron in this microwave was designed for something else.[otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
 
 Understand "warning" as the side panel when the location is the kitchen.
 Understand "label" as the side panel when the location is the kitchen.
 Understand "magnetron" as the side panel.
 Understand "circuit" as the side panel when the location is the kitchen.
+Understand "circuit board" as the side panel when the location is the kitchen.
+Understand "push [something] button" as switching on.
+Understand "door" as the cook box when the location is the kitchen.
 
-The cook button is part of the microwave oven.  The cook button is scenery.  The description is "The only control on the microwave, this button reads 'GO' in bold letters."
 	
+Check inserting something (called the subject) into the microwave oven:
+	try inserting the subject into the cook box instead.
+	
+Check opening the microwave oven:
+	try opening the cook box instead.
+
+Check closing the microwave oven:
+	try closing the cook box instead.
+
+Check inserting something (called the subject) into the cook box:
+	if the subject is tiny, continue the action;
+	if the subject is small, continue the action;
+	say "That won't fit in the oven." instead.
+
 Instead of opening the side panel:
 	if the noun is open, say "That's already been opened." instead;
 	if the noun is fried, say "It's closed, and looks melted." instead;
@@ -783,7 +853,7 @@ Before searching the side panel:
 	continue the action.
 
 After inserting into the side panel:
-	say "You insert the Klein Blaster into the side panel and wire it to the magnetron.";
+	say "You insert the Klein Blaster into the side panel and wire it to the magnetron by rewiring the circuit board slightly.";
 	if the side panel is hacked, say "As you slide the component in, a small LED labelled 'TRNSMT RDY' lights up on the board!"
 
 Instead of closing the side panel:
@@ -792,24 +862,25 @@ Instead of closing the side panel:
 	otherwise:
 		say "The panel is bent. The damage looks permanent." instead.
 
-Instead of pushing the cook button:
-	if the microwave is open:
+Instead of switching on the microwave oven:
+	if the side panel is fried, say "The oven appears to be dead." instead;
+	if the cook box is open:
 		unless the side panel is hacked:
 			say "The oven won't work unless it is closed." instead;
 		otherwise:
 			carry out the KleinHacking activity with the MitKlein instead;
-	unless the microwave is empty:
-		let L be the list of objects inside the microwave oven;
-		carry out the cooking activity with entry 1 of L;
+	unless the cook box is empty:
+		carry out the cooking activity;
 	otherwise:
 		say "There's nothing in the microwave.  Sensors prevent it from running empty; it's dangerous." instead.
+		
 
-Understand "go button" as the cook button.
-Understand "microwave button" as the cook button.
-Understand "oven button" as the cook button.
 
 [Tissue Generator] [SEE Docs 4.14/Ex. 55!]
-The tissue generator is a device. The tissue generator is in the Emergency Room.  The tissue generator is fixed in place.  The description of the tissue generator is "This is a medium-sized appliance found in most modern hospitals.  It is used to provide artificial tissue for grafting into or onto injuries.  In order to prevent rejection, the tissue generator must be given a complete scan of the patient's tissue, from which it will (by default) produce an exact duplicate of the scanned sample.  It has a button marked ACTIVATE. There is a large opening on the front of the machine labeled 'INSERT CRYOPACK' where, presumably, the generated tissue is delivered; there is a smaller opening labeled 'FEEDSTOCK' and there is a slot labeled 'SAMPLE' where a tissue sampler can be inserted.[unless the feed slot is empty]  The feed slot contains [list of objects in the feed slot]."
+The tissue generator is a device. The tissue generator is in the Emergency Room.  The tissue generator is fixed in place.  The description of the tissue generator is "This is a medium-sized appliance found in most modern hospitals.  It is used to provide artificial tissue for grafting into or onto injuries.  In order to prevent rejection, the tissue generator must be given a complete scan of the patient's tissue, from which it will (by default) produce an exact duplicate of the scanned sample.  It has a button marked ACTIVATE. There is a slot on the front of the machine labeled 'INSERT CRYOPACK FOR SAMPLE' where, presumably, the generated tissue is delivered; there is a smaller opening labeled 'FEED' and there is a slot labeled 'READ' where a tissue sampler can be inserted.  [if the tissue sampler is in the read slot]  The tissue sampler is in the read slot.[end if][if the cryopack is in the sample slot]  There is a cryopack in the sample slot.[end if][unless the feed slot is empty]  The feed slot contains [list of objects in the feed slot]."
+
+Instead of inserting into the tissue generator:
+	say "Which slot do you want to put [the noun] into - the sample slot, the feed slot or the read slot?".
 
 The sample slot is a container.  The sample slot is part of the tissue generator.  The sample slot is scenery.  The sample slot is not openable.  The sample slot is open. The description of the sample slot is "A large opening where a sample container can be placed to receive the generated tissue."
 
@@ -849,7 +920,7 @@ Instead of switching on the tissue generator:
 	carry out the synthesizing activity.	
 
 [lens crafter]
-The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
+The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
 The Lens Menu is part of the Lens Crafter.  The Lens Menu is scenery.  The description is "The menu screen, locked,  displays a password prompt. You don't have the password."
 The delivery slot is a container.  The delivery slot is part of the Lens Crafter.  The delivery slot is open.  The delivery slot is not openable.  The description of the delivery slot is "A slot where the lens crafter delivers its product.  It is shaped to accept a standard lens case."
 
@@ -861,15 +932,21 @@ Instead of switching on the lens crafter:
 	if the lens crafter is fried, say "The screen flashes red.  A message reads 'INSUFFICIENT STOCK.'" instead;
 	unless the lens case is in the delivery slot, say "The lens crafter machine's screen flashes red.  A message reads 'NO DELIVERY CONTAINER AVAILABLE." instead;
 	unless the location of the ID camera is Accessorize, say "The lens crafter machine's screen flashes red.  A message reads 'NO SOURCE DATA AVAILABLE.'" instead;
-	unless the Contents of the ID camera matches the text "Zuzu's eye", say "The lens crafter machine's screen flashes red.  A message reads 'SOURCE DATA FOUND. SOURCE DATA UNUSABLE.'" instead;
+	unless the Contents of the ID camera matches the text "Zuzu's eye", say "The ID camera's status light flashes. The lens crafter machine's screen flashes red.  A message reads 'DATA SOURCE FOUND. SOURCE DATA UNUSABLE.'" instead;
 	move the contact lens to the lens case;
 	now the lens case is closed;
 	now the lens crafter is fried;
 	say "The lens crafter machine's screen flashes green.  A message reads 'SOURCE DATA ACCEPTED - COSTUME LENS SYNTHESIZED.'  The machine hisses slightly, and a sleeve descends around the lens case.  When the sleeve retracts, the lens case is closed." instead.
 
+[jukebox]
+The Jukebox is in The Proletariat Bar.  The Jukebox is a device.  The Jukebox is scenery.  The description of the Jukebox is "A retro-themed music player with imitation vinyl records visible within its transparent cabinet, this jukebox actually operates via a network connection.   It doesn't require money, but then again the users can't really select music on it, either, so fair is fair.[if the jukebox is switched on] It is playing a subdued post-punk Musak adaptation of some anti-government tune."
+
+
+
+[Vehicles/region objects]
 
 [police flitter]
-The police flitter is a vehicle.  "A parked police flitter, armored and festooned with lights, looms here."  The police flitter is lockable and locked.  The police flitter is fixed in place. [The matching key of the police flitter is the flitterkey.] The police flitter can be violated or pristine.  The police flitter is pristine.  The description is "A Tesla-Fujiwara light aircraft, the police model of this particular flitter is upengined in order to carry armor and equipment.  Seating four, this example has the full lighting array and riot pod of a crowd control vehicle.[if locked]  It is securely locked, and a slowly blinking light indicates that its locklarm is armed."
+The police flitter is a vehicle.  "A parked police flitter, armored and festooned with lights, looms here."  The police flitter is lockable and locked.  The police flitter is fixed in place. The police flitter can be violated or pristine.  The police flitter is pristine.  The description is "A Tesla-Fujiwara light aircraft, the police model of this particular flitter is upengined in order to carry armor and equipment.  Seating four, this example has the full lighting array and riot pod of a crowd control vehicle.[if locked]  It is securely locked, and a slowly blinking light indicates that its locklarm is armed."
 
 Understand "flitter" as the police flitter.
 
@@ -922,10 +999,8 @@ Hanging around until is an action applying to one time.
 
 Check hanging around until: 
 	if the time of day is the time understood, say "It is [time understood] now!" instead.
-	[if the time of day is after the time understood, say "It is too late for that now." instead.]
 
 Carry out hanging around until: 
-	[while the time of day is before the time understood:]
 	while the time of day is not the time understood:
 		follow the turn sequence rules.
 
@@ -953,13 +1028,27 @@ Check waiting more:
 
 
 [removing]
-Understand "remove [something] with [something]" as cutting it with.
-Understand "detach [something] with [something]" as cutting it with.			
+Understand "remove [something] with [something preferably held]" as cutting it with.
+Understand "detach [something] with [something preferably held]" as cutting it with.
+Understand "cut [something] with [something preferably held]" as cutting it with.		
 
 [cutting]
 Cutting it with is an action applying to two things.
 
 Check cutting it with:
+	if the second noun is the multitool:
+		say "The one thing this multitool doesn't have is a decent cutting edge." instead;
+	unless the noun is carried:
+		unless the noun is scenery or the noun is fixed in place:
+			try taking the noun;
+	unless the second noun is carried:
+		unless the second noun is scenery or the second noun is fixed in place:
+			try taking the second noun;
+	continue the action.
+	
+
+
+[Check cutting it with:
 	if the second noun is the multitool:
 		say "The one thing this multitool doesn't have is a decent cutting edge." instead;
 	if the noun is the car key:
@@ -987,19 +1076,41 @@ Check cutting it with:
 			continue the action;		
 	otherwise:	
 		try cutting the noun instead.
+]
+
 
 Instead of cutting an antitheft tag (called the tag) with the tag remover:
 	say "You deftly remove the tag with the tag remover.";
 	now the tag is carried by the player.
 
+
+[and-combining]
+[see related section in 'global rules']
+And-combining is an action applying to one thing.  Understand "combine [things]" as and-combining.
+
+
+Check and-combining when group-combine-complete is true:
+	stop the action.
 	
+Carry out and-combining:
+	let L be the list of matched things; 
+	if the number of entries in L is 0, say "What do you want to combine?" instead; 
+	if the number of entries in L is 1, say "What do you want to combine that with?" instead;
+	if the number of entries in L > 2, say "You don't have enough hands." instead;
+	if the number of entries in L is 2:
+		let X be entry 1 in L;
+		let Y be entry 2 in L;
+		try combining X with Y;
+	[say line break;]
+	now group-combine-complete is true.
+
+
 
 [combining]
 Combining it with is an action applying to two carried things.
 Understand "combine [something] and [something]" as combining it with.
 Understand "combine [something] with [something]" as combining it with.  
-Understand "combining [something] to [something]" as combining it with.
-Understand the command "attach" as something new.  Understand "attach [something] to [something]" as combining it with.
+Understand "combine [something] to [something]" as combining it with.
 
 The combining it with action has an object called the resultant-item. 
 
@@ -1028,7 +1139,10 @@ Setting action variables for combining something with something:
 Check combining it with:
 	unless the noun provides the property item-id, say "[The noun] won't attach to [the second noun]." instead;
 	unless the second noun provides the property item-id, say "[The second noun] won't attach to [the noun]." instead;
-	if the resultant-item is nothing, say "[The noun] and [the second noun] don't make anything useful." instead;
+	if the resultant-item is nothing:
+		if the item-id of the noun is "M0" then say "The contents of that memory chip aren't very useful." instead;
+		if the item-id of the second noun is "M0" then say "The contents of that memory chip aren't very useful." instead;
+		 say "[The noun] and [the second noun] don't make anything useful." instead;
 	if the resultant-item is not in Limbo, say "That's not available." instead;
 	if the resultant-item is a Klein blaster:
 		unless the player is solderable, say "You don't have the proper tools." instead;
@@ -1049,27 +1163,47 @@ Carry out combining it with:
 Report combining it with:
 	say "You fashion the [noun] and the [second noun] into a [resultant-item]!". 
 
-[There is a memory chip in the backpack.][Testing]
+	
+[and-attaching]
+[see related section in 'global rules']
+Understand the command "attach" as something new.
+And-attaching is an action applying to one thing.  Understand "attach [things]" as and-attaching.
+Understand "attach [things]" as and-attaching.
+
+Check and-attaching when group-attach-complete is true:
+	stop the action.
+	
+Carry out and-attaching:
+	let L be the list of matched things; 
+	if the number of entries in L is 0, say "What do you want to attach?" instead; 
+	if the number of entries in L is 1, say "What do you want to attach that to?" instead;
+	if the number of entries in L > 2, say "You don't have enough hands." instead;
+	if the number of entries in L is 2:
+		let X be entry 1 in L;
+		let Y be entry 2 in L;
+		try attaching X to Y;
+	[say line break;]
+	now group-attach-complete is true.
 
 
-[soldering]
-[
-Brazing is an action applying to two carried things.
+[attaching]
+Attaching it to is an action applying to two things.
+Understand "attach [something] to [something]" as attaching it to.
+Understand "attach [something] and [something]" as attaching it to.
+Understand "attach [something]" as attaching it to.
 
-Understand the command "solder" as something new.  Understand "solder [something] to [something]" as brazing.
+Check attaching it to:
+	If the second noun is nothing:
+		say "What do you want to attach [the noun] to?" instead.
+		
+Carry out attaching it to:
+	if the noun is the cable:
+		try tying the cable to the second noun instead;
+	otherwise if the noun is the breaching charge:
+		try putting the breaching charge on the second noun instead;
+	otherwise:
+		try combining the noun with the second noun instead.
 
-Check brazing:
-	unless the second noun is understood, say "You need two things to solder together." instead;
-	unless the player has the soldering iron, say "You don't have the proper tools." instead;
-	unless the player has the solder, say "You don't have the proper supplies." instead;
-	if the noun is the soldering iron, say "You can't solder that to itself!" instead;
-	if the noun is the solder, say "You can't solder anything to that!" instead;
-	if the second noun is the soldering iron, say "You can't solder that to itself!" instead;
-	if the second noun is the solder, say "You can't solder anything to that!" instead;
-
-Carry out brazing:
-	try combining it with instead.
-]	
 
 [Opening]
 Opening it with is an action applying to two carried things.
@@ -1112,10 +1246,6 @@ Check sampling:
 	unless the noun is a person, say "That's not made of tissue." instead;
 	unless the noun is visible, say "But they're not here!" instead.
 	
-[	if the noun is the tissue sampler, say "That would be a really neat trick of topology." instead;
-	unless the location of the actor encloses the tissue sampler, say "You don't have anything to sample with." instead;
-	unless the noun is a palm, say "You can't sample that!" instead.]	
-	
 Setting action variables for sampling:
 	now the person sampling tissue is the printed name of the actor;
 	say "The tissue sample target is [person sampling tissue]".
@@ -1127,20 +1257,10 @@ Carry out sampling:
 Report sampling:
 	say "[if the actor is the player]You press your palm to the tissue sample plate; it glows briefly.[otherwise][the actor] presses a palm against the tissue sample plate; it glows briefly."
 
-		
-[	if the noun is part of a person (called the palmdonor):
-		if the palmdonor is the player:
-			now the Sample of the tissue sampler is "Player - Palm";
-			say "The palmdonor is the player!";
-		otherwise:
-			now the Sample of the tissue sampler is "Unknown Palm";
-	say "The tissue sampler plate glows briefly for a moment."
-]	
-
 
 
 [Arming] 
-Arming is an action applying to one [carried] thing.
+Arming is an action applying to one visible thing.
 Understand "arm [something]" as arming.
 Understand "pull tab on [something]" as arming.
 
@@ -1158,7 +1278,8 @@ Report arming:
 	otherwise if the noun is the Breaching Charge:
 		say "You pull the arming tab out and drop it, arming the Breaching Charge.";
 		if player is surveilled:
-			the player incriminates in one turn from now;
+			say "As soon as the charge detonates, the police will be looking at the surveillance video from this location; they'll ID you within a few minutes!";
+			the player incriminates in seven turns from now;
 	otherwise if the noun is the Tear Gas grenade:
 		say "You pull the pin on the Tear gas grenade and drop it as it begins to hiss!";
 		move the Tear Gas grenade to the location;
@@ -1166,42 +1287,66 @@ Report arming:
 			the player incriminates in one turn from now.]
 
 
-[Photographing activity]
-Photographing is an action applying to one visible thing.
-Understand "photograph [something]" as photographing.
-Understand "take picture of [something]" as photographing.
-Understand "take a picture of [something]" as photographing.
-Understand "snap [something]" as photographing.
+
+[Photographing]
+
+Understand "photograph [something] with [something preferably held]" as photographing.
+Understand "take picture of [something] with [something preferably held]" as photographing.
+Understand "take a picture of [something] with [something preferably held]" as photographing.
+Understand "snap [something] with [something preferably held]" as photographing.
+
+Photographing is an action applying to two visible things.
+
 
 Check photographing:
-	unless the player is holding the ID camera, say "What do you want to photograph [the noun] with?" instead;
-	if the noun is a person, say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
-	if the noun is part of a person, say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead.
-
-
+	if the second noun is the ID camera:
+		if the noun is a person, say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
+		if the noun is part of a person, say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead;
+	otherwise if the second noun is a disposable camera:
+		if the noun is disassembled, say "The camera is pried open and does not seem to function." instead;
+		continue the action;
+	otherwise:
+		say "What do you want to photograph [the noun] with?" instead.
+		
 Carry out photographing:
-	say "The camera makes an artificial-sounding 'CLICK' noise.  The disc icon flashes green, indicating that the camera's tiny onboard storage is full.";
-	now the Contents of the ID camera is the printed name of the noun;
-	now the ID camera is programmed.
+	now the Contents of the second noun is the printed name of the noun;
+	if the second noun is the ID camera, now the second noun is programmed.
+
+Report photographing:
+	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The disc icon flashes green, indicating that the camera's tiny onboard storage is full.".
+
 
 
 [axing]
-Axing is an action applying to one visible thing.
-Understand "ax [something]" as axing.
-Understand "axe [something]" as axing.
-Understand "chop [something]" as axing.
-Understand "hit [something]" as axing when the second noun is the Fire Axe.
-Understand "break [something]" as axing when the second noun is the Fire Axe.
+Smashing it with is an action applying to two things.
+Understand "ax [something] with [something preferably held]" as smashing it with.
+Understand "axe [something] with [something preferably held]" as smashing it with.
+Understand the command "chop" as something new. [This is because 'cut' is understood as 'chop' somehow and it redirects cutting]
+Understand "chop [something] with [something preferably held]" as smashing it with.
+Understand "hit [something] with [something preferably held]" as smashing it with.
+Understand "break [something] with [something preferably held]" as smashing it with.
+Understand "smash [something] with [something preferably held]" as smashing it with.
 
-Check axing:
-	if the player is not holding the Fire Axe, say "You can't do that without an axe![line break]" instead;
-	if the noun is a person, say "That will definitely get you arrested.  Plus, it's just wrong to attack people." instead;
-	if the noun is not the Balcony Door, say "I don't really think that's appropriate, do you?[line break]" instead.
- 
-Carry out axing:
-	say "The Balcony doors give way before your furious assault.  Before long, you have smashed a hole in them large enough to squeeze though safely, but if anyone was watching the surveillance systems and saw you do that, the police are probably looking for you.";
-	the player incriminates in one turn from now;
-	now the Balcony Door is axed.
+
+
+Check player attacking the vestibule door lock:
+	say "What do you want to smash the door lock with?" instead;
+
+Check smashing the observation window with something:
+	say "[The second noun] bounces off the tough armorcrys; you barely avoid injuring yourself." instead.
+	
+Check smashing something with something:
+	if the noun is the vestibule door lock:
+		unless the second noun is the fire axe, say "Attacking [the noun] with that isn't productive." instead;
+		continue the action;		
+	otherwise:
+		say "Violence isn't the answer to this one." instead.
+	
+Carry out smashing the vestibule door lock with something:
+	say "You heft the axe and set to.  The lock gives way before your furious assault!";
+	now the vestibule door lock is broken;
+	now the vestibule door is unlocked.	
+
 
 [microwaving]
 Microwaving is an action applying to one thing.
@@ -1213,35 +1358,39 @@ Understand "reheat [something]" as microwaving.
 Before microwaving:
 	if the noun is the microwave oven, say "That would be a neat trick." instead;
 	unless the microwave oven is in the location, say "How do you propose to do that?" instead;
-	unless the microwave is empty:
-		unless the noun is in the microwave, say "There's no room in the microwave." instead;
+	unless the cook box is empty:
+		unless the noun is in the cook box, say "There's no room in the microwave." instead;
 	unless the noun is touchable:
-		if the noun is in the microwave oven and the microwave oven is closed:
-			try silently opening the microwave oven;
+		if the noun is in the cook box and the cook box is closed:
+			try silently opening the cook box;
 	if the noun is visible, continue the action.
 	
 Carry out microwaving:
-	unless the noun is in the microwave oven:
-		try opening the microwave oven;
-		try inserting the noun into the microwave oven;
-	unless the microwave oven is closed:
-		try silently closing the microwave oven;
-	if the microwave is empty, say "There's nothing in the microwave." instead;
-	let L be the list of objects inside the microwave oven;
-	carry out the cooking activity with entry 1 of L;
+	unless the noun is in the cook box:
+		try opening the cook box;
+		try inserting the noun into the cook box;
+	unless the cook box is closed:
+		try silently closing the cook box;
+	if the cook box is empty, say "There's nothing in the microwave." instead;
+[	let L be the list of objects inside the microwave oven;
+	carry out the cooking activity with entry 1 of L;]
+	carry out the cooking activity.
 
 
 [cooking activity]
-Cooking something is an activity.
-Rule for cooking something (called target):
+Cooking is an activity.
+Rule for cooking:
 	unless the side panel is fried:
-		say "A light comes on in the microwave and it begins to hum.";
-		if the target is working:
-			if the target provides the property fryDescription, say "[fryDescription][line break]";
-			if the target provides the property fried, now the target is fried;
-		otherwise if the target is cold:
-			if the target provides the property cookDescription, say "[cookDescription][line break]";
-			if the target provides the property hot, now the target is hot;
+		say "A light comes on in the microwave and it begins to hum.[if the side panel is hacked]The oven makes a sharp high-pitched electronic noise as it operates, but the shielding in the door prevents anything from happening outside.";
+		repeat with sizzler running through the list of objects inside the cook box:
+			if sizzler provides the property fryDescription:
+				if sizzler is working, say "[fryDescription of sizzler][line break]";
+				now sizzler is fried;
+			else if sizzler provides the property cookDescription:
+				say "[cookDescription of sizzler][line break]";
+				now sizzler is hot;
+			otherwise: 
+				do nothing;
 		say  "A few moments later there is a loud [bold type]BING![roman type] and the microwave stops.";	
 	otherwise:
 		say "The microwave appears to be dead."		
@@ -1266,7 +1415,7 @@ Rule for kleinhacking something (called target):
 		if the target is hacked:
 			say "You feel a a light tickle in your head.";
 		otherwise:
-			say "You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.";
+			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.";
 			now the mitklein is hacked;
 			now the side panel is fried;
 			now the side panel is closed;
@@ -1292,9 +1441,6 @@ Rule for synthesizing:
 	if the tissueDonor of the tissue sampler matches the text "blank":
 		say "The tissue generator bleeps and a red light comes on which reads 'NO SAMPLE SCAN FOUND.'";
 		stop;
-	unless the tissueDonor of the tissue sampler matches the text "Roberto/Yourself":
-		say "The tissue generator bleeps and a red light comes on which reads 'INSUFFICIENT FEEDSTOCK.'";
-		stop;
 	otherwise:
 		if the tissueDonor of the tissue sampler matches the text "Roberto":
 			now the skin sample is valid;
@@ -1310,7 +1456,6 @@ Rule for synthesizing:
 
 Section 8 - Scenes
 
-[Streetwalking is a scene.  Streetwalking begins when the location is a street.  Streetwalking ends when the location is not a street.]
 
 [Bank Run]
 Bank Run is a recurring scene.  Bank Run begins when Roberto Velez is in The Proletariat Bar and Roberto Velez is runningErrand.
@@ -1367,7 +1512,10 @@ Instead of dropping an antitheft tag during Clothes Shopping:
 	end the story saying "You have been arrested!".
 
 Every Turn during Clothes Shopping:
-	if a random chance of 1 in 7 succeeds, say "[one of]A shopper murmurs some lyrics, presumably from a song she's listening to, and subsides.[or]A small group of people enter the store, look around, look at each other and file back out.[or]The shopkeeper wanders past you and gives you a suspicious look.[or]A PA system mumbles a message about an upcoming sale.[as decreasingly likely outcomes]"
+	if a random chance of 1 in 7 succeeds:
+		say "[one of]A small group of people enter the store, look around, look at each other and file back out.[or]The shopkeeper wanders past you and gives you a suspicious look.[or]A PA system mumbles a message about an upcoming sale.[as decreasingly likely outcomes]";
+	else if a random chance of 1 in 8 succeeds:
+		if the location of the shopper is Garb-Oh, say "[one of]A shopper murmurs some lyrics, presumably from a song she's listening to, and subsides.[or]The shopper pulls a shirt off the racks and looks at it critically before returning it.[purely at random]"
 
 Clothes Shopping ends when the location is not Garb-oh.
 Clothes Shopping ends when Shoplifting begins.
@@ -1411,13 +1559,7 @@ When Patrol begins:
 			now the police flitter is unlocked;
 	if the location is Green Commercial Bistro Paris:
 		say "A police officer enters the Bistro, buys a coffee and pastry and sits down at a window table."
-		
 
-After going to Green Commercial Plaza South during Patrol: [so we can assume the flitter is there]
-	If the player is flitterEnabled:
-		now the police flitter is unlocked;
-		say "The police flitter flashes its lights twice as the locklarm disengages.";
-	continue the action.
 
 After inserting into the car key during Patrol: [so we can assume the flitter is there]
 	if the location is Green Commercial Plaza South:
@@ -1438,30 +1580,42 @@ When Patrol ends:
 	if the location is Green Commercial Bistro Paris:
 		say "The police officer finishes his coffee, tosses his trash in a bin and ambles out of the bistro.  You hear the sound of flitter turbines spooling up outside and then fading away.";
 	if the location is Green Commercial Plaza South:
-		say "A police officer ambles out of Green Commercial Bistro Paris.  As he approaches the flitter, the flitter key transponder on his belt disables the locklarm.  He climbs in and shuts the door.  A few moments later, the aircraft powers up.  Its beacons flashing, the turbines spool up and it lifts smoothly into the air, disappearing behind the building tops.";
-		if the player encloses a memory chip (called target):
-			if the target is keyed:
-				now the target is programmed;
-				now the Contents of the target is "flitter";
-				say "Your hacked car key beeps softly, and its ready light turns green!"
+		say "A police officer ambles out of Green Commercial Bistro Paris.  As he approaches the flitter, the flitter key transponder on his belt disables the locklarm.  He climbs in and shuts the door.  A few moments later, the aircraft powers up. The turbines spool up and, its beacons flashing, it lifts smoothly into the air, disappearing behind the building tops.";
+		if the player encloses a keyed memory chip (called target):
+			now the target is programmed;
+			now the item-id of the target is "M0";
+			now the Contents of the target is "flitter";
+			say "Your hacked car key beeps softly, and its ready light turns green!"
 
 Police Gone begins when Patrol ends temporarily. [note this must be after Patrol scene declarations]
 
 [Drug Raid]
 Drug Raid is a scene.  Drug Raid begins when the location is South Primrose Lane and South Primrose Lane is reported and Drug Market is unraided.
 
+The Police Vehicles are scenery.  The description of the Police Vehicles is "Several ground and air vehicles in police markings with their lights flashing, parked haphazardly around the traffic circle."
+The Police Barrier is scenery.  The description of the Police Barrier is "A barrier made of plastic and aluminum, its power derives not from its appearance or construction but from the policeman standing behind it."
+Understand "cordon" as the police barrier.
+
+
 Instead of going south in South Primrose Lane during Drug Raid:
 	say "A stern-looking policeman from the cordon intercepts you and firmly tells you to stay back.  You move back to the street." instead.
 
 When Drug Raid begins:
-	say "You arrive at South Primrose Lane to a scene of chaos.  Police vehicles are pulled up all over the road, cyclone lights flashing.  As you watch, heavily armed SWAT officers file through the hole in the fence towards the Drug Market.   A staticky transmission over the radio of the cars near you says quietly 'Breaching charges in place.'  You can hear a voice on a bullhorn shout 'You have thirty seconds to surrender!'[paragraph break]A few seconds later, there is a deep thundering [bold type][italic type]BOOM[roman type] as the breaching charges detonate, and a confused hubbub as (presumably) the SWAT officers rush into the abandoned house."
+	move the Police Vehicles to South Primrose Lane;
+	move Policeman to South Primrose Lane;
+	move Police Barrier to South Primrose Lane;
+	say "You arrive at South Primrose Lane to a scene of chaos.  Police vehicles are pulled up all over the road, cyclone lights flashing.  As you watch, heavily armed SWAT officers file through the hole in the fence towards the Drug Market.   A staticky transmission over the radio of the vehicles near you says quietly 'Breaching charges in place.'  You can hear a voice on a bullhorn shout 'You have thirty seconds to surrender!'[paragraph break]A few seconds later, there is a deep thundering [bold type][italic type]BOOM[roman type] as the breaching charges detonate, and a confused hubbub as (presumably) the SWAT officers rush into the abandoned house."
+
 	
 Instead of looking in South Primrose Lane during Drug Raid:
-	say "Police vehicles and personnel are milling around here.  Bright lights are visible over the fence to the south.  A cordon of yellow police crime scene tape, guarded by several policemen, prevents anyone from approaching the fence."
+	say "Police vehicles are pulled up here.  Bright lights are visible over the fence to the south.  A cordon of police barriers, guarded by a stern-looking policeman, prevents anyone from approaching the fence, while police personnel mill about behind the barriers."
 
 Drug Raid ends when the time since Drug Raid began is 10 minutes.
 	
 When Drug Raid ends:
+	remove the Police Vehicles from play;
+	remove the Police Barrier from play;
+	remove the Policeman from play;
 	if the location is South Primrose Lane:
 		say "Eventually, police begin filing back out of the hole in the fence, dragging a few handcuffed suspects with them.  The bright lights across the fence go out, and various SWAT and regular police get back into their assorted vehicles and begin to pull away.  Soon nothing is left except a slight smell of smoke from the breaching charges."
 
@@ -1471,6 +1625,7 @@ Endgame is a scene.  Endgame begins when the player has been in Atrium Midair To
 Instead of dropping ID Bomb during Endgame:
 	say "[if Bombs Thrown is 0]You arm the bomb and toss it. The bomb spins down out of sight towards a window wall.  A few seconds later you make out a slight twinkling as the flash unit fires.  A low noise, of a crowd confused, slowly rises in volume![otherwise if Bombs Thrown is 1]Arming another bomb, you toss it away into the atrium where crowds are gathering at the windows!  The bomb flashes just in front of a large crowd gathered before a window wall, and they begin to mill about in panic and confusion!  The noise inside the atrium rises![otherwise if Bombs Thrown is 2]You arm your third ID bomb and drop it directly down into the crowds in the Main Lobby, where you can see police and Homeland Security forces pointing up at you as they maneuver into place.  There is a definite flinching in the crowd as the bomb goes off nearly at floor level, and the law enforcement personnel are instantly swamped by the confused masses of convention attendees as everyone on the Lobby floor is cut off from communicating directly with their electronics!";
 	Increase Bombs Thrown by 1;
+	say "thrown is [Bombs Thrown]";
 	remove the noun from play.
 
 Instead of arming ID bomb during Endgame:
@@ -1480,7 +1635,7 @@ Every turn during Endgame:
 	say "The descender whirs steadily as it lowers you.";
 	carry out the rappelling activity.
 
-Endgame ends victoriously when the location is Main Lobby and Bombs Thrown is 3.
+Endgame ends victoriously when the location is Main Lobby and Bombs Thrown is greater than 2.
 Endgame ends unsuccessfully when the location is Main Lobby and Bombs Thrown is less than 3.
 
 When Endgame ends victoriously:
@@ -1549,10 +1704,27 @@ To say tagged details:
 
 Before printing the name of Roberto Velez: now Roberto Velez is known.
 
+[Roberto's movement rules]
+At the time when boozing starts:
+	if Roberto Velez is off-stage:
+		if the location is The Proletariat Bar:
+			say "The door opens.  [if Roberto Velez is unknown]A medium man in a blue trade uniform[otherwise] Roberto Velez[end if] comes in, orders a beer and sits down at a table.";
+		move Roberto Velez to The Proletariat Bar;
+		snoozing starts at 8:00 PM.
+		
+At the time when snoozing starts:
+	if Roberto Velez is in The Proletariat Bar:
+		if the location is The Proletariat Bar:
+			say "Roberto stands up, stretches, pays his bill and ambles out.";
+		remove Roberto Velez from play;
+		boozing starts at 2:00 PM.
+
+[Roberto's possessions]
 The torn jacket is a thing.  The torn jacket is wearable.  The torn jacket is medium.  The description of the torn jacket is "A dark blue uniform jacket with black snap closures and false side pockets.  There is a long gash on the outside of the left sleeve near the shoulder.[if nametag is part of the torn jacket]  There is a nametag clipped to the jacket which reads 'Roberto Velez.'"
 
 The nametag is a thing.  The nametag is small.  The nametag is part of the torn jacket.  The nametag is scenery.  The description of the nametag is "A small black nametag with the name 'Roberto Velez' inscribed on it."
-	
+
+[Roberto's conversation]	
 Instead of speech when the noun is Roberto Velez:
 	if the topic understood matches the text "jacket" or the topic understood matches the text "uniform":
 		if Roberto Velez is preJacket:
@@ -1560,12 +1732,12 @@ Instead of speech when the noun is Roberto Velez:
 			now Roberto Velez is postJacket;
 		otherwise:
 			say "[one of]Roberto pokes a finger through the tear glumly.  'I need to replace this.'[or]Roberto nods.  'Yes, I still must find a way to replace this.'[or]Roberto looks at you sharply.  'Can you help me?  Or are you just amused by my misfortune?'[as decreasingly likely outcomes]";
-	otherwise if the topic understood includes "job/work/bank/reserve"[ or the topic understood matches the text "work"]:
+	otherwise if the topic understood includes "job/work/bank/reserve":
 		say "Roberto sighs.  'I have a good job,' he says.  'I am a custodian at the Reserve Bank, downtown.  The work is not bad, and the pay is not terrible, but they are very strict about the uniform.'";
 	otherwise:
 		say "Roberto looks at you curiously.  You have a sneaking suspicion his English is not very good.".
-[]
 
+[Roberto's transactions]
 Instead of the player trying giving the blue jacket to Roberto Velez:
 	if Roberto Velez is wearing the blue jacket, say "He already has it!" instead;
 	if Roberto Velez is carrying the blue jacket, say "He already has it!" instead;
@@ -1578,7 +1750,7 @@ Every turn when the player can see Roberto Velez and the location is The Proleta
 [Garb-oh attendant]
 In Garb-oh is a woman called the shopkeeper.  The description of the shopkeeper is "[if Shoplifting is happening]The shopkeeper is standing with the police and the shopper near the doors, gesticulating angrily and haranguing both the police and shopper.[otherwise] The shopkeeper is a somewhat frumpy older lady.  You can't help but wonder if she has been deliberately selected for her appearance so as to present a contrast with the merchandise."
 
-In Garb-oh is a woman called the shopper.  The shopper can be carryingSwag or notcarryingSwag.  The shopper is notcarryingSwag.  The shopper is wearing the shoulder bag.  The description of the shopper is "[if Shoplifting is happening]In tears, the shopper stands near the police officers, protesting her innocence and trading angry accusations with the shopkeeper.[otherwise] The shopper is a young woman wearing large headphones, loose clothes. She is bouncing her head in what is probably the rhythm of the song she is listening to, and seems to be paying very little attention to her surroundings.  Every once in a while she pulls an item from a rack and holds it up in front of a mirror before returning it to its place.  She is carrying a large shoulder bag."
+In Garb-oh is a woman called the shopper.  The shopper can be carryingSwag or notcarryingSwag.  The shopper is notcarryingSwag.  The shopper is wearing the shoulder bag.  The description of the shopper is "[if Shoplifting is happening]In tears, the shopper stands near the police officers, protesting her innocence and trading angry accusations with the shopkeeper.[otherwise] The shopper is a young woman wearing large headphones, loose clothes. She is bouncing her head in what is probably the rhythm of the song she is listening to, and seems to be paying very little attention to her surroundings.  Every once in a while she pulls an item from a rack and holds it up in front of a mirror before returning it to its place.  She is wearing a large shoulder bag."
 
 The shoulder bag is a container.  The shoulder bag is open.  The description is "An open-topped satchel with a carrying strap meant to be strung over one shoulder."
 
@@ -1604,6 +1776,9 @@ Rule for deciding the concealed possessions of Officer Prescott:
 	if the particular possession is the flitterkey, no;
 	otherwise yes.
 
+[Policeman]
+The Policeman is a man.  The description of the Policeman is "A street cop, dressed in uniform rather than the riot armor of a SWAT team member.  He is patrolling the barrier, making sure no passers-by intrude on the scene."
+
 [Sergeant Ramirez]
 In the Front Desk is a man called Sergeant Ramirez. The description of Sergeant Ramirez is "Seated behind his desk, this grizzled uniformed policeman is clearly a veteran of many years' service.  He scowls at you, waiting for you to make his life more annoying."
 
@@ -1614,8 +1789,6 @@ Persuasion rule for asking Sergeant Ramirez to try doing something:
 	say "[one of]The sergeant stolidly ignores you.[or]'You want me to run you in?'[or]'Beat it, I'm busy.'[or]'Look, go bother somebody else, okay?'[or]The sergeant stares at you fixedly, ostentatiously comparing your face to the screen of his computer.[as decreasingly likely outcomes]";
 	persuasion fails.
 	
-[Understand "tell [someone] about [any subject]" as telling the noun about the subject.]
-
 Telling someone about something is speech.
 Asking someone about something is speech.
 Answering someone that something is speech.
@@ -1639,7 +1812,8 @@ In Lift Lobby is a man called the Security Guard.  The description of the Securi
 [Ponyfriend Chunky]
 In Civil Center Steps is a man called Ponyfriend Chunky.  Ponyfriend Chunky can be cellBereft or cellEnabled.  Ponyfriend Chunky is cellBereft. Ponyfriend Chunky is carrying the begging sign. Ponyfriend chunky is carrying the pager.  The description of Ponyfriend Chunky is "Dressed in ragged clothing, this man is lookng around himself nervously, trying not to meet anyone's eye.  He is holding a sign that reads 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN.'"
 
-The begging sign is scenery.  The description of the begging sign is "It appears to be written in shaky black marker, written on a piece of cardboard."
+The begging sign is scenery.  The description of the begging sign is "Reading 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN,' the sign appears to be written in shaky black marker on a piece of cardboard."
+
 
 Rule for deciding the concealed possessions of Ponyfriend Chunky:
 	no.
@@ -1669,16 +1843,15 @@ To respond to Ponyfriend:
 
 Table of Ponyfriend Responses
 Topic		Response
-"pager"		"Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean
-		is, they page me and I call them to get the briefings, yes.  I'm sorry, I have to keep checking to make sure they haven't paged me.  I wish…I wish I could talk to them directly."
-"them/they"	"They are…up there. (Ponyfriend points up, dramatically).  They watch everything, 	and they know where we are and what we're doing, and sometimes they have to…	correct things.  That's where I come in.  I get missions."
-"mission/missions"	"My missions?  They're…well…(a suspicious look comes over his face) They're secret! 	You can't know!"
+"pager"	"Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I'm sorry, I have to keep checking to make sure they haven't paged me.  I wish…I wish I could talk to them directly."
+"them/they"	"They are…up there. [italic type](Ponyfriend points up, dramatically).[roman type]  They watch everything, and they know where we are and what we're doing, and sometimes they have to…	correct things.  That's where I come in.  I get missions."
+"mission/missions"	"My missions?  They're…well…(a suspicious look comes over his face) They're secret! You can't know!"
 "mitklein/bottle/chip"	"The Mitsui-Klein blessing…yes…that is how we know they love and watch over us."
-"sign"	"Oh…(he looks a bit crestfallen) …yes.  I, I'm not a wealthy man, and I must ask for 	your support in my missions."
+"sign"	"Oh…(he looks a bit crestfallen) …yes.  I, I'm not a wealthy man, and I must ask for your support in my missions."
 "phone"	"It would be much nicer if I had a phone of my own."
-"police/officer/cops"	"Them! (his brow furrows).  They…sometimes I think they're here to prevent me 	carrying out my missions.  I have to stay away from them…"
+"police/officer/cops"	"Them! (his brow furrows).  They…sometimes I think they're here to prevent me carrying out my missions.  I have to stay away from them…"
 "subway/transit"	"I like it in the Transit system in winter.  It's warm."
-"who"	"My name is Ponyfriend.  Ponyfriend Chunky.  I'm…I'm…(he shakes himself suddenly)…I'm sorry, what were you saying?"
+"who"	"My name is Ponyfriend.  Ponyfriend Chunky.  I'm…I'm…[italic type](he shakes himself suddenly)[roman type]…I'm sorry, what were you saying?"
 
 
 Ponyfriending is a recurring scene.  Ponyfriending begins when the location contains Ponyfriend Chunky.  Ponyfriending ends when the location does not contain Ponyfriend Chunky.
@@ -1703,7 +1876,7 @@ Transit System is a list of objects that varies.
 Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  Station Corridor is in Transit.  Green Commercial Station is in Transit.  Green Residential Station is in Transit.  
 
 
-The transit web is a thing.  The transit web is a backdrop.  It is in Green Residential Platform. It is in Reserve Bank Station.  It is in Green Commercial Platform.  It is in Green Service Platform. The transit web is large.  The description of the transit web is "Not really a web so much as a series of maglev rings linked by guides, the Transit Web is separated from the platform by a barrier fence with automatic doors which line up with Transit Capsule doors when a Capsule is in the station.  The Web rings glow faintly with the Magfield."
+The transit web is a thing.  The transit web is a backdrop.  It is in Green Residential Platform. It is in Reserve Bank Station.  It is in Green Commercial Platform.  It is in Green Service Platform. The transit web is large.  The description of the transit web is "Not really a web so much as a series of maglev rings linked by guides, the Transit Web is separated from the platform by a barrier fence with automatic doors, which line up with Transit Capsule doors when a Capsule is in the station.  The Web rings glow faintly with the Magfield."
 
 Instead of taking the transit web:
 	say "You're already taking the subway." instead.
@@ -1761,7 +1934,7 @@ Instead of going east in Reserve Bank Station during Transit Stop:
 		say "You enter the Transit capsule.";
 		move the player to the Capsule;
 	otherwise:
-		say "You can't go into the Transit Web![line break]".
+		try entering the Transit Web instead.
 
 Before going west in Transit Capsule during Transit Stop:
 	if the station of the Capsule is Reserve Bank Station:
@@ -1775,8 +1948,8 @@ Instead of going north in Green Commercial Platform during Transit Stop:
 		say "You enter the Transit capsule.";
 		move the player to the Capsule;
 	otherwise:
-		say "You can't go into the Transit Web![line break]".
-
+		try entering the Transit Web instead.
+		
 Before going south in Transit Capsule during Transit Stop:
 	if the station of the Capsule is Green Commercial Platform:
 		say "You exit the Transit capsule.";
@@ -1789,8 +1962,8 @@ Instead of going west in Green Residential Platform during Transit Stop:
 		say "You enter the Transit capsule.";
 		move the player to the Capsule;
 	otherwise:
-		say "You can't go into the Transit Web![line break]".
-		
+		try entering the Transit Web instead.
+				
 Before going east in Transit Capsule during Transit Stop:
 	if the station of the Capsule is Green Residential Platform:
 		say "You exit the Transit capsule.";
@@ -1803,8 +1976,8 @@ Instead of going south in Green Service Platform during Transit Stop:
 		say "You enter the Transit capsule.";
 		move the player to the Capsule;
 	otherwise:
-		say "You can't go into the Transit Web![line break]".
-		
+		try entering the Transit Web instead.
+				
 Instead of going north in Transit Capsule during Transit Stop:
 	if the station of the Capsule is Green Service Platform:
 		say "You exit the Transit Capsule.";
@@ -1812,7 +1985,6 @@ Instead of going north in Transit Capsule during Transit Stop:
 	otherwise:
 		continue the action.
 		
-[Transit Stop ends when the time since Transit Stop began is 3 minutes.]
 
 Transit Stop ends when turn count is transitTurn.
 
@@ -1836,7 +2008,6 @@ Every Turn during Transit Enroute:
 	if the location is Transit Capsule:
 		if a random chance of 1 in 5 succeeds, say "[one of]Someone coughs.[or]A man nearby yawns.[or]You find yourself mesmerized by an advertisement for disposable cameras.[or]The capsule shudders as it passes a junction in the Web.[or]A shabbily-dressed man wanders up to you.  He appears to be about to ask you for something, but then he catches a look at your eyes and instead wanders away again.[or]A nearby commuter's handheld begins beeping loudly.  She hurriedly shuts it off.[purely at random]"
 		
-[Transit Enroute ends when the time since Transit Enroute began is 3 minutes.]
 Transit Enroute ends when turn count is transitTurn.
 
 Transit Platform is a recurring scene.  Transit Platform begins when the location is a transitStation.
@@ -1876,8 +2047,9 @@ Chapter 2 - Green Residential
 
 Section 3 - Map
 
+
 Green Residential Platform is a transitStation.  The stationName of Green Residential Platform is "Green Residential".  The stationNumber of Green Residential Platform is 3. The description of Green Residential Platform is "Green Residential's platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west[if the location is the station of the Capsule], where a Transit capsule hovers impatiently.  The capsule doors are open.[otherwise], now empty.[end if]".
-Instead of going west in Green Residential Platform, say "You can't go into the Transit Web![line break]".
+Instead of going west in Green Residential Platform, try entering the Transit Web instead.
 
 The Green Residential Station door is east of Green Residential Platform and below Green Residential Station.  The Green Residential Station Door is an autodoor.  The Green Residential Station door is closed. 
 
@@ -1888,7 +2060,7 @@ Instead of opening the Green Residential Station door:
 		the autodoors close in zero turns from now;
 	otherwise if the location is Green Residential Station:
 		if the MitKlein is unhacked:
-			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein bottle, the police will know be able to link you to the hacking attempts.  You decide not to risk it." instead;
+			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein bottle, the police will now be able to link you to the hacking attempts.  You decide not to risk it." instead;
 		otherwise:
 			say "The Door Scanner scans your iris to determine your identity.  The Transit Security and Accounting Subroutine determines that you have a legitimate account with the Transit system, and the doors slide smoothly open.";
 		now the Green Residential Station door is open.
@@ -1902,18 +2074,20 @@ East Cedar Street is east of Primrose & Cedar.  East Cedar Street is blind.  The
 
 The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of extremely boring residential buildings."
 
-South Primrose Lane is south of Primrose & Cedar.  South Primrose Lane is unmapped. South Primrose Lane is blind.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane, just in front of your home.  To the south is a boarded-up empty house; sumac trees can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large burglar alarm warning sign and an enormous dog on the front lawn.  To the east is your building's front path."
+South Primrose Lane is south of Primrose & Cedar.   South Primrose Lane is blind.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane, just in front of your home.  To the south is a boarded-up empty house; sumac trees can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large burglar alarm warning sign and an enormous dog on the front lawn.  To the east is your building's front path."
 
 The warning sign is here.  The warning sign is fixed in place.  The warning sign is scenery.  The description is "It reads 'YOUR SKIN MUST BE THIS THICK (here there is a lifelike picture of a dog's tooth, perhaps an inch long) TO BURGLE THIS HOUSE.'  There is an arrow pointing down and to the side, which actually points at the dog."
 Understand "sign" as the warning sign when the location is South Primrose Lane.
 Understand "burglar sign" as the warning sign.
 Understand "Alarm sign" as the warning sign.
 
-The large dog is here.  The dog is fixed in place.  The dog is scenery.  The description is "This snoozing beast much mass thirty kilos or more.  Its ancestry appears to include Mastiff, Doberman Pinscher, Rottweiler and tribble. You have no desire to get anywhere near it."
+The large dog is here.  The dog is fixed in place.  The dog is scenery.  The description is "This snoozing beast must mass thirty kilos or more.  Its ancestry appears to include Mastiff, Doberman Pinscher, Rottweiler and tribble. You have no desire to get anywhere near it."
 Understand "dog" as the large dog when the location is South Primrose Lane.
 
 Check touching the large dog:
 	say "Uh…you really don't want to try that." instead.
+	
+Understand "kiss [something]" as touching.
 
 Instead of taking the dog, try touching the dog instead.
 Understand "pet [something]" as touching.
@@ -1941,7 +2115,7 @@ Carry out cutting the fence with something:
 	if the second noun is the tag remover:
 		say "You carefully cut through several strands of the fence until you have an opening big enough to slip through and slice a rent in the backing plastic.";
 		now the noun is cut open;
-		now South Primrose Lane is mapped;
+		change south exit of South Primrose Lane to Drug Market;
 	otherwise:
 		say "What do you want to cut it with?" instead.		
 
@@ -1951,12 +2125,15 @@ instead of cutting the fence:
 instead of climbing the fence:
 	say "The gaps are too small for your toes and you're not strong enough to climb it with only your fingers." instead.
 
-The Drug Market is south of South Primrose Lane.  The Drug Market is blind. The description of Drug Market is "Standing just south of the fence, you see an abandoned house on the south side of the lot. The front yard is a mess of trash and litter.  [if Drug Market is raided]The area is empty of people; yellow police line tape covers the empty front doorway.[otherwise]A few people are hanging around the closed front door.  They are looking at you with unfriendly stares."
+The Drug Market is a room.  The Drug Market is blind. The description of Drug Market is "Standing just south of the fence, you see an abandoned house on the south side of the lot. The front yard is a mess of trash and litter.  [if Drug Market is raided]The area is empty of people; yellow police line tape covers the empty front doorway.[otherwise]A few people are hanging around the closed front door.  They are looking at you with unfriendly stares."
 
-The denizens is here.  The denizens is scenery.  The description of the denizens is "This small group of locals is clustered around the front entryway.  They're quite intimidating, and you don't want to draw they attention to you.  At all."
+Index map with The Drug Market mapped south of South Primrose Lane.
+
+The denizens is in the Drug Market.  The denizens is scenery.  The description of the denizens is "This small group of locals is clustered around the front entryway.  They're quite intimidating, and you don't want to draw they attention to you.  At all."
 
 Understand "the people" as the denizens when the location is Drug Market.
 Understand "locals" as the denizens when the location is Drug Market.
+Understand "people" as the denizens when the location is Drug Market.
 
 Instead of speech when the noun is the denizens:
 	say "They give you stony looks before turning away." instead.
@@ -1968,7 +2145,10 @@ Before going south in Drug Market:
 		continue the action.
 		
 The Drug Den is south of Drug Market.  The Drug Den is blind. The description is "The empty ruins of a drug market hangout.  The SWAT team's breaching charges have blown the heavy metal main door into the hallway.  The house is thoroughly trashed, and rubble prevents you from moving any further into the building.  Discarded drug paraphernalia and random trash litters the floor."
-The metal door is here.  The metal door is fixed in place. The description of the metal door is "Bent and blackened, the armored door survived the breach but was blown into the interior of the house.  The handle is blown off.[if the metal door is charged]  As you lift the edge of the door to look underneath it, you see what looks like an undetonated breaching charge still attached to it!".
+The metal door is a supporter.  The metal door is in the Drug Den.  The metal door is fixed in place. The description of the metal door is "Bent and blackened, the armored door survived the breach but was blown into the interior of the house.  The handle is blown off.[if the metal door is charged]  As you lift the edge of the door to look underneath it, you see what looks like an undetonated breaching charge still attached to it!".
+
+Instead of taking the metal door:
+	say "You strain to lift the door, then give it up as a bad job." instead.
 
 Front Path is east of South Primrose Lane.  Front Path is blind. The description is "Your front path is paved with cracked flagstones, one of the few concessions to a sense of style that your absentee, never-to-be-seen landlord has made.  Primrose Lane is to the west, and your building is to the east."
 The mailbox is here.  The mailbox contains a newspaper.
@@ -2025,36 +2205,44 @@ Chapter 3 - Green Commercial
 Section 3 - Map
 
 Green Commercial Platform is a transitStation.  The stationName of Green Commercial Platform is "Green Commercial One".  The stationNumber of Green Commercial Platform is 2. The description of Green Commercial Platform is "Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty.[end if]". 
-Instead of going north in Green Commercial Platform, say "You can't go into the Transit Web![line break]".
+Instead of going north in Green Commercial Platform, try entering the Transit Web instead.
 
 The Green Commercial Station door is south of Green Commercial Platform and below Green Commercial Station.  The Green Commercial Station door is an autodoor.  The Green Commercial Station door is closed.
 
 Green Commercial Station is above the Green Commercial Station door.  The description is "Green Commercial One's Transit station usually does most of its business around the rush hours, as Green Residental commuters stop off to take care of errands.  The station is relatively small, but well kept up - the Green Commercial Business Improvement District organization sees to that.  Doors lead south to Green Commercial One proper, and a stairway leads down to the doors to the Transit platform."
-[BFR - handle platform movement?  down/north change?  Handle autodoor validation?]
 
 Green Commercial Plaza North is south of Green Commercial Station.  The description is "Green Commercial One is built around a plaza, and this is its northern end.  No vehicles are permitted within the public areas of Green Commercial One, so the entire area is pedestrian-only.  To the north are the doors to the Green Commercial Station.  To the east is the NanoMart.  To the west is a storefront bank with an ATM.  The plaza continues to the south."
 There is a trash can in Green Commercial Plaza North.
 
-Green Commercial Plaza Center is south of Green Commercial Plaza North.  The description is "This is the center of the Green Commercial Plaza.  There is a fountain here with a pair of benches facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe."
+Green Commercial Plaza Center is south of Green Commercial Plaza North.  The description is "This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe."
 There is a trash can in Green Commercial Plaza Center.
-[BFR - handle benches and fountain.]
+
+The fountain is in Green Commercial Plaza Center.  The fountain is scenery.  The description of the fountain is "A fairly dull example of landscape features, no doubt because it was designed or selected by a business association."
+
+The bench is in Green Commercial Plaza Center.  The bench is a supporter. The bench is enterable.  The bench is scenery.  The description of the bench is "A plascrete bench, boring but functional."
 
 Green Commercial Plaza South is south of Green Commercial Plaza Center.  The description is "The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it."
 There is a trash can in Green Commercial Plaza South.
+
+The trees are in Green Commercial Plaza South.  The trees are scenery.  The description of the trees is "A small number of heavily landscaped trees and shrubs which hide the buildings to the south."
+
+Understand "shrub" as the trees.
+Understand "shrubs" as the trees.
+Understand "tree" as the trees.
 
 Instead of going south in Green Commercial Plaza South, say "You can't find a path between the shrubs."
 
 A room called The Bank is west of Green Commercial Plaza North and northwest of Green Commercial Plaza Center.  The description of The Bank is "This is a completely nondescript bank storefront which exists solely to house an ATM.  It's so nondescript, in fact, you can't even really tell which bank owns it, probably to ensure that they can charge you access fees no matter what.  To the east is Green Commercial Plaza."
 
-The ATM is a device.  The ATM is in The Bank.  The ATM is fixed in place.  The ATM can be hacked or unhacked.  The ATM is unhacked. The description is "This is a standard ATM, using palm prints or Mit-Klein authentication to permit customers to perform banking transactions. A palm reader juts out from the front of the console."
-The palm reader is a part of the ATM. The palm reader is a container.  The palm reader is open. The palm reader is scenery.  The description is "This is a standard palm reader, which is used to verify the identity of the ATM customer.  A flat plate, slightly inset, it is placed at a convenient angle to allow the palm to lie  against it.  This one, however, has a broad crack in it across which someone has written 'KAPUT' in black marker."
+The ATM is a device.  The ATM is in The Bank.  The ATM is fixed in place.  The ATM can be hacked or unhacked.  The ATM is unhacked. The description is "This is a standard ATM, using palm prints and Mit-Klein authentication to permit customers to perform banking transactions. A palm reader juts out from the front of the console."
+The palm reader is a part of the ATM. The palm reader is a container.  The palm reader is open. The palm reader is scenery.  The description is "This is a standard palm reader, which is used to verify the identity of the ATM customer.  A flat plate, slightly inset, it is placed at a convenient angle to allow the palm to lie against it.  This one, however, has a broad crack in it across which someone has written 'KAPUT' in black marker."
 Instead of inserting into the palm reader:
 	if the noun is the tissue sampler:
 		say "You carefully fit the tissue sampler into the hollow of the palm reader so that it lies over the read area.";
 		now the tissue sampler is in the palm reader;
 		now the ATM is hacked;
 	otherwise:
-		say "You can't put that in a palm reader!".
+		say "You can't put that in the palm reader!".
 
 
 Instead of switching on the ATM:
@@ -2068,10 +2256,10 @@ Instead of switching on the ATM:
 
 The NanoMart is east of Green Commercial Plaza North and northeast of Green Commercial Plaza Center.  The description is "This brighly-lit shop is an altar to the notion of instant gratification.  Everything from cheap, hot coffee to ice cream and frozen lunches is available, provided you don't mind your purchases being relentlessly catalogued by the NanoMart Corporation.  You stopped shopping here after they told you you couldn't buy a coffee without using biometric authentication."
 
-The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  The Proletariat Bar is blind. The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar."
+The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  The Proletariat Bar is blind. The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.[if the jukebox is switched on][paragraph break][one of]A low tune can barely be made out over the ambient noise.[or]Thin music can be heard.[or]You barely recognize the Muzak as something that was once punk.[purely at random]"
 
 The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
-The Proletariat trash can is a trash can in the Proletariat restroom.
+There is a trash can in the Proletariat restroom.
 The Bar mirror is here.  The Bar mirror is a mirror.  The description is "This is a cheap but sturdy mirror, attached to the wall.  Its surface is nearly covered (except for a spot in the center, where you can see your own face) with scratches and permanent marker scrawls.  One graffito catches your eye near the bottom, but you'd have to look closely to make it out fully."
 
 The Green Commercial Bistro Paris is west of Green Commercial Plaza Center and southwest of Green Commercial Plaza North and northwest of Green Commercial Plaza South.  The description is "This is a branch of the popular lunch and coffee shop Bistro Paris.  Counter service is available for pastries, drinks and light sandwiches. There are a few tables near the front for sit-down meals.  A restroom is to the west.  On the north wall, opposite the service counter, is a collection of Paris-themed prints.  In the center is a large holoportrait of the chain's owner, Zuzu, and a sign claiming that the Bistro Paris has restaurants here, in the Reserve Bank Spacescraper, and in London."
@@ -2135,7 +2323,7 @@ Chapter 4 - Green Service
 Section 3 - Map
 
 Green Service Platform is a transitStation.  The stationName of Green Service Platform is "Green Service One".  The stationNumber of Green Service Platform is 3. The description of Green Service Platform is "Green Service One's platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south[if the location is the station of the Capsule], where a Transit capsule hovers impatiently in the web.  The capsule doors are open.[otherwise], now empty.[end if]".
-Instead of going south in Green Service Platform, say "You can't go into the Transit Web![line break]".
+Instead of going south in Green Service Platform, try entering the Transit Web instead.
 
 The Green Service Station door is north of Green Service Platform and below Green Service Station.  The Green Service Station door is an autodoor.  The Green Service Station door is closed.
 
@@ -2147,20 +2335,15 @@ Government Square North is north of Government Square South.  The description is
 
 Hospital Driveway is east of Government Square South and southeast of Government Square North and south of Hospital Entrance.  The description is "The driveway and parking area for the Hospital ER, which lies directly to the east.  To the north is the main entrance to the Hospital building."
 
-After going to Hospital Driveway:
-	If the player is flitterEnabled:
-		now the ambulance is unlocked;
-		say "The ambulance flashes its lights twice as the locklarm unlocks the back.";
-	continue the action.
-
 After inserting into the car key when the location is Hospital Driveway:
 	If the player is flitterEnabled:
 		now the ambulance is unlocked;
 		say "The ambulance flashes its lights twice as the locklarm unlocks the back."
 
 After going from Hospital Driveway:
-	now the ambulance is closed;
-	now the ambulance is locked;
+	if the ambulance is open:
+		now the ambulance is closed;
+		now the ambulance is locked;
 	continue the action.
 
 The ER door is east of Hospital Driveway and west of Triage.  The ER door is an autodoor.  The ER door is closed.
@@ -2169,7 +2352,7 @@ Hospital Entrance is north of Hospital Driveway and northeast of Government Squa
 
 The Hospital door is east of the Hospital Entrance and west of the Hospital Lobby.  The Hospital door is an autodoor.  The hospital door is closed.
 
-Hospital Lobby is east of the Hospital door.  The description is "This is the main entrance to a busy regional hospital.  Patients and staff ruhs back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading 'TRIAGE'; to the east is the elevator core and to the north is the waiting lounge."
+Hospital Lobby is east of the Hospital door.  The description is "This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading 'TRIAGE'; to the east is the elevator core and to the north is the waiting lounge."
 
 Hospital Lounge is north of Hospital Lobby.  Hospital Lounge is blind. The description is "This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads 'LAB' and the main lobby is to the south."
 
@@ -2184,7 +2367,10 @@ Hospital Elevators is north of the Emergency Room and east of Hospital Lobby.  T
 
 Hospital Restroom is east of Hospital Elevators.  Hospital Restroom is blind. The description is "A clean restroom that smells strongly of disinfectant and hand sanitizer.  There is a single sink with a small mirror over it and a single stall."
 There is a trash can in the Hospital Restroom.
-The Hospital mirror is a mirror. The Hospital Mirror is in the Hospital Restroom. The description is "A small oval mirror set at an angle for those in wheelchairs, which forces you to hunch down slightly.  A blue permanent marker graffito is visible at the very bottom if you look carefully."
+The hospital mirror is a mirror. The hospital mirror is in the Hospital Restroom. The description is "A small oval mirror set at an angle for those in wheelchairs, which forces you to hunch down slightly.  A blue permanent marker graffito is visible at the very bottom if you look carefully."
+The hospital sink is in the Hospital Restroom. The hospital sink is a supporter.  The hospital sink is scenery.  The description of the hospital sink is "Totally boring sink."
+The hospital stall is in the Hospital Restroom.  The hospital stall is scenery.  The description of the hospital stall is "Free of graffiti and relatively clean, you still don't want to use it."
+Instead of entering the hospital stall, say "You really don't want to use it." instead.
 
 Civil Center Steps is north of Government Square North.  The description is "This is the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
 Instead of going north in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
@@ -2194,15 +2380,16 @@ Police Station Steps is west of Government Square North and northwest of Governm
 
 Front Desk is west of Police Station Steps.  The description is "This is the front desk of the police station. A harried sergeant is manning the desk, and are so busy they don't even have time to give you more than a brief scowl.  To the north is a security gate leading into the police station proper, and to the south is an open area with a sign reading 'BOOKING.'"
 
-Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with all manner of stern posters posted above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
+Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
 
+The Police Poster is here.  The police poster is scenery.  The description of the Police Poster is "The poster has an almost laughably crude and kitschy burly policeman chasing a pair of hoodlums while blowing a whistle and brandishing a nightstick.  The hoodlums are leaving a trail of iconic Drug Paraphernalia.  A caption reads 'If you see any DRUG ACTIVITY, report it AT ONCE to your FRIENDLY LOCAL POLICE.'"
+Understand "poster" as the Police Poster.
 
 
 Chapter 5 - Reserve Bank
 
-Reserve Bank Station is a transitStation. The stationName of Reserve Bank Station is "Reserve Bank". The stationNumber of Reserve Bank Station is 1. The description of Reserve Bank Station is "The Reserve Bank Transit Station. The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the west.  The flow of commuters moves steadily through these doors, with each person turning their head to the right as they approach for the eye scanner to verify their identity before opening the portal long enough for them to slip through.  The floor and walls are both clean duramex nanotile, and the station name (Reserve Bank) is indicated on large plaques set into the walls.  At either end of the platform, closed gates guard against any entry into the slideway tunnels. A platform abuts a Transit web[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty." 
-
-Instead of going east in Reserve Bank Station, say "You can't go into the Transit Web![line break]".
+Reserve Bank Station is a transitStation. The stationName of Reserve Bank Station is "Reserve Bank". The stationNumber of Reserve Bank Station is 1. The description of Reserve Bank Station is "The Reserve Bank Transit Station. The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the west.  The flow of commuters moves steadily through these doors, with each person turning their head to the right as they approach for the eye scanner to verify their identity before opening the portal long enough for them to slip through.  The floor and walls are both clean duramex nanotile, and the station name (Reserve Bank) is indicated on large plaques set into the walls.  At either end of the platform, closed gates guard against any entry into the slideway tunnels. A platform abuts a Transit web[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty."
+Instead of going east in Reserve Bank Station, try entering the Transit Web instead.
 
 The Reserve Bank Station door is west of Reserve Bank Station and east of Station Corridor.  The Reserve Bank Station Door is an autodoor.  The Reserve Bank Station door is closed. 
 
@@ -2260,7 +2447,8 @@ Maintenance Area is west of Reserve Bank Bistro Paris and northwest of Food Cour
 
 The Food Court Restroom Door is north of Maintenance Area and south of Food Court Restroom. The Food Court Restroom Door is a door. The Food Court Restroom Door is scenery.
 
-A room called Food Court Restroom is north of the Food Court Restroom Door.  "Bog-standard restroom.  Several stalls offer a minimum of privacy."  There is a trash can in the Food Court Restroom.
+A room called Food Court Restroom is north of the Food Court Restroom Door.  "Bog-standard restroom.  Several stalls offer a minimum of privacy."  There is a trash can in the Food Court Restroom.  
+The Food Court Restroom mirror is a mirror.  The Food Court Restroom mirror is in the Food Court Restroom.  The description is "A wall-covering mirror over the sinks.  The edges are covered in fingerprints, and you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
 
 The Maintenance Door is west of Maintenance Area.  The Maintenance Door is an autodoor. The Maintenance Door is scenery.  The description is "The maintenance closet is sealed by an autodoor.  There is no eye  on this door, but a flat plate above the door handle indicates a palm scanner lock."
 
@@ -2288,7 +2476,7 @@ Check pushing cleaning equipment:
 Check opening the Solvents Cabinet: 
 	say "It's firmly locked, and you can't find a visible locking mechanism.  It must have a MitKlein scanner on it." instead.
 
-The wall rack is in the Utility Closet.  The rack is a supporter. The rack is scenery. The description is "A set of wall-mounted hooks[if the fire axe is on the rack], holding a fire axe.[otherwise], which are meant to hold a fire axe."
+The wall rack is in the Utility Closet.  The rack is a supporter. The rack is scenery. The description is "A set of wall-mounted hooks[if the fire axe is on the rack], holding a fire axe[end if][if the gas mask is on the rack] and a gas mask[end if]."
 
 Maintenance Corridor is west of the Utility Closet.  Maintenance Corridor is blind.  The description is "This is the middle of a short corridor running north to south.  The walls are gray-painted cinderblocks and have many scuff marks and scars.  The floor is an industrial non-slip surfaced concrete.  A door to the east is marked 'STORAGE.'"
 
@@ -2304,43 +2492,59 @@ Top of Service Bouncelift is above the Bottom of Service Bouncelift.  Top of Ser
 Before going east from Top of Service Bouncelift, say "You angle yourself towards the door.  The liftfield gently moves you to the edge of the tube, and you swing yourself out of the lift via the safety handle."
 Before going down from Top of Service Bouncelift, say "You move to the down half of the cylinder and the liftfield allows you to sink downwards.  This service bouncelift has no intervening exits, so you are in the lift for some time before the top end comes into sight."
 
-Bouncelift Vestibule is east of Top of Service Bouncelift.  Bouncelift Vestibule is blind.  The description of Bouncelift Vestibule is "The service bouncelift opens onto a small vestibule, not much larger than the size of a closet.  A sign painted on the wall reads 'LEVEL 35 - MEZZANINE'. There is an automatic door with an eye scanner to the east.  A small selection of fire safety tools is mounted to the wall."
+Bouncelift Vestibule is east of Top of Service Bouncelift.  Bouncelift Vestibule is blind.  The description of Bouncelift Vestibule is "The service bouncelift opens onto a small vestibule, not much larger than the size of a closet.  A sign painted on the wall reads 'LEVEL 35 - MEZZANINE'. There is a door with a palm lock to the east."
 
-Office Corridor is east of Bouncelift Vestibule.  The description of Office Corridor is "You are in the middle of a nondescript office corridor.  To the west is a security door to the service bouncelift.  To the north is a door reading 'RESTROOM'.  The corridor continues to the east."
+Vestibule Door is a door.  Vestibule door is lockable.  Vestibule door is locked. Vestibule Door is scenery. Vestibule Door is east of Bouncelift Vestibule and west of Office Corridor.  The description of Vestibule Door is "A scuffed but sturdy security door with a palm lock on this side to prevent unauthorized access to the floor beyond.  It looks like the lock is a retrofit, as it is attached to the door rather than an integral part."
+
+Vestibule Door lock is a part of Vestibule door. Vestibule Door lock can be intact or broken.  Vestibule Door lock is intact.  The description of Vestibule Door lock is "[if intact]A retrofitted palm lock which juts out from the door's surface.[otherwise]  The remnants of a palm lock, smashed and broken to the point where the door moves freely."
+
+Office Corridor is east of Vestibule Door.  The description of Office Corridor is "You are in the middle of a nondescript office corridor.  To the west is a security door to the service bouncelift.  To the north is a door reading 'RESTROOM'.  The corridor continues to the east."
 
 Office Restroom is north of Office Corridor.  The description of Office Restroom is "This is a restroom.  Since it is within corporate space, it is decorated a notch above most public restrooms.  You still wouldn't eat off the floor, though.  Also, unlike public restrooms, it seems to be under surveillance.  You're gratified to see that even this restroom doesn't seem to be safe despite that - a small graffito lurks on the left side of the mirror over the sinks."
 There is a trash can in the Office restroom.
 The Office mirror is a mirror.  The Office mirror is in the Office Restroom.  The description is "A wall-covering mirror bolted over the sinks.  Although it is free of fingerprints and grime, you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
 
-Seating Area is east of Office Corridor.  The description of Seating Area is "The corridor ends in a small open seating area.  Through the windows the myriad internal windows of the spacescraper's other suites can be seen.  There is a door leading north, presumably to the rest of the office space.  It is closed and locked.  [if the Balcony Door is intact]A pair of French doors lead east out to a balcony on the spacescraper's hollow core.[otherwise]The wreckage of a pair of French doors hangs in a doorway which leads east out to a balcony." 
+Seating Area is east of Office Corridor.  The description of Seating Area is "The corridor ends in a small open seating area.  Through the windows the myriad internal windows of the spacescraper's other suites can be seen.  There is a door leading north, presumably to the rest of the office space.  It is closed and locked.  [if the observation window is intact]An observation window looks out east onto a ledge over the spacescraper's hollow core.[otherwise]The wreckage of an observation window leads east out to a ledge." 
 
-The Balcony Door is in the Seating Area.  The Balcony Door is scenery.  The Balcony Door can be axed or intact. The Balcony Door is intact. The description is "[if intact]A pair of French doors made of nano-reinforced wood with durapane windows.[otherwise]The remains of a pair of French doors, wood frames split and broken and durapane windows shattered."
+The observation window is a supporter.  The observation window is in the Seating Area.  The observation window is scenery.  The observation window can be broken or intact.  The observation window is intact.  The description is "[if intact]A wall-sized armorcrys window which looks out over a ledge jutting into the airspace of the spacescraper's atrium.  The ledge, one of many spotted around the interior of the atrium, holds some flowers and a single tree, all in plascrete planters.[end if][if the observation window encloses the breaching charge]  A breaching charge is stuck to the window.[end if][if broken]The remnants of a wall-sized armorcrys window looking out over a ledge jutting into the atrium.  The ledge, on of many spotted around the interior of the atrium, holds some empty low planters and a single scarred tree in the middle of the ledge."
 
-Before going from the Seating Area to Atrium Balcony:
-	if the Balcony Door is intact:
-		instead say "The doors to the balcony are closed and securely locked.";
+Instead of examining outside when the location is Seating Area, try examining the observation window instead.
+
+Check inserting something into the observation window:
+	say "You can't put something in the window." instead.
+
+Check putting something on the observation window:
+	unless the noun is the breaching charge, say "That won't stick to the window." instead.
+
+Before going from the Seating Area to Atrium Ledge:
+	if the observation window is intact:
+		say "The observation window is quite solid.  You can't walk through it." instead;
 	otherwise:
-		say "You squeeze through the jagged hole in the balcony doors onto the balcony.";
+		say "You step gingerly through the jagged hole in the observation window onto the ledge.";
 		continue the action;
 		
-Atrium Balcony is east of the Seating Area.  The Atrium Balcony is unmapped. The description of Atrium Balcony is "This balcony, along with the others at the Mezzanine level, looks out over the huge hollow core of the Reserve Bank spacescraper's lower third.  The central column containing the main bouncelifts is visible perhaps fifty meters away.   Above, the roof of the atrium is hazily visible through the glare from its light fixtures some thirty floors up.  Sixty floors below, the main lobby can be made out.  To one side of the bouncelift column, the sublevel Lift Lobby can be seen one level below the lobby.  A low glass wall topped by a sturdy metal railing chest-high, surrounds the balcony for safety."
+Atrium Ledge is a room.  The Atrium Ledge is unmapped. The Atrium Ledge is blind. The description of Atrium Ledge is "This ledge, along with the others at the Mezzanine level, looks out over the huge hollow core of the Reserve Bank spacescraper's lower third.  The central column containing the main bouncelifts is visible perhaps fifty meters away.   Above, the roof of the atrium is hazily visible through the glare from its light fixtures some thirty floors up.  Sixty floors below, the main lobby can be made out.  To one side of the bouncelift column, the sublevel Lift Lobby can be seen one level below the lobby.  A very low glass wall surrounds the ledge for safety, but it's clear that this space isn't meant for the public.  A few holes in the plascrete floor hold scattered soil; one large planter in the center holds a scarred but defiantly unbent tree."
 
-The balcony railing is in the Atrium Balcony.  The balcony railing is scenery.  The description is "A sturdy-looking metal railing surrounding the balcony for safety.  You'd feel perfectly confident leaning against it despite the height."
+Index map with Atrium Ledge mapped east of the Seating Area.
 
-Before going west in Atrium Balcony:
+The scarred tree is in the Atrium Ledge.  The scarred tree is scenery.  The scarred tree is fixed in place.  The description is "A scarred but unbent decorative tree.  The trunk is some four inches across.  You have the urge to hold onto it as you stand on the ledge, looking out over many stories of empty space."
+
+Before going west in Atrium Ledge:
 	if the player is harnessed:
-		say "You can't maneuver through the doors with the stiff cable trailing out behind you." instead.
+		say "You can't maneuver through the wreckage of the window with the stiff cable trailing out behind you." instead.
 
-Before going down in Atrium Balcony:
-	if the player is not wearing the descender:
-		say "You can't go that way." instead;
-	otherwise unless the cable is part of the railing:
+Before going down from Atrium Ledge:
+	if the player does not enclose the descender:
 		say "You can't go that way - you'd fall." instead;
+	otherwise unless the cable is tied:
+		say "You can't go that way - you'd fall." instead;
+	otherwise unless the player is wearing the descender:
+		say "you're not confident enough in your grip to go over the edge while simply holding your lifeline." instead;
 	otherwise:
 		now Bombs Thrown is 0;
-		say "You carefully ease yourself over the railing, and before you can think better of it you let go!  The descender slowly pays out cable with a steady whir, and you find yourself dropping through empty space![line break]".
+		say "You carefully ease yourself over the edge, and before you can think better of it you let go!  The descender slowly pays out cable with a steady whir, and you find yourself dropping through empty space![line break]".
 
-The Atrium Midair Top is a room with printed name "The Atrium (Midair)". The Atrium Midair Top is down from the Atrium Balcony.  The Atrium Midair Top is unmapped. The Atrium Midair Top is blind. The description is "You are hanging in empty space some ways down from the balcony, the cable attached to your harness holding you face-down.  Below you you can see the crowds of people at the convention gathered on the Atrium floor."
+The Atrium Midair Top is a room with printed name "The Atrium (Midair)". The Atrium Midair Top is down from the Atrium Ledge.  The Atrium Midair Top is unmapped. The Atrium Midair Top is blind. The description is "You are hanging in empty space some ways down from the ledge, the cable attached to your harness holding you face-down.  Below you you can see the crowds of people at the convention gathered on the Atrium floor."
 
 The Atrium Midair Middle is a room with printed name "The Atrium (Midair)".  The Atrium Midair Middle is down from The Atrium Midair Top.  The Atrium Midair Middle is unmapped. The Atrium Midair Middle is blind. The description is "You are perhaps halfway down the atrium now.  You can make out individual people in the crowd of Homeland Security conventioneers below you.  People are coming to the windows all around the atrium now as word of your descent spreads."
 
