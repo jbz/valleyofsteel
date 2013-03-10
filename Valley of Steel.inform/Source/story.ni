@@ -417,11 +417,21 @@ Check opening an antitheft tag:
 	if the noun is fried, say "There's nothing to open. This tag has been melted into a single mass." instead;
 	if the noun is disassembled, say "That's already been opened." instead;
 	unless the player is carrying the knife, say "You don't have anything to open it with." instead;
+	if the noun is part of a garment (called the swag), say "The tag is fastened to [the swag]; you can't do that without damaging the garment." instead;
 	say "You cut open the antitheft tag with your knife.";
 	now the noun is disassembled;
 	now the noun is openable;
 	continue the action.
 	
+Instead of cutting an antitheft tag (called the tag) with the tag remover:
+	say "You deftly remove the tag with the tag remover.";
+	now the tag is carried by the player.
+	
+Instead of removing an antitheft tag (called the tag) with the tag remover:
+	say "You deftly remove the tag with the tag remover.";
+	now the tag is carried by the player;
+	rule succeeds.
+
 Check inserting into an antitheft tag:
 	Unless the second noun is tiny, say "That won't fit!" instead.
 
@@ -588,16 +598,18 @@ Rule for printing room description details of the closed car key: stop.
 In the car key is a broadcast chip.
 In the car key is a memory chip.
 
-Carry out cutting the car key with something:
+Check cutting the car key with something:
+	unless the second noun is the knife, say "That won't cut the car key." instead;
 	if the noun is fried, say "The key is melted into a single mass." instead;
 	if the noun is disassembled, say "That's already been opened." instead;
-	if the second noun is the knife:
-		say "You carefully cut open the car keys with your knife and peel back the rubber to reveal [a list of things in car key].";
-		now the noun is disassembled;
-		now the noun is open;
-		now the noun is unopenable;
-	otherwise:
-		say "What do you want to cut it with?" instead.		
+
+
+Carry out cutting the car key with something:
+	say "You carefully cut open the car keys with your knife and peel back the rubber to reveal [a list of things in car key].";
+	now the noun is disassembled;
+	now the noun is open;
+	now the noun is unopenable;
+	rule succeeds.
 
 instead of cutting the car key:
 	say "What do you want to cut it with?" instead.
@@ -1028,12 +1040,29 @@ Check waiting more:
 
 
 [removing]
-Understand "remove [something] with [something preferably held]" as cutting it with.
-Understand "detach [something] with [something preferably held]" as cutting it with.
-Understand "cut [something] with [something preferably held]" as cutting it with.		
+removing it with is an action applying to two things.
+Understand "remove [something] with [something preferably held]" as removing it with.
+Understand "detach [something] with [something preferably held]" as removing it with.
+
+
+Check removing it with:
+	if the second noun is nothing, say "What do you want to remove that with?" instead;
+	unless the second noun is the tag remover, say "You can't remove anything with that." instead;
+	if the noun is an antitheft tag:
+		unless the noun is part of a garment, say "That's not attached to anything." instead;
+	if the noun is the camera chain:
+		unless the chain is part of the ID camera, say "That's not attached to anything." instead;
+	continue the action.
+	
+Carry out removing it with:
+	say "That doesn't seem possible.";
+	stop the action.
+
+
 
 [cutting]
 Cutting it with is an action applying to two things.
+Understand "cut [something] with [something preferably held]" as cutting it with.		
 
 Check cutting it with:
 	if the second noun is the multitool:
@@ -1044,9 +1073,11 @@ Check cutting it with:
 	unless the second noun is carried:
 		unless the second noun is scenery or the second noun is fixed in place:
 			try taking the second noun;
-	continue the action.
-	
+	continue the action.	
 
+
+Carry out cutting it with:
+	say "Cutting that would achieve little."
 
 [Check cutting it with:
 	if the second noun is the multitool:
@@ -1078,10 +1109,6 @@ Check cutting it with:
 		try cutting the noun instead.
 ]
 
-
-Instead of cutting an antitheft tag (called the tag) with the tag remover:
-	say "You deftly remove the tag with the tag remover.";
-	now the tag is carried by the player.
 
 
 [and-combining]
@@ -2098,31 +2125,32 @@ The fence is in South Primrose Lane.  The fence is scenery.  The fence can be ei
 
 Understand "behind fence" as the fence when the location is South Primrose Lane.
 
-Before of going south in South Primrose Lane:
+Before going south in South Primrose Lane:
 	unless the fence is cut open:
 		say "You can't see any holes in the fence." instead;
 	otherwise:
 		continue the action.
-
-Before cutting the fence:
-	unless the player has the tag remover:
-		say "You don't have anything to cut it with." instead;
+		
+Check cutting the fence with something:
+	unless the second noun is the tag remover:
+		say "That won't cut cyclone fencing." instead;
 	otherwise:
 		continue the action.
 
-Carry out cutting the fence with something:
-	if the noun is cut open, say "There is already a hole in the fence large enough to slip through." instead;
-	if the second noun is the tag remover:
+Carry out cutting the fence with the tag remover:
+	if the noun is cut open:
+		say "There is already a hole in the fence large enough to slip through.";
+		stop the action;
+	otherwise:
 		say "You carefully cut through several strands of the fence until you have an opening big enough to slip through and slice a rent in the backing plastic.";
 		now the noun is cut open;
 		change south exit of South Primrose Lane to Drug Market;
-	otherwise:
-		say "What do you want to cut it with?" instead.		
+		rule succeeds.
 
-instead of cutting the fence:
+Instead of cutting the fence:
 	say "What do you want to cut it with?" instead.
 
-instead of climbing the fence:
+Instead of climbing the fence:
 	say "The gaps are too small for your toes and you're not strong enough to climb it with only your fingers." instead.
 
 The Drug Market is a room.  The Drug Market is blind. The description of Drug Market is "Standing just south of the fence, you see an abandoned house on the south side of the lot. The front yard is a mess of trash and litter.  [if Drug Market is raided]The area is empty of people; yellow police line tape covers the empty front doorway.[otherwise]A few people are hanging around the closed front door.  They are looking at you with unfriendly stares."
