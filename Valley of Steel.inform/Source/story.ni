@@ -194,9 +194,15 @@ This is the list notable events rule:
 			now the police flitter is unlocked;
 			say "The police flitter flashes its lights twice as the locklarm disengages.".
 
+[the next few rules deal with handling 'and'-linked noun lists]
 Before reading a command: 
 	now group-attach-complete is false;
 	now group-combine-complete is false.
+
+This is the and-command-stop rule:
+	if group-combine-complete is true or group-attach-complete is true, stop the action.
+	
+The and-command-stop rule is listed before the basic accessibility rule in the action-processing rules.
 
 The carefully announce items from multiple object lists rule is listed instead of the announce items from multiple object lists rule in the action-processing rules.
 
@@ -207,6 +213,7 @@ This is the carefully announce items from multiple object lists rule:
 		do nothing;
 	otherwise:
 		abide by the announce items from multiple object lists rule.
+
 
 The block giving rule is not listed in the check giving it to rules.
 
@@ -629,17 +636,19 @@ Instead of unlocking the car key with the knife:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely chained down to the countertop to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
 
 Understand "the chain" as the camera chain.
 
-Check cutting the camera chain with something:
-	if the second noun is the tag remover or the player is carrying the tag remover:
-		say "Looking around quickly, you snip through the ID chain with the tag remover!";
-		now the ID camera is portable instead;
-	otherwise:
-		 say "You have nothing which will cut that." instead.
+Check cutting the camera chain with the tag remover:
+	say "Looking around to check for watchers, you snip through the ID chain with the tag remover!";
+	now the ID camera is portable;
+	rule succeeds.
+
+
+Instead of cutting the camera chain:
+	say "What do you want to cut [the noun] with?" instead.
 
 		
 Check taking the ID camera:
@@ -1128,8 +1137,8 @@ Carry out and-combining:
 		let X be entry 1 in L;
 		let Y be entry 2 in L;
 		try combining X with Y;
-	[say line break;]
-	now group-combine-complete is true.
+	now group-combine-complete is true;
+	rule succeeds.
 
 
 
@@ -1209,7 +1218,6 @@ Carry out and-attaching:
 		let X be entry 1 in L;
 		let Y be entry 2 in L;
 		try attaching X to Y;
-	[say line break;]
 	now group-attach-complete is true.
 
 

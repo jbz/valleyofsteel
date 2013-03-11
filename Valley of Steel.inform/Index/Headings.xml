@@ -39,126 +39,126 @@
     </dict>
     <key>5</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>342</integer>
+        <key>Line</key><integer>349</integer>
         <key>Title</key><string>Section 4 - Test Code - Not for release</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>6</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>365</integer>
+        <key>Line</key><integer>372</integer>
         <key>Title</key><string>Section 5 - Portable Objects (non-Scenery)</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>7</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>718</integer>
+        <key>Line</key><integer>727</integer>
         <key>Title</key><string>Section 6 - Fixed/Scenery Objects</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>8</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>994</integer>
+        <key>Line</key><integer>1003</integer>
         <key>Title</key><string>Section 7 - Actions/Activities</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>9</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1484</integer>
+        <key>Line</key><integer>1492</integer>
         <key>Title</key><string>Section 8 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>10</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1677</integer>
+        <key>Line</key><integer>1685</integer>
         <key>Title</key><string>Section 9 - Tables</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>11</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1724</integer>
+        <key>Line</key><integer>1732</integer>
         <key>Title</key><string>Section 10 - NPCs</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>12</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1897</integer>
+        <key>Line</key><integer>1905</integer>
         <key>Title</key><string>Chapter 1 - Transit</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>13</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1899</integer>
+        <key>Line</key><integer>1907</integer>
         <key>Title</key><string>Section 0 - Setup</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>14</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1933</integer>
+        <key>Line</key><integer>1941</integer>
         <key>Title</key><string>Section 1 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>15</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2052</integer>
+        <key>Line</key><integer>2060</integer>
         <key>Title</key><string>Section 2 - The Capsule</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>16</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2072</integer>
+        <key>Line</key><integer>2080</integer>
         <key>Title</key><string>Chapter 2 - Green Residential</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>17</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2075</integer>
+        <key>Line</key><integer>2083</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>18</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2231</integer>
+        <key>Line</key><integer>2239</integer>
         <key>Title</key><string>Chapter 3 - Green Commercial</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>19</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2233</integer>
+        <key>Line</key><integer>2241</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>20</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2349</integer>
+        <key>Line</key><integer>2357</integer>
         <key>Title</key><string>Chapter 4 - Green Service</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>21</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2351</integer>
+        <key>Line</key><integer>2359</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>22</key><dict>
         <key>Filename</key><string>/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2417</integer>
+        <key>Line</key><integer>2425</integer>
         <key>Title</key><string>Chapter 5 - Reserve Bank</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
