@@ -30,7 +30,6 @@ When play begins:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
 	boozing starts at 2:00 PM;
-	[now Bombs Thrown is 0;]
 	say "Welcome to the surveillance society.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream.";
 
 
@@ -50,12 +49,8 @@ Index map with Transit Capsule mapped east of Reserve Bank Station.
 [Extensions]
 Include Exit Lister by Gavin Lambert.
 
-[Include Exit Lister by Eric Eve.][This version has 'apparent' for particular room routes but no easy global 'turn off for this location']
-
 Rule for listing exits while the location is unmapped: do nothing instead.
 
-[Editable Stored Actions for the Microwaving rule rewriting 'the noun']
-[Include Editable Stored Actions by Ron Newcomb.]
 
 [Definitions]
 
@@ -155,6 +150,8 @@ A suspicionState is a kind of value.  The suspicionStates are clear, suspect, or
 
 A person has a suspicionState.  A person is usually clear.
 
+the incriminatingAct is some text that varies.
+
 A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
 
 A room can be panopticon or blind.  A room is usually panopticon.
@@ -182,6 +179,13 @@ group-combine-complete is a truth state that varies.
 Section 3 - 'Every Turn' Rules, Timed Events and Global Rules
 
 [Global rule overrides]
+
+The can't unlock without a lock rule is not listed in any rulebook.
+The can't unlock what's already unlocked rule is not listed in any rulebook.
+The can't unlock without the correct key rule is not listed in any rulebook.
+The standard unlocking rule is not listed in any rulebook.
+The standard report unlocking rule is not listed in any rulebook.
+
 
 The list notable events rule is listed last in the carry out looking rulebook.
 
@@ -259,7 +263,7 @@ Every turn:
 	 if the suspicionState of the player is fugitive:
 		if player is surveilled:
 			unless the location is gassed:
-				say "Police, having spotted you, swarm into the area! You are tackled and handcuffed before you can react![line break]";
+				say "Police, hunting you for [the incriminatingAct], swarm into the area! You are tackled and handcuffed before you can react![line break]";
 				end the story saying "You have been arrested.";
 
 
@@ -312,13 +316,13 @@ At the time when an explosion occurs:
 			if the observation window supports the breaching charge:
 				now the observation window is broken;
 				change east exit of the Seating Area to the Atrium Ledge;
+				change west exit of the Atrium Ledge to the Seating Area;
 			now the location of the Breaching Charge is breached;
 			remove the Breaching Charge from play;
 		otherwise if the activeMunition is the Tear Gas grenade:
 			if the location of the Tear Gas grenade is the location:
 				say "With a bang and an enormous hiss, the gas grenade goes off and fills the area with a cloud of opaque smoke and tear gas!";
 			now the location of the Tear Gas grenade is gassed;
-			[now the location of the Tear Gas grenade is blind;]
 			The tear gas dissipates in 4 turns from now;
 			remove the Tear Gas grenade from play;
 
@@ -332,7 +336,7 @@ At the time when the tear gas dissipates:
 		
 
 At the time when the player incriminates:
-	say "You're pretty sure the police are looking for you now.";
+	say "You're pretty sure the police are looking for you now for [the incriminatingAct].";
 	now the suspicionState of the player is fugitive.
 	
 
@@ -403,9 +407,11 @@ Understand "paper" as the newspaper.
 
 An ID bomb is a kind of explosive. An ID bomb has a timer 1.  An ID bomb can be working or fried.  An ID bomb is usually working. An ID bomb has some text called item-id.  An ID bomb always has item-id "M5". An ID bomb has some text called fryDescription.  The fryDescription of an ID bomb is usually "There is a series of bright sparking flashes and a puff of smoke as the ID bomb begins to melt![line break]".  The description is "A small ID bomb with a single button. [if disarmed]The arming LED is dark.[else if armed]The arming LED is blinking green at shortening intervals![else if inert]The ID bomb is now a chunk of burnt and useless circuitry.[end if]". 
 
-After dropping an id bomb:
-	if the player is surveilled:
-		the player incriminates in 1 turn from now.
+After dropping an id bomb (called the bomb):
+	if the bomb is armed:
+		if the player is surveilled:
+			now the incriminatingAct is "dropping that ID Bomb";
+			the player incriminates in 1 turn from now.
 
 A memory chip is a kind of component.  A memory chip is usually portable.  A memory chip is tiny. A memory chip can be either blank or programmed.  A memory chip is usually blank. A memory chip usually has item-id "M0". A memory chip has some text called Contents. The Contents of a memory chip is usually "blank". A memory chip can be working or fried.  A memory chip is usually working. A memory chip has some text called fryDescription.  The fryDescription of a memory chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." The description of a memory chip is "This is a standard Memory chip- a small solid-state data storage device about the size of a coin.  Data can be stored to a Memory chip by most electronic devices and computers.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released.[otherwise if programmed]   This memory chip has been programmed with the payload of a Klein-blaster virus.  If there was a way to transmit this payload to nearby MitKlein encapsulations, you'd really have something powerful."
 Understand the blank property as describing a memory chip.
@@ -477,7 +483,7 @@ Understand "pack" as the backpack.
 
 The receive chip is a component.  The receive chip is in the pager.  The receive chip is tiny. The receive chip can be working or fried.  The receive chip is working.  The receive chip has some text called fryDescription.  The fryDescription of the receive chip is "There is a sizzling noise. The chip is now scorched and smoking slightly."  The receive chip is tiny.  The description of the receive chip is "This is a receive chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics that need to receive distant broadcasts, able to pull in signals from beyond a few meters.  There are leads on the chip for connecting data lines and a power source.[if fried] This chip is blackened and schorced; the magic smoke appears to have been released."
 
-The Tear Gas grenade is in the police flitter. The Tear Gas grenade is an explosive.  The Tear Gas grenade is small. The Tear Gas grenade has a timer 1.  The Tear Gas grenade can be working or fried.  The Tear Gas grenade is working.  The description of the Tear Gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'." [TESTING][LOCATION]
+The Tear Gas grenade is in the police flitter. The Tear Gas grenade is an explosive.  The Tear Gas grenade is small. The Tear Gas grenade has a timer 1.  The Tear Gas grenade can be working or fried.  The Tear Gas grenade is working.  The description of the Tear Gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'."
 
 The gas mask is on the wall rack.  The gas mask is wearable.  The description of the gas mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing." 
 
@@ -745,18 +751,7 @@ Instead of taking the rubbish, say "It's too disgusting to touch."
 A solar panel is a kind of container.   A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the lid, apparently powering something embedded beneath in the trash can.[if open]  This one has been pried back.[end if]"
 
 Check opening a solar panel:
-	if the noun is disassembled, say "That's already been opened." instead;
-	unless the player is carrying the multitool, say "You don't have anything to open it with." instead;
-	[unless the second noun is the multitool, say "What do you want to open it with?" instead;]
-	say "You pry loose the solar panel with the multitool, ignoring the cracking sounds.";
-	now the noun is disassembled;
-	now the noun is openable;
-	now the noun is not scenery;
-	if the player is surveilled:
-		unless the location is gassed:
-			the player incriminates in 1 turn from now;
-	continue the action.
-
+	say "You can't open that with your bare hands." instead.
 
 Check inserting into a solar panel:
 	Unless the noun is tiny, say "That won't fit!" instead.
@@ -781,6 +776,7 @@ Instead of examining a doodle:
 [plaques]
 A Plaque is a kind of thing.  Plaques are always scenery.  A plaque is in every transitStation. The description of a plaque is "Metal, perhaps a meter by five meters, the plaque reads '[bold type][the stationName of the location][roman type]' in standard Transit Helvetica font."
 Instead of taking a Plaque, say "You're here for a far nobler purpose than mere Transit vandalism."
+Instead of taking a Plaque for the third time, say "The police would frown on it."
 Instead of taking a Plaque for the fourth time:
 	say "The cops can see you messing with the plaque via their surveillance systems, and they don't think you should be vandalizing the Transit system.  They arrive en masse and grab you to take you away for processing, where they'll discover what you've done to your Mit-Klein Bottle - and that'll get you Readjusted.";
 	end the story saying "You have been arrested."
@@ -801,6 +797,7 @@ Instead of switching off an activate button which is part of a switched on devic
 	try switching off the machine.
 	
 Understand "activate [something]" as switching on.
+Understand "push [something] button" as switching on.
 Understand "deactivate [something]" as switching off.
 
 One activate button is part of every device.
@@ -828,17 +825,15 @@ The microwave oven is a device.  The microwave oven is in the Kitchen.  The micr
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
-The side panel is part of the microwave oven.  The side panel is a container.  The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1. The side panel is closed.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for perhaps a couple of small components inside it.  It's possible the circuit board controlling the magnetron in this microwave was designed for something else.[otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
+The side panel is part of the microwave oven.  The side panel is a container.  The side panel is openable and closed. The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for perhaps a couple of small components inside it.  It's possible the circuit board controlling the magnetron in this microwave was designed for something else.[otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
 
 Understand "warning" as the side panel when the location is the kitchen.
 Understand "label" as the side panel when the location is the kitchen.
 Understand "magnetron" as the side panel.
 Understand "circuit" as the side panel when the location is the kitchen.
 Understand "circuit board" as the side panel when the location is the kitchen.
-Understand "push [something] button" as switching on.
 Understand "door" as the cook box when the location is the kitchen.
 
-	
 Check inserting something (called the subject) into the microwave oven:
 	try inserting the subject into the cook box instead.
 	
@@ -853,15 +848,18 @@ Check inserting something (called the subject) into the cook box:
 	if the subject is small, continue the action;
 	say "That won't fit in the oven." instead.
 
-Instead of opening the side panel:
+instead of unlocking the side panel with the multitool:
+	try opening the side panel with the multitool instead.
+
+Check opening the side panel:
 	if the noun is open, say "That's already been opened." instead;
 	if the noun is fried, say "It's closed, and looks melted." instead;
-	unless the player is carrying the multitool, say "You don't have anything to open it with." instead;
-	say "You pry open the side panel with the multitool, ignoring the sound of breaking plastic.";
-	now the noun is disassembled;
-	now the noun is openable;
-	now the noun is not scenery;
-	now the noun is open.
+	say "What do you want to open it with?" instead.
+
+Check opening the side panel with something:
+	if the noun is open, say "That's already been opened." instead;
+	if the noun is fried, say "It's closed, and looks melted." instead;
+	continue the action.
 
 Check inserting into the side panel:
 	unless the noun is tiny, say "That won't fit!" instead;
@@ -1241,32 +1239,71 @@ Carry out attaching it to:
 
 
 [Opening]
-Opening it with is an action applying to two carried things.
-Understand "open [something] with [something]" as opening it with.
-Understand "disassemble [something] with [something]" as opening it with.
-Instead of opening a disposable camera, follow the disassembly rules.
-Instead of unlocking a disposable camera with something, follow the disassembly rules.
+Opening it with is an action applying to two things.
+Understand the command "open" as something new.
+Understand "Open [something]" as opening.
+Understand the command "open [something] with [something preferably held]" as something new.
+Understand "open [something] with [something preferably held]" as opening it with.
+Understand "disassemble [something] with [something preferably held]" as opening it with.
 
-Check opening it with:
+
+Carry out opening it with:
 	if the noun is a disposable camera:
-		follow the disassembly rules.
+		follow the disassembly rules;
+	else if the noun is a solar panel:
+		follow the disassembly rules;
+	else if the noun is the side panel:
+		follow the disassembly rules;
+	else if the noun is the car key:
+		follow the disassembly rules;
+	otherwise:
+		try opening the noun instead.
+
 
 [Disassembly]
 Disassembly is a rulebook.
 First disassembly rule: 
 	if the noun is disassembled:
-		say "That's already disassembled." instead;
+		say "That's already been done." instead;
 		rule fails.
 		
 A disassembly rule:
+	if the second noun is nothing, say "You can't open [the noun] with your bare hands." instead;
 	if the noun is a disposable camera:
 		unless the noun is carried, try taking the noun;
-		if the second noun is nothing, say "You can't open the camera with your bare hands." instead;
 		unless the second noun is the multitool:
 			say "You can't disassemble the camera with that." instead;
 		otherwise:
 			say "You pry open the case of the camera with the pliers in your multitool.";
 			now the noun is disassembled;
+			rule succeeds;
+	if the noun is a solar panel:
+		unless the second noun is the multitool:
+			say "You can't open [the noun] with that." instead;
+		otherwise:
+			say "You pry open the solar panel with the pliers in your multitool, ignoring the cracking sounds.";
+			now the noun is disassembled;
+			now the noun is open;
+			now the noun is not scenery;
+			if the player is surveilled:
+				unless the location is gassed:
+					now the incriminatingAct is "vandalizing that trash can";
+					the player incriminates in 1 turn from now;
+			rule succeeds;
+	if the noun is the side panel:
+		unless the second noun is the multitool:
+			say "You can't open [the noun] with that." instead;
+		otherwise:			
+			say "You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.";
+			now the noun is disassembled;
+			now the noun is not scenery;
+			now the noun is open;
+			rule succeeds;
+	if the noun is the car key:
+		unless the second noun is the knife:
+			say "You can't open [the noun] with that." instead;
+		otherwise:
+			try cutting the car key with the knife instead;
 			rule succeeds.
 
 
@@ -1314,6 +1351,7 @@ Report arming:
 		say "You pull the arming tab out and drop it, arming the Breaching Charge.";
 		if player is surveilled:
 			say "As soon as the charge detonates, the police will be looking at the surveillance video from this location; they'll ID you within a few minutes!";
+			now the incriminatingAct is "setting off that explosive";
 			the player incriminates in seven turns from now;
 	otherwise if the noun is the Tear Gas grenade:
 		say "You pull the pin on the Tear gas grenade and drop it as it begins to hiss!";
@@ -1407,8 +1445,6 @@ Carry out microwaving:
 	unless the cook box is closed:
 		try silently closing the cook box;
 	if the cook box is empty, say "There's nothing in the microwave." instead;
-[	let L be the list of objects inside the microwave oven;
-	carry out the cooking activity with entry 1 of L;]
 	carry out the cooking activity.
 
 
@@ -1845,7 +1881,7 @@ In Lift Lobby is a man called the Security Guard.  The description of the Securi
 
 
 [Ponyfriend Chunky]
-In Civil Center Steps is a man called Ponyfriend Chunky.  Ponyfriend Chunky can be cellBereft or cellEnabled.  Ponyfriend Chunky is cellBereft. Ponyfriend Chunky is carrying the begging sign. Ponyfriend chunky is carrying the pager.  The description of Ponyfriend Chunky is "Dressed in ragged clothing, this man is lookng around himself nervously, trying not to meet anyone's eye.  He is holding a sign that reads 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN.'"
+In Civil Center Steps is a man called Ponyfriend Chunky.  Ponyfriend Chunky can be cellBereft or cellEnabled.  Ponyfriend Chunky is cellBereft. Ponyfriend Chunky is carrying the begging sign. Ponyfriend chunky is carrying the pager.  The description of Ponyfriend Chunky is "Dressed in ragged clothing, this man is looking around himself nervously, trying not to meet anyone's eye.  He is holding a sign that reads 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN.'"
 
 The begging sign is scenery.  The description of the begging sign is "Reading 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN,' the sign appears to be written in shaky black marker on a piece of cardboard."
 
@@ -2153,6 +2189,7 @@ Carry out cutting the fence with the tag remover:
 		say "You carefully cut through several strands of the fence until you have an opening big enough to slip through and slice a rent in the backing plastic.";
 		now the noun is cut open;
 		change south exit of South Primrose Lane to Drug Market;
+		change north exit of Drug Market to South Primrose Lane;
 		rule succeeds.
 
 Instead of cutting the fence:
@@ -2308,8 +2345,12 @@ Understand "Zuzu's Eyes" as Zuzu's eye when the location is Green Commercial Bis
 Understand "the holoportrait" as the portrait.
 Understand "holoportrait" as the portrait.
 
-The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The Bistro Paris Restroom is blind. The description is "This public restroom is squeakily clean, as befits Bistro Paris' image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
+The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The Bistro Paris Restroom is blind. The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
 The Bistro Paris mirror is here.  The Bistro Paris mirror is a mirror.  The description is "This mirror is large and very clean, although near the bottom right a small permanent marker graffito catches your eye."
+The Bistro Paris sink is in the Bistro Paris Restroom. The Bistro Paris sink is a supporter.  The Bistro Paris sink is scenery.  The description of the Bistro Paris sink is "Totally boring sink."
+The Bistro Paris stall is in the Bistro Paris Restroom.  The Bistro Paris stall is scenery.  The description of the Bistro Paris stall is "Clean and relatively upscale, you still don't want to use it."
+Instead of entering the Bistro Paris stall, say "You really don't want to use it." instead.
+
 
 The Accessorize is east of Green Commercial Plaza South and southeast of Green Commercial Plaza Center.  The description is "This well-lit store purveys all manner of cosmetic aids and fashion accessories.  Everything from wrist bangles to skin creams to custom cosmetic contacts can be purchased here."
 

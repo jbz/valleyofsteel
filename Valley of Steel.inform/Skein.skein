@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<Skein rootNode="node-0x6ad5450" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x6a67160" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x6c97a0" />
-  <item nodeId="node-0x6ad5450">
+  <activeNode nodeId="node-0x6be7190" />
+  <item nodeId="node-0x6a67160">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
@@ -11,7 +11,7 @@ Welcome to the surveillance society.  Every citizen has been scanned, chipped, f
 
 Valley of Steel
 A tale of the surveillance society by The Custodian of http://everything2.com
-Release 1 / Serial number 130310 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130317 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Bedroom
 Your bedroom is rather boring.  It contains your bed - currently unmade - and the usual assortment of bedroom furnishings including a bedside table, next to the bed.
@@ -22,18 +22,21 @@ You can go north and west from here.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="191">NO</temporary>
+    <changed>YES</changed>
+    <temporary score="19">NO</temporary>
     <children>
-      <child nodeId="node-0x7cc8230" />
-      <child nodeId="node-0x7c44d10" />
-      <child nodeId="node-0x7d45cd0" />
-      <child nodeId="node-0x63a5b0" />
-      <child nodeId="node-0x6b1950" />
-      <child nodeId="node-0x6bde9e0" />
+      <child nodeId="node-0x6bd47e0" />
+      <child nodeId="node-0x6bd6460" />
+      <child nodeId="node-0x6bd76c0" />
+      <child nodeId="node-0x6bd5970" />
+      <child nodeId="node-0x6bd4c50" />
+      <child nodeId="node-0x6a67260" />
+      <child nodeId="node-0x6bd6770" />
+      <child nodeId="node-0x6bd4940" />
+      <child nodeId="node-0x6bd5f20" />
     </children>
   </item>
-  <item nodeId="node-0x6bde9e0">
+  <item nodeId="node-0x6bd5f20">
     <command xml:space="preserve">purloin harness and spool</command>
     <result xml:space="preserve">[Purloined.]
 [Purloined.]
@@ -43,11 +46,11 @@ You can go north and west from here.
     <changed>NO</changed>
     <temporary score="184">YES</temporary>
     <children>
-      <child nodeId="node-0x6bc9260" />
-      <child nodeId="node-0x7cc9e50" />
+      <child nodeId="node-0x6bd6070" />
+      <child nodeId="node-0x6bd5f90" />
     </children>
   </item>
-  <item nodeId="node-0x7cc9e50">
+  <item nodeId="node-0x6bd5f90">
     <command xml:space="preserve">attach harness and spool</command>
     <result xml:space="preserve">You fashion the harness and the spool into a descender!
 
@@ -56,10 +59,10 @@ You can go north and west from here.
     <changed>YES</changed>
     <temporary score="184">YES</temporary>
     <children>
-      <child nodeId="node-0x2e8550" />
+      <child nodeId="node-0x6bd6000" />
     </children>
   </item>
-  <item nodeId="node-0x2e8550">
+  <item nodeId="node-0x6bd6000">
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">You are carrying:
   a descender
@@ -70,7 +73,7 @@ You can go north and west from here.
     <changed>YES</changed>
     <temporary score="183">YES</temporary>
   </item>
-  <item nodeId="node-0x6bc9260">
+  <item nodeId="node-0x6bd6070">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">flag is false!
 
@@ -83,10 +86,10 @@ That isn&apos;t available.
     <changed>NO</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x7c19200" />
+      <child nodeId="node-0x6bd60e0" />
     </children>
   </item>
-  <item nodeId="node-0x7c19200">
+  <item nodeId="node-0x6bd60e0">
     <command xml:space="preserve">undo</command>
     <result xml:space="preserve">Bedroom
 [Previous turn undone.]
@@ -96,10 +99,10 @@ That isn&apos;t available.
     <changed>NO</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x6bf6980" />
+      <child nodeId="node-0x6bd6150" />
     </children>
   </item>
-  <item nodeId="node-0x6bf6980">
+  <item nodeId="node-0x6bd6150">
     <command xml:space="preserve">rules</command>
     <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
 
@@ -108,10 +111,10 @@ That isn&apos;t available.
     <changed>NO</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x7cbfb50" />
+      <child nodeId="node-0x6bd61c0" />
     </children>
   </item>
-  <item nodeId="node-0x7cbfb50">
+  <item nodeId="node-0x6bd61c0">
     <command xml:space="preserve">actions</command>
     <result xml:space="preserve">Actions listing on.
 
@@ -120,10 +123,10 @@ That isn&apos;t available.
     <changed>NO</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x7d81800" />
+      <child nodeId="node-0x6bd6230" />
     </children>
   </item>
-  <item nodeId="node-0x7d81800">
+  <item nodeId="node-0x6bd6230">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">[and-combining the harness]
 [Rule &quot;Check and-combining&quot; applies.]
@@ -148,10 +151,10 @@ That isn&apos;t available.
     <changed>NO</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x62ca20" />
+      <child nodeId="node-0x6bd62a0" />
     </children>
   </item>
-  <item nodeId="node-0x62ca20">
+  <item nodeId="node-0x6bd62a0">
     <command xml:space="preserve">undo</command>
     <result xml:space="preserve">Bedroom
 [Previous turn undone.]
@@ -161,10 +164,10 @@ That isn&apos;t available.
     <changed>YES</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x7c30890" />
+      <child nodeId="node-0x6bd6310" />
     </children>
   </item>
-  <item nodeId="node-0x7c30890">
+  <item nodeId="node-0x6bd6310">
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">[taking inventory]
 [Rule &quot;print empty inventory rule&quot; applies.]
@@ -182,10 +185,10 @@ You are carrying:
     <changed>YES</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x7c51490" />
+      <child nodeId="node-0x6bd6380" />
     </children>
   </item>
-  <item nodeId="node-0x7c51490">
+  <item nodeId="node-0x6bd6380">
     <command xml:space="preserve">rules all</command>
     <result xml:space="preserve">Rules tracing now switched to &quot;all&quot;. Type &quot;rules off&quot; to switch it off again.
 
@@ -194,10 +197,10 @@ You are carrying:
     <changed>YES</changed>
     <temporary score="168">YES</temporary>
     <children>
-      <child nodeId="node-0x24c200" />
+      <child nodeId="node-0x6bd63f0" />
     </children>
   </item>
-  <item nodeId="node-0x24c200">
+  <item nodeId="node-0x6bd63f0">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">[Rule &quot;Rule for deciding the concealed possessions of Officer Prescott&quot; does not apply.]
 [Rule &quot;Rule for deciding the concealed possessions of Ponyfriend Chunky&quot; does not apply.]
@@ -320,32 +323,109 @@ That isn&apos;t available.
     <changed>YES</changed>
     <temporary score="167">YES</temporary>
   </item>
-  <item nodeId="node-0x6b1950">
-    <command xml:space="preserve">wear watch</command>
-    <result xml:space="preserve">(first taking the watch)
-You put on the watch.
+  <item nodeId="node-0x6bd4940">
+    <command xml:space="preserve">purloin knife and key</command>
+    <result xml:space="preserve">[Purloined.]
+[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="273">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd49b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd49b0">
+    <command xml:space="preserve">open car key with knife</command>
+    <result xml:space="preserve">You carefully cut open the car keys with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="273">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4a20" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4a20">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Bedroom
+[Previous turn undone.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="273">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4a90" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4a90">
+    <command xml:space="preserve">actions</command>
+    <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="273">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4b00" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4b00">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="273">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4b70" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4b70">
+    <command xml:space="preserve">open car key with knife</command>
+    <result xml:space="preserve">[opening the car key with the lockblade knife]
+[Rule &quot;Carry out opening it with&quot; applies.]
+[(1) cutting the car key with the lockblade knife]
+[Rule &quot;Check cutting the car key with something&quot; applies.]
+[Rule &quot;Check cutting it with&quot; applies.]
+[Rule &quot;Carry out cutting the car key with something&quot; applies.]
+You carefully cut open the car keys with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
+
+[(1) cutting the car key with the lockblade knife - succeeded]
+
+[opening the car key with the lockblade knife - succeeded]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="273">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4be0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4be0">
+    <command xml:space="preserve">open car key with knife</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="272">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd6770">
+    <command xml:space="preserve">take phone</command>
+    <result xml:space="preserve">Taken.
 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7d580e0" />
+      <child nodeId="node-0x6bd67e0" />
     </children>
   </item>
-  <item nodeId="node-0x7d580e0">
-    <command xml:space="preserve">put phone in pack</command>
-    <result xml:space="preserve">You put the phone into the backpack.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c99f60" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c99f60">
+  <item nodeId="node-0x6bd67e0">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">
 Hall
@@ -356,598 +436,648 @@ You can go north, east to the Bedroom and west from here.
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7cb7fc0" />
+      <child nodeId="node-0x6bd6850" />
     </children>
   </item>
-  <item nodeId="node-0x7cb7fc0">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">
-Entry
-This is the small entryway to your apartment. A pile of mail, most of it unread, covers the small table just inside your front door.  The apartment hallway is to the south.  To the west is your office, and to the east is your bathroom.
-
-You can see a side table (on which is a car key) here.
-
-You can go north through the Front door (closed), south to the Hall, east and west from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c19320" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c19320">
-    <command xml:space="preserve">take key</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c76bd0" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c76bd0">
+  <item nodeId="node-0x6bd6850">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">
-Home Office
-Your home office, a room which in other homes might be a living room, is not very tidy.  Books, random equipment and empty soda cans cover most available surfaces except for your workbench and your laptop.
+Kitchen
+Your kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, reflecting the fact that you don&apos;t cook for yourself much.
 
-You can see a workbench (on which are a multitool, a lockblade knife, a soldering iron, some solder and a laptop) here.
+You can see a refrigerator (closed), a thermos (closed) and a microwave oven here.
 
-You can go south and east to Entry from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7cc0810" />
-    </children>
-  </item>
-  <item nodeId="node-0x7cc0810">
-    <command xml:space="preserve">take knife</command>
-    <result xml:space="preserve">This knife is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching.
+You can go north and east to the Hall from here.
 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7c223c0" />
+      <child nodeId="node-0x6bd68c0" />
     </children>
   </item>
-  <item nodeId="node-0x7c223c0">
-    <command xml:space="preserve">open key </command>
+  <item nodeId="node-0x6bd68c0">
+    <command xml:space="preserve">open side panel with phone</command>
+    <result xml:space="preserve">You can&apos;t disassemble the side panel with that.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7500" />
+      <child nodeId="node-0x6bd7180" />
+      <child nodeId="node-0x6bd6930" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6930">
+    <command xml:space="preserve">purloin multitool</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd69a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd69a0">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6a10" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6a10">
+    <command xml:space="preserve">purloin key and knife</command>
+    <result xml:space="preserve">[Purloined.]
+[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6a80" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6a80">
+    <command xml:space="preserve">open key with knife</command>
     <result xml:space="preserve">That&apos;s not something you can open.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x219bb0" />
+      <child nodeId="node-0x6bd6af0" />
     </children>
   </item>
-  <item nodeId="node-0x219bb0">
-    <command xml:space="preserve">cut key</command>
-    <result xml:space="preserve">What do you want to cut it with?
+  <item nodeId="node-0x6bd6af0">
+    <command xml:space="preserve">open key</command>
+    <result xml:space="preserve">That&apos;s not something you can open.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7c97d10" />
+      <child nodeId="node-0x6bd6b60" />
     </children>
   </item>
-  <item nodeId="node-0x7c97d10">
+  <item nodeId="node-0x6bd6b60">
+    <command xml:space="preserve">open key with knife</command>
+    <result xml:space="preserve">That&apos;s not something you can open.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6bd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6bd0">
     <command xml:space="preserve">cut key with knife</command>
     <result xml:space="preserve">You carefully cut open the car keys with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7cc2230" />
+      <child nodeId="node-0x6bd6c40" />
     </children>
   </item>
-  <item nodeId="node-0x7cc2230">
-    <command xml:space="preserve">take broadcast and memory</command>
-    <result xml:space="preserve">broadcast chip: Taken.
-memory chip: Taken.
+  <item nodeId="node-0x6bd6c40">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Kitchen
+[Previous turn undone.]
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7cc2700" />
+      <child nodeId="node-0x6bd6cb0" />
     </children>
   </item>
-  <item nodeId="node-0x7cc2700">
-    <command xml:space="preserve">put key in pack</command>
-    <result xml:space="preserve">You put the car key into the backpack.
+  <item nodeId="node-0x6bd6cb0">
+    <command xml:space="preserve">cut key</command>
+    <result xml:space="preserve">What do you want to cut it with?
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x638c20" />
+      <child nodeId="node-0x6bd6d20" />
     </children>
   </item>
-  <item nodeId="node-0x638c20">
+  <item nodeId="node-0x6bd6d20">
+    <command xml:space="preserve">gonear jukebox</command>
+    <result xml:space="preserve">The Proletariat Bar
+The Proletariat is a local bar (not a pub).  It&apos;s just far enough above a &quot;dive&quot; to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place&apos;s name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.
+
+You can go northwest, southwest, east and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6d90" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6d90">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Proletariat restroom
+The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti.
+
+You can see a trash can (closed) here.
+
+You can go west to The Proletariat Bar from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6e00" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6e00">
     <command xml:space="preserve">put knife in pack</command>
     <result xml:space="preserve">You put the lockblade knife into the backpack.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x6d86b0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6d86b0">
-    <command xml:space="preserve">put memory in chipslot</command>
-    <result xml:space="preserve">The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c73370" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c73370">
-    <command xml:space="preserve">take memory</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c271a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c271a0">
-    <command xml:space="preserve">take solder and iron</command>
-    <result xml:space="preserve">solder: Taken.
-soldering iron: Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c53170" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c53170">
-    <command xml:space="preserve">combine broadcast and memory</command>
-    <result xml:space="preserve">You switch the soldering iron on.
-
-You fashion the broadcast chip and the programmed memory chip into a Klein Blaster!
-
-That isn&apos;t available.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7ca6a70" />
-    </children>
-  </item>
-  <item nodeId="node-0x7ca6a70">
-    <command xml:space="preserve">undo</command>
-    <result xml:space="preserve">Home Office
-[Previous turn undone.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c87430" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c87430">
-    <command xml:space="preserve">rules</command>
-    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7db54a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x7db54a0">
-    <command xml:space="preserve">undo</command>
-    <result xml:space="preserve">Home Office
-[Previous turn undone.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7ca9c50" />
-    </children>
-  </item>
-  <item nodeId="node-0x7ca9c50">
-    <command xml:space="preserve">take solder and iron</command>
-    <result xml:space="preserve">solder: You already have that.
-soldering iron: You already have that.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c60a60" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c60a60">
-    <command xml:space="preserve">rules</command>
-    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="146">YES</temporary>
-    <children>
-      <child nodeId="node-0x6f94c0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6f94c0">
-    <command xml:space="preserve">combine broadcast and memory</command>
-    <result xml:space="preserve">[Rule &quot;First Check and-combining&quot; applies.]
-[Rule &quot;Carry out and-combining&quot; applies.]
-[Rule &quot;Setting action variables for combining something with something&quot; applies.]
-[Rule &quot;Check combining it with&quot; applies.]
-[Rule &quot;Check switching on the soldering iron&quot; applies.]
-[Rule &quot;can&apos;t switch on unless switchable rule&quot; applies.]
-[Rule &quot;can&apos;t switch on what&apos;s already on rule&quot; applies.]
-[Rule &quot;standard switching on rule&quot; applies.]
-[Rule &quot;standard report switching on rule&quot; applies.]
-You switch the soldering iron on.
-
-[Rule &quot;Carry out combining it with&quot; applies.]
-[Rule &quot;Report combining it with&quot; applies.]
-You fashion the broadcast chip and the programmed memory chip into a Klein Blaster!
-
-That isn&apos;t available.
-
-[Rule &quot;Every Turn during Transit Enroute&quot; applies.]
-&gt;</result>
-    <played>YES</played>
     <changed>YES</changed>
-    <temporary score="145">YES</temporary>
-  </item>
-  <item nodeId="node-0x63a5b0">
-    <command xml:space="preserve">gonear id camera</command>
-    <result xml:space="preserve">Booking
-This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects.
-
-You can see an ID camera here.
-
-You can go north from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="21">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7c4d1c0" />
-      <child nodeId="node-0x630cc0" />
+      <child nodeId="node-0x6bd6e70" />
     </children>
   </item>
-  <item nodeId="node-0x630cc0">
-    <command xml:space="preserve">take id camera</command>
-    <result xml:space="preserve">The camera is chained down securely.
+  <item nodeId="node-0x6bd6e70">
+    <command xml:space="preserve">open trash can</command>
+    <result xml:space="preserve">You open the trash can, revealing some rubbish.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x638510" />
+      <child nodeId="node-0x6bd6ee0" />
     </children>
   </item>
-  <item nodeId="node-0x638510">
-    <command xml:space="preserve">rules</command>
-    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+  <item nodeId="node-0x6bd6ee0">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6f50" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6f50">
+    <command xml:space="preserve">yes</command>
+    <result xml:space="preserve">
+
+
+Welcome to the surveillance society.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it&apos;s enough to make you scream.
+
+Valley of Steel
+A tale of the surveillance society by The Custodian of http://everything2.com
+Release 1 / Serial number 130315 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Bedroom
+Your bedroom is rather boring.  It contains your bed - currently unmade - and the usual assortment of bedroom furnishings including a bedside table, next to the bed.
+
+On the bedside table are a watch and a phone.
+
+You can go north and west from here.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7c1a8e0" />
+      <child nodeId="node-0x6bd6fc0" />
     </children>
   </item>
-  <item nodeId="node-0x7c1a8e0">
-    <command xml:space="preserve">take id camera</command>
-    <result xml:space="preserve">[Rule &quot;Check taking the ID camera&quot; applies.]
-The camera is chained down securely.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="13">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c1d8a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c1d8a0">
+  <item nodeId="node-0x6bd6fc0">
     <command xml:space="preserve">actions</command>
     <result xml:space="preserve">Actions listing on.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7c1f6d0" />
+      <child nodeId="node-0x6bd7030" />
     </children>
   </item>
-  <item nodeId="node-0x7c1f6d0">
-    <command xml:space="preserve">take id camera</command>
-    <result xml:space="preserve">[taking the ID camera]
-[Rule &quot;Check taking the ID camera&quot; applies.]
-The camera is chained down securely.
-[taking the ID camera - failed the Check taking the ID camera]
+  <item nodeId="node-0x6bd7030">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="266">YES</temporary>
     <children>
-      <child nodeId="node-0x7c5bde0" />
+      <child nodeId="node-0x6bd70a0" />
     </children>
   </item>
-  <item nodeId="node-0x7c5bde0">
+  <item nodeId="node-0x6bd70a0">
+    <command xml:space="preserve">purloin key and knife</command>
+    <result xml:space="preserve">[Purloined.]
+[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="266">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7110" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7110">
+    <command xml:space="preserve">open key with knife</command>
+    <result xml:space="preserve">[opening the car key with the lockblade knife]
+[Rule &quot;Carry out opening it with&quot; applies.]
+[(1) opening the car key]
+[Rule &quot;can&apos;t open unless openable rule&quot; applies.]
+That&apos;s not something you can open.
+[(1) opening the car key - failed the can&apos;t open unless openable rule]
+
+[opening the car key with the lockblade knife - succeeded]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="265">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd7180">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd71f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd71f0">
+    <command xml:space="preserve">open side panel with phone</command>
+    <result xml:space="preserve">[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7260" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7260">
+    <command xml:space="preserve">actions</command>
+    <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd72d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd72d0">
+    <command xml:space="preserve">open side panel with phone</command>
+    <result xml:space="preserve">[unlocking the side panel with the phone]
+[unlocking the side panel with the phone - succeeded]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+[Rule &quot;scene description text rule&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7340" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7340">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd73b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd73b0">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">[taking inventory]
+[Rule &quot;print empty inventory rule&quot; applies.]
+[Rule &quot;print standard inventory rule&quot; applies.]
+You are carrying:
+  a phone
+  a backpack (being worn and open but empty)
+
+[Rule &quot;report other people taking inventory rule&quot; applies.]
+[taking inventory - succeeded]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7420" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7420">
+    <command xml:space="preserve">purloin multitool</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="235">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7490" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7490">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">[unlocking the side panel with the multitool]
+[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[(1) opening the side panel with the multitool]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+[Rule &quot;Carry out opening it with&quot; applies.]
+You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+[(1) opening the side panel with the multitool - succeeded]
+
+[unlocking the side panel with the multitool - succeeded]
+
+[Rule &quot;Every Turn during Transit Enroute&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="234">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd7500">
+    <command xml:space="preserve">actions</command>
+    <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="243">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7570" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7570">
+    <command xml:space="preserve">open side panel with phone</command>
+    <result xml:space="preserve">[unlocking the side panel with the phone]
+[unlocking the side panel with the phone - succeeded]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="243">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd75e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd75e0">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="243">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7650" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7650">
+    <command xml:space="preserve">open side panel with phone</command>
+    <result xml:space="preserve">[unlocking the side panel with the phone]
+[unlocking the side panel with the phone - succeeded]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+[Rule &quot;scene description text rule&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="242">YES</temporary>
+  </item>
+  <item nodeId="node-0x6a67260">
+    <command xml:space="preserve">purloin tool</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd3da0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd3da0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Hall
+The central hallway of your modest home.  It&apos;s relatively clean and neat, as there is no furniture in it.
+
+You can go north, east to the Bedroom and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd3e10" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd3e10">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Kitchen
+Your kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, reflecting the fact that you don&apos;t cook for yourself much.
+
+You can see a refrigerator (closed), a thermos (closed) and a microwave oven here.
+
+You can go north and east to the Hall from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4540" />
+      <child nodeId="node-0x6bd4460" />
+      <child nodeId="node-0x6bd3e80" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd3e80">
+    <command xml:space="preserve">open side panel</command>
+    <result xml:space="preserve">What do you want to open it with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd3ef0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd3ef0">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4230" />
+      <child nodeId="node-0x6bd3f60" />
+      <child nodeId="node-0x6b46b20" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b46b20">
+    <command xml:space="preserve">purloin knife and key</command>
+    <result xml:space="preserve">[Purloined.]
+[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6a97c90" />
+    </children>
+  </item>
+  <item nodeId="node-0x6a97c90">
+    <command xml:space="preserve">cut key </command>
+    <result xml:space="preserve">What do you want to cut it with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6ab8e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6ab8e0">
+    <command xml:space="preserve">cut key with knife</command>
+    <result xml:space="preserve">You carefully cut open the car keys with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6a8d0d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6a8d0d0">
+    <command xml:space="preserve">purloin lost camera</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x6ae66a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6ae66a0">
+    <command xml:space="preserve">cut camera with knife</command>
+    <result xml:space="preserve">Cutting that would achieve little.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
+    <children>
+      <child nodeId="node-0x615040" />
+    </children>
+  </item>
+  <item nodeId="node-0x615040">
     <command xml:space="preserve">purloin tag remover</command>
     <result xml:space="preserve">[Purloined.]
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x7d3c0e0" />
+      <child nodeId="node-0x638080" />
     </children>
   </item>
-  <item nodeId="node-0x7d3c0e0">
-    <command xml:space="preserve">cut id camera</command>
-    <result xml:space="preserve">[cutting the ID camera]
-[Rule &quot;block cutting rule&quot; applies.]
-Cutting that up would achieve little.
-[cutting the ID camera - failed the block cutting rule]
+  <item nodeId="node-0x638080">
+    <command xml:space="preserve">put knife in pack</command>
+    <result xml:space="preserve">You put the lockblade knife into the backpack.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x7c5e670" />
+      <child nodeId="node-0x6a92ac0" />
     </children>
   </item>
-  <item nodeId="node-0x7c5e670">
-    <command xml:space="preserve">l id camera</command>
-    <result xml:space="preserve">[examining the ID camera]
-[Rule &quot;standard examining rule&quot; applies.]
-A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram (which isn&apos;t used at the moment as the camera is recording directly to the station&apos;s systems.) It is securely chained down to the countertop to prevent anyone from walking off with it.
+  <item nodeId="node-0x6a92ac0">
+    <command xml:space="preserve">gonear fence</command>
+    <result xml:space="preserve">South Primrose Lane
+Primrose Lane, just in front of your home.  To the south is a boarded-up empty house; sumac trees can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large burglar alarm warning sign and an enormous dog on the front lawn.  To the east is your building&apos;s front path.
 
-[Rule &quot;examine directions rule&quot; applies.]
-[Rule &quot;examine containers rule&quot; applies.]
-[Rule &quot;examine supporters rule&quot; applies.]
-[Rule &quot;examine devices rule&quot; applies.]
-[Rule &quot;examine undescribed things rule&quot; applies.]
-[Rule &quot;report other people examining rule&quot; applies.]
-[examining the ID camera - succeeded]
+You can go north and east from here.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x6d74f0" />
+      <child nodeId="node-0x6a8b480" />
     </children>
   </item>
-  <item nodeId="node-0x6d74f0">
-    <command xml:space="preserve">l chain</command>
-    <result xml:space="preserve">[examining the camera chain]
-[Rule &quot;standard examining rule&quot; applies.]
-A thin chain, almost a cable.  It has been visibly repaired in the past.
-
-[Rule &quot;examine directions rule&quot; applies.]
-[Rule &quot;examine containers rule&quot; applies.]
-[Rule &quot;examine supporters rule&quot; applies.]
-[Rule &quot;examine devices rule&quot; applies.]
-[Rule &quot;examine undescribed things rule&quot; applies.]
-[Rule &quot;report other people examining rule&quot; applies.]
-[examining the camera chain - succeeded]
+  <item nodeId="node-0x6a8b480">
+    <command xml:space="preserve">cut fence with tag remover</command>
+    <result xml:space="preserve">You carefully cut through several strands of the fence until you have an opening big enough to slip through and slice a rent in the backing plastic.
 
 &gt;</result>
     <played>YES</played>
     <changed>YES</changed>
-    <temporary score="13">YES</temporary>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x6db1f0" />
+      <child nodeId="node-0x6b33790" />
     </children>
   </item>
-  <item nodeId="node-0x6db1f0">
-    <command xml:space="preserve">cut chain</command>
-    <result xml:space="preserve">[cutting the camera chain]
-[Rule &quot;block cutting rule&quot; applies.]
-Cutting that up would achieve little.
-[cutting the camera chain - failed the block cutting rule]
-
-[Rule &quot;scene description text rule&quot; applies.]
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="13">YES</temporary>
-    <children>
-      <child nodeId="node-0x6d94b0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6d94b0">
-    <command xml:space="preserve">cut chain with tag remover</command>
-    <result xml:space="preserve">[cutting the camera chain with the tag remover]
-[Rule &quot;Check cutting the camera chain with something&quot; applies.]
-Looking around quickly, you snip through the ID chain with the tag remover!
-[cutting the camera chain with the tag remover - failed the Check cutting the camera chain with something]
-
-[Rule &quot;Every Turn during Transit Stop&quot; applies.]
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="12">YES</temporary>
-  </item>
-  <item nodeId="node-0x7c4d1c0">
-    <command xml:space="preserve">purloin tag remover and multitool</command>
-    <result xml:space="preserve">[Purloined.]
-[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="21">YES</temporary>
-    <children>
-      <child nodeId="node-0x6b6d10" />
-    </children>
-  </item>
-  <item nodeId="node-0x6b6d10">
-    <command xml:space="preserve">cut chain with tool</command>
-    <result xml:space="preserve">That won&apos;t cut through the chain.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="21">YES</temporary>
-    <children>
-      <child nodeId="node-0x68f800" />
-    </children>
-  </item>
-  <item nodeId="node-0x68f800">
-    <command xml:space="preserve">undo</command>
-    <result xml:space="preserve">Booking
-[Previous turn undone.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="20">YES</temporary>
-  </item>
-  <item nodeId="node-0x7d45cd0">
-    <command xml:space="preserve">purloin broadcast and memory and laptop</command>
-    <result xml:space="preserve">[Purloined.]
-[Purloined.]
-[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="191">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c8aba0" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c8aba0">
-    <command xml:space="preserve">put memory in chipslot</command>
-    <result xml:space="preserve">The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="191">YES</temporary>
-    <children>
-      <child nodeId="node-0x24bb560" />
-    </children>
-  </item>
-  <item nodeId="node-0x24bb560">
-    <command xml:space="preserve">take memory</command>
-    <result xml:space="preserve">Taken.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="191">YES</temporary>
-    <children>
-      <child nodeId="node-0x29b7b0" />
-    </children>
-  </item>
-  <item nodeId="node-0x29b7b0">
-    <command xml:space="preserve">put laptop in pack</command>
-    <result xml:space="preserve">You put the laptop into the backpack.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="191">YES</temporary>
-    <children>
-      <child nodeId="node-0x6bad310" />
-    </children>
-  </item>
-  <item nodeId="node-0x6bad310">
-    <command xml:space="preserve">purloin solder and iron</command>
-    <result xml:space="preserve">[Purloined.]
-[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="191">YES</temporary>
-    <children>
-      <child nodeId="node-0x6ba50d0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6ba50d0">
-    <command xml:space="preserve">attach broadcast and memory</command>
-    <result xml:space="preserve">You switch the soldering iron on.
-
-You fashion the programmed memory chip and the broadcast chip into a Klein Blaster!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="191">YES</temporary>
-    <children>
-      <child nodeId="node-0x6c97a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6c97a0">
-    <command xml:space="preserve">switch iron</command>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="190">YES</temporary>
-  </item>
-  <item nodeId="node-0x7c44d10">
-    <command xml:space="preserve">gonear id camea</command>
-    <result xml:space="preserve">There seems to be no such object anywhere in the model world.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x622e70" />
-    </children>
-  </item>
-  <item nodeId="node-0x622e70">
+  <item nodeId="node-0x6b33790">
     <command xml:space="preserve">gonear id camera</command>
     <result xml:space="preserve">Booking
 This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects.
@@ -958,121 +1088,530 @@ You can go north from here.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x7c29f10" />
+      <child nodeId="node-0x6af2610" />
     </children>
   </item>
-  <item nodeId="node-0x7c29f10">
-    <command xml:space="preserve">purloin multitool</command>
-    <result xml:space="preserve">[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x7ca0170" />
-    </children>
-  </item>
-  <item nodeId="node-0x7ca0170">
-    <command xml:space="preserve">cut chain with tool</command>
-    <result xml:space="preserve">The one thing this multitool doesn&apos;t have is a decent cutting edge.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c81d40" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c81d40">
-    <command xml:space="preserve">purloin tag remover</command>
-    <result xml:space="preserve">[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c7e1f0" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c7e1f0">
-    <command xml:space="preserve">cut chain with tool</command>
-    <result xml:space="preserve">The one thing this multitool doesn&apos;t have is a decent cutting edge.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x69c1c0" />
-    </children>
-  </item>
-  <item nodeId="node-0x69c1c0">
-    <command xml:space="preserve">cut chain</command>
-    <result xml:space="preserve">What do you want to cut the camera chain with?
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x7c9fb60" />
-    </children>
-  </item>
-  <item nodeId="node-0x7c9fb60">
+  <item nodeId="node-0x6af2610">
     <command xml:space="preserve">cut chain with tag remover</command>
     <result xml:space="preserve">Looking around to check for watchers, you snip through the ID chain with the tag remover!
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x7c6a4d0" />
+      <child nodeId="node-0x6abce10" />
     </children>
   </item>
-  <item nodeId="node-0x7c6a4d0">
-    <command xml:space="preserve">undo</command>
-    <result xml:space="preserve">Booking
-[Previous turn undone.]
+  <item nodeId="node-0x6abce10">
+    <command xml:space="preserve">gonear solvents cabinet</command>
+    <result xml:space="preserve">Utility Closet
+The maintenance closet is dimly lit and, ironically, not terribly clean.  There are various cleaning implements and supplies stored on shelves around the walls, a fire equipment wall rack, and a large metal solvents cabinet taking up one wall.  A flourescent light panel flickers wanly in the ceiling. Two doors lead out of the closet, one east and one west.
+
+On the wall rack are a gas mask and a Fire Axe.
+
+A scuffed disposable camera with a building property sticker on it is here.  Written on it in marker are the words &quot;DOCUMENT ALL MAINTENANCE ITEMS.&quot;
+
+You can go east through the Maintenance Door (closed) and west from here.
 
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="19">YES</temporary>
     <children>
-      <child nodeId="node-0x7c165c0" />
+      <child nodeId="node-0x6be7190" />
     </children>
   </item>
-  <item nodeId="node-0x7c165c0">
+  <item nodeId="node-0x6be7190">
+    <command xml:space="preserve">l cabinet</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="18">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd3f60">
     <command xml:space="preserve">rules</command>
     <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
 
 &gt;</result>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="54">YES</temporary>
+    <temporary score="137">YES</temporary>
     <children>
-      <child nodeId="node-0x7c9b5e0" />
+      <child nodeId="node-0x6bd3fd0" />
     </children>
   </item>
-  <item nodeId="node-0x7c9b5e0">
-    <command xml:space="preserve">cut chain with tag remover</command>
-    <result xml:space="preserve">[Rule &quot;Check cutting the camera chain with the tag remover&quot; applies.]
-Looking around to check for watchers, you snip through the ID chain with the tag remover!
+  <item nodeId="node-0x6bd3fd0">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+That&apos;s already been opened.
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+[Rule &quot;scene description text rule&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="137">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd3c70" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd3c70">
+    <command xml:space="preserve">l side panel</command>
+    <result xml:space="preserve">[Rule &quot;standard examining rule&quot; applies.]
+A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for perhaps a couple of small components inside it.  It&apos;s possible the circuit board controlling the magnetron in this microwave was designed for something else.
+
+[Rule &quot;examine directions rule&quot; applies.]
+[Rule &quot;examine containers rule&quot; applies.]
+[Rule &quot;examine supporters rule&quot; applies.]
+[Rule &quot;examine devices rule&quot; applies.]
+[Rule &quot;examine undescribed things rule&quot; applies.]
+[Rule &quot;report other people examining rule&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="137">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd3cc0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd3cc0">
+    <command xml:space="preserve">open the side panel</command>
+    <result xml:space="preserve">[Rule &quot;Check opening the side panel&quot; applies.]
+That&apos;s already been opened.
+
+[Rule &quot;Every Turn during Transit Enroute&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="137">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd41c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd41c0">
+    <command xml:space="preserve">open the side panel with tool</command>
+    <result xml:space="preserve">[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+That&apos;s already been opened.
+
+[Rule &quot;Every Turn during Transit Enroute&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="136">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd4230">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Kitchen
+[Previous turn undone.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd42a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd42a0">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4310" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4310">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+[Rule &quot;Carry out opening it with&quot; applies.]
+You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
 
 [Rule &quot;Every Turn during Transit Stop&quot; applies.]
 &gt;</result>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="53">YES</temporary>
+    <changed>YES</changed>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4380" />
+    </children>
   </item>
-  <item nodeId="node-0x7cc8230">
+  <item nodeId="node-0x6bd4380">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+That&apos;s already been opened.
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+[Rule &quot;scene description text rule&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="165">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd43f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd43f0">
+    <command xml:space="preserve">open side panel</command>
+    <result xml:space="preserve">[Rule &quot;Check opening the side panel&quot; applies.]
+That&apos;s already been opened.
+
+[Rule &quot;Every Turn during Transit Enroute&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd4460">
+    <command xml:space="preserve">open sie panel</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="80">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd44d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd44d0">
+    <command xml:space="preserve">open side panel</command>
+    <result xml:space="preserve">You pry open the side panel with the multitool, ignoring the sound of breaking plastic.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="79">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd4540">
+    <command xml:space="preserve">actions</command>
+    <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="187">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd45b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd45b0">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="187">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4620" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4620">
+    <command xml:space="preserve">open side panel</command>
+    <result xml:space="preserve">[opening the side panel]
+[Rule &quot;Check opening the side panel&quot; applies.]
+What do you want to open it with?
+[opening the side panel - failed the Check opening the side panel]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="187">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4040" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4040">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">[unlocking the side panel with the multitool]
+[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[(1) opening the side panel with the multitool]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+[Rule &quot;Carry out opening it with&quot; applies.]
+You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+[(1) opening the side panel with the multitool - succeeded]
+
+[unlocking the side panel with the multitool - succeeded]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="187">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd40b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd40b0">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Kitchen
+[Previous turn undone.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="187">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4120" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4120">
+    <command xml:space="preserve">purloin watch</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="187">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd48d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd48d0">
+    <command xml:space="preserve">open side panel with watch</command>
+    <result xml:space="preserve">[unlocking the side panel with the watch]
+[Rule &quot;can&apos;t unlock without a lock rule&quot; applies.]
+That doesn&apos;t seem to be something you can unlock.
+[unlocking the side panel with the watch - failed the can&apos;t unlock without a lock rule]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="186">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd4c50">
+    <command xml:space="preserve">purlointool</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognize.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4cc0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4cc0">
+    <command xml:space="preserve">purloin tool</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4d30" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4d30">
+    <command xml:space="preserve">gonear jukebox</command>
+    <result xml:space="preserve">The Proletariat Bar
+The Proletariat is a local bar (not a pub).  It&apos;s just far enough above a &quot;dive&quot; to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place&apos;s name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.
+
+You can go northwest, southwest, east and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4da0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4da0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Green Commercial Plaza Center
+This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe.
+
+You can see a trash can (closed) here.
+
+You can go north, northeast, northwest, south, southeast, east to The Proletariat Bar and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4e10" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4e10">
+    <command xml:space="preserve">open solar panel with tool</command>
+    <result xml:space="preserve">That doesn&apos;t seem to be something you can unlock.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4e80" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4e80">
+    <command xml:space="preserve">actions</command>
+    <result xml:space="preserve">Actions listing on.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4ef0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4ef0">
+    <command xml:space="preserve">open solar panel with tool</command>
+    <result xml:space="preserve">[unlocking the solar panel with the multitool]
+That doesn&apos;t seem to be something you can unlock.
+[unlocking the solar panel with the multitool - failed the can&apos;t unlock without a lock rule]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4f60" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4f60">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4fd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4fd0">
+    <command xml:space="preserve">open solar panel with tool</command>
+    <result xml:space="preserve">[unlocking the solar panel with the multitool]
+[Rule &quot;can&apos;t unlock without a lock rule&quot; applies.]
+That doesn&apos;t seem to be something you can unlock.
+[unlocking the solar panel with the multitool - failed the can&apos;t unlock without a lock rule]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4690" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4690">
+    <command xml:space="preserve">gonear side panel</command>
+    <result xml:space="preserve">[Rule &quot;determine visibility ceiling rule&quot; applies.]
+[(1) looking]
+[Rule &quot;room description heading rule&quot; applies.]
+Kitchen
+[Rule &quot;room description body text rule&quot; applies.]
+Your kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, reflecting the fact that you don&apos;t cook for yourself much.
+
+[Rule &quot;room description paragraphs about objects rule&quot; applies.]
+[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
+[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
+[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
+[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
+[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
+[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
+[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
+[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
+[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
+[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
+[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
+[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
+[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
+[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
+[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
+[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
+[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
+[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
+You can see a refrigerator (closed), a thermos (closed) and a microwave oven here.
+
+[Rule &quot;check new arrival rule&quot; applies.]
+[Rule &quot;explosive residue rule&quot; applies.]
+[Rule &quot;exits rule&quot; applies.]
+[Rule &quot;darkness hides exits rule&quot; applies.]
+[Rule &quot;darkness hides exits rule&quot; applies.]
+You can go [Rule &quot;darkness hides exits rule&quot; applies.]
+[Rule &quot;darkness hides exits rule&quot; applies.]
+north and east from here.
+
+[Rule &quot;list notable events rule&quot; applies.]
+[Rule &quot;other people looking rule&quot; applies.]
+[(1) looking - succeeded]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4700" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4700">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="177">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4770" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4770">
+    <command xml:space="preserve">open side panel with tool</command>
+    <result xml:space="preserve">[unlocking the side panel with the multitool]
+[Rule &quot;instead of unlocking the side panel with the multitool&quot; applies.]
+[(1) opening the side panel with the multitool]
+[Rule &quot;Check opening the side panel with something&quot; applies.]
+[Rule &quot;Carry out opening it with&quot; applies.]
+You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+[(1) opening the side panel with the multitool - succeeded]
+
+[unlocking the side panel with the multitool - succeeded]
+
+[Rule &quot;Every Turn during Transit Stop&quot; applies.]
+[Rule &quot;scene description text rule&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="176">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd5970">
     <command xml:space="preserve">purloin spool and harness</command>
     <result xml:space="preserve">[Purloined.]
 [Purloined.]
@@ -1082,10 +1621,10 @@ Looking around to check for watchers, you snip through the ID chain with the tag
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7de91a0" />
+      <child nodeId="node-0x6bd59e0" />
     </children>
   </item>
-  <item nodeId="node-0x7de91a0">
+  <item nodeId="node-0x6bd59e0">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">flag is false!
 
@@ -1096,10 +1635,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x6b98f40" />
+      <child nodeId="node-0x6bd5a50" />
     </children>
   </item>
-  <item nodeId="node-0x6b98f40">
+  <item nodeId="node-0x6bd5a50">
     <command xml:space="preserve">undo</command>
     <result xml:space="preserve">Bedroom
 [Previous turn undone.]
@@ -1109,10 +1648,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x6b8d200" />
+      <child nodeId="node-0x6bd5ac0" />
     </children>
   </item>
-  <item nodeId="node-0x6b8d200">
+  <item nodeId="node-0x6bd5ac0">
     <command xml:space="preserve">rules</command>
     <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
 
@@ -1121,10 +1660,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7c6a050" />
+      <child nodeId="node-0x6bd5b30" />
     </children>
   </item>
-  <item nodeId="node-0x7c6a050">
+  <item nodeId="node-0x6bd5b30">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">[Rule &quot;Check and-combining&quot; applies.]
 flag is false!
@@ -1141,10 +1680,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7dbf8e0" />
+      <child nodeId="node-0x6bd5ba0" />
     </children>
   </item>
-  <item nodeId="node-0x7dbf8e0">
+  <item nodeId="node-0x6bd5ba0">
     <command xml:space="preserve">undo</command>
     <result xml:space="preserve">Bedroom
 [Previous turn undone.]
@@ -1154,10 +1693,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7c7d630" />
+      <child nodeId="node-0x6bd5c10" />
     </children>
   </item>
-  <item nodeId="node-0x7c7d630">
+  <item nodeId="node-0x6bd5c10">
     <command xml:space="preserve">rules all</command>
     <result xml:space="preserve">Rules tracing now switched to &quot;all&quot;. Type &quot;rules off&quot; to switch it off again.
 
@@ -1166,10 +1705,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7cc2ac0" />
+      <child nodeId="node-0x6bd5c80" />
     </children>
   </item>
-  <item nodeId="node-0x7cc2ac0">
+  <item nodeId="node-0x6bd5c80">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">[Rule &quot;Rule for deciding the concealed possessions of Officer Prescott&quot; does not apply.]
 [Rule &quot;Rule for deciding the concealed possessions of Ponyfriend Chunky&quot; does not apply.]
@@ -1285,10 +1824,10 @@ You fashion the harness and the spool into a descender!
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7dad2a0" />
+      <child nodeId="node-0x6bd5cf0" />
     </children>
   </item>
-  <item nodeId="node-0x7dad2a0">
+  <item nodeId="node-0x6bd5cf0">
     <command xml:space="preserve">actions</command>
     <result xml:space="preserve">[Rule &quot;Setting action variables for combining something with something&quot; does not apply.]
 [Rule &quot;standard set going variables rule&quot; does not apply.]
@@ -1302,10 +1841,10 @@ Actions listing on.
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x6bb6560" />
+      <child nodeId="node-0x6bd5d60" />
     </children>
   </item>
-  <item nodeId="node-0x6bb6560">
+  <item nodeId="node-0x6bd5d60">
     <command xml:space="preserve">undo</command>
     <result xml:space="preserve">Bedroom
 [Previous turn undone.]
@@ -1315,10 +1854,10 @@ Actions listing on.
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7c2f280" />
+      <child nodeId="node-0x6bd5dd0" />
     </children>
   </item>
-  <item nodeId="node-0x7c2f280">
+  <item nodeId="node-0x6bd5dd0">
     <command xml:space="preserve">undo</command>
     <result xml:space="preserve">Bedroom
 [Previous turn undone.]
@@ -1328,10 +1867,10 @@ Actions listing on.
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7c80c70" />
+      <child nodeId="node-0x6bd5e40" />
     </children>
   </item>
-  <item nodeId="node-0x7c80c70">
+  <item nodeId="node-0x6bd5e40">
     <command xml:space="preserve">actions</command>
     <result xml:space="preserve">[Rule &quot;Setting action variables for combining something with something&quot; does not apply.]
 [Rule &quot;standard set going variables rule&quot; does not apply.]
@@ -1345,10 +1884,10 @@ Actions listing on.
     <changed>YES</changed>
     <temporary score="181">YES</temporary>
     <children>
-      <child nodeId="node-0x7c8c410" />
+      <child nodeId="node-0x6bd5eb0" />
     </children>
   </item>
-  <item nodeId="node-0x7c8c410">
+  <item nodeId="node-0x6bd5eb0">
     <command xml:space="preserve">combine harness and spool</command>
     <result xml:space="preserve">[Rule &quot;Rule for deciding the concealed possessions of Officer Prescott&quot; does not apply.]
 [Rule &quot;Rule for deciding the concealed possessions of Ponyfriend Chunky&quot; does not apply.]
@@ -1469,5 +2008,552 @@ You fashion the harness and the spool into a descender!
     <played>YES</played>
     <changed>YES</changed>
     <temporary score="180">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd76c0">
+    <command xml:space="preserve">gonear jukebox</command>
+    <result xml:space="preserve">The Proletariat Bar
+The Proletariat is a local bar (not a pub).  It&apos;s just far enough above a &quot;dive&quot; to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place&apos;s name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.
+
+You can go northwest, southwest, east and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7730" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7730">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Green Commercial Plaza Center
+This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe.
+
+You can see a trash can (closed) here.
+
+You can go north, northeast, northwest, south, southeast, east to The Proletariat Bar and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd77a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd77a0">
+    <command xml:space="preserve">purloin id bomb</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7810" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7810">
+    <command xml:space="preserve">drop id bomb</command>
+    <result xml:space="preserve">&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7880" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7880">
+    <command xml:space="preserve">purloin tool</command>
+    <result xml:space="preserve">[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd78f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd78f0">
+    <command xml:space="preserve">drop tool</command>
+    <result xml:space="preserve">Dropped.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7960" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7960">
+    <command xml:space="preserve">take bomb</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd79d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd79d0">
+    <command xml:space="preserve">arm bomb</command>
+    <result xml:space="preserve">The armed ID bomb beeps in your hand. The arming LED begins to blink ominously!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7a40" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7a40">
+    <command xml:space="preserve">drop bomb</command>
+    <result xml:space="preserve">There is a bright flash and nearly-ultrasonic whine as the ID Bomb discharges its capacitor through its radio chip! You feel a slight tickle in your skull from your dead Mit-Klein bottle circuits. The lights flicker.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7ab0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7ab0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+You&apos;re pretty sure the police are looking for you now for dropping that ID Bomb.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="75">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd7b20" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd7b20">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+Police, looking for you for dropping that ID Bomb, swarm into the area! You are tackled and handcuffed before you can react!
+
+
+
+    *** You have been arrested. ***
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="74">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd6460">
+    <command xml:space="preserve">purloin broadcast and memory and laptop</command>
+    <result xml:space="preserve">[Purloined.]
+[Purloined.]
+[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="191">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd64d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd64d0">
+    <command xml:space="preserve">put memory in chipslot</command>
+    <result xml:space="preserve">The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="191">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6540" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6540">
+    <command xml:space="preserve">take memory</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="191">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd65b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd65b0">
+    <command xml:space="preserve">put laptop in pack</command>
+    <result xml:space="preserve">You put the laptop into the backpack.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="191">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6620" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6620">
+    <command xml:space="preserve">purloin solder and iron</command>
+    <result xml:space="preserve">[Purloined.]
+[Purloined.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="191">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6690" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6690">
+    <command xml:space="preserve">attach broadcast and memory</command>
+    <result xml:space="preserve">You switch the soldering iron on.
+
+You fashion the programmed memory chip and the broadcast chip into a Klein Blaster!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="191">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd6700" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd6700">
+    <command xml:space="preserve">switch iron</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="190">YES</temporary>
+  </item>
+  <item nodeId="node-0x6bd47e0">
+    <command xml:space="preserve">wear watch</command>
+    <result xml:space="preserve">(first taking the watch)
+You put on the watch.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd4850" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd4850">
+    <command xml:space="preserve">put phone in pack</command>
+    <result xml:space="preserve">You put the phone into the backpack.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5040" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5040">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Hall
+The central hallway of your modest home.  It&apos;s relatively clean and neat, as there is no furniture in it.
+
+You can go north, east to the Bedroom and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd50b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd50b0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Entry
+This is the small entryway to your apartment. A pile of mail, most of it unread, covers the small table just inside your front door.  The apartment hallway is to the south.  To the west is your office, and to the east is your bathroom.
+
+You can see a side table (on which is a car key) here.
+
+You can go north through the Front door (closed), south to the Hall, east and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5120" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5120">
+    <command xml:space="preserve">take key</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5190" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5190">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Home Office
+Your home office, a room which in other homes might be a living room, is not very tidy.  Books, random equipment and empty soda cans cover most available surfaces except for your workbench and your laptop.
+
+You can see a workbench (on which are a multitool, a lockblade knife, a soldering iron, some solder and a laptop) here.
+
+You can go south and east to Entry from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5200" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5200">
+    <command xml:space="preserve">take knife</command>
+    <result xml:space="preserve">This knife is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5270" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5270">
+    <command xml:space="preserve">open key </command>
+    <result xml:space="preserve">That&apos;s not something you can open.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd52e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd52e0">
+    <command xml:space="preserve">cut key</command>
+    <result xml:space="preserve">What do you want to cut it with?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5350" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5350">
+    <command xml:space="preserve">cut key with knife</command>
+    <result xml:space="preserve">You carefully cut open the car keys with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd53c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd53c0">
+    <command xml:space="preserve">take broadcast and memory</command>
+    <result xml:space="preserve">broadcast chip: Taken.
+memory chip: Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5430" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5430">
+    <command xml:space="preserve">put key in pack</command>
+    <result xml:space="preserve">You put the car key into the backpack.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd54a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd54a0">
+    <command xml:space="preserve">put knife in pack</command>
+    <result xml:space="preserve">You put the lockblade knife into the backpack.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5510" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5510">
+    <command xml:space="preserve">put memory in chipslot</command>
+    <result xml:space="preserve">The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5580" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5580">
+    <command xml:space="preserve">take memory</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd55f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd55f0">
+    <command xml:space="preserve">take solder and iron</command>
+    <result xml:space="preserve">solder: Taken.
+soldering iron: Taken.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5660" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5660">
+    <command xml:space="preserve">combine broadcast and memory</command>
+    <result xml:space="preserve">You switch the soldering iron on.
+
+You fashion the broadcast chip and the programmed memory chip into a Klein Blaster!
+
+That isn&apos;t available.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd56d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd56d0">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Home Office
+[Previous turn undone.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5740" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5740">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd57b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd57b0">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Home Office
+[Previous turn undone.]
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5820" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5820">
+    <command xml:space="preserve">take solder and iron</command>
+    <result xml:space="preserve">solder: You already have that.
+soldering iron: You already have that.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5890" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5890">
+    <command xml:space="preserve">rules</command>
+    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="146">YES</temporary>
+    <children>
+      <child nodeId="node-0x6bd5900" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd5900">
+    <command xml:space="preserve">combine broadcast and memory</command>
+    <result xml:space="preserve">[Rule &quot;First Check and-combining&quot; applies.]
+[Rule &quot;Carry out and-combining&quot; applies.]
+[Rule &quot;Setting action variables for combining something with something&quot; applies.]
+[Rule &quot;Check combining it with&quot; applies.]
+[Rule &quot;Check switching on the soldering iron&quot; applies.]
+[Rule &quot;can&apos;t switch on unless switchable rule&quot; applies.]
+[Rule &quot;can&apos;t switch on what&apos;s already on rule&quot; applies.]
+[Rule &quot;standard switching on rule&quot; applies.]
+[Rule &quot;standard report switching on rule&quot; applies.]
+You switch the soldering iron on.
+
+[Rule &quot;Carry out combining it with&quot; applies.]
+[Rule &quot;Report combining it with&quot; applies.]
+You fashion the broadcast chip and the programmed memory chip into a Klein Blaster!
+
+That isn&apos;t available.
+
+[Rule &quot;Every Turn during Transit Enroute&quot; applies.]
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="145">YES</temporary>
   </item>
 </Skein>
