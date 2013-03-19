@@ -1,15 +1,16 @@
 Valley of Steel game design notes
 
-alxa 4.35 3.000
 
 ===>  CURRENT PROBLEMS
 
 
 GENERAL:
 
+'open side panel with knife -> you can't open the side panel with that.'
+
 FIXED biogen feedstock is OUT OF PLAY.
 
-During Drug Raid, things at the cordon should be visible (policeman who shoves you, eg).
+FIXED During Drug Raid, things at the cordon should be visible (policeman who shoves you, eg).
 
 FIXED. Put a 'REPORT DRUGS' poster in police station as hint?
 
@@ -19,9 +20,9 @@ Put a backdrop of reserve bank spacescraper into skyline, direction proper from 
 
 Lens Crafter is broken. Asks for Memory in slot (wrong), can't use menu, and 'just works when turned on' if camera is present.  Fix this.  Also, put lens case somewhere other than in machine? Or change 'action' message?
 
-Need verb 'solder' for combining.  Maybe understand as 'attach'?
+WONTFIX Need verb 'solder' for combining.  Maybe understand as 'attach'?
 
-Maybe 'cutting' should just work if you have the knife, rather than asking what you want to cut it with?  But would that mess up tag removal etc?  SEE EXAMPLE 'PADDINGTON'!
+FIXED Maybe 'cutting' should just work if you have the knife, rather than asking what you want to cut it with?  But would that mess up tag removal etc?  SEE EXAMPLE 'PADDINGTON'!
 
 FIXED FOR NOW - WHERE DO YOU GET DISPOSABLE CAMERAS? 
 
@@ -29,7 +30,7 @@ FIXED 'photographing' needs to work for disposable cameras as well as ID camera!
 
 FIXED. Trash Can:  Vandalizing *one* trash can solar panel makes them *ALL* describe as being vandalised.  Also, the 'vandalised' description says the panel is empty even if it's not.
 
-Clock thinks that the failure to pick up an object after trying to put things in the backpack to make room fails when it's closed should be more explicit that you haven't taken the object.
+WONTFIX Clock thinks that the failure to pick up an object after trying to put things in the backpack to make room fails when it's closed should be more explicit that you haven't taken the object.
 
 FIXED Trying to 'attach' (probably to 'combine', too) something which isn't in the component table borks because it doesn't have an item-id property, and putting a check for that in the 'check combining' rule doesn't seem to stop this
 

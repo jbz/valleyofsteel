@@ -30,7 +30,7 @@ When play begins:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
 	boozing starts at 2:00 PM;
-	say "Welcome to the surveillance society.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream.";
+	say "Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream.";
 
 
 
@@ -124,11 +124,6 @@ To decide whether Drug Market is unraided:
 To decide whether the metal door is charged:
 	if the breaching charge is supported by the metal door:
 		decide yes;
-[	if the location of the Breaching Charge is Drug Den:
-		unless the player is carrying the Breaching Charge:
-			decide yes;
-		otherwise:
-			decide no;]
 	otherwise:
 		decide no.
 
@@ -319,12 +314,12 @@ At the time when an explosion occurs:
 				change west exit of the Atrium Ledge to the Seating Area;
 			now the location of the Breaching Charge is breached;
 			remove the Breaching Charge from play;
-		otherwise if the activeMunition is the Tear Gas grenade:
-			if the location of the Tear Gas grenade is the location:
+		otherwise if the activeMunition is the tear gas grenade:
+			if the location of the tear gas grenade is the location:
 				say "With a bang and an enormous hiss, the gas grenade goes off and fills the area with a cloud of opaque smoke and tear gas!";
-			now the location of the Tear Gas grenade is gassed;
+			now the location of the tear gas grenade is gassed;
 			The tear gas dissipates in 4 turns from now;
-			remove the Tear Gas grenade from play;
+			remove the tear gas grenade from play;
 
 At the time when the tear gas dissipates:
 	if the location is gassed:
@@ -408,6 +403,7 @@ Understand "paper" as the newspaper.
 An ID bomb is a kind of explosive. An ID bomb has a timer 1.  An ID bomb can be working or fried.  An ID bomb is usually working. An ID bomb has some text called item-id.  An ID bomb always has item-id "M5". An ID bomb has some text called fryDescription.  The fryDescription of an ID bomb is usually "There is a series of bright sparking flashes and a puff of smoke as the ID bomb begins to melt![line break]".  The description is "A small ID bomb with a single button. [if disarmed]The arming LED is dark.[else if armed]The arming LED is blinking green at shortening intervals![else if inert]The ID bomb is now a chunk of burnt and useless circuitry.[end if]". 
 
 After dropping an id bomb (called the bomb):
+	say "Dropped.";
 	if the bomb is armed:
 		if the player is surveilled:
 			now the incriminatingAct is "dropping that ID Bomb";
@@ -418,7 +414,7 @@ Understand the blank property as describing a memory chip.
 
 A broadcast chip is a kind of component.  A broadcast chip is usually portable.  A broadcast chip is tiny. A broadcast chip can be working or fried. A broadcast chip is usually working. A broadcast chip always has item-id "M1". A broadcast chip has some text called fryDescription.  The fryDescription of a broadcast chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." A broadcast chip is tiny.  The description of a broadcast chip is "This is a broadcast chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics these days.  Usually powered by small batteries in phones or car keys, these generally have a range of a few meters.  There are leads on the chip for connecting a data source and a power source.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released."
 
-An antitheft tag is a kind of container.  An antitheft tag is portable.  An antitheft tag is small. An antitheft tag is usually closed and assembled. An antitheft tag can be working or fried.  An antitheft tag is usually working. An antitheft tag has some text called fryDescription.  The fryDescription of an antitheft tag is usually "There is a hissing noise. The plastic of the antitheft tag begins to melt." An antitheft tag is always small. An antitheft tag has a carrying capacity 1. A memory chip is in every antitheft tag. The description of an antitheft tag is "This is a small, nondescript black plastic tag, perhaps a centimeter thick and four by four centimeters square, with a security loop for attaching it to products.[if disassembled]  This tag has been pried open.[otherwise if fried] The tag has melted slightly.  Inside you can see what looks like the remains of some electronics, but the whole mess is melted together now."
+An antitheft tag is a kind of container.  An antitheft tag is portable.  An antitheft tag is small. An antitheft tag is usually closed and assembled. An antitheft tag can be working or fried.  An antitheft tag is usually working. An antitheft tag has some text called fryDescription.  The fryDescription of an antitheft tag is usually "There is a hissing noise. The plastic of the antitheft tag begins to melt." An antitheft tag is always small. An antitheft tag has a carrying capacity 1. A memory chip is in every antitheft tag. The description of an antitheft tag is "This is a small, nondescript black plastic tag, perhaps a centimeter thick and four by four centimeters square, with a security loop for attaching it to products.[if disassembled]  This tag has been cut open.[end if][if fried] The tag has melted slightly.  Inside you can see what looks like the remains of some electronics, but the whole mess is melted together now."
 
 An antitheft tag is part of every garment.
 
@@ -426,20 +422,23 @@ Rule for printing room description details of an antitheft tag: stop.
 
 Understand "tags" as antitheft tags.
 
-Check opening an antitheft tag:
-	if the noun is fried, say "There's nothing to open. This tag has been melted into a single mass." instead;
+Check cutting an antitheft tag with something:
+	unless the second noun is the knife, say "That won't cut the tag." instead;
+	if the noun is a part of a garment (called the swag), say "The plastic side of the tag is folded over, attached to [the swag].  You can't cut it." instead;
+	if the noun is fried, say "The tag is melted into a single mass of plastic." instead;
 	if the noun is disassembled, say "That's already been opened." instead;
-	unless the player is carrying the knife, say "You don't have anything to open it with." instead;
-	if the noun is part of a garment (called the swag), say "The tag is fastened to [the swag]; you can't do that without damaging the garment." instead;
-	say "You cut open the antitheft tag with your knife.";
+
+Carry out cutting an antitheft tag (called the cuttee) with something:
+	say "You carefully cut open the tag with your knife and peel back the plastic to reveal [a list of things in the cuttee].";
 	now the noun is disassembled;
-	now the noun is openable;
-	continue the action.
-	
-Instead of cutting an antitheft tag (called the tag) with the tag remover:
-	say "You deftly remove the tag with the tag remover.";
-	now the tag is carried by the player.
-	
+	now the noun is open;
+	now the noun is unopenable;
+	rule succeeds.
+
+instead of cutting an antitheft tag:
+	say "What do you want to cut it with?" instead.
+
+
 Instead of removing an antitheft tag (called the tag) with the tag remover:
 	say "You deftly remove the tag with the tag remover.";
 	now the tag is carried by the player;
@@ -457,11 +456,6 @@ Instead of closing an antitheft tag:
 Check taking an antitheft tag:
 	if the noun is part of a garment, say "What do you want to remove that with?" instead.
 
-Check cutting an antitheft tag:
-	if the noun is part of a garment, say "What do you want to cut that off with?" instead;
-	unless the player encloses the knife, say "You don't have anything to cut that with." instead;
-	try opening the noun instead.
-	
 
 A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the Kleinhacking signal.  It needs a power source to perform its task."
 
@@ -483,7 +477,7 @@ Understand "pack" as the backpack.
 
 The receive chip is a component.  The receive chip is in the pager.  The receive chip is tiny. The receive chip can be working or fried.  The receive chip is working.  The receive chip has some text called fryDescription.  The fryDescription of the receive chip is "There is a sizzling noise. The chip is now scorched and smoking slightly."  The receive chip is tiny.  The description of the receive chip is "This is a receive chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics that need to receive distant broadcasts, able to pull in signals from beyond a few meters.  There are leads on the chip for connecting data lines and a power source.[if fried] This chip is blackened and schorced; the magic smoke appears to have been released."
 
-The Tear Gas grenade is in the police flitter. The Tear Gas grenade is an explosive.  The Tear Gas grenade is small. The Tear Gas grenade has a timer 1.  The Tear Gas grenade can be working or fried.  The Tear Gas grenade is working.  The description of the Tear Gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'."
+The tear gas grenade is in the police flitter. The tear gas grenade is an explosive.  The tear gas grenade is small. The tear gas grenade has a timer 1.  The tear gas grenade can be working or fried.  The tear gas grenade is working.  The description of the tear gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'."
 
 The gas mask is on the wall rack.  The gas mask is wearable.  The description of the gas mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing." 
 
@@ -1000,8 +994,18 @@ Check entering the ambulance:
 
 Section 7 - Actions/Activities
 
-[general understand rules]
 
+[credits]
+Understand "credits" as getting credits.
+Understand "about" as getting credits.
+
+Getting credits is an action out of world.
+
+Carry out getting credits:
+	say "'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those and many others, to be listed when released."
+
+
+[general understand rules]
 Understand "talk to [someone]" as a mistake ("To start a conversation, try to ASK [the noun] ABOUT something or TELL [the noun] ABOUT something.").
 Understand "use [something]" as a mistake ("How would you like to use [the noun]?").
 Understand "use [something] on [something]" as a mistake ("How would you like to use [the noun]?").
@@ -1080,6 +1084,8 @@ Check cutting it with:
 	unless the second noun is carried:
 		unless the second noun is scenery or the second noun is fixed in place:
 			try taking the second noun;
+	if the noun is an antitheft tag:
+		unless the second noun is the knife, say "You can't open the tag with that." instead;
 	continue the action.	
 
 
@@ -1247,6 +1253,14 @@ Understand "open [something] with [something preferably held]" as opening it wit
 Understand "disassemble [something] with [something preferably held]" as opening it with.
 
 
+To disassemble (gadget - a thing):
+	say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.";
+	now the gadget is disassembled;
+	now the gadget is not scenery;
+	if the gadget is a container:
+		now the gadget is unopenable;
+		now the gadget is open.
+
 Carry out opening it with:
 	if the noun is a disposable camera:
 		follow the disassembly rules;
@@ -1255,6 +1269,8 @@ Carry out opening it with:
 	else if the noun is the side panel:
 		follow the disassembly rules;
 	else if the noun is the car key:
+		follow the disassembly rules;
+	else if the noun is an antitheft tag:
 		follow the disassembly rules;
 	otherwise:
 		try opening the noun instead.
@@ -1274,17 +1290,13 @@ A disassembly rule:
 		unless the second noun is the multitool:
 			say "You can't disassemble the camera with that." instead;
 		otherwise:
-			say "You pry open the case of the camera with the pliers in your multitool.";
-			now the noun is disassembled;
+			disassemble the noun;
 			rule succeeds;
 	if the noun is a solar panel:
 		unless the second noun is the multitool:
 			say "You can't open [the noun] with that." instead;
 		otherwise:
-			say "You pry open the solar panel with the pliers in your multitool, ignoring the cracking sounds.";
-			now the noun is disassembled;
-			now the noun is open;
-			now the noun is not scenery;
+			disassemble the noun;
 			if the player is surveilled:
 				unless the location is gassed:
 					now the incriminatingAct is "vandalizing that trash can";
@@ -1294,16 +1306,19 @@ A disassembly rule:
 		unless the second noun is the multitool:
 			say "You can't open [the noun] with that." instead;
 		otherwise:			
-			say "You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.";
-			now the noun is disassembled;
-			now the noun is not scenery;
-			now the noun is open;
+			disassemble the noun;
 			rule succeeds;
 	if the noun is the car key:
 		unless the second noun is the knife:
 			say "You can't open [the noun] with that." instead;
 		otherwise:
 			try cutting the car key with the knife instead;
+			rule succeeds;
+	if the noun is an antitheft tag:
+		unless the second noun is the knife:
+			say "You can't open [the noun] with that." instead;
+		otherwise:
+			try cutting the noun with the knife instead;
 			rule succeeds.
 
 
@@ -1353,11 +1368,9 @@ Report arming:
 			say "As soon as the charge detonates, the police will be looking at the surveillance video from this location; they'll ID you within a few minutes!";
 			now the incriminatingAct is "setting off that explosive";
 			the player incriminates in seven turns from now;
-	otherwise if the noun is the Tear Gas grenade:
-		say "You pull the pin on the Tear gas grenade and drop it as it begins to hiss!";
-		move the Tear Gas grenade to the location;
-		[if player is surveilled:
-			the player incriminates in one turn from now.]
+	otherwise if the noun is the tear gas grenade:
+		say "You pull the pin on the tear gas grenade and drop it as it begins to hiss!";
+		move the tear gas grenade to the location.
 
 
 
@@ -1596,13 +1609,17 @@ Shoplifting is a scene.  Shoplifting begins when the shopper is carryingSwag and
 
 When Shoplifting begins:
 	if the location is Garb-oh:
-		say "The shopper puts down a last item of clothing and drifts towards the door.  As she reaches it, however, the antitheft alarm blares and a strobe light begins to flash!  She stops, frozen in surprise, as the shopkeeper rushes over and grabs her.  A few seconds later, two policemen enter the shop.  The shopkeeper, shopper and police all begin shouting at the same time."		
+		say "The shopper puts down a last item of clothing and drifts towards the door.  As she reaches it, however, the antitheft alarm blares and a strobe light begins to flash!  She stops, frozen in surprise, as the shopkeeper rushes over and grabs her.  A few seconds later, two policemen enter the shop.  The shopkeeper, shopper and police all begin shouting at the same time.";
+		move Officer Prescott to Garb-Oh;
+		move the Patrolman to Garb-Oh.		
 
 
 When Shoplifting ends:
 	remove the shopper from play;
+	remove Officer Prescott from play;
+	remove the Patrolman from play;
 	if the location is Garb-oh:
-		say "The police finally search the shopper's shoulder bag, and shake their heads.  They lead her towards the door, one explaining that they'll need to take her statement at the station.  The shopkeeper asks snippily what they'll be doing to protect her stock; one of the cops rolls his eyes and says 'Lady, we'll have our patrol stop in the plaza out front for a while in case this one has any accomplices, all right?'  They leave, and the shopkeeper watches them go with a somewhat irritatingly smug expression on her face.";
+		say "The police finally search the shopper's shoulder bag, and shake their heads.  They lead her towards the door, one explaining that they'll need to take her statement at the station.  The shopkeeper asks snippily what they'll be doing to protect her stock; Officer Prescott rolls his eyes and says 'Lady, we'll have our patrol stop in the plaza out front for a while in case this one has any accomplices, all right?'  They leave, and the shopkeeper watches them go with a somewhat irritatingly smug expression on her face.";
 	if the sales counter encloses the player:
 		say "The shopkeeper looks over and sees you behind the sales counter.  Fury contorts her face and she runs to the door, screaming for the police to return!  They rush back in and find you behind the register.  Shaking their heads, they grab you and march you out of the store.";
 		end the story saying "You have been arrested!";
@@ -1669,24 +1686,24 @@ Understand "cordon" as the police barrier.
 
 
 Instead of going south in South Primrose Lane during Drug Raid:
-	say "A stern-looking policeman from the cordon intercepts you and firmly tells you to stay back.  You move back to the street." instead.
+	say "A stern-looking patrolman from the cordon intercepts you and firmly tells you to stay back.  You move back to the street." instead.
 
 When Drug Raid begins:
 	move the Police Vehicles to South Primrose Lane;
-	move Policeman to South Primrose Lane;
+	move the Patrolman to South Primrose Lane;
 	move Police Barrier to South Primrose Lane;
 	say "You arrive at South Primrose Lane to a scene of chaos.  Police vehicles are pulled up all over the road, cyclone lights flashing.  As you watch, heavily armed SWAT officers file through the hole in the fence towards the Drug Market.   A staticky transmission over the radio of the vehicles near you says quietly 'Breaching charges in place.'  You can hear a voice on a bullhorn shout 'You have thirty seconds to surrender!'[paragraph break]A few seconds later, there is a deep thundering [bold type][italic type]BOOM[roman type] as the breaching charges detonate, and a confused hubbub as (presumably) the SWAT officers rush into the abandoned house."
 
 	
 Instead of looking in South Primrose Lane during Drug Raid:
-	say "Police vehicles are pulled up here.  Bright lights are visible over the fence to the south.  A cordon of police barriers, guarded by a stern-looking policeman, prevents anyone from approaching the fence, while police personnel mill about behind the barriers."
+	say "Police vehicles are pulled up here.  Bright lights are visible over the fence to the south.  A cordon of police barriers, guarded by a stern-looking patrolman, prevents anyone from approaching the fence, while police personnel mill about behind the barriers."
 
 Drug Raid ends when the time since Drug Raid began is 10 minutes.
 	
 When Drug Raid ends:
 	remove the Police Vehicles from play;
 	remove the Police Barrier from play;
-	remove the Policeman from play;
+	remove the Patrolman from play;
 	if the location is South Primrose Lane:
 		say "Eventually, police begin filing back out of the hole in the fence, dragging a few handcuffed suspects with them.  The bright lights across the fence go out, and various SWAT and regular police get back into their assorted vehicles and begin to pull away.  Soon nothing is left except a slight smell of smoke from the breaching charges."
 
@@ -1694,9 +1711,9 @@ When Drug Raid ends:
 [Endgame]
 Endgame is a scene.  Endgame begins when the player has been in Atrium Midair Top for 1 turn.  
 Instead of dropping ID Bomb during Endgame:
-	say "[if Bombs Thrown is 0]You arm the bomb and toss it. The bomb spins down out of sight towards a window wall.  A few seconds later you make out a slight twinkling as the flash unit fires.  A low noise, of a crowd confused, slowly rises in volume![otherwise if Bombs Thrown is 1]Arming another bomb, you toss it away into the atrium where crowds are gathering at the windows!  The bomb flashes just in front of a large crowd gathered before a window wall, and they begin to mill about in panic and confusion!  The noise inside the atrium rises![otherwise if Bombs Thrown is 2]You arm your third ID bomb and drop it directly down into the crowds in the Main Lobby, where you can see police and Homeland Security forces pointing up at you as they maneuver into place.  There is a definite flinching in the crowd as the bomb goes off nearly at floor level, and the law enforcement personnel are instantly swamped by the confused masses of convention attendees as everyone on the Lobby floor is cut off from communicating directly with their electronics!";
+	say "[if Bombs Thrown is 0]You arm the bomb and toss it. The bomb spins down out of sight towards a window wall.  A few seconds later you make out a slight twinkling as the flash unit fires.  A low noise, of a crowd confused, slowly rises in volume![otherwise if Bombs Thrown is 1]Arming another bomb, you toss it away into the atrium where crowds are gathering at the windows!  The bomb flashes just in front of a large crowd gathered before a window wall, and they begin to mill about in panic and confusion!  The noise inside the atrium rises![otherwise if Bombs Thrown is 2]You arm your third ID bomb and drop it directly down into the crowds in the Main Lobby, where you can see police and Homeland Security forces pointing up at you as they maneuver into place.  There is a definite flinching in the crowd as the bomb goes off nearly at floor level, and the law enforcement personnel are instantly swamped by the confused masses of convention attendees as everyone on the Lobby floor is cut off from communicating directly with their electronics![otherwise]You arm another bomb and throw it across the Atrium towards a group of onlookers.  A twinkle indicates more citizens freed!";
 	Increase Bombs Thrown by 1;
-	say "thrown is [Bombs Thrown]";
+	[say "thrown is [Bombs Thrown]";]
 	remove the noun from play.
 
 Instead of arming ID bomb during Endgame:
@@ -1767,6 +1784,9 @@ component list	result
 
 Section 10 - NPCs
 
+[policemen]
+A policeman is a kind of man.  The description of a policeman is "A typical example of the Metro police force, wearing patrol gear including light body armor, crowded equipment belt and what look like actually comfortable boots."
+
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
 Roberto Velez is a man.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
 
@@ -1812,7 +1832,7 @@ Instead of speech when the noun is Roberto Velez:
 Instead of the player trying giving the blue jacket to Roberto Velez:
 	if Roberto Velez is wearing the blue jacket, say "He already has it!" instead;
 	if Roberto Velez is carrying the blue jacket, say "He already has it!" instead;
-	say "Roberto stands up and eagerly examines the blue jacket.  'This is perfect!' he says enthusiastically, showing you how closely it resembles his torn uniform jacket.  'Would you be willing to part with it? I cannot give you much, but I would happily pay you what I can; it will be less than what those dogs would take from my salary to replace this one!'";
+	say "Roberto stands up and eagerly examines the blue jacket.  'This is perfect!' he says enthusiastically, showing you how closely it resembles his torn uniform jacket.  'Would you be willing to part with it? I cannot give you much, but I would happily pay you what I can; it will be less than what those dogs would take from my salary to replace this one!' He pats his pockets, then shakes his head.  'I need to go to the ATM.'  With that, he stands up.";
 	now Roberto Velez is runningErrand.
 
 Every turn when the player can see Roberto Velez and the location is The Proletariat Bar:
@@ -1841,17 +1861,21 @@ Persuasion rule for asking the shopper to try doing something:
 	persuasion fails.
 	
 [Officer Prescott]
-Officer Prescott is a man.  Officer Prescott is carrying the flitterkey.  The description of Officer Prescott is "A normal-looking Metro Policeman, Prescott is wearing light patrol gear with his holobadge displaying his name and rank across his left breast. Every once in a while, the comm unit attached to his belt murmurs to him through his earpiece.[if the location is Green Commercial Bistro Paris] At the moment, he's sitting at a table nursing a coffee."
+Officer Prescott is a policeman.  Officer Prescott is carrying the flitterkey.  The description of Officer Prescott is "A normal-looking Metro Policeman, Prescott is wearing light patrol gear with his holobadge displaying his name and rank across his left breast. Every once in a while, the comm unit attached to his belt murmurs to him through his earpiece.[if the location is Green Commercial Bistro Paris] At the moment, he's sitting at a table nursing a coffee."
 
 Rule for deciding the concealed possessions of Officer Prescott:
 	if the particular possession is the flitterkey, no;
 	otherwise yes.
 
-[Policeman]
-The Policeman is a man.  The description of the Policeman is "A street cop, dressed in uniform rather than the riot armor of a SWAT team member.  He is patrolling the barrier, making sure no passers-by intrude on the scene."
+[Police]
+The Patrolman is a policeman.  The description of the Patrolman is "A street cop, dressed in uniform[if the location of the Patrolman is South Primrose Lane] rather than the riot armor of a SWAT team member.  He is patrolling the barrier, making sure no passers-by intrude on the scene[end if]."
+
+
+
+
 
 [Sergeant Ramirez]
-In the Front Desk is a man called Sergeant Ramirez. The description of Sergeant Ramirez is "Seated behind his desk, this grizzled uniformed policeman is clearly a veteran of many years' service.  He scowls at you, waiting for you to make his life more annoying."
+In the Front Desk is a policeman called Sergeant Ramirez. The description of Sergeant Ramirez is "Seated behind his desk, this grizzled uniformed policeman is clearly a veteran of many years' service.  He scowls at you, waiting for you to make his life more annoying."
 
 Every turn when the player can see Sergeant Ramirez:
 	if a random chance of 1 in 5 succeeds, say "[one of]Sergeant Ramirez scowls at his paperwork.[or]Sergeant Ramirez sharpens a pencil.[or]The telephone rings.  Sergeant Ramirez answers gruffly, speaks a few words and hangs up.[or]The door swings open and two officers come in, manhandling a suspect between them.  Ignoring their suspect's complaints, they pause briefly to check in with the desk before moving on into the police station.[or]Sergeant Ramirez picks his nose.[as decreasingly likely outcomes]";	
@@ -2086,7 +2110,7 @@ Transit Platform is a recurring scene.  Transit Platform begins when the locatio
 Every Turn during Transit Platform:
 	if a random chance of 1 in 8 succeeds, say "[one of]A commuter walks by.[or]A public address system reminds you to be alert and 'if you see something, say something!'[or]You see a small mouse scurry along the Transit Web and vanish back into the tunnels.[or]A police officer strolls through the area, giving you a suspicious look before moving on.[or]A busker puts down his cap and pulls out a flute.  Before he gets more than a few notes out a pair of policemen hurry up and hustle him and his cap away out of sight.[as decreasingly likely outcomes]";
 	if a random chance of 1 in 20 succeeds:
-		unless the station of the Capsule is the location, say "Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust wind, an express Transit Capsule blasts through [the stationName of the location] and vanishes into the darkness once more.";
+		unless the station of the Capsule is the location, say "Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through [the stationName of the location] and vanishes into the darkness once more.";
 	if a random chance of 1 in 250 succeeds:
 		unless the station of the Capsule is the location, say "Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through [the stationName of the location].  To your shock, a human figure closely follows the Capsule, suspended in the Magfield of the Transit Web!  It is wearing mirrorshades and what appear to be glowing bracelets and anklets.  Before you can make out anything else, the Capsule has vanished into the darkness, leading its strange follower away.  You're not sure you really saw that."
 
@@ -2158,6 +2182,9 @@ Understand "dog" as the large dog when the location is South Primrose Lane.
 Check touching the large dog:
 	say "Uh…you really don't want to try that." instead.
 	
+Check pushing the large dog:
+	say "Uh…you really don't want to try that." instead.
+	
 Understand "kiss [something]" as touching.
 
 Instead of taking the dog, try touching the dog instead.
@@ -2202,7 +2229,7 @@ The Drug Market is a room.  The Drug Market is blind. The description of Drug Ma
 
 Index map with The Drug Market mapped south of South Primrose Lane.
 
-The denizens is in the Drug Market.  The denizens is scenery.  The description of the denizens is "This small group of locals is clustered around the front entryway.  They're quite intimidating, and you don't want to draw they attention to you.  At all."
+The denizens is in the Drug Market.  The denizens is scenery.  The description of the denizens is "This small group of locals is clustered around the front entryway.  They're quite intimidating despite their somewhat glassy fixed stares, and you don't want to draw they attention to you.  At all."
 
 Understand "the people" as the denizens when the location is Drug Market.
 Understand "locals" as the denizens when the location is Drug Market.
@@ -2329,7 +2356,7 @@ Instead of switching on the ATM:
 
 The NanoMart is east of Green Commercial Plaza North and northeast of Green Commercial Plaza Center.  The description is "This brighly-lit shop is an altar to the notion of instant gratification.  Everything from cheap, hot coffee to ice cream and frozen lunches is available, provided you don't mind your purchases being relentlessly catalogued by the NanoMart Corporation.  You stopped shopping here after they told you you couldn't buy a coffee without using biometric authentication."
 
-The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  The Proletariat Bar is blind. The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.[if the jukebox is switched on][paragraph break][one of]A low tune can barely be made out over the ambient noise.[or]Thin music can be heard.[or]You barely recognize the Muzak as something that was once punk.[purely at random]"
+The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  [The Proletariat Bar is blind.] The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.[if the jukebox is switched on][paragraph break][one of]A low tune can barely be made out over the ambient noise.[or]Thin music can be heard.[or]You barely recognize the Muzak as something that was once punk.[purely at random]"
 
 The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
 There is a trash can in the Proletariat restroom.
@@ -2345,7 +2372,7 @@ Understand "Zuzu's Eyes" as Zuzu's eye when the location is Green Commercial Bis
 Understand "the holoportrait" as the portrait.
 Understand "holoportrait" as the portrait.
 
-The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The Bistro Paris Restroom is blind. The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
+The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
 The Bistro Paris mirror is here.  The Bistro Paris mirror is a mirror.  The description is "This mirror is large and very clean, although near the bottom right a small permanent marker graffito catches your eye."
 The Bistro Paris sink is in the Bistro Paris Restroom. The Bistro Paris sink is a supporter.  The Bistro Paris sink is scenery.  The description of the Bistro Paris sink is "Totally boring sink."
 The Bistro Paris stall is in the Bistro Paris Restroom.  The Bistro Paris stall is scenery.  The description of the Bistro Paris stall is "Clean and relatively upscale, you still don't want to use it."
@@ -2627,7 +2654,7 @@ The Atrium Midair Middle is a room with printed name "The Atrium (Midair)".  The
 
 The Atrium Midair Bottom is a room with printed name "The Atrium (Midair)".  The Atrium Midair Bottom is down from The Atrium Midair Middle.  The Atrium Midair Bottom is unmapped. The Atrium Midair Bottom is blind. The description is "You are nearly to the bottom.  The crowd below you has seen you, and a few people are pointing up."
 
-The Main Lobby is below the Atrium Midair Bottom.  The Main Lobby is above the Lift Lobby. The description is "This is the floor level of the main lobby, at the bottom of the tower atrium."
+The Main Lobby is below the Atrium Midair Bottom.  The Main Lobby is above the Lift Lobby. The Main Lobby is blind. The description is "This is the floor level of the main lobby, at the bottom of the tower atrium."
 
 The Atrium Airspace is a region.  The Atrium Midair Top is in the Atrium Airspace.  The Atrium Midair Middle is in the Atrium Airspace.  The Atrium Midair Bottom is in the Atrium Airspace.
 
