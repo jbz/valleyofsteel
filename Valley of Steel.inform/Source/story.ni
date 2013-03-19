@@ -636,20 +636,24 @@ Instead of unlocking the car key with the knife:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  Although a high-resolution hologram will fill most standard Memory chips, it nevertheless has a slot for one[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera.[end if][if the camera slot contains a memory chip]  There is a memory chip in the camera slot.[end if]"
+
+The camera slot is part of the ID camera.  The camera slot is a container.  The camera slot is unopenable and open.  The camera slot has carrying capacity 1. The camera slot is scenery.  The description is "A small slot which looks like it takes a standard memory chip."
+Check inserting into the camera slot:
+	unless the noun is a memory chip, say "That won't fit." instead.
+
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
-
 Understand "the chain" as the camera chain.
-
 Check cutting the camera chain with the tag remover:
 	say "Looking around to check for watchers, you snip through the ID chain with the tag remover!";
 	now the ID camera is portable;
 	rule succeeds.
 
-
 Instead of cutting the camera chain:
 	say "What do you want to cut [the noun] with?" instead.
 
+Instead of inserting something into the ID camera:
+	try inserting the noun into the camera slot instead.
 		
 Check taking the ID camera:
 	if the ID camera is fixed in place:
@@ -935,24 +939,38 @@ Instead of switching on the tissue generator:
 [lens crafter]
 The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
 The Lens Menu is part of the Lens Crafter.  The Lens Menu is scenery.  The description is "The menu screen, locked,  displays a password prompt. You don't have the password."
+The crafter slot is a container.  The crafter slot is part of the Lens Crafter.  The crafter slot has a carrying capacity 1.  The crafter slot is unopenable and open.  The crafter slot is scenery.  The description of the crafter slot is "A small slot shaped to accept a standard Memory chip."
+Check inserting into the crafter slot:
+	unless the noun is a memory chip, say "That won't fit." instead.
+Instead of inserting a memory chip into the lens crafter:
+	try inserting the noun into the crafter slot instead.
 The delivery slot is a container.  The delivery slot is part of the Lens Crafter.  The delivery slot is open.  The delivery slot is not openable.  The description of the delivery slot is "A slot where the lens crafter delivers its product.  It is shaped to accept a standard lens case."
-
 Check inserting into the delivery slot:
 	unless the noun is the lens case, say "That won't fit." instead;
-	unless the noun is open, say "The lens case must be open to fit in the delivery slot."
+	unless the noun is open, say "The lens case must be open to fit in the delivery slot." instead.
+
+
+
+Before switching on the lens crafter:
+	if the lens crafter is fried:
+		say "The screen flashes red.  A message reads 'INSUFFICIENT STOCK.'" instead;
+	unless the lens case is in the delivery slot:
+		say "The lens crafter machine's screen flashes red.  A message reads 'NO DELIVERY CONTAINER AVAILABLE.'" instead;
+	unless the crafter slot contains a memory chip:
+		say "The lens crafter machine's screen flashes red.  A message reads 'NO SOURCE DATA AVAILABLE'." instead;
+	repeat with iris running through the list of objects inside the crafter slot:
+		unless the Contents of iris matches the text "Zuzu's eye":
+			say "The lens crafter machine's screen flashes red.  A message reads 'SOURCE DATA NOT RECOGNIZABLE.'" instead;
+	continue the action.
+
 
 Instead of switching on the lens crafter:
-	if the lens crafter is fried, say "The screen flashes red.  A message reads 'INSUFFICIENT STOCK.'" instead;
-	unless the lens case is in the delivery slot, say "The lens crafter machine's screen flashes red.  A message reads 'NO DELIVERY CONTAINER AVAILABLE." instead;
-	unless the location of the ID camera is Accessorize, say "The lens crafter machine's screen flashes red.  A message reads 'NO SOURCE DATA AVAILABLE.'" instead;
-	unless the Contents of the ID camera matches the text "Zuzu's eye", say "The ID camera's status light flashes. The lens crafter machine's screen flashes red.  A message reads 'DATA SOURCE FOUND. SOURCE DATA UNUSABLE.'" instead;
-	move the contact lens to the lens case;
-	now the lens case is closed;
-	now the lens crafter is fried;
-	say "The lens crafter machine's screen flashes green.  A message reads 'SOURCE DATA ACCEPTED - COSTUME LENS SYNTHESIZED.'  The machine hisses slightly, and a sleeve descends around the lens case.  When the sleeve retracts, the lens case is closed." instead.
+	carry out the lensing activity;
+	rule succeeds.
+
 
 [jukebox]
-The Jukebox is in The Proletariat Bar.  The Jukebox is a device.  The Jukebox is scenery.  The description of the Jukebox is "A retro-themed music player with imitation vinyl records visible within its transparent cabinet, this jukebox actually operates via a network connection.   It doesn't require money, but then again the users can't really select music on it, either, so fair is fair.[if the jukebox is switched on] It is playing a subdued post-punk Musak adaptation of some anti-government tune."
+The Jukebox is in The Proletariat Bar.  The Jukebox is a device.  The Jukebox is scenery.  The description of the Jukebox is "A retro-themed music player with imitation vinyl records visible within its transparent cabinet, this jukebox actually operates via a network connection.   It doesn't require money, but then again the users can't really select music on it, either, so fair is fair.[if the jukebox is switched on] It is playing a subdued Musak adaptation of some post-punk anti-government tune."
 
 
 
@@ -1381,25 +1399,39 @@ Understand "take picture of [something] with [something preferably held]" as pho
 Understand "take a picture of [something] with [something preferably held]" as photographing.
 Understand "snap [something] with [something preferably held]" as photographing.
 
-Photographing is an action applying to two visible things.
-
+Photographing is an action applying to two visible things. 
 
 Check photographing:
 	if the second noun is the ID camera:
-		if the noun is a person, say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
-		if the noun is part of a person, say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead;
+		if the noun is a person:
+			say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
+			rule fails;
+		if the noun is part of a person:
+			say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead;
+			rule fails;
+		unless the camera slot contains a memory chip:
+			unless the location is Booking, say "The camera bleeps and displays a red icon in the shape of a memory chip." instead;
+			rule fails;
 	otherwise if the second noun is a disposable camera:
-		if the noun is disassembled, say "The camera is pried open and does not seem to function." instead;
-		continue the action;
+		if the noun is disassembled:
+			say "The camera is pried open and does not seem to function." instead;
+			rule fails;
+		otherwise:
+			continue the action;
 	otherwise:
 		say "What do you want to photograph [the noun] with?" instead.
 		
 Carry out photographing:
-	now the Contents of the second noun is the printed name of the noun;
-	if the second noun is the ID camera, now the second noun is programmed.
+	if the second noun is the ID camera:
+		repeat with film running through the list of objects inside the camera slot:
+			now the Contents of the film is the printed name of the noun;
+			now the film is programmed;
+	otherwise if the second noun is a disposable camera:
+		now the Contents of the second noun is the printed name of the noun.
+		
 
 Report photographing:
-	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The disc icon flashes green, indicating that the camera's tiny onboard storage is full.".
+	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The Memory icon flashes green, indicating that the camera's tiny onboard storage is full.".
 
 
 
@@ -1536,6 +1568,16 @@ Rule for synthesizing:
 		now the cryopack is operating;
 		say "With a final hiss, the tissue generator lights an indicator reading 'COMPLETE.'  You notice the cryopack is now closed and operating."
 
+
+
+[Lensing activity]
+Lensing is an activity.
+
+Rule for lensing:
+	move the contact lens to the lens case;
+	now the lens case is closed;
+	now the lens crafter is fried;
+	say "The lens crafter machine's screen flashes green.  A message reads 'SOURCE DATA ACCEPTED - COSTUME LENS SYNTHESIZED.'  The machine hisses slightly, and a sleeve descends around the lens case.  When the sleeve retracts, the lens case is closed." 
 
 
 Section 8 - Scenes
