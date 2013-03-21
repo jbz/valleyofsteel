@@ -173,13 +173,16 @@ group-combine-complete is a truth state that varies.
 
 Section 3 - 'Every Turn' Rules, Timed Events and Global Rules
 
-[Global rule overrides]
+[Global rule/action overrides]
 
 The can't unlock without a lock rule is not listed in any rulebook.
 The can't unlock what's already unlocked rule is not listed in any rulebook.
 The can't unlock without the correct key rule is not listed in any rulebook.
 The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
+[Understand the command "unlock" as something new.]
+
+
 
 
 The list notable events rule is listed last in the carry out looking rulebook.
@@ -243,6 +246,7 @@ The explosive residue rule is listed after the room description body text rule i
 This is the explosive residue rule:
 	if the location is breached:
 		say "There are the unmistakable signs of a blast.  Scarring and burn marks are everywhere, and a choking smell of explosives residues hangs in the air.[line break]".
+
 
 
 
@@ -323,7 +327,7 @@ At the time when an explosion occurs:
 
 At the time when the tear gas dissipates:
 	if the location is gassed:
-		say "The gas clears and a crowd of police rushes into the area, grabbing everyone they can see!";
+		say "The gas clears and a crowd of police rushes into the area, grabbing everyone they can catch!";
 		end the story saying "You have been arrested!";
 	otherwise:
 		repeat with gasSpot running through gassed rooms:
@@ -372,12 +376,20 @@ Section 5 - Portable Objects (non-Scenery)
 
 [kinds]
 
+[rooms]
+A sink is a kind of supporter.  It is scenery.  The description is "Totally boring sink."
+A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
+Instead of entering a stall, say "You really don't want to use it." instead.
+
+A restroom is a kind of room.  The description of a restroom is "Totally boring bathroom containing a sink, a mirror and a stall."  A sink is in every restroom.  A stall is in every restroom.
+
 [parts of people]
 A palm is a kind of thing. A palm is part of every person.  The description of a palm is "[if the player is not wearing the skin sample]Standard garden-variety palm.[otherwise]Your palm is hidden beneath a slightly wrinkled oblong patch of skin, lighter than your own, which has been stuck onto your hand." [BFR - FIX THIS (description based on whose palm]
 
 A eye is a kind of thing.  A eye is part of every person.  The description of a eye is "Standard garden-variety eye."
 
 [props]
+
 An explosive is a kind of thing. It is portable. All explosives have an armedState. An explosive is usually disarmed. An explosive has a number called a timer. 
 The description is "A length of metal with a button on the side. It has a 4-second fuse. [if disarmed]The bomb lies inert in your hand.[else if armed]The bomb beeps ominously.[else if inert]The bomb is blackened and useless from the force of the explosion.[end if]".
 Before printing the name of an explosive: say "[armedState] ".
@@ -514,6 +526,11 @@ Understand "tool" as the multitool.
 
 The watch is wearable.  The watch is small. The watch is on the bedside table. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
 
+After examining the watch for the third time:
+	if the watch is working:
+		unless the watch is worn by the player:
+			say "The watch might be more useful if worn."
+
 Understand "put on" as wearing.
 
 Carry out wearing the watch:
@@ -535,8 +552,9 @@ Check cutting the phone:
 	say "It's quite hard and slick.  You'd just hurt yourself." instead.
 	
 Check switching on the phone:
-	say "It's stone dead." instead.
+	say "Your phone is stone dead." instead.
 	
+
 
 [pager]
 The pager is a container.  The pager is closed.  The pager is small. The pager is openable.  The description of the pager is "It looks like a pretty old-school radio pager.  It also looks like it isn't working; the display is fogged over, there are no lights on it, and one of the two buttons on the front is missing. There is a small sliding panel on the back[if closed].[otherwise], which is open."
@@ -636,24 +654,20 @@ Instead of unlocking the car key with the knife:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  Although a high-resolution hologram will fill most standard Memory chips, it nevertheless has a slot for one[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera.[end if][if the camera slot contains a memory chip]  There is a memory chip in the camera slot.[end if]"
-
-The camera slot is part of the ID camera.  The camera slot is a container.  The camera slot is unopenable and open.  The camera slot has carrying capacity 1. The camera slot is scenery.  The description is "A small slot which looks like it takes a standard memory chip."
-Check inserting into the camera slot:
-	unless the noun is a memory chip, say "That won't fit." instead.
-
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
+
 Understand "the chain" as the camera chain.
+
 Check cutting the camera chain with the tag remover:
 	say "Looking around to check for watchers, you snip through the ID chain with the tag remover!";
 	now the ID camera is portable;
 	rule succeeds.
 
+
 Instead of cutting the camera chain:
 	say "What do you want to cut [the noun] with?" instead.
 
-Instead of inserting something into the ID camera:
-	try inserting the noun into the camera slot instead.
 		
 Check taking the ID camera:
 	if the ID camera is fixed in place:
@@ -685,7 +699,7 @@ The solder is a thing. The solder is on the workbench.  The solder is small. The
 [laptop]
 The laptop is on the workbench.  The laptop is medium.   The description is "Your laptop is a fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
 The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes.  Apparently, you managed to locate what you've been looking for for months- a file which claims to be a binary payload which, if broadcast into a person's Mitsui-Klein Encapsulation, can wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners!"
-The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data [if empty]but no storage is available.[otherwise] to the Memory chip in the slot."
+The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
 
 Understand "download slot" as the chipslot.
 Understand "slot" as the chipslot when the location is the location of the laptop.
@@ -807,6 +821,8 @@ The mailbox is a container.  The mailbox is fixed in place.  The mailbox is open
 Instead of opening the mailbox:
 	say "You touch your finger to the lockplate, and the mailbox swings open[unless the mailbox is empty], revealing [a list of things inside the mailbox].";
 	now the noun is open.
+Instead of touching the mailbox:
+	try opening the mailbox instead.
 
 
 The refrigerator is a container. The refrigerator is in the Kitchen.  The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit."
@@ -830,6 +846,7 @@ Understand "label" as the side panel when the location is the kitchen.
 Understand "magnetron" as the side panel.
 Understand "circuit" as the side panel when the location is the kitchen.
 Understand "circuit board" as the side panel when the location is the kitchen.
+Understand "board" as the side panel when the location is the kitchen.
 Understand "door" as the cook box when the location is the kitchen.
 
 Check inserting something (called the subject) into the microwave oven:
@@ -939,38 +956,24 @@ Instead of switching on the tissue generator:
 [lens crafter]
 The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
 The Lens Menu is part of the Lens Crafter.  The Lens Menu is scenery.  The description is "The menu screen, locked,  displays a password prompt. You don't have the password."
-The crafter slot is a container.  The crafter slot is part of the Lens Crafter.  The crafter slot has a carrying capacity 1.  The crafter slot is unopenable and open.  The crafter slot is scenery.  The description of the crafter slot is "A small slot shaped to accept a standard Memory chip."
-Check inserting into the crafter slot:
-	unless the noun is a memory chip, say "That won't fit." instead.
-Instead of inserting a memory chip into the lens crafter:
-	try inserting the noun into the crafter slot instead.
 The delivery slot is a container.  The delivery slot is part of the Lens Crafter.  The delivery slot is open.  The delivery slot is not openable.  The description of the delivery slot is "A slot where the lens crafter delivers its product.  It is shaped to accept a standard lens case."
+
 Check inserting into the delivery slot:
 	unless the noun is the lens case, say "That won't fit." instead;
-	unless the noun is open, say "The lens case must be open to fit in the delivery slot." instead.
-
-
-
-Before switching on the lens crafter:
-	if the lens crafter is fried:
-		say "The screen flashes red.  A message reads 'INSUFFICIENT STOCK.'" instead;
-	unless the lens case is in the delivery slot:
-		say "The lens crafter machine's screen flashes red.  A message reads 'NO DELIVERY CONTAINER AVAILABLE.'" instead;
-	unless the crafter slot contains a memory chip:
-		say "The lens crafter machine's screen flashes red.  A message reads 'NO SOURCE DATA AVAILABLE'." instead;
-	repeat with iris running through the list of objects inside the crafter slot:
-		unless the Contents of iris matches the text "Zuzu's eye":
-			say "The lens crafter machine's screen flashes red.  A message reads 'SOURCE DATA NOT RECOGNIZABLE.'" instead;
-	continue the action.
-
+	unless the noun is open, say "The lens case must be open to fit in the delivery slot."
 
 Instead of switching on the lens crafter:
-	carry out the lensing activity;
-	rule succeeds.
-
+	if the lens crafter is fried, say "The screen flashes red.  A message reads 'INSUFFICIENT STOCK.'" instead;
+	unless the lens case is in the delivery slot, say "The lens crafter machine's screen flashes red.  A message reads 'NO DELIVERY CONTAINER AVAILABLE." instead;
+	unless the location of the ID camera is Accessorize, say "The lens crafter machine's screen flashes red.  A message reads 'NO SOURCE DATA AVAILABLE.'" instead;
+	unless the Contents of the ID camera matches the text "Zuzu's eye", say "The ID camera's status light flashes. The lens crafter machine's screen flashes red.  A message reads 'DATA SOURCE FOUND. SOURCE DATA UNUSABLE.'" instead;
+	move the contact lens to the lens case;
+	now the lens case is closed;
+	now the lens crafter is fried;
+	say "The lens crafter machine's screen flashes green.  A message reads 'SOURCE DATA ACCEPTED - COSTUME LENS SYNTHESIZED.'  The machine hisses slightly, and a sleeve descends around the lens case.  When the sleeve retracts, the lens case is closed." instead.
 
 [jukebox]
-The Jukebox is in The Proletariat Bar.  The Jukebox is a device.  The Jukebox is scenery.  The description of the Jukebox is "A retro-themed music player with imitation vinyl records visible within its transparent cabinet, this jukebox actually operates via a network connection.   It doesn't require money, but then again the users can't really select music on it, either, so fair is fair.[if the jukebox is switched on] It is playing a subdued Musak adaptation of some post-punk anti-government tune."
+The Jukebox is in The Proletariat Bar.  The Jukebox is a device.  The Jukebox is scenery.  The description of the Jukebox is "A retro-themed music player with imitation vinyl records visible within its transparent cabinet, this jukebox actually operates via a network connection.   It doesn't require money, but then again the users can't really select music on it, either, so fair is fair.[if the jukebox is switched on] It is playing a subdued post-punk Musak adaptation of some anti-government tune."
 
 
 
@@ -1010,8 +1013,9 @@ Check entering the ambulance:
 	otherwise:
 		say "You really don't want to be caught in there if someone official comes along, and think better of it." instead.
 
-Section 7 - Actions/Activities
 
+
+Section 7 - Actions/Activities
 
 [credits]
 Understand "credits" as getting credits.
@@ -1399,39 +1403,25 @@ Understand "take picture of [something] with [something preferably held]" as pho
 Understand "take a picture of [something] with [something preferably held]" as photographing.
 Understand "snap [something] with [something preferably held]" as photographing.
 
-Photographing is an action applying to two visible things. 
+Photographing is an action applying to two visible things.
+
 
 Check photographing:
 	if the second noun is the ID camera:
-		if the noun is a person:
-			say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
-			rule fails;
-		if the noun is part of a person:
-			say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead;
-			rule fails;
-		unless the camera slot contains a memory chip:
-			unless the location is Booking, say "The camera bleeps and displays a red icon in the shape of a memory chip." instead;
-			rule fails;
+		if the noun is a person, say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
+		if the noun is part of a person, say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead;
 	otherwise if the second noun is a disposable camera:
-		if the noun is disassembled:
-			say "The camera is pried open and does not seem to function." instead;
-			rule fails;
-		otherwise:
-			continue the action;
+		if the noun is disassembled, say "The camera is pried open and does not seem to function." instead;
+		continue the action;
 	otherwise:
 		say "What do you want to photograph [the noun] with?" instead.
 		
 Carry out photographing:
-	if the second noun is the ID camera:
-		repeat with film running through the list of objects inside the camera slot:
-			now the Contents of the film is the printed name of the noun;
-			now the film is programmed;
-	otherwise if the second noun is a disposable camera:
-		now the Contents of the second noun is the printed name of the noun.
-		
+	now the Contents of the second noun is the printed name of the noun;
+	if the second noun is the ID camera, now the second noun is programmed.
 
 Report photographing:
-	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The Memory icon flashes green, indicating that the camera's tiny onboard storage is full.".
+	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The disc icon flashes green, indicating that the camera's tiny onboard storage is full.".
 
 
 
@@ -1570,16 +1560,6 @@ Rule for synthesizing:
 
 
 
-[Lensing activity]
-Lensing is an activity.
-
-Rule for lensing:
-	move the contact lens to the lens case;
-	now the lens case is closed;
-	now the lens crafter is fried;
-	say "The lens crafter machine's screen flashes green.  A message reads 'SOURCE DATA ACCEPTED - COSTUME LENS SYNTHESIZED.'  The machine hisses slightly, and a sleeve descends around the lens case.  When the sleeve retracts, the lens case is closed." 
-
-
 Section 8 - Scenes
 
 
@@ -1587,11 +1567,11 @@ Section 8 - Scenes
 Bank Run is a recurring scene.  Bank Run begins when Roberto Velez is in The Proletariat Bar and Roberto Velez is runningErrand.
 
 Every turn during Bank Run:
-	if the location of Roberto Velez is not the Bank:
-		let the way be the best route from the location of Roberto Velez to the Bank, using doors;
+	if the location of Roberto Velez is not Metro Savings:
+		let the way be the best route from the location of Roberto Velez to Metro Savings, using doors;
 		try Roberto Velez going the way.
 
-Bank Run ends when Roberto Velez is in the Bank and the location is the Bank.
+Bank Run ends when Roberto Velez is in Metro Savings and the location is Metro Savings.
 
 
 [Getting Cash]
@@ -1607,7 +1587,7 @@ When Getting Cash begins:
 		say "He shakes his head.  'I am sorry, but the machine is broken.'  You reassure him that you don't need paying for the jacket, at which he breaks out into a huge smile, gives you a hug, shakes your hand and quickly changes into the new blue jacket, dropping his torn jacket.  He walks out of the ATM, proudly fingering his new wardrobe.";
 		now the nametag is part of the blue jacket;
 		now Roberto Velez is wearing the blue jacket;
-		now the torn jacket is in The Bank;
+		now the torn jacket is in Metro Savings;
 		now the tissueDonor of the tissue sampler is "Roberto";
 		now the printed name of the tissue sampler is "tissue sampler (Roberto)";
 		now Roberto Velez is inPlay;
@@ -1618,7 +1598,7 @@ Getting Cash ends unsuccessfully when Roberto Velez is inHolding.
 
 [Roberto Waiting]
 Roberto Waiting is a recurring scene.  Roberto Waiting begins when Getting Cash ends unsuccessfully.
-Roberto Waiting ends in retry when the ATM is hacked and the location is The Bank and Roberto Velez is in The Bank.
+Roberto Waiting ends in retry when the ATM is hacked and the location is Metro Savings and Roberto Velez is in Metro Savings.
 Roberto Waiting ends in donedone at the time when Roberto Drinking begins.
 
 	
@@ -2010,7 +1990,7 @@ Section 0 - Setup
 
 Transit System is a list of objects that varies.
 
-Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  Station Corridor is in Transit.  Green Commercial Station is in Transit.  Green Residential Station is in Transit.  
+Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  Station Corridor is in Transit.  Green Commercial Station is in Transit.  Green Residential Station is in Transit.  Green Service Station is in Transit.
 
 
 The transit web is a thing.  The transit web is a backdrop.  It is in Green Residential Platform. It is in Reserve Bank Station.  It is in Green Commercial Platform.  It is in Green Service Platform. The transit web is large.  The description of the transit web is "Not really a web so much as a series of maglev rings linked by guides, the Transit Web is separated from the platform by a barrier fence with automatic doors, which line up with Transit Capsule doors when a Capsule is in the station.  The Web rings glow faintly with the Magfield."
@@ -2184,6 +2164,25 @@ Chapter 2 - Green Residential
 
 Section 3 - Map
 
+The spacescraper is a backdrop.  It is not scenery.  The initial appearance is "The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline."  The description of the spacescraper is "Visible in the distance above the surrounding buildings, the Reserve Bank Spacescraper is home to more than just the regional Reserve Bank.  It is a two-hundred-level building containing all manner of businesses and government offices, as well as a hotel and several floors of extremely high-priced residential apartments.  Centrally located Downtown, it boasts its own Transit station and a food court in its lower levels.  Conventions and events are often held in its soaring Atrium, an open space within the building core which rises over fifty floors entirely indoors."
+
+Instead of taking the spacescraper, say "That would be a very neat trick. It's miles away in any case."
+Instead of touching the spacescraper, say "That would be a very neat trick.  It's miles away in any case."
+Instead of attacking the spacescraper, say "It's a bit big for you.  It's miles away in any case."
+Instead of climbing the spacescraper, say "It's miles away."
+Instead of listening to the spacescraper, say "Any sound it is making is lost in the miles between you and it."
+Instead of cutting the spacescraper, say "It's a bit big for you.  It's miles away in any case."
+
+Understand "Reserve Bank" as the spacescraper.
+Understand "Reserve" as the spacescraper.
+Understand "Bank" as the spacescraper.
+Understand "Skyscraper" as the spacescraper.
+
+GreenResidential is a region.  Home Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.
+
+ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. 
+
+The Spacescraper is in ResidentialOutside.
 
 Green Residential Platform is a transitStation.  The stationName of Green Residential Platform is "Green Residential".  The stationNumber of Green Residential Platform is 3. The description of Green Residential Platform is "Green Residential's platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west[if the location is the station of the Capsule], where a Transit capsule hovers impatiently.  The capsule doors are open.[otherwise], now empty.[end if]".
 Instead of going west in Green Residential Platform, try entering the Transit Web instead.
@@ -2237,6 +2236,7 @@ Instead of going west in South Primrose Lane, say "As you approach the lawn of t
 The fence is in South Primrose Lane.  The fence is scenery.  The fence can be either cut open or uncut.  The fence is uncut.  The description of the fence is "[if fence is uncut]A combination of cyclone fence and plastic sheeting, it blocks your view.  You can hear rustling from behind it, as of people moving around furtively.[otherwise] A combination of cyclone fence and plastic sheeting, there is a large hole cut in the middle."
 
 Understand "behind fence" as the fence when the location is South Primrose Lane.
+Understand "tarp" as the fence when the location is South Primrose Lane.
 
 Before going south in South Primrose Lane:
 	unless the fence is cut open:
@@ -2303,6 +2303,9 @@ Instead of going up in Home Lobby, say "You can't open the security gate." inste
 
 The security gate is in the Home Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
 
+Instead of unlocking the security gate with something:
+	say "That won't open the gate." instead.
+
 Check taking the security gate:
 	say "You rattle the bars for a few seconds before giving up." instead.
 	
@@ -2317,7 +2320,7 @@ The Entry is south of the Front door.  The Entry is blind.  The description is "
 There is a side table in the Entry.  The car key is on the side table.  The mail is on the side table.  The mail is scenery.  The description of the mail is "Totally boring."
 Instead of taking the mail, say "You're just not interested in bills and advertisements." instead.
 
-The Home Office is west of The Entry.  The home office is blind.  The description is "Your home office, a room which in other homes might be a living room, is not very tidy.  Books, random equipment and empty soda cans cover most available surfaces except for your workbench[if the workbench supports the laptop] and your laptop.[otherwise]."
+The Home Office is west of The Entry.  The home office is blind.  The description is "Your home office, a room which in other homes might be a living room, is not very tidy.  Random detritus covers most available surfaces except for your workbench[if the workbench supports the laptop] and your laptop.[otherwise]."
 
 The workbench is a supporter. The workbench is in the Home Office.  The description is "You built your workbench from found materials a few years ago.  It's actually a very nice piece of furniture; just the right height, easy to get your legs under. "
 
@@ -2325,18 +2328,18 @@ Understand "bench" as the workbench.
 
 The Hall is south of the Entry.  The Hall is blind. The description is "The central hallway of your modest home.  It's relatively clean and neat, as there is no furniture in it."
 
-The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "Your home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if you had any visitors."
+The Bathroom is a restroom.  The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "Your home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if you had any visitors."
 
 The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "Your bedroom is rather boring.  It contains your bed - currently unmade - and the usual assortment of bedroom furnishings including a bedside table, next to the bed."
 
-The bedside table is a supporter.  The bedside table is in the Bedroom.  The bedside table is scenery. The description is "A cheap but sturdy bedside table, which has so far withstood your daily blind smashings at the alarm in your watch.  There is a table lamp atop it."
+The bedside table is a supporter.  The bedside table is in the Bedroom.  The bedside table is scenery. The description is "A cheap but sturdy bedside table, which has so far withstood your daily blind flailings after your watch.  There is a table lamp atop it."
 
 The bed is a supporter.  The bed is in the Bedroom.  The bed is scenery.  The description is "A basic, functional flat-pack bed.  A slight imprint in the shape of your body can be seen in the center."
 
 Check entering the bed:
 	say "You're not sleepy, and the bed isn't comfortable otherwise." instead.
 
-The table lamp is a device on the bedside table.  The table lamp is scenery.  The table lamp is fixed in place. The description is "A generic compact flourescent lamp, it has rested next to your bed for years.  You finally screwed it to the table after knocking it over for the fifth time whilst flailing for your watch alarm.[if table lamp is switched on]  It is presently giving off a wan bluish light."
+The table lamp is a device on the bedside table.  The table lamp is scenery.  The table lamp is fixed in place. The description is "A generic compact fluorescent lamp, it has rested next to your bed for years.  You finally screwed it to the table after knocking it over for the fifth time whilst flailing for your watch.[if table lamp is switched on]  It is presently giving off a wan bluish light."
 
 
 The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "Your kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, reflecting the fact that you don't cook for yourself much."
@@ -2345,6 +2348,13 @@ The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is bl
 Chapter 3 - Green Commercial
 
 Section 3 - Map
+
+GreenCommercial is a region.  Metro Savings is in GreenCommercial.  NanoMart is in GreenCommercial.  Green Commercial Bistro Paris is in GreenCommercial.  Bistro Paris Restroom is in GreenCommercial.  The Proletariat Bar is in GreenCommercial.  Proletariat Restroom is in GreenCommercial.  Garb-Oh is in GreenCommercial.  Accessorize is in GreenCommercial.
+
+GreenCommOutside is a region.  GreenCommOutside is in GreenCommercial.  Green Commercial Plaza North is in GreenCommOutside.  Green Commercial Plaza Center is in GreenCommOutside.  Green Commercial Plaza South is in GreenCommOutside.
+
+The spacescraper is in GreenCommOutside.
+
 
 Green Commercial Platform is a transitStation.  The stationName of Green Commercial Platform is "Green Commercial One".  The stationNumber of Green Commercial Platform is 2. The description of Green Commercial Platform is "Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty.[end if]". 
 Instead of going north in Green Commercial Platform, try entering the Transit Web instead.
@@ -2374,9 +2384,9 @@ Understand "tree" as the trees.
 
 Instead of going south in Green Commercial Plaza South, say "You can't find a path between the shrubs."
 
-A room called The Bank is west of Green Commercial Plaza North and northwest of Green Commercial Plaza Center.  The description of The Bank is "This is a completely nondescript bank storefront which exists solely to house an ATM.  It's so nondescript, in fact, you can't even really tell which bank owns it, probably to ensure that they can charge you access fees no matter what.  To the east is Green Commercial Plaza."
+Metro Savings is west of Green Commercial Plaza North and northwest of Green Commercial Plaza Center. The description of Metro Savings is "This is a completely nondescript bank storefront which exists solely to house an ATM.  It's so nondescript, in fact, you can't even really tell which bank owns it, probably to ensure that they can charge you access fees no matter what.  To the east is Green Commercial Plaza."
 
-The ATM is a device.  The ATM is in The Bank.  The ATM is fixed in place.  The ATM can be hacked or unhacked.  The ATM is unhacked. The description is "This is a standard ATM, using palm prints and Mit-Klein authentication to permit customers to perform banking transactions. A palm reader juts out from the front of the console."
+The ATM is a device.  The ATM is in Metro Savings.  The ATM is fixed in place.  The ATM can be hacked or unhacked.  The ATM is unhacked. The description is "This is a standard ATM, using palm prints and Mit-Klein authentication to permit customers to perform banking transactions. A palm reader juts out from the front of the console."
 The palm reader is a part of the ATM. The palm reader is a container.  The palm reader is open. The palm reader is scenery.  The description is "This is a standard palm reader, which is used to verify the identity of the ATM customer.  A flat plate, slightly inset, it is placed at a convenient angle to allow the palm to lie against it.  This one, however, has a broad crack in it across which someone has written 'KAPUT' in black marker."
 Instead of inserting into the palm reader:
 	if the noun is the tissue sampler:
@@ -2392,7 +2402,7 @@ Instead of switching on the ATM:
 	if the actor is the player:
 		say "You start to reach out to use the ATM, but the machine is unable to contact your MitKlein Encapsulation.  It flashes a red light and shuts off." instead;
 	otherwise:
-		if the location is The Bank:
+		if the location is Metro Savings:
 			say "[the actor] presses a palm to the ATM's palm reader.   Presumably, they complete their transaction to their satisfaction, although you can't see from where you are." instead.
 
 
@@ -2400,7 +2410,7 @@ The NanoMart is east of Green Commercial Plaza North and northeast of Green Comm
 
 The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  [The Proletariat Bar is blind.] The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.[if the jukebox is switched on][paragraph break][one of]A low tune can barely be made out over the ambient noise.[or]Thin music can be heard.[or]You barely recognize the Muzak as something that was once punk.[purely at random]"
 
-The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
+The Proletariat restroom is a restroom.  The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
 There is a trash can in the Proletariat restroom.
 The Bar mirror is here.  The Bar mirror is a mirror.  The description is "This is a cheap but sturdy mirror, attached to the wall.  Its surface is nearly covered (except for a spot in the center, where you can see your own face) with scratches and permanent marker scrawls.  One graffito catches your eye near the bottom, but you'd have to look closely to make it out fully."
 
@@ -2414,12 +2424,8 @@ Understand "Zuzu's Eyes" as Zuzu's eye when the location is Green Commercial Bis
 Understand "the holoportrait" as the portrait.
 Understand "holoportrait" as the portrait.
 
-The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
+The Bistro Paris Restroom is a restroom.  The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
 The Bistro Paris mirror is here.  The Bistro Paris mirror is a mirror.  The description is "This mirror is large and very clean, although near the bottom right a small permanent marker graffito catches your eye."
-The Bistro Paris sink is in the Bistro Paris Restroom. The Bistro Paris sink is a supporter.  The Bistro Paris sink is scenery.  The description of the Bistro Paris sink is "Totally boring sink."
-The Bistro Paris stall is in the Bistro Paris Restroom.  The Bistro Paris stall is scenery.  The description of the Bistro Paris stall is "Clean and relatively upscale, you still don't want to use it."
-Instead of entering the Bistro Paris stall, say "You really don't want to use it." instead.
-
 
 The Accessorize is east of Green Commercial Plaza South and southeast of Green Commercial Plaza Center.  The description is "This well-lit store purveys all manner of cosmetic aids and fashion accessories.  Everything from wrist bangles to skin creams to custom cosmetic contacts can be purchased here."
 
@@ -2468,6 +2474,13 @@ Chapter 4 - Green Service
 
 Section 3 - Map
 
+GreenService is a region.  Booking is in GreenService.  Front Desk is in GreenService.  Hospital Lab is in GreenService.  Hospital Lounge is in GreenService.  Hospital Lobby is in GreenService. Hospital Elevators is in GreenService.  Hospital Restroom is in GreenService.  Triage is in GreenService.  Emergency Room is in GreenService.
+
+GreenServOutside is a region.  GreenServOutside is in GreenService.  Government Square South and Government Square North and Police Station Steps and Civil Center Steps and Hospital Entrance and Hospital Driveway are in GreenServOutside.
+
+The spacescraper is in GreenServOutside.
+
+
 Green Service Platform is a transitStation.  The stationName of Green Service Platform is "Green Service One".  The stationNumber of Green Service Platform is 3. The description of Green Service Platform is "Green Service One's platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south[if the location is the station of the Capsule], where a Transit capsule hovers impatiently in the web.  The capsule doors are open.[otherwise], now empty.[end if]".
 Instead of going south in Green Service Platform, try entering the Transit Web instead.
 
@@ -2511,12 +2524,9 @@ The Emergency Room is east of Triage and south of the Hospital Elevators.  The d
 
 Hospital Elevators is north of the Emergency Room and east of Hospital Lobby.  The description is "The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east."
 
-Hospital Restroom is east of Hospital Elevators.  Hospital Restroom is blind. The description is "A clean restroom that smells strongly of disinfectant and hand sanitizer.  There is a single sink with a small mirror over it and a single stall."
+Hospital Restroom is a restroom.  Hospital Restroom is east of Hospital Elevators.  Hospital Restroom is blind. The description is "A clean restroom that smells strongly of disinfectant and hand sanitizer.  There is a single sink with a small mirror over it and a single stall."
 There is a trash can in the Hospital Restroom.
 The hospital mirror is a mirror. The hospital mirror is in the Hospital Restroom. The description is "A small oval mirror set at an angle for those in wheelchairs, which forces you to hunch down slightly.  A blue permanent marker graffito is visible at the very bottom if you look carefully."
-The hospital sink is in the Hospital Restroom. The hospital sink is a supporter.  The hospital sink is scenery.  The description of the hospital sink is "Totally boring sink."
-The hospital stall is in the Hospital Restroom.  The hospital stall is scenery.  The description of the hospital stall is "Free of graffiti and relatively clean, you still don't want to use it."
-Instead of entering the hospital stall, say "You really don't want to use it." instead.
 
 Civil Center Steps is north of Government Square North.  The description is "This is the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
 Instead of going north in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
@@ -2646,7 +2656,7 @@ Vestibule Door lock is a part of Vestibule door. Vestibule Door lock can be inta
 
 Office Corridor is east of Vestibule Door.  The description of Office Corridor is "You are in the middle of a nondescript office corridor.  To the west is a security door to the service bouncelift.  To the north is a door reading 'RESTROOM'.  The corridor continues to the east."
 
-Office Restroom is north of Office Corridor.  The description of Office Restroom is "This is a restroom.  Since it is within corporate space, it is decorated a notch above most public restrooms.  You still wouldn't eat off the floor, though.  Also, unlike public restrooms, it seems to be under surveillance.  You're gratified to see that even this restroom doesn't seem to be safe despite that - a small graffito lurks on the left side of the mirror over the sinks."
+Office Restroom is a restroom.  Office Restroom is north of Office Corridor.  The description of Office Restroom is "This is a restroom.  Since it is within corporate space, it is decorated a notch above most public restrooms, with the walls of the stall still bright white.  You still wouldn't eat off the floor, though.  Also, unlike most public restrooms, it seems to be under surveillance.  You're gratified to see that even this restroom doesn't seem to be safe despite that - a small graffito lurks on the left side of the mirror over the sink."
 There is a trash can in the Office restroom.
 The Office mirror is a mirror.  The Office mirror is in the Office Restroom.  The description is "A wall-covering mirror bolted over the sinks.  Although it is free of fingerprints and grime, you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
 
