@@ -30,6 +30,8 @@ When play begins:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
 	boozing starts at 2:00 PM;
+	activate the Table of General Hints;
+	now the player is unbriefed;
 	say "Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream.";
 
 
@@ -144,6 +146,8 @@ An armedState is a kind of value. The armedStates are disarmed, armed, exploding
 A suspicionState is a kind of value.  The suspicionStates are clear, suspect, or fugitive.
 
 A person has a suspicionState.  A person is usually clear.
+
+A person can be briefed or unbriefed.
 
 the incriminatingAct is some text that varies.
 
@@ -487,6 +491,11 @@ Instead of examining the MitKlein, say "You can't see any such thing." instead.
 The backpack is a player's holdall. The backpack is wearable. The player is wearing the backpack. The backpack is a container.  It is open. The description is "A black rip-stop backpack which you normally use for toting tools and books."
 Understand "pack" as the backpack.
 
+The pamphlet is in the Mailbox.  The pamphlet is small.  "This is a small pamphlet of glossy paper."  The description of the pamphlet is "The pamphlet has your name and address printed on one face, and is from the Department of Homeland Security.  It seems that they believe you are due to have a child any day now (which would surprise you if this was not the fifth time they had decided you were due such a blessed event). [paragraph break]As such, the pamphlet is meant to inform you of your duty as a citizen to ensure your child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.[paragraph break][if the player is briefed]Given your recent hacking activities, it is likely that any such scanning of [italic type]your[roman type] MitKlein will turn you instantly into a fugitive.  Even disabling your MitKlein - which no-one has managed to do - would help you only temporarily, for the lack of a functioning unit would be just as damning - unless the Department of Homeland Security had more pressing things to worry about.[end if]"
+
+After examining the pamphlet:
+	activate the Table of MitKlein hints.
+
 The receive chip is a component.  The receive chip is in the pager.  The receive chip is tiny. The receive chip can be working or fried.  The receive chip is working.  The receive chip has some text called fryDescription.  The fryDescription of the receive chip is "There is a sizzling noise. The chip is now scorched and smoking slightly."  The receive chip is tiny.  The description of the receive chip is "This is a receive chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics that need to receive distant broadcasts, able to pull in signals from beyond a few meters.  There are leads on the chip for connecting data lines and a power source.[if fried] This chip is blackened and schorced; the magic smoke appears to have been released."
 
 The tear gas grenade is in the police flitter. The tear gas grenade is an explosive.  The tear gas grenade is small. The tear gas grenade has a timer 1.  The tear gas grenade can be working or fried.  The tear gas grenade is working.  The description of the tear gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'."
@@ -704,6 +713,9 @@ The chipslot is part of the laptop.  The chipslot is a container.  The chipslot 
 Understand "download slot" as the chipslot.
 Understand "slot" as the chipslot when the location is the location of the laptop.
 Understand "file" as the screen.
+
+After examining the screen for the first time:
+	now the player is briefed.
 
 Instead of inserting into the laptop:
 	try inserting the noun into the chipslot instead.
@@ -986,6 +998,7 @@ Understand "flitter" as the police flitter.
 
 Check opening the flitter:
 	if the flitter is locked:
+		activate the Table of Vehicle Hints;
 		say "As you reach for the door handle, the locklarm begins to strobe and an ominous beeping begins.  You decide not to risk it." instead;
 	otherwise:
 		now the police flitter is violated;
@@ -1002,6 +1015,7 @@ The ambulance is a vehicle. The ambulance is in Hospital Driveway.  "An ambulanc
 
 Check opening the ambulance:
 	if the ambulance is locked:
+		activate the Table of Vehicle Hints;
 		say "As you reach for the door handle, the locklarm begins to strobe and an ominous beeping begins.  You decide not to risk it." instead;
 	otherwise:
 		now the ambulance is violated;
@@ -1025,6 +1039,15 @@ Getting credits is an action out of world.
 
 Carry out getting credits:
 	say "'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those and many others, to be listed when released."
+
+
+[help]
+Understand "help" as getting help.
+
+Getting help is an action out of world.
+
+Carry out getting help:
+	say "Valley of Steel is an interactive fiction game.  If you're new to intfic, you might wish to read an introductory article or two on the subject, such as 'How to Play a Text Adventure' by Steven Granade on the Brass Lantern website at http://brasslantern.org/beginners/playta1.html.[line break]In general, try using simple one or two-word (or two-phrase, really) commands to interact with objects in the game.  Here are a few simple command shortcuts to get you started.[paragraph break][bold type]L[roman type] - Look. Looks around at the general area.[line break][bold type]X <something>[roman type] - eXamine <something>.  Describes a specific object in more detail.[line break][bold type]N/S/E/W[roman type] - Move North, South, East or West, if possible.  Interim directions also work, e.g. NE or SW.[line break][bold type]TAKE <something>[roman type][line break][bold type]WEAR <something>[roman type][line break][bold type]DROP <something>[roman type][line break][bold type]OPEN <something>[roman type][line break][bold type]PUT <something> IN <something>[roman type] - attempts to insert the first object into the second (e.g. 'PUT WALLET IN BAG'.)[line break][bold type]Z[roman type] - wait a turn.[line break][bold type]G[roman type] - aGain: repeats the last command.[paragraph break]You can also SAVE and RESTORE the game, or get HINTS (if you're desperate!) "
 
 
 [general understand rules]
@@ -1701,6 +1724,7 @@ When Patrol ends:
 			now the target is programmed;
 			now the item-id of the target is "M0";
 			now the Contents of the target is "flitter";
+			deactivate the Table of Vehicle Hints;
 			say "Your hacked car key beeps softly, and its ready light turns green!"
 
 Police Gone begins when Patrol ends temporarily. [note this must be after Patrol scene declarations]
@@ -1989,6 +2013,114 @@ Every turn during Ponyfriending:
 		say "[one of]Ponyfriend tries to interest as passer-by in his theories of a mechanistic Deity. Unsuccessfully.[or]Ponyfriend furtively scratches underneath his none-too-clean shirt.[or]Ponyfriend sighs and sits down for a few moments before springing back up, muttering.[or]Ponyfriend scans the horizon, looking for something.[purely at random]"
 
 
+Section 11 - Hints
+
+[Uses Adaptive Hints v6 extension by Eric Eve]
+Include Adaptive Hints by Eric Eve.
+
+[Hint tables]
+
+Table of Potential Hints (continued)
+title		subtable
+"What should I do now?"		Table of General Hints
+"How do I get into Transit?"		Table of Home Escape Hints
+"How do I disable my MitKlein?"		Table of MitKlein Hints
+"How do I get into the Spacescraper?"		Table of Spacescraper Hints
+"How do I get past the Spacescraper Eye Scanner?"		Table of Eyescanner Hints
+"How do I get into vehicles?"		Table of Vehicle HInts
+"How do I get into the Maintenance Closet?"		Table of Closet Hints
+"What do I do at the Reserve Bank?"		Table of Goal Hints
+
+Table of General Hints	
+hint				used
+"Try exploring the world."				a number
+"Then try exploring more.  Are you sure you've seen everywhere?"
+
+Table of Home Escape Hints				
+hint				used
+"You need to find a way of entering Transit without the autodoor scanning your MitKlein."
+"You'll need to find a way to disable your MitKlein."
+
+
+Table of MitKlein Hints
+hint						used
+"You're a hacker.  Check your computer."
+"The file isn't enough to do the job.  It needs to be broadcast to your skull."
+"You'll need a Memory chip to hold the payload, and something to broadcast it."
+"If you don't see anything that fits the bill, maybe it's not immediately visible."
+"Do you see anything else which might need to store and broadcast information?"
+"You'll need to make sure your components are attached."
+"Find the appropriate tool to connect electronic commponents."
+"A regular broadcast chip won't do the job.  At least, not alone.  Not enough power."
+"You should find some way of boosting the signal."
+"Can you find something that puts out a lot of electromagnetic energy?"
+"You might have to look inside something that isn't supposed to be opened by the average consumer."
+"Okay, fine.  Open the microwave oven.  Not the main door."
+"Add one thing to the other!"
+"Remember - the microwave has shielding in the box and door to prevent its energy from getting to you…"
+
+
+Table of Spacescraper Hints
+hint						used
+"The Spacescraper is the center of Homeland Security activity for the region."
+"The Transit system can take you to the Spacescraper."
+
+Table of Eyescanner Hints
+hint						used
+"There's no way around the eye scanner door."
+"You'll have to fool it somehow."
+"It can't tell the difference between a contact lens and your eye."
+"The contact lens will have to ID you as someone who has a reason to be inside the Reserve Bank Spacescraper."
+"You might not have to meet that person in person, as it were."
+"There is a Food Court in the base of the Spacescraper.  Some businesses there might have other branches."
+"Ah, France!"
+"You'll need to take a high-resolution picture of your target's eye.  For ID purposes."
+
+
+Table of Vehicle Hints
+hint						used
+"To gain access to a vehicle, you need its key."
+"Well, perhaps not its actual key, but at the least an exact duplicate."
+"Most public safety vehicles use a common keycode."
+"Try finding someone with a key.  Perhaps you can copy theirs."
+"You don't have to be holding it to copy it."
+"You'll need something which can receive and store a vehicle transponder broadcast."
+"Then you'll need to be present when a real key is used."
+"Once you'd done that, you'll need to make sure your key can send, too."
+
+
+Table of Closet Hints
+hint						used
+"Only authorized personnel can enter the maintenance closet."
+"You'll need to find someone who is allowed to enter the closet."
+"Oh, and you'll need to find a way to convince the door's palm lock that you are, in fact, them."
+"Remember the contact lens?"
+"Do you really want me to get more explicit?"
+"Oh, fine.  If you've found your target, try talking to him about his job."
+"He needs to replace his jacket."
+"You'll need to get him a replacement."
+"Is he wandering around confused?  Well, then, ask yourself what he tried to do."
+"He used his palm on the ATM, didn't he."
+"Somehow, somewhere, this can be used to your benefit."
+
+
+Table of Goal Hints
+hint						used
+"If you've gotten this far, your MitKlein is disabled.  Being the only one with such is very dangerous."
+"What if other citizens' MitKleins were dead as well?"
+"The newspaper should tell you why the Reserve Bank is important."
+"What if those other people were in fact Homeland Security troops?"
+"There's a whole convention of Homeland Security personnel meeting in the Main Lobby."
+"You can't see or reach them from the basement.  The only thing that might work is an assault from above."
+"You won't be able to use the Lobby Lifts."
+"Think about what you made to free yourself."
+"What if you could find a portable power source for that?"
+"It would probably have to have some form of capacitor in it to achieve the requisite burst strength."
+"You'll need several of them to cause enough confusion to escape."
+
+[Hint activation/deactivation rules]
+[handled by situation, not items etc.]
+	
 
 Chapter 1 - Transit
 
@@ -2184,6 +2316,9 @@ Understand "Reserve" as the spacescraper.
 Understand "Bank" as the spacescraper.
 Understand "Skyscraper" as the spacescraper.
 
+After examining the spacescraper for the first time:
+	activate the Table of Spacescraper Hints.
+
 GreenResidential is a region.  Home Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.  Green Residential Station is in GreenResidential.
 
 ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. 
@@ -2202,7 +2337,8 @@ Instead of opening the Green Residential Station door:
 		the autodoors close in zero turns from now;
 	otherwise if the location is Green Residential Station:
 		if the MitKlein is unhacked:
-			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein bottle, the police will now be able to link you to the hacking attempts.  You decide not to risk it." instead;
+			activate the Table of Home Escape Hints;
+			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein bottle, the police will now be able to link you to the hacking attempts, and you'll be a fugitive.  You decide not to risk it." instead;
 		otherwise:
 			say "The Door Scanner scans your iris to determine your identity.  The Transit Security and Accounting Subroutine determines that you have a legitimate account with the Transit system, and the doors slide smoothly open.";
 		now the Green Residential Station door is open.
@@ -2299,7 +2435,7 @@ Instead of taking the metal door:
 	say "You strain to lift the door, then give it up as a bad job." instead.
 
 Front Path is east of South Primrose Lane.  Front Path is blind. The description is "Your front path is paved with cracked flagstones, one of the few concessions to a sense of style that your absentee, never-to-be-seen landlord has made.  Primrose Lane is to the west, and your building is to the east."
-The mailbox is here.  The mailbox contains a newspaper.
+The mailbox is here.  The mailbox contains a newspaper and the pamphlet.
 
 The House door is east of Front Path and west of Home Lobby.  The House door is an autodoor.  The House door is closed.
 
@@ -2562,9 +2698,13 @@ Instead of opening the Reserve Bank Station door:
 		the autodoors close in zero turns from now;
 	otherwise if the location is Reserve Bank Station:
 		if the player is not wearing the contact lens:
+			activate the Table of Eyescanner Hints;
 			say "The Eye Scanner laser delicately probes your iris to determine your identity.  The Reserve Bank Security Subroutine determines that you have no legitimate reason to enter the Reserve Bank spacescraper.  A harsh buzzer sounds and the door remains locked.";
 		otherwise if the player is wearing the contact lens:
 			say "The Eye Scanner scans the iris printed on the contact lens to determine your identity.  The Reserve Bank Security Subroutine determines that 'you' have a legitimate reason to enter the Reserve Bank spacescraper, and the doors slide smoothly open.";
+			deactivate the Table of Spacescraper Hints;
+			deactivate the Table of Eyescanner Hints;
+			activate the Table of Goal Hints;
 			now the Reserve Bank Station door is open.
 
 
@@ -2616,8 +2756,10 @@ The Maintenance Door is west of Maintenance Area.  The Maintenance Door is an au
 
 Before opening the maintenance door in the Maintenance area:
 	unless the player is handvalid:
+		activate the Table of Closet Hints;
 		say "The palm lock ignores you. The door remains firmly closed." instead;
 	otherwise:
+		deactivate the Table of Closet Hints;
 		say "You press your doctored palm against the scanner.  The lock clicks open.";
 		continue the action.
 	
