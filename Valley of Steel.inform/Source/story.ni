@@ -2,7 +2,7 @@
 
 The release number is 1.
 The story creation year is 2012.
-The story headline is "A tale of the surveillance society". The story genre is  "Science Fiction". The story description is "Your crusade against the powers that be, see, hear and know".
+The story headline is "A tale of the surveillance society". The story genre is  "Science Fiction". The story description is "They're coming for you.  You'll have to get them first.".
 
 Chapter 0 - Game Rules And Item Setup
 
@@ -1562,6 +1562,12 @@ Rule for synthesizing:
 
 Section 8 - Scenes
 
+[Home Escape]
+Home escape is a scene.  Home escape begins when play begins.  
+
+
+Home escape ends when the player is not in GreenResidential.
+
 
 [Bank Run]
 Bank Run is a recurring scene.  Bank Run begins when Roberto Velez is in The Proletariat Bar and Roberto Velez is runningErrand.
@@ -1990,7 +1996,7 @@ Section 0 - Setup
 
 Transit System is a list of objects that varies.
 
-Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  Station Corridor is in Transit.  Green Commercial Station is in Transit.  Green Residential Station is in Transit.  Green Service Station is in Transit.
+Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  [Station Corridor is in Transit.  Green Commercial Station is in Transit.  Green Residential Station is in Transit.  Green Service Station is in Transit.]
 
 
 The transit web is a thing.  The transit web is a backdrop.  It is in Green Residential Platform. It is in Reserve Bank Station.  It is in Green Commercial Platform.  It is in Green Service Platform. The transit web is large.  The description of the transit web is "Not really a web so much as a series of maglev rings linked by guides, the Transit Web is separated from the platform by a barrier fence with automatic doors, which line up with Transit Capsule doors when a Capsule is in the station.  The Web rings glow faintly with the Magfield."
@@ -2178,7 +2184,7 @@ Understand "Reserve" as the spacescraper.
 Understand "Bank" as the spacescraper.
 Understand "Skyscraper" as the spacescraper.
 
-GreenResidential is a region.  Home Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.
+GreenResidential is a region.  Home Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.  Green Residential Station is in GreenResidential.
 
 ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. 
 
@@ -2304,7 +2310,7 @@ Instead of going up in Home Lobby, say "You can't open the security gate." inste
 The security gate is in the Home Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
 
 Instead of unlocking the security gate with something:
-	say "That won't open the gate." instead.
+	say "You can't open the gate, even with that." instead.
 
 Check taking the security gate:
 	say "You rattle the bars for a few seconds before giving up." instead.
@@ -2349,7 +2355,7 @@ Chapter 3 - Green Commercial
 
 Section 3 - Map
 
-GreenCommercial is a region.  Metro Savings is in GreenCommercial.  NanoMart is in GreenCommercial.  Green Commercial Bistro Paris is in GreenCommercial.  Bistro Paris Restroom is in GreenCommercial.  The Proletariat Bar is in GreenCommercial.  Proletariat Restroom is in GreenCommercial.  Garb-Oh is in GreenCommercial.  Accessorize is in GreenCommercial.
+GreenCommercial is a region.  Metro Savings is in GreenCommercial.  NanoMart is in GreenCommercial.  Green Commercial Bistro Paris is in GreenCommercial.  Bistro Paris Restroom is in GreenCommercial.  The Proletariat Bar is in GreenCommercial.  Proletariat Restroom is in GreenCommercial.  Garb-Oh is in GreenCommercial.  Accessorize is in GreenCommercial.  Green Commercial Station is in GreenCommercial.
 
 GreenCommOutside is a region.  GreenCommOutside is in GreenCommercial.  Green Commercial Plaza North is in GreenCommOutside.  Green Commercial Plaza Center is in GreenCommOutside.  Green Commercial Plaza South is in GreenCommOutside.
 
@@ -2474,7 +2480,7 @@ Chapter 4 - Green Service
 
 Section 3 - Map
 
-GreenService is a region.  Booking is in GreenService.  Front Desk is in GreenService.  Hospital Lab is in GreenService.  Hospital Lounge is in GreenService.  Hospital Lobby is in GreenService. Hospital Elevators is in GreenService.  Hospital Restroom is in GreenService.  Triage is in GreenService.  Emergency Room is in GreenService.
+GreenService is a region.  Booking is in GreenService.  Front Desk is in GreenService.  Hospital Lab is in GreenService.  Hospital Lounge is in GreenService.  Hospital Lobby is in GreenService. Hospital Elevators is in GreenService.  Hospital Restroom is in GreenService.  Triage is in GreenService.  Emergency Room is in GreenService.  Green Service Station is in GreenService.
 
 GreenServOutside is a region.  GreenServOutside is in GreenService.  Government Square South and Government Square North and Police Station Steps and Civil Center Steps and Hospital Entrance and Hospital Driveway are in GreenServOutside.
 
@@ -2713,3 +2719,5 @@ The Atrium Airspace is a region.  The Atrium Midair Top is in the Atrium Airspac
 Before going down in the Atrium Airspace, say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
 
 Before going up in the Atrium Airspace, say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
+
+Instead of jumping in the Atrium Airspace, say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
