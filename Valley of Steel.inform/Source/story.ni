@@ -1,14 +1,20 @@
-"Valley of Steel" by The Custodian of http://everything2.com
+"Valley of Steel" by "The Custodian of http://everything2.com"
 
-The release number is 1.
+The story description is "In a pervasive surveillance society, you[']ll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers.  The creep of surveillance and control has continued unabated.  Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner.  You've spent years as a privacy hacker, and last night, after what might have been a few drinks too many, you may have achieved the grail.  You are in possession of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative.   The drink may have made you reckless, though.  Your own MitKlein signature was captured during the attack.  Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately.  Short term, you'll have to figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
+The story headline is "A tale of the surveillance society".
+The story genre is  "Science Fiction".
 The story creation year is 2012.
-The story headline is "A tale of the surveillance society". The story genre is  "Science Fiction". The story description is "They're coming for you.  You'll have to get them first.".
+The release number is 1.
+
+
+Release along with cover art, a website, an interpreter, the library card, the private source text, a file of "Original Story" called "valleyofsteel.pdf".
+
 
 Chapter 0 - Game Rules And Item Setup
 
 Section 1 - Game Settings and Setup
 
-Use American dialect, no scoring, and VERBOSE room descriptions.
+Use serial comma, American dialect, no scoring, and verbose room descriptions.
 
 [Use memory economy.]
 
@@ -45,8 +51,8 @@ Index map with Reserve Bank Station mapped northwest of Green Commercial Platfor
 Index map with Top of Service Bouncelift mapped west of Bouncelift Vestibule.
 Index map with Bouncelift Vestibule mapped west of Office Corridor.
 Index map with Seating Area mapped east of Office Corridor.
-Index map with Lift Lobby mapped east of Bottom of Service Bouncelift.
 Index map with Transit Capsule mapped east of Reserve Bank Station.
+Index map with EPS file.
 
 [Extensions]
 Include Exit Lister by Gavin Lambert.
@@ -184,16 +190,17 @@ The can't unlock what's already unlocked rule is not listed in any rulebook.
 The can't unlock without the correct key rule is not listed in any rulebook.
 The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
-[Understand the command "unlock" as something new.]
+Understand the command "unlock" as something new.
 
 
+Rule for deciding whether all includes scenery: it does not. Rule for deciding whether all includes a fixed in place thing while taking: it does not.  Rule for deciding whether all includes a thing enclosed by the player: it does not.
 
 
 The list notable events rule is listed last in the carry out looking rulebook.
 
 This is the list notable events rule:
 	if the player is flitterEnabled:
-		if the location contains the Ambulance:
+		if the location contains the ambulance:
 			now the ambulance is unlocked;
 			say "The ambulance flashes its lights twice as the locklarm unlocks the back.";
 		if the location contains the Police Flitter:
@@ -317,6 +324,7 @@ At the time when an explosion occurs:
 			otherwise:
 				say "There is an explosion from some distance off![line break]";
 			if the observation window supports the breaching charge:
+				deactivate the Table of Atrium Hints;
 				now the observation window is broken;
 				change east exit of the Seating Area to the Atrium Ledge;
 				change west exit of the Atrium Ledge to the Seating Area;
@@ -381,11 +389,31 @@ Section 5 - Portable Objects (non-Scenery)
 [kinds]
 
 [rooms]
+
+[bathrooms]
 A sink is a kind of supporter.  It is scenery.  The description is "Totally boring sink."
 A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
 Instead of entering a stall, say "You really don't want to use it." instead.
 
 A restroom is a kind of room.  The description of a restroom is "Totally boring bathroom containing a sink, a mirror and a stall."  A sink is in every restroom.  A stall is in every restroom.
+
+Understand "toilet" as the stall when the location is a restroom.
+
+Flushing is an action applying to one touchable thing.
+Understand "flush [something]" as flushing.
+
+Check flushing:
+	unless the noun is a stall, say "You can't flush that." instead.
+
+Carry out flushing:
+	say "There is a brief gurgling sound.  If only your problems could be so easily disposed of."
+
+[foodstore]
+A counter is a kind of supporter.  It is scenery. It is fixed in place. The description of a counter is "A combination display and serving counter."
+
+A foodstore is a kind of room.  The description of a foodstore is "Standard food service establishment with a counter."
+A counter is in every foodstore.
+
 
 [parts of people]
 A palm is a kind of thing. A palm is part of every person.  The description of a palm is "[if the player is not wearing the skin sample]Standard garden-variety palm.[otherwise]Your palm is hidden beneath a slightly wrinkled oblong patch of skin, lighter than your own, which has been stuck onto your hand." [BFR - FIX THIS (description based on whose palm]
@@ -490,8 +518,9 @@ Instead of examining the MitKlein, say "You can't see any such thing." instead.
 [props]
 The backpack is a player's holdall. The backpack is wearable. The player is wearing the backpack. The backpack is a container.  It is open. The description is "A black rip-stop backpack which you normally use for toting tools and books."
 Understand "pack" as the backpack.
+Understand "bag" as the backpack.
 
-The pamphlet is in the Mailbox.  The pamphlet is small.  "This is a small pamphlet of glossy paper."  The description of the pamphlet is "The pamphlet has your name and address printed on one face, and is from the Department of Homeland Security.  It seems that they believe you are due to have a child any day now (which would surprise you if this was not the fifth time they had decided you were due such a blessed event). [paragraph break]As such, the pamphlet is meant to inform you of your duty as a citizen to ensure your child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.[paragraph break][if the player is briefed]Given your recent hacking activities, it is likely that any such scanning of [italic type]your[roman type] MitKlein will turn you instantly into a fugitive.  Even disabling your MitKlein - which no-one has managed to do - would help you only temporarily, for the lack of a functioning unit would be just as damning - unless the Department of Homeland Security had more pressing things to worry about.[end if]"
+The pamphlet is in the Mailbox.  The pamphlet is small.  "This is a small pamphlet of glossy paper."  The description of the pamphlet is "The pamphlet is from the Department of Homeland Security.  It seems that they believe you are due to have a child any day now (which would surprise you if this was not the fifth time they had decided you were due such a blessed event). [paragraph break]As such, the pamphlet is meant to inform you of your duty as a citizen to ensure your child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.  The pamphlet cheerily explains that without such a chip, your child will be severely disadvantaged and unable to use basic modern services.[paragraph break]Given your hacking spree last night, it is likely that any such scanning of [italic type]your[roman type] MitKlein will turn you instantly into a fugitive.  Even disabling your MitKlein - which no-one has managed to do - would help you only temporarily, for the lack of a functioning unit would be just as damning - unless the Department of Homeland Security had more pressing things to worry about."
 
 After examining the pamphlet:
 	activate the Table of MitKlein hints.
@@ -550,6 +579,9 @@ Carry out wearing the watch:
 Carry out taking off the watch:
 	now the left hand status line is "[location]";
 	continue the action.
+	
+Instead of setting the watch to something:
+	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
 [cell phone]
 The phone is on the bedside table.  The phone is portable.  The phone is small.  The description of the phone is "Your cell phone was a standard candybar model with a nice screen.  'Was' because apparently, in your paranoia-fueled hacking binge, you must have decided it was too easy for the government to spy on you through it, and done something about that.  Now it's dead.  The screen is black.[if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the dead screen."
@@ -707,7 +739,7 @@ The solder is a thing. The solder is on the workbench.  The solder is small. The
 
 [laptop]
 The laptop is on the workbench.  The laptop is medium.   The description is "Your laptop is a fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
-The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes.  Apparently, you managed to locate what you've been looking for for months- a file which claims to be a binary payload which, if broadcast into a person's Mitsui-Klein Encapsulation, can wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners!"
+The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes, trying to remember what you were doing.  Apparently, you managed to locate what you've been looking for for months- a secret design document describing the internals of the MitKlein.  Using that, you appear to have coded a file which, if broadcast into a person's Mitsui-Klein Encapsulation, might wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners![paragraph break]Your theft of the file, however, seems to have triggered security software which managed to activate the MitKlein scanner in your laptop before you could prevent it.  The government now has your MitKlein code.  Although you managed to wipe as many records as you could find which carry that code, any scan of your MitKlein which is linked with your identification will probably render you a fugitive."
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
 
 Understand "download slot" as the chipslot.
@@ -715,7 +747,8 @@ Understand "slot" as the chipslot when the location is the location of the lapto
 Understand "file" as the screen.
 
 After examining the screen for the first time:
-	now the player is briefed.
+	now the player is briefed;
+	say "As you continue reading the backscroll, a chill of horror travels down your spine.  It must have been the bourbon, but it appears that you went into full-on devil-may-care mode to get the file - and you can clearly see at least three points in your incursions where your MitKlein signature was logged, even though the security systems were unable to stop you.  Although you appear to have chased down most of the records of your MitKlein ID you could, this means you really shouldn't perform any transactions which involve both your MitKlein and another biometric - because Homeland Security will certainly want to talk to you…"
 
 Instead of inserting into the laptop:
 	try inserting the noun into the chipslot instead.
@@ -831,7 +864,7 @@ One activate button is part of every device.
 
 The mailbox is a container.  The mailbox is fixed in place.  The mailbox is openable. The mailbox is closed.  The description is "Postal Service standard mailbox.  Yours will open to your fingerprint."
 Instead of opening the mailbox:
-	say "You touch your finger to the lockplate, and the mailbox swings open[unless the mailbox is empty], revealing [a list of things inside the mailbox].";
+	say "You touch your finger to the lockplate and the mailbox swings open[unless the mailbox is empty], revealing [a list of things inside the mailbox].";
 	now the noun is open.
 Instead of touching the mailbox:
 	try opening the mailbox instead.
@@ -923,7 +956,7 @@ Instead of switching on the microwave oven:
 
 
 [Tissue Generator] [SEE Docs 4.14/Ex. 55!]
-The tissue generator is a device. The tissue generator is in the Emergency Room.  The tissue generator is fixed in place.  The description of the tissue generator is "This is a medium-sized appliance found in most modern hospitals.  It is used to provide artificial tissue for grafting into or onto injuries.  In order to prevent rejection, the tissue generator must be given a complete scan of the patient's tissue, from which it will (by default) produce an exact duplicate of the scanned sample.  It has a button marked ACTIVATE. There is a slot on the front of the machine labeled 'INSERT CRYOPACK FOR SAMPLE' where, presumably, the generated tissue is delivered; there is a smaller opening labeled 'FEED' and there is a slot labeled 'READ' where a tissue sampler can be inserted.  [if the tissue sampler is in the read slot]  The tissue sampler is in the read slot.[end if][if the cryopack is in the sample slot]  There is a cryopack in the sample slot.[end if][unless the feed slot is empty]  The feed slot contains [list of objects in the feed slot]."
+The tissue generator is a device. The tissue generator is in the Emergency Room.  The tissue generator is fixed in place.  The description of the tissue generator is "This is a medium-sized appliance found in most modern hospitals.  It is used to provide artificial tissue for grafting into or onto injuries.  In order to prevent rejection, the tissue generator must be given a complete scan of the patient's tissue, from which it will (by default) produce an exact duplicate of the scanned sample.  It has a button marked ACTIVATE. There is a slot on the front of the machine labeled INSERT CRYOPACK FOR SAMPLE where, presumably, the generated tissue is delivered; there is a smaller opening labeled FEED and there is a slot labeled READ where a tissue sampler can be inserted.  [if the tissue sampler is in the read slot]  The tissue sampler is in the read slot.[end if][if the cryopack is in the sample slot]  There is a cryopack in the sample slot.[end if][unless the feed slot is empty]  The feed slot contains [list of objects in the feed slot]."
 
 Instead of inserting into the tissue generator:
 	say "Which slot do you want to put [the noun] into - the sample slot, the feed slot or the read slot?".
@@ -1012,6 +1045,8 @@ Check entering the flitter:
 
 [ambulance]		
 The ambulance is a vehicle. The ambulance is in Hospital Driveway.  "An ambulance, a bulky flittervan with emergency markings, is parked here."  The ambulance is lockable and locked.  The ambulance is fixed in place.  The ambulance can be violated or pristine.  The ambulance is pristine.  The description is "This aerovan is probably a Geely-Ford/Fujiwara product underneath, but has all manner of emergency lights and markings on it, including a large set of red crosses.  It has a double door in the back along with the two main cab entry doors.  It is dark and powered down[if locked] but securely locked, and a slowly blinking light indicates that its locklarm is armed[end if]."
+Understand "cab" as the ambulance when the location is Hospital Driveway.
+Understand "flittervan" as the ambulance.
 
 Check opening the ambulance:
 	if the ambulance is locked:
@@ -1038,7 +1073,7 @@ Understand "about" as getting credits.
 Getting credits is an action out of world.
 
 Carry out getting credits:
-	say "'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those and many others, to be listed when released."
+	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those and many others, to be listed when released."
 
 
 [help]
@@ -1426,8 +1461,7 @@ Understand "take picture of [something] with [something preferably held]" as pho
 Understand "take a picture of [something] with [something preferably held]" as photographing.
 Understand "snap [something] with [something preferably held]" as photographing.
 
-Photographing is an action applying to two visible things.
-
+Photographing is an action applying to two things.
 
 Check photographing:
 	if the second noun is the ID camera:
@@ -1437,7 +1471,7 @@ Check photographing:
 		if the noun is disassembled, say "The camera is pried open and does not seem to function." instead;
 		continue the action;
 	otherwise:
-		say "What do you want to photograph [the noun] with?" instead.
+		say "You can't photograph [the noun] with that." instead.
 		
 Carry out photographing:
 	now the Contents of the second noun is the printed name of the noun;
@@ -1836,6 +1870,18 @@ component list	result
 
 Section 10 - NPCs
 
+[servers]
+A server is a kind of person.  A server is always scenery. The description of a server is "A slightly harrassed-looking food service worker, intent on trading meals for funds.  [one of]He[or]She[sticky random] is busy serving customers."
+Report examining a server:
+	stop.
+Two servers are in every foodstore.
+
+[customers]
+A customer is a kind of person.  A customer is always scenery. The description of a customer is "Customers seeking a quick meal."
+Report examining a customer:
+	stop.
+Some customers are in every foodstore.
+
 [policemen]
 A policeman is a kind of man.  The description of a policeman is "A typical example of the Metro police force, wearing patrol gear including light body armor, crowded equipment belt and what look like actually comfortable boots."
 
@@ -1895,7 +1941,7 @@ In Garb-oh is a woman called the shopkeeper.  The description of the shopkeeper 
 
 In Garb-oh is a woman called the shopper.  The shopper can be carryingSwag or notcarryingSwag.  The shopper is notcarryingSwag.  The shopper is wearing the shoulder bag.  The description of the shopper is "[if Shoplifting is happening]In tears, the shopper stands near the police officers, protesting her innocence and trading angry accusations with the shopkeeper.[otherwise] The shopper is a young woman wearing large headphones, loose clothes. She is bouncing her head in what is probably the rhythm of the song she is listening to, and seems to be paying very little attention to her surroundings.  Every once in a while she pulls an item from a rack and holds it up in front of a mirror before returning it to its place.  She is wearing a large shoulder bag."
 
-The shoulder bag is a container.  The shoulder bag is open.  The description is "An open-topped satchel with a carrying strap meant to be strung over one shoulder."
+The shoulder bag is a container.  The shoulder bag is open.  The description is "An open-topped satchel with a carrying strap meant to be strung over one shoulder.[if the shopper is wearing the shoulder bag]  It is currently over the shoulder of a woman shopper."
 
 
 Instead of inserting into the shoulder bag:
@@ -1935,6 +1981,10 @@ Every turn when the player can see Sergeant Ramirez:
 Persuasion rule for asking Sergeant Ramirez to try doing something: 
 	say "[one of]The sergeant stolidly ignores you.[or]'You want me to run you in?'[or]'Beat it, I'm busy.'[or]'Look, go bother somebody else, okay?'[or]The sergeant stares at you fixedly, ostentatiously comparing your face to the screen of his computer.[as decreasingly likely outcomes]";
 	persuasion fails.
+	
+
+Report examining Sergeant Ramirez:
+	stop.
 	
 Telling someone about something is speech.
 Asking someone about something is speech.
@@ -2030,6 +2080,7 @@ title		subtable
 "How do I get into vehicles?"		Table of Vehicle HInts
 "How do I get into the Maintenance Closet?"		Table of Closet Hints
 "What do I do at the Reserve Bank?"		Table of Goal Hints
+"How do I get to the Reserve Bank Atrium?"		Table of Atrium Hints
 
 Table of General Hints	
 hint				used
@@ -2117,6 +2168,18 @@ hint						used
 "What if you could find a portable power source for that?"
 "It would probably have to have some form of capacitor in it to achieve the requisite burst strength."
 "You'll need several of them to cause enough confusion to escape."
+
+
+Table of Atrium Hints
+hint						used
+"The Main lifts aren't the only lifts in the building."
+"Stuck at the top?  Sometimes violence [italic type]is[roman type] the answer.  If you have the tools."
+"Glass that is too strong to break just means…maybe you need a bigger hammer."
+"Or explosives."
+"There are explosives purpose-built to get through obstacles.  But generally only the military and police have them."
+"The police would only use them to go after something they have orders to go after."
+"Like drug dealing, if you can find any."
+"Of course, you'll have to [italic type]tell[roman type] them about it."
 
 [Hint activation/deactivation rules]
 [handled by situation, not items etc.]
@@ -2302,7 +2365,7 @@ Chapter 2 - Green Residential
 
 Section 3 - Map
 
-The spacescraper is a backdrop.  It is not scenery.  The initial appearance is "The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline."  The description of the spacescraper is "Visible in the distance above the surrounding buildings, the Reserve Bank Spacescraper is home to more than just the regional Reserve Bank.  It is a two-hundred-level building containing all manner of businesses and government offices, as well as a hotel and several floors of extremely high-priced residential apartments.  Centrally located Downtown, it boasts its own Transit station and a food court in its lower levels.  Conventions and events are often held in its soaring Atrium, an open space within the building core which rises over fifty floors entirely indoors."
+The spacescraper is a backdrop.  It is not scenery.  The initial appearance is "The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline."  The description of the spacescraper is "Visible in the distance above the surrounding buildings, the Reserve Bank Spacescraper is home to more than just the regional Reserve Bank.  It is a two-hundred-level building containing all manner of businesses and government offices, as well as a hotel and several floors of extremely high-priced residential apartments.  Centrally located Downtown, it boasts its own Transit station and a food court in its lower levels.  Conventions and events are often held in its soaring Atrium, an open space within the building core which rises over fifty floors entirely indoors.  It is several miles away."
 
 Instead of taking the spacescraper, say "That would be a very neat trick. It's miles away in any case."
 Instead of touching the spacescraper, say "That would be a very neat trick.  It's miles away in any case."
@@ -2350,11 +2413,14 @@ Primrose & Cedar is east of Green Residential Station.  The description is "This
 
 East Cedar Street is east of Primrose & Cedar.  East Cedar Street is blind.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
 
-The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of extremely boring residential buildings."
+The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of extremely boring residential buildings with neatly trimmed lawns."
+Understand "houses" as residential buildings when the location is East Cedar Street.
+Understand "lawns" as residential buildings when the location is East Cedar Street.
 
-South Primrose Lane is south of Primrose & Cedar.   South Primrose Lane is blind.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane, just in front of your home.  To the south is a boarded-up empty house; sumac trees can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large burglar alarm warning sign and an enormous dog on the front lawn.  To the east is your building's front path."
+South Primrose Lane is south of Primrose & Cedar.   South Primrose Lane is blind.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane, just in front of your home, continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is your building's front path."
+Some sumac plants are in South Primrose Lane.  The sumac plants are scenery.  The description of the sumac plants is "You can see the tops of a few trees over the top of the fence.  Their leaves are greenish red, waving out of reach in the slight breeze."
 
-The warning sign is here.  The warning sign is fixed in place.  The warning sign is scenery.  The description is "It reads 'YOUR SKIN MUST BE THIS THICK (here there is a lifelike picture of a dog's tooth, perhaps an inch long) TO BURGLE THIS HOUSE.'  There is an arrow pointing down and to the side, which actually points at the dog."
+The warning sign is in South Primrose Lane.  The warning sign is fixed in place.  The warning sign is scenery.  The description is "It reads 'YOUR SKIN MUST BE THIS THICK (here there is a lifelike picture of a dog's tooth, perhaps an inch long) TO BURGLE THIS HOUSE.'  There is an arrow pointing down and to the side, which actually points at the dog."
 Understand "sign" as the warning sign when the location is South Primrose Lane.
 Understand "burglar sign" as the warning sign.
 Understand "Alarm sign" as the warning sign.
@@ -2436,6 +2502,7 @@ Instead of taking the metal door:
 
 Front Path is east of South Primrose Lane.  Front Path is blind. The description is "Your front path is paved with cracked flagstones, one of the few concessions to a sense of style that your absentee, never-to-be-seen landlord has made.  Primrose Lane is to the west, and your building is to the east."
 The mailbox is here.  The mailbox contains a newspaper and the pamphlet.
+Some flagstones are here.  The flagstones is scenery.  The description of the flagstones is "Weathered stones, they appear to be naturally smooth rather than having been shaped."
 
 The House door is east of Front Path and west of Home Lobby.  The House door is an autodoor.  The House door is closed.
 
@@ -2458,7 +2525,7 @@ The Front door is south of Home Lobby and north of Entry.  The Front door is an 
 
 Before opening the front door, say "You permit the apartment door scanner to scan your eye."
 
-The Entry is south of the Front door.  The Entry is blind.  The description is "This is the small entryway to your apartment. A pile of mail, most of it unread, covers the small table just inside your front door.  The apartment hallway is to the south.  To the west is your office, and to the east is your bathroom."
+The Entry is south of the Front door.  The Entry is blind.  The description is "This is the small entryway to your apartment. A pile of mail, most of it unread, nearly covers the side table just inside your front door.  The apartment hallway is to the south.  To the west is your office, and to the east is your bathroom."
 There is a side table in the Entry.  The car key is on the side table.  The mail is on the side table.  The mail is scenery.  The description of the mail is "Totally boring."
 Instead of taking the mail, say "You're just not interested in bills and advertisements." instead.
 
@@ -2466,13 +2533,17 @@ The Home Office is west of The Entry.  The home office is blind.  The descriptio
 
 The workbench is a supporter. The workbench is in the Home Office.  The description is "You built your workbench from found materials a few years ago.  It's actually a very nice piece of furniture; just the right height, easy to get your legs under. "
 
-Understand "bench" as the workbench.
+Understand "bench" as the workbench when the location is the Home Office.
 
 The Hall is south of the Entry.  The Hall is blind. The description is "The central hallway of your modest home.  It's relatively clean and neat, as there is no furniture in it."
 
 The Bathroom is a restroom.  The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "Your home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if you had any visitors."
 
-The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "Your bedroom is rather boring.  It contains your bed - currently unmade - and the usual assortment of bedroom furnishings including a bedside table, next to the bed."
+The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "Your bedroom is rather boring, indicative of how little time you spend in it while awake.  It contains your bed - currently, as always, unmade - and a bedside table with a lamp on it."
+
+Making up is an action applying to one thing.
+Understand "make [something]" as making up.
+Instead of making up the bed, say "There's no point."
 
 The bedside table is a supporter.  The bedside table is in the Bedroom.  The bedside table is scenery. The description is "A cheap but sturdy bedside table, which has so far withstood your daily blind flailings after your watch.  There is a table lamp atop it."
 
@@ -2482,7 +2553,6 @@ Check entering the bed:
 	say "You're not sleepy, and the bed isn't comfortable otherwise." instead.
 
 The table lamp is a device on the bedside table.  The table lamp is scenery.  The table lamp is fixed in place. The description is "A generic compact fluorescent lamp, it has rested next to your bed for years.  You finally screwed it to the table after knocking it over for the fifth time whilst flailing for your watch.[if table lamp is switched on]  It is presently giving off a wan bluish light."
-
 
 The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "Your kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, reflecting the fact that you don't cook for yourself much."
 
@@ -2514,6 +2584,10 @@ There is a trash can in Green Commercial Plaza Center.
 The fountain is in Green Commercial Plaza Center.  The fountain is scenery.  The description of the fountain is "A fairly dull example of landscape features, no doubt because it was designed or selected by a business association."
 
 The bench is in Green Commercial Plaza Center.  The bench is a supporter. The bench is enterable.  The bench is scenery.  The description of the bench is "A plascrete bench, boring but functional."
+Report entering the bench:  
+	say "You sit down on the bench." instead.
+Report exiting from the bench:
+	say "You stand up." instead.
 
 Green Commercial Plaza South is south of Green Commercial Plaza Center.  The description is "The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it."
 There is a trash can in Green Commercial Plaza South.
@@ -2526,10 +2600,12 @@ Understand "tree" as the trees.
 
 Instead of going south in Green Commercial Plaza South, say "You can't find a path between the shrubs."
 
-Metro Savings is west of Green Commercial Plaza North and northwest of Green Commercial Plaza Center. The description of Metro Savings is "This is a completely nondescript bank storefront which exists solely to house an ATM.  It's so nondescript, in fact, you can't even really tell which bank owns it, probably to ensure that they can charge you access fees no matter what.  To the east is Green Commercial Plaza."
+Metro Savings is west of Green Commercial Plaza North and northwest of Green Commercial Plaza Center. The description of Metro Savings is "This is a completely nondescript bank storefront which exists solely to house an ATM.  It's so nondescript, in fact, that it took you some actual effort to determine which bank owns it, probably to ensure that they can charge you access fees no matter what.  To the east is Green Commercial Plaza."
 
 The ATM is a device.  The ATM is in Metro Savings.  The ATM is fixed in place.  The ATM can be hacked or unhacked.  The ATM is unhacked. The description is "This is a standard ATM, using palm prints and Mit-Klein authentication to permit customers to perform banking transactions. A palm reader juts out from the front of the console."
 The palm reader is a part of the ATM. The palm reader is a container.  The palm reader is open. The palm reader is scenery.  The description is "This is a standard palm reader, which is used to verify the identity of the ATM customer.  A flat plate, slightly inset, it is placed at a convenient angle to allow the palm to lie against it.  This one, however, has a broad crack in it across which someone has written 'KAPUT' in black marker."
+Understand "plate" as the palm reader when the location is Metro Savings.
+
 Instead of inserting into the palm reader:
 	if the noun is the tissue sampler:
 		say "You carefully fit the tissue sampler into the hollow of the palm reader so that it lies over the read area.";
@@ -2548,15 +2624,31 @@ Instead of switching on the ATM:
 			say "[the actor] presses a palm to the ATM's palm reader.   Presumably, they complete their transaction to their satisfaction, although you can't see from where you are." instead.
 
 
-The NanoMart is east of Green Commercial Plaza North and northeast of Green Commercial Plaza Center.  The description is "This brighly-lit shop is an altar to the notion of instant gratification.  Everything from cheap, hot coffee to ice cream and frozen lunches is available, provided you don't mind your purchases being relentlessly catalogued by the NanoMart Corporation.  You stopped shopping here after they told you you couldn't buy a coffee without using biometric authentication."
+The NanoMart is east of Green Commercial Plaza North and northeast of Green Commercial Plaza Center.  The description is "This brighly-lit shop is an altar to the notion of instant gratification.  Everything from cheap, hot coffee to ice cream and frozen lunches is available via an automated vending system, provided you don't mind your purchases being relentlessly catalogued by the NanoMart Corporation.  You stopped shopping here after they told you you couldn't buy a coffee without using biometric authentication."
+The vending system is in the NanoMart.  The vending system is scenery.  The description of the vending system is "One wall is taken up by the automatic vending and dispensing system.  Usually, you can use the system to view a catalog of available items and purchase your choice; however, since the store is unable to scan your MitKlein, the system remains stubbornly blank."
+Understand "vending machine" as the vending system when the location is NanoMart.
+Understand "machine" as the vending system when the location is NanoMart.
 
-The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South.  [The Proletariat Bar is blind.] The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side, a jukebox sits against the back wall, and the rest of the space is filled with bar tables.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.[if the jukebox is switched on][paragraph break][one of]A low tune can barely be made out over the ambient noise.[or]Thin music can be heard.[or]You barely recognize the Muzak as something that was once punk.[purely at random]"
+The Proletariat Bar is east of Green Commercial Plaza Center and southeast of Green Commercial Plaza North and northeast of Green Commercial Plaza South. The description of the Proletariat Bar is "The Proletariat is a local bar (not a pub).  It's just far enough above a 'dive' to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side with a stolid bartender behind it and a jukebox sits against the back wall.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place's name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.[if the jukebox is switched on][paragraph break][one of]A low tune can barely be made out over the ambient noise.[or]Thin music can be heard.[or]You barely recognize the Muzak as something that was once punk.[purely at random]".
+Some people called the drinkers are in the proletariat bar.  The drinkers are scenery. The drinkers are plural-named. The description of the drinkers is "These people look fairly introverted and are focused on their drinks."
+
+Instead of examining the drinkers:
+	say "They're ignoring you and appear to be concentrating on their drinks of choice."
+
+Instead of pushing the drinkers:
+	try taking the drinkers instead.
+
+A man called the bartender is in the Proletariat Bar.  The bartender is scenery.  The description of the bartender is "The bartender is busily polishing a glass. He is ignoring you entirely, but you don't feel insulted as he seems to be ignoring everyone in the bar."
+The bartender is holding the glass.  The glass is scenery.  The description of the glass is "A slightly dirty standard bar drink holder."
+
+Report examining the bartender:
+	stop.
 
 The Proletariat restroom is a restroom.  The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
 There is a trash can in the Proletariat restroom.
 The Bar mirror is here.  The Bar mirror is a mirror.  The description is "This is a cheap but sturdy mirror, attached to the wall.  Its surface is nearly covered (except for a spot in the center, where you can see your own face) with scratches and permanent marker scrawls.  One graffito catches your eye near the bottom, but you'd have to look closely to make it out fully."
 
-The Green Commercial Bistro Paris is west of Green Commercial Plaza Center and southwest of Green Commercial Plaza North and northwest of Green Commercial Plaza South.  The description is "This is a branch of the popular lunch and coffee shop Bistro Paris.  Counter service is available for pastries, drinks and light sandwiches. There are a few tables near the front for sit-down meals.  A restroom is to the west.  On the north wall, opposite the service counter, is a collection of Paris-themed prints.  In the center is a large holoportrait of the chain's owner, Zuzu, and a sign claiming that the Bistro Paris has restaurants here, in the Reserve Bank Spacescraper, and in London."
+A foodstore called Green Commercial Bistro Paris is west of Green Commercial Plaza Center and southwest of Green Commercial Plaza North and northwest of Green Commercial Plaza South.  The description is "This is a branch of the popular lunch and coffee shop Bistro Paris.  There are a few tables near the front.  A restroom is to the west.  On the north wall, opposite the counter, is a collection of Paris-themed prints.  In the center is a large holoportrait of the chain's owner, Zuzu, and a sign claiming that the Bistro Paris has restaurants here, in the Reserve Bank Spacescraper, and in London.  A server behind the counter is waiting on several customers."
 There is a trash can in the Green Commercial Bistro Paris.
 The portrait is here.  The portrait is scenery.  The description is "This portrait is somewhat horribly overdone.  In it, Zuzu's face, in three-quarter profile, floats in front of what appears to be this very restaurant.  Her face is so large and detailed that you're sure they had to edit out her pores, although they probably left her bright green eye unretouched."
 Zuzu's eye is a part of the portrait. Zuzu's eye is scenery.  The description of Zuzu's eye is "Zuzu's eye is bright emerald green, which is easy to see as she is looking wide-eyed into the camera."
@@ -2565,11 +2657,35 @@ Understand "the eyes" as Zuzu's eye when the location is Green Commercial Bistro
 Understand "Zuzu's Eyes" as Zuzu's eye when the location is Green Commercial Bistro Paris.
 Understand "the holoportrait" as the portrait.
 Understand "holoportrait" as the portrait.
+Understand "prints" as the portrait.
 
-The Bistro Paris Restroom is a restroom.  The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A pair of stalls offer minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
+The tables are in Green Commercial Bistro Paris.  The tables are scenery. The tables are plural-named.  The description of the tables is "A scattering of very generic and boring dining furniture."
+
+The location sign is in Green Commercial Bistro Paris.  The location sign is scenery.  The description is "This sign helpfully wants you to know that the Bistro Paris chains has two other locations, one in London and one in the Reserve Bank Spacescraper downtown.  You wonder why London rather than Paris, but shrug it off."
+
+Understand "the sign" as the location sign when the location is Green Commercial Bistro Paris.
+
+The Bistro Paris Restroom is a restroom.  The Bistro Paris Restroom is west of Green Commercial Bistro Paris.  The description is "This public restroom is squeakily clean, as befits Bistro Paris['] image.  A stall offers minimum privacy, and a large mirror is affixed over the double sink.  Despite the best efforts of the staff, a bit of graffiti seems to have made it onto the mirror."
 The Bistro Paris mirror is here.  The Bistro Paris mirror is a mirror.  The description is "This mirror is large and very clean, although near the bottom right a small permanent marker graffito catches your eye."
 
 The Accessorize is east of Green Commercial Plaza South and southeast of Green Commercial Plaza Center.  The description is "This well-lit store purveys all manner of cosmetic aids and fashion accessories.  Everything from wrist bangles to skin creams to custom cosmetic contacts can be purchased here."
+
+Some stock is in Accessorize.  The stock is scenery.  The stock is plural-named. The description of the stock is "A variety of personal grooming products and fashion accessories graces the shelves."
+
+Understand "bangle" as the stock.
+Understand "skin cream" as the stock.
+Understand "cosmetics" as the stock.
+Understand "cream" as the stock.
+Understand "goods" as the stock.
+
+Check taking the stock:
+	say "As you reach for it, the store's systems detect your lack of functioning MitKlein bottle.  A bright red light flashes and a buzzer sounds.  You quickly retract your hand." instead.
+	
+Instead of pushing the stock:
+	try taking the stock instead.
+
+instead of buying the stock:
+	try taking the stock instead.
 
 The Garb-oh door is an autodoor.  The Garb-oh door is west of Green Commercial Plaza South and east of Garb-oh.  The description is "A thick glass autodoor with built-in eye scanner.  A discreet warning sign on the door indicates that theft protection is in use."
 
@@ -2582,7 +2698,7 @@ Before going through the Garb-oh door:
 
 Garb-oh is west of the Garb-oh door.  The description is "Garb-oh! is a trendy clothing shop.  Images of the shop's icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display."
 
-The racks is a supporter.  The racks is in Garb-oh.  The racks is scenery.  The description is "Garb-oh has the latest in shiny, innocuous chromed clothing racks."
+The racks is a supporter.  The racks is in Garb-oh.  The racks is plural-named.  The racks is fixed in place. The racks is scenery.  The description is "Garb-oh has the latest in shiny, innocuous chromed clothing racks."
 
 Understand "rack" as the racks.
 
@@ -2670,18 +2786,39 @@ Hospital Restroom is a restroom.  Hospital Restroom is east of Hospital Elevator
 There is a trash can in the Hospital Restroom.
 The hospital mirror is a mirror. The hospital mirror is in the Hospital Restroom. The description is "A small oval mirror set at an angle for those in wheelchairs, which forces you to hunch down slightly.  A blue permanent marker graffito is visible at the very bottom if you look carefully."
 
-Civil Center Steps is north of Government Square North.  The description is "This is the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
+Civil Center Steps is north of Government Square North.  The description is "These are the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
 Instead of going north in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
 Instead of going up in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
+Some people called the civil servants are here
 
 Police Station Steps is west of Government Square North and northwest of Government Square South.  The description is "These are the busy steps of the local police station.  To the east and southeast is Government Square, while the police station lies at the top to the west. Uniformed police and people in plain clothes are traversing the steps to exit and enter the building."
 
 Front Desk is west of Police Station Steps.  The description is "This is the front desk of the police station. A harried sergeant is manning the desk, and are so busy they don't even have time to give you more than a brief scowl.  To the north is a security gate leading into the police station proper, and to the south is an open area with a sign reading 'BOOKING.'"
+The police gate is in Front Desk.  The police gate is scenery.  The police gate is fixed in place. The description is "A scarred metal security gate of bars and mesh.  A bare hallway is visible trough it.  It is locked."
+Understand "gate" and "security gate" as the police gate when the location is Front Desk.
+
+Check opening the police gate:
+	say "The gate is securely locked." instead.
+
+Instead of going north in Front Desk:
+	say "The security gate is locked." instead.
+	
+Instead of unlocking the police gate with something:
+	say "You can't unlock the gate with that." instead.
 
 Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
-
 The Police Poster is here.  The police poster is scenery.  The description of the Police Poster is "The poster has an almost laughably crude and kitschy burly policeman chasing a pair of hoodlums while blowing a whistle and brandishing a nightstick.  The hoodlums are leaving a trail of iconic Drug Paraphernalia.  A caption reads 'If you see any DRUG ACTIVITY, report it AT ONCE to your FRIENDLY LOCAL POLICE.'"
 Understand "poster" as the Police Poster.
+The hard bench is here.  The hard bench is a supporter. The hard bench is enterable. The hard bench is scenery. The hard bench is fixed in place.  The description of the hard bench is "This bench is made of (very) hardwood, scarred and wearing a patina of age and use."
+
+Report entering the hard bench:
+	say "You sit down on the hard bench.  It gives not a millimeter." instead.
+	
+Report exiting from the hard bench:
+	say "You stand up." instead.
+	
+Understand "bench" as the hard bench when the location is Booking.
+
 
 
 Chapter 5 - Reserve Bank
@@ -2716,9 +2853,13 @@ Food Court is west of Station Corridor.  "The center of the Food Court beneath t
 There is a trash can in the Food Court.
 Instead of going up in the Food Court, try going west instead.
 
-Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court." 
+Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 Instead of going up in the Lift Lobby, say "You can't go that way."
 Instead of going down in the Lift Lobby, try going east instead. 
+
+After going west from the Food Court for the first time:
+	activate the Table of Atrium Hints;
+	continue the action.
 
 The Powered Platform is an enterable supporter in the Lift Lobby.  The Powered Platform is fixed in place. The description of the Powered Platform is "This is a platform with motorized winches resting near the south wall.  Judging from the equipment locked to it, it is used to clean the walls and windows of the Atrium.  A locked-down control winch control is at one end, and there is a safety railing around the edge."
 The winch control is a device.  The winch control is part of the Powered Platform.  The description of the winch control is "A simple control panel, used for winding or unwinding cables and thus raising or lowering the platform.  It seems to be shut off.  A keylock is set to 'OFF.'"
@@ -2735,15 +2876,22 @@ Check taking the spool:
 Check climbing the railing:
 	say "It nearly encloses the platform.  There's no point." instead.
 
-Reserve Bank Bistro Paris is north of Food Court and east of Maintenance Area and west of I Have No Mouth.  "Bistro Paris is a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders as coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappointment any gourmand feels when faced with the prospect of eating here.  There are two workers behind the counter serving a line of customers. A sign behind the counter reads 'Try our Green Commercial One location!'[line break]"
+A foodstore called Reserve Bank Bistro Paris is north of Food Court and east of Maintenance Area and west of I Have No Mouth.  "Bistro Paris is a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders as coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappointment any gourmand feels when faced with the prospect of eating here.  There are two workers behind the counter serving a line of customers. A sign painted onto the counter reads 'Try our Green Commercial One location!'"
 
-I Have No Mouth is northeast of Food Court and east of Reserve Bank Bistro Paris.  "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
+A foodstore called I Have No Mouth is northeast of Food Court and east of Reserve Bank Bistro Paris.  "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
 
-A room called The Sheep Look Up is southeast of Food Court and east of Tacos Terriff and south of I Have No Mouth.  "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several dozen hungry customers who wait in line."
+A foodstore called The Sheep Look Up is southeast of Food Court and east of Tacos Terriff and south of I Have No Mouth.  "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several dozen hungry customers who wait in line."
 
-Tacos Terriff is west of The Sheep Look Up and south of Food Court.  "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the lunch set."
+A foodstore called Tacos Terriff is west of The Sheep Look Up and south of Food Court.  "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the lunch set."
 
-Apollo's is west of Tacos Terriff and southwest of Food Court and south of Maintenance Area.  "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth." 
+A foodstore called Apollo's is west of Tacos Terriff and southwest of Food Court and south of Maintenance Area.  "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth."
+The robotic head is a backdrop in Apollo's.  The robotic head is scenery.  The robotic head is fixed in place. The description of the robotic head is "Large and chromed silver, this robot's head looks like a large helmet with rudimentary features.  Instead of eyes, a red band crosses the face, behind which a bright red light slowly moves back and forth."
+Instead of taking the robotic head:
+	say "It's mounted high behind the counter." instead.
+Instead of pushing the robotic head:
+	try taking the robotic head instead.
+	
+Understand "robot" and "robot head" and "head" as the robotic head when the location is Apollo's.
 
 Maintenance Area is west of Reserve Bank Bistro Paris and northwest of Food Court and north of Apollo's.  Maintenance Area is blind. "This corner of the food court is drab and uninhabited.  A closed door marked 'MAINTENANCE' lurks to the west, and another marked 'RESTROOM' to the north.  The floor and walls are scuffed around the door, no doubt from cleaning implements banging against them on their daily travels."
 
@@ -2786,15 +2934,21 @@ Maintenance Corridor is west of the Utility Closet.  Maintenance Corridor is bli
 
 North End of Maintenance Corridor is north of Maintenance Corridor.  North End of Maintenance Corridor is blind.  The description is "The corridor comes to an end here.  To the north is large door marked 'HVAC ACCESS' which is closed and securely locked.  A bulletin board on the wall to the right contains a dizzying array of official Workplace Notices, all of which bear the symbol of the Health and Safety Board."
 
-South End of Maintenance Corridor is south of Maintenance Corridor. South End of Maintenance Corridor is blind.  The description is "The corridor extends to the north from here.  To the east is a service bouncelift."
+South End of Maintenance Corridor is south of Maintenance Corridor. South End of Maintenance Corridor is blind.  The description is "The corridor extends to the north from here.  To the west is a service bouncelift."
+Before going west from South End of Maintenance corridor, say "The weight on your feet lightens as the bouncelift field grabs you."
 
-Bottom of Service Bouncelift is east of South End of Maintenance Corridor.  Bottom of Service Bouncelift is blind.  "Inside the Service Bouncelift, the blue glow of the liftfield illuminates the two-meter cylinder.  Here at the bottom, there is an exit to the west."
-Before going west from Bottom Of Service Bouncelift, say "You swim through the liftfield towards the exit, grasping the safety handle and swinging out of the bouncelift."
+Bottom of Service Bouncelift is west of South End of Maintenance Corridor.  Bottom of Service Bouncelift is blind.  "Inside the Service Bouncelift, the blue glow of the liftfield illuminates the two-meter cylinder and suspends you just off the floor.  Here at the bottom, there is an exit to the east."
+Before going east from Bottom Of Service Bouncelift, say "You swim through the liftfield towards the exit, grasping the safety handle and swinging out of the bouncelift."
 Before going up from Bottom of Service Bouncelift, say "You move to the up half of the cylinder and the liftfield wafts you upwards.  This service bouncelift has no intervening exits, so you are in the lift for some time before the top end comes into sight."
+Instead of jumping when the location is Bottom of Service Bouncelift:
+	say "The liftfield grabs you as you push off.";
+	try going up.
 
-Top of Service Bouncelift is above the Bottom of Service Bouncelift.  Top of Service Bouncelift is blind. "Here at the top of the Service Bouncelift, there is an exit to the east."
+Top of Service Bouncelift is above the Bottom of Service Bouncelift.  Top of Service Bouncelift is blind. "You are floating gently in midar at the top of the Service Bouncelift, there is an exit to the east."
 Before going east from Top of Service Bouncelift, say "You angle yourself towards the door.  The liftfield gently moves you to the edge of the tube, and you swing yourself out of the lift via the safety handle."
 Before going down from Top of Service Bouncelift, say "You move to the down half of the cylinder and the liftfield allows you to sink downwards.  This service bouncelift has no intervening exits, so you are in the lift for some time before the top end comes into sight."
+Instead of jumping when the location is Top of Service Bouncelift:
+	say "Your feet are floating in the air with the rest of you. You thrash around for a few moments until the field slowly brings your head upwards again."
 
 Bouncelift Vestibule is east of Top of Service Bouncelift.  Bouncelift Vestibule is blind.  The description of Bouncelift Vestibule is "The service bouncelift opens onto a small vestibule, not much larger than the size of a closet.  A sign painted on the wall reads 'LEVEL 35 - MEZZANINE'. There is a door with a palm lock to the east."
 
@@ -2827,11 +2981,28 @@ Before going from the Seating Area to Atrium Ledge:
 		say "You step gingerly through the jagged hole in the observation window onto the ledge.";
 		continue the action;
 		
-Atrium Ledge is a room.  The Atrium Ledge is unmapped. The Atrium Ledge is blind. The description of Atrium Ledge is "This ledge, along with the others at the Mezzanine level, looks out over the huge hollow core of the Reserve Bank spacescraper's lower third.  The central column containing the main bouncelifts is visible perhaps fifty meters away.   Above, the roof of the atrium is hazily visible through the glare from its light fixtures some thirty floors up.  Sixty floors below, the main lobby can be made out.  To one side of the bouncelift column, the sublevel Lift Lobby can be seen one level below the lobby.  A very low glass wall surrounds the ledge for safety, but it's clear that this space isn't meant for the public.  A few holes in the plascrete floor hold scattered soil; one large planter in the center holds a scarred but defiantly unbent tree."
+Atrium Ledge is a room.  The Atrium Ledge is unmapped. The Atrium Ledge is blind. The description of Atrium Ledge is "This ledge, along with the others at the Mezzanine level, looks out over the huge hollow core of the Reserve Bank spacescraper's lower third.  The central column containing the main bouncelifts is visible perhaps fifty meters away.   Above, the roof of the atrium is hazily visible through the glare from its light fixtures some thirty floors up.  Sixty floors below, the main lobby can be made out.  To one side of the bouncelift column, the sublevel Lift Lobby can be seen one level below the lobby.  A very low glass wall surrounds the ledge for safety, but it's clear that this space isn't meant for the public.  There are a few holes in the plascrete floor where plants once rested; one large planter in the center holds a scarred but defiantly unbent tree."
 
 Index map with Atrium Ledge mapped east of the Seating Area.
 
-The scarred tree is in the Atrium Ledge.  The scarred tree is scenery.  The scarred tree is fixed in place.  The description is "A scarred but unbent decorative tree.  The trunk is some four inches across.  You have the urge to hold onto it as you stand on the ledge, looking out over many stories of empty space."
+The scarred tree is in Atrium Ledge.  The scarred tree is scenery.  The scarred tree is fixed in place.  The description is "A scarred but unbent decorative tree stands here in a plascrete planter.  The trunk is some four inches across.  You have the urge to hold onto it as you stand on the ledge, looking out over many stories of empty space."
+Understand "planter" as the scarred tree when the location is Atrium Ledge.
+
+The plascrete floor is in Atrium Ledge.  The plascrete floor is scenery.  The plascrete floor is fixed in place.  The description is "The ledge's floor is a plascrete surface with several shallow holes in it which once held decorative plants."
+Instead of taking the plascrete floor:
+	say "That would be a neat trick."
+Instead of pushing the plascrete floor:
+	say "That would be a neat trick."
+Understand "hole" and "holes" as the plascrete floor.
+
+The broken window is in Atrium Ledge.  The broken window is scenery.  The broken window is fixed in place.  The description is "All that remains of the observation window is a bent, scarred frame and a few shards of armorglass here and there."
+
+The shards are in Atrium Ledge.  The shards are scenery.  The shards are fixed in place.  The description is "A few scattered pieces of armorglass. Most of the window must have been blown over the edge."
+Instead of taking the shards:
+	say "They're sharp.  You'd only hurt yourself." instead.
+Instead of pushing the shards:
+	say "You dare not risk them going over the edge and hurting someone below." instead.
+
 
 Before going west in Atrium Ledge:
 	if the player is harnessed:
