@@ -645,12 +645,13 @@ Instead of dropping the contact lens:
 	
 The tissue sampler is in the ambulance.  The tissue sampler is portable.  The tissue sampler has some text called tissueDonor.  The tissueDonor is "blank". The description is "This is a tissue sampler, used by hospital and emergency medical technicians for scanning skin or tissue in order to permit a tissue generator to produce compatible skin grafts. It is flat and translucent, and is intended to be laid against the skin to be replicated."
 
-The coffee is in the refrigerator.  The coffee is a thing.  The coffee is small. The coffee is edible. The coffee is portable.  The coffee can be either hot or cold.  The coffee is cold.  The coffee has some text called the cookDescription.  The cookDescription is "Steam begins to rise from the coffee."  The description is "The remains of your morning coffee in a convenient takeaway cup.[if cold]  It's cold.  Nothing worse than cold coffee.[otherwise]  It is just shy of too hot.  Perfect."
+[The coffee is in the refrigerator.  The coffee is a thing.  The coffee is small. The coffee is edible. The coffee is portable.  The coffee can be either hot or cold.  The coffee is cold.  The coffee has some text called the cookDescription.  The cookDescription is "Steam begins to rise from the coffee."  The description is "The remains of your morning coffee in a convenient takeaway cup.[if cold]  It's cold.  Nothing worse than cold coffee.[otherwise]  It is just shy of too hot.  Perfect."
 
 Instead of drinking the coffee:
 	unless the coffee is hot, say "Ugh.  Cold coffee is undrinkable." instead;
 	remove the coffee from play;
 	say "You drain the life-giving caffeine suspension, crumpling and throwing away the empty cup.  Ahhhhh."
+]
 
 The thermos is a container.  The thermos is in the Kitchen.  The thermos is openable and closed.  The thermos is portable.  The thermos has carrying capacity The description is "A stainless steel vacuum flask, this all-metal thermos excels at keeping hot things hot."
 
@@ -774,10 +775,9 @@ The cable is a part of the descender.  The cable can be tied or untied.  The des
 Before tying the cable to something:
 	unless the second noun is the scarred tree:
 		say "You can't tie the cable to that." instead;
-	say "You pass the cable around the tree and through the carabiner at the end and pull it tight, firmly attaching the cable to the tree.";
+	say "You pass the cable around the tree and snap the carabiner on the end around it, firmly attaching the cable to the tree.";
 	now the cable is tied;
 	stop.
-	
 
 The Maintenance camera is a disposable camera. The Maintenance camera is in the Utility Closet.  "A scuffed disposable camera with a building property sticker on it is here.  Written on it in marker are the words 'DOCUMENT ALL MAINTENANCE ITEMS.'"
 
@@ -870,13 +870,12 @@ Instead of touching the mailbox:
 	try opening the mailbox instead.
 
 
-The refrigerator is a container. The refrigerator is in the Kitchen.  The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit."
+The refrigerator is a container. The refrigerator is in the Kitchen.  The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit. Knowing you, there's unlikely to be anything in it that could be described as food."
 Understand "fridge" as the refrigerator.
 
 Check inserting into the refrigerator:
-	if the noun is the coffee:
-		now the noun is cold;
-	continue the action.
+	if the noun is medium or the noun is large:
+		say "That won't fit in the fridge." instead.
 
 
 [microwave]
@@ -1549,9 +1548,9 @@ Rule for cooking:
 			if sizzler provides the property fryDescription:
 				if sizzler is working, say "[fryDescription of sizzler][line break]";
 				now sizzler is fried;
-			else if sizzler provides the property cookDescription:
+			[else if sizzler provides the property cookDescription:
 				say "[cookDescription of sizzler][line break]";
-				now sizzler is hot;
+				now sizzler is hot;]
 			otherwise: 
 				do nothing;
 		say  "A few moments later there is a loud [bold type]BING![roman type] and the microwave stops.";	
@@ -1560,7 +1559,7 @@ Rule for cooking:
 
 
 [drinking coffee]
-Check drinking the coffee:
+[Check drinking the coffee:
 	if the coffee is cold, say "Ugh.  Cold coffee is undrinkable." instead;
 	otherwise continue the action.
 	
@@ -1569,7 +1568,7 @@ Carry out drinking the coffee:
 
 Report drinking the coffee:
 	say "You drain the paper gourd of life-giving caffeine suspension, tossing away the empty cup.  Ahhh."
-
+]
 
 [kleinhacking activity]
 KleinHacking something is an activity.
@@ -2951,8 +2950,9 @@ Instead of jumping when the location is Top of Service Bouncelift:
 	say "Your feet are floating in the air with the rest of you. You thrash around for a few moments until the field slowly brings your head upwards again."
 
 Bouncelift Vestibule is east of Top of Service Bouncelift.  Bouncelift Vestibule is blind.  The description of Bouncelift Vestibule is "The service bouncelift opens onto a small vestibule, not much larger than the size of a closet.  A sign painted on the wall reads 'LEVEL 35 - MEZZANINE'. There is a door with a palm lock to the east."
+Before going west from Bouncelift Vestibule, say "You step off the edge into empty space.  As always, there is a quick moment of adrenaline until your body realizes that the liftfield is working and you float into the tube."
 
-Vestibule Door is a door.  Vestibule door is lockable.  Vestibule door is locked. Vestibule Door is scenery. Vestibule Door is east of Bouncelift Vestibule and west of Office Corridor.  The description of Vestibule Door is "A scuffed but sturdy security door with a palm lock on this side to prevent unauthorized access to the floor beyond.  It looks like the lock is a retrofit, as it is attached to the door rather than an integral part."
+Vestibule Door is a door.  Vestibule door is lockable.  Vestibule door is locked. Vestibule Door is scenery. Vestibule Door is east of Bouncelift Vestibule and west of Office Corridor.  The description of Vestibule Door is "A scuffed but sturdy security door.[if the location is Bouncelift Vestibule] There is a palm lock on this side to prevent unauthorized access to the floor beyond.  It looks like the lock is a retrofit, as it is attached to the door rather than an integral part. A sign reads 'PUBLIC AREA BEYOND THIS DOOR.'[end if][if the location is Bouncelift Vestibule and the Vestibule Door lock is broken]  The lock is smashed.[end if]"
 
 Vestibule Door lock is a part of Vestibule door. Vestibule Door lock can be intact or broken.  Vestibule Door lock is intact.  The description of Vestibule Door lock is "[if intact]A retrofitted palm lock which juts out from the door's surface.[otherwise]  The remnants of a palm lock, smashed and broken to the point where the door moves freely."
 
@@ -2962,7 +2962,7 @@ Office Restroom is a restroom.  Office Restroom is north of Office Corridor.  Th
 There is a trash can in the Office restroom.
 The Office mirror is a mirror.  The Office mirror is in the Office Restroom.  The description is "A wall-covering mirror bolted over the sinks.  Although it is free of fingerprints and grime, you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
 
-Seating Area is east of Office Corridor.  The description of Seating Area is "The corridor ends in a small open seating area.  Through the windows the myriad internal windows of the spacescraper's other suites can be seen.  There is a door leading north, presumably to the rest of the office space.  It is closed and locked.  [if the observation window is intact]An observation window looks out east onto a ledge over the spacescraper's hollow core.[otherwise]The wreckage of an observation window leads east out to a ledge." 
+Seating Area is east of Office Corridor.  The description of Seating Area is "The corridor ends in a small open seating area.  There is a door leading north, presumably to the rest of the office space.  It is closed and locked.  [if the observation window is intact]An observation window looks out east onto a ledge over the spacescraper's hollow core.[otherwise]The wreckage of an observation window leads east out to a ledge." 
 
 The observation window is a supporter.  The observation window is in the Seating Area.  The observation window is scenery.  The observation window can be broken or intact.  The observation window is intact.  The description is "[if intact]A wall-sized armorcrys window which looks out over a ledge jutting into the airspace of the spacescraper's atrium.  The ledge, one of many spotted around the interior of the atrium, holds some flowers and a single tree, all in plascrete planters.[end if][if the observation window encloses the breaching charge]  A breaching charge is stuck to the window.[end if][if broken]The remnants of a wall-sized armorcrys window looking out over a ledge jutting into the atrium.  The ledge, on of many spotted around the interior of the atrium, holds some empty low planters and a single scarred tree in the middle of the ledge."
 
@@ -2981,7 +2981,7 @@ Before going from the Seating Area to Atrium Ledge:
 		say "You step gingerly through the jagged hole in the observation window onto the ledge.";
 		continue the action;
 		
-Atrium Ledge is a room.  The Atrium Ledge is unmapped. The Atrium Ledge is blind. The description of Atrium Ledge is "This ledge, along with the others at the Mezzanine level, looks out over the huge hollow core of the Reserve Bank spacescraper's lower third.  The central column containing the main bouncelifts is visible perhaps fifty meters away.   Above, the roof of the atrium is hazily visible through the glare from its light fixtures some thirty floors up.  Sixty floors below, the main lobby can be made out.  To one side of the bouncelift column, the sublevel Lift Lobby can be seen one level below the lobby.  A very low glass wall surrounds the ledge for safety, but it's clear that this space isn't meant for the public.  There are a few holes in the plascrete floor where plants once rested; one large planter in the center holds a scarred but defiantly unbent tree."
+Atrium Ledge is a room.  The Atrium Ledge is unmapped. The Atrium Ledge is blind. The description of Atrium Ledge is "This ledge, along with the others at the Mezzanine level, looks out over the huge hollow core of the Reserve Bank spacescraper's lower third.  The central column containing the main bouncelifts is visible perhaps fifty meters away.   Above, the roof of the atrium is hazily visible through the glare from its light fixtures some thirty floors up.  Thirty floors below, the main lobby can be made out.  To one side of the bouncelift column, the sublevel Lift Lobby can be seen one level below.  A very low glass wall surrounds the ledge for safety, but it's clear that this space isn't meant for the public.  There are a few holes in the plascrete floor where plants once rested; one large planter in the center holds a scarred but defiantly unbent tree."
 
 Index map with Atrium Ledge mapped east of the Seating Area.
 
@@ -3017,7 +3017,7 @@ Before going down from Atrium Ledge:
 		say "you're not confident enough in your grip to go over the edge while simply holding your lifeline." instead;
 	otherwise:
 		now Bombs Thrown is 0;
-		say "You carefully ease yourself over the edge, and before you can think better of it you let go!  The descender slowly pays out cable with a steady whir, and you find yourself dropping through empty space![line break]".
+		say "You carefully ease yourself over the edge, and before you can think better of it you let go!  The descender slowly pays out cable with a steady whir, and you find yourself dropping through empty space!".
 
 The Atrium Midair Top is a room with printed name "The Atrium (Midair)". The Atrium Midair Top is down from the Atrium Ledge.  The Atrium Midair Top is unmapped. The Atrium Midair Top is blind. The description is "You are hanging in empty space some ways down from the ledge, the cable attached to your harness holding you face-down.  Below you you can see the crowds of people at the convention gathered on the Atrium floor."
 
