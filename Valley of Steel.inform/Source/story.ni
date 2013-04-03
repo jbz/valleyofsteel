@@ -1,6 +1,6 @@
 "Valley of Steel" by "The Custodian of http://everything2.com"
 
-The story description is "In a pervasive surveillance society, you[']ll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers.  The creep of surveillance and control has continued unabated.  Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner.  You've spent years as a privacy hacker, and last night, after what might have been a few drinks too many, you may have achieved the grail.  You are in possession of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative.   The drink may have made you reckless, though.  Your own MitKlein signature was captured during the attack.  Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately.  Short term, you'll have to figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
+The story description is "In a pervasive surveillance society, you[']ll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers.  The creep of surveillance and control has continued unabated.  Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner.  You've spent years working with the underground as a hacker for hire, helping research and develop countermeasures to government surveillance.  You are in possession of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative.   The drink may have made you reckless, though.  Your own MitKlein signature was captured during the attack.  Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately.  Short term, you'll have to get off the street before curfew and figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
 The story headline is "A tale of the surveillance society".
 The story genre is  "Science Fiction".
 The story creation year is 2012.
@@ -24,9 +24,9 @@ Use serial comma, American dialect, no scoring, and verbose room descriptions.
 
 The carrying capacity of the player is 5.
 
-Time of day is 12:00 PM.
+Time of day is 4:50 PM.
 
-The player is in the Bedroom.
+The player is in Green Residential Park.
 
 When play begins: 
 	add the list of transitStations to Transit System;
@@ -38,6 +38,8 @@ When play begins:
 	boozing starts at 2:00 PM;
 	activate the Table of General Hints;
 	now the player is unbriefed;
+[	now the messagePointer of the phone is 0;]
+	the message arrives in 2 turns from now;
 	say "Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream.";
 
 
@@ -52,6 +54,8 @@ Index map with Top of Service Bouncelift mapped west of Bouncelift Vestibule.
 Index map with Bouncelift Vestibule mapped west of Office Corridor.
 Index map with Seating Area mapped east of Office Corridor.
 Index map with Transit Capsule mapped east of Reserve Bank Station.
+Index map with Side Yard mapped northeast of Front Lobby.
+Index map with Back yard mapped east of The Bedroom.
 Index map with EPS file.
 
 [Extensions]
@@ -80,6 +84,12 @@ Definition: a thing is matched if it is listed in the multiple object list.
 
 
 [Decision rules]
+
+To decide whether player is out of doors:
+	if the player is in ResidentialOutside, decide yes;
+	if the player is in GreenServOutside, decide yes;
+	if the player is in GreenCommOutside, decide yes;
+	decide no.
 
 To decide whether player is eyevalid:
 	unless the player is wearing the contact lens, decide no;
@@ -356,6 +366,12 @@ At the time when autodoors close:
 		say "The automatic door slides closed.";
 		now the door is closed.
 		
+At the time when the message arrives:
+	now the alertMessage of the phone is " A small line of text at the top of the screen reads '10 messages waiting.'";
+	now the messagePointer of the phone is 1;
+	if the location is the location of the phone, say "There is a quiet tone from your phone, indicating that an SMS message has arrived.";
+	if the phone is enclosed by the player, say "You feel a short vibration."
+
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
 
@@ -388,33 +404,6 @@ Section 5 - Portable Objects (non-Scenery)
 
 [kinds]
 
-[rooms]
-
-[bathrooms]
-A sink is a kind of supporter.  It is scenery.  The description is "Totally boring sink."
-A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
-Instead of entering a stall, say "You really don't want to use it." instead.
-
-A restroom is a kind of room.  The description of a restroom is "Totally boring bathroom containing a sink, a mirror and a stall."  A sink is in every restroom.  A stall is in every restroom.
-
-Understand "toilet" as the stall when the location is a restroom.
-
-Flushing is an action applying to one touchable thing.
-Understand "flush [something]" as flushing.
-
-Check flushing:
-	unless the noun is a stall, say "You can't flush that." instead.
-
-Carry out flushing:
-	say "There is a brief gurgling sound.  If only your problems could be so easily disposed of."
-
-[foodstore]
-A counter is a kind of supporter.  It is scenery. It is fixed in place. The description of a counter is "A combination display and serving counter."
-
-A foodstore is a kind of room.  The description of a foodstore is "Standard food service establishment with a counter."
-A counter is in every foodstore.
-
-
 [parts of people]
 A palm is a kind of thing. A palm is part of every person.  The description of a palm is "[if the player is not wearing the skin sample]Standard garden-variety palm.[otherwise]Your palm is hidden beneath a slightly wrinkled oblong patch of skin, lighter than your own, which has been stuck onto your hand." [BFR - FIX THIS (description based on whose palm]
 
@@ -439,10 +428,6 @@ After examining a garment:
 	if the noun is tagged, say "There is an antitheft tag attached to [the noun]."
 
 [objects - kinds]
-A newspaper is a kind of thing.  Instead of examining a newspaper:
-	say "Today[apostrophe]s front-page headline is: [bold type]Homeland Security convention to be held this week at the Reserve Bank Spacescraper[roman type].   'The best and the brightest of the various Homeland Security agencies will meet in the Reserve Bank Atrium this week to receive presentations on new security initiatives and to discuss the state of the art in security technology.'[paragraph break]The next headline reads: [bold type][headline in row newsIndex of the Table of Stories][roman type][line break]The story itself continues: '[newsstory in row newsIndex of the Table of Stories]' At the bottom, a small postscript reads [bold type]Would you like to know more?[roman type]  [url in row newsIndex of the Table of Stories]  [paragraph break]The thought of all those Homeland Security drones in one place makes you grind your teeth.  Then, however, a vision of all those heavily-secured workers with dead MitKlein bottles replaces it, and you have some difficulty wiping the resulting smile from your face.  If only..."
-
-Understand "paper" as the newspaper.
 
 An ID bomb is a kind of explosive. An ID bomb has a timer 1.  An ID bomb can be working or fried.  An ID bomb is usually working. An ID bomb has some text called item-id.  An ID bomb always has item-id "M5". An ID bomb has some text called fryDescription.  The fryDescription of an ID bomb is usually "There is a series of bright sparking flashes and a puff of smoke as the ID bomb begins to melt![line break]".  The description is "A small ID bomb with a single button. [if disarmed]The arming LED is dark.[else if armed]The arming LED is blinking green at shortening intervals![else if inert]The ID bomb is now a chunk of burnt and useless circuitry.[end if]". 
 
@@ -503,7 +488,6 @@ Check taking an antitheft tag:
 
 A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the Kleinhacking signal.  It needs a power source to perform its task."
 
-
 A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos."
 
 
@@ -520,7 +504,12 @@ The backpack is a player's holdall. The backpack is wearable. The player is wear
 Understand "pack" as the backpack.
 Understand "bag" as the backpack.
 
-The pamphlet is in the Mailbox.  The pamphlet is small.  "This is a small pamphlet of glossy paper."  The description of the pamphlet is "The pamphlet is from the Department of Homeland Security.  It seems that they believe you are due to have a child any day now (which would surprise you if this was not the fifth time they had decided you were due such a blessed event). [paragraph break]As such, the pamphlet is meant to inform you of your duty as a citizen to ensure your child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.  The pamphlet cheerily explains that without such a chip, your child will be severely disadvantaged and unable to use basic modern services.[paragraph break]Given your hacking spree last night, it is likely that any such scanning of [italic type]your[roman type] MitKlein will turn you instantly into a fugitive.  Even disabling your MitKlein - which no-one has managed to do - would help you only temporarily, for the lack of a functioning unit would be just as damning - unless the Department of Homeland Security had more pressing things to worry about."
+The newspaper is a thing.  The newspaper is small.  
+Instead of examining the newspaper:
+	say "Today[apostrophe]s front-page headline is: [bold type]Homeland Security convention to be held this week at the Reserve Bank Spacescraper[roman type].   'The best and the brightest of the various Homeland Security agencies will meet in the Reserve Bank Atrium this week to receive presentations on new security initiatives and to discuss the state of the art in security technology.'[paragraph break]The next headline reads: [bold type][headline in row newsIndex of the Table of Stories][roman type][line break]The story itself continues: '[newsstory in row newsIndex of the Table of Stories]' At the bottom, a small postscript reads [bold type]Would you like to know more?[roman type]  [url in row newsIndex of the Table of Stories]  [paragraph break]The thought of all those Homeland Security drones in one place makes you grind your teeth.  Then, however, a vision of all those heavily-secured workers with dead MitKlein bottles replaces it, and you have some difficulty wiping the resulting smile from your face.  If only..."
+Understand "paper" as the newspaper.
+
+The pamphlet is small. The description of the pamphlet is "The pamphlet is from the Department of Homeland Security.  It seems that they believe the occupants of Apartment 1 are due to have a child any day now.  As such, the pamphlet is meant to inform them of their duty as a citizen to ensure their child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.  The pamphlet cheerily explains that without such a chip, your child will be severely disadvantaged and unable to use basic modern services."
 
 After examining the pamphlet:
 	activate the Table of MitKlein hints.
@@ -554,15 +543,10 @@ Instead of inserting the Fire Axe into the backpack, say "The axe is far too lar
 After taking the Fire Axe for the first time:
 	say "This axe is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
 
-
-[The fire extinguisher is in the Bouncelift Vestibule.  The fire extinguisher is portable.  The fire extinguisher can be working or fried.  The fire extinguisher is working. The description is "A large, heavy metal cylinder with fire safety instructions written on it which read 'POINT AT FIRE.  PULL PIN.'"
-Instead of inserting the fire extinguisher into the backpack, say "The extinguisher is far too large to fit in there."
-[BFR: Handle using the Fire Extinguisher!]]
-
-The multitool is on the workbench.  The multitool is small. The description is "Your pocket multitool.  Has various pliers, blades and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched your name, address and 'BUSINESS REPLY MAIL' onto it."
+The multitool is in the backpack.  The multitool is small. The description is "Your pocket multitool.  Has various pliers, blades and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched your name, address and 'BUSINESS REPLY MAIL' onto it."
 Understand "tool" as the multitool.
 
-The watch is wearable.  The watch is small. The watch is on the bedside table. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
+The watch is wearable.  The watch is small. The watch is in the backpack. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
 
 After examining the watch for the third time:
 	if the watch is working:
@@ -584,7 +568,7 @@ Instead of setting the watch to something:
 	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
 [cell phone]
-The phone is on the bedside table.  The phone is portable.  The phone is small.  The description of the phone is "Your cell phone was a standard candybar model with a nice screen.  'Was' because apparently, in your paranoia-fueled hacking binge, you must have decided it was too easy for the government to spy on you through it, and done something about that.  Now it's dead.  The screen is black.[if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the dead screen."
+The phone is in the backpack.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
 
 Check opening the phone:
 	say "It's a sealed unit." instead.
@@ -594,7 +578,27 @@ Check cutting the phone:
 	
 Check switching on the phone:
 	say "Your phone is stone dead." instead.
-	
+
+Understand the command "read" as something new.
+
+Reading is an action applying to one carried thing.
+
+Understand "read [something]" as reading.
+
+Understand "sms" as the phone.
+
+Check reading:
+	unless the noun is the phone, try examining the noun instead;
+	unless the phone is carried by the player, try taking the phone;
+	unless the phone is carried by the player, say "You don't have your phone." instead.
+
+Carry out reading:
+	if there is no message corresponding to a number of the messagePointer of the phone in the Table of SMS Messages, say "You have no messages." instead;
+	say "Message [messagePointer] reads: [the message corresponding to a number of the messagePointer of the phone in the Table of SMS messages].";
+	increment the messagePointer of the phone;
+	if the messagePointer of the phone is greater than 10:
+		now the messagePointer of the phone is 1;
+		activate the Table of SMS Hints.
 
 
 [pager]
@@ -645,20 +649,12 @@ Instead of dropping the contact lens:
 	
 The tissue sampler is in the ambulance.  The tissue sampler is portable.  The tissue sampler has some text called tissueDonor.  The tissueDonor is "blank". The description is "This is a tissue sampler, used by hospital and emergency medical technicians for scanning skin or tissue in order to permit a tissue generator to produce compatible skin grafts. It is flat and translucent, and is intended to be laid against the skin to be replicated."
 
-[The coffee is in the refrigerator.  The coffee is a thing.  The coffee is small. The coffee is edible. The coffee is portable.  The coffee can be either hot or cold.  The coffee is cold.  The coffee has some text called the cookDescription.  The cookDescription is "Steam begins to rise from the coffee."  The description is "The remains of your morning coffee in a convenient takeaway cup.[if cold]  It's cold.  Nothing worse than cold coffee.[otherwise]  It is just shy of too hot.  Perfect."
-
-Instead of drinking the coffee:
-	unless the coffee is hot, say "Ugh.  Cold coffee is undrinkable." instead;
-	remove the coffee from play;
-	say "You drain the life-giving caffeine suspension, crumpling and throwing away the empty cup.  Ahhhhh."
-]
-
 The thermos is a container.  The thermos is in the Kitchen.  The thermos is openable and closed.  The thermos is portable.  The thermos has carrying capacity The description is "A stainless steel vacuum flask, this all-metal thermos excels at keeping hot things hot."
 
 The flitterkey is a thing.  The flitterkey is small. The flitterkey can be either working or fried.  The flitterkey is working.  The flitterkey has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the ballistic plastic of the flitter key begins to melt."  The description is "the flitterkey is a scuffed, hardened ballistic plastic transponder.[if fried] It looks like it has been partially melted; scorched electronics poke through the uneven plastic shell."
 
 [car key]
-The car key is a container.  The car key is small. The car key is unopenable. The car key is closed.  The car key has carrying capacity 2.  The car key can be either working or fried.  The car key is working. The car key has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the rubberized plastic of the car key begins to melt." The description is "The 'key' is really a small rubberized, sealed plastic transponder which automatically unlocks the car when you're near it.  It won't do much of anything at the moment, however, since your car has been in the shop for three days.[if fried]  It may not do anything ever again, in fact; it looks like it has melted slightly.  Some electronic bits can be seen in the mass of deformed plastic.[otherwise if open] The plastic has been cut away from one end of the key, revealing two component slots."
+The car key is a container.  The car key is small. The car key is unopenable. The car key is closed.  The car key has carrying capacity 2.  The car key can be either working or fried.  The car key is working. The car key has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the rubberized plastic of the car key begins to melt." The description is "This 'key' is really a small rubberized, sealed plastic transponder which automatically unlocks the car it is paired with when it is within range.  You have no idea where the appropriate car might be, however.[if fried]  It may not do anything ever again, in fact; it looks like it has melted slightly.  Some electronic bits can be seen in the mass of deformed plastic.[otherwise if open] The plastic has been cut away from one end of the key, revealing two component slots."
 
 Rule for printing room description details of the closed car key: stop.
 
@@ -672,7 +668,7 @@ Check cutting the car key with something:
 
 
 Carry out cutting the car key with something:
-	say "You carefully cut open the car keys with your knife and peel back the rubber to reveal [a list of things in car key].";
+	say "You carefully cut open the car key with your knife and peel back the rubber to reveal [a list of things in car key].";
 	now the noun is disassembled;
 	now the noun is open;
 	now the noun is unopenable;
@@ -720,15 +716,15 @@ Check taking the ID camera:
 
 The tag remover is in the sales drawer.  The tag remover is a thing.  The tag remover is small. The description is "This is a combination antitheft tag remover and wirecutter, useful for removing antitheft tags or pesky labels from products."
 
-The knife is on the workbench.  The knife is a thing. The knife is small. The printed name of the knife is "lockblade knife".  The description is "This is a battered but extremely sharp folding lockblade knife.  You've had it for years.  It's a wonder you haven't lost it to the TSA yet."
+The knife is on the workbench.  The knife is a thing. The knife is small. The printed name of the knife is "lockblade knife".  The description is "This is a battered but extremely sharp folding lockblade knife."
 
 After taking the knife for the first time:
 	say "This knife is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
 
 Check opening the knife:
-	say "You flip the blade open and stare at it for a few seconds, mesmerized by the clean steel, before closing it since you don't have a task for it right now." instead;
+	say "You flip the blade open and stare at it for a few seconds, mesmerized by the clean steel, before closing it since you don't have a task for it right now." instead.
 
-The soldering iron is a device.  The soldering iron is on the workbench. The soldering iron is small. The soldering iron is portable.  The soldering iron is switched off.  The description is "Your portable soldering iron.  It uses a sealed battery rather than requiring a power connection.[if switched on]  An LED on it is lit red, and the tip is quite hot."
+The soldering iron is a device.  The soldering iron is on the workbench. The soldering iron is small. The soldering iron is portable.  The soldering iron is switched off.  The description is "A portable soldering iron.  It uses a sealed battery rather than requiring a power connection.[if switched on]  An LED on it is lit red, and the tip is quite hot."
 
 Before inserting the soldering iron into:
 	if the soldering iron is switched on, say "That's dangerous.  You might want to switch the soldering iron off first." instead.
@@ -739,7 +735,11 @@ Check switching on the soldering iron:
 The solder is a thing. The solder is on the workbench.  The solder is small. The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted pool of useless solder."
 
 [laptop]
-The laptop is on the workbench.  The laptop is medium.   The description is "Your laptop is a fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
+The laptop is in the backpack.  The laptop is medium.   The description is "The laptop is a 
+
+
+
+fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
 The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes, trying to remember what you were doing.  Apparently, you managed to locate what you've been looking for for months- a secret design document describing the internals of the MitKlein.  Using that, you appear to have coded a file which, if broadcast into a person's Mitsui-Klein Encapsulation, might wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners![paragraph break]Your theft of the file, however, seems to have triggered security software which managed to activate the MitKlein scanner in your laptop before you could prevent it.  The government now has your MitKlein code.  Although you managed to wipe as many records as you could find which carry that code, any scan of your MitKlein which is linked with your identification will probably render you a fugitive."
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
 
@@ -779,18 +779,49 @@ Before tying the cable to something:
 	now the cable is tied;
 	stop.
 
-The Maintenance camera is a disposable camera. The Maintenance camera is in the Utility Closet.  "A scuffed disposable camera with a building property sticker on it is here.  Written on it in marker are the words 'DOCUMENT ALL MAINTENANCE ITEMS.'"
+The maintenance camera is a disposable camera. The Maintenance camera is in the Utility Closet.  "A scuffed disposable camera with a building property sticker on it is here.  Written on it in marker are the words 'DOCUMENT ALL MAINTENANCE ITEMS.'"
 
 The lost camera is a disposable camera.  The Lost camera is in Government Square North.  "It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here."
 
-The medical camera is a disposable camera.  The Medical camera is in the Ambulance.  "A cheap camera, no doubt used to document injuries or accident scenes, is here."
+The medical camera is a disposable camera.  The medical camera is in the Ambulance.  "A cheap camera, no doubt used to document injuries or accident scenes, is here."
 
 
 
 Section 6 - Fixed/Scenery Objects
 
 [kinds]
-An autodoor is a kind of door. An autodoor is always scenery. The description of an autodoor is "This is an automatic sliding door.  It is connected to an Eye Scanner and will determine if you are allowed passage by scanning your iris pattern as you approach. The door is presently [if the noun is open]open.[otherwise]closed."
+
+[rooms]
+
+[bathrooms]
+A sink is a kind of supporter.  It is scenery.  The description is "Totally boring sink."
+Check switching on a sink:
+	say "The water runs for a few seconds before shutting itself off." instead.
+A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
+Instead of entering a stall, say "You really don't want to use it." instead.
+
+A restroom is a kind of room.  The description of a restroom is "Totally boring bathroom containing a sink, a mirror and a stall."  A sink is in every restroom.  A stall is in every restroom.
+
+Understand "toilet" as the stall when the location is a restroom.
+
+Flushing is an action applying to one touchable thing.
+Understand "flush [something]" as flushing.
+
+Check flushing:
+	unless the noun is a stall, say "You can't flush that." instead.
+
+Carry out flushing:
+	say "There is a brief gurgling sound.  If only your problems could be so easily disposed of."
+
+[foodstore]
+A counter is a kind of supporter.  It is scenery. It is fixed in place. The description of a counter is "A combination display and serving counter."
+
+A foodstore is a kind of room.  The description of a foodstore is "Standard food service establishment with a counter."
+A counter is in every foodstore.
+
+
+[autodoors]
+An autodoor is a kind of door. An autodoor is always scenery. The description of an autodoor is "This is an automatic sliding door.  It is connected to an eye scanner and will determine if you are allowed passage by scanning your iris pattern as you approach. The door is presently [if the noun is open]open.[otherwise]closed."
 Understand "autodoor" as a door.
 Before going through an autodoor, the autodoors close in zero turns from now.
 
@@ -861,14 +892,6 @@ One activate button is part of every device.
 
 
 [Specific objects]
-
-The mailbox is a container.  The mailbox is fixed in place.  The mailbox is openable. The mailbox is closed.  The description is "Postal Service standard mailbox.  Yours will open to your fingerprint."
-Instead of opening the mailbox:
-	say "You touch your finger to the lockplate and the mailbox swings open[unless the mailbox is empty], revealing [a list of things inside the mailbox].";
-	now the noun is open.
-Instead of touching the mailbox:
-	try opening the mailbox instead.
-
 
 The refrigerator is a container. The refrigerator is in the Kitchen.  The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit. Knowing you, there's unlikely to be anything in it that could be described as food."
 Understand "fridge" as the refrigerator.
@@ -1137,17 +1160,39 @@ Understand "detach [something] with [something preferably held]" as removing it 
 
 Check removing it with:
 	if the second noun is nothing, say "What do you want to remove that with?" instead;
-	unless the second noun is the tag remover, say "You can't remove anything with that." instead;
-	if the noun is an antitheft tag:
-		unless the noun is part of a garment, say "That's not attached to anything." instead;
-	if the noun is the camera chain:
-		unless the chain is part of the ID camera, say "That's not attached to anything." instead;
-	continue the action.
+	unless the second noun is the tag remover or the second noun is the multitool, say "You can't remove anything with that." instead;
+	if the second noun is the tag remover:
+		if the noun is an antitheft tag:
+			unless the noun is part of a garment, say "That's not attached to anything." instead;
+		if the noun is the camera chain:
+			unless the chain is part of the ID camera, say "That's not attached to anything." instead;
+		continue the action;
+	otherwise if the second noun is the multitool:
+		if the noun is the cotter pin:
+			unless the cotter pin is inside the latch, say "That's not attached to anything." instead;
+		continue the action.
 	
 Carry out removing it with:
 	say "That doesn't seem possible.";
 	stop the action.
 
+
+[pulling it with]
+pulling it with is an action applying to two things.
+Understand "pull [something] with [something preferably held]" as pulling it with.
+Understand "yank [something] with [something preferably held]" as pulling it with.
+Understand "extract [something] with [something preferably held]" as pulling it with.
+
+Understand "yank [something]" as pulling.
+Understand "extract [something]" as pulling.
+
+Check pulling it with:
+	if the second noun is nothing:
+		try pulling the noun instead;
+	otherwise if the second noun is the multitool:
+		try removing the noun with the multitool instead;
+	otherwise:
+		say "You can't pull [the noun] with that." instead.
 
 
 [cutting]
@@ -1170,36 +1215,6 @@ Check cutting it with:
 
 Carry out cutting it with:
 	say "Cutting that would achieve little."
-
-[Check cutting it with:
-	if the second noun is the multitool:
-		say "The one thing this multitool doesn't have is a decent cutting edge." instead;
-	if the noun is the car key:
-		unless the car key is carried, say "You don't have the car key." instead;
-		unless the second noun is the knife:
-			say "You can't cut the key with that." instead;
-		if the second noun is the knife:
-			unless the knife is carried, try taking the knife;
-			continue the action;
-	otherwise if the noun is the fence:
-		if the second noun is the knife:
-			say "While sharp, this knife can't cut cyclone fencing." instead;
-		unless the second noun is the tag remover:
-			say "You can't cut the fence with that." instead;
-		if the second noun is the tag remover:
-			unless the tag remover is carried, try taking the tag remover;
-			continue the action;
-	otherwise if the noun is a disposable camera:
-		say "The case of the camera is quite hard and slick. You'd only hurt yourself." instead;
-	otherwise if the noun is an antitheft tag:
-		unless the noun is part of a garment, say "That's not attached to anything." instead;
-		unless the second noun is the tag remover, say "You can't remove the tag with that." instead;
-		if the second noun is the tag remover:
-			unless the tag remover is carried, try taking the tag remover;
-			continue the action;		
-	otherwise:	
-		try cutting the noun instead.
-]
 
 
 
@@ -1618,6 +1633,30 @@ Rule for synthesizing:
 
 Section 8 - Scenes
 
+[Times of day]
+Afternoon is a recurring scene.  Afternoon begins when the time of day is 12:00 PM.  Afternoon ends when the time of day is 5:00 PM.
+Evening is a recurring scene.  Evening begins when the time of day is 5:00 PM.  Evening ends when the time of day is 8:00 PM.
+
+When evening begins:
+	if the player is out of doors:
+		say "The streetlights blink on around the area, throwing back the darkening sky."
+
+Night is a recurring scene.  Night begins when the time of day is 8:00 PM.  Night ends when the time of day is 5:00 AM.
+
+Every turn during Night:
+	if the player is in ResidentialOutside and the MitKlein is unhacked:
+		if the player is clear and a random chance of 1 in 4 succeeds:
+			say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
+			now the incriminatingAct is "allowing your active MitKlein to be scanned";
+			the player incriminates in 3 turns from now.	
+
+
+Morning is a recurring scene.  Morning begins when the time of day is 5:00 AM.  Morning ends when the time of day is 12:00 PM.
+
+When morning begins:
+	if the player is out of doors:
+		say "The streetlights wink out, leaving the brightening sky to light the area."
+
 [Home Escape]
 Home escape is a scene.  Home escape begins when play begins.  
 
@@ -1821,6 +1860,21 @@ When Endgame ends unsuccessfully:
 	
 
 Section 9 - Tables
+
+Table of SMS Messages
+number	message
+0	--
+1	"REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. <more>"
+2	"DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.<more>"
+3	"NEW INSTRUCTIONS FOLLOW: <more>"
+4	"- YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED<more>"
+5	"- YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET<more>"
+6	"- YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED<more>"
+7	"- ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.<more>"
+8	"- ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY<more>"
+9	"- ONCE PROGRAM DOWNLOADED PERMANENTLY DISABLE THIS PHONE TO PREVENT TRACKING BY HOMELAND SECURITY<more>"
+10	"GOOD LUCK. MESSAGE ENDS."
+
 
 Table of Stories
 headline	url	newsstory
@@ -2072,6 +2126,7 @@ Include Adaptive Hints by Eric Eve.
 Table of Potential Hints (continued)
 title		subtable
 "What should I do now?"		Table of General Hints
+"What were my original SMS messages?"		Table of SMS Hints
 "How do I get into Transit?"		Table of Home Escape Hints
 "How do I disable my MitKlein?"		Table of MitKlein Hints
 "How do I get into the Spacescraper?"		Table of Spacescraper Hints
@@ -2085,6 +2140,20 @@ Table of General Hints
 hint				used
 "Try exploring the world."				a number
 "Then try exploring more.  Are you sure you've seen everywhere?"
+
+Table of SMS Hints
+hint	used
+"REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. <more>"
+"DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.<more>"
+"NEW INSTRUCTIONS FOLLOW: <more>"
+"- YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED<more>"
+"- YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET<more>"
+"- YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED<more>"
+"- ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.<more>"
+"- ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY<more>"
+"- ONCE PROGRAM DOWNLOADED PERMANENTLY DISABLE THIS PHONE TO PREVENT TRACKING BY HOMELAND SECURITY<more>"
+"GOOD LUCK. MESSAGE ENDS."
+
 
 Table of Home Escape Hints				
 hint				used
@@ -2220,8 +2289,8 @@ Understand "capsule" as the Voodoo Subway.
 
 Definition:  A room is entrained if the station of the Capsule is it.
 
-Section 1 - Scenes
 
+Section 1 - Scenes
 
 Transit Stop is a recurring scene.  Transit Stop begins when the turn count is three. Transit Stop begins when Transit Enroute ends.
 
@@ -2359,12 +2428,15 @@ Before going inside when the player is in the station of the Capsule:
 
 
 
-Chapter 2 - Green Residential
+Chapter 2 - Global Map
 
-
-Section 3 - Map
-
+[spacescraper]
 The spacescraper is a backdrop.  It is not scenery.  The initial appearance is "The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline."  The description of the spacescraper is "Visible in the distance above the surrounding buildings, the Reserve Bank Spacescraper is home to more than just the regional Reserve Bank.  It is a two-hundred-level building containing all manner of businesses and government offices, as well as a hotel and several floors of extremely high-priced residential apartments.  Centrally located Downtown, it boasts its own Transit station and a food court in its lower levels.  Conventions and events are often held in its soaring Atrium, an open space within the building core which rises over fifty floors entirely indoors.  It is several miles away."
+
+Understand "Reserve Bank" as the spacescraper.
+Understand "Reserve" as the spacescraper.
+Understand "Bank" as the spacescraper.
+Understand "Skyscraper" as the spacescraper.
 
 Instead of taking the spacescraper, say "That would be a very neat trick. It's miles away in any case."
 Instead of touching the spacescraper, say "That would be a very neat trick.  It's miles away in any case."
@@ -2373,19 +2445,31 @@ Instead of climbing the spacescraper, say "It's miles away."
 Instead of listening to the spacescraper, say "Any sound it is making is lost in the miles between you and it."
 Instead of cutting the spacescraper, say "It's a bit big for you.  It's miles away in any case."
 
-Understand "Reserve Bank" as the spacescraper.
-Understand "Reserve" as the spacescraper.
-Understand "Bank" as the spacescraper.
-Understand "Skyscraper" as the spacescraper.
 
 After examining the spacescraper for the first time:
 	activate the Table of Spacescraper Hints.
+	
 
-GreenResidential is a region.  Home Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.  Green Residential Station is in GreenResidential.
+[streetlights]
+The streetlights is a backdrop.  The streetlights is plural-named.  The streetlights is scenery.  The streetlights is fixed in place. The description of the streetlights is "The area is served by a number of familiar tall metal streetlights.  [if evening is happening]Their bright LED arrays shine against the darkening sky.[otherwise if night is happening]Their bright LED arrays illuminate the area against the night, casting a few faint shadows."
 
-ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. 
+Understand "streetlight" as the streetlights.
+Understand "Street light" as the streetlights.
 
-The Spacescraper is in ResidentialOutside.
+Instead of climbing the streetlights, say "The poles are too slick.  You struggle for a moment before giving up."
+
+
+Chapter 3 - Green Residential
+
+Section 3 - Map
+
+
+
+GreenResidential is a region.  Front Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.  Green Residential Station is in GreenResidential.
+
+ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. Green Residential Park is in ResidentialOutside.  Side Yard is in ResidentialOutside.  Back Yard is in ResidentialOutside.
+
+The Spacescraper is in ResidentialOutside.  The streetlights is in ResidentialOutside.
 
 Green Residential Platform is a transitStation.  The stationName of Green Residential Platform is "Green Residential".  The stationNumber of Green Residential Platform is 3. The description of Green Residential Platform is "Green Residential's platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west[if the location is the station of the Capsule], where a Transit capsule hovers impatiently.  The capsule doors are open.[otherwise], now empty.[end if]".
 Instead of going west in Green Residential Platform, try entering the Transit Web instead.
@@ -2410,13 +2494,16 @@ Green Residential Station is above Green Residential Station Door.  The descript
 
 Primrose & Cedar is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east."
 
-East Cedar Street is east of Primrose & Cedar.  East Cedar Street is blind.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
+Green Residential Park is north of Primrose & Cedar. The description is "Primrose Street ends here in a small circular cul-de-sac.  To the north of this is a small green park, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass, and a few benches are scattered around.  There is a curfew sign at the park's entrance."
+The curfew sign is in Green Residential Park.  The curfew sign is scenery.  The curfew sign is fixed in place.  The description is "A metal sign on a metal pole, it reads 'NOTE: PARK CLOSED DURING RESIDENTIAL AREA CURFEW - 8:00PM to 5:00 AM - NO LOITERING.'"
+
+East Cedar Street is east of Primrose & Cedar.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
 
 The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of extremely boring residential buildings with neatly trimmed lawns."
 Understand "houses" as residential buildings when the location is East Cedar Street.
 Understand "lawns" as residential buildings when the location is East Cedar Street.
 
-South Primrose Lane is south of Primrose & Cedar.   South Primrose Lane is blind.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane, just in front of your home, continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is your building's front path."
+South Primrose Lane is south of Primrose & Cedar.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence's front path."
 Some sumac plants are in South Primrose Lane.  The sumac plants are scenery.  The description of the sumac plants is "You can see the tops of a few trees over the top of the fence.  Their leaves are greenish red, waving out of reach in the slight breeze."
 
 The warning sign is in South Primrose Lane.  The warning sign is fixed in place.  The warning sign is scenery.  The description is "It reads 'YOUR SKIN MUST BE THIS THICK (here there is a lifelike picture of a dog's tooth, perhaps an inch long) TO BURGLE THIS HOUSE.'  There is an arrow pointing down and to the side, which actually points at the dog."
@@ -2499,17 +2586,87 @@ The metal door is a supporter.  The metal door is in the Drug Den.  The metal do
 Instead of taking the metal door:
 	say "You strain to lift the door, then give it up as a bad job." instead.
 
-Front Path is east of South Primrose Lane.  Front Path is blind. The description is "Your front path is paved with cracked flagstones, one of the few concessions to a sense of style that your absentee, never-to-be-seen landlord has made.  Primrose Lane is to the west, and your building is to the east."
-The mailbox is here.  The mailbox contains a newspaper and the pamphlet.
-Some flagstones are here.  The flagstones is scenery.  The description of the flagstones is "Weathered stones, they appear to be naturally smooth rather than having been shaped."
+Front Path is east of South Primrose Lane.  The description is "This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building's side yard is to the northeast."
+Some flagstones are here.  The flagstones is scenery.  The description of the flagstones is "Weathered stones, which appear to be naturally smooth rather than having been shaped."
 
-The House door is east of Front Path and west of Home Lobby.  The House door is an autodoor.  The House door is closed.
+West of Side Yard is northeast of Front Path.  The description is "A narrow side yard with a high solid fence on the north side and a few straggly decorative plants.  The yard extends east behind the house and west to the front of the house."
+The decorative plants is in the side yard.  The decorative plants is plural-named.  The decorative plants is scenery.  The description is "A few straggly brown and green plants huddling near the base of the fence and the side of the house."
+Instead of taking the decorative plants, say "They're just weeds, really." instead.
+Instead of pushing the decorative plants, say "You shove a few stalks around for a few moments before giving up." instead.
 
-Home Lobby is east of the House door.  Home Lobby is blind.  The description is "The slightly shabby front lobby of your building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and your apartment door is to the south."
-Instead of going east in Home Lobby, say "You can't open the security gate." instead.
-Instead of going up in Home Lobby, say "You can't open the security gate." instead.
+North of Back Yard is east of Side Yard.  The description is "An enclosed back yard, this small square of grass is surrounded by a high fence and the east side of the attached home.  A narrow frosted window - likely a bathroom - is visible in the middle of the stretch of wall, and a larger clear window with curtains behind it is visible at the south end."
+The narrow window is a backdrop.  The description is "A narrow window of frosted glass, it appears to be securely painted shut."
+The narrow window is in Back yard.  The narrow window is in the Bathroom.
+Understand "frosted window" as the narrow window when the location is Back Yard or the location is the Bathroom.
 
-The security gate is in the Home Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
+The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is hacked]  The lower pane is open."
+
+Understand "clear window" as the bedroom window when the location is Back Yard.
+Understand "large window" as the bedroom window when the location is Back Yard.
+Understand "windows" as the bedroom window when the location is Back Yard or the location is The Bedroom.
+Understand "window" as the bedroom window when the location is Back Yard.
+
+The latch is a container.  The latch is part of the bedroom window. The latch is unopenable and open.  The latch can be hacked or unhacked.  The latch is unhacked. The latch contains the cotter pin.  The latch is scenery.  The description of the latch is "This is a fairly standard window latch.  It prevents the two windowpanes from sliding past one another. [if the cotter pin is inside the latch] The locking tab is secured with a cotter pin which, for some reason, is on the outside of the window[otherwise] The cotter pin that locks the latch seems to be missing[end if]."
+Understand "mechanism" as the latch.  Understand "latch mechanism" as the latch.  Understand "lock" as the latch when the location is Back Yard.
+The cotter pin is a thing.  The cotter pin is small. The description is "A small steel pin made up of a length of wire doubled over on itself with a loop at one end."
+
+Rule for printing room description details of the latch: stop.
+
+Instead of removing the cotter pin with the multitool:
+	say "You deftly remove the cotter pin with the multitool.";
+	now the cotter pin is carried by the player;
+	now the latch is hacked;
+	change the west exit of Back Yard to Bedroom;
+	change the east exit of Bedroom to Back yard;
+	rule succeeds.
+
+Procedural rule while taking off the cotter pin: ignore the carrying requirements rule.
+
+Check taking the cotter pin:
+	if the cotter pin is inside the latch:
+		say "You can't get enough purchase with your fingers to pull it out." instead;
+	otherwise:
+		continue the action.
+
+Check pulling the cotter pin:
+	if the cotter pin is inside the latch:
+		say "You can't get enough purchase with your fingers to pull it out." instead;
+	otherwise:
+		continue the action.
+
+Before going west in Back Yard:
+	unless the bedroom window is hacked, say "The windows are securely locked." instead.
+	
+Before going east in the Bedroom:
+	unless the bedroom window is hacked, say "The windows are closed." instead.
+
+Check opening the bedroom window:
+	if the bedroom window is hacked:
+		say "It's already open." instead;
+	if the latch is hacked:
+		say "You slide the bedroom window open.";
+		now the bedroom window is hacked;
+		stop;
+	otherwise:
+		say "It's locked.";
+		stop.
+		
+Check closing the bedroom window:
+	if the bedroom window is unhacked:
+		say "It's already closed." instead;
+	otherwise:
+		say "You slide the bedroom window closed.";
+		now the bedroom window is unhacked;
+		stop.
+
+The House door is east of Front Path and west of Front Lobby.  The House door is an autodoor.  The House door is closed.
+
+Front Lobby is east of the House door.  Front Lobby is blind.  The description is "The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south."
+The newspaper is here.  The pamphlet is here.
+Instead of going east in Front Lobby, say "You can't open the security gate." instead.
+Instead of going up in Front Lobby, say "You can't open the security gate." instead.
+
+The security gate is in the Front Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
 
 Instead of unlocking the security gate with something:
 	say "You can't open the gate, even with that." instead.
@@ -2520,43 +2677,59 @@ Check taking the security gate:
 Check opening the security gate:
 	say "It's locked." instead.
 
-The Front door is south of Home Lobby and north of Entry.  The Front door is an autodoor. The Front door is closed.  The description is "Your apartment front door.  It is metal-reinforced wood, and has a single lock with multiple throw bars, controlled by an eye scanner."
+The Apartment door is south of Front Lobby and north of Entry.  The Apartment door is a door. The Apartment door is scenery. The Apartment door can be hacked or unhacked.  The Apartment door is unhacked. The Apartment door is closed.  The description is "The ground floor apartment front door is metal-reinforced wood.[if the location is Front Lobby]  A brass numeral '1' adorns the door.[otherwise if the location is The Entry] Multiple throw bars adorn the inside of the door."
 
-Before opening the front door, say "You permit the apartment door scanner to scan your eye."
+Check opening the Apartment door:
+	if the location is Front Lobby:
+		If the Apartment door is unhacked:
+			say "The door is securely locked." instead;
+		otherwise:
+			continue the action;
+	If the location is The Entry:
+		if the Apartment door is unhacked:
+			now the Apartment door is hacked;
+		say "You undo the throw bolts.  Since you have no key, you leave the door unlocked.";
+		continue the action.
 
-The Entry is south of the Front door.  The Entry is blind.  The description is "This is the small entryway to your apartment. A pile of mail, most of it unread, nearly covers the side table just inside your front door.  The apartment hallway is to the south.  To the west is your office, and to the east is your bathroom."
+
+The Entry is south of the Apartment door.  The Entry is blind.  The description is "This is the small entryway to the ground-floor apartment. A pile of mail, most of it unread, nearly covers the side table just inside the apartment door.  The apartment hallway is to the south.  To the west is an office, and to the east is a bathroom."
 There is a side table in the Entry.  The car key is on the side table.  The mail is on the side table.  The mail is scenery.  The description of the mail is "Totally boring."
-Instead of taking the mail, say "You're just not interested in bills and advertisements." instead.
+Instead of taking the mail, say "You're just not interested in someone else's bills and advertisements." instead.
 
-The Home Office is west of The Entry.  The home office is blind.  The description is "Your home office, a room which in other homes might be a living room, is not very tidy.  Random detritus covers most available surfaces except for your workbench[if the workbench supports the laptop] and your laptop.[otherwise]."
+The Home Office is west of The Entry.  The home office is blind.  The description is "This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench."
 
-The workbench is a supporter. The workbench is in the Home Office.  The description is "You built your workbench from found materials a few years ago.  It's actually a very nice piece of furniture; just the right height, easy to get your legs under. "
+The workbench is a supporter. The workbench is in the Home Office.  The description is "It's actually a very nice piece of furniture; just the right height, easy to get your legs under. "
 
 Understand "bench" as the workbench when the location is the Home Office.
 
-The Hall is south of the Entry.  The Hall is blind. The description is "The central hallway of your modest home.  It's relatively clean and neat, as there is no furniture in it."
+The Hall is south of the Entry.  The Hall is blind. The description is "The central hallway of this modest home.  It's relatively clean and neat, as there is no furniture in it."
 
-The Bathroom is a restroom.  The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "Your home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if you had any visitors."
+The Bathroom is a restroom.  The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "This home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if the owner had expected visitors. It contains a sink, toilet and shower."
+The shower is a container in the Bathroom.  The shower is scenery.  The shower is fixed in place. The shower is enterable, openable, transparent, and closed.  "A one-piece shower unit."
+Check switching on the shower:
+	say "The apartment owners must have shut off their water while away; nothing happens." instead.
+Check switching on a sink when the location is The Bathroom:
+	say "The apartment owners must have shut off their water while away; nothing happens." instead.
 
-The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "Your bedroom is rather boring, indicative of how little time you spend in it while awake.  It contains your bed - currently, as always, unmade - and a bedside table with a lamp on it."
+The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather boring, indicative of how little time you spend in it while awake.  It contains a bed - currently, as always, unmade - and a bedside table with a lamp on it."
 
 Making up is an action applying to one thing.
 Understand "make [something]" as making up.
 Instead of making up the bed, say "There's no point."
 
-The bedside table is a supporter.  The bedside table is in the Bedroom.  The bedside table is scenery. The description is "A cheap but sturdy bedside table, which has so far withstood your daily blind flailings after your watch.  There is a table lamp atop it."
+The bedside table is a supporter.  The bedside table is in the Bedroom.  The bedside table is scenery. The description is "A cheap but sturdy bedside table. There is a table lamp atop it."
 
-The bed is a supporter.  The bed is in the Bedroom.  The bed is scenery.  The description is "A basic, functional flat-pack bed.  A slight imprint in the shape of your body can be seen in the center."
+The bed is a supporter.  The bed is in the Bedroom.  The bed is scenery.  The description is "A basic, functional flat-pack bed.  A slight imprint in the shape of a body can be seen in the center."
 
 Check entering the bed:
 	say "You're not sleepy, and the bed isn't comfortable otherwise." instead.
 
-The table lamp is a device on the bedside table.  The table lamp is scenery.  The table lamp is fixed in place. The description is "A generic compact fluorescent lamp, it has rested next to your bed for years.  You finally screwed it to the table after knocking it over for the fifth time whilst flailing for your watch.[if table lamp is switched on]  It is presently giving off a wan bluish light."
+The table lamp is a device on the bedside table.  The table lamp is scenery.  The table lamp is fixed in place. The description is "A generic compact fluorescent lamp, it is screwed to the table, presumably to prevent it falling over.[if table lamp is switched on]  It is presently giving off a wan bluish light."
 
-The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "Your kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, reflecting the fact that you don't cook for yourself much."
+The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much."
 
 
-Chapter 3 - Green Commercial
+Chapter 4 - Green Commercial
 
 Section 3 - Map
 
@@ -2564,7 +2737,7 @@ GreenCommercial is a region.  Metro Savings is in GreenCommercial.  NanoMart is 
 
 GreenCommOutside is a region.  GreenCommOutside is in GreenCommercial.  Green Commercial Plaza North is in GreenCommOutside.  Green Commercial Plaza Center is in GreenCommOutside.  Green Commercial Plaza South is in GreenCommOutside.
 
-The spacescraper is in GreenCommOutside.
+The spacescraper is in GreenCommOutside.  The streetlights is in GreenCommOutside.
 
 
 Green Commercial Platform is a transitStation.  The stationName of Green Commercial Platform is "Green Commercial One".  The stationNumber of Green Commercial Platform is 2. The description of Green Commercial Platform is "Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty.[end if]". 
@@ -2578,7 +2751,16 @@ Green Commercial Plaza North is south of Green Commercial Station.  The descript
 There is a trash can in Green Commercial Plaza North.
 
 Green Commercial Plaza Center is south of Green Commercial Plaza North.  The description is "This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe."
-There is a trash can in Green Commercial Plaza Center.
+The drop message is in a trash can in Green Commercial Plaza Center.  The drop message is small.  The drop message can be folded or unfolded.  The drop message is folded. "You see a small folded message with your ID sigil on it stuck to the inner side of the trash can!"  The description is "A small piece of flash paper [if folded]attached to the inside of the can and folded shut.[otherwise] which contains the following message: 'IF THIS MESSAGE RETRIEVED ATTACK PAYLOAD IS FUNCTIONAL.  YOUR MK RECORD NOW DISTRIBUTED TO ALL SECURITY ELEMENTS.  TO EFFECT ESCAPE AND COMPLETE MISSION, USE PAYLOAD TO ATTACK HOMELAND SECURITY PERSONNEL IN HIGH CONCENTRATION.  BASED ON LIKELY FOOTPRINT OF ATTACK USING AVAILABLE COMPONENTS, A MINIMUM OF THREE SEQUENTIAL ATTACKS WILL BE REQUIRED TO DISRUPT ENOUGH OPERATIVES TO PERMIT ESCAPE.'"
+
+After taking the drop message:
+	say "You unfold the message as you take it.";
+	deactivate the Table of SMS Hints;
+	now the drop message is unfolded.
+	
+Instead of dropping the drop message:
+	say "You trigger the flash paper and drop the message.  There is a quick flash of flame, and it vanishes utterly!";
+	now the drop message is off-stage.
 
 The fountain is in Green Commercial Plaza Center.  The fountain is scenery.  The description of the fountain is "A fairly dull example of landscape features, no doubt because it was designed or selected by a business association."
 
@@ -2727,7 +2909,7 @@ Before going south in Garb-oh:
 		say "You move out from behind the sales counter.";
 		now the player is in Garb-oh instead.
 
-Chapter 4 - Green Service
+Chapter 5 - Green Service
 
 Section 3 - Map
 
@@ -2735,7 +2917,7 @@ GreenService is a region.  Booking is in GreenService.  Front Desk is in GreenSe
 
 GreenServOutside is a region.  GreenServOutside is in GreenService.  Government Square South and Government Square North and Police Station Steps and Civil Center Steps and Hospital Entrance and Hospital Driveway are in GreenServOutside.
 
-The spacescraper is in GreenServOutside.
+The spacescraper is in GreenServOutside.  The streetlights is in GreenServOutside.
 
 
 Green Service Platform is a transitStation.  The stationName of Green Service Platform is "Green Service One".  The stationNumber of Green Service Platform is 3. The description of Green Service Platform is "Green Service One's platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south[if the location is the station of the Capsule], where a Transit capsule hovers impatiently in the web.  The capsule doors are open.[otherwise], now empty.[end if]".
@@ -2820,7 +3002,7 @@ Understand "bench" as the hard bench when the location is Booking.
 
 
 
-Chapter 5 - Reserve Bank
+Chapter 6 - Reserve Bank
 
 Reserve Bank Station is a transitStation. The stationName of Reserve Bank Station is "Reserve Bank". The stationNumber of Reserve Bank Station is 1. The description of Reserve Bank Station is "The Reserve Bank Transit Station. The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the west.  The flow of commuters moves steadily through these doors, with each person turning their head to the right as they approach for the eye scanner to verify their identity before opening the portal long enough for them to slip through.  The floor and walls are both clean duramex nanotile, and the station name (Reserve Bank) is indicated on large plaques set into the walls.  At either end of the platform, closed gates guard against any entry into the slideway tunnels. A platform abuts a Transit web[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty."
 Instead of going east in Reserve Bank Station, try entering the Transit Web instead.
