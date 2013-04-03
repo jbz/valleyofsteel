@@ -38,9 +38,8 @@ When play begins:
 	boozing starts at 2:00 PM;
 	activate the Table of General Hints;
 	now the player is unbriefed;
-[	now the messagePointer of the phone is 0;]
 	the message arrives in 2 turns from now;
-	say "Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream.";
+	say "A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen's head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you've sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government's ubiquitous tagging of citizens is being worked out at levels above your own head.[paragraph break]For now, you have found yourself a small quiet park in a quiet corner of the City, and until you receive instructions, you have no plans.[paragraph break]Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream."
 
 
 
@@ -543,7 +542,7 @@ Instead of inserting the Fire Axe into the backpack, say "The axe is far too lar
 After taking the Fire Axe for the first time:
 	say "This axe is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
 
-The multitool is in the backpack.  The multitool is small. The description is "Your pocket multitool.  Has various pliers, blades and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched your name, address and 'BUSINESS REPLY MAIL' onto it."
+The multitool is in the backpack.  The multitool is small. The description is "Your pocket multitool.  Has various pliers and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched a PO Box address and 'BUSINESS REPLY MAIL' onto it."
 Understand "tool" as the multitool.
 
 The watch is wearable.  The watch is small. The watch is in the backpack. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
@@ -580,12 +579,11 @@ Check switching on the phone:
 	say "Your phone is stone dead." instead.
 
 Understand the command "read" as something new.
-
 Reading is an action applying to one carried thing.
-
 Understand "read [something]" as reading.
-
 Understand "sms" as the phone.
+Understand "messages" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player.
+
 
 Check reading:
 	unless the noun is the phone, try examining the noun instead;
@@ -734,12 +732,9 @@ Check switching on the soldering iron:
 
 The solder is a thing. The solder is on the workbench.  The solder is small. The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted pool of useless solder."
 
+
 [laptop]
-The laptop is in the backpack.  The laptop is medium.   The description is "The laptop is a 
-
-
-
-fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
+The laptop is in the backpack.  The laptop is medium.   The description is "The laptop is a fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
 The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes, trying to remember what you were doing.  Apparently, you managed to locate what you've been looking for for months- a secret design document describing the internals of the MitKlein.  Using that, you appear to have coded a file which, if broadcast into a person's Mitsui-Klein Encapsulation, might wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners![paragraph break]Your theft of the file, however, seems to have triggered security software which managed to activate the MitKlein scanner in your laptop before you could prevent it.  The government now has your MitKlein code.  Although you managed to wipe as many records as you could find which carry that code, any scan of your MitKlein which is linked with your identification will probably render you a fugitive."
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
 
@@ -763,6 +758,7 @@ After inserting into the chipslot:
 	now the Contents of the noun is "The Signal";
 	now the printed name of the noun is "programmed memory chip";
 	now the noun is programmed.
+
 
 
 The harness is a component.  The harness is in the Police Flitter. The item-id of the harness is "M7". The harness is wearable.  The description of the harness is "A strong harness made of black industrial strapping.  It has an attach point in the center of the back - a set of what appear to be metal locking hooks.  It fastens with sturdy plastic buckles.  It is probably used as a safety harness."
@@ -1594,6 +1590,7 @@ Rule for kleinhacking something (called target):
 		otherwise:
 			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.";
 			now the mitklein is hacked;
+			now the player is clear;
 			now the side panel is fried;
 			now the side panel is closed;
 			now the side panel is unopenable;
@@ -1647,6 +1644,7 @@ Every turn during Night:
 	if the player is in ResidentialOutside and the MitKlein is unhacked:
 		if the player is clear and a random chance of 1 in 4 succeeds:
 			say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
+			now the player is suspect;
 			now the incriminatingAct is "allowing your active MitKlein to be scanned";
 			the player incriminates in 3 turns from now.	
 
@@ -2595,9 +2593,9 @@ Instead of taking the decorative plants, say "They're just weeds, really." inste
 Instead of pushing the decorative plants, say "You shove a few stalks around for a few moments before giving up." instead.
 
 North of Back Yard is east of Side Yard.  The description is "An enclosed back yard, this small square of grass is surrounded by a high fence and the east side of the attached home.  A narrow frosted window - likely a bathroom - is visible in the middle of the stretch of wall, and a larger clear window with curtains behind it is visible at the south end."
-The narrow window is a backdrop.  The description is "A narrow window of frosted glass, it appears to be securely painted shut."
-The narrow window is in Back yard.  The narrow window is in the Bathroom.
-Understand "frosted window" as the narrow window when the location is Back Yard or the location is the Bathroom.
+The bathroom window is a backdrop.  The description is "A narrow window of frosted glass, it appears to be securely painted shut."
+The bathroom window is in Back yard.  The bathroom window is in the Bathroom.
+Understand "frosted window" as the bathroom window when the location is Back Yard or the location is the Bathroom.
 
 The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is hacked]  The lower pane is open."
 
@@ -2679,6 +2677,9 @@ Check opening the security gate:
 
 The Apartment door is south of Front Lobby and north of Entry.  The Apartment door is a door. The Apartment door is scenery. The Apartment door can be hacked or unhacked.  The Apartment door is unhacked. The Apartment door is closed.  The description is "The ground floor apartment front door is metal-reinforced wood.[if the location is Front Lobby]  A brass numeral '1' adorns the door.[otherwise if the location is The Entry] Multiple throw bars adorn the inside of the door."
 
+The post-it is here.  "A small post-it note is stuck to the door of Apartment 1."  The post-it is tiny.  The description of the post-it is "A short scribble, which reads 'The techs were by to turn off your water.  Have a nice vacation!'"
+Understand "note" as the post-it.
+
 Check opening the Apartment door:
 	if the location is Front Lobby:
 		If the Apartment door is unhacked:
@@ -2711,7 +2712,7 @@ Check switching on the shower:
 Check switching on a sink when the location is The Bathroom:
 	say "The apartment owners must have shut off their water while away; nothing happens." instead.
 
-The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather boring, indicative of how little time you spend in it while awake.  It contains a bed - currently, as always, unmade - and a bedside table with a lamp on it."
+The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather boring.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it."
 
 Making up is an action applying to one thing.
 Understand "make [something]" as making up.
