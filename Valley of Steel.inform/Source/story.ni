@@ -24,7 +24,7 @@ Use serial comma, American dialect, no scoring, and verbose room descriptions.
 
 The carrying capacity of the player is 5.
 
-Time of day is 4:50 PM.
+Time of day is 7:30 PM.
 
 The player is in Green Residential Park.
 
@@ -38,7 +38,8 @@ When play begins:
 	boozing starts at 2:00 PM;
 	activate the Table of General Hints;
 	now the player is unbriefed;
-	the message arrives in 2 turns from now;
+	now messagesWaiting is false;
+	the message arrives in 3 turns from now;
 	say "A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen's head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you've sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government's ubiquitous tagging of citizens is being worked out at levels above your own head.[paragraph break]For now, you have found yourself a small quiet park in a quiet corner of the City, and until you receive instructions, you have no plans.[paragraph break]Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream."
 
 
@@ -54,7 +55,7 @@ Index map with Bouncelift Vestibule mapped west of Office Corridor.
 Index map with Seating Area mapped east of Office Corridor.
 Index map with Transit Capsule mapped east of Reserve Bank Station.
 Index map with Side Yard mapped northeast of Front Lobby.
-Index map with Back yard mapped east of The Bedroom.
+Index map with Back Yard mapped east of The Bedroom.
 Index map with EPS file.
 
 [Extensions]
@@ -184,6 +185,8 @@ Things can be tiny, small, medium, or large (this is its size property).  Things
 
 transitTurn is a number that varies.
 
+messagesWaiting is a truth state that varies.
+
 [these are for and-attach and and-combine]
 group-attach-complete is a truth state that varies.
 group-combine-complete is a truth state that varies.
@@ -199,7 +202,7 @@ The can't unlock what's already unlocked rule is not listed in any rulebook.
 The can't unlock without the correct key rule is not listed in any rulebook.
 The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
-Understand the command "unlock" as something new.
+
 
 
 Rule for deciding whether all includes scenery: it does not. Rule for deciding whether all includes a fixed in place thing while taking: it does not.  Rule for deciding whether all includes a thing enclosed by the player: it does not.
@@ -313,7 +316,14 @@ Every turn:
 	if player is surveilled:
 		if the player is carrying the knife or the player is carrying the fire axe:
 			say "Security surveillance spots you openly carrying a weapon.  Police rush in!";
-			end the story saying "You have been arrested!".
+			end the story saying "You have been arrested!".;
+	if a random chance of 1 in 50 succeeds:
+		say "[one of]A tiny surveillance camera you're sure you didn't see before swivels to follow you.[or]You hear a very quiet [italic type]beep[roman type] from somewhere you can't identify.[or]You see a small red light in the corner of your vision which vanishes as you turn to look at it.[purely at random]";
+	if the player is out of doors:
+		if a random chance of 1 in 50 succeeds:
+			say "[one of]A black flittervan cruises slowly by above and vanishes from sight.[or]There is the sound of sirens in the distance.[or]You have the sudden feeling that you're being followed.[as decreasingly likely outcomes]"
+
+
 
 At the time when an explosion occurs:
 	repeat with activeMunition running through exploding explosives:
@@ -368,8 +378,35 @@ At the time when autodoors close:
 At the time when the message arrives:
 	now the alertMessage of the phone is " A small line of text at the top of the screen reads '10 messages waiting.'";
 	now the messagePointer of the phone is 1;
-	if the location is the location of the phone, say "There is a quiet tone from your phone, indicating that an SMS message has arrived.";
-	if the phone is enclosed by the player, say "You feel a short vibration."
+	now messagesWaiting is true;
+	the reminder happens in 5 turns from now;
+	if the location is the location of the phone, say "There is a quiet tone from your phone[if the phone is enclosed by the player] and you feel a short vibration[end if], indicating that an SMS message has arrived."
+
+At the time when the reminder happens:
+	unless messagesWaiting is false:
+		the reminder happens in 5 turns from now;
+		if the location of the phone is the location of the player:
+			say "A quiet tone from your phone indicates that you have unread SMS messages."
+			
+At the time when the phoneping happens:
+	if the player encloses the phone:
+		say "Your phone gives a quick vibration[if the player is surveilled].  At the same time, you see a surveillance camera swing to point at you[end if].";
+		the player incriminates in 3 turns from now;
+		now the incriminatingAct is "being in possession of your phone when it was located on the phone network";
+	otherwise:
+		the phonegrab happens in 3 turns from now.		
+
+At the time when the phonegrab happens:
+	if Ponyfriend Chunky encloses the phone:
+		if the player is near Ponyfriend Chunky:
+			say "Two policemen rush up.  After looking around for a few seconds and consulting a handheld device, they make a beeline for Ponyfriend Chunky.  Before he can even protest, they grab him, handcuff him, and hustle him out of sight.";
+			remove Ponyfriend Chunky from play;
+	otherwise if the phone is in the location of the player:
+		say "You see two police officers rush in and look around, consulting a handheld device.  After a few seconds, one of them spots your phone and slaps the other on the shoulder, pointing.  They grab it, look around suspiciously, and run out.";
+		remove the phone from play;
+	otherwise:
+		remove the phone from play.
+
 
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
@@ -566,8 +603,8 @@ Carry out taking off the watch:
 Instead of setting the watch to something:
 	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
-[cell phone]
-The phone is in the backpack.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
+[phone]
+The phone is in the backpack.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
 
 Check opening the phone:
 	say "It's a sealed unit." instead.
@@ -576,10 +613,15 @@ Check cutting the phone:
 	say "It's quite hard and slick.  You'd just hurt yourself." instead.
 	
 Check switching on the phone:
-	say "Your phone is stone dead." instead.
+	if the phone is working, say "It's already on." instead;
+	if the phone is fried, say "It's stone dead." instead.
+	
+Check switching off the phone:
+	if the phone is working, say "There's no point.  It can be tracked even if it's 'off'." instead;
+	if the phone is fried, say "It's stone dead." instead.
 
 Understand the command "read" as something new.
-Reading is an action applying to one carried thing.
+Reading is an action applying to one visible thing.
 Understand "read [something]" as reading.
 Understand "sms" as the phone.
 Understand "messages" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player.
@@ -594,6 +636,8 @@ Carry out reading:
 	if there is no message corresponding to a number of the messagePointer of the phone in the Table of SMS Messages, say "You have no messages." instead;
 	say "Message [messagePointer] reads: [the message corresponding to a number of the messagePointer of the phone in the Table of SMS messages].";
 	increment the messagePointer of the phone;
+	if messagesWaiting is true:
+		now messagesWaiting is false;
 	if the messagePointer of the phone is greater than 10:
 		now the messagePointer of the phone is 1;
 		activate the Table of SMS Hints.
@@ -685,8 +729,6 @@ Instead of closing the car key:
 	otherwise:
 		say "The plastic appears to be cut away. The damage looks permanent." instead.
 
-Instead of unlocking the car key with the knife:
-	try cutting the car key with the knife instead.
 
 
 [ID camera]
@@ -734,17 +776,15 @@ The solder is a thing. The solder is on the workbench.  The solder is small. The
 
 
 [laptop]
-The laptop is in the backpack.  The laptop is medium.   The description is "The laptop is a fairly powerful one.  You've spent a good deal of time and energy outfitting it with as many anti-surveillance tools as you could get your hands on.  Apparently you left it on after your epic caffeine-fueled hacking spree last night; the screen contains a downloaded file.  Just below the screen, the chipslot download light is blinking green, indicating it is ready to save.[unless the chipslot is empty] There is a chip in the chipslot."
-The screen is part of the laptop.  The screen is scenery.  The description is "You read the laptop screen with slightly bleary eyes, trying to remember what you were doing.  Apparently, you managed to locate what you've been looking for for months- a secret design document describing the internals of the MitKlein.  Using that, you appear to have coded a file which, if broadcast into a person's Mitsui-Klein Encapsulation, might wipe the MitKlein entirely!  Since the MitKlein is inserted at infancy, wiping a person's MitKlein would mean making them very difficult to track in a surveillance society overrun with chip scanners![paragraph break]Your theft of the file, however, seems to have triggered security software which managed to activate the MitKlein scanner in your laptop before you could prevent it.  The government now has your MitKlein code.  Although you managed to wipe as many records as you could find which carry that code, any scan of your MitKlein which is linked with your identification will probably render you a fugitive."
+The laptop is a container.  The laptop is on the workbench.  The laptop is medium.   The carrying capacity of the laptop is 0. The laptop is openable and closed.  The laptop can be hacked or unhacked.  The laptop is unhacked. The description is "The laptop is a generic, slightly more fashionable than functional model. [if open] It is active, with the screen lit.[otherwise if closed]  It is closed and sleeping.[end if][unless the chipslot is empty] There is a chip in the chipslot."
+The screen is part of the laptop.  The screen is scenery.  The description is "[screen-description]".
+The reboot button is part of the screen.  The reboot button is scenery.  The description is "A stylized on-screen button to restart the computer.  This model will search for a network book device when rebooted."
+Understand "restart button" as the reboot button.
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
 
 Understand "download slot" as the chipslot.
 Understand "slot" as the chipslot when the location is the location of the laptop.
 Understand "file" as the screen.
-
-After examining the screen for the first time:
-	now the player is briefed;
-	say "As you continue reading the backscroll, a chill of horror travels down your spine.  It must have been the bourbon, but it appears that you went into full-on devil-may-care mode to get the file - and you can clearly see at least three points in your incursions where your MitKlein signature was logged, even though the security systems were unable to stop you.  Although you appear to have chased down most of the records of your MitKlein ID you could, this means you really shouldn't perform any transactions which involve both your MitKlein and another biometric - because Homeland Security will certainly want to talk to you…"
 
 Instead of inserting into the laptop:
 	try inserting the noun into the chipslot instead.
@@ -759,9 +799,67 @@ After inserting into the chipslot:
 	now the printed name of the noun is "programmed memory chip";
 	now the noun is programmed.
 
+Check examining the screen:
+	if the laptop is closed, say "The laptop is closed." instead.
+	
+Check touching the screen:
+	if the laptop is closed, say "The laptop is closed." instead.
+	
+Check examining the reboot button:
+	if the laptop is closed, say "You can't see any such thing." instead.
+	
+Check touching the reboot button:
+	if the laptop is closed, say "You can't see any such thing." instead.
+	
+Check taking the reboot button:
+	if the laptop is closed, say "You can't see any such thing." instead.
+	
+To say screen-description:
+	if the laptop is unhacked:
+		say "The laptop is presently displaying a login screen.  There is a reboot button in the corner of the screen.";
+	otherwise if the laptop is hacked:
+		say "The laptop is displaying a static screen, which instructs you to place a memory chip into its chipslot to download the attack program."
+
+Rebooting is an action applying to one touchable thing.
+Understand "reboot [something]" as rebooting.
+Understand "restart [something]" as rebooting.
+
+Instead of pushing the reboot button, try rebooting the laptop instead.
+Instead of touching the reboot button, try rebooting the laptop instead.
+
+Understand the command "click" as something new.
+Understand "click [something]" as touching.
+
+Check rebooting:
+	unless the noun is the laptop, say "That can't be rebooted." instead;
+	if the laptop is hacked, say "The laptop is currently frozen by the attack program download and refuses to reboot." instead;
+	if the laptop is closed, say "The laptop is closed." instead.
+	
+Carry out rebooting:
+	if the laptop is netbootable:
+		say "The screen flickers as the laptop reboots.  The laptop pauses as it finds the boot server that has been installed on your phone, and then there is a quick series of flashes before a screen full of text comes up!";
+		now the laptop is hacked;
+		remove the reboot button from play;
+		if the chipslot contains a memory chip (called the target):
+			say "The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.";
+			now the item-id of the target is "M2";
+			now the Contents of the target is "The Signal";
+			now the printed name of the target is "programmed memory chip";
+			now the target is programmed;
+	otherwise:
+		say "The laptop screen flickers.  A brief boot cycle passes by dizzyingly fast, and the laptop returns to the login screen.";
+	
+
+Nearness relates a thing (called X) to a thing (called Y) when the location of X is the location of Y. The verb to be near implies the nearness relation.
+
+To decide if the laptop is netbootable:
+	unless the laptop is near the phone, decide no;
+	unless the phone is working, decide no;
+	if the messagePointer of the phone is 0, decide no;
+	decide yes.
 
 
-The harness is a component.  The harness is in the Police Flitter. The item-id of the harness is "M7". The harness is wearable.  The description of the harness is "A strong harness made of black industrial strapping.  It has an attach point in the center of the back - a set of what appear to be metal locking hooks.  It fastens with sturdy plastic buckles.  It is probably used as a safety harness."
+The harness is a component.  The harness is in the Police Flitter. The item-id of the harness is "M7". The harness is wearable.  The description of the harness is "A strong harness made of black industrial strapping.  It has an attach point in the center of the back - a set of what appear to be metal locking hooks.  It fastens with sturdy plastic buckles.  It is probably used for safety by police when their flitter doors are open or to lift people into the flitter."
 
 The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, it seems to have a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is enclosed by the powered platform]  It is attached to the platform's winch frame with several locking clamps."
 
@@ -926,8 +1024,8 @@ Check inserting something (called the subject) into the cook box:
 	if the subject is small, continue the action;
 	say "That won't fit in the oven." instead.
 
-instead of unlocking the side panel with the multitool:
-	try opening the side panel with the multitool instead.
+[instead of unlocking the side panel with the multitool:
+	try opening the side panel with the multitool instead.]
 
 Check opening the side panel:
 	if the noun is open, say "That's already been opened." instead;
@@ -1148,11 +1246,30 @@ Check waiting more:
 	if the time understood is greater than six hours, say "You really haven't got that kind of patience." instead.
 
 
+
+[unlocking] 
+[We have to re-implement this b/c we override it in order to let 'open x with y' work]
+Understand the command "unlock" as something new.
+
+Unlocking is an action applying to one touchable thing.
+Understand "unlock [something]" as unlocking.
+
+Carry out unlocking:
+	say "You can't unlock [the noun].";
+	stop the action.
+
+Key-unlocking is an action applying to two touchable things.
+Understand "unlock [something] with [something]" as key-unlocking.
+
+Carry out key-unlocking:
+	say "You can't unlock [the noun] with that.";
+	stop the action.
+
 [removing]
 removing it with is an action applying to two things.
 Understand "remove [something] with [something preferably held]" as removing it with.
 Understand "detach [something] with [something preferably held]" as removing it with.
-
+Understand "take [something] with [something]" as removing it with.
 
 Check removing it with:
 	if the second noun is nothing, say "What do you want to remove that with?" instead;
@@ -1632,11 +1749,12 @@ Section 8 - Scenes
 
 [Times of day]
 Afternoon is a recurring scene.  Afternoon begins when the time of day is 12:00 PM.  Afternoon ends when the time of day is 5:00 PM.
-Evening is a recurring scene.  Evening begins when the time of day is 5:00 PM.  Evening ends when the time of day is 8:00 PM.
+Evening is a recurring scene.  Evening begins when play begins. Evening begins when the time of day is 5:00 PM.  Evening ends when the time of day is 8:00 PM.
 
 When evening begins:
 	if the player is out of doors:
-		say "The streetlights blink on around the area, throwing back the darkening sky."
+		if the time of day is 5:00 PM: [This prevents the message from popping up at game start, which is an 'off-schedule' beginning for this ecene]
+			say "The streetlights blink on around the area, throwing back the darkening sky."
 
 Night is a recurring scene.  Night begins when the time of day is 8:00 PM.  Night ends when the time of day is 5:00 AM.
 
@@ -1655,11 +1773,8 @@ When morning begins:
 	if the player is out of doors:
 		say "The streetlights wink out, leaving the brightening sky to light the area."
 
-[Home Escape]
-Home escape is a scene.  Home escape begins when play begins.  
-
-
-Home escape ends when the player is not in GreenResidential.
+[[Home Escape]
+Home escape is a scene.  Home escape begins when play begins.  Home escape ends when the player is not in GreenResidential.]
 
 
 [Bank Run]
@@ -1870,7 +1985,7 @@ number	message
 6	"- YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED<more>"
 7	"- ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.<more>"
 8	"- ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY<more>"
-9	"- ONCE PROGRAM DOWNLOADED PERMANENTLY DISABLE THIS PHONE TO PREVENT TRACKING BY HOMELAND SECURITY<more>"
+9	"- THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY<more>"
 10	"GOOD LUCK. MESSAGE ENDS."
 
 
@@ -1882,7 +1997,7 @@ headline	url	newsstory
 "In Los Angeles, something is always burning."	"http://bit.ly/ylxSjM"	"Area man barricades house against police in possible confusion.  SWAT unit's flash-bangs result in casualty."
 "Soldiers begin to experience breakdowns."	"http://bit.ly/z5g588"	"The parents of several deployed American military personnel have raised concerns that their children appear to be losing touch with reality.  Government refutes these claims with statistics showing that 97.2 percent of deployed American service personnel are safely medicated."
 "Possible Artificial Intelligence breakthrough!"	"http://bit.ly/wM2TwQ"	"Researchers at an area university have issued conflicting press statements as to whether a recent AI incubation experiment has ended in success or failure.  One graduate student, who appeared to be in tears, would only say 'Pyrrhic.  It was so unnecessary.'"
-"Winter settles in over our military positions in the mountains."	"http://bit.ly/xO9ijg"	"Fighting has been slowed by the onset of a heavier-than-expected winter snow season in the Corderilla Oriental mountains.  Trench lines have been set up, and both sides have settled in for a vigilant if slower winter."
+"Winter settles in over military positions in the mountains."	"http://bit.ly/xO9ijg"	"Fighting has been slowed by the onset of a heavier-than-expected winter snow season in the Corderilla Oriental mountains.  Trench lines have been set up, and both sides have settled in for a vigilant if slower winter."
 "New Mit-Klein Data Sold To Dating Company!"	"http://bit.ly/yir9ea"	"New venture promises to utilize Mitsui-Klein transaction and telemetry data to match clients with ideal partners.  'We would never intrude on our clients' privacy, ' the CTO stated.  'It is possible that data has been deanonymized before it reaches us, but we would never utilize that data for our financial gain.'"
 "Fine Structure is this month's ebook best seller!"	"http://bit.ly/wdEurc"	"Science Fiction novel reaches record sales.  Author unavailable for comment, but publisher and readers pleased!"
 "Giant combat robot found in student flat in Britain."	"http://bit.ly/WIYQXy"	"Authorities cannot fathom who left the 7-story-tall combat mecha folded in a basement."
@@ -2125,7 +2240,6 @@ Table of Potential Hints (continued)
 title		subtable
 "What should I do now?"		Table of General Hints
 "What were my original SMS messages?"		Table of SMS Hints
-"How do I get into Transit?"		Table of Home Escape Hints
 "How do I disable my MitKlein?"		Table of MitKlein Hints
 "How do I get into the Spacescraper?"		Table of Spacescraper Hints
 "How do I get past the Spacescraper Eye Scanner?"		Table of Eyescanner Hints
@@ -2151,12 +2265,6 @@ hint	used
 "- ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY<more>"
 "- ONCE PROGRAM DOWNLOADED PERMANENTLY DISABLE THIS PHONE TO PREVENT TRACKING BY HOMELAND SECURITY<more>"
 "GOOD LUCK. MESSAGE ENDS."
-
-
-Table of Home Escape Hints				
-hint				used
-"You need to find a way of entering Transit without the autodoor scanning your MitKlein."
-"You'll need to find a way to disable your MitKlein."
 
 
 Table of MitKlein Hints
@@ -2257,8 +2365,7 @@ Section 0 - Setup
 
 Transit System is a list of objects that varies.
 
-Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  [Station Corridor is in Transit.  Green Commercial Station is in Transit.  Green Residential Station is in Transit.  Green Service Station is in Transit.]
-
+Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  
 
 The transit web is a thing.  The transit web is a backdrop.  It is in Green Residential Platform. It is in Reserve Bank Station.  It is in Green Commercial Platform.  It is in Green Service Platform. The transit web is large.  The description of the transit web is "Not really a web so much as a series of maglev rings linked by guides, the Transit Web is separated from the platform by a barrier fence with automatic doors, which line up with Transit Capsule doors when a Capsule is in the station.  The Web rings glow faintly with the Magfield."
 
@@ -2443,7 +2550,6 @@ Instead of climbing the spacescraper, say "It's miles away."
 Instead of listening to the spacescraper, say "Any sound it is making is lost in the miles between you and it."
 Instead of cutting the spacescraper, say "It's a bit big for you.  It's miles away in any case."
 
-
 After examining the spacescraper for the first time:
 	activate the Table of Spacescraper Hints.
 	
@@ -2457,6 +2563,18 @@ Understand "Street light" as the streetlights.
 Instead of climbing the streetlights, say "The poles are too slick.  You struggle for a moment before giving up."
 
 
+[sky]
+The sky is a backdrop.  The sky is scenery.  The description of the sky is "[if morning is happening]The sky is a pale robin's egg, with a few wispy clouds visible.[otherwise if afternoon is happening]The sky is the color of a television, turned to a dead channel.  Well, maybe a bit lighter than that.  With a few clouds in it.[otherwise if evening is happening]The sky is a deep blue, with colors fading into the reds towards the western horizon.[otherwise if night is happening]The sky is difficult to see past the glare of the streetlights, but a few of the brightest stars - and possibly planets - are visible in its depths."
+
+Instead of taking the sky, say "I can't take the sky from you.  Because you don't have it.  And can't take it."
+Instead of touching the sky, say "You can't reach that."
+Instead of climbing the sky, say "I don't see a beanstalk anywhere."
+Instead of burning the sky, say "I don't think you have a flame large enough."
+
+Instead of examining up when the player is out of doors, try examining the sky.
+
+
+
 Chapter 3 - Green Residential
 
 Section 3 - Map
@@ -2467,7 +2585,7 @@ GreenResidential is a region.  Front Lobby is in GreenResidential. Entry is in G
 
 ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. Green Residential Park is in ResidentialOutside.  Side Yard is in ResidentialOutside.  Back Yard is in ResidentialOutside.
 
-The Spacescraper is in ResidentialOutside.  The streetlights is in ResidentialOutside.
+The Spacescraper is in ResidentialOutside.  The streetlights is in ResidentialOutside.  The sky is in ResidentialOutside.
 
 Green Residential Platform is a transitStation.  The stationName of Green Residential Platform is "Green Residential".  The stationNumber of Green Residential Platform is 3. The description of Green Residential Platform is "Green Residential's platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west[if the location is the station of the Capsule], where a Transit capsule hovers impatiently.  The capsule doors are open.[otherwise], now empty.[end if]".
 Instead of going west in Green Residential Platform, try entering the Transit Web instead.
@@ -2481,11 +2599,17 @@ Instead of opening the Green Residential Station door:
 		the autodoors close in zero turns from now;
 	otherwise if the location is Green Residential Station:
 		if the MitKlein is unhacked:
-			activate the Table of Home Escape Hints;
+			activate the Table of MitKlein hints;
 			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein bottle, the police will now be able to link you to the hacking attempts, and you'll be a fugitive.  You decide not to risk it." instead;
 		otherwise:
 			say "The Door Scanner scans your iris to determine your identity.  The Transit Security and Accounting Subroutine determines that you have a legitimate account with the Transit system, and the doors slide smoothly open.";
 		now the Green Residential Station door is open.
+
+After going down from Green Residential Station:
+	if the player encloses the phone:
+		if the phone is working:
+			say "Your phone beeps softly as it starts hunting for a signal.";
+			the phoneping happens in 60 turns from now.
 
 
 Green Residential Station is above Green Residential Station Door.  The description of Green Residential Station is "This is a utilitarian (read: boring) facility intended mostly to keep the rain out of the Transit System.  A stairway leads down to the Transit platform and an exit leads east to the street."
@@ -2500,6 +2624,7 @@ East Cedar Street is east of Primrose & Cedar.  The description is "Cedar Street
 The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of extremely boring residential buildings with neatly trimmed lawns."
 Understand "houses" as residential buildings when the location is East Cedar Street.
 Understand "lawns" as residential buildings when the location is East Cedar Street.
+Understand "lawn" as residential buildings when the location is East Cedar Street.
 
 South Primrose Lane is south of Primrose & Cedar.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence's front path."
 Some sumac plants are in South Primrose Lane.  The sumac plants are scenery.  The description of the sumac plants is "You can see the tops of a few trees over the top of the fence.  Their leaves are greenish red, waving out of reach in the slight breeze."
@@ -2633,7 +2758,7 @@ Check pulling the cotter pin:
 		continue the action.
 
 Before going west in Back Yard:
-	unless the bedroom window is hacked, say "The windows are securely locked." instead.
+	unless the bedroom window is hacked, say "The windows are closed[unless the latch is hacked] and securely locked[end if]." instead.
 	
 Before going east in the Bedroom:
 	unless the bedroom window is hacked, say "The windows are closed." instead.
@@ -2657,6 +2782,11 @@ Check closing the bedroom window:
 		now the bedroom window is unhacked;
 		stop.
 
+Check entering the bedroom window:
+	if the location is Back Yard, try going west instead;
+	if the location is the Bedroom, try going east instead.
+
+
 The House door is east of Front Path and west of Front Lobby.  The House door is an autodoor.  The House door is closed.
 
 Front Lobby is east of the House door.  Front Lobby is blind.  The description is "The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south."
@@ -2666,8 +2796,8 @@ Instead of going up in Front Lobby, say "You can't open the security gate." inst
 
 The security gate is in the Front Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
 
-Instead of unlocking the security gate with something:
-	say "You can't open the gate, even with that." instead.
+[Instead of unlocking the security gate with something:
+	say "You can't open the gate, even with that." instead.]
 
 Check taking the security gate:
 	say "You rattle the bars for a few seconds before giving up." instead.
@@ -2738,7 +2868,7 @@ GreenCommercial is a region.  Metro Savings is in GreenCommercial.  NanoMart is 
 
 GreenCommOutside is a region.  GreenCommOutside is in GreenCommercial.  Green Commercial Plaza North is in GreenCommOutside.  Green Commercial Plaza Center is in GreenCommOutside.  Green Commercial Plaza South is in GreenCommOutside.
 
-The spacescraper is in GreenCommOutside.  The streetlights is in GreenCommOutside.
+The spacescraper is in GreenCommOutside.  The streetlights is in GreenCommOutside.  The sky is in GreenCommOutside.
 
 
 Green Commercial Platform is a transitStation.  The stationName of Green Commercial Platform is "Green Commercial One".  The stationNumber of Green Commercial Platform is 2. The description of Green Commercial Platform is "Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north[if the location is the station of the Capsule], where a Transit capsule can be seen hovering.  The capsule doors are open.[otherwise], now empty.[end if]". 
@@ -2918,7 +3048,7 @@ GreenService is a region.  Booking is in GreenService.  Front Desk is in GreenSe
 
 GreenServOutside is a region.  GreenServOutside is in GreenService.  Government Square South and Government Square North and Police Station Steps and Civil Center Steps and Hospital Entrance and Hospital Driveway are in GreenServOutside.
 
-The spacescraper is in GreenServOutside.  The streetlights is in GreenServOutside.
+The spacescraper is in GreenServOutside.  The streetlights is in GreenServOutside.  The sky is in GreenServOutside.
 
 
 Green Service Platform is a transitStation.  The stationName of Green Service Platform is "Green Service One".  The stationNumber of Green Service Platform is 3. The description of Green Service Platform is "Green Service One's platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south[if the location is the station of the Capsule], where a Transit capsule hovers impatiently in the web.  The capsule doors are open.[otherwise], now empty.[end if]".
@@ -2985,8 +3115,8 @@ Check opening the police gate:
 Instead of going north in Front Desk:
 	say "The security gate is locked." instead.
 	
-Instead of unlocking the police gate with something:
-	say "You can't unlock the gate with that." instead.
+[Instead of unlocking the police gate with something:
+	say "You can't unlock the gate with that." instead.]
 
 Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
 The Police Poster is here.  The police poster is scenery.  The description of the Police Poster is "The poster has an almost laughably crude and kitschy burly policeman chasing a pair of hoodlums while blowing a whistle and brandishing a nightstick.  The hoodlums are leaving a trail of iconic Drug Paraphernalia.  A caption reads 'If you see any DRUG ACTIVITY, report it AT ONCE to your FRIENDLY LOCAL POLICE.'"
