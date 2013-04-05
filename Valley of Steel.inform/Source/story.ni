@@ -29,6 +29,7 @@ Time of day is 7:30 PM.
 The player is in Green Residential Park.
 
 When play begins: 
+	seed the random-number generator with 8942;  [NOTE: THIS MUST BE REMOVED FOR NON-TEST PLAY]
 	add the list of transitStations to Transit System;
 	sort Transit System in stationNumber order;
 	now newsIndex is a random number from 1 to the number of rows in the Table of Stories;
@@ -776,12 +777,14 @@ The solder is a thing. The solder is on the workbench.  The solder is small. The
 
 
 [laptop]
-The laptop is a container.  The laptop is on the workbench.  The laptop is medium.   The carrying capacity of the laptop is 0. The laptop is openable and closed.  The laptop can be hacked or unhacked.  The laptop is unhacked. The description is "The laptop is a generic, slightly more fashionable than functional model. [if open] It is active, with the screen lit.[otherwise if closed]  It is closed and sleeping.[end if][unless the chipslot is empty] There is a chip in the chipslot."
+The laptop is on the workbench.  The laptop is medium.  The laptop can be hacked or unhacked.  The laptop is unhacked. The description is "The laptop is a generic, slightly more fashionable than functional portable tablet computer. It is active, with the screen lit.[unless the chipslot is empty] There is a chip in the chipslot."
 The screen is part of the laptop.  The screen is scenery.  The description is "[screen-description]".
 The reboot button is part of the screen.  The reboot button is scenery.  The description is "A stylized on-screen button to restart the computer.  This model will search for a network book device when rebooted."
 Understand "restart button" as the reboot button.
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
 
+Understand "tablet" as the laptop.
+Understand "slate" as the laptop.
 Understand "download slot" as the chipslot.
 Understand "slot" as the chipslot when the location is the location of the laptop.
 Understand "file" as the screen.
@@ -798,21 +801,6 @@ After inserting into the chipslot:
 	now the Contents of the noun is "The Signal";
 	now the printed name of the noun is "programmed memory chip";
 	now the noun is programmed.
-
-Check examining the screen:
-	if the laptop is closed, say "The laptop is closed." instead.
-	
-Check touching the screen:
-	if the laptop is closed, say "The laptop is closed." instead.
-	
-Check examining the reboot button:
-	if the laptop is closed, say "You can't see any such thing." instead.
-	
-Check touching the reboot button:
-	if the laptop is closed, say "You can't see any such thing." instead.
-	
-Check taking the reboot button:
-	if the laptop is closed, say "You can't see any such thing." instead.
 	
 To say screen-description:
 	if the laptop is unhacked:
@@ -832,8 +820,7 @@ Understand "click [something]" as touching.
 
 Check rebooting:
 	unless the noun is the laptop, say "That can't be rebooted." instead;
-	if the laptop is hacked, say "The laptop is currently frozen by the attack program download and refuses to reboot." instead;
-	if the laptop is closed, say "The laptop is closed." instead.
+	if the laptop is hacked, say "The laptop is currently frozen by the attack program download and refuses to reboot." instead.
 	
 Carry out rebooting:
 	if the laptop is netbootable:
@@ -1461,7 +1448,7 @@ Understand "disassemble [something] with [something preferably held]" as opening
 
 
 To disassemble (gadget - a thing):
-	say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.";
+	say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.[if the gadget is a container] Opening [the gadget] reveals [the contents of the gadget]![end if]";
 	now the gadget is disassembled;
 	now the gadget is not scenery;
 	if the gadget is a container:
@@ -2757,6 +2744,9 @@ Check pulling the cotter pin:
 		say "You can't get enough purchase with your fingers to pull it out." instead;
 	otherwise:
 		continue the action.
+		
+Check taking off the cotter pin:
+	try taking the cotter pin instead.
 
 Before going west in Back Yard:
 	unless the bedroom window is hacked, say "The windows are closed[unless the latch is hacked] and securely locked[end if]." instead.
