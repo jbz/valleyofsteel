@@ -317,10 +317,10 @@ Every turn:
 		if the player is carrying the knife or the player is carrying the fire axe:
 			say "Security surveillance spots you openly carrying a weapon.  Police rush in!";
 			end the story saying "You have been arrested!".;
-		if a random chance of 1 in 50 succeeds:
+		if a random chance of 1 in 75 succeeds:
 			say "[one of]A tiny surveillance camera you're sure you didn't see before swivels to follow you.[or]You hear a very quiet [italic type]beep[roman type] from somewhere you can't identify.[or]You see a small red light in the corner of your vision which vanishes as you turn to look at it.[purely at random]";
 	if the player is out of doors:
-		if a random chance of 1 in 50 succeeds:
+		if a random chance of 1 in 75 succeeds:
 			say "[one of]A black flittervan cruises slowly by above and vanishes from sight.[or]There is the sound of sirens in the distance.[or]You have the sudden feeling that you're being followed.[as decreasingly likely outcomes]"
 
 
@@ -2012,7 +2012,7 @@ image	url
 "a small imp giving you the finger!"	"http://bit.ly/ya9fSZ"
 "a crude drawing of the Twin Towers with the word 'REALLY?'"	"http://bit.ly/yvwYxd"
 "a crude robotic figure reaching up pleadingly."	"http://bit.ly/WIYD6J"
-"the scrawled words [bold type]THIS IS JIMMY FULL OF BLOOD[roman type]"	"http://bit.ly/WIZc0k"
+"the scrawled words [bold type]THIS IS JIMMY FULL OF BLOOD.[roman type]"	"http://bit.ly/WIZc0k"
 
 
 Table of Gizmos
@@ -3068,7 +3068,8 @@ Hospital Driveway is east of Government Square South and southeast of Government
 After inserting into the car key when the location is Hospital Driveway:
 	If the player is flitterEnabled:
 		now the ambulance is unlocked;
-		say "The ambulance flashes its lights twice as the locklarm unlocks the back."
+		say "The ambulance flashes its lights twice as the locklarm unlocks the back.";
+	continue the action.
 
 After going from Hospital Driveway:
 	if the ambulance is open:
