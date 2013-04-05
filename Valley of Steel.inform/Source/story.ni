@@ -317,8 +317,8 @@ Every turn:
 		if the player is carrying the knife or the player is carrying the fire axe:
 			say "Security surveillance spots you openly carrying a weapon.  Police rush in!";
 			end the story saying "You have been arrested!".;
-	if a random chance of 1 in 50 succeeds:
-		say "[one of]A tiny surveillance camera you're sure you didn't see before swivels to follow you.[or]You hear a very quiet [italic type]beep[roman type] from somewhere you can't identify.[or]You see a small red light in the corner of your vision which vanishes as you turn to look at it.[purely at random]";
+		if a random chance of 1 in 50 succeeds:
+			say "[one of]A tiny surveillance camera you're sure you didn't see before swivels to follow you.[or]You hear a very quiet [italic type]beep[roman type] from somewhere you can't identify.[or]You see a small red light in the corner of your vision which vanishes as you turn to look at it.[purely at random]";
 	if the player is out of doors:
 		if a random chance of 1 in 50 succeeds:
 			say "[one of]A black flittervan cruises slowly by above and vanishes from sight.[or]There is the sound of sirens in the distance.[or]You have the sudden feeling that you're being followed.[as decreasingly likely outcomes]"
