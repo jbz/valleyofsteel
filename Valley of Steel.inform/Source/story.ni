@@ -1,6 +1,6 @@
 "Valley of Steel" by "The Custodian of http://everything2.com"
 
-The story description is "In a pervasive surveillance society, you[']ll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers.  The creep of surveillance and control has continued unabated.  Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner.  You've spent years working with the underground as a hacker for hire, helping research and develop countermeasures to government surveillance.  You are in possession of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative.   The drink may have made you reckless, though.  Your own MitKlein signature was captured during the attack.  Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately.  Short term, you'll have to get off the street before curfew and figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
+The story description is "In a pervasive surveillance society, you[']ll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers.  The creep of surveillance and control has continued unabated.  Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner.  You've spent years working with the underground as a hacker for hire, helping research and develop countermeasures to government surveillance.  You've managed to steal information which will help the design of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative.   Your own MitKlein signature was captured during your mission, however.  Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately.  Short term, you'll have to get off the street before curfew and figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
 The story headline is "A tale of the surveillance society".
 The story genre is  "Science Fiction".
 The story creation year is 2012.
@@ -2609,7 +2609,8 @@ After going down from Green Residential Station:
 	if the player encloses the phone:
 		if the phone is working:
 			say "Your phone beeps softly as it starts hunting for a signal.";
-			the phoneping happens in 60 turns from now.
+			the phoneping happens in 60 turns from now;
+	continue the action.
 
 
 Green Residential Station is above Green Residential Station Door.  The description of Green Residential Station is "This is a utilitarian (read: boring) facility intended mostly to keep the rain out of the Transit System.  A stairway leads down to the Transit platform and an exit leads east to the street."
