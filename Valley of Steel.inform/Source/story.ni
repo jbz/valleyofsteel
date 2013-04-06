@@ -1880,7 +1880,8 @@ After inserting into the car key during Patrol: [so we can assume the flitter is
 	if the location is Green Commercial Plaza South:
 		If the player is flitterEnabled:
 			now the police flitter is unlocked;
-			say "The police flitter flashes its lights twice as the locklarm disengages."
+			say "The police flitter flashes its lights twice as the locklarm disengages.";
+	continue the action.
 
 After going from Green Commercial Plaza South during Patrol:
 	now the police flitter is closed;
@@ -2089,7 +2090,7 @@ Instead of speech when the noun is Roberto Velez:
 Instead of the player trying giving the blue jacket to Roberto Velez:
 	if Roberto Velez is wearing the blue jacket, say "He already has it!" instead;
 	if Roberto Velez is carrying the blue jacket, say "He already has it!" instead;
-	say "Roberto stands up and eagerly examines the blue jacket.  'This is perfect!' he says enthusiastically, showing you how closely it resembles his torn uniform jacket.  'Would you be willing to part with it? I cannot give you much, but I would happily pay you what I can; it will be less than what those dogs would take from my salary to replace this one!' He pats his pockets, then shakes his head.  'I need to go to the ATM.'  With that, he stands up.";
+	say "Roberto stands up and eagerly examines the blue jacket.  'This would be a perfect replacement!' he says enthusiastically, showing you how closely it resembles his torn uniform jacket.  'Would you be willing to part with it? I cannot give you much, but I would happily pay you what I can; it will be less than what those dogs would take from my salary to replace this one!' He pats his pockets, then shakes his head.  'I need to go to the ATM.'  With that, he stands up.";
 	now Roberto Velez is runningErrand.
 
 Every turn when the player can see Roberto Velez and the location is The Proletariat Bar:
