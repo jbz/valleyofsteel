@@ -29,19 +29,19 @@ Time of day is 7:30 PM.
 The player is in Green Residential Park.
 
 When play begins: 
-	seed the random-number generator with 8942;  [NOTE: THIS MUST BE REMOVED FOR NON-TEST PLAY]
+	[seed the random-number generator with 8942;  [NOTE: THIS MUST BE REMOVED FOR NON-TEST PLAY]]
 	add the list of transitStations to Transit System;
 	sort Transit System in stationNumber order;
 	now newsIndex is a random number from 1 to the number of rows in the Table of Stories;
 	repeat with target running through doodles:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
-	boozing starts at 2:00 PM;
+	snoozing starts at 2:00 AM;
 	activate the Table of General Hints;
 	now the player is unbriefed;
 	now messagesWaiting is false;
 	the message arrives in 3 turns from now;
-	say "A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen's head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you've sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government's ubiquitous tagging of citizens is being worked out at levels above your own head.[paragraph break]For now, you have found yourself a small quiet park in a quiet corner of the City, and until you receive instructions, you have no plans.[paragraph break]Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream."
+	say "A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen's head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you've sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government's ubiquitous tagging of citizens is being worked out at levels above your own head.[paragraph break]For now, you have found yourself a small quiet park in a quiet corner of the City.[paragraph break]Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream."
 
 
 
@@ -413,9 +413,10 @@ After looking when player is surveilled, say "There is a Public Surveillance Not
 
 
 
-
 Section 4 - Test Code - Not for release
 
+When play begins:
+	seed the random-number generator with 8942.
 
 Bomb surveying is an action applying to nothing.
 Understand "bomb survey" as bomb surveying.
@@ -525,7 +526,7 @@ Check taking an antitheft tag:
 
 A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the Kleinhacking signal.  It needs a power source to perform its task."
 
-A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos."
+A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos.[if disassembled]  This camera has been cracked open, revealing its internal electronics.  A capacitor (for the flash unit) and battery are available, as are numerous circuit connection points.[end if]"
 
 
 
@@ -1448,7 +1449,10 @@ Understand "disassemble [something] with [something preferably held]" as opening
 
 
 To disassemble (gadget - a thing):
-	say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.[if the gadget is a container] Opening [the gadget] reveals [the contents of the gadget]![end if]";
+	if the gadget is a container:
+		say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.[unless the gadget is empty] Opening [the gadget] reveals [the list of things inside the gadget]![end if]";
+	otherwise:
+		say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.";
 	now the gadget is disassembled;
 	now the gadget is not scenery;
 	if the gadget is a container:
@@ -2039,7 +2043,7 @@ Some customers are in every foodstore.
 A policeman is a kind of man.  The description of a policeman is "A typical example of the Metro police force, wearing patrol gear including light body armor, crowded equipment belt and what look like actually comfortable boots."
 
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
-Roberto Velez is a man.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
+Roberto Velez is a man in the Proletariat Bar.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
 
 To say tagged details:
 	if the nametag is part of the torn jacket, say " and his name on a tag clipped to the breast".
@@ -2052,14 +2056,16 @@ At the time when boozing starts:
 		if the location is The Proletariat Bar:
 			say "The door opens.  [if Roberto Velez is unknown]A medium man in a blue trade uniform[otherwise] Roberto Velez[end if] comes in, orders a beer and sits down at a table.";
 		move Roberto Velez to The Proletariat Bar;
-		snoozing starts at 8:00 PM.
+		now Roberto Velez is inPlay;
+		snoozing starts at 2:00 AM.
 		
 At the time when snoozing starts:
 	if Roberto Velez is in The Proletariat Bar:
 		if the location is The Proletariat Bar:
 			say "Roberto stands up, stretches, pays his bill and ambles out.";
 		remove Roberto Velez from play;
-		boozing starts at 2:00 PM.
+		now Roberto Velez is inHolding;
+		boozing starts at 3:00 PM.
 
 [Roberto's possessions]
 The torn jacket is a thing.  The torn jacket is wearable.  The torn jacket is medium.  The description of the torn jacket is "A dark blue uniform jacket with black snap closures and false side pockets.  There is a long gash on the outside of the left sleeve near the shoulder.[if nametag is part of the torn jacket]  There is a nametag clipped to the jacket which reads 'Roberto Velez.'"
@@ -2100,12 +2106,15 @@ The shoulder bag is a container.  The shoulder bag is open.  The description is 
 Instead of inserting into the shoulder bag:
 	if the noun is a garment:
 		say "You stealthily slide [the noun] into the shoulder bag!";
+		now the noun is inside the shoulder bag;
 		if the noun is tagged:
 			now the shopper is carryingSwag;
 		continue the action;
 	otherwise:		
 		say "The shopper feels you placing [the noun] into the bag! She spins around, clutching the bag tightly to herself and hisses 'Do you want me to scream for a cop?'" instead.
 
+Report inserting into the shoulder bag:
+	stop.
 
 Persuasion rule for asking the shopper to try doing something:
 	say "[one of]The shopper ignores you.[or]The woman looks at you disbelievingly, rolls her eyes and moves on.[or]The shopper points at her headphones with an insincere smile of apology and moves away.[purely at random]";
@@ -2135,7 +2144,6 @@ Persuasion rule for asking Sergeant Ramirez to try doing something:
 	say "[one of]The sergeant stolidly ignores you.[or]'You want me to run you in?'[or]'Beat it, I'm busy.'[or]'Look, go bother somebody else, okay?'[or]The sergeant stares at you fixedly, ostentatiously comparing your face to the screen of his computer.[as decreasingly likely outcomes]";
 	persuasion fails.
 	
-
 Report examining Sergeant Ramirez:
 	stop.
 	
@@ -2146,7 +2154,7 @@ Answering someone that something is speech.
 Instead of speech when the noun is Sergeant Ramirez:
 	if the topic understood matches the text "drug":
 		if South Primrose Lane is reported:
-			say "The sergeant stares suspiciously at you.  'You already reported that location.  You trying to be funny?'" instead;
+			say "The sergeant stares suspiciously at you.  'You already reported that.  You trying to be funny?'" instead;
 		if the player has been in the Drug Market:
 			say "The sergeant suddenly becomes animated, looking directly at you.  'What?' he barks.  'Drugs?  Where?'  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He checks your ID using an eye scanner to verify that you live next door, then picks up the phone and has an animated conversation with someone on the other end, the word 'drugs' and 'extreme' and 'losers' coming up with frequency.  He has lost interest in you.";
 			now South Primrose Lane is reported;
@@ -2193,7 +2201,7 @@ To respond to Ponyfriend:
 
 Table of Ponyfriend Responses
 Topic		Response
-"pager"	"Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I'm sorry, I have to keep checking to make sure they haven't paged me.  I wish…I wish I could talk to them directly."
+"pager"	"Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I'm sorry, I have to keep checking to make sure they haven't paged me.  I wish…I wish I could talk to them directly, though."
 "them/they"	"They are…up there. [italic type](Ponyfriend points up, dramatically).[roman type]  They watch everything, and they know where we are and what we're doing, and sometimes they have to…	correct things.  That's where I come in.  I get missions."
 "mission/missions"	"My missions?  They're…well…(a suspicious look comes over his face) They're secret! You can't know!"
 "mitklein/bottle/chip"	"The Mitsui-Klein blessing…yes…that is how we know they love and watch over us."
@@ -2202,6 +2210,13 @@ Topic		Response
 "police/officer/cops"	"Them! (his brow furrows).  They…sometimes I think they're here to prevent me carrying out my missions.  I have to stay away from them…"
 "subway/transit"	"I like it in the Transit system in winter.  It's warm."
 "who"	"My name is Ponyfriend.  Ponyfriend Chunky.  I'm…I'm…[italic type](he shakes himself suddenly)[roman type]…I'm sorry, what were you saying?"
+"spacescraper/reserve/bank"	"The Tower! (Ponyfriend points eagerly towards the Spacescraper visible in the distance)  I think I'll need to go there…that mission, though…(he stops talking suddenly and looks at you suspiciously.)"
+"ramirez"	"Him.  He's obsessed. Always asking me where my drugs are.  I'm clean, I've [italic type]told[roman type] him, but still he harasses me."
+"flitter/ambulance"	"I wish I could fly."
+"homeland/security/dhs"	"SSSHHH! Don't…don't mention Them!"
+"surveillance"	"They watch over us, yes.  They love us."
+"civic/government"	"Oh…(he turns to look at the building)…I've only been inside once.  It's very cold in there."
+
 
 
 Ponyfriending is a recurring scene.  Ponyfriending begins when the location contains Ponyfriend Chunky.  Ponyfriending ends when the location does not contain Ponyfriend Chunky.
@@ -2604,8 +2619,14 @@ Green Residential Station is above Green Residential Station Door.  The descript
 
 Primrose & Cedar is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east."
 
-Green Residential Park is north of Primrose & Cedar. The description is "Primrose Street ends here in a small circular cul-de-sac.  To the north of this is a small green park, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass, and a few benches are scattered around.  There is a curfew sign at the park's entrance."
+Green Residential Park is north of Primrose & Cedar. The description is "Primrose Street ends here in a small circular cul-de-sac.  To the north of this is a small green park, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park's entrance."
 The curfew sign is in Green Residential Park.  The curfew sign is scenery.  The curfew sign is fixed in place.  The description is "A metal sign on a metal pole, it reads 'NOTE: PARK CLOSED DURING RESIDENTIAL AREA CURFEW - 8:00PM to 5:00 AM - NO LOITERING.'"
+The greenery is in Green Residential Park.  The greenery is scenery.  The printed name of the greenery is "trees".  The description of the greenery is "A small number of manicured trees, scattered around the park."
+Instead of climbing the greenery, say "There's no point."
+Understand "trees" as the greenery when the location is Green Residential Park.
+Understand "tree" as the greenery when the location is Green Residential Park.
+
+
 
 East Cedar Street is east of Primrose & Cedar.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
 

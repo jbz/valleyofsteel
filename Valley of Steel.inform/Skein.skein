@@ -1,0 +1,3646 @@
+<?xml version="1.0"?>
+<Skein rootNode="node-0xd380860" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Zoom</generator>
+  <activeNode nodeId="node-0xd366b30" />
+  <item nodeId="node-0xd380860">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen&apos;s head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you&apos;ve sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government&apos;s ubiquitous tagging of citizens is being worked out at levels above your own head.
+
+For now, you have found yourself a small quiet park in a quiet corner of the City.
+
+Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it&apos;s enough to make you scream.
+
+Valley of Steel
+A tale of the surveillance society by The Custodian of http://everything2.com
+Release 1 / Serial number 130406 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Green Residential Park
+Primrose Street ends here in a small circular cul-de-sac.  To the north of this is a small green park, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go south from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+
+
+A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen&apos;s head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you&apos;ve sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government&apos;s ubiquitous tagging of citizens is being worked out at levels above your own head.
+
+For now, you have found yourself a small quiet park in a quiet corner of the City.
+
+Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it&apos;s enough to make you scream.
+
+Valley of Steel
+A tale of the surveillance society by The Custodian of http://everything2.com
+Release 1 / Serial number 130406 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Green Residential Park
+Primrose Street ends here in a small circular cul-de-sac.  To the north of this is a small green park, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go south from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd447c20" />
+    </children>
+  </item>
+  <item nodeId="node-0xd447c20">
+    <command xml:space="preserve">wear watch</command>
+    <result xml:space="preserve">(first taking the watch)
+You put on the watch.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first taking the watch)
+You put on the watch.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b40750" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b40750">
+    <command xml:space="preserve">take phone</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b59f70" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b59f70">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Primrose &amp; Cedar
+This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Green Residential Park, south, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Primrose &amp; Cedar
+This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Green Residential Park, south, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bd48d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bd48d0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+South Primrose Lane
+Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence&apos;s front path.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Primrose &amp; Cedar and east from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+South Primrose Lane
+Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence&apos;s front path.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Primrose &amp; Cedar and east from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b4abc0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b4abc0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast, east through the House door (closed), and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+There is a quiet tone from your phone and you feel a short vibration, indicating that an SMS message has arrived.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast, east through the House door (closed), and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+There is a quiet tone from your phone and you feel a short vibration, indicating that an SMS message has arrived.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b4f020" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b4f020">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">(first opening the House door)
+
+Front Lobby
+The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south.
+
+A small post-it note is stuck to the door of Apartment 1.
+
+You can also see a newspaper and a pamphlet here.
+
+You can go south through the Apartment door (closed) and west through the House door to Front Path from here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the House door)
+
+Front Lobby
+The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south.
+
+A small post-it note is stuck to the door of Apartment 1.
+
+You can also see a newspaper and a pamphlet here.
+
+You can go south through the Apartment door (closed) and west through the House door to Front Path from here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bf8060" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bf8060">
+    <command xml:space="preserve">put newspaper and pamphlet in pack</command>
+    <result xml:space="preserve">newspaper: Done.
+pamphlet: Done.
+
+&gt;</result>
+    <commentary xml:space="preserve">newspaper: Done.
+pamphlet: Done.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bddac0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bddac0">
+    <command xml:space="preserve">read post-it</command>
+    <result xml:space="preserve">A short scribble, which reads &quot;The techs were by to turn off your water.  Have a nice vacation!&quot;
+
+&gt;</result>
+    <commentary xml:space="preserve">A short scribble, which reads &quot;The techs were by to turn off your water.  Have a nice vacation!&quot;
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b72590" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b72590">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">(first opening the House door)
+
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast, east through the House door to Front Lobby, and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the House door)
+
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast, east through the House door to Front Lobby, and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b11980" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b11980">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+Side Yard
+A narrow side yard with a high solid fence on the north side and a few straggly decorative plants.  The yard extends east behind the house and west to the front of the house.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go east and west to Front Path from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Side Yard
+A narrow side yard with a high solid fence on the north side and a few straggly decorative plants.  The yard extends east behind the house and west to the front of the house.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go east and west to Front Path from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd48cbf0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd48cbf0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Back Yard
+An enclosed back yard, this small square of grass is surrounded by a high fence and the east side of the attached home.  A narrow frosted window - likely a bathroom - is visible in the middle of the stretch of wall, and a larger clear window with curtains behind it is visible at the south end.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Side Yard from here.
+
+There is a Public Surveillance Notice here.
+
+A quiet tone from your phone indicates that you have unread SMS messages.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Back Yard
+An enclosed back yard, this small square of grass is surrounded by a high fence and the east side of the attached home.  A narrow frosted window - likely a bathroom - is visible in the middle of the stretch of wall, and a larger clear window with curtains behind it is visible at the south end.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Side Yard from here.
+
+There is a Public Surveillance Notice here.
+
+A quiet tone from your phone indicates that you have unread SMS messages.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bb96a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bb96a0">
+    <command xml:space="preserve">l bedroom window</command>
+    <result xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.
+
+&gt;</result>
+    <commentary xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xda63150" />
+    </children>
+  </item>
+  <item nodeId="node-0xda63150">
+    <command xml:space="preserve">l latch</command>
+    <result xml:space="preserve">This is a fairly standard window latch.  It prevents the two windowpanes from sliding past one another.  The locking tab is secured with a cotter pin which, for some reason, is on the outside of the window.
+
+In the latch is a cotter pin.
+
+&gt;</result>
+    <commentary xml:space="preserve">This is a fairly standard window latch.  It prevents the two windowpanes from sliding past one another.  The locking tab is secured with a cotter pin which, for some reason, is on the outside of the window.
+
+In the latch is a cotter pin.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd45d290" />
+    </children>
+  </item>
+  <item nodeId="node-0xd45d290">
+    <command xml:space="preserve">remove cotter pin</command>
+    <result xml:space="preserve">You can&apos;t get enough purchase with your fingers to pull it out.
+
+&gt;</result>
+    <commentary xml:space="preserve">You can&apos;t get enough purchase with your fingers to pull it out.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6be5c50" />
+    </children>
+  </item>
+  <item nodeId="node-0x6be5c50">
+    <command xml:space="preserve">remove cotter pin with multitool</command>
+    <result xml:space="preserve">You deftly remove the cotter pin with the multitool.
+
+&gt;</result>
+    <commentary xml:space="preserve">You deftly remove the cotter pin with the multitool.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4597c0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4597c0">
+    <command xml:space="preserve">drop pin</command>
+    <result xml:space="preserve">Dropped.
+
+&gt;</result>
+    <commentary xml:space="preserve">Dropped.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4c96f0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4c96f0">
+    <command xml:space="preserve">read SMS</command>
+    <result xml:space="preserve">Message 1 reads: REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. &lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 1 reads: REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. &lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4f7080" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4f7080">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 2 reads: DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.&lt;more&gt;.
+
+You have the sudden feeling that you&apos;re being followed.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 2 reads: DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.&lt;more&gt;.
+
+You have the sudden feeling that you&apos;re being followed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4a3210" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4a3210">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 3 reads: NEW INSTRUCTIONS FOLLOW: &lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 3 reads: NEW INSTRUCTIONS FOLLOW: &lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd456a60" />
+    </children>
+  </item>
+  <item nodeId="node-0xd456a60">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 4 reads: - YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED&lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 4 reads: - YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED&lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b15a10" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b15a10">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 5 reads: - YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET&lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 5 reads: - YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET&lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4e88b0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4e88b0">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 6 reads: - YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED&lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 6 reads: - YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED&lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4e4d50" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4e4d50">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 7 reads: - ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.&lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 7 reads: - ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.&lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4e97b0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4e97b0">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 8 reads: - ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY&lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 8 reads: - ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY&lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4e5d20" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4e5d20">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;.
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4b30d0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4b30d0">
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Message 10 reads: GOOD LUCK. MESSAGE ENDS..
+
+&gt;</result>
+    <commentary xml:space="preserve">Message 10 reads: GOOD LUCK. MESSAGE ENDS..
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4e92f0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4e92f0">
+    <command xml:space="preserve">open bedroom window</command>
+    <result xml:space="preserve">You slide the bedroom window open.
+
+&gt;</result>
+    <commentary xml:space="preserve">You slide the bedroom window open.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bf1fb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bf1fb0">
+    <command xml:space="preserve">enter bedroom window</command>
+    <result xml:space="preserve">
+Bedroom
+This bedroom is rather boring.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it.
+
+You can go north, east to Back Yard, and west from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Bedroom
+This bedroom is rather boring.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it.
+
+You can go north, east to Back Yard, and west from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bb8790" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bb8790">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Hall
+The central hallway of this modest home.  It&apos;s relatively clean and neat, as there is no furniture in it.
+
+You can go north, east to Bedroom, and west from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hall
+The central hallway of this modest home.  It&apos;s relatively clean and neat, as there is no furniture in it.
+
+You can go north, east to Bedroom, and west from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b3aa40" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b3aa40">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Entry
+This is the small entryway to the ground-floor apartment. A pile of mail, most of it unread, nearly covers the side table just inside the apartment door.  The apartment hallway is to the south.  To the west is an office, and to the east is a bathroom.
+
+You can see a side table (on which is a car key) here.
+
+You can go north through the Apartment door (closed) to Front Lobby, south to Hall, east, and west from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Entry
+This is the small entryway to the ground-floor apartment. A pile of mail, most of it unread, nearly covers the side table just inside the apartment door.  The apartment hallway is to the south.  To the west is an office, and to the east is a bathroom.
+
+You can see a side table (on which is a car key) here.
+
+You can go north through the Apartment door (closed) to Front Lobby, south to Hall, east, and west from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b495f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b495f0">
+    <command xml:space="preserve">take key</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4ce960" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4ce960">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Home Office
+This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench.
+
+You can see a workbench (on which are a lockblade knife, a soldering iron, some solder, and a laptop) here.
+
+You can go south and east to Entry from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Home Office
+This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench.
+
+You can see a workbench (on which are a lockblade knife, a soldering iron, some solder, and a laptop) here.
+
+You can go south and east to Entry from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1a64d80" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a64d80">
+    <command xml:space="preserve">take knife and iron and solder</command>
+    <result xml:space="preserve">lockblade knife: This knife is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching.
+soldering iron: Taken.
+solder: Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">lockblade knife: This knife is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching.
+soldering iron: Taken.
+solder: Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b0d7b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b0d7b0">
+    <command xml:space="preserve">reboot laptop</command>
+    <result xml:space="preserve">The screen flickers as the laptop reboots.  The laptop pauses as it finds the boot server that has been installed on your phone, and then there is a quick series of flashes before a screen full of text comes up!
+
+&gt;</result>
+    <commentary xml:space="preserve">The screen flickers as the laptop reboots.  The laptop pauses as it finds the boot server that has been installed on your phone, and then there is a quick series of flashes before a screen full of text comes up!
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4da590" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4da590">
+    <command xml:space="preserve">open key with knife</command>
+    <result xml:space="preserve">You carefully cut open the car key with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
+
+&gt;</result>
+    <commentary xml:space="preserve">You carefully cut open the car key with your knife and peel back the rubber to reveal a broadcast chip and a memory chip.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd49bc00" />
+    </children>
+  </item>
+  <item nodeId="node-0xd49bc00">
+    <command xml:space="preserve">take broadcast and memory</command>
+    <result xml:space="preserve">broadcast chip: (putting the phone into the backpack to make room)
+Taken.
+memory chip: (putting the car key into the backpack to make room)
+Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">broadcast chip: (putting the phone into the backpack to make room)
+Taken.
+memory chip: (putting the car key into the backpack to make room)
+Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4ddb80" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4ddb80">
+    <command xml:space="preserve">put memory in chipslot</command>
+    <result xml:space="preserve">The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.
+
+&gt;</result>
+    <commentary xml:space="preserve">The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd498c10" />
+    </children>
+  </item>
+  <item nodeId="node-0xd498c10">
+    <command xml:space="preserve">take memory</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd45a170" />
+    </children>
+  </item>
+  <item nodeId="node-0xd45a170">
+    <command xml:space="preserve">put laptop in pack</command>
+    <result xml:space="preserve">You put the laptop into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the laptop into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4cac20" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4cac20">
+    <command xml:space="preserve">combine broadcast and memory</command>
+    <result xml:space="preserve">You switch the soldering iron on.
+
+You fashion the broadcast chip and the programmed memory chip into a Klein Blaster!
+&gt;</result>
+    <commentary xml:space="preserve">You switch the soldering iron on.
+
+You fashion the broadcast chip and the programmed memory chip into a Klein Blaster!
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x61e820" />
+    </children>
+  </item>
+  <item nodeId="node-0x61e820">
+    <command xml:space="preserve">turn iron off</command>
+    <result xml:space="preserve">You switch the soldering iron off.
+
+&gt;</result>
+    <commentary xml:space="preserve">You switch the soldering iron off.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b250a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b250a0">
+    <command xml:space="preserve">put iron and solder in pack</command>
+    <result xml:space="preserve">soldering iron: Done.
+solder: Done.
+
+&gt;</result>
+    <commentary xml:space="preserve">soldering iron: Done.
+solder: Done.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x18ca590" />
+    </children>
+  </item>
+  <item nodeId="node-0x18ca590">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Kitchen
+This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don&apos;t cook for themselves much.
+
+You can see a thermos (closed), a refrigerator (closed), and a microwave oven here.
+
+You can go north to Home Office and east to Hall from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Kitchen
+This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don&apos;t cook for themselves much.
+
+You can see a thermos (closed), a refrigerator (closed), and a microwave oven here.
+
+You can go north to Home Office and east to Hall from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4f34e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4f34e0">
+    <command xml:space="preserve">put thermos in pack</command>
+    <result xml:space="preserve">You put the thermos into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the thermos into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4099f0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4099f0">
+    <command xml:space="preserve">open side panel with multitool</command>
+    <result xml:space="preserve">You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+&gt;</result>
+    <commentary xml:space="preserve">You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd497cf0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd497cf0">
+    <command xml:space="preserve">microwave phone</command>
+    <result xml:space="preserve">You open the oven.
+
+You put the phone into the oven.
+
+A light comes on in the microwave and it begins to hum.
+Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final ZZT noise.
+A few moments later there is a loud BING! and the microwave stops.
+
+&gt;</result>
+    <commentary xml:space="preserve">You open the oven.
+
+You put the phone into the oven.
+
+A light comes on in the microwave and it begins to hum.
+Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final ZZT noise.
+A few moments later there is a loud BING! and the microwave stops.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd42dc50" />
+    </children>
+  </item>
+  <item nodeId="node-0xd42dc50">
+    <command xml:space="preserve">open oven</command>
+    <result xml:space="preserve">You open the oven.
+
+&gt;</result>
+    <commentary xml:space="preserve">You open the oven.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd407560" />
+    </children>
+  </item>
+  <item nodeId="node-0xd407560">
+    <command xml:space="preserve">take phone</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd407e20" />
+    </children>
+  </item>
+  <item nodeId="node-0xd407e20">
+    <command xml:space="preserve">put klein blaster in side panel</command>
+    <result xml:space="preserve">You insert the Klein Blaster into the side panel and wire it to the magnetron by rewiring the circuit board slightly.
+As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the board!
+
+&gt;</result>
+    <commentary xml:space="preserve">You insert the Klein Blaster into the side panel and wire it to the magnetron by rewiring the circuit board slightly.
+As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the board!
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c609f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c609f0">
+    <command xml:space="preserve">push microwave button</command>
+    <result xml:space="preserve">With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you&apos;ll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.
+
+&gt;</result>
+    <commentary xml:space="preserve">With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you&apos;ll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x18d5f40" />
+    </children>
+  </item>
+  <item nodeId="node-0x18d5f40">
+    <command xml:space="preserve">put knife in pack</command>
+    <result xml:space="preserve">You put the lockblade knife into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the lockblade knife into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd2ae7a0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd2ae7a0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Home Office
+This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench.
+
+You can see a workbench here.
+
+You can go south to the Kitchen and east to Entry from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Home Office
+This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench.
+
+You can see a workbench here.
+
+You can go south to the Kitchen and east to Entry from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd394610" />
+    </children>
+  </item>
+  <item nodeId="node-0xd394610">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Entry
+This is the small entryway to the ground-floor apartment. A pile of mail, most of it unread, nearly covers the side table just inside the apartment door.  The apartment hallway is to the south.  To the west is an office, and to the east is a bathroom.
+
+You can see a side table here.
+
+You can go north through the Apartment door (closed) to Front Lobby, south to Hall, east, and west to Home Office from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Entry
+This is the small entryway to the ground-floor apartment. A pile of mail, most of it unread, nearly covers the side table just inside the apartment door.  The apartment hallway is to the south.  To the west is an office, and to the east is a bathroom.
+
+You can see a side table here.
+
+You can go north through the Apartment door (closed) to Front Lobby, south to Hall, east, and west to Home Office from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd46b880" />
+    </children>
+  </item>
+  <item nodeId="node-0xd46b880">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">(first opening the Apartment door)
+You undo the throw bolts.  Since you have no key, you leave the door unlocked.
+
+Front Lobby
+The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south.
+
+A small post-it note is stuck to the door of Apartment 1.
+
+You can go south through the Apartment door to Entry and west through the House door (closed) to Front Path from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Apartment door)
+You undo the throw bolts.  Since you have no key, you leave the door unlocked.
+
+Front Lobby
+The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south.
+
+A small post-it note is stuck to the door of Apartment 1.
+
+You can go south through the Apartment door to Entry and west through the House door (closed) to Front Path from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4cc440" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4cc440">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">(first opening the House door)
+
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast to Side Yard, east through the House door to Front Lobby, and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the House door)
+
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast to Side Yard, east through the House door to Front Lobby, and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd40c7e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd40c7e0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+South Primrose Lane
+Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence&apos;s front path.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Primrose &amp; Cedar and east to Front Path from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+South Primrose Lane
+Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence&apos;s front path.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Primrose &amp; Cedar and east to Front Path from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6bf4040" />
+    </children>
+  </item>
+  <item nodeId="node-0x6bf4040">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Primrose &amp; Cedar
+This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Green Residential Park, south to South Primrose Lane, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Primrose &amp; Cedar
+This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Green Residential Park, south to South Primrose Lane, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4052a0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4052a0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Green Residential Station
+This is a utilitarian (read: boring) facility intended mostly to keep the rain out of the Transit System.  A stairway leads down to the Transit platform and an exit leads east to the street.
+
+You can go east to Primrose &amp; Cedar and down through the Green Residential Station door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Green Residential Station
+This is a utilitarian (read: boring) facility intended mostly to keep the rain out of the Transit System.  A stairway leads down to the Transit platform and an exit leads east to the street.
+
+You can go east to Primrose &amp; Cedar and down through the Green Residential Station door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd2ae300" />
+    </children>
+  </item>
+  <item nodeId="node-0xd2ae300">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">(first opening the Green Residential Station door)
+The Door Scanner scans your iris to determine your identity.  The Transit Security and Accounting Subroutine determines that you have a legitimate account with the Transit system, and the doors slide smoothly open.
+
+Green Residential Platform
+Green Residential&apos;s platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west, now empty.
+
+You can go east through the Green Residential Station door to Green Residential Station from here.
+
+There is a Public Surveillance Notice here.
+
+You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Green Residential Station door)
+The Door Scanner scans your iris to determine your identity.  The Transit Security and Accounting Subroutine determines that you have a legitimate account with the Transit system, and the doors slide smoothly open.
+
+Green Residential Platform
+Green Residential&apos;s platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west, now empty.
+
+You can go east through the Green Residential Station door to Green Residential Station from here.
+
+There is a Public Surveillance Notice here.
+
+You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd42aaa0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd42aaa0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6ca2e00" />
+    </children>
+  </item>
+  <item nodeId="node-0x6ca2e00">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1a99c80" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a99c80">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c7c340" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c7c340">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd44e990" />
+    </children>
+  </item>
+  <item nodeId="node-0xd44e990">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd452a00" />
+    </children>
+  </item>
+  <item nodeId="node-0xd452a00">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4336e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4336e0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd42f210" />
+    </children>
+  </item>
+  <item nodeId="node-0xd42f210">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x22ae20" />
+    </children>
+  </item>
+  <item nodeId="node-0x22ae20">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6b22fd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6b22fd0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd485a40" />
+    </children>
+  </item>
+  <item nodeId="node-0xd485a40">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4418f0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4418f0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c7cac0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c7cac0">
+    <command xml:space="preserve">enter capsule</command>
+    <result xml:space="preserve">You move into the Transit Capsule.
+
+Transit Capsule
+A fifty-person maglev Transit capsule.  You&apos;re standing, holding on to a strap.  Through the windows you can see the Green Residential Platform.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">You move into the Transit Capsule.
+
+Transit Capsule
+A fifty-person maglev Transit capsule.  You&apos;re standing, holding on to a strap.  Through the windows you can see the Green Residential Platform.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4b2780" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4b2780">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel.
+You hold onto your strap as the Capsule rapidly accelerates.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel.
+You hold onto your strap as the Capsule rapidly accelerates.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd430690" />
+    </children>
+  </item>
+  <item nodeId="node-0xd430690">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4389c0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4389c0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c7f7d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c7f7d0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Service Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Service Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd467ad0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd467ad0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd40a890" />
+    </children>
+  </item>
+  <item nodeId="node-0xd40a890">
+    <command xml:space="preserve">exit</command>
+    <result xml:space="preserve">Green Service Platform
+Green Service One&apos;s platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south, where a Transit capsule hovers impatiently in the web.  The capsule doors are open.
+
+You can go north through the Green Service Station door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Green Service Platform
+Green Service One&apos;s platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south, where a Transit capsule hovers impatiently in the web.  The capsule doors are open.
+
+You can go north through the Green Service Station door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1a626a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a626a0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">(first opening the Green Service Station door)
+
+Green Service Station
+Green Service is the local government services cluster.  The Transit station seems to reflect this, exhibiting a weary conformity - although you couldn&apos;t say exactly how.  A stairway leads down to the platform access doors, and a set of doors lead north out onto Government Square.
+
+You can go north and down through the Green Service Station door to Green Service Platform from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Green Service Station door)
+
+Green Service Station
+Green Service is the local government services cluster.  The Transit station seems to reflect this, exhibiting a weary conformity - although you couldn&apos;t say exactly how.  A stairway leads down to the platform access doors, and a set of doors lead north out onto Government Square.
+
+You can go north and down through the Green Service Station door to Green Service Platform from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c1f900" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c1f900">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Government Square South
+This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital&apos;s driveway.  The Hospital&apos;s main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north, northeast, northwest, south to Green Service Station, and east from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Government Square South
+This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital&apos;s driveway.  The Hospital&apos;s main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north, northeast, northwest, south to Green Service Station, and east from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd23b060" />
+    </children>
+  </item>
+  <item nodeId="node-0xd23b060">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Government Square North
+The north half of Government Square is surrounded on three sides by road.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here.
+
+You can go north, south to Government Square South, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Government Square North
+The north half of Government Square is surrounded on three sides by road.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here.
+
+You can go north, south to Government Square South, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4133c0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4133c0">
+    <command xml:space="preserve">put lost camera in pack</command>
+    <result xml:space="preserve">You put the lost camera into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the lost camera into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1ac8170" />
+    </children>
+  </item>
+  <item nodeId="node-0x1ac8170">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Civil Center Steps
+These are the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see Ponyfriend Chunky and the civil servants here.
+
+You can go south to Government Square North from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Civil Center Steps
+These are the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see Ponyfriend Chunky and the civil servants here.
+
+You can go south to Government Square North from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd48b150" />
+    </children>
+  </item>
+  <item nodeId="node-0xd48b150">
+    <command xml:space="preserve">ponyfriend, tell me about the pager</command>
+    <result xml:space="preserve">Ponyfriend shrugs and replies. &quot;Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I&apos;m sorry, I have to keep checking to make sure they haven&apos;t paged me.  I wish…I wish I could talk to them directly, though.&quot;
+
+&gt;</result>
+    <commentary xml:space="preserve">Ponyfriend shrugs and replies. &quot;Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I&apos;m sorry, I have to keep checking to make sure they haven&apos;t paged me.  I wish…I wish I could talk to them directly, though.&quot;
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c9f6d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c9f6d0">
+    <command xml:space="preserve">ponyfriend, tell me about your missions</command>
+    <result xml:space="preserve">Ponyfriend&apos;s shoulders shake for a few moments before he replies to you, mumbling in the direction of your feet. &quot;My missions?  They&apos;re…well…(a suspicious look comes over his face) They&apos;re secret! You can&apos;t know!&quot;
+
+You have the sudden feeling that you&apos;re being followed.
+
+&gt;</result>
+    <commentary xml:space="preserve">Ponyfriend&apos;s shoulders shake for a few moments before he replies to you, mumbling in the direction of your feet. &quot;My missions?  They&apos;re…well…(a suspicious look comes over his face) They&apos;re secret! You can&apos;t know!&quot;
+
+You have the sudden feeling that you&apos;re being followed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4f7ca0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4f7ca0">
+    <command xml:space="preserve">ponyfriend, give me the pager</command>
+    <result xml:space="preserve">Ponyfriend looks frightened and clutches the pager to his chest.  &quot;No! You can&apos;t have it!  THEY gave it to me! How would I know They needed me if I gave it to you?&quot;
+
+&gt;</result>
+    <commentary xml:space="preserve">Ponyfriend looks frightened and clutches the pager to his chest.  &quot;No! You can&apos;t have it!  THEY gave it to me! How would I know They needed me if I gave it to you?&quot;
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4aa730" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4aa730">
+    <command xml:space="preserve">offer phone to ponyfriend</command>
+    <result xml:space="preserve">(Ponyfriend Chunky)
+Ponyfriend clutches the cell phone and mumbles &quot;This is so much better, now I can get my instructions directly rather than having to call them back!&quot;  He stands there for a moment, then seems to come to a realization.  &quot;In fact, they can call me!  I don&apos;t need this pager!&quot; he says.
+
+Ponyfriend Chunky gives the pager to you.
+
+&gt;</result>
+    <commentary xml:space="preserve">(Ponyfriend Chunky)
+Ponyfriend clutches the cell phone and mumbles &quot;This is so much better, now I can get my instructions directly rather than having to call them back!&quot;  He stands there for a moment, then seems to come to a realization.  &quot;In fact, they can call me!  I don&apos;t need this pager!&quot; he says.
+
+Ponyfriend Chunky gives the pager to you.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd491290" />
+    </children>
+  </item>
+  <item nodeId="node-0xd491290">
+    <command xml:space="preserve">open pager</command>
+    <result xml:space="preserve">You open the pager, revealing a receive chip.
+
+&gt;</result>
+    <commentary xml:space="preserve">You open the pager, revealing a receive chip.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3e35d0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3e35d0">
+    <command xml:space="preserve">put receive chip in key</command>
+    <result xml:space="preserve">You put the receive chip into the car key.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the receive chip into the car key.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c6ba70" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c6ba70">
+    <command xml:space="preserve">put pager in pack</command>
+    <result xml:space="preserve">You put the pager into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the pager into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c1c500" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c1c500">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Government Square North
+The north half of Government Square is surrounded on three sides by road.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Civil Center Steps, south to Government Square South, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Government Square North
+The north half of Government Square is surrounded on three sides by road.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Civil Center Steps, south to Government Square South, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c1bf20" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c1bf20">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Hospital Entrance
+This is the front entryway pavilion of the local hospital.  The automatic entryway doors are to the east, and the ER entrance and driveway is to the south.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go south, southwest to Government Square South, east through the Hospital door (closed), and west to Government Square North from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Entrance
+This is the front entryway pavilion of the local hospital.  The automatic entryway doors are to the east, and the ER entrance and driveway is to the south.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go south, southwest to Government Square South, east through the Hospital door (closed), and west to Government Square North from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c18bb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c18bb0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">(first opening the Hospital door)
+
+Hospital Lobby
+This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading &quot;TRIAGE&quot;; to the east is the elevator core and to the north is the waiting lounge.
+
+You can go north, south, east, and west through the Hospital door to Hospital Entrance from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Hospital door)
+
+Hospital Lobby
+This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading &quot;TRIAGE&quot;; to the east is the elevator core and to the north is the waiting lounge.
+
+You can go north, south, east, and west through the Hospital door to Hospital Entrance from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x289f80" />
+    </children>
+  </item>
+  <item nodeId="node-0x289f80">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Hospital Lounge
+This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads &quot;LAB&quot; and the main lobby is to the south.
+
+You can go south to Hospital Lobby and east from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Lounge
+This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads &quot;LAB&quot; and the main lobby is to the south.
+
+You can go south to Hospital Lobby and east from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3adff0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3adff0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Hospital Lab
+This is an all-purpose pathology laboratory receiving area.  The lab itself is behind a bulletproof glass wall to the east, and a small window allows samples or paperwork to be passed back and forth.
+
+You can see a cryopack (closed) and a trash can (closed) here.
+
+You can go west to Hospital Lounge from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Lab
+This is an all-purpose pathology laboratory receiving area.  The lab itself is behind a bulletproof glass wall to the east, and a small window allows samples or paperwork to be passed back and forth.
+
+You can see a cryopack (closed) and a trash can (closed) here.
+
+You can go west to Hospital Lounge from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd44bb40" />
+    </children>
+  </item>
+  <item nodeId="node-0xd44bb40">
+    <command xml:space="preserve">take cryopack</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3dacc0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3dacc0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Hospital Lounge
+This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads &quot;LAB&quot; and the main lobby is to the south.
+
+You can go south to Hospital Lobby and east to the Hospital Lab from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Lounge
+This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads &quot;LAB&quot; and the main lobby is to the south.
+
+You can go south to Hospital Lobby and east to the Hospital Lab from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4364f0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4364f0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Hospital Lobby
+This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading &quot;TRIAGE&quot;; to the east is the elevator core and to the north is the waiting lounge.
+
+You can go north to Hospital Lounge, south, east, and west through the Hospital door (closed) to Hospital Entrance from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Lobby
+This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading &quot;TRIAGE&quot;; to the east is the elevator core and to the north is the waiting lounge.
+
+You can go north to Hospital Lounge, south, east, and west through the Hospital door (closed) to Hospital Entrance from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c20900" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c20900">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Hospital Elevators
+The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east.
+
+You can go south, east, and west to Hospital Lobby from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Elevators
+The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east.
+
+You can go south, east, and west to Hospital Lobby from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c0e240" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c0e240">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Hospital Restroom
+A clean restroom that smells strongly of disinfectant and hand sanitizer.  There is a single sink with a small mirror over it and a single stall.
+
+You can see a trash can (closed) here.
+
+You can go west to Hospital Elevators from here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Restroom
+A clean restroom that smells strongly of disinfectant and hand sanitizer.  There is a single sink with a small mirror over it and a single stall.
+
+You can see a trash can (closed) here.
+
+You can go west to Hospital Elevators from here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4406e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4406e0">
+    <command xml:space="preserve">open solar panel with tool</command>
+    <result xml:space="preserve">You pry open the solar panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+ Opening the solar panel reveals the broadcast chip!
+
+&gt;</result>
+    <commentary xml:space="preserve">You pry open the solar panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+ Opening the solar panel reveals the broadcast chip!
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd447e10" />
+    </children>
+  </item>
+  <item nodeId="node-0xd447e10">
+    <command xml:space="preserve">put broadcast chip in pack</command>
+    <result xml:space="preserve">You put the broadcast chip into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the broadcast chip into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xdac7c40" />
+    </children>
+  </item>
+  <item nodeId="node-0xdac7c40">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Hospital Elevators
+The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east.
+
+You can go south, east to Hospital Restroom, and west to Hospital Lobby from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Hospital Elevators
+The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east.
+
+You can go south, east to Hospital Restroom, and west to Hospital Lobby from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4df840" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4df840">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Emergency Room
+This is a prep and emergency treatment area for the emergency ward to the east, which is locked.  Triage is to the west, and a door leads north.
+
+You can see a tissue generator here.
+
+You can go north to Hospital Elevators and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Emergency Room
+This is a prep and emergency treatment area for the emergency ward to the east, which is locked.  Triage is to the west, and a door leads north.
+
+You can see a tissue generator here.
+
+You can go north to Hospital Elevators and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c6ad00" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c6ad00">
+    <command xml:space="preserve">open cryopack</command>
+    <result xml:space="preserve">A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up.
+
+You open the cryopack.
+
+&gt;</result>
+    <commentary xml:space="preserve">A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up.
+
+You open the cryopack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6cd38c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6cd38c0">
+    <command xml:space="preserve">put cryopack in sample slot</command>
+    <result xml:space="preserve">You put the cryopack into the sample slot.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the cryopack into the sample slot.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd422fa0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd422fa0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Triage
+This is a triage area for the ER to the east.  To the north is the main Hospital lobby, and west lies the automatic doors out to the driveway.
+
+You can go north to Hospital Lobby, east to the Emergency Room, and west through the ER door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Triage
+This is a triage area for the ER to the east.  To the north is the main Hospital lobby, and west lies the automatic doors out to the driveway.
+
+You can go north to Hospital Lobby, east to the Emergency Room, and west through the ER door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c1fc20" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c1fc20">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">(first opening the ER door)
+
+Hospital Driveway
+The driveway and parking area for the Hospital ER, which lies directly to the east.  To the north is the main entrance to the Hospital building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+An ambulance, a bulky flittervan with emergency markings, is parked here.
+
+You can go north to Hospital Entrance, northwest to Government Square North, east through the ER door to Triage, and west to Government Square South from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the ER door)
+
+Hospital Driveway
+The driveway and parking area for the Hospital ER, which lies directly to the east.  To the north is the main entrance to the Hospital building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+An ambulance, a bulky flittervan with emergency markings, is parked here.
+
+You can go north to Hospital Entrance, northwest to Government Square North, east through the ER door to Triage, and west to Government Square South from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd37f050" />
+    </children>
+  </item>
+  <item nodeId="node-0xd37f050">
+    <command xml:space="preserve">open ambulance</command>
+    <result xml:space="preserve">As you reach for the door handle, the locklarm begins to strobe and an ominous beeping begins.  You decide not to risk it.
+
+&gt;</result>
+    <commentary xml:space="preserve">As you reach for the door handle, the locklarm begins to strobe and an ominous beeping begins.  You decide not to risk it.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c1fb20" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c1fb20">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+Government Square South
+This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital&apos;s driveway.  The Hospital&apos;s main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Government Square North, northeast to Hospital Entrance, northwest, south to Green Service Station, and east to Hospital Driveway from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Government Square South
+This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital&apos;s driveway.  The Hospital&apos;s main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Government Square North, northeast to Hospital Entrance, northwest, south to Green Service Station, and east to Hospital Driveway from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3ea7c0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3ea7c0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Green Service Station
+Green Service is the local government services cluster.  The Transit station seems to reflect this, exhibiting a weary conformity - although you couldn&apos;t say exactly how.  A stairway leads down to the platform access doors, and a set of doors lead north out onto Government Square.
+
+You can go north to Government Square South and down through the Green Service Station door (closed) to Green Service Platform from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Green Service Station
+Green Service is the local government services cluster.  The Transit station seems to reflect this, exhibiting a weary conformity - although you couldn&apos;t say exactly how.  A stairway leads down to the platform access doors, and a set of doors lead north out onto Government Square.
+
+You can go north to Government Square South and down through the Green Service Station door (closed) to Green Service Platform from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1aadbf0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1aadbf0">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">(first opening the Green Service Station door)
+
+Green Service Platform
+Green Service One&apos;s platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south, now empty.
+
+You can go north through the Green Service Station door to Green Service Station from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Green Service Station door)
+
+Green Service Platform
+Green Service One&apos;s platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south, now empty.
+
+You can go north through the Green Service Station door to Green Service Station from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd376f30" />
+    </children>
+  </item>
+  <item nodeId="node-0xd376f30">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c158d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c158d0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd2d60d0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd2d60d0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6ca09b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6ca09b0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c1ee60" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c1ee60">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3a47a0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3a47a0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3be050" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3be050">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4d1d40" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4d1d40">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3ed100" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3ed100">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3c1890" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3c1890">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A commuter walks by.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A commuter walks by.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3b3840" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3b3840">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3d1d70" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3d1d70">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd387a90" />
+    </children>
+  </item>
+  <item nodeId="node-0xd387a90">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Service Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Service Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1a98780" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a98780">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3e5ac0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3e5ac0">
+    <command xml:space="preserve">enter capsule</command>
+    <result xml:space="preserve">You move into the Transit Capsule.
+
+Transit Capsule
+A fifty-person maglev Transit capsule.  You&apos;re standing, holding on to a strap.  Through the windows you can see the Green Service Platform.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">You move into the Transit Capsule.
+
+Transit Capsule
+A fifty-person maglev Transit capsule.  You&apos;re standing, holding on to a strap.  Through the windows you can see the Green Service Platform.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4dc890" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4dc890">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel.
+You hold onto your strap as the Capsule rapidly accelerates.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel.
+You hold onto your strap as the Capsule rapidly accelerates.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3e2d00" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3e2d00">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6ef310" />
+    </children>
+  </item>
+  <item nodeId="node-0x6ef310">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xda82df0" />
+    </children>
+  </item>
+  <item nodeId="node-0xda82df0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Reserve Bank Station and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Reserve Bank Station and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd487b40" />
+    </children>
+  </item>
+  <item nodeId="node-0xd487b40">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3ea9d0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3ea9d0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd31c760" />
+    </children>
+  </item>
+  <item nodeId="node-0xd31c760">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel.
+You hold onto your strap as the Capsule rapidly accelerates.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel.
+You hold onto your strap as the Capsule rapidly accelerates.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd31bbd0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd31bbd0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3b22c0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3b22c0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd301e20" />
+    </children>
+  </item>
+  <item nodeId="node-0xd301e20">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Commercial Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Commercial Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd41a9a0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd41a9a0">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Time passes.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd337fb0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd337fb0">
+    <command xml:space="preserve">exit</command>
+    <result xml:space="preserve">Green Commercial Platform
+Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north, where a Transit capsule can be seen hovering.  The capsule doors are open.
+
+You can go south through the Green Commercial Station door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</result>
+    <commentary xml:space="preserve">Green Commercial Platform
+Green Commercial One is one of the oldest stations on the Transit web.  Although it has been refurbished several times, its age still manages to show through the layers of tile and paint.  The platform opens out at the middle to a lobby area which is dominated by a row of automated doors to the south, which lead to stairways up to the main station.  The flow of commuters moves steadily through these doors.  The floor and walls are both extremely scuffed duramex nanotile, and the station name (Green Commercial One) is indicated on a large plaque set into the walls. The platform abuts the Transit web to the north, where a Transit capsule can be seen hovering.  The capsule doors are open.
+
+You can go south through the Green Commercial Station door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+A few commuters get on and off the Transit capsule.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe85e9d0" />
+    </children>
+  </item>
+  <item nodeId="node-0xe85e9d0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">(first opening the Green Commercial Station door)
+
+Green Commercial Station
+Green Commercial One&apos;s Transit station usually does most of its business around the rush hours, as Green Residental commuters stop off to take care of errands.  The station is relatively small, but well kept up - the Green Commercial Business Improvement District organization sees to that.  Doors lead south to Green Commercial One proper, and a stairway leads down to the doors to the Transit platform.
+
+You can go south and down through the Green Commercial Station door to Green Commercial Platform from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Green Commercial Station door)
+
+Green Commercial Station
+Green Commercial One&apos;s Transit station usually does most of its business around the rush hours, as Green Residental commuters stop off to take care of errands.  The station is relatively small, but well kept up - the Green Commercial Business Improvement District organization sees to that.  Doors lead south to Green Commercial One proper, and a stairway leads down to the doors to the Transit platform.
+
+You can go south and down through the Green Commercial Station door to Green Commercial Platform from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe864a50" />
+    </children>
+  </item>
+  <item nodeId="node-0xe864a50">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Green Commercial Plaza North
+Green Commercial One is built around a plaza, and this is its northern end.  No vehicles are permitted within the public areas of Green Commercial One, so the entire area is pedestrian-only.  To the north are the doors to the Green Commercial Station.  To the east is the NanoMart.  To the west is a storefront bank with an ATM.  The plaza continues to the south.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Station, south, southeast, southwest, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Green Commercial Plaza North
+Green Commercial One is built around a plaza, and this is its northern end.  No vehicles are permitted within the public areas of Green Commercial One, so the entire area is pedestrian-only.  To the north are the doors to the Green Commercial Station.  To the east is the NanoMart.  To the west is a storefront bank with an ATM.  The plaza continues to the south.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Station, south, southeast, southwest, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3205f0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3205f0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Green Commercial Plaza Center
+This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza North, northeast, northwest, south, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Green Commercial Plaza Center
+This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza North, northeast, northwest, south, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd412170" />
+    </children>
+  </item>
+  <item nodeId="node-0xd412170">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Green Commercial Plaza South
+The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza Center, northeast, northwest, east, and west through the Garb-oh door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Green Commercial Plaza South
+The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza Center, northeast, northwest, east, and west through the Garb-oh door (closed) from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd375a30" />
+    </children>
+  </item>
+  <item nodeId="node-0xd375a30">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">(first opening the Garb-oh door)
+
+Garb-oh
+Garb-oh! is a trendy clothing shop.  Images of the shop&apos;s icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display.
+
+On the racks are a blue jacket, a red jacket, a white shirt, a green shirt, a blue pair of pants, and a brown pair of pants.
+
+The sales counter runs along the north side of the store.
+
+You can also see the shopkeeper and the shopper here.
+
+You can go east through the Garb-oh door to Green Commercial Plaza South from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Garb-oh door)
+
+Garb-oh
+Garb-oh! is a trendy clothing shop.  Images of the shop&apos;s icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display.
+
+On the racks are a blue jacket, a red jacket, a white shirt, a green shirt, a blue pair of pants, and a brown pair of pants.
+
+The sales counter runs along the north side of the store.
+
+You can also see the shopkeeper and the shopper here.
+
+You can go east through the Garb-oh door to Green Commercial Plaza South from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c682e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c682e0">
+    <command xml:space="preserve">take red jacket</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe867df0" />
+    </children>
+  </item>
+  <item nodeId="node-0xe867df0">
+    <command xml:space="preserve">x shopper</command>
+    <result xml:space="preserve"> The shopper is a young woman wearing large headphones, loose clothes. She is bouncing her head in what is probably the rhythm of the song she is listening to, and seems to be paying very little attention to her surroundings.  Every once in a while she pulls an item from a rack and holds it up in front of a mirror before returning it to its place.  She is wearing a large shoulder bag.
+
+The shopper is empty-handed.
+
+&gt;</result>
+    <commentary xml:space="preserve"> The shopper is a young woman wearing large headphones, loose clothes. She is bouncing her head in what is probably the rhythm of the song she is listening to, and seems to be paying very little attention to her surroundings.  Every once in a while she pulls an item from a rack and holds it up in front of a mirror before returning it to its place.  She is wearing a large shoulder bag.
+
+The shopper is empty-handed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd302f30" />
+    </children>
+  </item>
+  <item nodeId="node-0xd302f30">
+    <command xml:space="preserve">put red jacket in shoulder bag</command>
+    <result xml:space="preserve">You stealthily slide the red jacket into the shoulder bag!
+
+The shopper puts down a last item of clothing and drifts towards the door.  As she reaches it, however, the antitheft alarm blares and a strobe light begins to flash!  She stops, frozen in surprise, as the shopkeeper rushes over and grabs her.  A few seconds later, two policemen enter the shop.  The shopkeeper, shopper and police all begin shouting at the same time.
+
+&gt;</result>
+    <commentary xml:space="preserve">You stealthily slide the red jacket into the shoulder bag!
+
+The shopper puts down a last item of clothing and drifts towards the door.  As she reaches it, however, the antitheft alarm blares and a strobe light begins to flash!  She stops, frozen in surprise, as the shopkeeper rushes over and grabs her.  A few seconds later, two policemen enter the shop.  The shopkeeper, shopper and police all begin shouting at the same time.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3a4b30" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3a4b30">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You move around behind the sales counter.
+
+Garb-oh (in the sales counter)
+Garb-oh! is a trendy clothing shop.  Images of the shop&apos;s icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display.
+
+On the racks are a blue jacket, a white shirt, a green shirt, a blue pair of pants, and a brown pair of pants.
+
+You can also see a Patrolman, Officer Prescott, the shopkeeper, and the shopper here.
+
+There is a wide drawer below the counter level.
+
+You can go east through the Garb-oh door (closed) to Green Commercial Plaza South from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">You move around behind the sales counter.
+
+Garb-oh (in the sales counter)
+Garb-oh! is a trendy clothing shop.  Images of the shop&apos;s icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display.
+
+On the racks are a blue jacket, a white shirt, a green shirt, a blue pair of pants, and a brown pair of pants.
+
+You can also see a Patrolman, Officer Prescott, the shopkeeper, and the shopper here.
+
+There is a wide drawer below the counter level.
+
+You can go east through the Garb-oh door (closed) to Green Commercial Plaza South from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd4ef710" />
+    </children>
+  </item>
+  <item nodeId="node-0xd4ef710">
+    <command xml:space="preserve">open drawer</command>
+    <result xml:space="preserve">You open the sales drawer, revealing a tag remover.
+
+&gt;</result>
+    <commentary xml:space="preserve">You open the sales drawer, revealing a tag remover.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c69bd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c69bd0">
+    <command xml:space="preserve">take tag remover</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3ac940" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3ac940">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You move out from behind the sales counter.
+
+Garb-oh
+Garb-oh! is a trendy clothing shop.  Images of the shop&apos;s icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display.
+
+On the racks are a blue jacket, a white shirt, a green shirt, a blue pair of pants, and a brown pair of pants.
+
+The sales counter runs along the north side of the store.
+
+You can also see a Patrolman, Officer Prescott, the shopkeeper, and the shopper here.
+
+You can go east through the Garb-oh door (closed) to Green Commercial Plaza South from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">You move out from behind the sales counter.
+
+Garb-oh
+Garb-oh! is a trendy clothing shop.  Images of the shop&apos;s icon Greta Garbo abound, each dressed in the clothing item offered on the rack below it.  Jackets, scarves, bandannas, trousers, shirts and more are on inviting display.
+
+On the racks are a blue jacket, a white shirt, a green shirt, a blue pair of pants, and a brown pair of pants.
+
+The sales counter runs along the north side of the store.
+
+You can also see a Patrolman, Officer Prescott, the shopkeeper, and the shopper here.
+
+You can go east through the Garb-oh door (closed) to Green Commercial Plaza South from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe86d3e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xe86d3e0">
+    <command xml:space="preserve">take blue jacket</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd2b2ff0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd2b2ff0">
+    <command xml:space="preserve">remove blue jacket&apos;s antitheft tag</command>
+    <result xml:space="preserve">(first taking the blue jacket&apos;s antitheft tag)
+What do you want to remove that with?
+
+&gt;</result>
+    <commentary xml:space="preserve">(first taking the blue jacket&apos;s antitheft tag)
+What do you want to remove that with?
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xda2a280" />
+    </children>
+  </item>
+  <item nodeId="node-0xda2a280">
+    <command xml:space="preserve">remove blue jacket&apos;s antitheft tag with tag remover</command>
+    <result xml:space="preserve">You deftly remove the tag with the tag remover.
+
+&gt;</result>
+    <commentary xml:space="preserve">You deftly remove the tag with the tag remover.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c13ee0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c13ee0">
+    <command xml:space="preserve">put blue jacket in pack</command>
+    <result xml:space="preserve">You put the blue jacket into the backpack.
+
+The police finally search the shopper&apos;s shoulder bag, and shake their heads.  They lead her towards the door, one explaining that they&apos;ll need to take her statement at the station.  The shopkeeper asks snippily what they&apos;ll be doing to protect her stock; Officer Prescott rolls his eyes and says &quot;Lady, we&apos;ll have our patrol stop in the plaza out front for a while in case this one has any accomplices, all right?&quot;  They leave, and the shopkeeper watches them go with a somewhat irritatingly smug expression on her face.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the blue jacket into the backpack.
+
+The police finally search the shopper&apos;s shoulder bag, and shake their heads.  They lead her towards the door, one explaining that they&apos;ll need to take her statement at the station.  The shopkeeper asks snippily what they&apos;ll be doing to protect her stock; Officer Prescott rolls his eyes and says &quot;Lady, we&apos;ll have our patrol stop in the plaza out front for a while in case this one has any accomplices, all right?&quot;  They leave, and the shopkeeper watches them go with a somewhat irritatingly smug expression on her face.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd408d30" />
+    </children>
+  </item>
+  <item nodeId="node-0xd408d30">
+    <command xml:space="preserve">open thermos</command>
+    <result xml:space="preserve">You open the thermos.
+
+&gt;</result>
+    <commentary xml:space="preserve">You open the thermos.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3b8810" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3b8810">
+    <command xml:space="preserve">put blue jacket&apos;s antitheft tag in thermos</command>
+    <result xml:space="preserve">You put the blue jacket&apos;s antitheft tag into the thermos.
+
+A small group of people enter the store, look around, look at each other and file back out.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the blue jacket&apos;s antitheft tag into the thermos.
+
+A small group of people enter the store, look around, look at each other and file back out.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe8c8cb0" />
+    </children>
+  </item>
+  <item nodeId="node-0xe8c8cb0">
+    <command xml:space="preserve">remove white shirt&apos;s antitheft tag with tag remover</command>
+    <result xml:space="preserve">You deftly remove the tag with the tag remover.
+
+&gt;</result>
+    <commentary xml:space="preserve">You deftly remove the tag with the tag remover.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x1ae66b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1ae66b0">
+    <command xml:space="preserve">remove green shirt&apos;s antitheft tag with tag remover</command>
+    <result xml:space="preserve">You deftly remove the tag with the tag remover.
+
+&gt;</result>
+    <commentary xml:space="preserve">You deftly remove the tag with the tag remover.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3066e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3066e0">
+    <command xml:space="preserve">put white shirt&apos;s antitheft tag in thermos</command>
+    <result xml:space="preserve">You put the white shirt&apos;s antitheft tag into the thermos.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the white shirt&apos;s antitheft tag into the thermos.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd3c4700" />
+    </children>
+  </item>
+  <item nodeId="node-0xd3c4700">
+    <command xml:space="preserve">put green shirt&apos;s antitheft tag in thermos</command>
+    <result xml:space="preserve">You put the green shirt&apos;s antitheft tag into the thermos.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the green shirt&apos;s antitheft tag into the thermos.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd443370" />
+    </children>
+  </item>
+  <item nodeId="node-0xd443370">
+    <command xml:space="preserve">close thermos</command>
+    <result xml:space="preserve">You close the thermos.
+
+&gt;</result>
+    <commentary xml:space="preserve">You close the thermos.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd486460" />
+    </children>
+  </item>
+  <item nodeId="node-0xd486460">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying:
+  a tag remover
+  a watch (being worn)
+  a backpack (being worn, and open)
+    a blue jacket
+    a broadcast chip
+    a pager (open but empty)
+    a lost camera
+    a lockblade knife
+    a thermos (closed)
+    some solder
+    a soldering iron
+    a laptop
+    a car key
+      a receive chip
+    a pamphlet
+    a newspaper
+    a multitool
+
+&gt;</result>
+    <commentary xml:space="preserve">You are carrying:
+  a tag remover
+  a watch (being worn)
+  a backpack (being worn, and open)
+    a blue jacket
+    a broadcast chip
+    a pager (open but empty)
+    a lost camera
+    a lockblade knife
+    a thermos (closed)
+    some solder
+    a soldering iron
+    a laptop
+    a car key
+      a receive chip
+    a pamphlet
+    a newspaper
+    a multitool
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe8dfa20" />
+    </children>
+  </item>
+  <item nodeId="node-0xe8dfa20">
+    <command xml:space="preserve">put tag remover in pack</command>
+    <result xml:space="preserve">You put the tag remover into the backpack.
+
+&gt;</result>
+    <commentary xml:space="preserve">You put the tag remover into the backpack.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0x6c19480" />
+    </children>
+  </item>
+  <item nodeId="node-0x6c19480">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">(first opening the Garb-oh door)
+
+Green Commercial Plaza South
+The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza Center, northeast, northwest, east, and west through the Garb-oh door to Garb-oh from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</result>
+    <commentary xml:space="preserve">(first opening the Garb-oh door)
+
+Green Commercial Plaza South
+The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza Center, northeast, northwest, east, and west through the Garb-oh door to Garb-oh from here.
+
+There is a Public Surveillance Notice here.
+
+The automatic door slides closed.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xe827080" />
+    </children>
+  </item>
+  <item nodeId="node-0xe827080">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+Green Commercial Plaza Center
+This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza North, northeast, northwest, south to Green Commercial Plaza South, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+Green Commercial Plaza Center
+This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can also see a trash can (closed) here.
+
+You can go north to Green Commercial Plaza North, northeast, northwest, south to Green Commercial Plaza South, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="1184">NO</temporary>
+    <children>
+      <child nodeId="node-0xd366b30" />
+    </children>
+  </item>
+  <item nodeId="node-0xd366b30">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+The Proletariat Bar
+The Proletariat is a local bar (not a pub).  It&apos;s just far enough above a &quot;dive&quot; to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side with a stolid bartender behind it and a jukebox sits against the back wall.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place&apos;s name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.
+
+You can go northwest to Green Commercial Plaza North, southwest to Green Commercial Plaza South, east, and west to Green Commercial Plaza Center from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <commentary xml:space="preserve">
+The Proletariat Bar
+The Proletariat is a local bar (not a pub).  It&apos;s just far enough above a &quot;dive&quot; to be allowed zoning here, but steadfastedly refuses to cater to upscale tastes.  You like it.  Restrooms are to the east; the bar runs along the north side with a stolid bartender behind it and a jukebox sits against the back wall.  A few hardy drinkers sit here, communing with their spirits.  In a nod to the place&apos;s name, a Public Surveillance Notice covered with stickers and graffiti tags has been framed above the bar.
+
+You can go northwest to Green Commercial Plaza North, southwest to Green Commercial Plaza South, east, and west to Green Commercial Plaza Center from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="1183">NO</temporary>
+  </item>
+</Skein>
