@@ -120,6 +120,17 @@ To decide whether the side panel is hacked:
 	if the side panel is fried, decide no;
 	decide yes.
 	
+To decide whether the ID camera is photoEnabled:
+	unless the ID camera is working, decide no;
+	unless the location of the ID camera is Booking:
+		unless the film slot contains a memory chip, decide no;
+	decide yes.
+	
+To decide whether the lens crafter is lensEnabled:
+	unless the data slot contains a memory chip (called the film), decide no;
+	unless the contents of the film matches the text "Zuzu's eye", decide no;
+	decide yes.
+
 To decide whether the player is harnessed:
 	unless the player encloses the descender, decide no;
 	unless the cable is tied, decide no;
@@ -185,6 +196,7 @@ Things can be either assembled or disassembled.  Things are usually assembled.
 Things can be tiny, small, medium, or large (this is its size property).  Things are usually medium.
 
 transitTurn is a number that varies.
+patrolTurn is a number that varies.
 
 messagesWaiting is a truth state that varies.
 
@@ -734,8 +746,15 @@ Instead of closing the car key:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this camera is used for recording the identity of suspects brought in.  It is high resolution, but has only onboard memory for a single hi-res hologram[if the ID camera is fixed in place] (which isn't used at the moment as the camera is recording directly to the station's systems.) It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution camera is used for recording the identity of suspects brought in.  It can either record to a local server, or to a standard Memory chip placed in its memory slot.[if the ID camera is fixed in place] It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
+The film slot is a container.  The film slot is part of the ID camera.  The film slot is unopenable and open. The carrying capacity of the film slot is 1.  The description of the film slot is "A slot for a standard Memory chip.[unless empty] A chip is currently in the slot.[end if]".
+
+Check inserting into the film slot:
+	unless the noun is a memory chip, say "That won't fit." instead.
+
+Instead of inserting into the id camera:
+	try inserting the noun into the film slot instead.
 
 Understand "the chain" as the camera chain.
 
@@ -744,10 +763,8 @@ Check cutting the camera chain with the tag remover:
 	now the ID camera is portable;
 	rule succeeds.
 
-
 Instead of cutting the camera chain:
 	say "What do you want to cut [the noun] with?" instead.
-
 		
 Check taking the ID camera:
 	if the ID camera is fixed in place:
@@ -755,6 +772,14 @@ Check taking the ID camera:
 	otherwise:
 		continue the action.
 
+camchecking is an action out of world.
+Understand "camcheck" as camchecking.
+
+Carry out camchecking:
+	If the ID camera is photoEnabled:
+		say "Enabled.";
+	otherwise:
+		say "Not enabled."
 
 The tag remover is in the sales drawer.  The tag remover is a thing.  The tag remover is small. The description is "This is a combination antitheft tag remover and wirecutter, useful for removing antitheft tags or pesky labels from products."
 
@@ -1103,22 +1128,36 @@ Instead of switching on the tissue generator:
 	carry out the synthesizing activity.	
 
 [lens crafter]
-The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
+The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
 The Lens Menu is part of the Lens Crafter.  The Lens Menu is scenery.  The description is "The menu screen, locked,  displays a password prompt. You don't have the password."
 The delivery slot is a container.  The delivery slot is part of the Lens Crafter.  The delivery slot is open.  The delivery slot is not openable.  The description of the delivery slot is "A slot where the lens crafter delivers its product.  It is shaped to accept a standard lens case."
+The data slot is a container.  The data slot is a part of the Lens Crafter.  The data slot is open and unopenable.  The description of the data slot is "A slot for a standard Memory chip."
+
+Check inserting into the lens crafter:
+	if the noun is a memory chip, try inserting the noun into the data slot instead;
+	if the noun is the lens case, try inserting the noun into the delivery slot instead.
+
+Check inserting into the data slot:
+	unless the noun is a Memory chip, say "That won't fit." instead.
 
 Check inserting into the delivery slot:
 	unless the noun is the lens case, say "That won't fit." instead;
 	unless the noun is open, say "The lens case must be open to fit in the delivery slot."
 
-Instead of switching on the lens crafter:
+
+Check switching on the lens crafter:
 	if the lens crafter is fried, say "The screen flashes red.  A message reads 'INSUFFICIENT STOCK.'" instead;
 	unless the lens case is in the delivery slot, say "The lens crafter machine's screen flashes red.  A message reads 'NO DELIVERY CONTAINER AVAILABLE." instead;
-	unless the location of the ID camera is Accessorize, say "The lens crafter machine's screen flashes red.  A message reads 'NO SOURCE DATA AVAILABLE.'" instead;
-	unless the Contents of the ID camera matches the text "Zuzu's eye", say "The ID camera's status light flashes. The lens crafter machine's screen flashes red.  A message reads 'DATA SOURCE FOUND. SOURCE DATA UNUSABLE.'" instead;
+	unless the lens crafter is lensEnabled, say "The lens crafter machine's screen flashes red.  A message reads 'NO VALID SOURCE DATA AVAILABLE.'" instead.
+
+
+Carry out switching on the lens crafter:
 	move the contact lens to the lens case;
 	now the lens case is closed;
 	now the lens crafter is fried;
+	now the lens crafter is switched off.
+	
+Report switching on the lens crafter:
 	say "The lens crafter machine's screen flashes green.  A message reads 'SOURCE DATA ACCEPTED - COSTUME LENS SYNTHESIZED.'  The machine hisses slightly, and a sleeve descends around the lens case.  When the sleeve retracts, the lens case is closed." instead.
 
 [jukebox]
@@ -1583,8 +1622,11 @@ Photographing is an action applying to two things.
 
 Check photographing:
 	if the second noun is the ID camera:
+		unless the ID camera is carried by the player, try taking the ID camera;
+		unless the ID camera is photoEnabled, say "The camera blinks a red icon, indicating there is no available storage." instead;
 		if the noun is a person, say "The camera bleeps a wavy icon, indicating that the subject isn't still enough for a hologram." instead;
 		if the noun is part of a person, say "The camera bleeps a wavy icon indicating that the subject isn't still enough for a hologram." instead;
+		continue the action;
 	otherwise if the second noun is a disposable camera:
 		if the noun is disassembled, say "The camera is pried open and does not seem to function." instead;
 		continue the action;
@@ -1592,11 +1634,17 @@ Check photographing:
 		say "You can't photograph [the noun] with that." instead.
 		
 Carry out photographing:
-	now the Contents of the second noun is the printed name of the noun;
-	if the second noun is the ID camera, now the second noun is programmed.
+	if the noun is a disposable camera:
+		now the Contents of the second noun is the printed name of the noun;
+	if the second noun is the ID camera:
+		if the film slot contains a memory chip (called the filmchip):
+			now the Contents of the filmchip is the printed name of the noun;
+			now the filmchip is programmed;
+		otherwise if the location of the camera is booking:
+			continue the action.
 
 Report photographing:
-	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The disc icon flashes green, indicating that the camera's tiny onboard storage is full.".
+	say "The camera emits an artificial-sounding 'CLICK' noise.[if the second noun is the ID camera]  The disc icon flashes green, indicating that the image has been stored.".
 
 
 
@@ -1862,8 +1910,8 @@ Police Gone ends when the time since Police Gone began is 20 minutes.
 
 [Patrol]
 Patrol is a recurring scene.  Patrol begins when Police Gone ends.  
-Patrol ends finally when the time since Patrol began is 20 minutes and the Police Flitter is violated.  
-Patrol ends temporarily when the time since Patrol began is 20 minutes and the Police Flitter is pristine.
+Patrol ends finally when the turn count is equal to patrolTurn and the Police Flitter is violated.  
+Patrol ends temporarily when the turn count is equal to patrolTurn and the Police Flitter is pristine.
 
 When Patrol begins:
 	Move the police flitter to Green Commercial Plaza South;
