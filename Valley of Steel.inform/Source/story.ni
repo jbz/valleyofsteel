@@ -7,7 +7,7 @@ The story creation year is 2012.
 The release number is 1.
 
 
-Release along with cover art, a website, an interpreter, the library card, the private source text, a file of "Original Story" called "valleyofsteel.pdf".
+Release along with cover art, a website, an interpreter, the introductory booklet, the library card, the private source text, a solution, a file of "Original Story" called "valleyofsteel.pdf".
 
 
 Chapter 0 - Game Rules And Item Setup
@@ -29,7 +29,6 @@ Time of day is 7:30 PM.
 The player is in Green Residential Park.
 
 When play begins: 
-	[seed the random-number generator with 8942;  [NOTE: THIS MUST BE REMOVED FOR NON-TEST PLAY]]
 	add the list of transitStations to Transit System;
 	sort Transit System in stationNumber order;
 	now newsIndex is a random number from 1 to the number of rows in the Table of Stories;
@@ -450,6 +449,14 @@ Understand "entraining" as entraining.
 Report entraining:
 	say "The list of entrained rooms is [list of entrained rooms]."
 
+camchecking is an action out of world.
+Understand "camcheck" as camchecking.
+
+Carry out camchecking:
+	If the ID camera is photoEnabled:
+		say "Enabled.";
+	otherwise:
+		say "Not enabled."
 
 
 Section 5 - Portable Objects (non-Scenery)
@@ -490,8 +497,12 @@ After dropping an id bomb (called the bomb):
 			now the incriminatingAct is "dropping that ID Bomb";
 			the player incriminates in 1 turn from now.
 
-A memory chip is a kind of component.  A memory chip is usually portable.  A memory chip is tiny. A memory chip can be either blank or programmed.  A memory chip is usually blank. A memory chip usually has item-id "M0". A memory chip has some text called Contents. The Contents of a memory chip is usually "blank". A memory chip can be working or fried.  A memory chip is usually working. A memory chip has some text called fryDescription.  The fryDescription of a memory chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." The description of a memory chip is "This is a standard Memory chip- a small solid-state data storage device about the size of a coin.  Data can be stored to a Memory chip by most electronic devices and computers.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released.[otherwise if programmed]   This memory chip has been programmed with the payload of a Klein-blaster virus.  If there was a way to transmit this payload to nearby MitKlein encapsulations, you'd really have something powerful."
-Understand the blank property as describing a memory chip.
+chiptype is a kind of value.  The chiptypes are blank, attack, transponder and photo.
+A memory chip is a kind of component.  A memory chip is usually portable.  A memory chip is tiny.  A memory chip has a chiptype. A memory chip is usually blank. A memory chip usually has item-id "M0". A memory chip has some text called Contents. The Contents of a memory chip is usually "blank". A memory chip can be working or fried.  A memory chip is usually working. A memory chip has some text called fryDescription.  The fryDescription of a memory chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." The description of a memory chip is "This is a standard Memory chip- a small solid-state data storage device about the size of a coin.  Data can be stored to a Memory chip by most electronic devices and computers.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released.[otherwise if attack]   This memory chip has been programmed with the payload of a Klein-blaster virus.  If there was a way to transmit this payload to nearby MitKlein encapsulations, you'd really have something powerful.[otherwise if photo]  This memory chip seems to contain image data.[otherwise if transponder]  This memory chip appears to contain a flitter's transponder code.[end if]".
+Understand the chiptype property as describing a memory chip.
+
+Before printing the name of a memory chip: say "[chiptype] ".
+Before printing the plural name of a memory chip: say "[chiptype] ".
 
 A broadcast chip is a kind of component.  A broadcast chip is usually portable.  A broadcast chip is tiny. A broadcast chip can be working or fried. A broadcast chip is usually working. A broadcast chip always has item-id "M1". A broadcast chip has some text called fryDescription.  The fryDescription of a broadcast chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." A broadcast chip is tiny.  The description of a broadcast chip is "This is a broadcast chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics these days.  Usually powered by small batteries in phones or car keys, these generally have a range of a few meters.  There are leads on the chip for connecting a data source and a power source.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released."
 
@@ -538,7 +549,7 @@ Check taking an antitheft tag:
 	if the noun is part of a garment, say "What do you want to remove that with?" instead.
 
 
-A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the Kleinhacking signal.  It needs a power source to perform its task."
+A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the attack payload.  It needs a power source to perform its task."
 
 A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos.[if disassembled]  This camera has been cracked open, revealing its internal electronics.  A capacitor (for the flash unit) and battery are available, as are numerous circuit connection points.[end if]"
 
@@ -748,7 +759,7 @@ Instead of closing the car key:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be either blank or programmed.  The ID camera is blank.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution camera is used for recording the identity of suspects brought in.  It can either record to a local server, or to a standard Memory chip placed in its memory slot.[if the ID camera is fixed in place] It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution camera is used for recording the identity of suspects brought in.  It can either record to a local server, or to a standard Memory chip placed in its memory slot.[if the ID camera is fixed in place] It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
 The film slot is a container.  The film slot is part of the ID camera.  The film slot is unopenable and open. The carrying capacity of the film slot is 1.  The description of the film slot is "A slot for a standard Memory chip.[unless empty] A chip is currently in the slot.[end if]".
 
@@ -774,14 +785,6 @@ Check taking the ID camera:
 	otherwise:
 		continue the action.
 
-camchecking is an action out of world.
-Understand "camcheck" as camchecking.
-
-Carry out camchecking:
-	If the ID camera is photoEnabled:
-		say "Enabled.";
-	otherwise:
-		say "Not enabled."
 
 The tag remover is in the sales drawer.  The tag remover is a thing.  The tag remover is small. The description is "This is a combination antitheft tag remover and wirecutter, useful for removing antitheft tags or pesky labels from products."
 
@@ -827,8 +830,7 @@ After inserting into the chipslot:
 	say "The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.";
 	now the item-id of the noun is "M2";
 	now the Contents of the noun is "The Signal";
-	now the printed name of the noun is "programmed memory chip";
-	now the noun is programmed.
+	now the chiptype of the noun is attack.
 	
 To say screen-description:
 	if the laptop is unhacked:
@@ -859,8 +861,7 @@ Carry out rebooting:
 			say "The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.";
 			now the item-id of the target is "M2";
 			now the Contents of the target is "The Signal";
-			now the printed name of the target is "programmed memory chip";
-			now the target is programmed;
+			now the target is attack;
 	otherwise:
 		say "The laptop screen flickers.  A brief boot cycle passes by dizzyingly fast, and the laptop returns to the login screen.";
 	
@@ -1275,6 +1276,20 @@ Check waiting more:
 	if the time understood is greater than six hours, say "You really haven't got that kind of patience." instead.
 
 
+[waiting for subway]
+Waiting for subway is an action applying to nothing.
+Understand "wait capsule" or "wait for capsule"  or "wait transit" or "wait for transit" or "wait train" or "wait for train" or "wait subway" or "wait for subway" as waiting for subway.
+
+Check waiting for subway:
+	unless the location is a transitStation, say "Do you really expect a Transit capsule to show up here?" instead.
+
+Carry out waiting for subway:
+	let the target turn be the turn count + 60;
+	while the turn count is not the target turn and the station of the Capsule is not the location:
+		follow the turn sequence rules.
+		
+Report waiting for subway:
+	say "The Capsule has arrived.[if the watch is worn by the player]  The time is [time of day].[end if]"
 
 [unlocking] 
 [We have to re-implement this b/c we override it in order to let 'open x with y' work]
@@ -1641,7 +1656,7 @@ Carry out photographing:
 	if the second noun is the ID camera:
 		if the film slot contains a memory chip (called the filmchip):
 			now the Contents of the filmchip is the printed name of the noun;
-			now the filmchip is programmed;
+			now the filmchip is photo;
 		otherwise if the location of the camera is booking:
 			continue the action.
 
@@ -1782,7 +1797,7 @@ Rule for synthesizing:
 		move the skin sample to the cryopack;
 		now the cryopack is closed;
 		now the cryopack is operating;
-		say "With a final hiss, the tissue generator lights an indicator reading 'COMPLETE.'  You notice the cryopack is now closed and operating."
+		say "Lights flash and the machine hums for a while. With a final hiss, the tissue generator lights an indicator reading 'COMPLETE.'  You notice the cryopack is now closed and operating."
 
 
 
@@ -1945,20 +1960,20 @@ After going from Green Commercial Plaza South during Patrol:
 	continue the action.
 
 When Patrol ends:
-	Now the police flitter is closed;
-	Now the police flitter is locked;
-	Remove the police flitter from play;
-	Remove Officer Prescott from play;
 	if the location is Green Commercial Bistro Paris:
 		say "The police officer finishes his coffee, tosses his trash in a bin and ambles out of the bistro.  You hear the sound of flitter turbines spooling up outside and then fading away.";
 	if the location is Green Commercial Plaza South:
-		say "A police officer ambles out of Green Commercial Bistro Paris.  As he approaches the flitter, the flitter key transponder on his belt disables the locklarm.  He climbs in and shuts the door.  A few moments later, the aircraft powers up. The turbines spool up and, its beacons flashing, it lifts smoothly into the air, disappearing behind the building tops.";
+		say "A police officer ambles out of Green Commercial Bistro Paris.  [if the police flitter is locked]As he approaches the flitter, the flitter key transponder on his belt disables the locklarm.[otherwise]  He pauses as he reaches the flitter, frowns, and checks the flitter key on his belt before trying the door.  When it opens, he looks around suspiciously, then makes a radio call.  You hear him state that he is discontinuing the Plaza patrol.  [end if]He then climbs into the flitter and shuts the door.  A few moments later, the aircraft powers up. The turbines spool up and, its beacons flashing, it lifts smoothly into the air, disappearing behind the building tops.";
 		if the player encloses a keyed memory chip (called target):
-			now the target is programmed;
+			now the target is transponder;
 			now the item-id of the target is "M0";
 			now the Contents of the target is "flitter";
 			deactivate the Table of Vehicle Hints;
-			say "Your hacked car key beeps softly, and its ready light turns green!"
+			say "Your hacked car key beeps softly, and its ready light turns green!";
+	Now the police flitter is closed;
+	Now the police flitter is locked;
+	Remove the police flitter from play;
+	Remove Officer Prescott from play.
 
 Police Gone begins when Patrol ends temporarily. [note this must be after Patrol scene declarations]
 
@@ -3254,7 +3269,8 @@ Check entering powered platform:
 	say "The security guard looks over, sees your maintenance jacket and gives you a nod."
 	
 Check taking the spool:
-	unless the player is on the powered platform, say "You can't reach it from outside the railing." instead.
+	if the spool is on the powered platform:
+		unless the player is on the powered platform, say "You can't reach it from outside the railing." instead.
 
 Check climbing the railing:
 	say "It nearly encloses the platform.  There's no point." instead.
