@@ -6,7 +6,6 @@ The story genre is  "Science Fiction".
 The story creation year is 2012.
 The release number is 1.
 
-
 Release along with cover art, a website, an interpreter, the introductory booklet, the library card, the private source text, a solution, a file of "Original Story" called "valleyofsteel.pdf".
 
 
@@ -177,8 +176,6 @@ A person has a suspicionState.  A person is usually clear.
 A person can be briefed or unbriefed.
 
 the incriminatingAct is some text that varies.
-
-A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
 
 A room can be panopticon or blind.  A room is usually panopticon.
 A room can be gassed or safe.  A room is usually safe.
@@ -972,7 +969,7 @@ Instead of examining a doodle:
 	say "This small graffito is [image in row tempIndex of the Table of Graffiti] Just below it is a URL: [bold type][URL in row tempIndex of the Table of Graffiti][roman type]"
 
 [plaques]
-A Plaque is a kind of thing.  Plaques are always scenery.  A plaque is in every transitStation. The description of a plaque is "Metal, perhaps a meter by five meters, the plaque reads '[bold type][the stationName of the location][roman type]' in standard Transit Helvetica font."
+A Plaque is a kind of thing.  Plaques are always scenery. The description of a plaque is "Metal, perhaps a meter by five meters, the plaque reads '[bold type][the stationName of the location][roman type]' in standard Transit Helvetica font."
 Instead of taking a Plaque, say "You're here for a far nobler purpose than mere Transit vandalism."
 Instead of taking a Plaque for the third time, say "The police would frown on it."
 Instead of taking a Plaque for the fourth time:
@@ -2437,6 +2434,10 @@ hint						used
 Chapter 1 - Transit
 
 Section 0 - Setup
+
+A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
+
+ A plaque is in every transitStation.
 
 Transit System is a list of objects that varies.
 
