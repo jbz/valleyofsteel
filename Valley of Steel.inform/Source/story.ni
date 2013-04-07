@@ -196,7 +196,9 @@ Things can be either assembled or disassembled.  Things are usually assembled.
 Things can be tiny, small, medium, or large (this is its size property).  Things are usually medium.
 
 transitTurn is a number that varies.
+shopTurn is a number that varies.
 patrolTurn is a number that varies.
+raidTurn is a number that varies.
 
 messagesWaiting is a truth state that varies.
 
@@ -1883,6 +1885,7 @@ Clothes Shopping ends when Shoplifting begins.
 Shoplifting is a scene.  Shoplifting begins when the shopper is carryingSwag and the location is Garb-oh.
 
 When Shoplifting begins:
+	now shopTurn is turn count + 7;
 	if the location is Garb-oh:
 		say "The shopper puts down a last item of clothing and drifts towards the door.  As she reaches it, however, the antitheft alarm blares and a strobe light begins to flash!  She stops, frozen in surprise, as the shopkeeper rushes over and grabs her.  A few seconds later, two policemen enter the shop.  The shopkeeper, shopper and police all begin shouting at the same time.";
 		move Officer Prescott to Garb-Oh;
@@ -1901,19 +1904,24 @@ When Shoplifting ends:
 	if the location is Green Commercial Plaza South:
 		say "A pair of police escort a tearful woman out of Garb-Oh.  A police flitter swoops down from the sky with a howl of turbines to land in the plaza.  The two cops speak with the pilot before bundling the woman inside and climbing in after her.  The aircraft spools its turbines back up and lifts back into the air, vanishing out of sight behind the skyline."
 
-Shoplifting ends when the time since Shoplifting began is 7 minutes.
+Shoplifting ends when the turn count is shopTurn.
 
 [Police Gone]
-Police Gone is a recurring scene.  Police Gone begins when Shoplifting ends. 
-Police Gone ends when the time since Police Gone began is 20 minutes.
+Police Gone is a recurring scene.  Police Gone begins when Shoplifting ends.  
+
+When Police Gone begins:
+	now patrolTurn is turn count + 20.
+	
+Police Gone ends when turn count is patrolTurn.
 
 
 [Patrol]
 Patrol is a recurring scene.  Patrol begins when Police Gone ends.  
-Patrol ends finally when the turn count is equal to patrolTurn and the Police Flitter is violated.  
-Patrol ends temporarily when the turn count is equal to patrolTurn and the Police Flitter is pristine.
+Patrol ends finally when the turn count is patrolTurn and the Police Flitter is violated.  
+Patrol ends temporarily when the turn count is patrolTurn and the Police Flitter is pristine.
 
 When Patrol begins:
+	now patrolTurn is turn count + 20;
 	Move the police flitter to Green Commercial Plaza South;
 	Move Officer Prescott to Green Commercial Bistro Paris;
 	if the location is Green Commercial Plaza South:
@@ -1966,6 +1974,7 @@ Instead of going south in South Primrose Lane during Drug Raid:
 	say "A stern-looking patrolman from the cordon intercepts you and firmly tells you to stay back.  You move back to the street." instead.
 
 When Drug Raid begins:
+	now raidTurn is turn count + 10;
 	move the Police Vehicles to South Primrose Lane;
 	move the Patrolman to South Primrose Lane;
 	move Police Barrier to South Primrose Lane;
@@ -1975,7 +1984,7 @@ When Drug Raid begins:
 Instead of looking in South Primrose Lane during Drug Raid:
 	say "Police vehicles are pulled up here.  Bright lights are visible over the fence to the south.  A cordon of police barriers, guarded by a stern-looking patrolman, prevents anyone from approaching the fence, while police personnel mill about behind the barriers."
 
-Drug Raid ends when the time since Drug Raid began is 10 minutes.
+Drug Raid ends when turn count is raidTurn.
 	
 When Drug Raid ends:
 	remove the Police Vehicles from play;
