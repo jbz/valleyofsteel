@@ -928,7 +928,7 @@ A counter is in every foodstore.
 
 
 [autodoors]
-An autodoor is a kind of door. An autodoor is always scenery. The description of an autodoor is "This is an automatic sliding door.  It is connected to an eye scanner and will determine if you are allowed passage by scanning your iris pattern as you approach. The door is presently [if the noun is open]open.[otherwise]closed."
+An autodoor is a kind of door. An autodoor is always scenery. The description of an autodoor is "This is an automatic sliding door.  It is connected to an eye scanner which is able to, if so configured, determine if you are allowed passage by scanning your iris pattern as you approach. The door is presently [if the noun is open]open.[otherwise]closed."
 Understand "autodoor" as a door.
 Before going through an autodoor, the autodoors close in zero turns from now.
 
@@ -1286,7 +1286,7 @@ Carry out waiting for subway:
 		follow the turn sequence rules.
 		
 Report waiting for subway:
-	say "The Capsule has arrived.[if the watch is worn by the player]  The time is [time of day].[end if]"
+	say "The Capsule has arrived.[run paragraph on][if the watch is worn by the player]  The time is [time of day].[end if]"
 
 [unlocking] 
 [We have to re-implement this b/c we override it in order to let 'open x with y' work]
@@ -2226,7 +2226,7 @@ Instead of speech when the noun is Sergeant Ramirez:
 		if South Primrose Lane is reported:
 			say "The sergeant stares suspiciously at you.  'You already reported that.  You trying to be funny?'" instead;
 		if the player has been in the Drug Market:
-			say "The sergeant suddenly becomes animated, looking directly at you.  'What?' he barks.  'Drugs?  Where?'  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He checks your ID using an eye scanner to verify that you live next door, then picks up the phone and has an animated conversation with someone on the other end, the word 'drugs' and 'extreme' and 'losers' coming up with frequency.  He has lost interest in you.";
+			say "The sergeant suddenly becomes animated, looking directly at you.  'What?' he barks.  'Drugs?  Where?'  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He picks up the phone and has an animated conversation with someone on the other end, the word 'drugs' and 'extreme' and 'losers' coming up with frequency.  He has lost interest in you.";
 			now South Primrose Lane is reported;
 		otherwise:
 			say "Sergeant Ramirez snorts.  'Did you actually witness drug trafficking?' he asks.  When you shake your head, he sighs theatrically and goes back to his paperwork.";
