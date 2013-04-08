@@ -3295,9 +3295,7 @@ Understand "robot" and "robot head" and "head" as the robotic head when the loca
 
 Maintenance Area is west of Reserve Bank Bistro Paris and northwest of Food Court and north of Apollo's.  Maintenance Area is blind. "This corner of the food court is drab and uninhabited.  A closed door marked 'MAINTENANCE' lurks to the west, and another marked 'RESTROOM' to the north.  The floor and walls are scuffed around the door, no doubt from cleaning implements banging against them on their daily travels."
 
-The Food Court Restroom Door is north of Maintenance Area and south of Food Court Restroom. The Food Court Restroom Door is a door. The Food Court Restroom Door is scenery.
-
-A room called Food Court Restroom is north of the Food Court Restroom Door.  "Bog-standard restroom.  Several stalls offer a minimum of privacy."  There is a trash can in the Food Court Restroom.  
+A restroom called The Food Court Restroom is north of Maintenance Area.  "Bog-standard restroom.  Several stalls offer a minimum of privacy.  A large mirror covers the walls over the sink."
 The Food Court Restroom mirror is a mirror.  The Food Court Restroom mirror is in the Food Court Restroom.  The description is "A wall-covering mirror over the sinks.  The edges are covered in fingerprints, and you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
 
 The Maintenance Door is west of Maintenance Area.  The Maintenance Door is an autodoor. The Maintenance Door is scenery.  The description is "The maintenance closet is sealed by an autodoor.  There is no eye  on this door, but a flat plate above the door handle indicates a palm scanner lock."
