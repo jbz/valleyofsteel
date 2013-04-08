@@ -1000,7 +1000,7 @@ One activate button is part of every device.
 
 [Specific objects]
 
-The refrigerator is a container. The refrigerator is in the Kitchen.  The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit. Knowing you, there's unlikely to be anything in it that could be described as food."
+The refrigerator is a container. The refrigerator is in the Kitchen.  The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit."
 Understand "fridge" as the refrigerator.
 
 Check inserting into the refrigerator:
@@ -1017,7 +1017,7 @@ The side panel is part of the microwave oven.  The side panel is a container.  T
 
 Understand "warning" as the side panel when the location is the kitchen.
 Understand "label" as the side panel when the location is the kitchen.
-Understand "magnetron" as the side panel.
+Understand "magnetron" as the side panel when the location is the kitchen.
 Understand "circuit" as the side panel when the location is the kitchen.
 Understand "circuit board" as the side panel when the location is the kitchen.
 Understand "board" as the side panel when the location is the kitchen.
