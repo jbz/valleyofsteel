@@ -2969,6 +2969,7 @@ There is a trash can in Green Commercial Plaza North.
 
 Green Commercial Plaza Center is south of Green Commercial Plaza North.  The description is "This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe."
 The drop message is in a trash can in Green Commercial Plaza Center.  The drop message is small.  The drop message can be folded or unfolded.  The drop message is folded. "You see a small folded message with your ID sigil on it stuck to the inner side of the trash can!"  The description is "A small piece of flash paper [if folded]attached to the inside of the can and folded shut.[otherwise] which contains the following message: 'IF THIS MESSAGE RETRIEVED ATTACK PAYLOAD IS FUNCTIONAL.  YOUR MK RECORD NOW DISTRIBUTED TO ALL SECURITY ELEMENTS.  TO EFFECT ESCAPE AND COMPLETE MISSION, USE PAYLOAD TO ATTACK HOMELAND SECURITY PERSONNEL IN HIGH CONCENTRATION.  BASED ON LIKELY FOOTPRINT OF ATTACK USING AVAILABLE COMPONENTS, A MINIMUM OF THREE SEQUENTIAL ATTACKS WILL BE REQUIRED TO DISRUPT ENOUGH OPERATIVES TO PERMIT ESCAPE.'"
+Understand "flash paper" as the drop message.
 
 After taking the drop message:
 	say "You unfold the message as you take it.";
