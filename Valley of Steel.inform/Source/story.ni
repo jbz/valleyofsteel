@@ -2343,13 +2343,13 @@ hint	used
 
 Table of MitKlein Hints
 hint						used
-"You're a hacker.  Check your computer."
+"You're a hacker.  Check your SMS messages."
 "The file isn't enough to do the job.  It needs to be broadcast to your skull."
 "You'll need a Memory chip to hold the payload, and something to broadcast it."
 "If you don't see anything that fits the bill, maybe it's not immediately visible."
 "Do you see anything else which might need to store and broadcast information?"
 "You'll need to make sure your components are attached."
-"Find the appropriate tool to connect electronic commponents."
+"Find the appropriate tool to connect electronic components."
 "A regular broadcast chip won't do the job.  At least, not alone.  Not enough power."
 "You should find some way of boosting the signal."
 "Can you find something that puts out a lot of electromagnetic energy?"
