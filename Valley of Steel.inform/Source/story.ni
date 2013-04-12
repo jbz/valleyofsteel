@@ -3191,7 +3191,13 @@ The hospital mirror is a mirror. The hospital mirror is in the Hospital Restroom
 Civil Center Steps is north of Government Square North.  The description is "These are the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
 Instead of going north in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
 Instead of going up in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
-Some people called the civil servants are here
+Some people called the civil servants are here.  The civil servants are plural-named.  The description of the civil servants is "A crowd of boring-looking government functionaries."
+
+Instead of examining the civil servants:
+	say "They're ignoring you and appear to be concentrating on their errands."
+
+Instead of pushing the civil servants:
+	try taking the civil servants instead.
 
 Police Station Steps is west of Government Square North and northwest of Government Square South.  The description is "These are the busy steps of the local police station.  To the east and southeast is Government Square, while the police station lies at the top to the west. Uniformed police and people in plain clothes are traversing the steps to exit and enter the building."
 
