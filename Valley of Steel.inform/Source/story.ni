@@ -1399,6 +1399,8 @@ Combining it with is an action applying to two carried things.
 Understand "combine [something] and [something]" as combining it with.
 Understand "combine [something] with [something]" as combining it with.  
 Understand "combine [something] to [something]" as combining it with.
+Understand "solder [something] to [something]" as combining it with.
+Understand "solder [something] and [something]" as combining it with.
 
 The combining it with action has an object called the resultant-item. 
 
