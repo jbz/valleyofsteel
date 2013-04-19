@@ -603,12 +603,15 @@ Instead of inserting the Fire Axe into the backpack, say "The axe is far too lar
 After taking the Fire Axe for the first time:
 	say "This axe is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
 
-The multitool is in the backpack.  The multitool is small. The description is "Your pocket multitool.  Has various pliers and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  You are paranoid that one day you'll forget and try to get on an airplane with it and that'll be the last you'll see of it, so you've etched a PO Box address and 'BUSINESS REPLY MAIL' onto it."
+The multitool is carried by the player.  The multitool is small. The description is "Your pocket multitool.  Has various pliers and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  One exception is that in order to remain legal, it doesn't have any cutting edges larger than your fingernail.  You are paranoid that one day you'll forget and try to get on an airplane with it and despite that fact that'll be the last you'll see of it, so you've etched a PO Box address and 'BUSINESS REPLY MAIL' onto it."
 Understand "tool" as the multitool.
 
-The watch is wearable.  The watch is small. The watch is in the backpack. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
+After examining the multitool for the first time:
+	say "[bracket]The multitool is useful for prying or as a pliers.  To use it, try commands with the phrase WITH MULTITOOL - for example, OPEN <NOUN> WITH MULTITOOL or REMOVE <NOUN> WITH MULTITOOL.[close bracket]".
 
-After examining the watch for the third time:
+The watch is wearable.  The watch is carried by the player. The watch is small. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
+
+After examining the watch for the second time:
 	if the watch is working:
 		unless the watch is worn by the player:
 			say "The watch might be more useful if worn."
@@ -628,7 +631,7 @@ Instead of setting the watch to something:
 	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
 [phone]
-The phone is in the backpack.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
+The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
 
 Check opening the phone:
 	say "It's a sealed unit." instead.
@@ -645,7 +648,7 @@ Check switching off the phone:
 	if the phone is fried, say "It's stone dead." instead.
 
 Understand the command "read" as something new.
-Reading is an action applying to one visible thing.
+Reading is an action applying to one visible thing.    Reading is acting instant.
 Understand "read [something]" as reading.
 Understand "sms" as the phone.
 Understand "messages" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player.
