@@ -15,6 +15,8 @@ Section 1 - Game Settings and Setup
 
 Use serial comma, American dialect, no scoring, and verbose room descriptions.
 
+Use MAX_OBJECTS of 640.
+
 [Use memory economy.]
 
 [Use dynamic memory allocation of at least 16384.]
@@ -2470,7 +2472,14 @@ Section 0 - Setup
 
 A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
 
- A plaque is in every transitStation.
+A plaque is in every transitStation.
+
+A Transit Map is a kind of thing.  A Transit Map is always fixed in place.  The description of a Transit Map is "A metal sign displaying a map of Green Line Transit:[line break][map diagram]".
+
+To say map diagram:
+	say "[fixed letter spacing]        -------------[line break]";	say "        |   Green   |[line break]";	say "        |  Service  |[line break]";	say "        -------------[line break]";	say "         /          \[line break]";	say "        /            \[line break]";	say " -----------    -------------[line break]";	say " | Reserve |    |   Green   |[line break]";	say " |  Bank   |    |Residential|[line break]";	say " -----------    -------------[line break]";	say "        \            /[line break]";	say "         \          /[line break]";	say "         ------------[line break]";	say "         |  Green   |[line break]";	say "         |Commercial|[line break]";	say "         ------------[line break][variable letter spacing]".
+
+A Transit Map is in every transitStation.
 
 Understand "floor" as the ground when the location is a transitStation.
 Understand "wall" and "walls" as the plaque when the location is a transitStation.
@@ -3008,9 +3017,10 @@ Instead of going north in Green Commercial Platform, try entering the Transit We
 
 The Green Commercial Station door is south of Green Commercial Platform and below Green Commercial Station.  The Green Commercial Station door is an autodoor.  The Green Commercial Station door is closed.
 
-Green Commercial Station is above the Green Commercial Station door.  The description is "Green Commercial One's Transit station usually does most of its business around the rush hours, as Green Residental commuters stop off to take care of errands.  The station is relatively small, but well kept up - the Green Commercial Business Improvement District organization sees to that.  Doors lead south to Green Commercial One proper, and a stairway leads down to the doors to the Transit platform."
+Green Commercial Station is above the Green Commercial Station door.  The description is "Green Commercial One's Transit station usually does most of its business around the rush hours, as Green Residental commuters stop off to take care of errands.  The station is relatively small, but well kept up - the Green Commercial Business Improvement District organization sees to that.  Open doorways lead south to Green Commercial One proper, and a stairway leads down to the doors to the Transit platform."
 
-Green Commercial Plaza North is south of Green Commercial Station.  The description is "Green Commercial One is built around a plaza, and this is its northern end.  No vehicles are permitted within the public areas of Green Commercial One, so the entire area is pedestrian-only.  To the north are the doors to the Green Commercial Station.  To the east is the NanoMart.  To the west is a storefront bank with an ATM.  The plaza continues to the south."
+
+Green Commercial Plaza North is south of Green Commercial Station.  The description is "Green Commercial One is built around a plaza, and this is its northern end.  No vehicles are permitted within the public areas of Green Commercial One, so the entire area is pedestrian-only.  To the north are the doorways to the Green Commercial Station.  To the east is the NanoMart.  To the west is a storefront bank with an ATM.  The plaza continues to the south."
 There is a trash can in Green Commercial Plaza North.
 
 Green Commercial Plaza Center is south of Green Commercial Plaza North.  The description is "This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe."
@@ -3038,7 +3048,6 @@ Green Commercial Plaza South is south of Green Commercial Plaza Center.  The des
 There is a trash can in Green Commercial Plaza South.
 
 The trees are in Green Commercial Plaza South.  The trees are scenery.  The description of the trees is "A small number of heavily landscaped trees and shrubs which hide the buildings to the south."
-
 Understand "shrub" as the trees.
 Understand "shrubs" as the trees.
 Understand "tree" as the trees.
@@ -3050,6 +3059,7 @@ Metro Savings is west of Green Commercial Plaza North and northwest of Green Com
 The ATM is a device.  The ATM is in Metro Savings.  The ATM is fixed in place.  The ATM can be hacked or unhacked.  The ATM is unhacked. The description is "This is a standard ATM, using palm prints and Mit-Klein authentication to permit customers to perform banking transactions. A palm reader juts out from the front of the console."
 The palm reader is a part of the ATM. The palm reader is a container.  The palm reader is open. The palm reader is scenery.  The description is "This is a standard palm reader, which is used to verify the identity of the ATM customer.  A flat plate, slightly inset, it is placed at a convenient angle to allow the palm to lie against it.  This one, however, has a broad crack in it across which someone has written 'KAPUT' in black marker."
 Understand "plate" as the palm reader when the location is Metro Savings.
+Understand "crack" as the palm reader when the location is Metro Savings.
 
 Instead of inserting into the palm reader:
 	if the noun is the tissue sampler:
@@ -3102,11 +3112,10 @@ Understand "the eyes" as Zuzu's eye when the location is Green Commercial Bistro
 Understand "Zuzu's Eyes" as Zuzu's eye when the location is Green Commercial Bistro Paris.
 Understand "the holoportrait" as the portrait.
 Understand "holoportrait" as the portrait.
-Understand "prints" as the portrait.
+The prints is unimportant stuff in Green Commercial Bistro Paris.
+The tables are unimportant stuff in Green Commercial Bistro Paris.
 
-The tables are in Green Commercial Bistro Paris.  The tables are scenery. The tables are plural-named.  The description of the tables is "A scattering of very generic and boring dining furniture."
-
-The location sign is in Green Commercial Bistro Paris.  The location sign is scenery.  The description is "This sign helpfully wants you to know that the Bistro Paris chains has two other locations, one in London and one in the Reserve Bank Spacescraper downtown.  You wonder why London rather than Paris, but shrug it off."
+The location sign is in Green Commercial Bistro Paris.  The location sign is scenery.  The description is "This sign helpfully wants you to know that the Bistro Paris chain has two other locations, one in London and one in the Reserve Bank Spacescraper downtown.  You wonder why London rather than Paris, but shrug it off."
 
 Understand "the sign" as the location sign when the location is Green Commercial Bistro Paris.
 
@@ -3189,11 +3198,20 @@ Instead of going south in Green Service Platform, try entering the Transit Web i
 
 The Green Service Station door is north of Green Service Platform and below Green Service Station.  The Green Service Station door is an autodoor.  The Green Service Station door is closed.
 
-Green Service Station is above the Green Service Station door.  The description is "Green Service is the local government services cluster.  The Transit station seems to reflect this, exhibiting a weary conformity - although you couldn't say exactly how.  A stairway leads down to the platform access doors, and a set of doors lead north out onto Government Square."
+Green Service Station is above the Green Service Station door.  The description is "Green Service is the local government services cluster.  The Transit station seems to reflect this, exhibiting a weary conformity - although you couldn't say exactly how.  A stairway leads down to the platform access doors, and a set of doorways lead north out onto Government Square."
 
 Government Square South is north of Green Service Station.  The description is "This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital's driveway.  The Hospital's main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station."
+The benches is unimportant stuff in Government Square South.
+The landscape features is unimportant stuff in Government Square South.
+The govcars is a backdrop.  The govcars is plural-named. The description is "Perfectly boring vehicles passing by."
+The govcars is in Government Square North and Government Square South.
+Understand "groundcars" and "vehicles" and "flitters" and "cars" as the govcars when the govcars is in the location.
+Instead of entering the govcars, say "They're moving. You'd be injured."
+Instead of climbing the govcars, say "They're moving. You'd be injured."
 
-Government Square North is north of Government Square South.  The description is "The north half of Government Square is surrounded on three sides by road.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building."
+
+Government Square North is north of Government Square South.  The description is "The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building."
+
 
 Hospital Driveway is east of Government Square South and southeast of Government Square North and south of Hospital Entrance.  The description is "The driveway and parking area for the Hospital ER, which lies directly to the east.  To the north is the main entrance to the Hospital building."
 
@@ -3218,8 +3236,12 @@ The Hospital door is east of the Hospital Entrance and west of the Hospital Lobb
 Hospital Lobby is east of the Hospital door.  The description is "This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading 'TRIAGE'; to the east is the elevator core and to the north is the waiting lounge."
 
 Hospital Lounge is north of Hospital Lobby.  Hospital Lounge is blind. The description is "This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads 'LAB' and the main lobby is to the south."
+The magazines is unimportant stuff in the Hospital Lounge.
 
 Hospital Lab is east of Hospital Lounge.  The description is "This is an all-purpose pathology laboratory receiving area.  The lab itself is behind a bulletproof glass wall to the east, and a small window allows samples or paperwork to be passed back and forth."
+The labwindow is unimportant stuff in the Hospital Lab. Understand "window" as the labwindow when the location is Hospital Lab.
+The glass wall is unimportant stuff in the Hospital Lab.
+Understand "wall" and "bulletproof glass" and "glass" as the glass wall when the location is Hospital Lab.
 There is a trash can in the Hospital Lab.
 
 Triage is south of Hospital Lobby and east of the ER door and west of the Emergency Room.  The description is "This is a triage area for the ER to the east.  To the north is the main Hospital lobby, and west lies the automatic doors out to the driveway."
@@ -3235,6 +3257,7 @@ The hospital mirror is a mirror. The hospital mirror is in the Hospital Restroom
 Civil Center Steps is north of Government Square North.  The description is "These are the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
 Instead of going north in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
 Instead of going up in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
+The security checkpoint is unimportant stuff in Civil Center Steps.
 Some people called the civil servants are here.  The civil servants are plural-named.  The description of the civil servants is "A crowd of boring-looking government functionaries."
 
 Instead of examining the civil servants:
@@ -3254,9 +3277,6 @@ Check opening the police gate:
 
 Instead of going north in Front Desk:
 	say "The security gate is locked." instead.
-	
-[Instead of unlocking the police gate with something:
-	say "You can't unlock the gate with that." instead.]
 
 Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
 The Police Poster is here.  The police poster is scenery.  The description of the Police Poster is "The poster has an almost laughably crude and kitschy burly policeman chasing a pair of hoodlums while blowing a whistle and brandishing a nightstick.  The hoodlums are leaving a trail of iconic Drug Paraphernalia.  A caption reads 'If you see any DRUG ACTIVITY, report it AT ONCE to your FRIENDLY LOCAL POLICE.'"
@@ -3298,14 +3318,17 @@ Instead of opening the Reserve Bank Station door:
 
 
 Station Corridor is west of the Reserve Bank Station Door.  "The corridor widens as it terminates at the automatic doors to the Reserve Bank Station, which lies to the east.  We Morlocks trundle to and fro without speaking to each other, in fear of camera and of mike and of might Eloi paycheck-cutting wrath.  Although traffic is overwhelmingly to the west, there are two doors reserved for traffic into the station, indicated by green lightbars overhead, whose access scanners are active."  
+The lightbars are unimportant stuff in Station Corridor.  Understand "green lightbars" as the lightbars when the location is Station Corridor.
 
 The Dining Area is a region.  Food Court and Reserve Bank Bistro Paris and I Have No Mouth and The Sheep Look Up and Tacos Terriff and Apollo's are in the Dining Area.
 
 Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Hundreds of people are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles, nondescript gray matte shedding scuff marks with the determination of the designed servant into nanogrout channels in between.  During the short nighttime lull, the floor will seem to creep slightly as the nanogrout slowly flows the daytime grime along the channels to dispose of it into the walls."  
 There is a trash can in the Food Court.
+The foodtables are unimportant stuff in the Food Court.  Understand "tables" as the foodtables when the location is Food Court.
 Instead of going up in the Food Court, try going west instead.
 
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
+The lift scanners are unimportant stuff in the Lift Lobby.
 Instead of going up in the Lift Lobby, say "You can't go that way."
 Instead of going down in the Lift Lobby, try going east instead. 
 
@@ -3330,12 +3353,14 @@ Check climbing the railing:
 	say "It nearly encloses the platform.  There's no point." instead.
 
 A foodstore called Reserve Bank Bistro Paris is north of Food Court and east of Maintenance Area and west of I Have No Mouth.  "Bistro Paris is a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders as coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappointment any gourmand feels when faced with the prospect of eating here.  There are two workers behind the counter serving a line of customers. A sign painted onto the counter reads 'Try our Green Commercial One location!'"
+The soggy croissants are unimportant stuff in Reserve Bank Bistro Paris.
 
 A foodstore called I Have No Mouth is northeast of Food Court and east of Reserve Bank Bistro Paris.  "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
+The cones are unimportant stuff in I Have No Mouth.  Understand "cups" as the cones when the location is I Have No Mouth.
 
-A foodstore called The Sheep Look Up is southeast of Food Court and east of Tacos Terriff and south of I Have No Mouth.  "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several dozen hungry customers who wait in line."
+A foodstore called The Sheep Look Up is southeast of Food Court and east of Tacos Terriff and south of I Have No Mouth.  "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several hungry customers who wait in line."
 
-A foodstore called Tacos Terriff is west of The Sheep Look Up and south of Food Court.  "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the lunch set."
+A foodstore called Tacos Terriff is west of The Sheep Look Up and south of Food Court.  "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the office set."
 
 A foodstore called Apollo's is west of Tacos Terriff and southwest of Food Court and south of Maintenance Area.  "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth."
 The robotic head is a backdrop in Apollo's.  The robotic head is scenery.  The robotic head is fixed in place. The description of the robotic head is "Large and chromed silver, this robot's head looks like a large helmet with rudimentary features.  Instead of eyes, a red band crosses the face, behind which a bright red light slowly moves back and forth."
@@ -3364,11 +3389,12 @@ Before opening the maintenance door in the Maintenance area:
 	
 
 Utility Closet is west of the Maintenance Door. Utility Closet is blind. The description is "The maintenance closet is dimly lit and, ironically, not terribly clean.  There are various cleaning implements and supplies stored on shelves around the walls, a fire equipment wall rack, and a large metal solvents cabinet taking up one wall.  A flourescent light panel flickers wanly in the ceiling. Two doors lead out of the closet, one east and one west."
+The flourescent light panel is unimportant stuff in Utility Closet.  Understand "light" and "panel" as the flourescent light panel when the location is Utility Closet.
 
 The Solvents Cabinet is in the Utility Closet.  [The Solvents Cabinet is a thing.] The Solvents Cabinet is scenery.  The description of the Solvents Cabinet is "A large metal cabinet with several industrial warning icons on it occupies one wall. This cabinet is apparently used to store toxic cleaning and plumbing chemicals.  It seems to be locked."
 
 The cleaning equipment is in the Utility Closet.  The cleaning equipment is scenery.  The description of the cleaning equipment is "A collection of half-empty bottles and jugs and some very well-used mops, brooms and rags."
-Understand "supplies" as the cleaning equipment when the location is Utility Closet.
+Understand "supplies" and "implements" as the cleaning equipment when the location is Utility Closet.
 
 Check taking cleaning equipment:
 	say "You can't carry all that, and indeed don't want to." instead.
@@ -3384,6 +3410,7 @@ The wall rack is in the Utility Closet.  The rack is a supporter. The rack is sc
 Maintenance Corridor is west of the Utility Closet.  Maintenance Corridor is blind.  The description is "This is the middle of a short corridor running north to south.  The walls are gray-painted cinderblocks and have many scuff marks and scars.  The floor is an industrial non-slip surfaced concrete.  A door to the east is marked 'STORAGE.'"
 
 North End of Maintenance Corridor is north of Maintenance Corridor.  North End of Maintenance Corridor is blind.  The description is "The corridor comes to an end here.  To the north is large door marked 'HVAC ACCESS' which is closed and securely locked.  A bulletin board on the wall to the right contains a dizzying array of official Workplace Notices, all of which bear the symbol of the Health and Safety Board."
+The bulletin board is unimportant stuff in North End of Maintenance Corridor.  Understand "workplace notices" as the bulletin board when the location is North End of Maintenance Corridor.
 
 South End of Maintenance Corridor is south of Maintenance Corridor. South End of Maintenance Corridor is blind.  The description is "The corridor extends to the north from here.  To the west is a service bouncelift."
 Before going west from South End of Maintenance corridor, say "The weight on your feet lightens as the bouncelift field grabs you."
