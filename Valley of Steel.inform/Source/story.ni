@@ -204,7 +204,11 @@ group-combine-complete is a truth state that varies.
 
 
 
-Section 3 - 'Every Turn' Rules, Timed Events and Global Rules
+Section 3 - 'Every Turn' Rules, Timed Events and Global Rules/Grammar
+
+[Global understands]
+Understand "kiss [something]" as touching.
+Understand "pet [something]" as touching.
 
 [Global rule/action overrides]
 
@@ -213,7 +217,6 @@ The can't unlock what's already unlocked rule is not listed in any rulebook.
 The can't unlock without the correct key rule is not listed in any rulebook.
 The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
-
 
 
 Rule for deciding whether all includes scenery: it does not. Rule for deciding whether all includes a fixed in place thing while taking: it does not.  Rule for deciding whether all includes a thing enclosed by the player: it does not.
@@ -272,7 +275,6 @@ Check giving (this is the polite refusal of unwanted objects rule):
 		if the second noun is the shopkeeper, say "She holds her hands up to ward you off, gives you a quick glare, and moves away." instead;
 		otherwise say "[the second noun] doesn't seem interested in that at all." instead;
 	continue the action.
-
 
 
 The explosive residue rule is listed after the room description body text rule in the carry out looking rules.
@@ -456,6 +458,7 @@ Carry out camchecking:
 		say "Not enabled."
 
 
+
 Section 5 - Portable Objects (non-Scenery)
 
 [kinds]
@@ -609,6 +612,10 @@ Understand "tool" as the multitool.
 After examining the multitool for the first time:
 	say "[bracket]The multitool is useful for prying or as a pliers.  To use it, try commands with the phrase WITH MULTITOOL - for example, OPEN <NOUN> WITH MULTITOOL or REMOVE <NOUN> WITH MULTITOOL.[close bracket]".
 
+Check opening a door with the multitool:
+	say "The multitool is capable, but not that capable." instead.
+	
+
 The watch is wearable.  The watch is carried by the player. The watch is small. The watch can be working or fried.  The watch is working.  The watch has some text called fryDescription.  The fryDescription is "The watch sparks slightly and the face darkens." The description of the watch is "A cheap digital, your watch [if working]reads [time of day].[otherwise]appears to be dead."
 
 After examining the watch for the second time:
@@ -652,7 +659,7 @@ Reading is an action applying to one visible thing.    Reading is acting instant
 Understand "read [something]" as reading.
 Understand "sms" as the phone.
 Understand "messages" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player.
-
+Understand "message" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player and the drop message is not carried by the player.
 
 Check reading:
 	unless the noun is the phone, try examining the noun instead;
@@ -901,6 +908,16 @@ Section 6 - Fixed/Scenery Objects
 
 [kinds]
 
+[boring stuff]
+Unimportant stuff is a kind of thing. Unimportant stuff is scenery. 
+Instead of doing something other than examining or taking unimportant stuff, say "You've really got better things to do that trying to do that." 
+Instead of examining unimportant stuff, say "[one of]That isn't interesting.[or]Perfectly boring.[or]Just what you'd expect.[purely at random]".
+Instead of taking unimportant stuff, say "You can't do that."
+		
+The ground is a backdrop.  The ground is everywhere.
+Instead of examining the ground:
+	try examining down instead.
+	
 [rooms]
 
 [bathrooms]
@@ -2455,6 +2472,9 @@ A transitStation is a kind of room. A transitStation has some text called a stat
 
  A plaque is in every transitStation.
 
+Understand "floor" as the ground when the location is a transitStation.
+Understand "wall" and "walls" as the plaque when the location is a transitStation.
+
 Transit System is a list of objects that varies.
 
 Transit is a region.  Transit Capsule is in Transit.  All transitStations are in Transit.  
@@ -2647,7 +2667,7 @@ After examining the spacescraper for the first time:
 	
 
 [streetlights]
-The streetlights is a backdrop.  The streetlights is plural-named.  The streetlights is scenery.  The streetlights is fixed in place. The description of the streetlights is "The area is served by a number of familiar tall metal streetlights.  [if evening is happening]Their bright LED arrays shine against the darkening sky.[otherwise if night is happening]Their bright LED arrays illuminate the area against the night, casting a few faint shadows."
+The streetlights is a backdrop.  The streetlights is plural-named.  [The streetlights is scenery.  The streetlights is fixed in place.] The description of the streetlights is "The area is served by a number of familiar tall metal streetlights.  [if evening is happening]Their bright LED arrays shine against the darkening sky.[otherwise if night is happening]Their bright LED arrays illuminate the area against the night, casting a few faint shadows."
 
 Understand "streetlight" as the streetlights.
 Understand "Street light" as the streetlights.
@@ -2663,7 +2683,9 @@ Instead of touching the sky, say "You can't reach that."
 Instead of climbing the sky, say "I don't see a beanstalk anywhere."
 Instead of burning the sky, say "I don't think you have a flame large enough."
 
-Instead of examining up when the player is out of doors, try examining the sky.
+Instead of examining up when the player is out of doors:
+	try examining the sky;
+	rule succeeds.
 
 
 
@@ -2706,16 +2728,18 @@ After going down from Green Residential Station:
 
 
 Green Residential Station is above Green Residential Station Door.  The description of Green Residential Station is "This is a utilitarian (read: boring) facility intended mostly to keep the rain out of the Transit System.  A stairway leads down to the Transit platform and an exit leads east to the street."
+The stairway is unimportant stuff in Green Residential Station. Understand "stairs" as the stairway when the location is Green Residential Station.
 
-Primrose & Cedar is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station doors are to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east."
+Primrose & Cedar is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station entrance is to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east."
 
-Green Residential Park is north of Primrose & Cedar. The description is "Primrose Street ends here in a small circular cul-de-sac.  To the north of this is a small green park, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park's entrance."
+Green Residential Park is north of Primrose & Cedar. The description is "Primrose Street ends here in a small circular cul-de-sac.  You're in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park's entrance."
 The curfew sign is in Green Residential Park.  The curfew sign is scenery.  The curfew sign is fixed in place.  The description is "A metal sign on a metal pole, it reads 'NOTE: PARK CLOSED DURING RESIDENTIAL AREA CURFEW - 8:00PM to 5:00 AM - NO LOITERING.'"
-The greenery is in Green Residential Park.  The greenery is scenery.  The printed name of the greenery is "trees".  The description of the greenery is "A small number of manicured trees, scattered around the park."
-Instead of climbing the greenery, say "There's no point."
+The greenery is unimportant stuff in Green Residential Park.  The printed name of the greenery is "trees".  The description of the greenery is "A small number of manicured trees, scattered around the park."
 Understand "trees" as the greenery when the location is Green Residential Park.
 Understand "tree" as the greenery when the location is Green Residential Park.
-
+The grass is unimportant stuff in Green Residential Park.
+The fences is unimportant stuff in Green Residential Park.
+The cul-de-sac is unimportant stuff in Green Residential Park. Understand "street" as the cul-de-sac when the location is Green Residential Park.
 
 
 East Cedar Street is east of Primrose & Cedar.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
@@ -2742,10 +2766,9 @@ Check touching the large dog:
 Check pushing the large dog:
 	say "Uh…you really don't want to try that." instead.
 	
-Understand "kiss [something]" as touching.
 
 Instead of taking the dog, try touching the dog instead.
-Understand "pet [something]" as touching.
+
 
 Instead of going west in South Primrose Lane, say "As you approach the lawn of the house, the large dog raises its head to look at you and growls, softly but very communicatively.  You decide discretion is the better part of valor and retreat.".
 
@@ -2784,6 +2807,8 @@ Instead of climbing the fence:
 	say "The gaps are too small for your toes and you're not strong enough to climb it with only your fingers." instead.
 
 The Drug Market is a room.  The Drug Market is blind. The description of Drug Market is "Standing just south of the fence, you see an abandoned house on the south side of the lot. The front yard is a mess of trash and litter.  [if Drug Market is raided]The area is empty of people; yellow police line tape covers the empty front doorway.[otherwise]A few people are hanging around the closed front door.  They are looking at you with unfriendly stares."
+The drugtrash is unimportant stuff in the Drug Market.  Understand "trash" and "litter" as the drugtrash when the location is the Drug Market.
+The policetape is unimportant stuff in the Drug Market.  Understand "police line" and "tape" as the policetape when the location is the Drug Market.
 
 Index map with The Drug Market mapped south of South Primrose Lane.
 
@@ -2803,20 +2828,24 @@ Before going south in Drug Market:
 		continue the action.
 		
 The Drug Den is south of Drug Market.  The Drug Den is blind. The description is "The empty ruins of a drug market hangout.  The SWAT team's breaching charges have blown the heavy metal main door into the hallway.  The house is thoroughly trashed, and rubble prevents you from moving any further into the building.  Discarded drug paraphernalia and random trash litters the floor."
+The rubble is unimportant stuff in the Drug Den. Understand "trash" and "paraphernalia" and "drug paraphernalia" as the rubble when the location is the Drug Den.
 The metal door is a supporter.  The metal door is in the Drug Den.  The metal door is fixed in place. The description of the metal door is "Bent and blackened, the armored door survived the breach but was blown into the interior of the house.  The handle is blown off.[if the metal door is charged]  As you lift the edge of the door to look underneath it, you see what looks like an undetonated breaching charge still attached to it!".
 
 Instead of taking the metal door:
 	say "You strain to lift the door, then give it up as a bad job." instead.
 
 Front Path is east of South Primrose Lane.  The description is "This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building's side yard is to the northeast."
-Some flagstones are here.  The flagstones is scenery.  The description of the flagstones is "Weathered stones, which appear to be naturally smooth rather than having been shaped."
+The flagstones is here.  The flagstones is scenery.  The flagstones is plural-named. The description of the flagstones is "Weathered stones, which appear to be naturally smooth rather than having been shaped."
 
 West of Side Yard is northeast of Front Path.  The description is "A narrow side yard with a high solid fence on the north side and a few straggly decorative plants.  The yard extends east behind the house and west to the front of the house."
 The decorative plants is in the side yard.  The decorative plants is plural-named.  The decorative plants is scenery.  The description is "A few straggly brown and green plants huddling near the base of the fence and the side of the house."
 Instead of taking the decorative plants, say "They're just weeds, really." instead.
 Instead of pushing the decorative plants, say "You shove a few stalks around for a few moments before giving up." instead.
+The solid fence is unimportant stuff in the Side Yard.  Understand "fence" as the solid fence when the location is the side yard.
 
 North of Back Yard is east of Side Yard.  The description is "An enclosed back yard, this small square of grass is surrounded by a high fence and the east side of the attached home.  A narrow frosted window - likely a bathroom - is visible in the middle of the stretch of wall, and a larger clear window with curtains behind it is visible at the south end."
+Yardgrass is unimportant stuff in Back Yard.  Yardfence is unimportant stuff in Back Yard. Yardwall is unimportant stuff in Back Yard. Understand "grass" as yardgrass when the location is Back Yard.  Understand "fence" as yardfence when the location is Back Yard. Understand "wall" as Yardwall when the location is Back Yard.
+
 The bathroom window is a backdrop.  The description is "A narrow window of frosted glass, it appears to be securely painted shut."
 The bathroom window is in Back yard.  The bathroom window is in the Bathroom.
 Understand "frosted window" as the bathroom window when the location is Back Yard or the location is the Bathroom.
@@ -2911,6 +2940,7 @@ The Apartment door is south of Front Lobby and north of Entry.  The Apartment do
 
 The post-it is here.  "A small post-it note is stuck to the door of Apartment 1."  The post-it is tiny.  The description of the post-it is "A short scribble, which reads 'The techs were by to turn off your water.  Have a nice vacation!'"
 Understand "note" as the post-it.
+
 
 Check opening the Apartment door:
 	if the location is Front Lobby:
