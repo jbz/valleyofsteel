@@ -1238,7 +1238,7 @@ Understand "about" as getting credits.
 Getting credits is an action out of world.
 
 Carry out getting credits:
-	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those and many others, to be listed when released."
+	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by Klaus some of those, along with uncledavid, Evelin en Biep Durieux, Klaus Matteus among others.  All errors, of course, are my own."
 
 
 [help]
