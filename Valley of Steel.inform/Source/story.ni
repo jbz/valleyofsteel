@@ -1284,9 +1284,13 @@ Check waiting for subway:
 	unless the location is a transitStation, say "Do you really expect a Transit capsule to show up here?" instead.
 
 Carry out waiting for subway:
-	let the target turn be the turn count + 60;
-	while the turn count is not the target turn and the station of the Capsule is not the location:
-		follow the turn sequence rules.
+	if the station of the Capsule is the location:
+		say "It's already here.";
+		continue the action;
+	otherwise:
+		let the target turn be the turn count + 60;
+		while the turn count is not the target turn and the station of the Capsule is not the location:
+			follow the turn sequence rules.
 		
 Report waiting for subway:
 	say "The Capsule has arrived.[run paragraph on][if the watch is worn by the player]  The time is [time of day].[end if]"
@@ -1413,6 +1417,9 @@ Limbo is a container. Limbo contains 5 Klein Blasters.  Limbo contains 5 ID bomb
 
 
 Setting action variables for combining something with something:
+	if the noun is a Klein Blaster and the second noun is the side panel:
+		try inserting the noun into the second noun instead;
+		stop;
 	let X be a list of texts;
 	if the noun provides the property item-id, add the item-id of the noun to X;
 	if the second noun provides the property item-id, add the item-id of the second noun to X;
@@ -1445,7 +1452,8 @@ Check combining it with:
 		unless the noun is working, say "[the noun] is too damaged![line break]" instead;
 		unless the second noun is working, say "[the second noun] is too damaged![line break]" instead;
 	if the noun is a disposable camera and the noun is assembled, say "There's no place on the camera to attach anything." instead;
-	if the second noun is a disposable camera and the second noun is assembled, say "There's no place on the camera to attach anything." instead.
+	if the second noun is a disposable camera and the second noun is assembled, say "There's no place on the camera to attach anything." instead;
+	if the noun is a Klein Blaster and the second noun is the side panel, try inserting the noun into the second noun instead.
 
 	
 Carry out combining it with:
@@ -1493,6 +1501,9 @@ Carry out attaching it to:
 		try tying the cable to the second noun instead;
 	otherwise if the noun is the breaching charge:
 		try putting the breaching charge on the second noun instead;
+	otherwise if the noun is a Klein Blaster:
+		if the second noun is the side panel:
+			try inserting the noun into the second noun instead;
 	otherwise:
 		try combining the noun with the second noun instead.
 
