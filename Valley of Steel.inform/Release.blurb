@@ -1,20 +1,20 @@
 ! Blurb file created by Inform build 6G60
 
-status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/jbz/Projects/valley/Valley of Steel.inform/Build/StatusCblorb.html"
+status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Build/StatusCblorb.html"
 
 
 ! Identification
 
-project folder "/Users/jbz/Projects/valley/Valley of Steel.inform"
-release to "/Users/jbz/Projects/valley/Valley of Steel Materials/Release"
+project folder "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform"
+release to "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/Release"
 
 ! Blorb instructions
 
 storyfile leafname "Valley of Steel.gblorb"
-storyfile "/Users/jbz/Projects/valley/Valley of Steel.inform/Build/output.ulx" include
-ifiction "/Users/jbz/Projects/valley/Valley of Steel.inform/Metadata.iFiction" include
-cover "/Users/jbz/Projects/valley/Valley of Steel Materials/Cover.png"
-picture 1 "/Users/jbz/Projects/valley/Valley of Steel Materials/Cover.png"
+storyfile "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Build/output.ulx" include
+ifiction "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Metadata.iFiction" include
+cover "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/Cover.png"
+picture 1 "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/Cover.png"
 
 ! Placeholder variables
 
@@ -23,30 +23,30 @@ placeholder [RELEASE] = "1"
 placeholder [YEAR] = "2012"
 placeholder [TITLE] = "Valley of Steel"
 placeholder [AUTHOR] = "The Custodian of http://everything2.com"
-placeholder [BLURB] = "In a pervasive surveillance society, you'll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers. The creep of surveillance and control has continued unabated. Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner. You've spent years working with the underground as a hacker for hire, helping research and develop countermeasures to government surveillance. You've managed to steal information which will help the design of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative. Your own MitKlein signature was captured during your mission, however. Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately. Short term, you'll have to get off the street before curfew and figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
+placeholder [BLURB] = "In a pervasive surveillance society, you'll dare to strike a blow for anonymity - but to stay free, you will need to take down the watchers. The creep of surveillance and control has continued unabated. Every citizen is required to have a chip implant which can definitively identify them to anyone with a scanner. You've spent years working with the underground as a hacker for hire, helping research and develop countermeasures to government surveillance. You are in possession of a cryptographic attack against the Mitsui-Klein Encapsulation that every citizen carries in their skull, which (if it works) will render the chip inoperative. The drink may have made you reckless, though. Your own MitKlein signature was captured during the attack. Although you did your best to wipe all records of your MitKlein signature from all the databases you could find, if you let your chip be scanned by any system it is likely that Homeland Security will be after you immediately. Short term, you'll have to get off the street before curfew and figure out how to move around undetected - long term, you will have to bring the fight to Homeland Security itself."
 
 ! Other material to release
 
 source
-solution
 ifiction
-auxiliary "/Users/jbz/Projects/valley/Valley of Steel Materials/valleyofsteel.pdf" "Original Story"
-auxiliary "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/IntroductionToIF.pdf" "Introduction to IF"
+auxiliary "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/valleyofsteel.pdf" "Original Story"
 
 ! Website instructions
 
 placeholder [ENCODEDSTORYFILE] = "Valley of Steel.gblorb.js"
-template path "/Users/jbz/Projects/valley/Valley of Steel Materials/Templates"
+template path "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/Templates"
 template path "/Users/jbz/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/Templates"
 interpreter "Quixe" "g"
-base64 "/Users/jbz/Projects/valley/Valley of Steel.inform/Build/output.ulx" to "/Users/jbz/Projects/valley/Valley of Steel Materials/Release/interpreter/Valley of Steel.gblorb.js"
+base64 "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel.inform/Build/output.ulx" to "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/Release/interpreter/Valley of Steel.gblorb.js"
 
 ! Website instructions
 
-template path "/Users/jbz/Projects/valley/Valley of Steel Materials/Templates"
+template path "/Users/jbz/Dropbox/Projects/IF Games/Valley/Valley of Steel Materials/Templates"
 template path "/Users/jbz/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/Templates"
 css
 website "Standard"
-status instruction ||&nbsp;<a href="source:story.ni#line9"><img border=0 src=inform:/Reveal.tif></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line10"><img border=0 src=inform:/Reveal.tif></a>||
+status alternative ||Using 'Release along with a solution'&nbsp;<a href=inform:/doc398.html><img border=0 src=inform:/help.png></a>||
+status alternative ||Using 'Release along with the introductory booklet'&nbsp;<a href=inform:/doc392.html><img border=0 src=inform:/help.png></a>||
