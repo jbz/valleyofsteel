@@ -676,6 +676,7 @@ Carry out reading:
 		now messagesWaiting is false;
 	if the messagePointer of the phone is greater than 10:
 		now the messagePointer of the phone is 1;
+		activate the Table of MitKlein Hints;
 		activate the Table of SMS Hints.
 
 
@@ -866,6 +867,7 @@ Carry out rebooting:
 		say "The screen flickers as the laptop reboots.  The laptop pauses as it finds the boot server that has been installed on your phone, and then there is a quick series of flashes before a screen full of text comes up!";
 		now the laptop is hacked;
 		remove the reboot button from play;
+		activate the Table of MitKlein hints;
 		if the chipslot contains a memory chip (called the target):
 			say "The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.";
 			now the item-id of the target is "M2";
@@ -1031,7 +1033,7 @@ Check inserting into the refrigerator:
 
 
 [microwave]
-The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'ACTIVATE') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
+The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'ACTIVATE') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box][end if].[if the side panel is open]  The service panel is bent open on the side.[end if]"
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
@@ -1054,13 +1056,13 @@ Check opening the microwave oven:
 Check closing the microwave oven:
 	try closing the cook box instead.
 
+Instead of searching the microwave oven:
+	try searching the cook box instead.
+
 Check inserting something (called the subject) into the cook box:
 	if the subject is tiny, continue the action;
 	if the subject is small, continue the action;
 	say "That won't fit in the oven." instead.
-
-[instead of unlocking the side panel with the multitool:
-	try opening the side panel with the multitool instead.]
 
 Check opening the side panel:
 	if the noun is open, say "That's already been opened." instead;
@@ -2477,7 +2479,22 @@ A plaque is in every transitStation.
 A Transit Map is a kind of thing.  A Transit Map is always fixed in place.  The description of a Transit Map is "A metal sign displaying a map of Green Line Transit:[line break][map diagram]".
 
 To say map diagram:
-	say "[fixed letter spacing]        -------------[line break]";	say "        |   Green   |[line break]";	say "        |  Service  |[line break]";	say "        -------------[line break]";	say "         /          \[line break]";	say "        /            \[line break]";	say " -----------    -------------[line break]";	say " | Reserve |    |   Green   |[line break]";	say " |  Bank   |    |Residential|[line break]";	say " -----------    -------------[line break]";	say "        \            /[line break]";	say "         \          /[line break]";	say "         ------------[line break]";	say "         |  Green   |[line break]";	say "         |Commercial|[line break]";	say "         ------------[line break][variable letter spacing]".
+	say "[fixed letter spacing]        -------------[line break]";
+	say "        |   Green   |[line break]";
+	say "        |  Service  |[line break]";
+	say "        -------------[line break]";
+	say "         /          \[line break]";
+	say "        /            \[line break]";
+	say " -----------    -------------[line break]";
+	say " | Reserve |    |   Green   |[line break]";
+	say " |  Bank   |    |Residential|[line break]";
+	say " -----------    -------------[line break]";
+	say "        \            /[line break]";
+	say "         \          /[line break]";
+	say "         ------------[line break]";
+	say "         |  Green   |[line break]";
+	say "         |Commercial|[line break]";
+	say "         ------------[line break][variable letter spacing]".
 
 A Transit Map is in every transitStation.
 
