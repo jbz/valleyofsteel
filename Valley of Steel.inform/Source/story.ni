@@ -211,6 +211,7 @@ Section 3 - 'Every Turn' Rules, Timed Events and Global Rules/Grammar
 [Global understands]
 Understand "kiss [something]" as touching.
 Understand "pet [something]" as touching.
+Understand "kick [something]" as attacking.
 
 [Global rule/action overrides]
 
@@ -888,7 +889,7 @@ To decide if the laptop is netbootable:
 
 The harness is a component.  The harness is in the Police Flitter. The item-id of the harness is "M7". The harness is wearable.  The description of the harness is "A strong harness made of black industrial strapping.  It has an attach point in the center of the back - a set of what appear to be metal locking hooks.  It fastens with sturdy plastic buckles.  It is probably used for safety by police when their flitter doors are open or to lift people into the flitter."
 
-The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, it seems to have a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is enclosed by the powered platform]  It is attached to the platform's winch frame with several locking clamps."
+The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, with a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is enclosed by the powered platform]  It is attached to the platform's winch frame with several locking clamps."
 
 The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight."
 The cable is a part of the descender.  The cable can be tied or untied.  The description is "A spool of extremely strong cable attached to the descender with a spliced-in carabiner at the end.[if tied]  One end of the cable is looped around the scarred tree and attached with the carabiner."
@@ -915,7 +916,7 @@ Section 6 - Fixed/Scenery Objects
 [boring stuff]
 Unimportant stuff is a kind of thing. Unimportant stuff is scenery. 
 Instead of doing something other than examining or taking unimportant stuff, say "You've really got better things to do that trying to do that." 
-Instead of examining unimportant stuff, say "[one of]That isn't interesting.[or]Perfectly boring.[or]Just what you'd expect.[purely at random]".
+Instead of examining unimportant stuff, say "[one of]That won't help you.[or]You examine that but find nothing of interest.[purely at random]".
 Instead of taking unimportant stuff, say "You can't do that."
 		
 The ground is a backdrop.  The ground is everywhere.
@@ -2776,6 +2777,7 @@ Understand "lawns" as residential buildings when the location is East Cedar Stre
 Understand "lawn" as residential buildings when the location is East Cedar Street.
 
 South Primrose Lane is south of Primrose & Cedar.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence's front path."
+The lawn is unimportant stuff in South Primrose Lane.
 Some sumac plants are in South Primrose Lane.  The sumac plants are scenery.  The description of the sumac plants is "You can see the tops of a few trees over the top of the fence.  Their leaves are greenish red, waving out of reach in the slight breeze."
 
 The warning sign is in South Primrose Lane.  The warning sign is fixed in place.  The warning sign is scenery.  The description is "It reads 'YOUR SKIN MUST BE THIS THICK (here there is a lifelike picture of a dog's tooth, perhaps an inch long) TO BURGLE THIS HOUSE.'  There is an arrow pointing down and to the side, which actually points at the dog."
@@ -2783,7 +2785,7 @@ Understand "sign" as the warning sign when the location is South Primrose Lane.
 Understand "burglar sign" as the warning sign.
 Understand "Alarm sign" as the warning sign.
 
-The large dog is here.  The dog is fixed in place.  The dog is scenery.  The description is "This snoozing beast must mass thirty kilos or more.  Its ancestry appears to include Mastiff, Doberman Pinscher, Rottweiler and tribble. You have no desire to get anywhere near it."
+The large dog is here.  The large dog is fixed in place.  The large dog is scenery.  The description is "This snoozing beast must mass thirty kilos or more.  Its ancestry appears to include Mastiff, Doberman Pinscher, Rottweiler and tribble. You have no desire to get anywhere near it."
 Understand "dog" as the large dog when the location is South Primrose Lane.
 
 Check touching the large dog:
@@ -2791,10 +2793,11 @@ Check touching the large dog:
 	
 Check pushing the large dog:
 	say "Uh…you really don't want to try that." instead.
+
+Check attacking the large dog:
+	say "Uh…you really, REALLY don't want to try that." instead.
 	
-
 Instead of taking the dog, try touching the dog instead.
-
 
 Instead of going west in South Primrose Lane, say "As you approach the lawn of the house, the large dog raises its head to look at you and growls, softly but very communicatively.  You decide discretion is the better part of valor and retreat.".
 
@@ -2862,6 +2865,10 @@ Instead of taking the metal door:
 
 Front Path is east of South Primrose Lane.  The description is "This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building's side yard is to the northeast."
 The flagstones is here.  The flagstones is scenery.  The flagstones is plural-named. The description of the flagstones is "Weathered stones, which appear to be naturally smooth rather than having been shaped."
+Understand "stones" as the flagstones when the location is Front Path.
+Check looking under the flagstones:
+	try pushing the flagstones instead.
+
 
 West of Side Yard is northeast of Front Path.  The description is "A narrow side yard with a high solid fence on the north side and a few straggly decorative plants.  The yard extends east behind the house and west to the front of the house."
 The decorative plants is in the side yard.  The decorative plants is plural-named.  The decorative plants is scenery.  The description is "A few straggly brown and green plants huddling near the base of the fence and the side of the house."
@@ -3220,7 +3227,7 @@ Green Service Station is above the Green Service Station door.  The description 
 Government Square South is north of Green Service Station.  The description is "This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital's driveway.  The Hospital's main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station."
 The benches is unimportant stuff in Government Square South.
 The landscape features is unimportant stuff in Government Square South.
-The govcars is a backdrop.  The govcars is plural-named. The description is "Perfectly boring vehicles passing by."
+The govcars is a backdrop.  The govcars is plural-named. The description is "A stream of vehicles passing by."
 The govcars is in Government Square North and Government Square South.
 Understand "groundcars" and "vehicles" and "flitters" and "cars" as the govcars when the govcars is in the location.
 Instead of entering the govcars, say "They're moving. You'd be injured."
