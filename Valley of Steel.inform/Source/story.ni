@@ -29,7 +29,7 @@ Time of day is 7:30 PM.
 
 The player is in Green Residential Park.
 
-When play begins: 
+When play begins:
 	add the list of transitStations to Transit System;
 	sort Transit System in stationNumber order;
 	now newsIndex is a random number from 1 to the number of rows in the Table of Stories;
@@ -39,6 +39,7 @@ When play begins:
 	snoozing starts at 2:00 AM;
 	activate the Table of General Hints;
 	now the player is unbriefed;
+	now instantiate is false;
 	now messagesWaiting is false;
 	the message arrives in 3 turns from now;
 	say "A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen's head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you've sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government's ubiquitous tagging of citizens is being worked out at levels above your own head.[paragraph break]For now, you have found yourself a small quiet park in a quiet corner of the City.[paragraph break]Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream."
@@ -288,13 +289,26 @@ This is the explosive residue rule:
 
 
 
-
 [Zero-time actions]
 Examining something is acting instant. Looking is acting instant.  Taking inventory is acting instant. Taking is acting instant.
 
-The take visual actions out of world rule is listed before the every turn stage rule in the turn sequence rules.
-This is the take visual actions out of world rule: if acting instant, rule succeeds.
+instantiate is a truth state that varies.
 
+The take visual actions out of world rule is listed before the every turn stage rule in the turn sequence rules.
+
+This is the take visual actions out of world rule: 
+	if acting instant, rule succeeds;
+	if instantiate is true:
+		now instantiate is false;
+		rule succeeds.
+
+[new check going/instant action]
+Check going (this is the new can't go that way rule):
+	if the room gone to is nothing:
+		now instantiate is true;
+		say "You can't go that way." instead.
+
+The new can't go that way rule is listed instead of the can't go that way rule in the check going rulebook.
 
 [Every turn rules]
 Every turn:
