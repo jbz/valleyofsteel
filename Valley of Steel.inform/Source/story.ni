@@ -38,7 +38,6 @@ When play begins:
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
 	snoozing starts at 2:00 AM;
 	activate the Table of General Hints;
-	now the player is unbriefed;
 	now instantiate is false;
 	now messagesWaiting is false;
 	the message arrives in 3 turns from now;
@@ -175,8 +174,6 @@ An armedState is a kind of value. The armedStates are disarmed, armed, exploding
 A suspicionState is a kind of value.  The suspicionStates are clear, suspect, or fugitive.
 
 A person has a suspicionState.  A person is usually clear.
-
-A person can be briefed or unbriefed.
 
 the incriminatingAct is some text that varies.
 
@@ -998,6 +995,13 @@ Instead of closing a solar panel:
 
 [mirrors]
 A mirror is a kind of thing.  A mirror is always scenery.
+
+Instead of searching a mirror:
+	say "It's hard to say if your reflection shows a true urban resistance fighter or just a very nondescript citizen.  You've changed your hairstyle so many times now, you don't know [italic type]what[roman type] you look like.".
+A reflection is a kind of thing.  A reflection is part of every mirror.  A reflection is always scenery.
+
+Understand "face" as a reflection.
+Instead of examining a reflection, say "It's hard to say if your reflection shows a true urban resistance fighter or just a very nondescript citizen.  You've changed your hairstyle so many times now, you don't know [italic type]what[roman type] you look like."
 
 A doodle is a kind of thing. A doodle is part of every mirror.  A doodle is always scenery.  A doodle has a number called the graffitiIndex.
 
