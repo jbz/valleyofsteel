@@ -826,7 +826,7 @@ Before inserting the soldering iron into:
 Check switching on the soldering iron:
 	if the soldering iron is switched on, try switching off the soldering iron instead.
 
-The solder is a thing. The solder is on the workbench.  The solder is small. The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted pool of useless solder."
+The solder is a thing. The solder is on the workbench.  The solder is small. The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted disc of useless solder."
 
 
 [laptop]
@@ -1443,11 +1443,16 @@ Carry out and-combining:
 
 [combining]
 Combining it with is an action applying to two carried things.
-Understand "combine [something] and [something]" as combining it with.
 Understand "combine [something] with [something]" as combining it with.  
 Understand "combine [something] to [something]" as combining it with.
+Understand "connect [something] to [something]" as combining it with.
+Understand "connect [something] with [something]" as combining it with.
 Understand "solder [something] to [something]" as combining it with.
+Understand "solder [something] with [something]" as combining it with.
+[Note: these won't work due to the 'and' triggering the 'multiple command' part of the Parser; to override that, see this thread: http://www.intfiction.org/forum/viewtopic.php?f=7&t=7405]
+Understand "combine [something] and [something]" as combining it with.
 Understand "solder [something] and [something]" as combining it with.
+Understand "connect [something] and [something]" as combining it with.
 
 The combining it with action has an object called the resultant-item. 
 
