@@ -2050,6 +2050,7 @@ Understand "cordon" as the police barrier.
 
 
 Instead of going south in South Primrose Lane during Drug Raid:
+	now instantiate is true;
 	say "A stern-looking patrolman from the cordon intercepts you and firmly tells you to stay back.  You move back to the street." instead.
 
 When Drug Raid begins:
@@ -2307,6 +2308,7 @@ In Lift Lobby is a man called the Security Guard.  The description of the Securi
 [Ponyfriend Chunky]
 In Civil Center Steps is a man called Ponyfriend Chunky.  Ponyfriend Chunky can be cellBereft or cellEnabled.  Ponyfriend Chunky is cellBereft. Ponyfriend Chunky is carrying the begging sign. Ponyfriend chunky is carrying the pager.  The description of Ponyfriend Chunky is "Dressed in ragged clothing, this man is looking around himself nervously, trying not to meet anyone's eye.  He is holding a sign that reads 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN.'"
 
+
 The begging sign is scenery.  The description of the begging sign is "Reading 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN,' the sign appears to be written in shaky black marker on a piece of cardboard."
 
 
@@ -2538,9 +2540,11 @@ Transit is a region.  Transit Capsule is in Transit.  All transitStations are in
 The transit web is a thing.  The transit web is a backdrop.  It is in Green Residential Platform. It is in Reserve Bank Station.  It is in Green Commercial Platform.  It is in Green Service Platform. The transit web is large.  The description of the transit web is "Not really a web so much as a series of maglev rings linked by guides, the Transit Web is separated from the platform by a barrier fence with automatic doors, which line up with Transit Capsule doors when a Capsule is in the station.  The Web rings glow faintly with the Magfield."
 
 Instead of taking the transit web:
+	now instantiate is true;
 	say "You're already taking the subway." instead.
 	
 Instead of entering the transit web:
+	now instantiate is true;
 	say "A barrier fence with closed autodoors blocks your way." instead.
 
 
@@ -2828,7 +2832,9 @@ Check attacking the large dog:
 	
 Instead of taking the dog, try touching the dog instead.
 
-Instead of going west in South Primrose Lane, say "As you approach the lawn of the house, the large dog raises its head to look at you and growls, softly but very communicatively.  You decide discretion is the better part of valor and retreat.".
+Instead of going west in South Primrose Lane:
+	now instantiate is true;
+	say "As you approach the lawn of the house, the large dog raises its head to look at you and growls, softly but very communicatively.  You decide discretion is the better part of valor and retreat.".
 
 The fence is in South Primrose Lane.  The fence is scenery.  The fence can be either cut open or uncut.  The fence is uncut.  The description of the fence is "[if fence is uncut]A combination of cyclone fence and plastic sheeting, it blocks your view.  You can hear rustling from behind it, as of people moving around furtively.[otherwise] A combination of cyclone fence and plastic sheeting, there is a large hole cut in the middle."
 
@@ -2984,8 +2990,12 @@ The House door is east of Front Path and west of Front Lobby.  The House door is
 
 Front Lobby is east of the House door.  Front Lobby is blind.  The description is "The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south."
 The newspaper is here.  The pamphlet is here.
-Instead of going east in Front Lobby, say "You can't open the security gate." instead.
-Instead of going up in Front Lobby, say "You can't open the security gate." instead.
+Instead of going east in Front Lobby:
+	now instantiate is true;
+	say "You can't open the security gate." instead.
+Instead of going up in Front Lobby:
+	now instantiate is true;
+	say "You can't open the security gate." instead.
 
 The security gate is in the Front Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
 
@@ -3105,7 +3115,9 @@ Understand "shrub" as the trees.
 Understand "shrubs" as the trees.
 Understand "tree" as the trees.
 
-Instead of going south in Green Commercial Plaza South, say "You can't find a path between the shrubs."
+Instead of going south in Green Commercial Plaza South:
+	now instantiate is true;
+	say "You can't find a path between the shrubs."
 
 Metro Savings is west of Green Commercial Plaza North and northwest of Green Commercial Plaza Center. The description of Metro Savings is "This is a completely nondescript bank storefront which exists solely to house an ATM.  It's so nondescript, in fact, that it took you some actual effort to determine which bank owns it, probably to ensure that they can charge you access fees no matter what.  To the east is Green Commercial Plaza."
 
@@ -3308,9 +3320,14 @@ There is a trash can in the Hospital Restroom.
 The hospital mirror is a mirror. The hospital mirror is in the Hospital Restroom. The description is "A small oval mirror set at an angle for those in wheelchairs, which forces you to hunch down slightly.  A blue permanent marker graffito is visible at the very bottom if you look carefully."
 
 Civil Center Steps is north of Government Square North.  The description is "These are the front steps of an impressive government building.  Civil servants hurry in and out through the security checkpoint, going about their business."
-Instead of going north in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
-Instead of going up in Civil Center Steps, say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
+Instead of going north in Civil Center Steps:
+	now instantiate is true;
+	say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
+Instead of going up in Civil Center Steps:
+	now instantiate is true;
+	say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
 The security checkpoint is unimportant stuff in Civil Center Steps.
+
 Some people called the civil servants are here.  The civil servants are plural-named.  The description of the civil servants is "A crowd of boring-looking government functionaries."
 
 Instead of examining the civil servants:
@@ -3329,6 +3346,7 @@ Check opening the police gate:
 	say "The gate is securely locked." instead.
 
 Instead of going north in Front Desk:
+	now instantiate is true;
 	say "The security gate is locked." instead.
 
 Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
@@ -3382,7 +3400,9 @@ Instead of going up in the Food Court, try going west instead.
 
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 The lift scanners are unimportant stuff in the Lift Lobby.
-Instead of going up in the Lift Lobby, say "You can't go that way."
+Instead of going up in the Lift Lobby:
+	now instantiate is true;
+	say "You can't go that way."
 Instead of going down in the Lift Lobby, try going east instead. 
 
 After going west from the Food Court for the first time:
