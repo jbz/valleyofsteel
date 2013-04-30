@@ -1758,6 +1758,8 @@ Understand "reheat [something]" as microwaving.
 
 Before microwaving:
 	if the noun is the microwave oven, say "That would be a neat trick." instead;
+	if the noun is the phone:
+		unless the laptop is hacked, say "You are about to microwave the phone when you remember that you'll need to somehow get the attack program off it first." instead;
 	unless the microwave oven is in the location, say "How do you propose to do that?" instead;
 	unless the cook box is empty:
 		unless the noun is in the cook box, say "There's no room in the microwave." instead;
@@ -1779,6 +1781,10 @@ Carry out microwaving:
 [cooking activity]
 Cooking is an activity.
 Rule for cooking:
+	if the phone is inside the cook box:
+		if the laptop is unhacked:
+			say "You are about to microwave the phone when you remember that you'll need to somehow get the attack program off it first.";
+			stop;
 	unless the side panel is fried:
 		say "A light comes on in the microwave and it begins to hum.[if the side panel is hacked]The oven makes a sharp high-pitched electronic noise as it operates, but the shielding in the door prevents anything from happening outside.";
 		repeat with sizzler running through the list of objects inside the cook box:
