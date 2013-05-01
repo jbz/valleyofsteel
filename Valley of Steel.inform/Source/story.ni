@@ -937,7 +937,7 @@ Instead of examining the ground:
 [rooms]
 
 [bathrooms]
-A sink is a kind of supporter.  It is scenery.  The description is "Totally boring sink."
+A sink is a kind of supporter.  It is scenery.  The description is "Looks like a completely normal sink."
 Check switching on a sink:
 	say "The water runs for a few seconds before shutting itself off." instead.
 A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
@@ -3039,12 +3039,14 @@ Understand "bench" as the workbench when the location is the Home Office.
 
 The Hall is south of the Entry.  The Hall is blind. The description is "The central hallway of this modest home.  It's relatively clean and neat, as there is no furniture in it."
 
-The Bathroom is a restroom.  The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "This home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if the owner had expected visitors. It contains a sink, toilet and shower."
+The Bathroom is a restroom.  The Bathroom is east of the Entry and north of the Bedroom.  The Bathroom is blind. The description is "This home only has the one bathroom, which means that the fact that it's not very clean is somewhat embarrassing.  Or at least, it would be if the owner had expected visitors. It contains a sink, mirror, toilet and shower."
 The shower is a container in the Bathroom.  The shower is scenery.  The shower is fixed in place. The shower is enterable, openable, transparent, and closed.  "A one-piece shower unit."
 Check switching on the shower:
 	say "The apartment owners must have shut off their water while away; nothing happens." instead.
 Check switching on a sink when the location is The Bathroom:
 	say "The apartment owners must have shut off their water while away; nothing happens." instead.
+The home mirror is a mirror in the Bathroom.  The description of the home mirror is "A mid-range but functional mirror mounted over the sink.  It has various illegible smudges around the edge which suggest that its owner uses it to write temporary notes to themself.  One corner has a small piece of graffiti done in black marker."
+The smudges are a part of the home mirror.  The smudges are plural-named. The description of the smudges is "The smudges appear to be the remnants of Magic Marker notes, each now rubbed out - unlike the graffiti in the lower corner."
 
 The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather boring.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it."
 
