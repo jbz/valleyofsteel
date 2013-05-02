@@ -1003,13 +1003,15 @@ A reflection is a kind of thing.  A reflection is part of every mirror.  A refle
 Understand "face" as a reflection.
 Instead of examining a reflection, say "It's hard to say if your reflection shows a true urban resistance fighter or just a very nondescript citizen.  You've changed your hairstyle so many times now, you don't know [italic type]what[roman type] you look like."
 
-A doodle is a kind of thing. A doodle is part of every mirror.  A doodle is always scenery.  A doodle has a number called the graffitiIndex.
+A doodle is a kind of thing. A doodle is part of every mirror.  A doodle is always scenery.  A doodle has a number called the graffitiIndex. The description of a doodle is "[Doodle Description]".
+
+To say Doodle Description:
+	now the tempIndex is the graffitiIndex of the noun;
+	say "This small graffito is [image in row tempIndex of the Table of Graffiti] Just below it is a URL: [bold type][URL in row tempIndex of the Table of Graffiti][roman type]".
 
 Understand "graffiti" as a doodle.
 Understand "graffito" as a doodle.
-Instead of examining a doodle:
-	now the tempIndex is the graffitiIndex of the noun;
-	say "This small graffito is [image in row tempIndex of the Table of Graffiti] Just below it is a URL: [bold type][URL in row tempIndex of the Table of Graffiti][roman type]"
+
 
 [plaques]
 A Plaque is a kind of thing.  Plaques are always scenery. The description of a plaque is "Metal, perhaps a meter by five meters, the plaque reads '[bold type][the stationName of the location][roman type]' in standard Transit Helvetica font."
@@ -3405,7 +3407,9 @@ The lift scanners are unimportant stuff in the Lift Lobby.
 Instead of going up in the Lift Lobby:
 	now instantiate is true;
 	say "You can't go that way."
-Instead of going down in the Lift Lobby, try going east instead. 
+Instead of going down in the Lift Lobby, try going east instead.
+
+Instead of examining up in the Lift Lobby, say "Several meters up, the walls end at the street level and the spacescraper's enormous internal atrium is visible above.  The Main Lobby occupies the floor above, at the base of the atrium; railings circle the opening at the top of the Lift Lobby, and a few people are leaning over to look downwards.  Many stories above, the roof of the Atrium is barely visible behind the glare of its many enormous lighting fixtures."
 
 After going west from the Food Court for the first time:
 	activate the Table of Atrium Hints;
@@ -3557,17 +3561,24 @@ Instead of taking the shards:
 Instead of pushing the shards:
 	say "You dare not risk them going over the edge and hurting someone below." instead.
 
-
 Before going west in Atrium Ledge:
 	if the player is harnessed:
+		now instantiate is true;
 		say "You can't maneuver through the wreckage of the window with the stiff cable trailing out behind you." instead.
+
+Instead of examining down in Atrium Ledge, say "You look carefully over the edge.  The Main Lobby can be seen some thirty floors down, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  It's a long way down."
+
+Instead of examining up in Atrium Ledge, say "The atrium continues upwards for some thirty floors, ending in a ceiling which is mostly obscured by the glare from the various powerful lighting fixtures which provide daylight-quality illumination to the interior space."
 
 Before going down from Atrium Ledge:
 	if the player does not enclose the descender:
+		now instantiate is true;
 		say "You can't go that way - you'd fall." instead;
 	otherwise unless the cable is tied:
+		now instantiate is true;
 		say "You can't go that way - you'd fall." instead;
 	otherwise unless the player is wearing the descender:
+		now instantiate is true;
 		say "you're not confident enough in your grip to go over the edge while simply holding your lifeline." instead;
 	otherwise:
 		now Bombs Thrown is 0;
