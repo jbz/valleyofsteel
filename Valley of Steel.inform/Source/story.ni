@@ -902,8 +902,10 @@ The harness is a component.  The harness is in the Police Flitter. The item-id o
 
 The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, with a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is enclosed by the powered platform]  It is attached to the platform's winch frame with several locking clamps."
 
-The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight."
+The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight.[end if][if the cable is tied]  The end of the cable is looped around the tree trunk, secured with the carabiner.[end if]".
 The cable is a part of the descender.  The cable can be tied or untied.  The description is "A spool of extremely strong cable attached to the descender with a spliced-in carabiner at the end.[if tied]  One end of the cable is looped around the scarred tree and attached with the carabiner."
+
+Understand "carabiner" as the cable.
 
 Check tying the cable to something:
 	unless the second noun is the scarred tree:
@@ -919,6 +921,7 @@ Instead of untying the cable:
 
 Instead of tying the descender to something:
 	try tying the cable to the second noun instead.
+
 
 Instead of tying the harness to something:
 	if the descender is touchable:
@@ -1577,6 +1580,10 @@ Check attaching it to:
 Carry out attaching it to:
 	if the noun is the cable:
 		try tying the cable to the second noun instead;
+	if the noun is the descender:
+		try tying the cable to the second noun instead;
+	if the noun is the harness:
+		try tying the harness to the second noun instead;
 	otherwise if the noun is the breaching charge:
 		try putting the breaching charge on the second noun instead;
 	otherwise if the noun is a Klein Blaster:
