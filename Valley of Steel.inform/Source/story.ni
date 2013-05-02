@@ -905,12 +905,43 @@ The spool is a component.  The spool is on the Powered Platform. The item-id of 
 The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight."
 The cable is a part of the descender.  The cable can be tied or untied.  The description is "A spool of extremely strong cable attached to the descender with a spliced-in carabiner at the end.[if tied]  One end of the cable is looped around the scarred tree and attached with the carabiner."
 
-Before tying the cable to something:
+Check tying the cable to something:
 	unless the second noun is the scarred tree:
-		say "You can't tie the cable to that." instead;
+		say "You can't tie the descender cable to that." instead;
+	if the cable is tied:
+		say "It's already attached." instead;
 	say "You pass the cable around the tree and snap the carabiner on the end around it, firmly attaching the cable to the tree.";
 	now the cable is tied;
 	stop.
+
+Instead of untying the cable:
+	try untying the descender. 
+
+Instead of tying the descender to something:
+	try tying the cable to the second noun instead.
+
+Instead of tying the harness to something:
+	if the descender is touchable:
+		try tying the cable to the second noun instead;
+	otherwise:
+		say "You can't tie the harness to anything." instead.
+		
+Understand the command "untie" as something new.
+Understand "untie [something]" as untying.
+Understand "detach [something]" as untying.
+
+Untying is an action applying to one touchable thing.
+
+Check untying:
+	unless the noun is the descender:
+		say "You can't detach that." instead;
+	unless the cable is tied:
+		say "It's not attached to anything." instead.
+		
+Carry out untying:
+	say "You open the carabiner and unhook the cable, detaching it.";
+	now the cable is untied.
+
 
 The maintenance camera is a disposable camera. The Maintenance camera is in the Utility Closet.  "A scuffed disposable camera with a building property sticker on it is here.  Written on it in marker are the words 'DOCUMENT ALL MAINTENANCE ITEMS.'"
 
@@ -2081,7 +2112,6 @@ Endgame is a scene.  Endgame begins when the player has been in Atrium Midair To
 Instead of dropping ID Bomb during Endgame:
 	say "[if Bombs Thrown is 0]You arm the bomb and toss it. The bomb spins down out of sight towards a window wall.  A few seconds later you make out a slight twinkling as the flash unit fires.  A low noise, of a crowd confused, slowly rises in volume![otherwise if Bombs Thrown is 1]Arming another bomb, you toss it away into the atrium where crowds are gathering at the windows!  The bomb flashes just in front of a large crowd gathered before a window wall, and they begin to mill about in panic and confusion!  The noise inside the atrium rises![otherwise if Bombs Thrown is 2]You arm your third ID bomb and drop it directly down into the crowds in the Main Lobby, where you can see police and Homeland Security forces pointing up at you as they maneuver into place.  There is a definite flinching in the crowd as the bomb goes off nearly at floor level, and the law enforcement personnel are instantly swamped by the confused masses of convention attendees as everyone on the Lobby floor is cut off from communicating directly with their electronics![otherwise]You arm another bomb and throw it across the Atrium towards a group of onlookers.  A twinkle indicates more citizens freed!";
 	Increase Bombs Thrown by 1;
-	[say "thrown is [Bombs Thrown]";]
 	remove the noun from play.
 
 Instead of arming ID bomb during Endgame:
@@ -3557,8 +3587,10 @@ The broken window is in Atrium Ledge.  The broken window is scenery.  The broken
 
 The shards are in Atrium Ledge.  The shards are scenery.  The shards are fixed in place.  The description is "A few scattered pieces of armorglass. Most of the window must have been blown over the edge."
 Instead of taking the shards:
+	now instantiate is true;
 	say "They're sharp.  You'd only hurt yourself." instead.
 Instead of pushing the shards:
+	now instantiate is true;
 	say "You dare not risk them going over the edge and hurting someone below." instead.
 
 Before going west in Atrium Ledge:
@@ -3566,9 +3598,13 @@ Before going west in Atrium Ledge:
 		now instantiate is true;
 		say "You can't maneuver through the wreckage of the window with the stiff cable trailing out behind you." instead.
 
-Instead of examining down in Atrium Ledge, say "You look carefully over the edge.  The Main Lobby can be seen some thirty floors down, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  It's a long way down."
+Instead of examining down in Atrium Ledge:
+	say "You look carefully over the edge.  The Main Lobby can be seen some thirty floors down, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  A crowd of people, most seated facing a speaker's podium, occupy the Main Lobby floor. It's a long way down.";
+	rule succeeds.
 
-Instead of examining up in Atrium Ledge, say "The atrium continues upwards for some thirty floors, ending in a ceiling which is mostly obscured by the glare from the various powerful lighting fixtures which provide daylight-quality illumination to the interior space."
+Instead of examining up in Atrium Ledge:
+	say "The atrium continues upwards for some thirty floors, ending in a ceiling which is mostly obscured by the glare from the various powerful lighting fixtures which provide daylight-quality illumination to the interior space.";
+	rule succeeds.
 
 Before going down from Atrium Ledge:
 	if the player does not enclose the descender:
@@ -3594,8 +3630,24 @@ The Main Lobby is below the Atrium Midair Bottom.  The Main Lobby is above the L
 
 The Atrium Airspace is a region.  The Atrium Midair Top is in the Atrium Airspace.  The Atrium Midair Middle is in the Atrium Airspace.  The Atrium Midair Bottom is in the Atrium Airspace.
 
-Before going down in the Atrium Airspace, say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
+Before going down in the Atrium Airspace:
+	now instantiate is true;
+	say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
 
-Before going up in the Atrium Airspace, say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
+Before going up in the Atrium Airspace:
+	now instantiate is true;
+	say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
 
-Instead of jumping in the Atrium Airspace, say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
+Instead of jumping in the Atrium Airspace:
+	now instantiate is true;
+	say "You're hanging from a descender.  It is lowering you at a preset rate." instead.
+
+Instead of examining up in the Atrium Airspace:
+	now instantiate is true;
+	say "The atrium continues upwards for some thirty floors, ending in a ceiling which is mostly obscured by the glare from the various powerful lighting fixtures which provide daylight-quality illumination to the interior space.  The descender cable stretches out above you before disappearing over the edge of the atrium ledge above.";
+	rule succeeds.
+
+Instead of examining down in the Atrium Airspace:
+	now instantiate is true;
+	say "The Main Lobby can be seen below, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  A crowd of people, most seated facing a speaker's podium, occupy the Main Lobby floor. It's a long way down.";
+	rule succeeds.
