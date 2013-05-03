@@ -313,7 +313,7 @@ Every turn:
 		if player is surveilled:
 			unless the location is gassed:
 				say "Police, hunting you for [the incriminatingAct], swarm into the area! You are tackled and handcuffed before you can react![line break]";
-				end the story saying "You have been arrested.";
+				end the story saying "You have been arrested!";
 
 
 Every turn:
@@ -1053,7 +1053,7 @@ Instead of taking a Plaque, say "You're here for a far nobler purpose than mere 
 Instead of taking a Plaque for the third time, say "The police would frown on it."
 Instead of taking a Plaque for the fourth time:
 	say "The cops can see you messing with the plaque via their surveillance systems, and they don't think you should be vandalizing the Transit system.  They arrive en masse and grab you to take you away for processing, where they'll discover what you've done to your Mit-Klein Bottle - and that'll get you Readjusted.";
-	end the story saying "You have been arrested."
+	end the story saying "You have been arrested!"
 	
 [activate buttons]
 An activate button is a kind of thing.
@@ -2216,6 +2216,36 @@ Report examining a customer:
 	stop.
 Some customers are in every foodstore.
 
+[commuters]
+A commuter is a kind of person.  A commuter is always scenery.  The description of a commuter is "A [one of]young[or]middle-aged[or]elderly[or]harrassed-looking[or]worried[or]smiling[or]blank-faced[or]distracted[or]indeterminate[as decreasingly likely outcomes] [one of]man[or]woman[or]office worker[or]executive[or]student[or]tech worker[or]delivery worker[purely at random] [one of]with a messenger bag[or]with a briefcase[or]juggling some packages[or]towing a travel case[or]with some flowers[or]with a child[or]intent on their destination[or]eating a snack[or]carrying a newspaper[or]reading from a handheld[or]answering a text[purely at random] [one of]hurries[or]walks swiftly[or]runs[or]jogs[or]marches[or]swerves[or]meanders[or]sashays[as decreasingly likely outcomes] past you [one of]and is gone[or]before vanishing[or]before disappearing into the crowd[or]before slipping out of sight[or]on their way out of the area[as decreasingly likely outcomes]."
+
+Report examining a commuter:
+	stop.
+
+Instead of touching a commuter:
+	say "You try to reach out into the fast-moving stream of people to intercept them, but they effortlessly dodge your grasp without looking your way and are lost in the crowd."
+	
+Instead of speech when the noun is a commuter:
+	say "Your words are lost as the commuter slips past you and continues on their way."
+	
+Instead of pushing a commuter:
+	say "You try to shove the commuter as they go by, but their experience at avoiding crowds allows them to slip past you without stopping."
+	
+Instead of attacking a commuter for the first time:
+	say "You probably shouldn't do anything to draw attention from the police."
+	
+Instead of attacking a commuter for the second time:
+	say "Really, attacking people isn't going to help and is just going to get you in trouble."
+	
+Instead of attacking a commuter for the third time:
+	say "[bracket]Fine, if you insist…[close bracket] Your attempted attack is easily dodged, but the commuter gives you a hostile stare and shouts for the police.  Officers appear and make a beeline for you at your victim's behest, and one brings out a MitKlein scanner.  When it bleeps a harsh tone, they all look at you with gimlet eyes.";
+	end the story saying "You have been arrested!".
+	
+Understand "man" as a commuter.
+Understand "woman" as a commuter.
+Understand "person" as a commuter.
+Understand "people" as a commuter.
+
 [policemen]
 A policeman is a kind of man.  The description of a policeman is "A typical example of the Metro police force, wearing patrol gear including light body armor, crowded equipment belt and what look like actually comfortable boots."
 
@@ -2342,7 +2372,7 @@ Instead of speech when the noun is Sergeant Ramirez:
 
 [security guard]
 In Lift Lobby is a man called the Security Guard.  The description of the Security Guard is "He's dressed in a standard security guard outfit.  It appears his job is keep people from fiddling with the ashtrays or perhaps the fake plants."
-
+There is a commuter in the lift lobby.
 
 [Ponyfriend Chunky]
 In Civil Center Steps is a man called Ponyfriend Chunky.  Ponyfriend Chunky can be cellBereft or cellEnabled.  Ponyfriend Chunky is cellBereft. Ponyfriend Chunky is carrying the begging sign. Ponyfriend chunky is carrying the pager.  The description of Ponyfriend Chunky is "Dressed in ragged clothing, this man is looking around himself nervously, trying not to meet anyone's eye.  He is holding a sign that reads 'HELP ME COMPLETE MY MISSION GIVE WHAT YOU CAN.'"
@@ -2546,6 +2576,8 @@ Section 0 - Setup
 A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
 
 A plaque is in every transitStation.
+
+A commuter is in every transitStation.
 
 A Transit Map is a kind of thing.  A Transit Map is always fixed in place.  The description of a Transit Map is "A metal sign displaying a map of Green Line Transit:[line break][map diagram]".
 
@@ -3441,10 +3473,20 @@ Instead of going up in the Food Court, try going west instead.
 
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 The lift scanners are unimportant stuff in the Lift Lobby.
+The bouncelifts are in the Lift Lobby. The bouncelifts are scenery.  The bouncelifts are plural-named.  The description of the bouncelifts is "A bank of vertical gravtech lift tubes along the north wall.  Access to them is controlled by lift scanners, which require a working and authorized MitKlein signature to pass."
+
+
 Instead of going up in the Lift Lobby:
 	now instantiate is true;
 	say "You can't go that way."
 Instead of going down in the Lift Lobby, try going east instead.
+
+Instead of going north in the Lift Lobby:
+	now instantiate is true;
+	say "The main bouncelifts are much more heavily secured than the public areas of the building.  Your dead MitKlein prevents you from gaining access.".
+
+Instead of entering the bouncelifts:
+	try going north.
 
 Instead of examining up in the Lift Lobby, say "Several meters up, the walls end at the street level and the spacescraper's enormous internal atrium is visible above.  The Main Lobby occupies the floor above, at the base of the atrium; railings circle the opening at the top of the Lift Lobby, and a few people are leaning over to look downwards.  Many stories above, the roof of the Atrium is barely visible behind the glare of its many enormous lighting fixtures."
 
