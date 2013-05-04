@@ -6,7 +6,7 @@ The story genre is  "Science Fiction".
 The story creation year is 2012.
 The release number is 1.
 
-Release along with cover art, a website, an interpreter, the introductory booklet, the library card, the private source text, a solution, a file of "Original Story" called "valleyofsteel.pdf".
+Release along with cover art, a "Extended" website, an interpreter, the introductory booklet, the library card, the private source text, a solution, a file of "Original Story" called "valleyofsteel.pdf".
 
 
 Chapter 0 - Game Rules And Item Setup
@@ -267,6 +267,7 @@ Check an actor inserting something into (this is the revised can’t insert what
 	if the noun is touchable, continue the action;
 	stop the action.
 
+[giving and its exceptions]
 Check giving (this is the polite refusal of unwanted objects rule):
 	unless the noun interests the second noun:
 		if the second noun is Ponyfriend Chunky, say "Ponyfriend shakes his head violently and pushes [the noun] back to you." instead;
@@ -277,7 +278,7 @@ Check giving (this is the polite refusal of unwanted objects rule):
 		otherwise say "[the second noun] doesn't seem interested in that at all." instead;
 	continue the action.
 
-
+[explosive residue rule]
 The explosive residue rule is listed after the room description body text rule in the carry out looking rules.
 
 This is the explosive residue rule:
@@ -977,7 +978,7 @@ Check switching on a sink:
 A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
 Instead of entering a stall, say "You really don't want to use it." instead.
 
-A restroom is a kind of room.  The description of a restroom is "Totally boring bathroom containing a sink, a mirror and a stall."  A sink is in every restroom.  A stall is in every restroom.
+A restroom is a kind of room.  The description of a restroom is "A nondescript bathroom containing a sink, a mirror and a stall."  A sink is in every restroom.  A stall is in every restroom.
 
 Understand "toilet" as the stall when the location is a restroom.
 
@@ -1288,14 +1289,30 @@ Check entering the ambulance:
 
 Section 7 - Actions/Activities
 
+[about]
+Understand "about" as getting info.
+
+getting info is an action out of world.
+
+Carry out getting info:
+	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  For a list of contributors to the game, say [bold type]CREDITS[roman type]."
+	
+
 [credits]
 Understand "credits" as getting credits.
-Understand "about" as getting credits.
 
 Getting credits is an action out of world.
 
 Carry out getting credits:
-	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by Klaus some of those, along with uncledavid, Evelin en Biep Durieux, Klaus Matteus among others.  All errors, of course, are my own."
+	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those, along with uncledavid, Evelin en Biep Durieux, Klaus Matteus and Andrew Schultz among others.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, say [bold type]ABOUT[roman type]."
+
+
+[score]
+
+Carry out requesting the score:
+	say "The score is this: you're being hunted, and there's not much good that will come out of small measures and half-successes.  In the end, they will win or you'll be free.";
+	stop.
+	
 
 
 [help]
@@ -1370,6 +1387,35 @@ Carry out waiting for subway:
 		
 Report waiting for subway:
 	say "The Capsule has arrived.[run paragraph on][if the watch is worn by the player]  The time is [time of day].[end if]"
+
+
+[sleeping]
+Instead of sleeping:
+	if the player is out of doors:
+		now instantiate is true;
+		say "Sleeping outdoors tends to result in a vagrancy arrest.  You think better of it." instead;
+	otherwise:
+		if the location is the bedroom:
+			say "You're far too keyed up to sleep." instead;
+		otherwise:
+			say "There's nowhere to sleep." instead.
+	
+
+[waving]
+Before waving hands:
+	if the player is surveilled:
+		now instantiate is true;
+		say "You start to wave, then realize you would be drawing attention to yourself and quickly stifle the impulse." instead;
+	otherwise:
+		continue the action.
+
+[jumping]
+Before jumping:
+	if the player is surveilled:
+		now instantiate is true;
+		say "You look at the nearby surveillance notice and decide not to do anything unusual." instead;
+	otherwise:
+		continue the action.
 
 [unlocking] 
 [We have to re-implement this b/c we override it in order to let 'open x with y' work]
@@ -1783,10 +1829,13 @@ Check smashing the observation window with something:
 	
 Check smashing something with something:
 	if the noun is the vestibule door lock:
-		unless the second noun is the fire axe, say "Attacking [the noun] with that isn't productive." instead;
+		unless the second noun is the fire axe:
+			now instantiate is true;
+			say "Attacking [the noun] with that isn't productive." instead;
 		continue the action;		
 	otherwise:
-		say "Violence isn't the answer to this one." instead.
+		now instantiate is true;
+		say "You don't want the police after you, so you desist." instead.
 	
 Carry out smashing the vestibule door lock with something:
 	say "You heft the axe and set to.  The lock gives way before your furious assault!";
@@ -2232,9 +2281,11 @@ Instead of pushing a commuter:
 	say "You try to shove the commuter as they go by, but their experience at avoiding crowds allows them to slip past you without stopping."
 	
 Instead of attacking a commuter for the first time:
+	now instantiate is true;
 	say "You probably shouldn't do anything to draw attention from the police."
 	
 Instead of attacking a commuter for the second time:
+	now instantiate is true;
 	say "Really, attacking people isn't going to help and is just going to get you in trouble."
 	
 Instead of attacking a commuter for the third time:
@@ -2246,8 +2297,36 @@ Understand "woman" as a commuter.
 Understand "person" as a commuter.
 Understand "people" as a commuter.
 
+
+[staff members]
+A staff member is a kind of person.  A staff member is always scenery.  The description of a staff member is "A [one of]resident[or]attending[or]nurse[or]medical student[or]hospital administrator[purely at random] [one of]with some case files[or]fiddling with a tablet[or]talking on a phone[or]reading a note[or]looking at a chart[purely at random] [one of]hurries[or]walks swiftly[or]runs[or]slips[purely at random] past you."
+
+Report examining a staff member:
+	stop.
+	
+Instead of touching a staff member:
+	say "You reach for the staff member's arm but they're past you before you can actually touch them and are gone."
+	
+Instead of speech when the noun is a commuter:
+	say "The staff member ignores you, intent on their business."
+	
+Instead of pushing a staff member:
+	now instantiate is true;
+	say "You desist, unwilling to draw attention to yourself from security."
+	
+Instead of attacking a staff member:
+	now instantiate is true;
+	say "You desist, unwilling to draw attention to yourself from security (or worse, the police)."
+
+Understand "staff" as a staff member.
+
+
 [policemen]
 A policeman is a kind of man.  The description of a policeman is "A typical example of the Metro police force, wearing patrol gear including light body armor, crowded equipment belt and what look like actually comfortable boots."
+
+Instead of attacking a policeman:
+	now instantiate is true;
+	say "You're determined to get out of this mess, and that's definitely not going to happen if you do that.  You smother the impulse."
 
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
 Roberto Velez is a man in the Proletariat Bar.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
@@ -2858,7 +2937,7 @@ After going down from Green Residential Station:
 	continue the action.
 
 
-Green Residential Station is above Green Residential Station Door.  The description of Green Residential Station is "This is a utilitarian (read: boring) facility intended mostly to keep the rain out of the Transit System.  A stairway leads down to the Transit platform and an exit leads east to the street."
+Green Residential Station is above Green Residential Station Door.  The description of Green Residential Station is "This is a utilitarian shelter intended mostly to keep the rain out of the Transit System.  A stairway leads down to the autodoor leading to the Transit platform and an exit leads east to the street."
 The stairway is unimportant stuff in Green Residential Station. Understand "stairs" as the stairway when the location is Green Residential Station.
 
 Primrose & Cedar is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station entrance is to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east."
@@ -2875,7 +2954,7 @@ The cul-de-sac is unimportant stuff in Green Residential Park. Understand "stree
 
 East Cedar Street is east of Primrose & Cedar.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
 
-The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of extremely boring residential buildings with neatly trimmed lawns."
+The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of residential buildings with neatly trimmed lawns."
 Understand "houses" as residential buildings when the location is East Cedar Street.
 Understand "lawns" as residential buildings when the location is East Cedar Street.
 Understand "lawn" as residential buildings when the location is East Cedar Street.
@@ -3099,7 +3178,7 @@ Check opening the Apartment door:
 
 
 The Entry is south of the Apartment door.  The Entry is blind.  The description is "This is the small entryway to the ground-floor apartment. A pile of mail, most of it unread, nearly covers the side table just inside the apartment door.  The apartment hallway is to the south.  To the west is an office, and to the east is a bathroom."
-There is a side table in the Entry.  The car key is on the side table.  The mail is on the side table.  The mail is scenery.  The description of the mail is "Totally boring."
+There is a side table in the Entry.  The car key is on the side table.  The mail is on the side table.  The mail is scenery.  The description of the mail is "[one of]Pretty much what you'd expect.[or]A stack of someone else's mail you've already thumbed through.[stopping]".
 Instead of taking the mail, say "You're just not interested in someone else's bills and advertisements." instead.
 
 The Home Office is west of The Entry.  The home office is blind.  The description is "This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench."
@@ -3119,7 +3198,7 @@ Check switching on a sink when the location is The Bathroom:
 The home mirror is a mirror in the Bathroom.  The description of the home mirror is "A mid-range but functional mirror mounted over the sink.  It has various illegible smudges around the edge which suggest that its owner uses it to write temporary notes to themself.  One corner has a small piece of graffiti done in black marker."
 The smudges are a part of the home mirror.  The smudges are plural-named. The description of the smudges is "The smudges appear to be the remnants of Magic Marker notes, each now rubbed out - unlike the graffiti in the lower corner."
 
-The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather boring.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it."
+The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather plain.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it."
 
 Making up is an action applying to one thing.
 Understand "make [something]" as making up.
@@ -3174,11 +3253,15 @@ Instead of dropping the drop message:
 
 The fountain is in Green Commercial Plaza Center.  The fountain is scenery.  The description of the fountain is "A fairly dull example of landscape features, no doubt because it was designed or selected by a business association."
 
-The bench is in Green Commercial Plaza Center.  The bench is a supporter. The bench is enterable.  The bench is scenery.  The description of the bench is "A plascrete bench, boring but functional."
+The bench is in Green Commercial Plaza Center.  The bench is a supporter. The bench is enterable.  The bench is scenery.  The description of the bench is "A plascrete bench, functional but rather unyielding.  You suspect comfort was intentionally left out of the design to discourage loitering."
 Report entering the bench:  
 	say "You sit down on the bench." instead.
 Report exiting from the bench:
 	say "You stand up." instead.
+	
+Instead of sleeping when the bench encloses the player:
+	now instantiate is true;
+	say "This bench is far, far, [italic type]far[roman type] too uncomfortable to sleep on." instead.
 
 Green Commercial Plaza South is south of Green Commercial Plaza Center.  The description is "The southern end of the Green Commercial Plaza, which continues to the north.  To the east is Accessorize, a fashion store, and to the west is Garb-oh, a trendy clothing shop.  The south end of the mall is closed off by an elaborate landscaping installation of trees and shrubs, presumably to hide a relatively ugly building behind it."
 There is a trash can in Green Commercial Plaza South.
@@ -3372,8 +3455,12 @@ Hospital Entrance is north of Hospital Driveway and northeast of Government Squa
 The Hospital door is east of the Hospital Entrance and west of the Hospital Lobby.  The Hospital door is an autodoor.  The hospital door is closed.
 
 Hospital Lobby is east of the Hospital door.  The description is "This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading 'TRIAGE'; to the east is the elevator core and to the north is the waiting lounge."
+There is a commuter in the Hospital Lobby.
+There is a staff member in the Hospital Lobby.
+Understand "patient" as a commuter when the location is the hospital lobby.
+Understand "patients" as a commuter when the location is the hospital lobby.
 
-Hospital Lounge is north of Hospital Lobby.  Hospital Lounge is blind. The description is "This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads 'LAB' and the main lobby is to the south."
+Hospital Lounge is north of Hospital Lobby.  Hospital Lounge is blind. The description is "This lounge is full of marginally-comfortable seating and antiquated magazines.  A door to the east reads 'LAB' and the main lobby is to the south.  It is deserted; looking at the decor, you're pretty sure you know why."
 The magazines is unimportant stuff in the Hospital Lounge.
 
 Hospital Lab is east of Hospital Lounge.  The description is "This is an all-purpose pathology laboratory receiving area.  The lab itself is behind a bulletproof glass wall to the east, and a small window allows samples or paperwork to be passed back and forth."
@@ -3382,11 +3469,21 @@ The glass wall is unimportant stuff in the Hospital Lab.
 Understand "wall" and "bulletproof glass" and "glass" as the glass wall when the location is Hospital Lab.
 There is a trash can in the Hospital Lab.
 
-Triage is south of Hospital Lobby and east of the ER door and west of the Emergency Room.  The description is "This is a triage area for the ER to the east.  To the north is the main Hospital lobby, and west lies the automatic doors out to the driveway."
+Triage is south of Hospital Lobby and east of the ER door and west of the Emergency Room.  The description is "This is a triage area for the ER to the east.  To the north is the main Hospital lobby, and west lies the automatic doors out to the driveway.  Patients and staff are moving back and forth through the area."
+There is a commuter in Triage.
+There is a staff member in Triage.
+Understand "patient" as a commuter when the location is Triage.
+Understand "patients" as a commuter when the location is Triage.
 
-The Emergency Room is east of Triage and south of the Hospital Elevators.  The description is "This is a prep and emergency treatment area for the emergency ward to the east, which is locked.  Triage is to the west, and a door leads north."
 
-Hospital Elevators is north of the Emergency Room and east of Hospital Lobby.  The description is "The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east."
+The Emergency Room is east of Triage and south of the Hospital Elevators.  The description is "This is a prep and emergency treatment area for the emergency ward to the east, which is locked.  Triage is to the west, and a door leads north.  The ER is presently unused, and lies empty."
+
+Hospital Elevators is north of the Emergency Room and east of Hospital Lobby.  The description is "The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  Patients and staff move through the area. The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east."
+There is a commuter in Hospital Elevators.
+There is a staff member in Hospital Elevators.
+Understand "patient" as a commuter when the location is Hospital Elevators.
+Understand "patients" as a commuter when the location is Hospital Elevators.
+
 
 Hospital Restroom is a restroom.  Hospital Restroom is east of Hospital Elevators.  Hospital Restroom is blind. The description is "A clean restroom that smells strongly of disinfectant and hand sanitizer.  There is a single sink with a small mirror over it and a single stall."
 There is a trash can in the Hospital Restroom.
@@ -3401,7 +3498,7 @@ Instead of going up in Civil Center Steps:
 	say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
 The security checkpoint is unimportant stuff in Civil Center Steps.
 
-Some people called the civil servants are here.  The civil servants are plural-named.  The description of the civil servants is "A crowd of boring-looking government functionaries."
+Some people called the civil servants are here.  The civil servants are plural-named.  The description of the civil servants is "A crowd of bored-looking government functionaries."
 
 Instead of examining the civil servants:
 	say "They're ignoring you and appear to be concentrating on their errands."
