@@ -404,7 +404,8 @@ At the time when autodoors close:
 		now the door is closed.
 		
 At the time when the message arrives:
-	now the alertMessage of the phone is " A small line of text at the top of the screen reads '10 messages waiting.'";
+	now the alertMessage of the phone is " A small line of text at the top of the screen reads '[messagesLeft] messages waiting.'";
+	now the messagesLeft of the phone is 10;
 	now the messagePointer of the phone is 1;
 	now messagesWaiting is true;
 	the reminder happens in 5 turns from now;
@@ -653,7 +654,7 @@ Instead of setting the watch to something:
 	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
 [phone]
-The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
+The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has a number called the messagesLeft.  The messagesLeft of the phone is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
 
 Check opening the phone:
 	say "It's a sealed unit." instead.
@@ -685,10 +686,13 @@ Carry out reading:
 	if there is no message corresponding to a number of the messagePointer of the phone in the Table of SMS Messages, say "You have no messages." instead;
 	say "Message [messagePointer] reads: [the message corresponding to a number of the messagePointer of the phone in the Table of SMS messages].";
 	increment the messagePointer of the phone;
+	if the messagesLeft of the phone is greater than 0:
+		decrement the messagesLeft of the phone;
 	if messagesWaiting is true:
 		now messagesWaiting is false;
 	if the messagePointer of the phone is greater than 10:
 		now the messagePointer of the phone is 1;
+		now the alertMessage of the phone is "";
 		activate the Table of MitKlein Hints;
 		activate the Table of SMS Hints.
 
@@ -1082,6 +1086,10 @@ One activate button is part of every device.
 
 The refrigerator is a container. The refrigerator is in the Kitchen.  The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit."
 Understand "fridge" as the refrigerator.
+
+Report opening the refrigerator for the first time:
+	Say "You open the refrigerator.[paragraph break]It's empty. The occupants must have emptied it before going on vacation.";
+	stop.
 
 Check inserting into the refrigerator:
 	if the noun is medium or the noun is large:
@@ -2904,7 +2912,6 @@ Chapter 3 - Green Residential
 Section 3 - Map
 
 
-
 GreenResidential is a region.  Front Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.  Green Residential Station is in GreenResidential.
 
 ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. Green Residential Park is in ResidentialOutside.  Side Yard is in ResidentialOutside.  Back Yard is in ResidentialOutside.
@@ -3054,6 +3061,7 @@ Understand "stones" as the flagstones when the location is Front Path.
 Check looking under the flagstones:
 	try pushing the flagstones instead.
 
+Instead of going inside in Front Path, try going east instead.
 
 West of Side Yard is northeast of Front Path.  The description is "A narrow side yard with a high solid fence on the north side and a few straggly decorative plants.  The yard extends east behind the house and west to the front of the house."
 The decorative plants is in the side yard.  The decorative plants is plural-named.  The decorative plants is scenery.  The description is "A few straggly brown and green plants huddling near the base of the fence and the side of the house."
@@ -3067,11 +3075,17 @@ Yardgrass is unimportant stuff in Back Yard.  Yardfence is unimportant stuff in 
 The bathroom window is a backdrop.  The description is "A narrow window of frosted glass, it appears to be securely painted shut."
 The bathroom window is in Back yard.  The bathroom window is in the Bathroom.
 Understand "frosted window" as the bathroom window when the location is Back Yard or the location is the Bathroom.
+Understand "narrow window" as the bathroom window when the location is Back Yard or the location is the Bathroom.
+
+Instead of entering bathroom window, say "It's painted shut."
+Instead of opening bathroom window, say "It's painted shut."
+
 
 The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is hacked]  The lower pane is open."
 
 Understand "clear window" as the bedroom window when the location is Back Yard.
 Understand "large window" as the bedroom window when the location is Back Yard.
+Understand "larger window" as the bedroom window when the location is Back Yard.
 Understand "windows" as the bedroom window when the location is Back Yard or the location is The Bedroom.
 Understand "window" as the bedroom window when the location is Back Yard.
 
@@ -3082,14 +3096,25 @@ The cotter pin is a thing.  The cotter pin is small. The description is "A small
 Rule for printing room description details of the latch: stop.
 
 Instead of removing the cotter pin with the multitool:
-	say "You deftly remove the cotter pin with the multitool.";
-	now the cotter pin is carried by the player;
-	now the latch is hacked;
-	change the west exit of Back Yard to Bedroom;
-	change the east exit of Bedroom to Back yard;
-	rule succeeds.
+	if the cotter pin is in the latch:
+		say "You deftly remove the cotter pin with the multitool.";
+		now the cotter pin is carried by the player;
+		now the latch is hacked;
+		change the west exit of Back Yard to Bedroom;
+		change the east exit of Bedroom to Back yard;
+		rule succeeds;
+	otherwise if the cotter pin is in a container:
+		say "You don't need the multitool for that.";
+		try taking the cotter pin;
+		rule succeeds;
+	otherwise:
+		say "The pin isn't inside anything.";
+		rule fails.
 
 Procedural rule while taking off the cotter pin: ignore the carrying requirements rule.
+
+Instead of inserting the cotter pin into the latch:
+	say "You try for a minute or so, but the pin must have bent - it won't go back into the latch." instead.
 
 Check taking the cotter pin:
 	if the cotter pin is inside the latch:
@@ -3106,11 +3131,16 @@ Check pulling the cotter pin:
 Check taking off the cotter pin:
 	try taking the cotter pin instead.
 
+Instead of going inside in Back Yard:
+	try going west instead.
+
 Before going west in Back Yard:
-	unless the bedroom window is hacked, say "The windows are closed[unless the latch is hacked] and securely locked[end if]." instead.
+	unless the bedroom window is hacked:
+		now instantiate is true;
+		say "The windows are closed[unless the latch is hacked] and securely locked[end if]." instead.
 	
 Before going east in the Bedroom:
-	unless the bedroom window is hacked, say "The windows are closed." instead.
+	unless the bedroom window is hacked, say "The windows are closed." instead;
 
 Check opening the bedroom window:
 	if the bedroom window is hacked:
@@ -3146,11 +3176,9 @@ Instead of going east in Front Lobby:
 Instead of going up in Front Lobby:
 	now instantiate is true;
 	say "You can't open the security gate." instead.
+Instead of going outside in Front Lobby, try going west instead.
 
 The security gate is in the Front Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
-
-[Instead of unlocking the security gate with something:
-	say "You can't open the gate, even with that." instead.]
 
 Check taking the security gate:
 	say "You rattle the bars for a few seconds before giving up." instead.
@@ -3199,6 +3227,8 @@ The home mirror is a mirror in the Bathroom.  The description of the home mirror
 The smudges are a part of the home mirror.  The smudges are plural-named. The description of the smudges is "The smudges appear to be the remnants of Magic Marker notes, each now rubbed out - unlike the graffiti in the lower corner."
 
 The Bedroom is east of the hall and south of the Bathroom.  The bedroom is blind.  The description is "This bedroom is rather plain.  Its owners must not spend much time in it while awake.  It contains a bed - currently unmade - and a bedside table with a lamp on it."
+
+Instead of going outside when the location is the bedroom, try going east instead.
 
 Making up is an action applying to one thing.
 Understand "make [something]" as making up.

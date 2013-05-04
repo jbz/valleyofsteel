@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Skein rootNode="node-0x6e22530" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x6ca9690" />
+  <activeNode nodeId="node-0x6e22530" />
   <item nodeId="node-0x6e22530">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -15,7 +15,7 @@ Welcome to the future.  Every citizen has been scanned, chipped, folded, spindle
 
 Valley of Steel
 A tale of the surveillance society by The Custodian of http://everything2.com
-Release 1 / Serial number 130503 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130504 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Green Residential Park
 Primrose Street ends here in a small circular cul-de-sac.  You&apos;re in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
@@ -52,7 +52,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="699">NO</temporary>
     <children>
       <child nodeId="node-0x6e22580" />
     </children>
@@ -9657,7 +9657,7 @@ Meek and obedient, you follow the leader down well-trodden corridors, down into 
 Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?
 &gt; </commentary>
     <played>YES</played>
-    <changed>YES</changed>
+    <changed>NO</changed>
     <temporary score="467">NO</temporary>
   </item>
 </Skein>
