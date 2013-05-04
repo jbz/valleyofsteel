@@ -210,6 +210,11 @@ Section 3 - 'Every Turn' Rules, Timed Events and Global Rules/Grammar
 Understand "kiss [something]" as touching.
 Understand "pet [something]" as touching.
 Understand "kick [something]" as attacking.
+Understand "talk to [someone]" as a mistake ("To start a conversation, try to ASK [the noun] ABOUT something or TELL [the noun] ABOUT something.").
+Understand "use [something]" as a mistake ("How would you like to use [the noun]?").
+Understand "use [something] on [something]" as a mistake ("How would you like to use [the noun]?").
+Understand "use [something] with [something]" as a mistake ("How would you like to use [the noun]?").
+
 
 [Global rule/action overrides]
 
@@ -218,6 +223,14 @@ The can't unlock what's already unlocked rule is not listed in any rulebook.
 The can't unlock without the correct key rule is not listed in any rulebook.
 The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
+
+
+[global reporting rules]
+Report examining someone:
+	if the noun is the player:
+		say "[if the number of unconcealed things carried by the noun is zero][The noun] are empty-handed.[otherwise][The noun] are carrying [a list of unconcealed things carried by the noun].";
+	otherwise:
+		say "[if the number of unconcealed things carried by the noun is zero][The noun] is empty-handed.[otherwise][The noun] has [a list of unconcealed things carried by the noun]."
 
 
 Rule for deciding whether all includes scenery: it does not. Rule for deciding whether all includes a fixed in place thing while taking: it does not.  Rule for deciding whether all includes a thing enclosed by the player: it does not.
@@ -1299,20 +1312,18 @@ Section 7 - Actions/Activities
 
 [about]
 Understand "about" as getting info.
-
-getting info is an action out of world.
+Getting info is an action out of world.
 
 Carry out getting info:
-	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  For a list of contributors to the game, say [bold type]CREDITS[roman type]."
+	say "[bold type][story title][roman type][paragraph break][story description][paragraph break]'Valley of Steel' is an IF adaptation of a story posted on http://everything2.com.  Both story and IF are authored by The Custodian of Everything2 using Inform 7.  For a list of contributors to the game, use the command CREDITS."
 	
 
 [credits]
 Understand "credits" as getting credits.
-
 Getting credits is an action out of world.
 
 Carry out getting credits:
-	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those, along with uncledavid, Evelin en Biep Durieux, Klaus Matteus and Andrew Schultz among others.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, say [bold type]ABOUT[roman type]."
+	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those, along with uncledavid, Evelin en Biep Durieux, Klaus Matteus and Andrew Schultz among others.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, use the command ABOUT."
 
 
 [score]
@@ -1322,27 +1333,29 @@ Carry out requesting the score:
 	stop.
 	
 
-
 [help]
 Understand "help" as getting help.
-
 Getting help is an action out of world.
 
 Carry out getting help:
 	say "Valley of Steel is an interactive fiction game.  If you're new to intfic, you might wish to read an introductory article or two on the subject, such as 'How to Play a Text Adventure' by Steven Granade on the Brass Lantern website at http://brasslantern.org/beginners/playta1.html.[line break]In general, try using simple one or two-word (or two-phrase, really) commands to interact with objects in the game.  Here are a few simple command shortcuts to get you started.[paragraph break][bold type]L[roman type] - Look. Looks around at the general area.[line break][bold type]X <something>[roman type] - eXamine <something>.  Describes a specific object in more detail.[line break][bold type]N/S/E/W[roman type] - Move North, South, East or West, if possible.  Interim directions also work, e.g. NE or SW.[line break][bold type]TAKE <something>[roman type][line break][bold type]WEAR <something>[roman type][line break][bold type]DROP <something>[roman type][line break][bold type]OPEN <something>[roman type][line break][bold type]PUT <something> IN <something>[roman type] - attempts to insert the first object into the second (e.g. 'PUT WALLET IN BAG'.)[line break][bold type]Z[roman type] - wait a turn.[line break][bold type]G[roman type] - aGain: repeats the last command.[paragraph break]You can also SAVE and RESTORE the game, or get HINTS (if you're desperate!) "
 
 
-[general understand rules]
-Understand "talk to [someone]" as a mistake ("To start a conversation, try to ASK [the noun] ABOUT something or TELL [the noun] ABOUT something.").
-Understand "use [something]" as a mistake ("How would you like to use [the noun]?").
-Understand "use [something] on [something]" as a mistake ("How would you like to use [the noun]?").
-Understand "use [something] with [something]" as a mistake ("How would you like to use [the noun]?").
+[answering]
+Understand the command "answer" as something new.
+Answering is an action applying to one touchable thing.
+Understand "answer [something]" as answering.
+Understand "answer [someone]" as answering.
 
-Report examining someone:
-	if the noun is the player:
-		say "[if the number of unconcealed things carried by the noun is zero][The noun] are empty-handed.[otherwise][The noun] are carrying [a list of unconcealed things carried by the noun].";
-	otherwise:
-		say "[if the number of unconcealed things carried by the noun is zero][The noun] is empty-handed.[otherwise][The noun] has [a list of unconcealed things carried by the noun]."
+Instead of answering:
+	say "No-one was talking to you."
+
+Instead of answering the phone:
+	say "It didn't ring."
+	
+Instead of answering a person:
+	say "Try 'TELL [noun]' or 'ASK [noun]' instead."
+
 
 [waiting until]
 Hanging around until is an action applying to one time.
@@ -1461,6 +1474,9 @@ Check removing it with:
 	otherwise if the second noun is the multitool:
 		if the noun is the cotter pin:
 			unless the cotter pin is inside the latch, say "That's not attached to anything." instead;
+		if the noun is a Public Surveillance Notice:
+			say "You are about to start working on the surveillance notice when you have the sudden feeling that you're being, well…watched.  Spooked, you desist.";
+			stop;
 		continue the action.
 	
 Carry out removing it with:
@@ -1903,17 +1919,6 @@ Rule for cooking:
 		say "The microwave appears to be dead."		
 
 
-[drinking coffee]
-[Check drinking the coffee:
-	if the coffee is cold, say "Ugh.  Cold coffee is undrinkable." instead;
-	otherwise continue the action.
-	
-Carry out drinking the coffee:
-	remove the coffee from play.
-
-Report drinking the coffee:
-	say "You drain the paper gourd of life-giving caffeine suspension, tossing away the empty cup.  Ahhh."
-]
 
 [kleinhacking activity]
 KleinHacking something is an activity.
@@ -1975,13 +1980,20 @@ When evening begins:
 
 Night is a recurring scene.  Night begins when the time of day is 8:00 PM.  Night ends when the time of day is 5:00 AM.
 
+When night begins:
+	if the player is in ResidentialOutside and the MitKlein is unhacked:
+		say "It's 8:00 PM.  The curfew is now in effect for this neighborhood."
+
 Every turn during Night:
 	if the player is in ResidentialOutside and the MitKlein is unhacked:
-		if the player is clear and a random chance of 1 in 4 succeeds:
-			say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
-			now the player is suspect;
-			now the incriminatingAct is "allowing your active MitKlein to be scanned";
-			the player incriminates in 3 turns from now.	
+		if the player is clear:
+			if a random chance of 1 in 5 succeeds:
+				say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
+				now the player is suspect;
+				now the incriminatingAct is "allowing your active MitKlein to be scanned";
+				the player incriminates in 3 turns from now;
+			otherwise:
+				say "The curfew is still in effect.  You'd better get inside before you're scanned."
 
 
 Morning is a recurring scene.  Morning begins when the time of day is 5:00 AM.  Morning ends when the time of day is 12:00 PM.
