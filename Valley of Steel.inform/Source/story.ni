@@ -37,9 +37,11 @@ When play begins:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
 	snoozing starts at 2:00 AM;
+	curfew message happens at 7:55 PM;
 	activate the Table of General Hints;
 	now instantiate is false;
 	now messagesWaiting is false;
+	now messagesLeft is 0;
 	the message arrives in 3 turns from now;
 	say "A rare moment of rest.  Your mission to steal specifications of the MitKlein Encapsulation - the ID transponder embedded in every citizen's head, even yours - was successful, and you transmitted your report to Central early this morning.   You expect a new assignment soon, even if it is only instructions to fall back into a cover identity, as you have been on the front lines of the underground struggle against Homeland Security nearly from the start.  Giving up your birth identity and life, moving instead into the flickery half-existence of an underground operative, you've sabotaged, stolen, publicized, verified and fought for years now.  Hopefully, this last mission means that a strategy to counter the government's ubiquitous tagging of citizens is being worked out at levels above your own head.[paragraph break]For now, you have found yourself a small quiet park in a quiet corner of the City.[paragraph break]Welcome to the future.  Every citizen has been scanned, chipped, folded, spindled and mutilated - and it's enough to make you scream."
 
@@ -184,6 +186,8 @@ A room can be breached or unbreached.  A room is usually unbreached.
 
 the newsIndex is a number that varies.
 the tempIndex is a number that varies.
+
+messagesLeft is a number that varies.
 
 the Bombs Thrown is a number that varies.
 the Contents is a kind of value.
@@ -417,12 +421,11 @@ At the time when autodoors close:
 		now the door is closed.
 		
 At the time when the message arrives:
-	now the alertMessage of the phone is " A small line of text at the top of the screen reads '[messagesLeft] messages waiting.'";
-	now the messagesLeft of the phone is 10;
+	now messagesLeft is 10;
 	now the messagePointer of the phone is 1;
 	now messagesWaiting is true;
 	the reminder happens in 5 turns from now;
-	if the location is the location of the phone, say "There is a quiet tone from your phone[if the phone is enclosed by the player] and you feel a short vibration[end if], indicating that an SMS message has arrived."
+	if the location is the location of the phone, say "There is a quiet tone from your phone[if the phone is enclosed by the player] and you feel a short vibration[end if], indicating that an SMS message has arrived.";
 
 At the time when the reminder happens:
 	unless messagesWaiting is false:
@@ -448,6 +451,10 @@ At the time when the phonegrab happens:
 		remove the phone from play;
 	otherwise:
 		remove the phone from play.
+
+At the time when curfew message happens:
+	if the mitklein is unhacked:
+		say "The Green Residential curfew will begin in five minutes.  You'll need to be inside to avoid being arrested."
 
 
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
@@ -596,12 +603,22 @@ The backpack is a player's holdall. The backpack is wearable. The player is wear
 Understand "pack" as the backpack.
 Understand "bag" as the backpack.
 
-The newspaper is a thing.  The newspaper is small.  
-Instead of examining the newspaper:
+The newspaper is a thing.  The newspaper is small.  The description is "The local newspaper, printed on plasfax.  Some retro individuals still prefer to hold their news in their hands."
+
+After examining the newspaper for the first time:
+	say "[bracket]If you want to read the newspaper (as opposed to just looking at it) try READ NEWSPAPER.[close bracket][line break]"
+	
+Instead of reading the newspaper:
 	say "Today[apostrophe]s front-page headline is: [bold type]Homeland Security convention to be held this week at the Reserve Bank Spacescraper[roman type].   'The best and the brightest of the various Homeland Security agencies will meet in the Reserve Bank Atrium this week to receive presentations on new security initiatives and to discuss the state of the art in security technology.'[paragraph break]The next headline reads: [bold type][headline in row newsIndex of the Table of Stories][roman type][line break]The story itself continues: '[newsstory in row newsIndex of the Table of Stories]' At the bottom, a small postscript reads [bold type]Would you like to know more?[roman type]  [url in row newsIndex of the Table of Stories]  [paragraph break]The thought of all those Homeland Security drones in one place makes you grind your teeth.  Then, however, a vision of all those heavily-secured workers with dead MitKlein bottles replaces it, and you have some difficulty wiping the resulting smile from your face.  If only..."
 Understand "paper" as the newspaper.
 
-The pamphlet is small. The description of the pamphlet is "The pamphlet is from the Department of Homeland Security.  It seems that they believe the occupants of Apartment 1 are due to have a child any day now.  As such, the pamphlet is meant to inform them of their duty as a citizen to ensure their child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.  The pamphlet cheerily explains that without such a chip, your child will be severely disadvantaged and unable to use basic modern services."
+The pamphlet is small. The description of the pamphlet is "A pamphlet is from the Department of Homeland Security."
+
+After examining the pamphlet for the first time:
+	say "[bracket]If you want to read the pamphlet (as opposed to just looking at it) try READ PAMPHLET.[close bracket][line break]"
+	
+Instead of reading the pamphlet:
+	say "It seems that the DHS believe the occupants of Apartment 1 are due to have a child any day now.  As such, the pamphlet is meant to inform them of their duty as a citizen to ensure their child has his or her Mitsui-Klein encapsulation properly implanted by their birth hospital.  Along with two or three not-so-veiled hints as to the penalties for avoiding implantation, the pamplet also contains a very familiar boilerplate description of the MitKlein Bottle which you and all your fellow citizens carry within your skulls.  Inserted at birth, the MitKlein becomes embedded in the bone structure of the skull as the fontanelles close and harden.  It contains just enough electronics to act as a transponder which will identify its owner, securely, to any nearby chip scanner over a range of perhaps five meters or less.  The pamphlet cheerily explains that without such a chip, your child will be severely disadvantaged and unable to use basic modern services."
 
 After examining the pamphlet:
 	activate the Table of MitKlein hints.
@@ -667,7 +684,17 @@ Instead of setting the watch to something:
 	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
 [phone]
-The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has a number called the messagesLeft.  The messagesLeft of the phone is 0. The phone has some text called alertMessage.  The alertMessage is "". The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its calling functionality to make it more difficult to track, the lock screen is still active and reads '[time of day]'.[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
+The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its voice calling functionality to make it less distracting, the lock screen is still active and tells you it is [time of day].[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
+
+
+To say alertMessage:
+	if messagesLeft is greater than 0:
+		say " A small line of text at the top of the screen reads '[messagesLeft] new message[if messagesLeft is greater than 1]s[end if] waiting.'[no line break]";
+	otherwise:
+		say "[no line break]".
+
+After examining the phone when messagesWaiting is true:
+	say "[first time][bracket]You can read your messages with READ SMS or READ MESSAGES. Issue the same command again to read subsequent messages.[close bracket][line break][only]".
 
 Check opening the phone:
 	say "It's a sealed unit." instead.
@@ -687,25 +714,27 @@ Understand the command "read" as something new.
 Reading is an action applying to one visible thing.    Reading is acting instant.
 Understand "read [something]" as reading.
 Understand "sms" as the phone.
-Understand "messages" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player.
+Understand "messages" as the phone.
 Understand "message" as the phone when the messagePointer of the phone is not 0 and the phone is carried by the player and the drop message is not carried by the player.
 
 Check reading:
 	unless the noun is the phone, try examining the noun instead;
-	unless the phone is carried by the player, try taking the phone;
-	unless the phone is carried by the player, say "You don't have your phone." instead.
+	if the player is near the phone:
+		unless the phone is carried by the player:
+			say "(taking the phone)";
+			try taking the phone;
+	[unless the phone is carried by the player, say "You don't have your phone." instead.]
 
 Carry out reading:
-	if there is no message corresponding to a number of the messagePointer of the phone in the Table of SMS Messages, say "You have no messages." instead;
-	say "Message [messagePointer] reads: [the message corresponding to a number of the messagePointer of the phone in the Table of SMS messages].";
+	if there is no message corresponding to a number of the messagePointer of the phone in the Table of SMS Messages, say "You have no SMS messages." instead;
+	say "Message [messagePointer] reads: [the message corresponding to a number of the messagePointer of the phone in the Table of SMS messages][line break]";
 	increment the messagePointer of the phone;
-	if the messagesLeft of the phone is greater than 0:
-		decrement the messagesLeft of the phone;
-	if messagesWaiting is true:
-		now messagesWaiting is false;
+	if the messagesLeft is greater than 0:
+		decrement messagesLeft;
 	if the messagePointer of the phone is greater than 10:
 		now the messagePointer of the phone is 1;
-		now the alertMessage of the phone is "";
+		if messagesWaiting is true:
+			now messagesWaiting is false;
 		activate the Table of MitKlein Hints;
 		activate the Table of SMS Hints.
 
