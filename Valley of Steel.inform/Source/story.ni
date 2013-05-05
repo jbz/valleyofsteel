@@ -1143,7 +1143,9 @@ The microwave oven is a device.  The microwave oven is in the Kitchen.  The micr
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
-The side panel is part of the microwave oven.  The side panel is a container.  The side panel is openable and closed. The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for perhaps a couple of small components inside it.  It's possible the circuit board controlling the magnetron in this microwave was designed for something else.[otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
+The side panel is part of the microwave oven.  The side panel is a container.  The side panel is openable and closed. The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for a small component inside it. [otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
+
+The safety limiter is in the side panel.  The safety limiter is tiny. The safety limiter can be working or fried.  The safety limiter is working.  The safety limiter has some text called the fryDescription.  The fryDescription of the safety limiter is "Brief sparks, like a small St. Elmo's fire, race around the various components of the safety limiter and a crackling noise comes from it before the microwave stops."  The description of the safety limiter is "A small circuit board consisting of two connected chips which plugs into the microwave oven side panel.  One chip looks a bit like a standard receive chip, and the other a standard memory chip - although these are custom versions and can't be used as such. [if working]Examining its connectors and their labels, you deduce that when installed, this board monitors the sensors and radio frequencies inside the microwave oven and prevents it from operating if things like electronics are inside, it's empty, or the door is open.[otherwise if fried]In fact, these won't be usable ever again - the limiter is scorched and soot-blackened and looks thoroughly dead.[end if]"
 
 Understand "warning" as the side panel when the location is the kitchen.
 Understand "label" as the side panel when the location is the kitchen.
@@ -1188,15 +1190,20 @@ Check inserting into the side panel:
 	unless the noun is tiny, say "That won't fit!" instead;
 	if the noun is a broadcast chip, say "There aren't enough connections on the broadcast chip to fill the space in the board." instead;
 	if the noun is a memory chip, say "There aren't enough connections on the memory chip to fill the space in the board." instead;
-	unless the noun is a Klein Blaster, say "The space has connections for electronics.  [The noun] doesn't have the proper connections." instead.
+	if the noun is the safety limiter:
+		continue the action;
+	if the noun is a Klein Blaster:
+		continue the action;
+	otherwise:
+		say "The space has connections for electronics.  [The noun] doesn't have the proper connections." instead.
 
 Before searching the side panel:
 	say "The side panel shows one side of the oven's magnetron as well as part of a circuit board with several connections on it.[if the side panel is hacked]  A Klein Blaster has been wired into place here.";
 	continue the action.
 
 After inserting into the side panel:
-	say "You insert the Klein Blaster into the side panel and wire it to the magnetron by rewiring the circuit board slightly.";
-	if the side panel is hacked, say "As you slide the component in, a small LED labelled 'TRNSMT RDY' lights up on the board!"
+	if the side panel is hacked, say "As you slide the component in, a small LED labelled 'TRNSMT RDY' lights up on the main board!";
+	continue the action.
 
 Instead of closing the side panel:
 	if the noun is closed:
@@ -1206,16 +1213,25 @@ Instead of closing the side panel:
 
 Instead of switching on the microwave oven:
 	if the side panel is fried, say "The oven appears to be dead." instead;
-	if the cook box is open:
-		unless the side panel is hacked:
+	if the microwave is limited:
+		if the cook box is open:
 			say "The oven won't work unless it is closed." instead;
+		if the cook box is empty:
+			say "There's nothing in the microwave.  Sensors prevent it from running empty; it's dangerous." instead;
+	if the side panel is hacked:
+		if the cook box is closed:
+			say "The microwave comes on, its lights lit brightly, and begins to shake for a few seconds before the level of radio energy in the cook box, confined by the closed door, trips emergency circuits and it shuts off again." instead;
 		otherwise:
 			carry out the KleinHacking activity with the MitKlein instead;
-	unless the cook box is empty:
-		carry out the cooking activity;
-	otherwise:
-		say "There's nothing in the microwave.  Sensors prevent it from running empty; it's dangerous." instead.
-		
+	if the cook box is open:
+		say "You feel a strange warmth on your face as the microwave starts up.";
+	carry out the cooking activity.
+
+
+To decide if the microwave is limited:
+	unless the safety limiter is inside the side panel, decide no;
+	unless the safety limiter is working, decide no;
+	decide yes.
 
 
 [Tissue Generator] [SEE Docs 4.14/Ex. 55!]
@@ -1921,7 +1937,7 @@ Before microwaving:
 	
 Carry out microwaving:
 	unless the noun is in the cook box:
-		try opening the cook box;
+		try silently opening the cook box;
 		try inserting the noun into the cook box;
 	unless the cook box is closed:
 		try silently closing the cook box;
@@ -1936,15 +1952,18 @@ Rule for cooking:
 		if the laptop is unhacked:
 			say "You are about to microwave the phone when you remember that you'll need to somehow get the attack program off it first.";
 			stop;
+	if the microwave is limited:
+		repeat with sizzler running through the list of objects inside the cook box:
+			if sizzler provides the property fryDescription:
+				say "The microwave blinks on and then immediately blinks off as the safety circuits detect electronic components inside the microwave.";
+				stop;
 	unless the side panel is fried:
 		say "A light comes on in the microwave and it begins to hum.[if the side panel is hacked]The oven makes a sharp high-pitched electronic noise as it operates, but the shielding in the door prevents anything from happening outside.";
 		repeat with sizzler running through the list of objects inside the cook box:
 			if sizzler provides the property fryDescription:
 				if sizzler is working, say "[fryDescription of sizzler][line break]";
+			if sizzler provides the property fried:
 				now sizzler is fried;
-			[else if sizzler provides the property cookDescription:
-				say "[cookDescription of sizzler][line break]";
-				now sizzler is hot;]
 			otherwise: 
 				do nothing;
 		say  "A few moments later there is a loud [bold type]BING![roman type] and the microwave stops.";	

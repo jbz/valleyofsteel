@@ -38,7 +38,7 @@ Welcome to the future.  Every citizen has been scanned, chipped, folded, spindle
 
 Valley of Steel
 A tale of the surveillance society by The Custodian of http://everything2.com
-Release 1 / Serial number 130503 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130505 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Green Residential Park
 Primrose Street ends here in a small circular cul-de-sac.  You&apos;re in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
@@ -52,7 +52,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="583">NO</temporary>
+    <temporary score="428">NO</temporary>
     <children>
       <child nodeId="node-0x6a66f0" />
     </children>
@@ -67,7 +67,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6a6740" />
     </children>
@@ -98,7 +98,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b69d90" />
     </children>
@@ -129,7 +129,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b69de0" />
     </children>
@@ -164,7 +164,7 @@ There is a quiet tone from your phone and you feel a short vibration, indicating
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6acb900" />
     </children>
@@ -201,7 +201,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6acb950" />
     </children>
@@ -218,7 +218,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a020" />
     </children>
@@ -233,7 +233,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a070" />
     </children>
@@ -270,7 +270,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a0c0" />
     </children>
@@ -301,7 +301,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a110" />
     </children>
@@ -332,22 +332,22 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a160" />
     </children>
   </item>
   <item nodeId="node-0x6b6a160">
     <command xml:space="preserve">l bedroom window</command>
-    <result xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.
+    <result xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.  Having the latch on the outside probably violates some building code for somewhere.
 
 &gt;</result>
-    <commentary xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.
+    <commentary xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.  Having the latch on the outside probably violates some building code for somewhere.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b080" />
     </children>
@@ -366,7 +366,7 @@ In the latch is a cotter pin.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6acb9c0" />
     </children>
@@ -385,7 +385,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b030" />
     </children>
@@ -400,7 +400,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4afe0" />
     </children>
@@ -415,157 +415,157 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4af70" />
     </children>
   </item>
   <item nodeId="node-0x6e4af70">
     <command xml:space="preserve">read SMS</command>
-    <result xml:space="preserve">Message 1 reads: REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. &lt;more&gt;.
+    <result xml:space="preserve">Message 1 reads: REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. &lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 1 reads: REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. &lt;more&gt;.
+    <commentary xml:space="preserve">Message 1 reads: REPORT RECEIVED.  MISSION SUCCESSFUL.  ATTACK PROGRAM CREATED USING INFORMATION IN REPORT. &lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4af00" />
     </children>
   </item>
   <item nodeId="node-0x6e4af00">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 2 reads: DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.&lt;more&gt;.
+    <result xml:space="preserve">Message 2 reads: DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 2 reads: DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.&lt;more&gt;.
+    <commentary xml:space="preserve">Message 2 reads: DANGER DANGER DANGER:  OPERATIVE COMPROMISED DURING OPERATION.  YOUR MITKLEIN CODE READ BY HOMELAND SECURITY.  YOUR ID RECORDS DELETED BUT MITKLEIN CODE ALONE ENOUGH TO ID YOU AS TARGET.&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ae90" />
     </children>
   </item>
   <item nodeId="node-0x6e4ae90">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 3 reads: NEW INSTRUCTIONS FOLLOW: &lt;more&gt;.
+    <result xml:space="preserve">Message 3 reads: NEW INSTRUCTIONS FOLLOW: &lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 3 reads: NEW INSTRUCTIONS FOLLOW: &lt;more&gt;.
+    <commentary xml:space="preserve">Message 3 reads: NEW INSTRUCTIONS FOLLOW: &lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ae20" />
     </children>
   </item>
   <item nodeId="node-0x6e4ae20">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 4 reads: - YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED&lt;more&gt;.
+    <result xml:space="preserve">Message 4 reads: - YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 4 reads: - YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED&lt;more&gt;.
+    <commentary xml:space="preserve">Message 4 reads: - YOU MUST FIND A WAY TO DISABLE YOUR MITKLEIN USING ATTACK PROGRAM WHICH WILL BE DELIVERED&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b130" />
     </children>
   </item>
   <item nodeId="node-0x6e4b130">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 5 reads: - YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET&lt;more&gt;.
+    <result xml:space="preserve">Message 5 reads: - YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 5 reads: - YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET&lt;more&gt;.
+    <commentary xml:space="preserve">Message 5 reads: - YOU MUST NOT BE IN SURVEILLED AREA DURING CURFEW WITH ACTIVE MITKLEIN OR SECURITY SWEEPS WILL IDENTIFY YOU AS TARGET&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b0d0" />
     </children>
   </item>
   <item nodeId="node-0x6e4b0d0">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 6 reads: - YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED&lt;more&gt;.
+    <result xml:space="preserve">Message 6 reads: - YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 6 reads: - YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED&lt;more&gt;.
+    <commentary xml:space="preserve">Message 6 reads: - YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ac10" />
     </children>
   </item>
   <item nodeId="node-0x6e4ac10">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 7 reads: - ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.&lt;more&gt;.
+    <result xml:space="preserve">Message 7 reads: - ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 7 reads: - ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.&lt;more&gt;.
+    <commentary xml:space="preserve">Message 7 reads: - ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aba0" />
     </children>
   </item>
   <item nodeId="node-0x6e4aba0">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 8 reads: - ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY&lt;more&gt;.
+    <result xml:space="preserve">Message 8 reads: - ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 8 reads: - ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY&lt;more&gt;.
+    <commentary xml:space="preserve">Message 8 reads: - ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ab30" />
     </children>
   </item>
   <item nodeId="node-0x6e4ab30">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;.
+    <result xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;.
+    <commentary xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aac0" />
     </children>
   </item>
   <item nodeId="node-0x6e4aac0">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 10 reads: GOOD LUCK. MESSAGE ENDS..
+    <result xml:space="preserve">Message 10 reads: GOOD LUCK. MESSAGE ENDS.
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 10 reads: GOOD LUCK. MESSAGE ENDS..
+    <commentary xml:space="preserve">Message 10 reads: GOOD LUCK. MESSAGE ENDS.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aa50" />
     </children>
@@ -580,7 +580,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a9e0" />
     </children>
@@ -602,8 +602,8 @@ You can go north, east to Back Yard, and west from here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a970" />
     </children>
@@ -626,7 +626,7 @@ You can go north, east to Bedroom, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a900" />
     </children>
@@ -653,7 +653,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a890" />
     </children>
@@ -668,7 +668,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a820" />
     </children>
@@ -695,7 +695,7 @@ You can go south and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a7b0" />
     </children>
@@ -716,7 +716,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ad50" />
     </children>
@@ -731,7 +731,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aca0" />
     </children>
@@ -746,7 +746,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4acf0" />
     </children>
@@ -767,7 +767,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a500" />
     </children>
@@ -782,7 +782,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a490" />
     </children>
@@ -797,7 +797,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a420" />
     </children>
@@ -812,7 +812,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a3b0" />
     </children>
@@ -829,7 +829,7 @@ You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a340" />
     </children>
@@ -844,7 +844,7 @@ You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a2d0" />
     </children>
@@ -861,7 +861,7 @@ solder: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a260" />
     </children>
@@ -888,7 +888,7 @@ You can go north to Home Office and east to Hall from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a1f0" />
     </children>
@@ -897,13 +897,17 @@ You can go north to Home Office and east to Hall from here.
     <command xml:space="preserve">put thermos in pack</command>
     <result xml:space="preserve">You put the thermos into the backpack.
 
+The Green Residential curfew will begin in five minutes.  You&apos;ll need to be inside to avoid being arrested.
+
 &gt;</result>
     <commentary xml:space="preserve">You put the thermos into the backpack.
+
+The Green Residential curfew will begin in five minutes.  You&apos;ll need to be inside to avoid being arrested.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a180" />
     </children>
@@ -911,32 +915,45 @@ You can go north to Home Office and east to Hall from here.
   <item nodeId="node-0x6e4a180">
     <command xml:space="preserve">open side panel with multitool</command>
     <result xml:space="preserve">You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+ Opening the side panel reveals the safety limiter!
 
 &gt;</result>
     <commentary xml:space="preserve">You pry open the side panel with the pliers in your multitool, ignoring the sound of breaking plastic.
+ Opening the side panel reveals the safety limiter!
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
+    <children>
+      <child nodeId="node-0x1a59fd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1a59fd0">
+    <command xml:space="preserve">take limiter</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve">Taken.
+
+&gt;</commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a110" />
     </children>
   </item>
   <item nodeId="node-0x6e4a110">
     <command xml:space="preserve">microwave phone</command>
-    <result xml:space="preserve">You open the oven.
-
-You put the phone into the oven.
+    <result xml:space="preserve">You put the phone into the oven.
 
 A light comes on in the microwave and it begins to hum.
 Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final ZZT noise.
 A few moments later there is a loud BING! and the microwave stops.
 
 &gt;</result>
-    <commentary xml:space="preserve">You open the oven.
-
-You put the phone into the oven.
+    <commentary xml:space="preserve">You put the phone into the oven.
 
 A light comes on in the microwave and it begins to hum.
 Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final ZZT noise.
@@ -945,7 +962,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a0a0" />
     </children>
@@ -960,7 +977,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a030" />
     </children>
@@ -975,24 +992,26 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49fc0" />
     </children>
   </item>
   <item nodeId="node-0x6e49fc0">
     <command xml:space="preserve">put klein blaster in side panel</command>
-    <result xml:space="preserve">You insert the Klein Blaster into the side panel and wire it to the magnetron by rewiring the circuit board slightly.
-As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the board!
+    <result xml:space="preserve">As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the main board!
+
+You put the Klein Blaster into the side panel.
 
 &gt;</result>
-    <commentary xml:space="preserve">You insert the Klein Blaster into the side panel and wire it to the magnetron by rewiring the circuit board slightly.
-As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the board!
+    <commentary xml:space="preserve">As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the main board!
+
+You put the Klein Blaster into the side panel.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49f50" />
     </children>
@@ -1007,7 +1026,7 @@ As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; light
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49ee0" />
     </children>
@@ -1022,7 +1041,7 @@ As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; light
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49e70" />
     </children>
@@ -1049,7 +1068,7 @@ You can go south to the Kitchen and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49e00" />
     </children>
@@ -1076,7 +1095,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a550" />
     </children>
@@ -1107,7 +1126,7 @@ You can go south through the Apartment door to Entry and west through the House 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a5c0" />
     </children>
@@ -1148,7 +1167,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a630" />
     </children>
@@ -1179,7 +1198,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a6a0" />
     </children>
@@ -1210,7 +1229,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a710" />
     </children>
@@ -1236,23 +1255,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
-    <children>
-      <child nodeId="node-0x6e49d90" />
-    </children>
-  </item>
-  <item nodeId="node-0x6e49d90">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?
-
-&gt;</result>
-    <commentary xml:space="preserve">I beg your pardon?
-
-&gt;</commentary>
-    <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49d20" />
     </children>
@@ -1295,7 +1299,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49cb0" />
     </children>
@@ -1316,7 +1320,7 @@ The capsule doors slide shut.  The humming noice increases in volume, and the ca
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="403">NO</temporary>
     <children>
       <child nodeId="node-0x6e49c40" />
     </children>
@@ -1351,7 +1355,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="402">NO</temporary>
     <children>
       <child nodeId="node-0x6e49bd0" />
     </children>
