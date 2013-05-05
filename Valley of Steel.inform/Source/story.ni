@@ -1110,7 +1110,7 @@ Check inserting into the refrigerator:
 
 
 [microwave]
-The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'ACTIVATE') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box][end if].[if the side panel is open]  The service panel is bent open on the side.[end if]"
+The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box][end if].[if the side panel is open]  The service panel is bent open on the side.[end if]"
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
@@ -1123,6 +1123,10 @@ Understand "circuit" as the side panel when the location is the kitchen.
 Understand "circuit board" as the side panel when the location is the kitchen.
 Understand "board" as the side panel when the location is the kitchen.
 Understand "door" as the cook box when the location is the kitchen.
+Understand "cook button" as the microwave oven's activate button when the location is the kitchen.
+Understand "cook" as the microwave oven's activate button when the location is the kitchen.
+
+Does the player mean pushing the microwave oven's activate button: it is unlikely.
 
 Check inserting something (called the subject) into the microwave oven:
 	try inserting the subject into the cook box instead.
@@ -3084,16 +3088,17 @@ The solid fence is unimportant stuff in the Side Yard.  Understand "fence" as th
 North of Back Yard is east of Side Yard.  The description is "An enclosed back yard, this small square of grass is surrounded by a high fence and the east side of the attached home.  A narrow frosted window - likely a bathroom - is visible in the middle of the stretch of wall, and a larger clear window with curtains behind it is visible at the south end."
 Yardgrass is unimportant stuff in Back Yard.  Yardfence is unimportant stuff in Back Yard. Yardwall is unimportant stuff in Back Yard. Understand "grass" as yardgrass when the location is Back Yard.  Understand "fence" as yardfence when the location is Back Yard. Understand "wall" as Yardwall when the location is Back Yard.
 
-The bathroom window is a backdrop.  The description is "A narrow window of frosted glass, it appears to be securely painted shut."
+The bathroom window is a backdrop.  The description is "A very narrow window of frosted glass, it appears to be painted shut."
 The bathroom window is in Back yard.  The bathroom window is in the Bathroom.
 Understand "frosted window" as the bathroom window when the location is Back Yard or the location is the Bathroom.
 Understand "narrow window" as the bathroom window when the location is Back Yard or the location is the Bathroom.
 
-Instead of entering bathroom window, say "It's painted shut."
+Instead of entering bathroom window, say "It's painted shut, and too small for you in any case."
 Instead of opening bathroom window, say "It's painted shut."
+Does the player mean entering the bathroom window: it is very unlikely.
+Does the player mean closing the bathroom window: it is very unlikely.
 
-
-The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is hacked]  The lower pane is open."
+The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is unhacked]  Having the latch on the outside probably violates some building code for somewhere.[end if][if the bedroom window is hacked]  The lower pane is open.[end if]"
 
 Understand "clear window" as the bedroom window when the location is Back Yard.
 Understand "large window" as the bedroom window when the location is Back Yard.
@@ -3147,23 +3152,24 @@ Instead of going inside in Back Yard:
 	try going west instead.
 
 Before going west in Back Yard:
-	unless the bedroom window is hacked:
+	if the latch is unhacked:
 		now instantiate is true;
-		say "The windows are closed[unless the latch is hacked] and securely locked[end if]." instead.
+		say "The bedroom window is closed and securely locked." instead;
+	if the bedroom window is unhacked:
+		try opening the bedroom window.	
 	
 Before going east in the Bedroom:
-	unless the bedroom window is hacked, say "The windows are closed." instead;
+	if the bedroom window is unhacked:
+		try opening the bedroom window.
 
 Check opening the bedroom window:
 	if the bedroom window is hacked:
 		say "It's already open." instead;
 	if the latch is hacked:
-		say "You slide the bedroom window open.";
 		now the bedroom window is hacked;
-		stop;
+		say "You slide the bedroom window open." instead;
 	otherwise:
-		say "It's locked.";
-		stop.
+		say "It's locked." instead.
 		
 Check closing the bedroom window:
 	if the bedroom window is unhacked:
@@ -3171,8 +3177,9 @@ Check closing the bedroom window:
 	otherwise:
 		say "You slide the bedroom window closed.";
 		now the bedroom window is unhacked;
+		rule succeeds;
 		stop.
-
+		
 Check entering the bedroom window:
 	if the location is Back Yard, try going west instead;
 	if the location is the Bedroom, try going east instead.
@@ -3213,7 +3220,7 @@ Check opening the Apartment door:
 	If the location is The Entry:
 		if the Apartment door is unhacked:
 			now the Apartment door is hacked;
-		say "You undo the throw bolts.  Since you have no key, you leave the door unlocked.";
+			say "You undo the throw bolts.  Since you have no key, you leave the door unlocked.";
 		continue the action.
 
 
@@ -3254,6 +3261,8 @@ Check entering the bed:
 	say "You're not sleepy, and the bed isn't comfortable otherwise." instead.
 
 The table lamp is a device on the bedside table.  The table lamp is scenery.  The table lamp is fixed in place. The description is "A generic compact fluorescent lamp, it is screwed to the table, presumably to prevent it falling over.[if table lamp is switched on]  It is presently giving off a wan bluish light."
+
+Instead of burning the table lamp, try switching on the table lamp.
 
 The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much."
 
