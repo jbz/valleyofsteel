@@ -627,7 +627,11 @@ The receive chip is a component.  The receive chip is in the pager.  The receive
 
 The tear gas grenade is in the police flitter. The tear gas grenade is an explosive.  The tear gas grenade is small. The tear gas grenade has a timer 1.  The tear gas grenade can be working or fried.  The tear gas grenade is working.  The description of the tear gas grenade is "A small canister roughly the side of a soda can with a tab on one end.  Stenciled text reads 'M7A4 RIOT - SMOKE/CS'."
 
-The gas mask is on the wall rack.  The gas mask is wearable.  The description of the gas mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing." 
+The gas mask is on the wall rack.  The gas mask is wearable.  The description of the gas mask is "This is an industrial breath mask meant to protect the wearer against fumes from solvents or other dangerous chemicals.  A clear mask covers the entirety of the face, and a filter canister covers the mouth for breathing."
+
+After taking the gas mask for the first time:
+	say "Homeland Security frowns on people wearing gas masks in public places.  You should exercise caution and not be seen wearing it.";
+	continue the action.
 
 There is a blue jacket on the racks.  The blue jacket is a jacket. The description is "A dark blue jacket, very bland cut, with black snap closures and side pockets.  You almost expect to see a name sewn on the front at the breast in gold thread.  It's probably a size too large for you."
 
