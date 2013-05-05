@@ -52,7 +52,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="428">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6a66f0" />
     </children>
@@ -67,7 +67,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6a6740" />
     </children>
@@ -98,7 +98,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b69d90" />
     </children>
@@ -129,7 +129,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b69de0" />
     </children>
@@ -164,7 +164,7 @@ There is a quiet tone from your phone and you feel a short vibration, indicating
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6acb900" />
     </children>
@@ -201,7 +201,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6acb950" />
     </children>
@@ -218,7 +218,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a020" />
     </children>
@@ -233,7 +233,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a070" />
     </children>
@@ -270,7 +270,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a0c0" />
     </children>
@@ -301,7 +301,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a110" />
     </children>
@@ -332,7 +332,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6b6a160" />
     </children>
@@ -347,7 +347,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b080" />
     </children>
@@ -366,7 +366,7 @@ In the latch is a cotter pin.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6acb9c0" />
     </children>
@@ -385,7 +385,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b030" />
     </children>
@@ -400,7 +400,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4afe0" />
     </children>
@@ -415,7 +415,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4af70" />
     </children>
@@ -430,7 +430,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4af00" />
     </children>
@@ -445,7 +445,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ae90" />
     </children>
@@ -460,7 +460,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ae20" />
     </children>
@@ -475,7 +475,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b130" />
     </children>
@@ -490,7 +490,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4b0d0" />
     </children>
@@ -505,7 +505,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ac10" />
     </children>
@@ -520,7 +520,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aba0" />
     </children>
@@ -535,7 +535,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ab30" />
     </children>
@@ -550,7 +550,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aac0" />
     </children>
@@ -565,7 +565,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aa50" />
     </children>
@@ -580,7 +580,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a9e0" />
     </children>
@@ -603,7 +603,7 @@ You can go north, east to Back Yard, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a970" />
     </children>
@@ -626,7 +626,7 @@ You can go north, east to Bedroom, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a900" />
     </children>
@@ -653,7 +653,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a890" />
     </children>
@@ -668,7 +668,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a820" />
     </children>
@@ -695,7 +695,7 @@ You can go south and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a7b0" />
     </children>
@@ -716,7 +716,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4ad50" />
     </children>
@@ -731,7 +731,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4aca0" />
     </children>
@@ -746,7 +746,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4acf0" />
     </children>
@@ -767,7 +767,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a500" />
     </children>
@@ -782,7 +782,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a490" />
     </children>
@@ -797,7 +797,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a420" />
     </children>
@@ -812,7 +812,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a3b0" />
     </children>
@@ -829,7 +829,7 @@ You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a340" />
     </children>
@@ -844,7 +844,7 @@ You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a2d0" />
     </children>
@@ -861,7 +861,7 @@ solder: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a260" />
     </children>
@@ -888,7 +888,7 @@ You can go north to Home Office and east to Hall from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a1f0" />
     </children>
@@ -907,7 +907,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a180" />
     </children>
@@ -924,7 +924,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x1a59fd0" />
     </children>
@@ -939,7 +939,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a110" />
     </children>
@@ -962,7 +962,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a0a0" />
     </children>
@@ -977,7 +977,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e4a030" />
     </children>
@@ -992,7 +992,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e49fc0" />
     </children>
@@ -1011,7 +1011,7 @@ You put the Klein Blaster into the side panel.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="530">NO</temporary>
     <children>
       <child nodeId="node-0x6e49f50" />
     </children>
@@ -1020,13 +1020,15 @@ You put the Klein Blaster into the side panel.
     <command xml:space="preserve">push microwave button</command>
     <result xml:space="preserve">With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you&apos;ll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.
 
+You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this mess...
+
 &gt;</result>
     <commentary xml:space="preserve">With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you&apos;ll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <changed>YES</changed>
+    <temporary score="529">NO</temporary>
     <children>
       <child nodeId="node-0x6e49ee0" />
     </children>

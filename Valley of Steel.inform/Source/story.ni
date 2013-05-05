@@ -1979,7 +1979,7 @@ Rule for kleinhacking something (called target):
 		if the target is hacked:
 			say "You feel a a light tickle in your head.";
 		otherwise:
-			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.";
+			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.[paragraph break]You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this mess...";
 			now the mitklein is hacked;
 			now the player is clear;
 			now the side panel is fried;
