@@ -1995,6 +1995,7 @@ Rule for kleinhacking something (called target):
 			now the side panel is fried;
 			now the side panel is closed;
 			now the side panel is unopenable;
+			deactivate the table of Microwave Hints;
 	otherwise:
 		say "The microwave appears to be dead."
 		
@@ -2312,6 +2313,7 @@ image	url
 "a crude drawing of the Twin Towers with the word 'REALLY?'"	"http://bit.ly/ZBwMoI"
 "a crude robotic figure reaching up pleadingly."	"http://bit.ly/13d2hdd"
 "the scrawled words [bold type]THIS IS JIMMY FULL OF BLOOD.[roman type]"	"http://bit.ly/11cbpAS"
+"the scrawled words(?) [italic type]Nath bhoshu alef ad'yegh. Aum.[roman type]"	"http://bit.ly/ZLGvfN"
 
 
 Table of Gizmos
@@ -2612,6 +2614,7 @@ title		subtable
 "What should I do now?"		Table of General Hints
 "What were my original SMS messages?"		Table of SMS Hints
 "How do I disable my MitKlein?"		Table of MitKlein Hints
+"What do I do with the microwave?"		Table of Microwave hints
 "How do I get into the Spacescraper?"		Table of Spacescraper Hints
 "How do I get past the Spacescraper Eye Scanner?"		Table of Eyescanner Hints
 "How do I get into vehicles?"		Table of Vehicle HInts
@@ -2622,7 +2625,13 @@ title		subtable
 Table of General Hints	
 hint				used
 "Try exploring the world."				a number
-"Then try exploring more.  Are you sure you've seen everywhere?"
+"Have you read your messages?"
+"Have you gotten out of Green Residential?"
+"Have you found your drop message of instructions?"
+"Have you found a way into the Spacescraper?"
+"Have you found a way through that suspicious fence in South Primrose Lane?"
+"Have you found a way into the Maintenance Closet?"
+
 
 Table of SMS Hints
 hint	used
@@ -2656,6 +2665,19 @@ hint						used
 "Remember - the microwave has shielding in the box and door to prevent its energy from getting to you…"
 
 
+Table of Microwave Hints
+hint						used
+"Microwaves put out radio energy.  A lot of it."
+"You can use it to handle your problem with your phone, if you're ready to do that."
+"It won't let you harm electronics.  At least, not as it is."
+"Your multitool is probably your friend here."
+"In addition to destroying things, the microwave can be used to hack things if you have a sufficiently sophisticated attack program and a means of getting the microwave to broadcast it."
+"The safety limiter changed the behavior of the microwave.  You need to do the same.  Try making a replacement for it."
+"You'll need to find components for this.  They're somewhere in the house."
+"Look at the car key very, very carefully.  Then think about it."
+"Once you've found your components, one of them will need to be prepared…"
+"…and then they'll need to be attached to each other somehow."
+
 Table of Spacescraper Hints
 hint						used
 "The Spacescraper is the center of Homeland Security activity for the region."
@@ -2663,14 +2685,15 @@ hint						used
 
 Table of Eyescanner Hints
 hint						used
-"There's no way around the eye scanner door."
+"There's no way in other than the eye scanner door."
 "You'll have to fool it somehow."
-"It can't tell the difference between a contact lens and your eye."
+"It can't tell the difference between a contact lens and your naked eye."
 "The contact lens will have to ID you as someone who has a reason to be inside the Reserve Bank Spacescraper."
 "You might not have to meet that person in person, as it were."
 "There is a Food Court in the base of the Spacescraper.  Some businesses there might have other branches."
 "Ah, France!"
 "You'll need to take a high-resolution picture of your target's eye.  For ID purposes."
+"Then you'll need to make a contact lens with the image."
 
 
 Table of Vehicle Hints
@@ -2698,6 +2721,9 @@ hint						used
 "Is he wandering around confused?  Well, then, ask yourself what he tried to do."
 "He used his palm on the ATM, didn't he."
 "Somehow, somewhere, this can be used to your benefit."
+"You're trying to find a way to make a detailed model of a piece of tissue.  Doctors do this. So do EMTs."
+"The hospital ER makes tissue, usually because a medic is on the way in with a patient they've scanned."
+"Look in the ambulance."
 
 
 Table of Goal Hints
@@ -2705,7 +2731,7 @@ hint						used
 "If you've gotten this far, your MitKlein is disabled.  Being the only one with such is very dangerous."
 "What if other citizens' MitKleins were dead as well?"
 "The newspaper should tell you why the Reserve Bank is important."
-"What if those other people were in fact Homeland Security troops?"
+"What if those other people were in fact Homeland Security personnel?"
 "There's a whole convention of Homeland Security personnel meeting in the Main Lobby."
 "You can't see or reach them from the basement.  The only thing that might work is an assault from above."
 "You won't be able to use the Lobby Lifts."
@@ -2719,12 +2745,13 @@ Table of Atrium Hints
 hint						used
 "The Main lifts aren't the only lifts in the building."
 "Stuck at the top?  Sometimes violence [italic type]is[roman type] the answer.  If you have the tools."
-"Glass that is too strong to break just means…maybe you need a bigger hammer."
-"Or explosives."
+"Glass that is too strong to break just means…maybe you need a bigger hammer. Or explosives."
 "There are explosives purpose-built to get through obstacles.  But generally only the military and police have them."
 "The police would only use them to go after something they have orders to go after."
 "Like drug dealing, if you can find any."
-"Of course, you'll have to [italic type]tell[roman type] them about it."
+"That would take somewhere quiet, hidden from sight."
+"Behind closed…fences."
+"Of course, once you've found it, you'll have to tell the [italic type]police[roman type] about it."
 
 [Hint activation/deactivation rules]
 [handled by situation, not items etc.]
@@ -3327,6 +3354,9 @@ The table lamp is a device on the bedside table.  The table lamp is scenery.  Th
 Instead of burning the table lamp, try switching on the table lamp.
 
 The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much."
+
+After going to The Kitchen the first time:
+	activate the Table of Microwave Hints.
 
 
 Chapter 4 - Green Commercial

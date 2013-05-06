@@ -48,5 +48,5 @@ template path "/Users/jbz/Projects/valley/Valley of Steel Materials/Templates"
 template path "/Users/jbz/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/Templates"
 css
-website "Extended"
+website "Standard"
 status instruction ||&nbsp;<a href="source:story.ni#line9"><img border=0 src=inform:/Reveal.tif></a>||
