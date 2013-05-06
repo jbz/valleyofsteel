@@ -602,14 +602,14 @@ Instead of examining the MitKlein, say "You can't see any such thing." instead.
 The backpack is a player's holdall. The backpack is wearable. The player is wearing the backpack. The backpack is a container.  It is open. The description is "A black rip-stop backpack which you normally use for toting tools and books."
 Understand "pack" as the backpack.
 Understand "bag" as the backpack.
-
+ffor
 The newspaper is a thing.  The newspaper is small.  The description is "The local newspaper, printed on plasfax.  Some retro individuals still prefer to hold their news in their hands."
 
 After examining the newspaper for the first time:
 	say "[bracket]If you want to read the newspaper (as opposed to just looking at it) try READ NEWSPAPER.[close bracket][line break]"
 	
 Instead of reading the newspaper:
-	say "Today[apostrophe]s front-page headline is: [bold type]Homeland Security convention to be held this week at the Reserve Bank Spacescraper[roman type].   'The best and the brightest of the various Homeland Security agencies will meet in the Reserve Bank Atrium this week to receive presentations on new security initiatives and to discuss the state of the art in security technology.'[paragraph break]The next headline reads: [bold type][headline in row newsIndex of the Table of Stories][roman type][line break]The story itself continues: '[newsstory in row newsIndex of the Table of Stories]' At the bottom, a small postscript reads [bold type]Would you like to know more?[roman type]  [url in row newsIndex of the Table of Stories]  [paragraph break]The thought of all those Homeland Security drones in one place makes you grind your teeth.  Then, however, a vision of all those heavily-secured workers with dead MitKlein bottles replaces it, and you have some difficulty wiping the resulting smile from your face.  If only..."
+	say "Today[apostrophe]s front-page headline is: [bold type]Homeland Security convention to be held this week at the Reserve Bank Spacescraper[roman type].   'The best and the brightest of the various Homeland Security agencies will meet in the Reserve Bank Atrium this week to receive presentations on new security initiatives and to discuss the state of the art in security technology.'[paragraph break]The next headline reads: [bold type][headline in row newsIndex of the Table of Stories][roman type][line break]The story itself continues: '[newsstory in row newsIndex of the Table of Stories]' At the bottom, a small postscript reads [bold type]Would you like to know more?[roman type]  [url in row newsIndex of the Table of Stories]  [paragraph break]Reading the story about the Homeland Security convention, the thought of all those Homeland Security drones in one place makes you grind your teeth.  Then, however, a vision of all those heavily-secured workers with dead MitKlein bottles replaces it, and you have some difficulty wiping the resulting smile from your face.  If only..."
 Understand "paper" as the newspaper.
 
 The pamphlet is small. The description of the pamphlet is "A pamphlet is from the Department of Homeland Security."
@@ -2120,7 +2120,7 @@ Every Turn during Clothes Shopping:
 	if a random chance of 1 in 7 succeeds:
 		say "[one of]A small group of people enter the store, look around, look at each other and file back out.[or]The shopkeeper wanders past you and gives you a suspicious look.[or]A PA system mumbles a message about an upcoming sale.[as decreasingly likely outcomes]";
 	else if a random chance of 1 in 4 succeeds:
-		if the location of the shopper is Garb-Oh, say "[one of]A shopper murmurs some lyrics, presumably from a song she's listening to, and subsides.[or]A shopper pulls a [one of]shirt[or]pair of pants[or]jacket[purely at random] off the racks and looks at it critically before returning it.[or]A shopper wanders out of the shop, as another wanders in and begins browsing.[purely at random]"
+		if the location of the shopper is Garb-Oh, say "[one of]A shopper murmurs some lyrics, presumably from a song she's listening to, and subsides.[or]A shopper pulls a [one of]shirt[or]pair of pants[or]jacket[purely at random] off the racks and looks at it critically before returning it.[or]A shopper wanders through the antitheft detectors and out of the shop, as another wanders in and begins browsing.[purely at random]"
 
 Clothes Shopping ends when the location is not Garb-oh.
 Clothes Shopping ends when Shoplifting begins.
@@ -2278,34 +2278,34 @@ number	message
 6	"- YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED<more>"
 7	"- ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.<more>"
 8	"- ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY<more>"
-9	"- THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY<more>"
+9	"- THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES CELL SIGNAL IN ANOTHER AREA IT MAY BE LOCATED BY HOMELAND SECURITY - DISABLE ENTIRELY BEFORE TRAVEL<more>"
 10	"GOOD LUCK. MESSAGE ENDS."
 
 
 Table of Stories
 headline	url	newsstory
-"Area Man sought for ground-to-air attacks on military drones."	"http://bit.ly/z5bjs"	"The motives are as unknown as the identity of the mystery man, who has destroyed three Government UCAVs through various means in the past few weeks.  The FBI confidently expects his capture in the next few days."
-"Area Man on senseless rampage."	"http://bit.ly/xVabuF"	"Several dozen police officers were called out when a man began randomly shooting through home windows in an apparent vendetta against television sets last night.  Although officers attempted to capture the man alive, he resisted arrest with heavy weapons.  The Orange Industrial Water Tower will be out of service for some weeks."
-"Handheld device privacy threat?"	"http://bit.ly/x9n54J"	"News investigation shows that popular handhelds may have significant privacy backdoor.  Government denies story allegation."
-"In Los Angeles, something is always burning."	"http://bit.ly/ylxSjM"	"Area man barricades house against police in possible confusion.  SWAT unit's flash-bangs result in casualty."
-"Soldiers begin to experience breakdowns."	"http://bit.ly/z5g588"	"The parents of several deployed American military personnel have raised concerns that their children appear to be losing touch with reality.  Government refutes these claims with statistics showing that 97.2 percent of deployed American service personnel are safely medicated."
-"Possible Artificial Intelligence breakthrough!"	"http://bit.ly/wM2TwQ"	"Researchers at an area university have issued conflicting press statements as to whether a recent AI incubation experiment has ended in success or failure.  One graduate student, who appeared to be in tears, would only say 'Pyrrhic.  It was so unnecessary.'"
-"Winter settles in over military positions in the mountains."	"http://bit.ly/xO9ijg"	"Fighting has been slowed by the onset of a heavier-than-expected winter snow season in the Corderilla Oriental mountains.  Trench lines have been set up, and both sides have settled in for a vigilant if slower winter."
-"New Mit-Klein Data Sold To Dating Company!"	"http://bit.ly/yir9ea"	"New venture promises to utilize Mitsui-Klein transaction and telemetry data to match clients with ideal partners.  'We would never intrude on our clients' privacy, ' the CTO stated.  'It is possible that data has been deanonymized before it reaches us, but we would never utilize that data for our financial gain.'"
-"Fine Structure is this month's ebook best seller!"	"http://bit.ly/wdEurc"	"Science Fiction novel reaches record sales.  Author unavailable for comment, but publisher and readers pleased!"
-"Giant combat robot found in student flat in Britain."	"http://bit.ly/WIYQXy"	"Authorities cannot fathom who left the 7-story-tall combat mecha folded in a basement."
+"Area Man sought for ground-to-air attacks on military drones."	"http://bit.ly/13YYZJ8"	"The motives are as unknown as the identity of the mystery man, who has destroyed three Government UCAVs through various means in the past few weeks.  The FBI confidently expects his capture in the next few days."
+"Area Man on senseless rampage."	"http://bit.ly/15kTY2q"	"Several dozen police officers were called out when a man began randomly shooting through home windows in an apparent vendetta against television sets last night.  Although officers attempted to capture the man alive, he resisted arrest with heavy weapons.  The Orange Industrial Water Tower will be out of service for some weeks."
+"Handheld device privacy threat?"	"http://bit.ly/ZBvOZH"	"News investigation shows that popular handhelds may have significant privacy backdoor.  Government denies story allegation."
+"In Los Angeles, something is always burning."	"http://bit.ly/15sb2mO"	"Area man barricades house against police in possible confusion.  SWAT unit's flash-bangs result in casualty."
+"Soldiers begin to experience breakdowns."	"http://bit.ly/16NZdXM"	"The parents of several deployed American military personnel have raised concerns that their children appear to be losing touch with reality.  Government refutes these claims with statistics showing that 97.2 percent of deployed American service personnel are safely medicated."
+"Possible Artificial Intelligence breakthrough!"	"http://bit.ly/17I7fzC"	"Researchers at an area university have issued conflicting press statements as to whether a recent AI incubation experiment has ended in success or failure.  One graduate student, who appeared to be in tears, would only say 'Pyrrhic.  It was so unnecessary.'"
+"Winter settles in over military positions in the mountains."	"http://bit.ly/13YZwek"	"Fighting has been slowed by the onset of a heavier-than-expected winter snow season in the Corderilla Oriental mountains.  Trench lines have been set up, and both sides have settled in for a vigilant if slower winter."
+"New Mit-Klein Data Sold To Dating Company!"	"http://bit.ly/17I7kDq"	"New venture promises to utilize Mitsui-Klein transaction and telemetry data to match clients with ideal partners.  'We would never intrude on our clients' privacy, ' the CTO stated.  'It is possible that data has been deanonymized before it reaches us, but we would never utilize that data for our financial gain.'"
+"Fine Structure is this month's ebook best seller!"	"http://bit.ly/16cfR3s"	"Science Fiction novel reaches record sales.  Author unavailable for comment, but publisher and readers pleased!"
+"Giant combat robot found in student flat in Britain."	"http://bit.ly/13nauKJ"	"Authorities cannot fathom who left the 7-story-tall combat mecha folded in a basement."
 
 Table of Graffiti
 image	url
-"a small stick figure with a signal strength icon around its head."	"http://bit.ly/A3ZK6R"
-"a stylized angel wearing a pair of mirrorshades."	"http://bit.ly/y73yki"
-"scrawled text reading [bold type]HISTORY IS A LIE[roman type]![line break]"	"http://bit.ly/xefJ8P"
-"a small crude image of a television."	"http://bit.ly/xw0dKz"
-"a small figure, flying, wearing a cape."	"http://bit.ly/fknhZE"
-"a small imp giving you the finger!"	"http://bit.ly/ya9fSZ"
-"a crude drawing of the Twin Towers with the word 'REALLY?'"	"http://bit.ly/yvwYxd"
-"a crude robotic figure reaching up pleadingly."	"http://bit.ly/WIYD6J"
-"the scrawled words [bold type]THIS IS JIMMY FULL OF BLOOD.[roman type]"	"http://bit.ly/WIZc0k"
+"a small stick figure with a signal strength icon around its head."	"http://bit.ly/11hN3R0"
+"a stylized angel wearing a pair of mirrorshades."	"http://bit.ly/16cfZ2S"
+"scrawled text reading [bold type]HISTORY IS A LIE[roman type]![line break]"	"http://bit.ly/13naTgl"
+"a small crude image of a television."	"http://bit.ly/18pRO02"
+"a small figure, flying, wearing a cape."	"http://bit.ly/18O4POl"
+"a small imp giving you the finger!"	"http://bit.ly/ZBwJsV"
+"a crude drawing of the Twin Towers with the word 'REALLY?'"	"http://bit.ly/ZBwMoI"
+"a crude robotic figure reaching up pleadingly."	"http://bit.ly/13d2hdd"
+"the scrawled words [bold type]THIS IS JIMMY FULL OF BLOOD.[roman type]"	"http://bit.ly/11cbpAS"
 
 
 Table of Gizmos
@@ -3150,7 +3150,7 @@ Instead of opening bathroom window, say "It's painted shut."
 Does the player mean entering the bathroom window: it is very unlikely.
 Does the player mean closing the bathroom window: it is very unlikely.
 
-The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is unhacked]  Having the latch on the outside probably violates some building code for somewhere.[end if][if the bedroom window is hacked]  The lower pane is open.[end if]"
+The bedroom window is a backdrop. The bedroom window is in Back Yard.  The bedroom window is in Bedroom.  The bedroom window is scenery.  The bedroom window can be hacked or unhacked.  The bedroom window is unhacked. The description is "A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.[if the bedroom window is unhacked]  Having the latch on the outside probably violates some building code somewhere.[end if][if the bedroom window is hacked]  The lower pane is open.[end if]"
 
 Understand "clear window" as the bedroom window when the location is Back Yard.
 Understand "large window" as the bedroom window when the location is Back Yard.
@@ -3181,6 +3181,10 @@ Instead of removing the cotter pin with the multitool:
 		rule fails.
 
 Procedural rule while taking off the cotter pin: ignore the carrying requirements rule.
+
+Instead of dropping the cotter pin:
+	say "You drop the cotter pin and it falls to the ground, vanishing into the pocket dimension reserved for screws, clips, single socks and pens.";
+	remove the cotter pin from play.
 
 Instead of inserting the cotter pin into the latch:
 	say "You try for a minute or so, but the pin must have bent - it won't go back into the latch." instead.
@@ -3384,6 +3388,7 @@ The ATM is a device.  The ATM is in Metro Savings.  The ATM is fixed in place.  
 The palm reader is a part of the ATM. The palm reader is a container.  The palm reader is open. The palm reader is scenery.  The description is "This is a standard palm reader, which is used to verify the identity of the ATM customer.  A flat plate, slightly inset, it is placed at a convenient angle to allow the palm to lie against it.  This one, however, has a broad crack in it across which someone has written 'KAPUT' in black marker."
 Understand "plate" as the palm reader when the location is Metro Savings.
 Understand "crack" as the palm reader when the location is Metro Savings.
+Understand the command "hide" as insert.
 
 Instead of inserting into the palm reader:
 	if the noun is the tissue sampler:
