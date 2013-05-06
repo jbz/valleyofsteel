@@ -1586,6 +1586,9 @@ Carry out cutting it with:
 [see related section in 'global rules']
 And-combining is an action applying to one thing.  Understand "combine [things]" as and-combining.
 
+Understand "solder [things]" as and-combining.
+Understand "connect [things]" as and-combining.
+Understand "attach [things]" as and-combining.
 
 Check and-combining when group-combine-complete is true:
 	stop the action.
