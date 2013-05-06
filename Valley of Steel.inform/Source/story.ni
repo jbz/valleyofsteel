@@ -2119,8 +2119,8 @@ Instead of dropping an antitheft tag during Clothes Shopping:
 Every Turn during Clothes Shopping:
 	if a random chance of 1 in 7 succeeds:
 		say "[one of]A small group of people enter the store, look around, look at each other and file back out.[or]The shopkeeper wanders past you and gives you a suspicious look.[or]A PA system mumbles a message about an upcoming sale.[as decreasingly likely outcomes]";
-	else if a random chance of 1 in 8 succeeds:
-		if the location of the shopper is Garb-Oh, say "[one of]A shopper murmurs some lyrics, presumably from a song she's listening to, and subsides.[or]The shopper pulls a shirt off the racks and looks at it critically before returning it.[purely at random]"
+	else if a random chance of 1 in 4 succeeds:
+		if the location of the shopper is Garb-Oh, say "[one of]A shopper murmurs some lyrics, presumably from a song she's listening to, and subsides.[or]A shopper pulls a [one of]shirt[or]pair of pants[or]jacket[purely at random] off the racks and looks at it critically before returning it.[or]A shopper wanders out of the shop, as another wanders in and begins browsing.[purely at random]"
 
 Clothes Shopping ends when the location is not Garb-oh.
 Clothes Shopping ends when Shoplifting begins.
@@ -3499,7 +3499,7 @@ Before going north in Garb-oh:
 		say "You move around behind the sales counter.";
 		now the player is in the sales counter instead;
 	otherwise:
-		say "You try to move behind the sales counter, but the shopkeeper glares at you and blocks the way!" instead.
+		say "[one of]You try to move behind the sales counter, but the shopkeeper glares at you and blocks the way![or]The shopkeeper blocks you again.  You need a distraction.[or]The shopkeeper blocks you.[stopping]" instead.
 
 Before going south in Garb-oh:
 	if the sales counter encloses the player:
