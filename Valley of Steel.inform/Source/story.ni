@@ -229,6 +229,9 @@ The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
 
 
+Rule for printing a parser error when the latest parser error is the I beg your pardon error: 
+  say "[one of]I didn't catch that.[or]I'm not a mindreader.[or]Mmmmmmyes?[or]I beg your pardon?[as decreasingly likely outcomes]" .
+
 [global reporting rules]
 Report examining someone:
 	if the noun is the player:
@@ -454,8 +457,7 @@ At the time when the phonegrab happens:
 
 At the time when curfew message happens:
 	if the mitklein is unhacked:
-		say "The Green Residential curfew will begin in five minutes.  You'll need to be inside to avoid being arrested."
-
+		say "The Green Residential curfew will begin in five minutes.  You'll need to be [if Bedroom has been visited]back [end if]inside, in an area which isn't under public surveillance, to avoid being arrested."
 
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
@@ -801,7 +803,7 @@ The car key is a container.  The car key is small. The car key is unopenable. Th
 Rule for printing room description details of the closed car key: stop.
 
 In the car key is a broadcast chip.
-In the car key is a memory chip.
+In the car key is a memory chip.  The memory chip is transponder.
 
 Check cutting the car key with something:
 	unless the second noun is the knife, say "That won't cut the car key." instead;
@@ -897,7 +899,9 @@ Instead of inserting into the laptop:
 	try inserting the noun into the chipslot instead.
 
 Check inserting into the chipslot:
-	unless the noun is a memory chip, say "That won't go in there." instead.
+	unless the noun is tiny, say "That's not even close to the right size and shape." instead;
+	unless the noun is a memory chip, say "That won't fit in the slot - it's the wrong shape." instead;
+	if the noun is attack, say "Its already programmed." instead.
 	
 After inserting into the chipslot:
 	say "The Download light flashes red intermittently for a few seconds before returning to a regular blinking green.";
@@ -1698,7 +1702,9 @@ Understand "attach [something]" as attaching it to.
 
 Check attaching it to:
 	If the second noun is nothing:
-		say "What do you want to attach [the noun] to?" instead.
+		say "What do you want to attach [the noun] to?" instead;
+	if the second noun is the noun:
+		say "You can't attach [the noun] to itself." instead.
 		
 Carry out attaching it to:
 	if the noun is the cable:
@@ -2037,11 +2043,11 @@ When evening begins:
 Night is a recurring scene.  Night begins when the time of day is 8:00 PM.  Night ends when the time of day is 5:00 AM.
 
 When night begins:
-	if the player is in ResidentialOutside and the MitKlein is unhacked:
+	if the player is in ResidentialOutside or the player is in GreenResidential and the MitKlein is unhacked:
 		say "It's 8:00 PM.  The curfew is now in effect for this neighborhood."
 
 Every turn during Night:
-	if the player is in ResidentialOutside and the MitKlein is unhacked:
+	if the player is in ResidentialOutside or the player is in Green Residential Station or the player is in Front Lobby and the MitKlein is unhacked:
 		if the player is clear:
 			if a random chance of 1 in 5 succeeds:
 				say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
@@ -2049,7 +2055,7 @@ Every turn during Night:
 				now the incriminatingAct is "allowing your active MitKlein to be scanned";
 				the player incriminates in 3 turns from now;
 			otherwise:
-				say "The curfew is still in effect.  You'd better get inside before you're scanned."
+				say "The curfew is still in effect.  You'd better get [if Bedroom has been visited]back [end if]inside before you're scanned."
 
 
 Morning is a recurring scene.  Morning begins when the time of day is 5:00 AM.  Morning ends when the time of day is 12:00 PM.
@@ -3243,7 +3249,7 @@ Check entering the bedroom window:
 
 The House door is east of Front Path and west of Front Lobby.  The House door is an autodoor.  The House door is closed.
 
-Front Lobby is east of the House door.  Front Lobby is blind.  The description is "The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south."
+Front Lobby is east of the House door.  The description is "The slightly shabby front lobby of this multi-family building.  A door leads outside to the west, gated stairs leading up to the upper two floors are to the east, and an apartment door is to the south."
 The newspaper is here.  The pamphlet is here.
 Instead of going east in Front Lobby:
 	now instantiate is true;
