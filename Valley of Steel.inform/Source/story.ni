@@ -457,7 +457,7 @@ At the time when the phonegrab happens:
 
 At the time when curfew message happens:
 	if the mitklein is unhacked:
-		say "The Green Residential curfew will begin in five minutes.  You'll need to be [if Bedroom has been visited]back [end if]inside, in an area which isn't under public surveillance, to avoid being arrested."
+		say "The Green Residential curfew will begin in five minutes.  You'll need to be inside, in an area which isn't under public surveillance, to avoid being arrested."
 
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
@@ -526,7 +526,7 @@ After examining a garment:
 
 [objects - kinds]
 
-An ID bomb is a kind of explosive. An ID bomb has a timer 1.  An ID bomb can be working or fried.  An ID bomb is usually working. An ID bomb has some text called item-id.  An ID bomb always has item-id "M5". An ID bomb has some text called fryDescription.  The fryDescription of an ID bomb is usually "There is a series of bright sparking flashes and a puff of smoke as the ID bomb begins to melt![line break]".  The description is "A small ID bomb with a single button. [if disarmed]The arming LED is dark.[else if armed]The arming LED is blinking green at shortening intervals![else if inert]The ID bomb is now a chunk of burnt and useless circuitry.[end if]". 
+An ID bomb is a kind of explosive. An ID bomb has a timer 1.  An ID bomb is small. An ID bomb can be working or fried.  An ID bomb is usually working. An ID bomb has some text called item-id.  An ID bomb always has item-id "M5". An ID bomb has some text called fryDescription.  The fryDescription of an ID bomb is usually "There is a series of bright sparking flashes and a puff of smoke as the ID bomb begins to melt![line break]".  The description is "A small ID bomb with a single button. [if disarmed]The arming LED is dark.[else if armed]The arming LED is blinking green at shortening intervals![else if inert]The ID bomb is now a chunk of burnt and useless circuitry.[end if]". 
 
 After dropping an id bomb (called the bomb):
 	say "Dropped.";
@@ -587,7 +587,7 @@ Check taking an antitheft tag:
 	if the noun is part of a garment, say "What do you want to remove that with?" instead.
 
 
-A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the attack payload.  It needs a power source to perform its task."
+A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster has some text called fryDescription.  The fryDescription of a Klein Blaster is usually "Sparks fountain from the delicate device.  You watch in horror as your carefully-built module fries itself."  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the attack payload.  It needs a power source to perform its task."
 
 A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos.[if disassembled]  This camera has been cracked open, revealing its internal electronics.  A capacitor (for the flash unit) and battery are available, as are numerous circuit connection points.[end if]"
 
@@ -823,6 +823,7 @@ instead of cutting the car key:
 
 Check inserting into the car key:
 	Unless the noun is tiny, say "That won't fit!" instead;
+	Unless the noun is a chip, say "The slots in the car key are made for individual chips." instead;
 	continue the action.
 
 Instead of closing the car key:
@@ -895,6 +896,9 @@ Understand "download slot" as the chipslot.
 Understand "slot" as the chipslot when the location is the location of the laptop.
 Understand "file" as the screen.
 
+Instead of reading the laptop:
+	try examining the screen instead.
+	
 Instead of inserting into the laptop:
 	try inserting the noun into the chipslot instead.
 
@@ -1147,11 +1151,11 @@ Check inserting into the refrigerator:
 
 
 [microwave]
-The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box][end if].[if the side panel is open]  The service panel is bent open on the side.[end if]"
+The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box].[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
-The side panel is part of the microwave oven.  The side panel is a container.  The side panel is openable and closed. The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1.  The side panel is scenery.  The description of the side panel is "A label on the side panel reads NO USER SERVICEABLE PARTS INSIDE.  There is a warning icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for a small component inside it. [otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
+The side panel is part of the microwave oven.  The side panel is a container.  The side panel is openable and closed. The side panel can be working or fried.  The side panel is working. The side panel has carrying capacity 1.  The side panel is scenery.  The description of the side panel is "The side panel is a small rounded rectangle of plastic with a narrow seam running around it.  A warning label on it reads NO USER SERVICEABLE PARTS INSIDE.  There is an icon of a small stick figure opening the panel and being electrocuted, irradiated and (as far as you can tell) stung by bees.[if open]  The panel has been pried open. The magnetron is just visible here, right next to some circuitry.  The panel has room for a small component inside it. [otherwise if fried]  The side panel is scorched and the innards melted.  Apparently the magnetron overloaded something.[end if][if the side panel is hacked]  The panel has been pried open.  The magnetron is just visible here, with a Klein Blaster wired in next to it.  A small LED (labelled TRNSMT RDY) is lit!"
 
 The safety limiter is in the side panel.  The safety limiter is tiny. The safety limiter can be working or fried.  The safety limiter is working.  The safety limiter has some text called the fryDescription.  The fryDescription of the safety limiter is "Brief sparks, like a small St. Elmo's fire, race around the various components of the safety limiter and a crackling noise comes from it before the microwave stops."  The description of the safety limiter is "A small circuit board consisting of two connected chips which plugs into the microwave oven side panel.  One chip looks a bit like a standard receive chip, and the other a standard memory chip - although these are custom versions and can't be used as such. [if working]Examining its connectors and their labels, you deduce that when installed, this board monitors the sensors and radio frequencies inside the microwave oven and prevents it from operating if things like electronics are inside, it's empty, or the door is open.[otherwise if fried]In fact, these won't be usable ever again - the limiter is scorched and soot-blackened and looks thoroughly dead.[end if]"
 
@@ -1166,6 +1170,9 @@ Understand "cook button" as the microwave oven's activate button when the locati
 Understand "cook" as the microwave oven's activate button when the location is the kitchen.
 
 Does the player mean pushing the microwave oven's activate button: it is unlikely.
+
+Instead of pushing the cook box:
+	try pushing the microwave oven's activate button instead.
 
 Check inserting something (called the subject) into the microwave oven:
 	try inserting the subject into the cook box instead.
@@ -1531,6 +1538,8 @@ Check removing it with:
 	otherwise if the second noun is the multitool:
 		if the noun is the cotter pin:
 			unless the cotter pin is inside the latch, say "That's not attached to anything." instead;
+		if the noun is the side panel:
+			try opening the side panel with the multitool instead;
 		if the noun is a Public Surveillance Notice:
 			say "You are about to start working on the surveillance notice when you have the sudden feeling that you're being, well…watched.  Spooked, you desist.";
 			stop;
@@ -1564,6 +1573,8 @@ Cutting it with is an action applying to two things.
 Understand "cut [something] with [something preferably held]" as cutting it with.		
 
 Check cutting it with:
+	if the second noun is a person:
+		try attacking the second noun instead;
 	if the second noun is the multitool:
 		say "The one thing this multitool doesn't have is a decent cutting edge." instead;
 	unless the noun is carried:
@@ -1968,7 +1979,7 @@ Rule for cooking:
 	if the microwave is limited:
 		repeat with sizzler running through the list of objects inside the cook box:
 			if sizzler provides the property fryDescription:
-				say "The microwave blinks on and then immediately blinks off as the safety circuits detect electronic components inside the microwave.[first time]  The safety limiter is intended to prevent damage to both the microwave and electronic items that might be placed inside it.[only]";
+				say "The microwave blinks on and then immediately blinks off as the safety circuits detect electronic components inside the microwave.[no line break][one of] The safety limiter is intended to prevent damage to both the microwave and electronic items that might be placed inside it.[or][line break][stopping]";
 				stop;
 	unless the side panel is fried:
 		say "A light comes on in the microwave and it begins to hum.[if the side panel is hacked]The oven makes a sharp high-pitched electronic noise as it operates, but the shielding in the door prevents anything from happening outside.";
