@@ -3603,14 +3603,14 @@ Green Service Station is above the Green Service Station door.  The description 
 Government Square South is north of Green Service Station.  The description is "This is the southern half of Government Square.  Several benches and landscape features are scattered throughout the area.  A roadway approaches from the west, loops north around the square and continues to the east.  Groundcars move back and forth along the road, mixed with official vehicles such as police cars, ambulances and the ubiquitous slightly shabby black flitters used by government agencies.  The doors to Green Service Transit station are to the south.  Across the road to the east is Green Hospital's driveway.  The Hospital's main entrance is to the northeast.  The square continues to the north.  To the northwest, across the road on the other side, is the front steps of the local police station."
 The benches is unimportant stuff in Government Square South.
 The landscape features is unimportant stuff in Government Square South.
-The govcars is a backdrop.  The govcars is plural-named. The description is "A stream of vehicles passing by."
+The govcars is a backdrop.  The govcars is plural-named. The printed name of the govcars is "vehicles". The description is "A stream of vehicles passing by."
 The govcars is in Government Square North and Government Square South.
-Understand "groundcars" and "vehicles" and "flitters" and "cars" as the govcars when the govcars is in the location.
+Understand "groundcars" and "vehicles" and "flitter" and "flitters" and "car" and "cars" as the govcars when the govcars is in the location.
 Instead of entering the govcars, say "They're moving. You'd be injured."
 Instead of climbing the govcars, say "They're moving. You'd be injured."
 
 
-Government Square North is north of Government Square South.  The description is "The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads near the buildings across it.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building."
+Government Square North is north of Government Square South.  The description is "The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads out of sight atop the surrounding buildings.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building."
 
 
 Hospital Driveway is east of Government Square South and southeast of Government Square North and south of Hospital Entrance.  The description is "The driveway and parking area for the Hospital ER, which lies directly to the east.  To the north is the main entrance to the Hospital building."
@@ -3632,8 +3632,10 @@ The ER door is east of Hospital Driveway and west of Triage.  The ER door is an 
 Hospital Entrance is north of Hospital Driveway and northeast of Government Square South and east of Government Square North.  The description is "This is the front entryway pavilion of the local hospital.  The automatic entryway doors are to the east, and the ER entrance and driveway is to the south."
 
 The Hospital door is east of the Hospital Entrance and west of the Hospital Lobby.  The Hospital door is an autodoor.  The hospital door is closed.
+Understand "doors" as the Hospital door when the location is Hospital Entrance.
+Understand "doors" as the Hospital door when the location is Hospital Lobby.
 
-Hospital Lobby is east of the Hospital door.  The description is "This is the main entrance to a busy regional hospital.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading 'TRIAGE'; to the east is the elevator core and to the north is the waiting lounge."
+Hospital Lobby is east of the Hospital door.  The description is "This is the main entrance to a busy regional hospital. Autodoors lie to the west.  Patients and staff rush back and forth, all too busy to pay you any attention.  To the south is an archway with a sign reading 'TRIAGE'; to the east is the elevator core and to the north is the waiting lounge."
 There is a commuter in the Hospital Lobby.
 There is a staff member in the Hospital Lobby.
 Understand "patient" as a commuter when the location is the hospital lobby.
@@ -3657,6 +3659,10 @@ Understand "patients" as a commuter when the location is Triage.
 
 The Emergency Room is east of Triage and south of the Hospital Elevators.  The description is "This is a prep and emergency treatment area for the emergency ward to the east, which is locked.  Triage is to the west, and a door leads north.  The ER is presently unused, and lies empty."
 
+Instead of going east in Emergency Room:
+	now instantiate is true;
+	say "The emergency ward is locked."
+
 Hospital Elevators is north of the Emergency Room and east of Hospital Lobby.  The description is "The main elevator bank for the hospital seems to require either an appropriate Mit-Klein scan or a hospital ID to swipe.  Patients and staff move through the area. The lobby is to the west.  The ER is through a door to the south, and a restroom is to the east."
 There is a commuter in Hospital Elevators.
 There is a staff member in Hospital Elevators.
@@ -3675,7 +3681,10 @@ Instead of going north in Civil Center Steps:
 Instead of going up in Civil Center Steps:
 	now instantiate is true;
 	say "In order to pass the checkpoint, you would need to have a Government authorized Mitsui-Klein signature.  Realizing this, you retreat."
-The security checkpoint is unimportant stuff in Civil Center Steps.
+The security checkpoint is scenery in Civil Center Steps.  The description is "A checkpoint visible at the entrance to the Civil Center where civil servants enter and depart."
+Instead of pushing the security checkpoint, say "That's not a good idea for someone trying to remain unnoticed by law enforcement."
+Instead of touching the security checkpoint, say "You'd rather not get too close."
+
 
 Some people called the civil servants are here.  The civil servants are plural-named.  The description of the civil servants is "A crowd of bored-looking government functionaries."
 
