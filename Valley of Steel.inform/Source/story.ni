@@ -1400,7 +1400,7 @@ Understand "credits" as getting credits.
 Getting credits is an action out of world.
 
 Carry out getting credits:
-	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those, along with uncledavid, Evelin en Biep Durieux, Klaus Matteus and Andrew Schultz among others.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, use the command ABOUT."
+	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those.  Andrew Schultz has patiently and heroically labored to point out things I did wrong, even going back and retesting after I fixed them (and all to often, broke other stuff).  In addition uncledavid, Evelin en Biep Durieux, and Klaus Matteus provided invaluable testing.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, use the command ABOUT."
 
 
 [score]
