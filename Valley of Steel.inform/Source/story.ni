@@ -872,13 +872,26 @@ After taking the knife for the first time:
 Check opening the knife:
 	say "You flip the blade open and stare at it for a few seconds, mesmerized by the clean steel, before closing it since you don't have a task for it right now." instead.
 
-The soldering iron is a device.  The soldering iron is on the workbench. The soldering iron is small. The soldering iron is portable.  The soldering iron is switched off.  The description is "A portable soldering iron.  It uses a sealed battery rather than requiring a power connection.[if switched on]  An LED on it is lit red, and the tip is quite hot."
+The soldering iron is a device.  The soldering iron is on the workbench. The soldering iron is small. The soldering iron is portable.  The soldering iron is switched off.  The description is "A portable soldering iron.  It uses a sealed battery rather than requiring a power connection.[if switched on]  An LED on it is lit, and the tip is glowing red."
 
 Before inserting the soldering iron into:
 	if the soldering iron is switched on, say "That's dangerous.  You might want to switch the soldering iron off first." instead.
 	
 Check switching on the soldering iron:
 	if the soldering iron is switched on, try switching off the soldering iron instead.
+
+Report switching on the soldering iron:
+	say "The tip heats up rapidly to a cherry-red heat."
+	
+Report switching off the soldering iron:
+	say "The tip cools rapidly, fading to a silver-gray."
+
+Check touching the soldering iron:
+	if the soldering iron is switched on:
+		now instantiate is true;
+		say "You reach for the soldering iron but snatch your fingers away from the tip, which is cherry-red!" instead;
+	otherwise:
+		continue the action.
 
 The solder is a thing. The solder is on the workbench.  The solder is small. The indefinite article is "some".  The solder can be either working or fried. The solder is working. The solder has some text called the fryDescription.  The fryDescription of the solder is "With an audible bubbling hiss, the solder melts into a puddle."  The description is "[if working]A small spool of resin-cored solder.[otherwise]A melted disc of useless solder."
 

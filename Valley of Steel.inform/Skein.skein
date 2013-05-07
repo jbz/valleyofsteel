@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Skein rootNode="node-0x6b539f0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x6b539f0" />
+  <activeNode nodeId="node-0x6eb36b0" />
   <item nodeId="node-0x6b539f0">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -52,8 +52,9 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="94">NO</temporary>
+    <temporary score="112">NO</temporary>
     <children>
+      <child nodeId="node-0xade4280" />
       <child nodeId="node-0x6b53a40" />
     </children>
   </item>
@@ -9665,5 +9666,81 @@ Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="467">NO</temporary>
+  </item>
+  <item nodeId="node-0xade4280">
+    <command xml:space="preserve">gonear home office</command>
+    <result xml:space="preserve">Home Office
+This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench.
+
+You can see a workbench (on which are a lockblade knife, a soldering iron, some solder, and a laptop) here.
+
+You can go south and east from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="112">YES</temporary>
+    <children>
+      <child nodeId="node-0xac0ed70" />
+    </children>
+  </item>
+  <item nodeId="node-0xac0ed70">
+    <command xml:space="preserve">turn on iron</command>
+    <result xml:space="preserve">The tip heats up rapidly to a cherry-red heat.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="112">YES</temporary>
+    <children>
+      <child nodeId="node-0xacbbc50" />
+    </children>
+  </item>
+  <item nodeId="node-0xacbbc50">
+    <command xml:space="preserve">touch iron</command>
+    <result xml:space="preserve">You reach for the soldering iron but snatch your fingers away from the tip, which is cherry-red!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="112">YES</temporary>
+    <children>
+      <child nodeId="node-0x27f9c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x27f9c0">
+    <command xml:space="preserve">put iron in bag</command>
+    <result xml:space="preserve">That&apos;s dangerous.  You might want to switch the soldering iron off first.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="112">YES</temporary>
+    <children>
+      <child nodeId="node-0xad6a750" />
+    </children>
+  </item>
+  <item nodeId="node-0xad6a750">
+    <command xml:space="preserve">switch iron off</command>
+    <result xml:space="preserve">The tip cools rapidly, fading to a silver-gray.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="112">YES</temporary>
+    <children>
+      <child nodeId="node-0x6eb36b0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6eb36b0">
+    <command xml:space="preserve">touch iron</command>
+    <result xml:space="preserve">You feel nothing unexpected.
+
+There is a quiet tone from your phone and you feel a short vibration, indicating that an SMS message has arrived.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="111">YES</temporary>
   </item>
 </Skein>
