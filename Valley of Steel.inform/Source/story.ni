@@ -604,7 +604,7 @@ Instead of examining the MitKlein, say "You can't see any such thing." instead.
 The backpack is a player's holdall. The backpack is wearable. The player is wearing the backpack. The backpack is a container.  It is open. The description is "A black rip-stop backpack which you normally use for toting tools and books."
 Understand "pack" as the backpack.
 Understand "bag" as the backpack.
-ffor
+
 The newspaper is a thing.  The newspaper is small.  The description is "The local newspaper, printed on plasfax.  Some retro individuals still prefer to hold their news in their hands."
 
 After examining the newspaper for the first time:

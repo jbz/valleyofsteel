@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Skein rootNode="node-0x6b539f0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x6df6ab0" />
+  <activeNode nodeId="node-0xacdc5d0" />
   <item nodeId="node-0x6b539f0">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -52,8 +52,9 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="2407">NO</temporary>
+    <temporary score="2436">NO</temporary>
     <children>
+      <child nodeId="node-0xace7d70" />
       <child nodeId="node-0x6b53a40" />
     </children>
   </item>
@@ -9715,7 +9716,73 @@ Meek and obedient, you follow the leader down well-trodden corridors, down into 
 Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?
 &gt; </commentary>
     <played>YES</played>
-    <changed>YES</changed>
+    <changed>NO</changed>
     <temporary score="2406">NO</temporary>
+  </item>
+  <item nodeId="node-0xace7d70">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+Primrose &amp; Cedar
+This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station entrance is to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Green Residential Park, south, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="2436">YES</temporary>
+    <children>
+      <child nodeId="node-0xac04530" />
+    </children>
+  </item>
+  <item nodeId="node-0xac04530">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+South Primrose Lane
+Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence&apos;s front path.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go north to Primrose &amp; Cedar and east from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="2436">YES</temporary>
+    <children>
+      <child nodeId="node-0xea896c0" />
+    </children>
+  </item>
+  <item nodeId="node-0xea896c0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Front Path
+This front path is paved with cracked flagstones.  Primrose Lane is to the west, a three-family building is to the east, and the building&apos;s side yard is to the northeast.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+You can go northeast, east through the House door (closed), and west to South Primrose Lane from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="2436">YES</temporary>
+    <children>
+      <child nodeId="node-0xacdc5d0" />
+    </children>
+  </item>
+  <item nodeId="node-0xacdc5d0">
+    <command xml:space="preserve">e</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="2435">YES</temporary>
   </item>
 </Skein>
