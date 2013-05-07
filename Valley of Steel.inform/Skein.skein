@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Skein rootNode="node-0x6b539f0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0x6eb36b0" />
+  <activeNode nodeId="node-0x6df6ab0" />
   <item nodeId="node-0x6b539f0">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -38,7 +38,7 @@ Welcome to the future.  Every citizen has been scanned, chipped, folded, spindle
 
 Valley of Steel
 A tale of the surveillance society by The Custodian of http://everything2.com
-Release 1 / Serial number 130505 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 1 / Serial number 130506 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Green Residential Park
 Primrose Street ends here in a small circular cul-de-sac.  You&apos;re in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
@@ -52,9 +52,8 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="112">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
-      <child nodeId="node-0xade4280" />
       <child nodeId="node-0x6b53a40" />
     </children>
   </item>
@@ -68,7 +67,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b532e0" />
     </children>
@@ -99,7 +98,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b53330" />
     </children>
@@ -130,7 +129,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b53380" />
     </children>
@@ -165,7 +164,7 @@ There is a quiet tone from your phone and you feel a short vibration, indicating
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6aa7ad0" />
     </children>
@@ -179,9 +178,11 @@ The slightly shabby front lobby of this multi-family building.  A door leads out
 
 A small post-it note is stuck to the door of Apartment 1.
 
-You can also see a newspaper and a pamphlet here.
+You can also see ffor The newspaper and a pamphlet here.
 
 You can go south through the Apartment door (closed) and west through the House door to Front Path from here.
+
+There is a Public Surveillance Notice here.
 
 The automatic door slides closed.
 
@@ -193,33 +194,35 @@ The slightly shabby front lobby of this multi-family building.  A door leads out
 
 A small post-it note is stuck to the door of Apartment 1.
 
-You can also see a newspaper and a pamphlet here.
+You can also see ffor The newspaper and a pamphlet here.
 
 You can go south through the Apartment door (closed) and west through the House door to Front Path from here.
+
+There is a Public Surveillance Notice here.
 
 The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6aa7b20" />
     </children>
   </item>
   <item nodeId="node-0x6aa7b20">
     <command xml:space="preserve">put newspaper and pamphlet in pack</command>
-    <result xml:space="preserve">newspaper: Done.
+    <result xml:space="preserve">ffor The newspaper: Done.
 pamphlet: Done.
 
 &gt;</result>
-    <commentary xml:space="preserve">newspaper: Done.
+    <commentary xml:space="preserve">ffor The newspaper: Done.
 pamphlet: Done.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b535b0" />
     </children>
@@ -234,7 +237,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b53600" />
     </children>
@@ -271,7 +274,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b53650" />
     </children>
@@ -302,7 +305,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b536a0" />
     </children>
@@ -333,22 +336,22 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6b53710" />
     </children>
   </item>
   <item nodeId="node-0x6b53710">
     <command xml:space="preserve">l bedroom window</command>
-    <result xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.  Having the latch on the outside probably violates some building code for somewhere.
+    <result xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.  Having the latch on the outside probably violates some building code somewhere.
 
 &gt;</result>
-    <commentary xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.  Having the latch on the outside probably violates some building code for somewhere.
+    <commentary xml:space="preserve">A large clear two-pane window, it is locked with a latch mechanism at the join of the two panes.  Having the latch on the outside probably violates some building code somewhere.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debab0" />
     </children>
@@ -367,7 +370,7 @@ In the latch is a cotter pin.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6aa7b70" />
     </children>
@@ -386,7 +389,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debb00" />
     </children>
@@ -401,22 +404,22 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debb70" />
     </children>
   </item>
   <item nodeId="node-0x6debb70">
     <command xml:space="preserve">drop pin</command>
-    <result xml:space="preserve">Dropped.
+    <result xml:space="preserve">You drop the cotter pin and it falls to the ground, vanishing into the pocket dimension reserved for screws, clips, single socks and pens.
 
 &gt;</result>
-    <commentary xml:space="preserve">Dropped.
+    <commentary xml:space="preserve">You drop the cotter pin and it falls to the ground, vanishing into the pocket dimension reserved for screws, clips, single socks and pens.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debbe0" />
     </children>
@@ -431,7 +434,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debc50" />
     </children>
@@ -446,7 +449,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debcc0" />
     </children>
@@ -461,7 +464,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debd30" />
     </children>
@@ -476,7 +479,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deb9f0" />
     </children>
@@ -491,7 +494,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deba40" />
     </children>
@@ -506,7 +509,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debf20" />
     </children>
@@ -521,7 +524,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debf90" />
     </children>
@@ -536,22 +539,22 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec000" />
     </children>
   </item>
   <item nodeId="node-0x6dec000">
     <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;
+    <result xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES CELL SIGNAL IN ANOTHER AREA IT MAY BE LOCATED BY HOMELAND SECURITY - DISABLE ENTIRELY BEFORE TRAVEL&lt;more&gt;
 
 &gt;</result>
-    <commentary xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES NEW CELL SIGNAL IT MAY BE LOCATED BY HOMELAND SECURITY&lt;more&gt;
+    <commentary xml:space="preserve">Message 9 reads: - THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES CELL SIGNAL IN ANOTHER AREA IT MAY BE LOCATED BY HOMELAND SECURITY - DISABLE ENTIRELY BEFORE TRAVEL&lt;more&gt;
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec070" />
     </children>
@@ -566,7 +569,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec0e0" />
     </children>
@@ -575,13 +578,17 @@ A quiet tone from your phone indicates that you have unread SMS messages.
     <command xml:space="preserve">open bedroom window</command>
     <result xml:space="preserve">You slide the bedroom window open.
 
+You have the sudden feeling that you&apos;re being followed.
+
 &gt;</result>
     <commentary xml:space="preserve">You slide the bedroom window open.
+
+You have the sudden feeling that you&apos;re being followed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec150" />
     </children>
@@ -604,7 +611,7 @@ You can go north, east to Back Yard, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec1c0" />
     </children>
@@ -627,7 +634,7 @@ You can go north, east to Bedroom, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec230" />
     </children>
@@ -654,7 +661,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec2a0" />
     </children>
@@ -669,7 +676,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec310" />
     </children>
@@ -696,7 +703,7 @@ You can go south and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec380" />
     </children>
@@ -717,7 +724,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debda0" />
     </children>
@@ -732,22 +739,22 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debe10" />
     </children>
   </item>
   <item nodeId="node-0x6debe10">
     <command xml:space="preserve">open key with knife</command>
-    <result xml:space="preserve">You carefully cut open the car key with your knife and peel back the rubber to reveal a broadcast chip and a blank memory chip.
+    <result xml:space="preserve">You carefully cut open the car key with your knife and peel back the rubber to reveal a broadcast chip and a transponder memory chip.
 
 &gt;</result>
-    <commentary xml:space="preserve">You carefully cut open the car key with your knife and peel back the rubber to reveal a broadcast chip and a blank memory chip.
+    <commentary xml:space="preserve">You carefully cut open the car key with your knife and peel back the rubber to reveal a broadcast chip and a transponder memory chip.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6debe80" />
     </children>
@@ -756,19 +763,19 @@ Taken.
     <command xml:space="preserve">take broadcast and memory</command>
     <result xml:space="preserve">broadcast chip: (putting the multitool into the backpack to make room)
 Taken.
-blank memory chip: (putting the car key into the backpack to make room)
+transponder memory chip: (putting the car key into the backpack to make room)
 Taken.
 
 &gt;</result>
     <commentary xml:space="preserve">broadcast chip: (putting the multitool into the backpack to make room)
 Taken.
-blank memory chip: (putting the car key into the backpack to make room)
+transponder memory chip: (putting the car key into the backpack to make room)
 Taken.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec630" />
     </children>
@@ -783,7 +790,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec6a0" />
     </children>
@@ -798,7 +805,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec710" />
     </children>
@@ -813,39 +820,47 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec780" />
     </children>
   </item>
   <item nodeId="node-0x6dec780">
     <command xml:space="preserve">combine broadcast and memory</command>
-    <result xml:space="preserve">You switch the soldering iron on.
+    <result xml:space="preserve">The tip heats up rapidly to a cherry-red heat.
+
+You switch the soldering iron on.
 
 You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</result>
-    <commentary xml:space="preserve">You switch the soldering iron on.
+    <commentary xml:space="preserve">The tip heats up rapidly to a cherry-red heat.
+
+You switch the soldering iron on.
 
 You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec7f0" />
     </children>
   </item>
   <item nodeId="node-0x6dec7f0">
     <command xml:space="preserve">turn iron off</command>
-    <result xml:space="preserve">You switch the soldering iron off.
+    <result xml:space="preserve">The tip cools rapidly, fading to a silver-gray.
+
+You switch the soldering iron off.
 
 &gt;</result>
-    <commentary xml:space="preserve">You switch the soldering iron off.
+    <commentary xml:space="preserve">The tip cools rapidly, fading to a silver-gray.
+
+You switch the soldering iron off.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec860" />
     </children>
@@ -862,7 +877,7 @@ solder: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec8d0" />
     </children>
@@ -889,7 +904,7 @@ You can go north to Home Office and east to Hall from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec940" />
     </children>
@@ -898,17 +913,17 @@ You can go north to Home Office and east to Hall from here.
     <command xml:space="preserve">put thermos in pack</command>
     <result xml:space="preserve">You put the thermos into the backpack.
 
-The Green Residential curfew will begin in five minutes.  You&apos;ll need to be inside to avoid being arrested.
+The Green Residential curfew will begin in five minutes.  You&apos;ll need to be back inside, in an area which isn&apos;t under public surveillance, to avoid being arrested.
 
 &gt;</result>
     <commentary xml:space="preserve">You put the thermos into the backpack.
 
-The Green Residential curfew will begin in five minutes.  You&apos;ll need to be inside to avoid being arrested.
+The Green Residential curfew will begin in five minutes.  You&apos;ll need to be back inside, in an area which isn&apos;t under public surveillance, to avoid being arrested.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec9b0" />
     </children>
@@ -925,7 +940,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deca20" />
     </children>
@@ -940,7 +955,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deca90" />
     </children>
@@ -963,7 +978,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decb00" />
     </children>
@@ -978,7 +993,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decb70" />
     </children>
@@ -993,7 +1008,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decbe0" />
     </children>
@@ -1004,15 +1019,19 @@ A few moments later there is a loud BING! and the microwave stops.
 
 You put the Klein Blaster into the side panel.
 
+It&apos;s 8:00 PM.  The curfew is now in effect for this neighborhood.
+
 &gt;</result>
     <commentary xml:space="preserve">As you slide the component in, a small LED labelled &quot;TRNSMT RDY&quot; lights up on the main board!
 
 You put the Klein Blaster into the side panel.
 
+It&apos;s 8:00 PM.  The curfew is now in effect for this neighborhood.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="530">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decc50" />
     </children>
@@ -1021,15 +1040,15 @@ You put the Klein Blaster into the side panel.
     <command xml:space="preserve">push microwave button</command>
     <result xml:space="preserve">With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you&apos;ll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.
 
-You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this mess...
-
+You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this whole mess…
 &gt;</result>
     <commentary xml:space="preserve">With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you&apos;ll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.
 
+You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this whole mess…
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="529">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deccc0" />
     </children>
@@ -1044,7 +1063,7 @@ You examine the now-fried microwave, musing to yourself that if only there was a
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decd30" />
     </children>
@@ -1071,7 +1090,7 @@ You can go south to the Kitchen and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec3f0" />
     </children>
@@ -1098,7 +1117,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec460" />
     </children>
@@ -1115,6 +1134,8 @@ A small post-it note is stuck to the door of Apartment 1.
 
 You can go south through the Apartment door to Entry and west through the House door (closed) to Front Path from here.
 
+There is a Public Surveillance Notice here.
+
 &gt;</result>
     <commentary xml:space="preserve">(first opening the Apartment door)
 You undo the throw bolts.  Since you have no key, you leave the door unlocked.
@@ -1126,10 +1147,12 @@ A small post-it note is stuck to the door of Apartment 1.
 
 You can go south through the Apartment door to Entry and west through the House door (closed) to Front Path from here.
 
+There is a Public Surveillance Notice here.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec4d0" />
     </children>
@@ -1147,8 +1170,6 @@ You can go northeast to Side Yard, east through the House door to Front Lobby, a
 
 There is a Public Surveillance Notice here.
 
-You have the sudden feeling that you&apos;re being followed.
-
 The automatic door slides closed.
 
 &gt;</result>
@@ -1163,14 +1184,12 @@ You can go northeast to Side Yard, east through the House door to Front Lobby, a
 
 There is a Public Surveillance Notice here.
 
-You have the sudden feeling that you&apos;re being followed.
-
 The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec540" />
     </children>
@@ -1201,7 +1220,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dec5b0" />
     </children>
@@ -1232,7 +1251,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decda0" />
     </children>
@@ -1259,7 +1278,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dece10" />
     </children>
@@ -1302,7 +1321,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dece80" />
     </children>
@@ -1323,18 +1342,14 @@ The capsule doors slide shut.  The humming noice increases in volume, and the ca
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="403">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decef0" />
     </children>
   </item>
   <item nodeId="node-0x6decef0">
     <command xml:space="preserve">wait for capsule</command>
-    <result xml:space="preserve">You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
-
-A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
-
-You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+    <result xml:space="preserve">Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Residential and vanishes into the darkness once more.
 
 A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
 
@@ -1343,11 +1358,7 @@ The Capsule has arrived.  The time is 8:32 pm.
 A few commuters get on and off the Transit capsule.
 
 &gt;</result>
-    <commentary xml:space="preserve">You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
-
-A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
-
-You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+    <commentary xml:space="preserve">Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Residential and vanishes into the darkness once more.
 
 A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
 
@@ -1358,7 +1369,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="402">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decf60" />
     </children>
@@ -1387,7 +1398,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6decfd0" />
     </children>
@@ -1412,7 +1423,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded040" />
     </children>
@@ -1427,7 +1438,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded0b0" />
     </children>
@@ -1446,7 +1457,7 @@ A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded120" />
     </children>
@@ -1471,7 +1482,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded190" />
     </children>
@@ -1490,7 +1501,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded200" />
     </children>
@@ -1523,7 +1534,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded270" />
     </children>
@@ -1556,7 +1567,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded2e0" />
     </children>
@@ -1587,7 +1598,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded350" />
     </children>
@@ -1622,7 +1633,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded3c0" />
     </children>
@@ -1637,7 +1648,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded430" />
     </children>
@@ -1672,22 +1683,22 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded4a0" />
     </children>
   </item>
   <item nodeId="node-0x6ded4a0">
     <command xml:space="preserve">ponyfriend, tell me about the pager</command>
-    <result xml:space="preserve">Ponyfriend responds out of the corner of his mouth, looking away. &quot;Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I&apos;m sorry, I have to keep checking to make sure they haven&apos;t paged me.  I wish…I wish I could talk to them directly, though.瀀&quot;
+    <result xml:space="preserve">Ponyfriend responds out of the corner of his mouth, looking away. &quot;Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I&apos;m sorry, I have to keep checking to make sure they haven&apos;t paged me.  I wish…I wish I could talk to them directly, though.&quot;
 
 &gt;</result>
-    <commentary xml:space="preserve">Ponyfriend responds out of the corner of his mouth, looking away. &quot;Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I&apos;m sorry, I have to keep checking to make sure they haven&apos;t paged me.  I wish…I wish I could talk to them directly, though.瀀&quot;
+    <commentary xml:space="preserve">Ponyfriend responds out of the corner of his mouth, looking away. &quot;Oh, my pager, yes.  This is how They send me my mission briefings. Well, what I mean is, they page me and I call them to get the briefings, yes.  I&apos;m sorry, I have to keep checking to make sure they haven&apos;t paged me.  I wish…I wish I could talk to them directly, though.&quot;
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded510" />
     </children>
@@ -1701,8 +1712,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded580" />
     </children>
@@ -1717,7 +1728,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded5f0" />
     </children>
@@ -1738,7 +1749,7 @@ Ponyfriend Chunky gives the pager to you.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded660" />
     </children>
@@ -1757,7 +1768,7 @@ Ponyfriend furtively scratches underneath his none-too-clean shirt.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded6d0" />
     </children>
@@ -1776,7 +1787,7 @@ Ponyfriend checks his cell phone, looking disappointed that no-one has called.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded740" />
     </children>
@@ -1791,7 +1802,7 @@ Ponyfriend checks his cell phone, looking disappointed that no-one has called.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded7b0" />
     </children>
@@ -1822,7 +1833,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded820" />
     </children>
@@ -1853,7 +1864,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded890" />
     </children>
@@ -1886,7 +1897,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded900" />
     </children>
@@ -1908,8 +1919,8 @@ You can go south to Hospital Lobby and east from here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded970" />
     </children>
@@ -1940,7 +1951,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6ded9e0" />
     </children>
@@ -1955,7 +1966,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deda50" />
     </children>
@@ -1977,8 +1988,8 @@ You can go south to Hospital Lobby and east to the Hospital Lab from here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedac0" />
     </children>
@@ -2005,7 +2016,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedb30" />
     </children>
@@ -2031,8 +2042,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedba0" />
     </children>
@@ -2059,7 +2070,7 @@ You can go west to Hospital Elevators from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedc10" />
     </children>
@@ -2076,7 +2087,7 @@ You can go west to Hospital Elevators from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedc80" />
     </children>
@@ -2091,7 +2102,7 @@ You can go west to Hospital Elevators from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedcf0" />
     </children>
@@ -2117,8 +2128,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedd60" />
     </children>
@@ -2152,8 +2163,8 @@ You see a small red light in the corner of your vision which vanishes as you tur
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deddd0" />
     </children>
@@ -2172,7 +2183,7 @@ You open the cryopack.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dede40" />
     </children>
@@ -2187,7 +2198,7 @@ You open the cryopack.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedeb0" />
     </children>
@@ -2213,8 +2224,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedf20" />
     </children>
@@ -2255,7 +2266,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dedf90" />
     </children>
@@ -2270,7 +2281,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee000" />
     </children>
@@ -2301,7 +2312,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee070" />
     </children>
@@ -2328,7 +2339,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee0e0" />
     </children>
@@ -2365,7 +2376,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee150" />
     </children>
@@ -2400,7 +2411,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee1c0" />
     </children>
@@ -2429,7 +2440,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee230" />
     </children>
@@ -2454,7 +2465,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee2a0" />
     </children>
@@ -2469,7 +2480,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee310" />
     </children>
@@ -2484,7 +2495,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee380" />
     </children>
@@ -2501,7 +2512,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee3f0" />
     </children>
@@ -2520,7 +2531,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee460" />
     </children>
@@ -2539,7 +2550,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee4d0" />
     </children>
@@ -2564,7 +2575,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee540" />
     </children>
@@ -2579,7 +2590,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee5b0" />
     </children>
@@ -2594,7 +2605,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee620" />
     </children>
@@ -2611,7 +2622,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee690" />
     </children>
@@ -2630,7 +2641,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee700" />
     </children>
@@ -2663,7 +2674,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee770" />
     </children>
@@ -2696,7 +2707,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee7e0" />
     </children>
@@ -2731,7 +2742,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee850" />
     </children>
@@ -2766,7 +2777,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee8c0" />
     </children>
@@ -2801,7 +2812,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee930" />
     </children>
@@ -2823,6 +2834,8 @@ You can go east through the Garb-oh door to Green Commercial Plaza South from he
 
 There is a Public Surveillance Notice here.
 
+A shopper pulls a pair of pants off the racks and looks at it critically before returning it.
+
 The automatic door slides closed.
 
 &gt;</result>
@@ -2841,12 +2854,14 @@ You can go east through the Garb-oh door to Green Commercial Plaza South from he
 
 There is a Public Surveillance Notice here.
 
+A shopper pulls a pair of pants off the racks and looks at it critically before returning it.
+
 The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6dee9a0" />
     </children>
@@ -2861,7 +2876,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deea10" />
     </children>
@@ -2880,7 +2895,7 @@ The shopper is empty-handed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deea80" />
     </children>
@@ -2899,7 +2914,7 @@ The shopper puts down a last item of clothing and drifts towards the door.  As s
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deeaf0" />
     </children>
@@ -2940,7 +2955,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deeb60" />
     </children>
@@ -2955,7 +2970,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deebd0" />
     </children>
@@ -2970,7 +2985,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deec40" />
     </children>
@@ -3011,7 +3026,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deecb0" />
     </children>
@@ -3026,7 +3041,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deed20" />
     </children>
@@ -3043,7 +3058,7 @@ What do you want to remove that with?
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deed90" />
     </children>
@@ -3058,7 +3073,7 @@ What do you want to remove that with?
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deee00" />
     </children>
@@ -3077,7 +3092,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deee70" />
     </children>
@@ -3092,7 +3107,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deeee0" />
     </children>
@@ -3101,13 +3116,17 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
     <command xml:space="preserve">put blue jacket&apos;s antitheft tag in thermos</command>
     <result xml:space="preserve">You put the blue jacket&apos;s antitheft tag into the thermos.
 
+A small group of people enter the store, look around, look at each other and file back out.
+
 &gt;</result>
     <commentary xml:space="preserve">You put the blue jacket&apos;s antitheft tag into the thermos.
+
+A small group of people enter the store, look around, look at each other and file back out.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deef50" />
     </children>
@@ -3122,7 +3141,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deefc0" />
     </children>
@@ -3137,7 +3156,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def030" />
     </children>
@@ -3152,7 +3171,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def0a0" />
     </children>
@@ -3161,13 +3180,17 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
     <command xml:space="preserve">put green shirt&apos;s antitheft tag in thermos</command>
     <result xml:space="preserve">You put the green shirt&apos;s antitheft tag into the thermos.
 
+A tiny surveillance camera you&apos;re sure you didn&apos;t see before swivels to follow you.
+
 &gt;</result>
     <commentary xml:space="preserve">You put the green shirt&apos;s antitheft tag into the thermos.
+
+A tiny surveillance camera you&apos;re sure you didn&apos;t see before swivels to follow you.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def110" />
     </children>
@@ -3182,7 +3205,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def180" />
     </children>
@@ -3191,6 +3214,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
     <command xml:space="preserve">i</command>
     <result xml:space="preserve">You are carrying:
   a tag remover
+  a safety limiter
   a backpack (being worn, and open)
     a blue jacket
     a broadcast chip
@@ -3205,12 +3229,13 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
       a receive chip
     a multitool
     a pamphlet
-    a newspaper
+    ffor The newspaper
   a watch (being worn)
 
 &gt;</result>
     <commentary xml:space="preserve">You are carrying:
   a tag remover
+  a safety limiter
   a backpack (being worn, and open)
     a blue jacket
     a broadcast chip
@@ -3225,13 +3250,13 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
       a receive chip
     a multitool
     a pamphlet
-    a newspaper
+    ffor The newspaper
   a watch (being worn)
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def1f0" />
     </children>
@@ -3246,7 +3271,7 @@ The police finally search the shopper&apos;s shoulder bag, and shake their heads
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def260" />
     </children>
@@ -3287,7 +3312,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def2d0" />
     </children>
@@ -3322,7 +3347,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def340" />
     </children>
@@ -3353,7 +3378,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def3b0" />
     </children>
@@ -3380,7 +3405,7 @@ You can go west to The Proletariat Bar from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def420" />
     </children>
@@ -3397,7 +3422,7 @@ You can go west to The Proletariat Bar from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def490" />
     </children>
@@ -3412,7 +3437,7 @@ You can go west to The Proletariat Bar from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def500" />
     </children>
@@ -3427,7 +3452,7 @@ You can go west to The Proletariat Bar from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def570" />
     </children>
@@ -3442,7 +3467,7 @@ You can go west to The Proletariat Bar from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def5e0" />
     </children>
@@ -3465,7 +3490,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def650" />
     </children>
@@ -3480,7 +3505,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def6c0" />
     </children>
@@ -3495,7 +3520,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def730" />
     </children>
@@ -3514,7 +3539,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def7a0" />
     </children>
@@ -3529,7 +3554,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def810" />
     </children>
@@ -3544,7 +3569,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def880" />
     </children>
@@ -3563,7 +3588,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def8f0" />
     </children>
@@ -3578,7 +3603,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def960" />
     </children>
@@ -3593,7 +3618,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6def9d0" />
     </children>
@@ -3608,7 +3633,7 @@ You carefully cut open the tag with your knife and peel back the plastic to reve
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defa40" />
     </children>
@@ -3625,6 +3650,8 @@ You can go northwest to Green Commercial Plaza North, southwest to Green Commerc
 
 There is a Public Surveillance Notice here.
 
+Roberto shuffles his feet.
+
 &gt;</result>
     <commentary xml:space="preserve">
 The Proletariat Bar
@@ -3636,10 +3663,12 @@ You can go northwest to Green Commercial Plaza North, southwest to Green Commerc
 
 There is a Public Surveillance Notice here.
 
+Roberto shuffles his feet.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defab0" />
     </children>
@@ -3674,7 +3703,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defb20" />
     </children>
@@ -3713,7 +3742,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defb90" />
     </children>
@@ -3728,7 +3757,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defc00" />
     </children>
@@ -3743,7 +3772,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defc70" />
     </children>
@@ -3758,7 +3787,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defce0" />
     </children>
@@ -3773,7 +3802,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defd50" />
     </children>
@@ -3788,7 +3817,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defdc0" />
     </children>
@@ -3803,7 +3832,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defe30" />
     </children>
@@ -3818,7 +3847,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defea0" />
     </children>
@@ -3833,7 +3862,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deff10" />
     </children>
@@ -3848,7 +3877,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6deff80" />
     </children>
@@ -3863,7 +3892,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6defff0" />
     </children>
@@ -3878,7 +3907,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0060" />
     </children>
@@ -3901,7 +3930,7 @@ Your hacked car key beeps softly, and its ready light turns green!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df00d0" />
     </children>
@@ -3916,7 +3945,7 @@ Your hacked car key beeps softly, and its ready light turns green!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0140" />
     </children>
@@ -3951,7 +3980,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df01b0" />
     </children>
@@ -3986,7 +4015,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0220" />
     </children>
@@ -4001,6 +4030,8 @@ You can go south to Green Commercial Plaza North and down through the Green Comm
 
 There is a Public Surveillance Notice here.
 
+A tiny surveillance camera you&apos;re sure you didn&apos;t see before swivels to follow you.
+
 &gt;</result>
     <commentary xml:space="preserve">
 Green Commercial Station
@@ -4010,10 +4041,12 @@ You can go south to Green Commercial Plaza North and down through the Green Comm
 
 There is a Public Surveillance Notice here.
 
+A tiny surveillance camera you&apos;re sure you didn&apos;t see before swivels to follow you.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0290" />
     </children>
@@ -4031,8 +4064,6 @@ You can go south through the Green Commercial Station door to Green Commercial S
 
 There is a Public Surveillance Notice here.
 
-A tiny surveillance camera you&apos;re sure you didn&apos;t see before swivels to follow you.
-
 The automatic door slides closed.
 
 &gt;</result>
@@ -4047,14 +4078,12 @@ You can go south through the Green Commercial Station door to Green Commercial S
 
 There is a Public Surveillance Notice here.
 
-A tiny surveillance camera you&apos;re sure you didn&apos;t see before swivels to follow you.
-
 The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0300" />
     </children>
@@ -4085,7 +4114,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0370" />
     </children>
@@ -4114,7 +4143,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df03e0" />
     </children>
@@ -4139,7 +4168,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0450" />
     </children>
@@ -4154,7 +4183,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df04c0" />
     </children>
@@ -4169,7 +4198,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0530" />
     </children>
@@ -4186,7 +4215,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df05a0" />
     </children>
@@ -4205,7 +4234,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0610" />
     </children>
@@ -4238,7 +4267,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0680" />
     </children>
@@ -4272,8 +4301,8 @@ The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df06f0" />
     </children>
@@ -4304,7 +4333,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0760" />
     </children>
@@ -4335,7 +4364,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df07d0" />
     </children>
@@ -4354,7 +4383,7 @@ You carefully cut through several strands of the fence until you have an opening
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0840" />
     </children>
@@ -4381,7 +4410,7 @@ You can go north to South Primrose Lane and south from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df08b0" />
     </children>
@@ -4412,7 +4441,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0920" />
     </children>
@@ -4443,7 +4472,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0990" />
     </children>
@@ -4469,8 +4498,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0a00" />
     </children>
@@ -4489,7 +4518,7 @@ You can go east through the Green Residential Station door to Green Residential 
 
 There is a Public Surveillance Notice here.
 
-Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Residential and vanishes into the darkness once more.
+You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
 
 The automatic door slides closed.
 
@@ -4506,23 +4535,21 @@ You can go east through the Green Residential Station door to Green Residential 
 
 There is a Public Surveillance Notice here.
 
-Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Residential and vanishes into the darkness once more.
+You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
 
 The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0a70" />
     </children>
   </item>
   <item nodeId="node-0x6df0a70">
     <command xml:space="preserve">wait for capsule</command>
-    <result xml:space="preserve">You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
-
-A police officer strolls through the area, giving you a suspicious look before moving on.
+    <result xml:space="preserve">A police officer strolls through the area, giving you a suspicious look before moving on.
 
 A commuter walks by.
 
@@ -4533,9 +4560,7 @@ The Capsule has arrived.  The time is 11:20 pm.
 A few commuters get on and off the Transit capsule.
 
 &gt;</result>
-    <commentary xml:space="preserve">You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
-
-A police officer strolls through the area, giving you a suspicious look before moving on.
+    <commentary xml:space="preserve">A police officer strolls through the area, giving you a suspicious look before moving on.
 
 A commuter walks by.
 
@@ -4548,7 +4573,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0ae0" />
     </children>
@@ -4577,7 +4602,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0b50" />
     </children>
@@ -4602,7 +4627,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0bc0" />
     </children>
@@ -4617,7 +4642,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0c30" />
     </children>
@@ -4632,7 +4657,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0ca0" />
     </children>
@@ -4649,7 +4674,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0d10" />
     </children>
@@ -4668,7 +4693,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0d80" />
     </children>
@@ -4701,7 +4726,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0df0" />
     </children>
@@ -4734,7 +4759,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0e60" />
     </children>
@@ -4765,7 +4790,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0ed0" />
     </children>
@@ -4796,7 +4821,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0f40" />
     </children>
@@ -4827,7 +4852,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df0fb0" />
     </children>
@@ -4836,17 +4861,17 @@ There is a Public Surveillance Notice here.
     <command xml:space="preserve">ramirez, i want to report a drug market</command>
     <result xml:space="preserve">The sergeant suddenly becomes animated, looking directly at you.  &quot;What?&quot; he barks.  &quot;Drugs?  Where?&quot;  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He picks up the phone and has an animated conversation with someone on the other end, the word &quot;drugs&quot; and &quot;extreme&quot; and &quot;losers&quot; coming up with frequency.  He has lost interest in you.
 
-The door swings open and two officers come in, manhandling a suspect between them.  Ignoring their suspect&apos;s complaints, they pause briefly to check in with the desk before moving on into the police station.
+The telephone rings.  Sergeant Ramirez answers gruffly, speaks a few words and hangs up.
 
 &gt;</result>
     <commentary xml:space="preserve">The sergeant suddenly becomes animated, looking directly at you.  &quot;What?&quot; he barks.  &quot;Drugs?  Where?&quot;  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He picks up the phone and has an animated conversation with someone on the other end, the word &quot;drugs&quot; and &quot;extreme&quot; and &quot;losers&quot; coming up with frequency.  He has lost interest in you.
 
-The door swings open and two officers come in, manhandling a suspect between them.  Ignoring their suspect&apos;s complaints, they pause briefly to check in with the desk before moving on into the police station.
+The telephone rings.  Sergeant Ramirez answers gruffly, speaks a few words and hangs up.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1020" />
     </children>
@@ -4877,7 +4902,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1090" />
     </children>
@@ -4892,7 +4917,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1100" />
     </children>
@@ -4907,7 +4932,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1170" />
     </children>
@@ -4922,7 +4947,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df11e0" />
     </children>
@@ -4953,7 +4978,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1250" />
     </children>
@@ -4984,7 +5009,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df12c0" />
     </children>
@@ -5001,6 +5026,8 @@ You can go north to Civil Center Steps, south to Government Square South, southe
 
 There is a Public Surveillance Notice here.
 
+A black flittervan cruises slowly by above and vanishes from sight.
+
 &gt;</result>
     <commentary xml:space="preserve">
 Government Square North
@@ -5012,10 +5039,12 @@ You can go north to Civil Center Steps, south to Government Square South, southe
 
 There is a Public Surveillance Notice here.
 
+A black flittervan cruises slowly by above and vanishes from sight.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1330" />
     </children>
@@ -5046,7 +5075,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df13a0" />
     </children>
@@ -5065,8 +5094,6 @@ You can go north to Hospital Entrance, northwest to Government Square North, eas
 
 There is a Public Surveillance Notice here.
 
-A black flittervan cruises slowly by above and vanishes from sight.
-
 &gt;</result>
     <commentary xml:space="preserve">
 Hospital Driveway
@@ -5080,12 +5107,10 @@ You can go north to Hospital Entrance, northwest to Government Square North, eas
 
 There is a Public Surveillance Notice here.
 
-A black flittervan cruises slowly by above and vanishes from sight.
-
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1410" />
     </children>
@@ -5094,13 +5119,17 @@ A black flittervan cruises slowly by above and vanishes from sight.
     <command xml:space="preserve">remove receive chip from key</command>
     <result xml:space="preserve">Taken.
 
+There is the sound of sirens in the distance.
+
 &gt;</result>
     <commentary xml:space="preserve">Taken.
+
+There is the sound of sirens in the distance.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1480" />
     </children>
@@ -5119,7 +5148,7 @@ You put the broadcast chip into the car key.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df14f0" />
     </children>
@@ -5128,17 +5157,13 @@ You put the broadcast chip into the car key.
     <command xml:space="preserve">put receive in pack</command>
     <result xml:space="preserve">You put the receive chip into the backpack.
 
-There is the sound of sirens in the distance.
-
 &gt;</result>
     <commentary xml:space="preserve">You put the receive chip into the backpack.
-
-There is the sound of sirens in the distance.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1560" />
     </children>
@@ -5153,7 +5178,7 @@ There is the sound of sirens in the distance.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df15d0" />
     </children>
@@ -5170,7 +5195,7 @@ medical camera: Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1640" />
     </children>
@@ -5187,7 +5212,7 @@ medical camera: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df16b0" />
     </children>
@@ -5218,7 +5243,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1720" />
     </children>
@@ -5245,7 +5270,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1790" />
     </children>
@@ -5284,7 +5309,7 @@ A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1800" />
     </children>
@@ -5305,7 +5330,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1870" />
     </children>
@@ -5334,7 +5359,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df18e0" />
     </children>
@@ -5359,7 +5384,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1950" />
     </children>
@@ -5374,7 +5399,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df19c0" />
     </children>
@@ -5389,7 +5414,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1a30" />
     </children>
@@ -5406,7 +5431,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1aa0" />
     </children>
@@ -5425,7 +5450,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1b10" />
     </children>
@@ -5444,7 +5469,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1b80" />
     </children>
@@ -5469,7 +5494,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1bf0" />
     </children>
@@ -5478,13 +5503,17 @@ You hold onto your strap as the Capsule rapidly accelerates.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
+A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it off.
+
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
+
+A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it off.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1c60" />
     </children>
@@ -5493,17 +5522,13 @@ You hold onto your strap as the Capsule rapidly accelerates.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
-A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it off.
-
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
-
-A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it off.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1cd0" />
     </children>
@@ -5520,7 +5545,7 @@ With a deep thrumming and the whoosh of displaced air, the Transit Capsule slide
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1d40" />
     </children>
@@ -5539,7 +5564,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1db0" />
     </children>
@@ -5572,7 +5597,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1e20" />
     </children>
@@ -5605,7 +5630,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1e90" />
     </children>
@@ -5640,7 +5665,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1f00" />
     </children>
@@ -5671,7 +5696,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1f70" />
     </children>
@@ -5686,7 +5711,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df1fe0" />
     </children>
@@ -5721,7 +5746,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2050" />
     </children>
@@ -5756,7 +5781,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df20c0" />
     </children>
@@ -5791,7 +5816,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2130" />
     </children>
@@ -5826,7 +5851,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df21a0" />
     </children>
@@ -5857,7 +5882,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2210" />
     </children>
@@ -5880,7 +5905,7 @@ Roberto Velez goes northwest.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2280" />
     </children>
@@ -5919,7 +5944,7 @@ Roberto Velez goes west.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df22f0" />
     </children>
@@ -5958,7 +5983,7 @@ He shakes his head.  &quot;I am sorry, but the machine is broken.&quot;  You rea
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2360" />
     </children>
@@ -5973,7 +5998,7 @@ He shakes his head.  &quot;I am sorry, but the machine is broken.&quot;  You rea
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df23d0" />
     </children>
@@ -5988,7 +6013,7 @@ He shakes his head.  &quot;I am sorry, but the machine is broken.&quot;  You rea
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2440" />
     </children>
@@ -6003,7 +6028,7 @@ He shakes his head.  &quot;I am sorry, but the machine is broken.&quot;  You rea
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df24b0" />
     </children>
@@ -6038,7 +6063,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2520" />
     </children>
@@ -6073,7 +6098,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2590" />
     </children>
@@ -6104,7 +6129,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2600" />
     </children>
@@ -6121,7 +6146,7 @@ You put the blank memory chip into the film slot.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2670" />
     </children>
@@ -6142,7 +6167,7 @@ The camera emits an artificial-sounding &quot;CLICK&quot; noise.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df26e0" />
     </children>
@@ -6157,7 +6182,7 @@ The camera emits an artificial-sounding &quot;CLICK&quot; noise.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2750" />
     </children>
@@ -6192,7 +6217,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df27c0" />
     </children>
@@ -6235,7 +6260,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2830" />
     </children>
@@ -6266,7 +6291,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df28a0" />
     </children>
@@ -6281,7 +6306,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2910" />
     </children>
@@ -6296,7 +6321,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2980" />
     </children>
@@ -6311,7 +6336,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df29f0" />
     </children>
@@ -6326,7 +6351,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2a60" />
     </children>
@@ -6369,7 +6394,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2ad0" />
     </children>
@@ -6384,26 +6409,28 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2b40" />
     </children>
   </item>
   <item nodeId="node-0x6df2b40">
     <command xml:space="preserve">take all</command>
-    <result xml:space="preserve">disarmed tear gas grenade: Taken.
+    <result xml:space="preserve">disarmed tear gas grenade: (putting the safety limiter into the backpack to make room)
+Taken.
 harness: (putting the tissue sampler (Roberto) into the backpack to make room)
 Taken.
 
 &gt;</result>
-    <commentary xml:space="preserve">disarmed tear gas grenade: Taken.
+    <commentary xml:space="preserve">disarmed tear gas grenade: (putting the safety limiter into the backpack to make room)
+Taken.
 harness: (putting the tissue sampler (Roberto) into the backpack to make room)
 Taken.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2bb0" />
     </children>
@@ -6438,7 +6465,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2c20" />
     </children>
@@ -6473,7 +6500,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2c90" />
     </children>
@@ -6500,7 +6527,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2d00" />
     </children>
@@ -6537,7 +6564,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2d70" />
     </children>
@@ -6550,6 +6577,8 @@ A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced 
 The Capsule has arrived.  The time is 12:50 am.
 A few commuters get on and off the Transit capsule.
 
+A commuter walks by.
+
 &gt;</result>
     <commentary xml:space="preserve">A public address system reminds you to be alert and &quot;if you see something, say something!&quot;
 
@@ -6557,10 +6586,12 @@ A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced 
 The Capsule has arrived.  The time is 12:50 am.
 A few commuters get on and off the Transit capsule.
 
+A commuter walks by.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2de0" />
     </children>
@@ -6589,7 +6620,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2e50" />
     </children>
@@ -6614,7 +6645,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2ec0" />
     </children>
@@ -6629,7 +6660,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2f30" />
     </children>
@@ -6638,17 +6669,13 @@ You hold onto your strap as the Capsule rapidly accelerates.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
-A shabbily-dressed man wanders up to you.  He appears to be about to ask you for something, but then he catches a look at your eyes and instead wanders away again.
-
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
-
-A shabbily-dressed man wanders up to you.  He appears to be about to ask you for something, but then he catches a look at your eyes and instead wanders away again.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df2fa0" />
     </children>
@@ -6657,15 +6684,19 @@ A shabbily-dressed man wanders up to you.  He appears to be about to ask you for
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
+A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it off.
+
 With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
+
+A nearby commuter&apos;s handheld begins beeping loudly.  She hurriedly shuts it off.
 
 With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3010" />
     </children>
@@ -6684,7 +6715,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3080" />
     </children>
@@ -6717,7 +6748,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df30f0" />
     </children>
@@ -6751,8 +6782,8 @@ The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3160" />
     </children>
@@ -6783,7 +6814,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df31d0" />
     </children>
@@ -6804,6 +6835,8 @@ You arrive at South Primrose Lane to a scene of chaos.  Police vehicles are pull
 
 A few seconds later, there is a deep thundering BOOM as the breaching charges detonate, and a confused hubbub as (presumably) the SWAT officers rush into the abandoned house.
 
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
 &gt;</result>
     <commentary xml:space="preserve">
 South Primrose Lane
@@ -6819,10 +6852,12 @@ You arrive at South Primrose Lane to a scene of chaos.  Police vehicles are pull
 
 A few seconds later, there is a deep thundering BOOM as the breaching charges detonate, and a confused hubbub as (presumably) the SWAT officers rush into the abandoned house.
 
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3240" />
     </children>
@@ -6837,7 +6872,7 @@ A few seconds later, there is a deep thundering BOOM as the breaching charges de
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df32b0" />
     </children>
@@ -6852,7 +6887,7 @@ A few seconds later, there is a deep thundering BOOM as the breaching charges de
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3320" />
     </children>
@@ -6861,17 +6896,13 @@ A few seconds later, there is a deep thundering BOOM as the breaching charges de
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
-A black flittervan cruises slowly by above and vanishes from sight.
-
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
-
-A black flittervan cruises slowly by above and vanishes from sight.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3390" />
     </children>
@@ -6886,7 +6917,7 @@ A black flittervan cruises slowly by above and vanishes from sight.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3400" />
     </children>
@@ -6901,7 +6932,7 @@ A black flittervan cruises slowly by above and vanishes from sight.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3470" />
     </children>
@@ -6916,7 +6947,7 @@ A black flittervan cruises slowly by above and vanishes from sight.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df34e0" />
     </children>
@@ -6925,13 +6956,17 @@ A black flittervan cruises slowly by above and vanishes from sight.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
+
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
+
+You see a small red light in the corner of your vision which vanishes as you turn to look at it.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3550" />
     </children>
@@ -6946,7 +6981,7 @@ A black flittervan cruises slowly by above and vanishes from sight.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df35c0" />
     </children>
@@ -6955,17 +6990,13 @@ A black flittervan cruises slowly by above and vanishes from sight.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
-A black flittervan cruises slowly by above and vanishes from sight.
-
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
-
-A black flittervan cruises slowly by above and vanishes from sight.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3630" />
     </children>
@@ -6984,7 +7015,7 @@ Eventually, police begin filing back out of the hole in the fence, dragging a fe
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df36a0" />
     </children>
@@ -7011,7 +7042,7 @@ You can go north to South Primrose Lane and south from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3710" />
     </children>
@@ -7038,7 +7069,7 @@ You can go north to Drug Market from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3780" />
     </children>
@@ -7053,7 +7084,7 @@ You can go north to Drug Market from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df37f0" />
     </children>
@@ -7080,7 +7111,7 @@ You can go north to South Primrose Lane and south to Drug Den from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3860" />
     </children>
@@ -7111,7 +7142,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df38d0" />
     </children>
@@ -7142,7 +7173,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3940" />
     </children>
@@ -7168,8 +7199,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df39b0" />
     </children>
@@ -7188,7 +7219,7 @@ You can go east through the Green Residential Station door to Green Residential 
 
 There is a Public Surveillance Notice here.
 
-You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+A police officer strolls through the area, giving you a suspicious look before moving on.
 
 The automatic door slides closed.
 
@@ -7205,37 +7236,33 @@ You can go east through the Green Residential Station door to Green Residential 
 
 There is a Public Surveillance Notice here.
 
-You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+A police officer strolls through the area, giving you a suspicious look before moving on.
 
 The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3a20" />
     </children>
   </item>
   <item nodeId="node-0x6df3a20">
     <command xml:space="preserve">wait for capsule</command>
-    <result xml:space="preserve">A police officer strolls through the area, giving you a suspicious look before moving on.
-
-A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+    <result xml:space="preserve">A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 The Capsule has arrived.  The time is 1:20 am.
 A few commuters get on and off the Transit capsule.
 
 &gt;</result>
-    <commentary xml:space="preserve">A police officer strolls through the area, giving you a suspicious look before moving on.
-
-A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
+    <commentary xml:space="preserve">A light grows in the tunnel.  With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Residential Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 The Capsule has arrived.  The time is 1:20 am.
 A few commuters get on and off the Transit capsule.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3a90" />
     </children>
@@ -7264,7 +7291,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3b00" />
     </children>
@@ -7289,7 +7316,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3b70" />
     </children>
@@ -7304,7 +7331,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3be0" />
     </children>
@@ -7319,7 +7346,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3c50" />
     </children>
@@ -7328,15 +7355,19 @@ You hold onto your strap as the Capsule rapidly accelerates.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
+You find yourself mesmerized by an advertisement for disposable cameras.
+
 With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Service Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
+
+You find yourself mesmerized by an advertisement for disposable cameras.
 
 With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Green Service Platform and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3cc0" />
     </children>
@@ -7355,7 +7386,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3d30" />
     </children>
@@ -7373,6 +7404,8 @@ There is a Public Surveillance Notice here.
 
 A few commuters get on and off the Transit capsule.
 
+A commuter walks by.
+
 &gt;</result>
     <commentary xml:space="preserve">Green Service Platform
 Green Service One&apos;s platform is underground.  It serves mostly city workers during the day.  There is an exit at the center of the platform which leads north through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the south, where a Transit capsule hovers impatiently in the web.  The capsule doors are open.
@@ -7385,10 +7418,12 @@ There is a Public Surveillance Notice here.
 
 A few commuters get on and off the Transit capsule.
 
+A commuter walks by.
+
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3da0" />
     </children>
@@ -7421,7 +7456,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3e10" />
     </children>
@@ -7452,7 +7487,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3e80" />
     </children>
@@ -7491,7 +7526,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3ef0" />
     </children>
@@ -7523,8 +7558,8 @@ The automatic door slides closed.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3f60" />
     </children>
@@ -7554,8 +7589,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df3fd0" />
     </children>
@@ -7570,7 +7605,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4040" />
     </children>
@@ -7587,7 +7622,7 @@ Lights flash and the machine hums for a while. With a final hiss, the tissue gen
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df40b0" />
     </children>
@@ -7604,7 +7639,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4120" />
     </children>
@@ -7630,8 +7665,8 @@ There is a Public Surveillance Notice here.
 
 &gt;</commentary>
     <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="468">NO</temporary>
+    <changed>NO</changed>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4190" />
     </children>
@@ -7676,7 +7711,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4200" />
     </children>
@@ -7707,7 +7742,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4270" />
     </children>
@@ -7734,7 +7769,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df42e0" />
     </children>
@@ -7771,18 +7806,14 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4350" />
     </children>
   </item>
   <item nodeId="node-0x6df4350">
     <command xml:space="preserve">wait for capsule</command>
-    <result xml:space="preserve">You hear a very quiet beep from somewhere you can&apos;t identify.
-
-Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Service One and vanishes into the darkness once more.
-
-You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+    <result xml:space="preserve">Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Service One and vanishes into the darkness once more.
 
 Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Service One and vanishes into the darkness once more.
 
@@ -7791,11 +7822,7 @@ The Capsule has arrived.  The time is 1:50 am.
 A few commuters get on and off the Transit capsule.
 
 &gt;</result>
-    <commentary xml:space="preserve">You hear a very quiet beep from somewhere you can&apos;t identify.
-
-Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Service One and vanishes into the darkness once more.
-
-You see a small mouse scurry along the Transit Web and vanish back into the tunnels.
+    <commentary xml:space="preserve">Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Service One and vanishes into the darkness once more.
 
 Warning lights along the platform edge begin to blink rapidly.  A light grows in the tunnel.  With a deep moan and gust of wind, an express Transit Capsule blasts through Green Service One and vanishes into the darkness once more.
 
@@ -7806,7 +7833,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df43c0" />
     </children>
@@ -7835,7 +7862,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4430" />
     </children>
@@ -7860,7 +7887,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df44a0" />
     </children>
@@ -7875,7 +7902,7 @@ You hold onto your strap as the Capsule rapidly accelerates.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4510" />
     </children>
@@ -7884,13 +7911,17 @@ You hold onto your strap as the Capsule rapidly accelerates.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
+The capsule shudders as it passes a junction in the Web.
+
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
+
+The capsule shudders as it passes a junction in the Web.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4580" />
     </children>
@@ -7899,15 +7930,19 @@ You hold onto your strap as the Capsule rapidly accelerates.
     <command xml:space="preserve">z</command>
     <result xml:space="preserve">Time passes.
 
+You find yourself mesmerized by an advertisement for disposable cameras.
+
 With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Reserve Bank Station and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 &gt;</result>
     <commentary xml:space="preserve">Time passes.
+
+You find yourself mesmerized by an advertisement for disposable cameras.
 
 With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into Reserve Bank Station and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df45f0" />
     </children>
@@ -7926,7 +7961,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4660" />
     </children>
@@ -7959,7 +7994,7 @@ A few commuters get on and off the Transit capsule.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df46d0" />
     </children>
@@ -7980,7 +8015,7 @@ The capsule doors slide shut.  The humming noice increases in volume, and the ca
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4740" />
     </children>
@@ -7999,7 +8034,7 @@ You put on the contact lens.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df47b0" />
     </children>
@@ -8008,13 +8043,17 @@ You put on the contact lens.
     <command xml:space="preserve">put lens case in pack</command>
     <result xml:space="preserve">You put the lens case into the backpack.
 
+A commuter walks by.
+
 &gt;</result>
     <commentary xml:space="preserve">You put the lens case into the backpack.
+
+A commuter walks by.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4820" />
     </children>
@@ -8049,7 +8088,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4890" />
     </children>
@@ -8080,7 +8119,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4900" />
     </children>
@@ -8115,7 +8154,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4970" />
     </children>
@@ -8138,7 +8177,7 @@ On the Powered Platform you can see a spool.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df49e0" />
     </children>
@@ -8153,7 +8192,7 @@ On the Powered Platform you can see a spool.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4a50" />
     </children>
@@ -8190,7 +8229,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4ac0" />
     </children>
@@ -8221,7 +8260,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4b30" />
     </children>
@@ -8244,7 +8283,7 @@ You can go north, south, southeast to Food Court, east, and west through the Mai
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4ba0" />
     </children>
@@ -8263,7 +8302,7 @@ You open the cryopack, revealing a skin sample.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4c10" />
     </children>
@@ -8284,7 +8323,7 @@ You put on the skin sample.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4c80" />
     </children>
@@ -8323,7 +8362,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4cf0" />
     </children>
@@ -8340,7 +8379,7 @@ gas mask: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4d60" />
     </children>
@@ -8355,7 +8394,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4dd0" />
     </children>
@@ -8370,7 +8409,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4e40" />
     </children>
@@ -8385,7 +8424,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4eb0" />
     </children>
@@ -8400,7 +8439,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4f20" />
     </children>
@@ -8415,7 +8454,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df4f90" />
     </children>
@@ -8430,7 +8469,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5000" />
     </children>
@@ -8445,7 +8484,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5070" />
     </children>
@@ -8460,7 +8499,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df50e0" />
     </children>
@@ -8475,7 +8514,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5150" />
     </children>
@@ -8490,7 +8529,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df51c0" />
     </children>
@@ -8505,7 +8544,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5230" />
     </children>
@@ -8520,7 +8559,7 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df52a0" />
     </children>
@@ -8535,24 +8574,28 @@ You fashion the harness and the spool into a descender!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5310" />
     </children>
   </item>
   <item nodeId="node-0x6df5310">
     <command xml:space="preserve">take mask and multitool</command>
-    <result xml:space="preserve">gas mask: Taken.
+    <result xml:space="preserve">gas mask: Homeland Security frowns on people wearing gas masks in public places.  You should exercise caution and not be seen wearing it.
+
+Taken.
 multitool: Taken.
 
 &gt;</result>
-    <commentary xml:space="preserve">gas mask: Taken.
+    <commentary xml:space="preserve">gas mask: Homeland Security frowns on people wearing gas masks in public places.  You should exercise caution and not be seen wearing it.
+
+Taken.
 multitool: Taken.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5380" />
     </children>
@@ -8581,7 +8624,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df53f0" />
     </children>
@@ -8612,7 +8655,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5460" />
     </children>
@@ -8627,7 +8670,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df54d0" />
     </children>
@@ -8646,7 +8689,7 @@ With a bang and an enormous hiss, the gas grenade goes off and fills the area wi
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5540" />
     </children>
@@ -8665,7 +8708,7 @@ Billowing clouds of tear gas and smoke make it difficult to see.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df55b0" />
     </children>
@@ -8686,7 +8729,7 @@ Billowing clouds of tear gas and smoke make it difficult to see.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5620" />
     </children>
@@ -8701,7 +8744,7 @@ Billowing clouds of tear gas and smoke make it difficult to see.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5690" />
     </children>
@@ -8724,7 +8767,7 @@ You can go north, south, southeast to Food Court, east, and west through the Mai
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5700" />
     </children>
@@ -8763,7 +8806,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5770" />
     </children>
@@ -8780,7 +8823,7 @@ Dropped.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df57e0" />
     </children>
@@ -8795,7 +8838,7 @@ Dropped.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5850" />
     </children>
@@ -8812,7 +8855,7 @@ soldering iron: Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df58c0" />
     </children>
@@ -8820,18 +8863,22 @@ soldering iron: Taken.
   <item nodeId="node-0x6df58c0">
     <command xml:space="preserve">combine broadcast and attack</command>
     <result xml:space="preserve">(first taking the attack memory chip)
+The tip heats up rapidly to a cherry-red heat.
+
 You switch the soldering iron on.
 
 You fashion the attack memory chip and the broadcast chip into a Klein Blaster!
 &gt;</result>
     <commentary xml:space="preserve">(first taking the attack memory chip)
+The tip heats up rapidly to a cherry-red heat.
+
 You switch the soldering iron on.
 
 You fashion the attack memory chip and the broadcast chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5930" />
     </children>
@@ -8848,7 +8895,7 @@ You fashion the attack memory chip and the broadcast chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df59a0" />
     </children>
@@ -8867,7 +8914,7 @@ You don&apos;t have the proper tools.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5a10" />
     </children>
@@ -8882,7 +8929,7 @@ You don&apos;t have the proper tools.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5a80" />
     </children>
@@ -8897,7 +8944,7 @@ You don&apos;t have the proper tools.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5af0" />
     </children>
@@ -8912,7 +8959,7 @@ You don&apos;t have the proper tools.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5b60" />
     </children>
@@ -8925,22 +8972,26 @@ You don&apos;t have the proper tools.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5bd0" />
     </children>
   </item>
   <item nodeId="node-0x6df5bd0">
     <command xml:space="preserve">turn off iron</command>
-    <result xml:space="preserve">You switch the soldering iron off.
+    <result xml:space="preserve">The tip cools rapidly, fading to a silver-gray.
+
+You switch the soldering iron off.
 
 &gt;</result>
-    <commentary xml:space="preserve">You switch the soldering iron off.
+    <commentary xml:space="preserve">The tip cools rapidly, fading to a silver-gray.
+
+You switch the soldering iron off.
 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5c40" />
     </children>
@@ -8957,7 +9008,7 @@ solder: Dropped.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5cb0" />
     </children>
@@ -8976,7 +9027,7 @@ You pry open the lost camera with the pliers in your multitool, ignoring the sou
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5d20" />
     </children>
@@ -8995,7 +9046,7 @@ You pry open the maintenance camera with the pliers in your multitool, ignoring 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5d90" />
     </children>
@@ -9014,7 +9065,7 @@ You pry open the medical camera with the pliers in your multitool, ignoring the 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5e00" />
     </children>
@@ -9027,7 +9078,7 @@ You pry open the medical camera with the pliers in your multitool, ignoring the 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5e70" />
     </children>
@@ -9042,7 +9093,7 @@ You fashion the Klein Blaster and the lost camera into a disarmed ID bomb!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5ee0" />
     </children>
@@ -9057,7 +9108,7 @@ You fashion the Klein Blaster and the maintenance camera into a disarmed ID bomb
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5f50" />
     </children>
@@ -9074,7 +9125,7 @@ You put on the descender.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df5fc0" />
     </children>
@@ -9089,7 +9140,7 @@ You put on the descender.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6030" />
     </children>
@@ -9112,7 +9163,7 @@ You can go north, south, and east to the Utility Closet from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df60a0" />
     </children>
@@ -9135,7 +9186,7 @@ You can go north to Maintenance Corridor and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6110" />
     </children>
@@ -9160,7 +9211,7 @@ You can go east to South End of Maintenance Corridor and up from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6180" />
     </children>
@@ -9185,7 +9236,7 @@ You can go east and down to Bottom of Service Bouncelift from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df61f0" />
     </children>
@@ -9210,7 +9261,7 @@ You can go east through Vestibule Door (closed) and west to Top of Service Bounc
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6260" />
     </children>
@@ -9227,7 +9278,7 @@ A scuffed but sturdy security door. There is a palm lock on this side to prevent
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df62d0" />
     </children>
@@ -9242,7 +9293,7 @@ A scuffed but sturdy security door. There is a palm lock on this side to prevent
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6340" />
     </children>
@@ -9257,7 +9308,7 @@ A scuffed but sturdy security door. There is a palm lock on this side to prevent
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df63b0" />
     </children>
@@ -9286,7 +9337,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6420" />
     </children>
@@ -9313,7 +9364,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6490" />
     </children>
@@ -9328,7 +9379,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6500" />
     </children>
@@ -9347,7 +9398,7 @@ You put the disarmed breaching charge on the observation window.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6570" />
     </children>
@@ -9364,7 +9415,7 @@ As soon as the charge detonates, the police will be looking at the surveillance 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df65e0" />
     </children>
@@ -9391,7 +9442,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6650" />
     </children>
@@ -9406,7 +9457,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df66c0" />
     </children>
@@ -9421,7 +9472,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6730" />
     </children>
@@ -9440,7 +9491,7 @@ There is a loud BOOM from nearby! The floor shakes.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df67a0" />
     </children>
@@ -9471,7 +9522,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6810" />
     </children>
@@ -9492,7 +9543,7 @@ This ledge, along with the others at the Mezzanine level, looks out over the hug
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6880" />
     </children>
@@ -9511,7 +9562,7 @@ You&apos;re pretty sure the police are looking for you now for setting off that 
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df68f0" />
     </children>
@@ -9532,7 +9583,7 @@ You are hanging in empty space some ways down from the ledge, the cable attached
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6960" />
     </children>
@@ -9557,7 +9608,7 @@ You are hanging in empty space some ways down from the ledge, the cable attached
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df69d0" />
     </children>
@@ -9582,7 +9633,7 @@ You are perhaps halfway down the atrium now.  You can make out individual people
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6a40" />
     </children>
@@ -9607,7 +9658,7 @@ You are nearly to the bottom.  The crowd below you has seen you, and a few peopl
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="468">NO</temporary>
+    <temporary score="2407">NO</temporary>
     <children>
       <child nodeId="node-0x6df6ab0" />
     </children>
@@ -9664,83 +9715,7 @@ Meek and obedient, you follow the leader down well-trodden corridors, down into 
 Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?
 &gt; </commentary>
     <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="467">NO</temporary>
-  </item>
-  <item nodeId="node-0xade4280">
-    <command xml:space="preserve">gonear home office</command>
-    <result xml:space="preserve">Home Office
-This is obviously a home office, a room which in other homes might be a living room. It is not very tidy.  Random detritus covers most available surfaces except for a workbench.
-
-You can see a workbench (on which are a lockblade knife, a soldering iron, some solder, and a laptop) here.
-
-You can go south and east from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="112">YES</temporary>
-    <children>
-      <child nodeId="node-0xac0ed70" />
-    </children>
-  </item>
-  <item nodeId="node-0xac0ed70">
-    <command xml:space="preserve">turn on iron</command>
-    <result xml:space="preserve">The tip heats up rapidly to a cherry-red heat.
-
-&gt;</result>
-    <played>YES</played>
     <changed>YES</changed>
-    <temporary score="112">YES</temporary>
-    <children>
-      <child nodeId="node-0xacbbc50" />
-    </children>
-  </item>
-  <item nodeId="node-0xacbbc50">
-    <command xml:space="preserve">touch iron</command>
-    <result xml:space="preserve">You reach for the soldering iron but snatch your fingers away from the tip, which is cherry-red!
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="112">YES</temporary>
-    <children>
-      <child nodeId="node-0x27f9c0" />
-    </children>
-  </item>
-  <item nodeId="node-0x27f9c0">
-    <command xml:space="preserve">put iron in bag</command>
-    <result xml:space="preserve">That&apos;s dangerous.  You might want to switch the soldering iron off first.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="112">YES</temporary>
-    <children>
-      <child nodeId="node-0xad6a750" />
-    </children>
-  </item>
-  <item nodeId="node-0xad6a750">
-    <command xml:space="preserve">switch iron off</command>
-    <result xml:space="preserve">The tip cools rapidly, fading to a silver-gray.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="112">YES</temporary>
-    <children>
-      <child nodeId="node-0x6eb36b0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6eb36b0">
-    <command xml:space="preserve">touch iron</command>
-    <result xml:space="preserve">You feel nothing unexpected.
-
-There is a quiet tone from your phone and you feel a short vibration, indicating that an SMS message has arrived.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="111">YES</temporary>
+    <temporary score="2406">NO</temporary>
   </item>
 </Skein>

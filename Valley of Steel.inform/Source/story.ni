@@ -457,7 +457,7 @@ At the time when the phonegrab happens:
 
 At the time when curfew message happens:
 	if the mitklein is unhacked:
-		say "The Green Residential curfew will begin in five minutes.  You'll need to be inside, in an area which isn't under public surveillance, to avoid being arrested."
+		say "The Green Residential curfew will begin in five minutes.  You'll need to be [if the bedroom has been visited]back [end if]inside, in an area which isn't under public surveillance, to avoid being arrested."
 
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
@@ -803,7 +803,7 @@ The car key is a container.  The car key is small. The car key is unopenable. Th
 Rule for printing room description details of the closed car key: stop.
 
 In the car key is a broadcast chip.
-In the car key is a memory chip.  The memory chip is transponder.
+In the car key is a transponder memory chip.  [The memory chip is transponder.]
 
 Check cutting the car key with something:
 	unless the second noun is the knife, say "That won't cut the car key." instead;
@@ -823,7 +823,7 @@ instead of cutting the car key:
 
 Check inserting into the car key:
 	Unless the noun is tiny, say "That won't fit!" instead;
-	Unless the noun is a chip, say "The slots in the car key are made for individual chips." instead;
+	Unless the noun is a memory chip or the noun is a broadcast chip or the noun is a receive chip, say "The slots in the car key are made for individual chips." instead;
 	continue the action.
 
 Instead of closing the car key:
@@ -1639,10 +1639,12 @@ Understand "connect [something] to [something]" as combining it with.
 Understand "connect [something] with [something]" as combining it with.
 Understand "solder [something] to [something]" as combining it with.
 Understand "solder [something] with [something]" as combining it with.
+Understand "solder [something] onto [something]" as combining it with.
 [Note: these won't work due to the 'and' triggering the 'multiple command' part of the Parser; to override that, see this thread: http://www.intfiction.org/forum/viewtopic.php?f=7&t=7405]
-Understand "combine [something] and [something]" as combining it with.
+[Note note: use Understand "solder [things]" as and-attaching" instead!]
+[Understand "combine [something] and [something]" as combining it with.
 Understand "solder [something] and [something]" as combining it with.
-Understand "connect [something] and [something]" as combining it with.
+Understand "connect [something] and [something]" as combining it with.]
 
 The combining it with action has an object called the resultant-item. 
 
@@ -1989,6 +1991,9 @@ Rule for cooking:
 		if the laptop is unhacked:
 			say "You are about to microwave the phone when you remember that you'll need to somehow get the attack program off it first.";
 			stop;
+	if a klein blaster is inside the cook box:
+		say "You stop before initiating the cook cycle to avoid destroying the Klein Blaster.";
+		stop;
 	if the microwave is limited:
 		repeat with sizzler running through the list of objects inside the cook box:
 			if sizzler provides the property fryDescription:
@@ -2071,19 +2076,21 @@ When evening begins:
 Night is a recurring scene.  Night begins when the time of day is 8:00 PM.  Night ends when the time of day is 5:00 AM.
 
 When night begins:
-	if the player is in ResidentialOutside or the player is in GreenResidential and the MitKlein is unhacked:
-		say "It's 8:00 PM.  The curfew is now in effect for this neighborhood."
+	if the player is in ResidentialOutside or the player is in GreenResidential:
+		if the MitKlein is unhacked:
+			say "It's 8:00 PM.  The curfew is now in effect for this neighborhood."
 
 Every turn during Night:
-	if the player is in ResidentialOutside or the player is in Green Residential Station or the player is in Front Lobby and the MitKlein is unhacked:
-		if the player is clear:
-			if a random chance of 1 in 5 succeeds:
-				say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
-				now the player is suspect;
-				now the incriminatingAct is "allowing your active MitKlein to be scanned";
-				the player incriminates in 3 turns from now;
-			otherwise:
-				say "The curfew is still in effect.  You'd better get [if Bedroom has been visited]back [end if]inside before you're scanned."
+	if the player is in ResidentialOutside or the player is in Green Residential Station or the player is in Front Lobby:
+		if the MitKlein is unhacked:
+			if the player is clear:
+				if a random chance of 1 in 5 succeeds:
+					say "Surveillance systems, active due to the Residential Curfew, note your presence and scan your MitKlein!  They'll be after you soon!";
+					now the player is suspect;
+					now the incriminatingAct is "allowing your active MitKlein to be scanned";
+					the player incriminates in 3 turns from now;
+				otherwise:
+					say "The curfew is still in effect.  You'd better get [if Bedroom has been visited]back [end if]inside before you're scanned."
 
 
 Morning is a recurring scene.  Morning begins when the time of day is 5:00 AM.  Morning ends when the time of day is 12:00 PM.
@@ -3383,7 +3390,8 @@ Instead of burning the table lamp, try switching on the table lamp.
 The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much."
 
 After going to The Kitchen the first time:
-	activate the Table of Microwave Hints.
+	activate the Table of Microwave Hints;
+	continue the action.
 
 
 Chapter 4 - Green Commercial
