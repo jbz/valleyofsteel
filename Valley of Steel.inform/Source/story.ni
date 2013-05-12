@@ -457,7 +457,7 @@ At the time when the phonegrab happens:
 
 At the time when curfew message happens:
 	if the mitklein is unhacked:
-		say "The Green Residential curfew will begin in five minutes.  You'll need to be [if the bedroom has been visited]back [end if]inside, in an area which isn't under public surveillance, to avoid being arrested."
+		say "The Green Residential curfew will begin in five minutes.  You'll need to be [if the bedroom has been visited and the player is out of doors]back [end if]inside, in an area which isn't under public surveillance, to avoid being arrested."
 
 After looking when player is surveilled, say "There is a Public Surveillance Notice here."
 
@@ -566,7 +566,7 @@ Carry out cutting an antitheft tag (called the cuttee) with something:
 	rule succeeds.
 
 instead of cutting an antitheft tag:
-	say "What do you want to cut it with?" instead.
+	say "You'd need to cut [the noun] with something; you can't do it bare-handed." instead.
 
 
 Instead of removing an antitheft tag (called the tag) with the tag remover:
@@ -881,10 +881,14 @@ Check switching on the soldering iron:
 	if the soldering iron is switched on, try switching off the soldering iron instead.
 
 Report switching on the soldering iron:
-	say "The tip heats up rapidly to a cherry-red heat."
+	say "You switch the soldering iron on.";
+	say "The tip heats up rapidly to a cherry-red heat.";
+	stop.
 	
 Report switching off the soldering iron:
-	say "The tip cools rapidly, fading to a silver-gray."
+	say "You switch the soldering iron off.";
+	say "The tip cools rapidly, fading to a silver-gray.";
+	stop.
 
 Check touching the soldering iron:
 	if the soldering iron is switched on:
@@ -898,7 +902,7 @@ The solder is a thing. The solder is on the workbench.  The solder is small. The
 
 [laptop]
 The laptop is on the workbench.  The laptop is medium.  The laptop can be hacked or unhacked.  The laptop is unhacked. The description is "The laptop is a generic, slightly more fashionable than functional portable tablet computer. It is active, with the screen lit.[unless the chipslot is empty] There is a chip in the chipslot."
-The screen is part of the laptop.  The screen is scenery.  The description is "[screen-description]".
+The screen is part of the laptop.  The screen is scenery.  The description is "[screen-description].".
 The reboot button is part of the screen.  The reboot button is scenery.  The description is "A stylized on-screen button to restart the computer.  This model will search for a network book device when rebooted."
 Understand "restart button" as the reboot button.
 The chipslot is part of the laptop.  The chipslot is a container.  The chipslot is scenery. The chipslot is open.  The chipslot has carrying capacity 1.  The description is "The chipslot is used for external storage.  Right now, its status LED is blinking, indicating that it has been set to autosave data[if empty], but no Memory chip is in the slot.[otherwise] to the Memory chip in the slot."
@@ -908,6 +912,7 @@ Understand "slate" as the laptop.
 Understand "download slot" as the chipslot.
 Understand "slot" as the chipslot when the location is the location of the laptop.
 Understand "file" as the screen.
+Understand "text" as the screen when the laptop is hacked and the laptop is visible.
 
 Instead of reading the laptop:
 	try examining the screen instead.
@@ -928,9 +933,9 @@ After inserting into the chipslot:
 	
 To say screen-description:
 	if the laptop is unhacked:
-		say "The laptop is presently displaying a login screen.  There is a reboot button in the corner of the screen.";
+		say "The laptop is presently displaying a login screen.  There is a reboot button in the corner of the screen";
 	otherwise if the laptop is hacked:
-		say "The laptop is displaying a static screen, which instructs you to place a memory chip into its chipslot to download the attack program."
+		say "The laptop is displaying a static screen, which instructs you to place a memory chip into its chipslot to download the attack program".
 
 Rebooting is an action applying to one touchable thing.
 Understand "reboot [something]" as rebooting.
@@ -1186,6 +1191,9 @@ Does the player mean pushing the microwave oven's activate button: it is unlikel
 
 Instead of pushing the cook box:
 	try pushing the microwave oven's activate button instead.
+
+Instead of putting something on the side panel:
+	say "You can't put [the noun] on the side panel.  It would just fall off." instead.
 
 Check inserting something (called the subject) into the microwave oven:
 	try inserting the subject into the cook box instead.
@@ -1762,7 +1770,7 @@ Understand "disassemble [something] with [something preferably held]" as opening
 
 To disassemble (gadget - a thing):
 	if the gadget is a container:
-		say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.[unless the gadget is empty] Opening [the gadget] reveals [the list of things inside the gadget]![end if]";
+		say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.[unless the gadget is empty][line break]Opening [the gadget] reveals [the list of things inside the gadget]![end if]";
 	otherwise:
 		say "You pry open [the gadget] with the pliers in your multitool, ignoring the sound of breaking plastic.";
 	now the gadget is disassembled;
@@ -2021,7 +2029,7 @@ Rule for kleinhacking something (called target):
 		if the target is hacked:
 			say "You feel a a light tickle in your head.";
 		otherwise:
-			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.[paragraph break]You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this whole mess…";
+			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.[paragraph break]You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this whole mess.";
 			now the mitklein is hacked;
 			now the player is clear;
 			now the side panel is fried;
@@ -3231,6 +3239,10 @@ The cotter pin is a thing.  The cotter pin is small. The description is "A small
 
 Rule for printing room description details of the latch: stop.
 
+Instead of key-unlocking the cotter pin:
+	now instantiate is true;
+	say "[The noun] can't be locked or unlocked." instead.
+
 Instead of removing the cotter pin with the multitool:
 	if the cotter pin is in the latch:
 		say "You deftly remove the cotter pin with the multitool.";
@@ -3319,6 +3331,8 @@ Instead of going up in Front Lobby:
 	now instantiate is true;
 	say "You can't open the security gate." instead.
 Instead of going outside in Front Lobby, try going west instead.
+
+Does the player mean opening the apartment door when the location is the Front Lobby:  it is likely.
 
 The security gate is in the Front Lobby.  The security gate is scenery.  The description of the security gate is "A worn but imposing gate of metal bars.  It is locked."
 
