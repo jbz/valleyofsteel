@@ -449,14 +449,20 @@ At the time when the reminder happens:
 		if the location of the phone is the location of the player:
 			say "A quiet tone from your phone indicates that you have unread SMS messages."
 			
-At the time when the phoneping happens:
+At the time when the phonewarn happens:
 	unless the phone is fried:
-		if the player encloses the phone:
-			say "Your phone gives a quick vibration[if the player is surveilled].  At the same time, you see a surveillance camera swing to point at you[end if].";
-			the player incriminates in 3 turns from now;
-			now the incriminatingAct is "being in possession of your phone when it was located on the phone network";
-		otherwise:
-			the phonegrab happens in 3 turns from now.		
+		say "Your phone beeps softly as it starts hunting for a signal! You realize you can move back to Green Residential to prevent it finding a new network.";
+		the phoneping happens in a random number from 30 to 60 turns from now.
+
+At the time when the phoneping happens:
+	unless the player is in GreenResidential:
+		unless the phone is fried:
+			if the player encloses the phone:
+				say "Your phone gives a quick vibration[if the player is surveilled].  At the same time, you see a surveillance camera swing to point at you[end if].";
+				the player incriminates in 3 turns from now;
+				now the incriminatingAct is "being in possession of your phone when it was located on the phone network";
+			otherwise:
+				the phonegrab happens in 3 turns from now.		
 
 At the time when the phonegrab happens:
 	if Ponyfriend Chunky encloses the phone:
@@ -3140,8 +3146,7 @@ Instead of opening the Green Residential Station door:
 After going down from Green Residential Station:
 	if the player encloses the phone:
 		if the phone is working:
-			say "Your phone beeps softly as it starts hunting for a signal.";
-			the phoneping happens in 60 turns from now;
+			the phonewarn happens in 0 turns from now;
 	continue the action.
 
 

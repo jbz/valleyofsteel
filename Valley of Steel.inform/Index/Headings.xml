@@ -39,140 +39,140 @@
     </dict>
     <key>5</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>480</integer>
+        <key>Line</key><integer>486</integer>
         <key>Title</key><string>Section 4 - Test Code - Not for release</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>6</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>514</integer>
+        <key>Line</key><integer>520</integer>
         <key>Title</key><string>Section 5 - Portable Objects (non-Scenery)</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>7</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1057</integer>
+        <key>Line</key><integer>1063</integer>
         <key>Title</key><string>Section 6 - Fixed/Scenery Objects</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>8</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1430</integer>
+        <key>Line</key><integer>1436</integer>
         <key>Title</key><string>Section 7 - Actions/Activities</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>9</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2109</integer>
+        <key>Line</key><integer>2115</integer>
         <key>Title</key><string>Section 8 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>10</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2353</integer>
+        <key>Line</key><integer>2359</integer>
         <key>Title</key><string>Section 9 - Tables</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>11</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2416</integer>
+        <key>Line</key><integer>2422</integer>
         <key>Title</key><string>Section 10 - NPCs</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>12</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2701</integer>
+        <key>Line</key><integer>2707</integer>
         <key>Title</key><string>Section 11 - Hints</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>13</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2856</integer>
+        <key>Line</key><integer>2862</integer>
         <key>Title</key><string>Chapter 1 - Transit</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>14</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2858</integer>
+        <key>Line</key><integer>2864</integer>
         <key>Title</key><string>Section 0 - Setup</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>15</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2929</integer>
+        <key>Line</key><integer>2935</integer>
         <key>Title</key><string>Section 1 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>16</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3047</integer>
+        <key>Line</key><integer>3053</integer>
         <key>Title</key><string>Section 2 - The Capsule</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>17</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3067</integer>
+        <key>Line</key><integer>3073</integer>
         <key>Title</key><string>Chapter 2 - Global Map</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>18</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3111</integer>
+        <key>Line</key><integer>3117</integer>
         <key>Title</key><string>Chapter 3 - Green Residential</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>19</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3113</integer>
+        <key>Line</key><integer>3119</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>20</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3472</integer>
+        <key>Line</key><integer>3477</integer>
         <key>Title</key><string>Chapter 4 - Green Commercial</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>21</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3474</integer>
+        <key>Line</key><integer>3479</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>22</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3654</integer>
+        <key>Line</key><integer>3659</integer>
         <key>Title</key><string>Chapter 5 - Green Service</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>23</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3656</integer>
+        <key>Line</key><integer>3661</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>24</key><dict>
         <key>Filename</key><string>/Users/jbz/Projects/Valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3798</integer>
+        <key>Line</key><integer>3803</integer>
         <key>Title</key><string>Chapter 6 - Reserve Bank</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
