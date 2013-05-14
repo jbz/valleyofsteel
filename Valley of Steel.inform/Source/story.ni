@@ -450,12 +450,13 @@ At the time when the reminder happens:
 			say "A quiet tone from your phone indicates that you have unread SMS messages."
 			
 At the time when the phoneping happens:
-	if the player encloses the phone:
-		say "Your phone gives a quick vibration[if the player is surveilled].  At the same time, you see a surveillance camera swing to point at you[end if].";
-		the player incriminates in 3 turns from now;
-		now the incriminatingAct is "being in possession of your phone when it was located on the phone network";
-	otherwise:
-		the phonegrab happens in 3 turns from now.		
+	unless the phone is fried:
+		if the player encloses the phone:
+			say "Your phone gives a quick vibration[if the player is surveilled].  At the same time, you see a surveillance camera swing to point at you[end if].";
+			the player incriminates in 3 turns from now;
+			now the incriminatingAct is "being in possession of your phone when it was located on the phone network";
+		otherwise:
+			the phonegrab happens in 3 turns from now.		
 
 At the time when the phonegrab happens:
 	if Ponyfriend Chunky encloses the phone:
@@ -1069,10 +1070,13 @@ Instead of examining the ground:
 	
 [rooms]
 
-[bathrooms]
-A sink is a kind of supporter.  It is scenery.  The description is "Looks like a completely normal sink."
+[bathrooms] [CHECK: inform recipe book, Ex. 438, Ch. 8.5]
+A sink is a kind of supporter.  It is scenery.   The description is "Looks like a completely normal sink."
+
 Check switching on a sink:
-	say "The water runs for a few seconds before shutting itself off." instead.
+	say "You turn on the sink.  Water flows from the faucet for a few seconds before stopping.";
+	stop.
+	
 A stall is a kind of thing.  It is scenery.  The description is "Clean and relatively upscale, you still don't want to use it."
 Instead of entering a stall, say "You really don't want to use it." instead.
 
@@ -1100,10 +1104,13 @@ A counter is in every foodstore.
 An autodoor is a kind of door. An autodoor is always scenery. The description of an autodoor is "This is an automatic sliding door.  It is connected to an eye scanner which is able to, if so configured, determine if you are allowed passage by scanning your iris pattern as you approach. The door is presently [if the noun is open]open.[otherwise]closed."
 Understand "autodoor" as a door.
 Before going through an autodoor, the autodoors close in zero turns from now.
+Before opening an autodoor, the autodoors close in zero turns from now.
 
 An Eye Scanner is a kind of thing. An Eye Scanner is part of every autodoor. An Eye Scanner is scenery. The description of the Eye Scanner is "Above and to the right of each automated door is a Door Scanner. These spherical devices have a glass plane inset in the side facing you, and an eerie red light flickers deep inside each as it waits for you to present a recognizable iris to the scanning laser within.  Until you do so, the door controlled by the scanner will remain closed."
 Understand "the scanner" as an Eye Scanner.
 
+
+[Public Surveillance notice]
 The Public Surveillance Notice is a backdrop.  The description of A Public Surveillance Notice is "A mounted sign which reads: PUBLIC SURVEILLANCE AREA.  ALL ACTIVITY MONITORED FOR HOMELAND SECURITY."
 
 Instead of taking the Public Surveillance Notice, say "That's firmly mounted in place, by law."
@@ -2356,7 +2363,7 @@ number	message
 6	"- YOU MUST NOT BE ID-SCANNED UNTIL MITKLEIN IS DISABLED<more>"
 7	"- ONCE MITKLEIN IS DISABLED, RETRIEVE DROP MESSAGE FOR NEW INSTRUCTIONS.  CONTACT WILL LEAVE DROP MESSAGE NEAR FOUNTAIN IN GREEN COMMERCIAL.<more>"
 8	"- ATTACK PROGRAM AVAILABLE FOR DOWNLOAD BY NETBOOTING ANY COMPUTER WITH YOUR PHONE IN PROXIMITY<more>"
-9	"- THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES CELL SIGNAL IN ANOTHER AREA IT MAY BE LOCATED BY HOMELAND SECURITY - DISABLE ENTIRELY BEFORE TRAVEL<more>"
+9	"- THIS PHONE POSSIBLY COMPROMISED - IF IT ACQUIRES CELL SIGNAL IN ANOTHER AREA IT WILL BE LOCATABLE BY HOMELAND SECURITY - DISABLE ENTIRELY OR ABANDON BEFORE TRAVEL<more>"
 10	"GOOD LUCK. MESSAGE ENDS."
 
 
@@ -3454,6 +3461,8 @@ The table lamp is a device on the bedside table.  The table lamp is scenery.  Th
 Instead of burning the table lamp, try switching on the table lamp.
 
 The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much."
+There is a sink in the kitchen.
+
 
 After going to The Kitchen the first time:
 	activate the Table of Microwave Hints;
