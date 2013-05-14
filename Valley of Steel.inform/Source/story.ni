@@ -232,6 +232,9 @@ The standard report unlocking rule is not listed in any rulebook.
 Rule for printing a parser error when the latest parser error is the I beg your pardon error: 
   say "[one of]I didn't catch that.[or]I'm not a mindreader.[or]Mmmmmmyes?[or]I beg your pardon?[as decreasingly likely outcomes]" .
 
+[Global disambiguation rules]
+Does the player mean opening something that is open: it is unlikely.
+
 [global reporting rules]
 Report examining someone:
 	if the noun is the player:
@@ -450,7 +453,7 @@ At the time when the phonegrab happens:
 			say "Two policemen rush up.  After looking around for a few seconds and consulting a handheld device, they make a beeline for Ponyfriend Chunky.  Before he can even protest, they grab him, handcuff him, and hustle him out of sight.";
 			remove Ponyfriend Chunky from play;
 	otherwise if the phone is in the location of the player:
-		say "You see two police officers rush in and look around, consulting a handheld device.  After a few seconds, one of them spots your phone and slaps the other on the shoulder, pointing.  They grab it, look around suspiciously, and run out.";
+		say "You see two police officers rush in and look around, consulting a handheld device.  After a few seconds, one of them spots your phone and slaps the other on the shoulder, pointing.  They grab it, look around suspiciously, and run off.";
 		remove the phone from play;
 	otherwise:
 		remove the phone from play.
@@ -764,11 +767,20 @@ Before opening the pager:
 
 The cryopack is a container.   The cryopack is in the Hospital Lab.  The cryopack has carrying capacity 1.  The cryopack is openable. The cryopack is closed.  The cryopack can be either operating or dead.  The cryopack is operating. The description of the cryopack is "This is a roughly fist-sized container, white with red crosses and an instructions sticker with WARNING! printed at the top.  [if operating]It feels slightly cold to the touch.  A green LED labelled 'OPERATING' is lit.[otherwise]A red LED labelled 'INACTIVE' is lit."
 
+Understand "pack" as the cryopack.
+
 After opening the cryopack: 
 	if the cryopack is operating:
-		say "A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up.";
-		now the cryopack is dead;
+		say "You open the cryopack. A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up.";
 	continue the action.
+
+Report opening the cryopack:
+	if the cryopack is operating:
+		now the cryopack is dead;
+		stop;
+	otherwise:
+		continue the action.
+
 
 The warning sticker is part of the cryopack. The warning sticker is scenery.  The description of the warning sticker is "WARNING: This is a single-use cryogenic transport pack.  Opening the cryopack will disrupt the superconductor charge and disable the cryopack until it is recharged for its next use."
 Understand "instructions sticker" as the warning sticker while the cryopack is visible.
@@ -819,7 +831,7 @@ Carry out cutting the car key with something:
 	rule succeeds.
 
 instead of cutting the car key:
-	say "What do you want to cut it with?" instead.
+	say "You'd need to cut [the noun] with something; you can't do it bare-handed." instead.
 
 Check inserting into the car key:
 	Unless the noun is tiny, say "That won't fit!" instead;
@@ -1087,10 +1099,15 @@ The Public Surveillance Notice is a backdrop.  The description of A Public Surve
 Instead of taking the Public Surveillance Notice, say "That's firmly mounted in place, by law."
 
 [trash cans]
-A trash can is a kind of container.  A trash can is fixed in place.  A trash can is openable. A trash can is usually closed.  A trash can is usually assembled. The description of a trash can is "Painted industrial dark green, the [location] trash can awaits its daily diet of rubbish.  There is a solar panel on it; presumably it reports back to a central system when it is full.[if the solar panel enclosed by the location is open]  The solar panel on the can lid has been pried back.  Vandals!"
+A trash can is a kind of container.  A trash can is fixed in place.  A trash can is openable. A trash can is usually closed.  A trash can is usually assembled. The description of a trash can is "Painted industrial dark green, the [location] trash can awaits its daily diet of rubbish.  There is a solar panel on it; presumably it reports back to a central system when it is full.[if the solar panel enclosed by the location is open]  The solar panel on the can lid has been pried open.  Vandals!"
 A rubbish is a kind of thing.  A rubbish is fixed in place.  A rubbish is in every trash can.  The indefinite article is "some". The description of a rubbish is "All you'd expect from a cheap public trash can."
 Instead of taking the rubbish, say "It's too disgusting to touch."
 A solar panel is a kind of container.   A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the lid, apparently powering something embedded beneath in the trash can.[if open]  This one has been pried back.[end if]"
+
+Check searching a trash can:
+	if the noun is closed:
+		try opening the noun;
+	continue the action.
 
 Check opening a solar panel:
 	say "You can't open that with your bare hands." instead.
@@ -1215,7 +1232,7 @@ Check inserting something (called the subject) into the cook box:
 Check opening the side panel:
 	if the noun is open, say "That's already been opened." instead;
 	if the noun is fried, say "It's closed, and looks melted." instead;
-	say "What do you want to open it with?" instead.
+	say "You can't get enough purchase with your fingers alone." instead.
 
 Check opening the side panel with something:
 	if the noun is open, say "That's already been opened." instead;
@@ -1500,11 +1517,12 @@ Instead of sleeping:
 	if the player is out of doors:
 		now instantiate is true;
 		say "Sleeping outdoors tends to result in a vagrancy arrest.  You think better of it." instead;
+	if the location is the bedroom:
+		say "You're far too keyed up to sleep." instead;
+	if the player is in Transit:
+		say "Sleeping in the Transit system tends to result in a vagrancy arrest.  You think better of it." instead;
 	otherwise:
-		if the location is the bedroom:
-			say "You're far too keyed up to sleep." instead;
-		otherwise:
-			say "There's nowhere to sleep." instead.
+		say "There's nowhere to sleep." instead.
 	
 
 [waving]
@@ -2036,6 +2054,7 @@ Rule for kleinhacking something (called target):
 			now the side panel is closed;
 			now the side panel is unopenable;
 			deactivate the table of Microwave Hints;
+			deactivate the table of MitKlein hints;
 	otherwise:
 		say "The microwave appears to be dead."
 		
@@ -2454,11 +2473,28 @@ Instead of attacking a policeman:
 	now instantiate is true;
 	say "You're determined to get out of this mess, and that's definitely not going to happen if you do that.  You smother the impulse."
 
+[bartender]
+The bartender is a man in the Proletariat Bar.  The bartender is scenery.  The description of the bartender is "The bartender is busily polishing a glass. He is ignoring you entirely, but you don't feel insulted as he seems to be ignoring everyone in the bar."
+The bartender is holding the glass.  The glass is scenery.  The description of the glass is "A slightly dirty standard bar drink holder."
+ 
+Report examining the bartender:
+	stop.
+Instead of speech when the noun is the bartender:
+	if the topic understood matches the text "roberto" or the topic understood matches the text "velez":
+		if Roberto Velez is in the Proletariat Bar:
+			say "The bartender looks up and then nods meaningfully towards Roberto, who is sitting at a table.  'He's in here most nights, like clockwork[if Roberto Velez is preJacket]. Having some trouble at work, I understand.  Best ask him about it, not me[end if].'";
+		otherwise:
+			say "He comes in here most afternoons around three.  Works the early shift at the Bank.";
+	otherwise:
+		say "[one of]The bartender looks at you briefly before returning his attention to the glass.[or]The bartender cocks his head as you speak, then shakes his head eloquently.  Looks like he doesn't have anything to say.[or]The bartender seems to be ignoring you.[purely at random]".
+
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
-Roberto Velez is a man in the Proletariat Bar.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "Roberto is a medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
+Roberto Velez is a man in the Proletariat Bar.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "A medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
 
 To say tagged details:
 	if the nametag is part of the torn jacket, say " and his name on a tag clipped to the breast".
+	
+After examining the nametag for the first time: now Roberto Velez is known.
 
 Before printing the name of Roberto Velez: now Roberto Velez is known.
 
@@ -2466,7 +2502,7 @@ Before printing the name of Roberto Velez: now Roberto Velez is known.
 At the time when boozing starts:
 	if Roberto Velez is off-stage:
 		if the location is The Proletariat Bar:
-			say "The door opens.  [if Roberto Velez is unknown]A medium man in a blue trade uniform[otherwise] Roberto Velez[end if] comes in, orders a beer and sits down at a table.";
+			say "The door opens.  [if Roberto Velez is unknown]A medium man in a blue trade uniform[otherwise]Roberto Velez[end if] comes in, orders a beer and sits down at a table.";
 		move Roberto Velez to The Proletariat Bar;
 		now Roberto Velez is inPlay;
 		snoozing starts at 2:00 AM.
@@ -2483,6 +2519,9 @@ At the time when snoozing starts:
 The torn jacket is a thing.  The torn jacket is wearable.  The torn jacket is medium.  The description of the torn jacket is "A dark blue uniform jacket with black snap closures and false side pockets.  There is a long gash on the outside of the left sleeve near the shoulder.[if nametag is part of the torn jacket]  There is a nametag clipped to the jacket which reads 'Roberto Velez.'"
 
 The nametag is a thing.  The nametag is small.  The nametag is part of the torn jacket.  The nametag is scenery.  The description of the nametag is "A small black nametag with the name 'Roberto Velez' inscribed on it."
+
+After examining the nametag for the first time:
+	now Roberto Velez is known.
 
 [Roberto's conversation]	
 Instead of speech when the noun is Roberto Velez:
@@ -2543,9 +2582,6 @@ Rule for deciding the concealed possessions of Officer Prescott:
 The Patrolman is a policeman.  The description of the Patrolman is "A street cop, dressed in uniform[if the location of the Patrolman is South Primrose Lane] rather than the riot armor of a SWAT team member.  He is patrolling the barrier, making sure no passers-by intrude on the scene[end if]."
 
 
-
-
-
 [Sergeant Ramirez]
 In the Front Desk is a policeman called Sergeant Ramirez. The description of Sergeant Ramirez is "Seated behind his desk, this grizzled uniformed policeman is clearly a veteran of many years' service.  He scowls at you, waiting for you to make his life more annoying."
 
@@ -2594,7 +2630,8 @@ After giving the phone to Ponyfriend Chunky:
 	now Ponyfriend Chunky is cellEnabled;
 	try Ponyfriend Chunky giving the pager to the player.
 
-After asking Ponyfriend Chunky about something: respond to Ponyfriend.  After answering Ponyfriend Chunky that something: respond to Ponyfriend.
+After asking Ponyfriend Chunky about something: respond to Ponyfriend.  
+After answering Ponyfriend Chunky that something: respond to Ponyfriend.
 
 After telling Ponyfriend Chunky about something, say "Ponyfriend says 'I don't think you know what's happening here.  I'm sorry, but I can't accept your information."
 	
@@ -2622,7 +2659,7 @@ Topic		Response
 "phone"	"It would be much nicer if I had a phone of my own."
 "police/officer/cops"	"Them! (his brow furrows).  They…sometimes I think they're here to prevent me carrying out my missions.  I have to stay away from them…"
 "subway/transit"	"I like it in the Transit system in winter.  It's warm."
-"who"	"My name is Ponyfriend.  Ponyfriend Chunky.  I'm…I'm…[italic type](he shakes himself suddenly)[roman type]…I'm sorry, what were you saying?"
+"who/name"	"My name is Ponyfriend.  Ponyfriend Chunky.  I'm…I'm…[italic type](he shakes himself suddenly)[roman type]…I'm sorry, what were you saying?"
 "spacescraper/reserve/bank"	"The Tower! (Ponyfriend points eagerly towards the Spacescraper visible in the distance)  I think I'll need to go there…that mission, though…(he stops talking suddenly and looks at you suspiciously.)"
 "ramirez"	"Him.  He's obsessed. Always asking me where my drugs are.  I'm clean, I've [italic type]told[roman type] him, but still he harasses me."
 "flitter/ambulance"	"I wish I could fly."
@@ -2805,6 +2842,8 @@ Section 0 - Setup
 
 A transitStation is a kind of room. A transitStation has some text called a stationName.  A transitStation has a number called a stationNumber.
 
+Definition:  A room is entrained if the station of the Capsule is it.
+
 A plaque is in every transitStation.
 
 A commuter is in every transitStation.
@@ -2816,14 +2855,16 @@ To say map diagram:
 	say "        |   Green   |[line break]";
 	say "        |  Service  |[line break]";
 	say "        -------------[line break]";
+	say "          /        ^[line break]";
 	say "         /          \[line break]";
-	say "        /            \[line break]";
+	say "        v            \[line break]";
 	say " -----------    -------------[line break]";
 	say " | Reserve |    |   Green   |[line break]";
 	say " |  Bank   |    |Residential|[line break]";
 	say " -----------    -------------[line break]";
+	say "       \              ^[line break]";
 	say "        \            /[line break]";
-	say "         \          /[line break]";
+	say "         v          /[line break]";
 	say "         ------------[line break]";
 	say "         |  Green   |[line break]";
 	say "         |Commercial|[line break]";
@@ -2852,7 +2893,7 @@ Instead of entering the transit web:
 The Voodoo Subway is a thing.  The Voodoo Subway is a backdrop. The Voodoo Subway is large. The description is "A fifty-person maglev Transit Capsule.  The front window is dark, indicating that the capsule is running on automatic.  The Magfield causes a slight bluish glow around the bottom of the capsule.  Its doors are precisely level with the platform."
 
 Instead of taking the Voodoo Subway:
-	say "You're joking, right?".
+	say "You can't take that.  If you want to board the capsule, try using ENTER.".
 
 Instead of entering the Voodoo Subway:
 	say "You move into the Transit Capsule.";
@@ -2864,8 +2905,8 @@ Instead of exiting from the Transit Capsule:
 
 Understand "the capsule" as the Voodoo Subway.
 Understand "capsule" as the Voodoo Subway.
-
-Definition:  A room is entrained if the station of the Capsule is it.
+Understand "train" as the Voodoo Subway.
+Understand "subway" as the Voodoo Subway.
 
 
 Section 1 - Scenes
@@ -3165,7 +3206,7 @@ Carry out cutting the fence with the tag remover:
 		rule succeeds.
 
 Instead of cutting the fence:
-	say "What do you want to cut it with?" instead.
+	say "You'd need to cut [the noun] with something; you can't do it bare-handed." instead.
 
 Instead of climbing the fence:
 	say "The gaps are too small for your toes and you're not strong enough to climb it with only your fingers." instead.
@@ -3236,6 +3277,7 @@ Understand "window" as the bedroom window when the location is Back Yard.
 The latch is a container.  The latch is part of the bedroom window. The latch is unopenable and open.  The latch can be hacked or unhacked.  The latch is unhacked. The latch contains the cotter pin.  The latch is scenery.  The description of the latch is "This is a fairly standard window latch.  It prevents the two windowpanes from sliding past one another. [if the cotter pin is inside the latch] The locking tab is secured with a cotter pin which, for some reason, is on the outside of the window[otherwise] The cotter pin that locks the latch seems to be missing[end if]."
 Understand "mechanism" as the latch.  Understand "latch mechanism" as the latch.  Understand "lock" as the latch when the location is Back Yard.
 The cotter pin is a thing.  The cotter pin is small. The description is "A small steel pin made up of a length of wire doubled over on itself with a loop at one end."
+Understand "loop" as the cotter pin when the cotter pin is visible.
 
 Rule for printing room description details of the latch: stop.
 
@@ -3270,13 +3312,13 @@ Instead of inserting the cotter pin into the latch:
 
 Check taking the cotter pin:
 	if the cotter pin is inside the latch:
-		say "You can't get enough purchase with your fingers to pull it out." instead;
+		say "You can't get enough purchase with your fingers to pull the pin out." instead;
 	otherwise:
 		continue the action.
 
 Check pulling the cotter pin:
 	if the cotter pin is inside the latch:
-		say "You can't get enough purchase with your fingers to pull it out." instead;
+		say "You can't get enough purchase with your fingers to pull the pin out." instead;
 	otherwise:
 		continue the action.
 		
@@ -3507,12 +3549,6 @@ Instead of examining the drinkers:
 Instead of pushing the drinkers:
 	try taking the drinkers instead.
 
-A man called the bartender is in the Proletariat Bar.  The bartender is scenery.  The description of the bartender is "The bartender is busily polishing a glass. He is ignoring you entirely, but you don't feel insulted as he seems to be ignoring everyone in the bar."
-The bartender is holding the glass.  The glass is scenery.  The description of the glass is "A slightly dirty standard bar drink holder."
-
-Report examining the bartender:
-	stop.
-
 The Proletariat restroom is a restroom.  The Proletariat restroom is east of the Proletariat Bar.  The Proletariat restroom is blind. The description of the Proletariat restroom is "The one-holer restroom at the Proletariat is cleaner than you might think, although that may be due to the fact that it is midweek.  A scratched mirror over the sink has been covered with marker graffiti."
 There is a trash can in the Proletariat restroom.
 The Bar mirror is here.  The Bar mirror is a mirror.  The description is "This is a cheap but sturdy mirror, attached to the wall.  Its surface is nearly covered (except for a spot in the center, where you can see your own face) with scratches and permanent marker scrawls.  One graffito catches your eye near the bottom, but you'd have to look closely to make it out fully."
@@ -3719,7 +3755,7 @@ Check opening the police gate:
 
 Instead of going north in Front Desk:
 	now instantiate is true;
-	say "The security gate is locked." instead.
+	say "The gate is securely locked." instead.
 
 Booking is south of Front desk.  The description is "This area is used for processing prisoners…er, excuse me, suspects, and as a waiting lounge.  There is a single hard bench, now empty, and a counter along the south wall with a stern poster on the wall above it.  One area has been kept clear and is a neutral pale blue, presumably to be used as a backdrop for photographing suspects."
 The Police Poster is here.  The police poster is scenery.  The description of the Police Poster is "The poster has an almost laughably crude and kitschy burly policeman chasing a pair of hoodlums while blowing a whistle and brandishing a nightstick.  The hoodlums are leaving a trail of iconic Drug Paraphernalia.  A caption reads 'If you see any DRUG ACTIVITY, report it AT ONCE to your FRIENDLY LOCAL POLICE.'"
@@ -3732,6 +3768,10 @@ Report entering the hard bench:
 Report exiting from the hard bench:
 	say "You stand up." instead.
 	
+Instead of sleeping when the hard bench encloses the player:
+	now instantiate is true;
+	say "This bench is uncomfortable, and there are police everywhere.  You can't risk it." instead.
+
 Understand "bench" as the hard bench when the location is Booking.
 
 
