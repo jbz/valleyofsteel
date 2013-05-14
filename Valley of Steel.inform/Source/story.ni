@@ -227,24 +227,9 @@ The can't unlock what's already unlocked rule is not listed in any rulebook.
 The can't unlock without the correct key rule is not listed in any rulebook.
 The standard unlocking rule is not listed in any rulebook.
 The standard report unlocking rule is not listed in any rulebook.
-
-
-Rule for printing a parser error when the latest parser error is the I beg your pardon error: 
-  say "[one of]I didn't catch that.[or]I'm not a mindreader.[or]Mmmmmmyes?[or]I beg your pardon?[as decreasingly likely outcomes]" .
-
-[Global disambiguation rules]
-Does the player mean opening something that is open: it is unlikely.
-
-[global reporting rules]
-Report examining someone:
-	if the noun is the player:
-		say "[if the number of unconcealed things carried by the noun is zero][The noun] are empty-handed.[otherwise][The noun] are carrying [a list of unconcealed things carried by the noun].";
-	otherwise:
-		say "[if the number of unconcealed things carried by the noun is zero][The noun] is empty-handed.[otherwise][The noun] has [a list of unconcealed things carried by the noun]."
-
-
-Rule for deciding whether all includes scenery: it does not. Rule for deciding whether all includes a fixed in place thing while taking: it does not.  Rule for deciding whether all includes a thing enclosed by the player: it does not.
-
+Rule for deciding whether all includes scenery: it does not. 
+Rule for deciding whether all includes a fixed in place thing while taking: it does not.  
+Rule for deciding whether all includes a thing enclosed by the player: it does not.
 
 The list notable events rule is listed last in the carry out looking rulebook.
 
@@ -256,6 +241,40 @@ This is the list notable events rule:
 		if the location contains the Police Flitter:
 			now the police flitter is unlocked;
 			say "The police flitter flashes its lights twice as the locklarm disengages.".
+
+Rule for printing a parser error when the latest parser error is the I beg your pardon error: 
+  say "[one of]I didn't catch that.[or]I'm not a mindreader.[or]I beg your pardon?[as decreasingly likely outcomes]" .
+
+Carry out examining yourself:
+	say "You're wearing basic clothing which is almost obsessively nondescript.  You're average in nearly every physical respect - something which didn't win you many accolades growing up, but serves you well in your efforts to blend in with the conformist population through which you now move.";
+	stop.
+	
+Report examining yourself:
+	unless the number of things worn by the player is zero:
+		say "You're wearing [a list of things worn by the player].";
+	say "[if the number of things carried by the player is zero]You are empty-handed.[otherwise]You're carrying [a list of things carried by the player]."
+
+[Global disambiguation rules]
+Does the player mean opening something that is open: it is unlikely.
+Does the player mean inserting into the backpack: it is likely.
+
+[global reporting rules]
+Report examining someone:
+	unless the noun is the player:
+		say "[if the number of unconcealed things carried by the noun is zero][The noun] is empty-handed.[otherwise][The noun] is carrying [a list of unconcealed things carried by the noun]."
+
+
+
+The revised can’t insert what’s not held rule is listed instead of the can't insert what's not held rule in the check inserting it into rules.
+
+Check an actor inserting something into (this is the revised can’t insert what’s not held rule):
+	if the actor is carrying the noun, continue the action;
+	if the actor is wearing the noun, continue the action;
+	if the player encloses the noun:
+		if the noun is touchable, continue the action;
+	if the noun is touchable, continue the action;
+	stop the action.
+
 
 [the next few rules deal with handling 'and'-linked noun lists]
 Before reading a command: 
@@ -278,19 +297,10 @@ This is the carefully announce items from multiple object lists rule:
 		abide by the announce items from multiple object lists rule.
 
 
-The block giving rule is not listed in the check giving it to rules.
-
-The revised can’t insert what’s not held rule is listed instead of the can't insert what's not held rule in the check inserting it into rules.
-
-Check an actor inserting something into (this is the revised can’t insert what’s not held rule):
-	if the actor is carrying the noun, continue the action;
-	if the actor is wearing the noun, continue the action;
-	if the player encloses the noun:
-		if the noun is touchable, continue the action;
-	if the noun is touchable, continue the action;
-	stop the action.
 
 [giving and its exceptions]
+The block giving rule is not listed in the check giving it to rules.
+
 Check giving (this is the polite refusal of unwanted objects rule):
 	unless the noun interests the second noun:
 		if the second noun is Ponyfriend Chunky, say "Ponyfriend shakes his head violently and pushes [the noun] back to you." instead;
@@ -3072,13 +3082,13 @@ After examining the spacescraper for the first time:
 The streetlights is a backdrop.  The streetlights is plural-named.  [The streetlights is scenery.  The streetlights is fixed in place.] The description of the streetlights is "The area is served by a number of familiar tall metal streetlights.  [if evening is happening]Their bright LED arrays shine against the darkening sky.[otherwise if night is happening]Their bright LED arrays illuminate the area against the night, casting a few faint shadows."
 
 Understand "streetlight" as the streetlights.
-Understand "Street light" as the streetlights.
+Understand "street light" as the streetlights.
 
 Instead of climbing the streetlights, say "The poles are too slick.  You struggle for a moment before giving up."
 
 
 [sky]
-The sky is a backdrop.  The sky is scenery.  The description of the sky is "[if morning is happening]The sky is a pale robin's egg, with a few wispy clouds visible.[otherwise if afternoon is happening]The sky is the color of a television, turned to a dead channel.  Well, maybe a bit lighter than that.  With a few clouds in it.[otherwise if evening is happening]The sky is a deep blue, with colors fading into the reds towards the western horizon.[otherwise if night is happening]The sky is difficult to see past the glare of the streetlights, but a few of the brightest stars - and possibly planets - are visible in its depths."
+The sky is a backdrop.  The sky is scenery.  The description of the sky is "[if morning is happening]The sky is a pale robin's egg, with a few wispy clouds visible.[otherwise if afternoon is happening]The sky is the color of a television, turned to a dead channel.  Well, maybe a bit lighter than that.  With a few clouds in it.[otherwise if evening is happening]The sky is a deep blue, with colors fading into the reds towards the western horizon behind the streetlights.[otherwise if night is happening]The sky is difficult to see past the glare of the streetlights, but a few of the brightest stars - and possibly planets - are visible in its depths."
 
 Instead of taking the sky, say "I can't take the sky from you.  Because you don't have it.  And can't take it."
 Instead of touching the sky, say "You can't reach that."
