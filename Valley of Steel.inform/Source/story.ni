@@ -1196,7 +1196,7 @@ One activate button is part of every device.
 
 [Specific objects]
 
-The refrigerator is a container. The refrigerator is in the Kitchen.  The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit."
+The refrigerator is a container in the Kitchen. The refrigerator is scenery. The carrying capacity of the refrigerator is 5. The refrigerator is fixed in place.  The refrigerator is openable and closed.  The description is "Standard off-white home antiheating unit."
 Understand "fridge" as the refrigerator.
 
 Report opening the refrigerator for the first time:
@@ -1209,7 +1209,7 @@ Check inserting into the refrigerator:
 
 
 [microwave]
-The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box].[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
+The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is scenery. The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box].[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
@@ -3465,7 +3465,7 @@ The table lamp is a device on the bedside table.  The table lamp is scenery.  Th
 
 Instead of burning the table lamp, try switching on the table lamp.
 
-The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much."
+The Kitchen is south of the Home Office and west of the Hall.  The Kitchen is blind. The description is "This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don't cook for themselves much.  The built-in sink takes up most of the available counter, with the microwave oven occupying almost all of the rest.  The refrigerator hulks along the opposite wall."
 There is a sink in the kitchen.
 
 
