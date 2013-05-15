@@ -444,10 +444,11 @@ At the time when the message arrives:
 	if the location is the location of the phone, say "There is a quiet tone from your phone[if the phone is enclosed by the player] and you feel a short vibration[end if], indicating that an SMS message has arrived.";
 
 At the time when the reminder happens:
-	unless messagesWaiting is false:
-		the reminder happens in 5 turns from now;
-		if the location of the phone is the location of the player:
-			say "A quiet tone from your phone indicates that you have unread SMS messages."
+	unless the phone is fried:
+		unless messagesWaiting is false:
+			the reminder happens in 5 turns from now;
+			if the location of the phone is the location of the player:
+				say "A quiet tone from your phone indicates that you have unread SMS messages."
 			
 At the time when the phonewarn happens:
 	unless the phone is fried:
@@ -710,7 +711,7 @@ Instead of setting the watch to something:
 	say "It uses a radio signal from an atomic clock to maintain the correct time automatically.  It has no controls." instead.
 
 [phone]
-The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its voice calling functionality to make it less distracting, the lock screen is still active and tells you it is [time of day].[alertMessage][end if][if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
+The phone is carried by the player.  The phone is portable.  The phone is small.  The phone can be working or fried.  The phone is working.  The phone can be unviewed or viewed.  The phone is unviewed. The phone has a number called the messagePointer.  The messagePointer is 0. The phone has some text called fryDescription.  The fryDescription is "Almost immediately, sparks begin to dance wildly around the rim of the phone! After a few seconds more, the screen goes dead black with a very final [italic type]ZZT[roman type] noise." The description of the phone is "A standard candybar model with a nice screen.  [if fried]At least, the screen was nice; now it's stone dead.[otherwise if working]Although you've disabled its voice calling functionality to make it less distracting, the lock screen is still active and tells you it is [time of day].[alertMessage][end if]  The back is blank metal save for a tiny icon of a waterdrop with a slash across it.[if ponyfriend chunky encloses the phone]  Ponyfriend Chunky has it now, and seems to be tapping energetically at the screen."
 
 
 To say alertMessage:
@@ -752,6 +753,8 @@ Check reading:
 	[unless the phone is carried by the player, say "You don't have your phone." instead.]
 
 Carry out reading:
+	if the phone is fried:
+		say "The phone is stone dead." instead;
 	if there is no message corresponding to a number of the messagePointer of the phone in the Table of SMS Messages, say "You have no SMS messages." instead;
 	say "Message [messagePointer] reads: [the message corresponding to a number of the messagePointer of the phone in the Table of SMS messages][line break]";
 	increment the messagePointer of the phone;
@@ -1564,6 +1567,58 @@ Before jumping:
 	otherwise:
 		continue the action.
 
+[washing][code lifted from Em Short's Modern Conveniences extension]
+Understand "take shower" or "take a shower" or "take bath" or "take a bath" or "bathe" or "wash" as bathing. Bathing is an action applying to nothing.
+
+
+Check bathing (this is the restrict baths to restrooms rule):
+	if the location is not a restroom:
+		if the player is the actor:
+			say "This isn't the place." instead;
+		stop the action.
+
+Check an actor bathing (this is the block bathing rule):
+	if the player is the actor:
+		say "You haven't time for a bath." instead;
+	stop the action.
+
+Washing is an action applying to one thing.
+Understand "clean [something]" or "wet [something]" or "wash [something]" or "dunk [something]" or "soak [something]" or "immerse [something]" as washing.
+
+Instead of an actor washing the actor:
+	try the actor bathing.
+
+Check an actor washing (this is the restrict washing to the proximity of sinks rule):
+	if the actor can touch a sink:
+		do nothing;
+	otherwise:
+		if the player is the actor:
+			say "You don't see a sink." instead;
+		stop the action;
+
+Check an actor washing (this is the block washing rule):
+	if the player is the actor:
+		if the noun is the phone:
+			continue the action;
+		otherwise:	
+			say "It doesn't seem worth the bother." instead;
+	stop the action.
+
+
+Carry out washing:
+	if the noun is the phone:
+		unless the laptop is hacked:
+			say "You are about to soak your phone when you remember you haven't gotten the attack program off it yet.  Since your phone isn't advertised as waterproof, you desist." instead; 
+		if the noun is working:
+			say "The screen flickers and dies as you run it under the stream of water.  You remove it and shake it dry.";
+			now the phone is fried;
+		otherwise:
+			say "It doesn't seem worth the bother." instead;
+	otherwise:
+		say "It doesn't seem worth the bother." instead.
+
+
+
 [unlocking] 
 [We have to re-implement this b/c we override it in order to let 'open x with y' work]
 Understand the command "unlock" as something new.
@@ -1934,13 +1989,12 @@ Report arming:
 
 
 [Photographing]
-
+Photographing is an action applying to two things.
 Understand "photograph [something] with [something preferably held]" as photographing.
 Understand "take picture of [something] with [something preferably held]" as photographing.
 Understand "take a picture of [something] with [something preferably held]" as photographing.
 Understand "snap [something] with [something preferably held]" as photographing.
 
-Photographing is an action applying to two things.
 
 Check photographing:
 	if the second noun is the ID camera:
