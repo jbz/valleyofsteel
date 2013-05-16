@@ -2551,8 +2551,8 @@ Instead of attacking a policeman:
 	say "You're determined to get out of this mess, and that's definitely not going to happen if you do that.  You smother the impulse."
 
 [bartender]
-The bartender is a man in the Proletariat Bar.  The bartender is scenery.  The description of the bartender is "The bartender is busily polishing a glass. He is ignoring you entirely, but you don't feel insulted as he seems to be ignoring everyone in the bar."
-The bartender is holding the glass.  The glass is scenery.  The description of the glass is "A slightly dirty standard bar drink holder."
+The Bartender is a man in the Proletariat Bar.   The description of the bartender is "The bartender is busily polishing a glass. He is ignoring you entirely, but you don't feel insulted as he seems to be ignoring everyone in the bar."
+The Bartender is holding the glass.  The glass is scenery.  The description of the glass is "A slightly dirty standard bar drink holder."
  
 Report examining the bartender:
 	stop.
@@ -2560,20 +2560,34 @@ Instead of speech when the noun is the bartender:
 	if the topic understood matches the text "roberto" or the topic understood matches the text "velez":
 		if Roberto Velez is in the Proletariat Bar:
 			say "The bartender looks up and then nods meaningfully towards Roberto, who is sitting at a table.  'He's in here most nights, like clockwork[if Roberto Velez is preJacket]. Having some trouble at work, I understand.  Best ask him about it, not me[end if].'";
+			rule succeeds;
 		otherwise:
-			say "He comes in here most afternoons around three.  Works the early shift at the Bank.";
+			say "The bartender looks up.  'He comes in here most afternoons around three.  Works the early shift at the Bank.'";
+			rule succeeds;
+	if the topic understood matches the text "reserve" or the topic understood matches the text "spacescraper" or the topic understood matches the text "bank":
+		say "The bartender shrugs.  'Don't know much about what goes on in there.  You might ask Roberto, though.'";
+		rule succeeds;
+	if the topic understood matches the text "mitklein":
+		say "The bartender scowls.  'Don't remind me.  Most folks in here don't like [']em, but there ain't much we can do.'";
+		rule succeeds;
+	if the topic understood matches the text "man" and Roberto Velez is unknown:
+		if Roberto Velez is inPlay:
+			say "The bartender looks over at the seated man.  'Him?  He's in here most nights.  If you want to know anything else about him, try asking him.'";
 	otherwise:
-		say "[one of]The bartender looks at you briefly before returning his attention to the glass.[or]The bartender cocks his head as you speak, then shakes his head eloquently.  Looks like he doesn't have anything to say.[or]The bartender seems to be ignoring you.[purely at random]".
+		say "[one of]The bartender looks at you briefly before  shrugging and returning his attention to the glass.[or]The bartender cocks his head as you speak, then shakes his head eloquently.  Looks like he doesn't have anything to say.[or]The bartender seems to be ignoring you.[purely at random]".
 
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
-Roberto Velez is a man in the Proletariat Bar.  Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "A medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
+Roberto Velez is a man in the Proletariat Bar.  The printed name of Roberto Velez is "a man". Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "A medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
 
 To say tagged details:
-	if the nametag is part of the torn jacket, say " and his name on a tag clipped to the breast".
+	if the nametag is part of the torn jacket, say " and his name (Roberto Velez) on a tag clipped to the breast".
 	
-After examining the nametag for the first time: now Roberto Velez is known.
+After examining the nametag for the first time: recognize Roberto.
+After examining Roberto Velez for the first time:  recognize Roberto.
 
-Before printing the name of Roberto Velez: now Roberto Velez is known.
+To recognize Roberto:
+	now Roberto Velez is known;
+	now the printed name of Roberto Velez is "Roberto Velez".
 
 [Roberto's movement rules]
 At the time when boozing starts:
@@ -2610,6 +2624,9 @@ Instead of speech when the noun is Roberto Velez:
 			say "[one of]Roberto pokes a finger through the tear glumly.  'I need to replace this.'[or]Roberto nods.  'Yes, I still must find a way to replace this.'[or]Roberto looks at you sharply.  'Can you help me?  Or are you just amused by my misfortune?'[as decreasingly likely outcomes]";
 	otherwise if the topic understood includes "job/work/bank/reserve":
 		say "Roberto sighs.  'I have a good job,' he says.  'I am a custodian at the Reserve Bank, downtown.  The work is not bad, and the pay is not terrible, but they are very strict about the uniform.'";
+	otherwise if the topic understood includes "who/name":
+		say "The man looks up.  'My name is Roberto Velez,' he says, tapping his nametag.";
+		recognize Roberto;
 	otherwise:
 		say "Roberto looks at you curiously.  You have a sneaking suspicion his English is not very good.".
 
