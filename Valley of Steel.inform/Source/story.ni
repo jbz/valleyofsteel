@@ -3203,13 +3203,13 @@ The Green Residential Station door is east of Green Residential Platform and bel
 
 Instead of opening the Green Residential Station door:
 	if the location is Green Residential Platform:
-		say "The Eye Scanner laser delicately probes your iris to determine your identity.  The Reserve Bank Security Subroutine determines that you live in Green Residential, and the doors slide smoothly open.";
+		say "The Eye Scanner laser delicately probes your iris, and the doors slide smoothly open.";
 		now the Green Residential Station Door is open;
 		the autodoors close in zero turns from now;
 	otherwise if the location is Green Residential Station:
 		if the MitKlein is unhacked:
 			activate the Table of MitKlein hints;
-			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein bottle, the police will now be able to link you to the hacking attempts, and you'll be a fugitive.  You decide not to risk it." instead;
+			say "You're pretty sure that your last hacking session left a record of your Mitsui-Klein signature on various government computer systems.  Your retina print will get you on, but if you allow the autodoor to scan your MitKlein the police will be able to link you to the hacking attempts, and you'll be a fugitive.  You decide not to risk it." instead;
 		otherwise:
 			say "The Door Scanner scans your iris to determine your identity.  The Transit Security and Accounting Subroutine determines that you have a legitimate account with the Transit system, and the doors slide smoothly open.";
 		now the Green Residential Station door is open.
