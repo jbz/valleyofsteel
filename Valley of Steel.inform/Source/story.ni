@@ -382,7 +382,7 @@ Every turn:
 			say "[one of]A tiny surveillance camera you're sure you didn't see before swivels to follow you.[or]You hear a very quiet [italic type]beep[roman type] from somewhere you can't identify.[or]You see a small red light in the corner of your vision which vanishes as you turn to look at it.[purely at random]";
 	if the player is out of doors:
 		if a random chance of 1 in 75 succeeds:
-			say "[one of]A black flittervan cruises slowly by above and vanishes from sight.[or]There is the sound of sirens in the distance.[or]You have the sudden feeling that you're being followed.[as decreasingly likely outcomes]"
+			say "[one of]A black flittervan cruises slowly by above and vanishes from sight.[or]There is the sound of sirens in the distance.[or]You have the sudden feeling that you're being followed, but have no idea by whom.[or]A surveillance camera atop a nearby streetlight swivels silently.[or]With a brief flare of light from its boosters and a far-off rumble, a drop shuttle descends from the sky towards the semiballistic pads atop the far-off Reserve Bank Spacescraper.[or]With a brief flare of light from its boosters and a far-off rumble, a drop shuttle rises from the semiballistic pads atop the far-off Reserve Bank Spacescraper, vanishing into the sky.[as decreasingly likely outcomes]".
 
 
 
@@ -1508,8 +1508,11 @@ Understand "wait [a time period]" or "wait for [a time period]" or "wait for a/a
 Carry out waiting more: 
 	let the target time be the time of day plus the time understood; 
 	decrease the target time by one minute; 
-	while the time of day is not the target time: 
-		follow the turn sequence rules.
+	while the time of day is not the target time:
+		if the story has ended:
+			stop;
+		otherwise:
+			follow the turn sequence rules.
 
 Report waiting more: 
 	say "It is now [time of day + 1 minute]."
