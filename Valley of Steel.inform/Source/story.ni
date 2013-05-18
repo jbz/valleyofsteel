@@ -2405,7 +2405,7 @@ Endgame ends victoriously when the location is Main Lobby and Bombs Thrown is gr
 Endgame ends unsuccessfully when the location is Main Lobby and Bombs Thrown is less than 3.
 
 When Endgame ends victoriously:
-	say "You reach the floor of the Main Lobby.  The confusion is immense, as thousands of people realize that their MitKlein bottles no longer function.  The various law enforcement personnel throughout the crowd are distracted and paralyzed by the fact that their equipment will no longer recognize them.  In the confusion, your landing goes nearly unnoticed.  You slip out of the descender and it whisks back upwards out of sight.[paragraph break]Soon, new police enter the lobby and begin organizing an evacuation while others continue their futile search for the unknown attacker.  A policeman gestures at you and a group of people near you to follow him and turns to head downstairs towards the Transit station.  You watch as everyone turns to follow the policeman, but you know that the police can't save them.[paragraph break][italic type]The police can't save you.  I can.  I will.  I'm coming for you.  I'm coming for all of you.[roman type][paragraph break][bold type]Meek and obedient, you follow the leader down well-trodden corridors, down into the Valley of Steel![roman type]";
+	say "You reach the floor of the Main Lobby.  The confusion is immense, as thousands of people realize that their MitKlein bottles no longer function.  The various law enforcement personnel throughout the crowd are distracted and paralyzed by the fact that their equipment will no longer recognize them.  In the confusion, your landing goes nearly unnoticed.  You slip out of the descender and it whisks back upwards out of sight.[paragraph break]Soon, new police enter the lobby and begin organizing an evacuation while others continue their futile search for the unknown attacker.  A policeman gestures at you and a group of people near you to follow him and turns to head downstairs towards the Transit station.[paragraph break]Moving away, you head for the lift tube to the roof pads and your extraction point.  You cast a glance over as everyone else in the area turns to follow the policeman, and you feel the savage grin on your face.[paragraph break][italic type]Meek and obedient, you follow the leader down well-trodden corridors, down into the Valley of Steel. But the police can't save you.  I can.  I will.  I'm coming back.  I'm coming for all of you.[roman type]";
 	end the story finally saying "You are free!" 
 
 When Endgame ends unsuccessfully:
@@ -2787,7 +2787,7 @@ Include Adaptive Hints by Eric Eve.
 
 Table of Potential Hints (continued)
 title		subtable
-"What should I do now?"		Table of General Hints
+"What should I do?"		Table of General Hints
 "What were my original SMS messages?"		Table of SMS Hints
 "How do I disable my MitKlein?"		Table of MitKlein Hints
 "What do I do with the microwave?"		Table of Microwave hints
@@ -2800,13 +2800,14 @@ title		subtable
 
 Table of General Hints	
 hint				used
-"Try exploring the world."				a number
-"Have you read your messages?"
+"Your goal is to escape the city."				a number
+"Have you received and read your SMS messages?"
 "Have you gotten out of Green Residential?"
 "Have you found your drop message of instructions?"
 "Have you found a way into the Spacescraper?"
 "Have you found a way through that suspicious fence in South Primrose Lane?"
 "Have you found a way into the Maintenance Closet?"
+"Have you found a way to the main level of the Atrium?"
 
 
 Table of SMS Hints
@@ -3571,7 +3572,7 @@ Green Commercial Plaza North is south of Green Commercial Station.  The descript
 There is a trash can in Green Commercial Plaza North.
 
 Green Commercial Plaza Center is south of Green Commercial Plaza North.  The description is "This is the center of the Green Commercial Plaza.  There is a fountain here with a bench facing it.  The plaza continues to the north and south; to the east is a bar called (ironically, you hope) the Proletariat.  To the west is a Bistro Paris cafe."
-The drop message is in a trash can in Green Commercial Plaza Center.  The drop message is small.  The drop message can be folded or unfolded.  The drop message is folded. "You see a small folded message with your ID sigil on it stuck to the inner side of the trash can!"  The description is "A small piece of flash paper [if folded]attached to the inside of the can and folded shut.[otherwise] which contains the following message: 'IF THIS MESSAGE RETRIEVED ATTACK PAYLOAD IS FUNCTIONAL.  YOUR MK RECORD NOW DISTRIBUTED TO ALL SECURITY ELEMENTS.  TO EFFECT ESCAPE AND COMPLETE MISSION, USE PAYLOAD TO ATTACK HOMELAND SECURITY PERSONNEL IN HIGH CONCENTRATION.  BASED ON LIKELY FOOTPRINT OF ATTACK USING AVAILABLE COMPONENTS, A MINIMUM OF THREE SEQUENTIAL ATTACKS WILL BE REQUIRED TO DISRUPT ENOUGH OPERATIVES TO PERMIT ESCAPE.'"
+The drop message is in a trash can in Green Commercial Plaza Center.  The drop message is small.  The drop message can be folded or unfolded.  The drop message is folded. "You see a small folded message with your ID sigil on it stuck to the inner side of the trash can!"  The description is "A small piece of flash paper [if folded]attached to the inside of the can and folded shut.[otherwise] which contains the following message: 'IF THIS MESSAGE RETRIEVED ATTACK PAYLOAD IS FUNCTIONAL.  YOUR MK RECORD NOW DISTRIBUTED TO ALL SECURITY ELEMENTS.  TO EFFECT ESCAPE AND COMPLETE MISSION, USE PAYLOAD TO DISRUPT ANY BLOCKING HOMELAND SECURITY PERSONNEL.  FOR LARGE CROWDS, A MINIMUM OF THREE SEQUENTIAL ATTACKS WILL BE REQUIRED TO DISRUPT ENOUGH OPERATIVES TO PERMIT ESCAPE.  DROP SHUTTLE WILL MAKE PICKUP ONCE YOU REACH THE RESERVE BANK SPACESCRAPER SEMIBALLISTIC ROOF PADS.  ACCESS TO PADS ONLY AVAILABLE VIA SPECIAL LIFT TUBE IN MAIN ATRIUM LEVEL.'"
 Understand "flash paper" as the drop message.
 
 After taking the drop message:
