@@ -565,7 +565,8 @@ Before printing the plural name of a memory chip: say "[chiptype] ".
 
 A broadcast chip is a kind of component.  A broadcast chip is usually portable.  A broadcast chip is tiny. A broadcast chip can be working or fried. A broadcast chip is usually working. A broadcast chip always has item-id "M1". A broadcast chip has some text called fryDescription.  The fryDescription of a broadcast chip is usually "There is a sizzling noise. The chip is now scorched and smoking slightly." A broadcast chip is tiny.  The description of a broadcast chip is "This is a broadcast chip - a small solid-state radio about the size of a coin.  These can be found in most portable electronics these days.  Usually powered by small batteries in phones or car keys, these generally have a range of a few meters.  There are leads on the chip for connecting a data source and a power source.[if fried]  This chip is blackened and scorched; the magic smoke appears to have been released."
 
-An antitheft tag is a kind of container.  An antitheft tag is portable.  An antitheft tag is small. An antitheft tag is usually closed and assembled. An antitheft tag can be working or fried.  An antitheft tag is usually working. An antitheft tag has some text called fryDescription.  The fryDescription of an antitheft tag is usually "There is a hissing noise. The plastic of the antitheft tag begins to melt." An antitheft tag is always small. An antitheft tag has a carrying capacity 1. A memory chip is in every antitheft tag. The description of an antitheft tag is "This is a small, nondescript black plastic tag, perhaps a centimeter thick and four by four centimeters square, with a security loop for attaching it to products.[if disassembled]  This tag has been cut open.[end if][if fried] The tag has melted slightly.  Inside you can see what looks like the remains of some electronics, but the whole mess is melted together now."
+An antitheft tag is a kind of container.  An antitheft tag is portable.  An antitheft tag is small. An antitheft tag is usually closed and assembled. An antitheft tag can be working or fried.  An antitheft tag is usually working. An antitheft tag has some text called fryDescription.  The fryDescription of an antitheft tag is usually "There is a hissing noise. The plastic of the antitheft tag begins to melt." An antitheft tag is always small. An antitheft tag has a carrying capacity 1. A memory chip is in every antitheft tag. The description of an antitheft tag is "This is a small rubberized sealed plastic transponder, perhaps a centimeter thick and two by four centimeters square, with a complex security mechanism for attaching it to products. It is used for inventory control as well as theft prevention; it cannot be removed from a garment without the associated removal tool.[if disassembled]  This tag has been cut open.[end if][if fried] The tag has melted slightly.  Inside you can see what looks like the remains of some electronics, but the whole mess is melted together now."
+
 
 An antitheft tag is part of every garment.
 
@@ -586,6 +587,10 @@ Carry out cutting an antitheft tag (called the cuttee) with something:
 	now the noun is unopenable;
 	rule succeeds.
 
+Does the player mean examining an antitheft tag which is part of something carried by the player: it is likely.
+Does the player mean examining an antitheft tag which is carried by the player: it is likely.
+Does the player mean cutting an antitheft tag: it is likely.
+
 instead of cutting an antitheft tag:
 	say "You'd need to cut [the noun] with something; you can't do it bare-handed." instead.
 
@@ -605,7 +610,9 @@ Instead of closing an antitheft tag:
 		say "The damage looks permanent." instead.
 		
 Check taking an antitheft tag:
-	if the noun is part of a garment, say "What do you want to remove that with?" instead.
+	if the noun is part of a garment:
+		say "You can't remove that bare-handed; you'll need to use the appropriate tool.";
+		stop.
 
 
 A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein Blaster is tiny. A Klein Blaster can be working or fried.  A Klein Blaster is usually working.  A Klein Blaster has some text called fryDescription.  The fryDescription of a Klein Blaster is usually "Sparks fountain from the delicate device.  You watch in horror as your carefully-built module fries itself."  A Klein Blaster always has item-id "M3". The description of a Klein Blaster is "A combination of a Broadcast chip and a Memory chip which has been programmed with the attack payload.  It needs a power source to perform its task."
