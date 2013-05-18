@@ -4,7 +4,7 @@ The story description is "In a pervasive surveillance society, you[']ll dare to 
 The story headline is "A tale of the surveillance society".
 The story genre is  "Science Fiction".
 The story creation year is 2012.
-The release number is 1.
+The release number is 2.
 
 Release along with cover art, a "Extended" website, an interpreter, the introductory booklet, the library card, the private source text, a solution, a file of "Original Story" called "valleyofsteel.pdf".
 
@@ -3899,8 +3899,14 @@ Instead of opening the Reserve Bank Station door:
 			now the Reserve Bank Station door is open.
 
 
-Station Corridor is west of the Reserve Bank Station Door.  "The corridor widens as it terminates at the automatic doors to the Reserve Bank Station, which lies to the east.  We Morlocks trundle to and fro without speaking to each other, in fear of camera and of mike and of might Eloi paycheck-cutting wrath.  Although traffic is overwhelmingly to the west, there are two doors reserved for traffic into the station, indicated by green lightbars overhead, whose access scanners are active."  
+Station Corridor is west of the Reserve Bank Station Door.  "The corridor widens as it terminates at the automatic doors to the Reserve Bank Station, which lies to the east.  There is a directory and guide sign on the wall.  Although traffic is overwhelmingly to the west, there are two doors reserved for traffic into the station, indicated by green lightbars overhead, whose access scanners are active."  
 The lightbars are unimportant stuff in Station Corridor.  Understand "green lightbars" as the lightbars when the location is Station Corridor.
+The directory is in the Station Corridor.  The directory is fixed in place.  The description of the directory is "A large sign mounted to the wall.  It reads: [line break][bold type]Green Line Transit: Basement Level[line break]Food Court: Basement Level[line break]Atrium: Main Lobby Level[line break]Rooftop Bouncelift: Main Lobby Level".
+
+Understand "guide" as the directory.  Understand "sign" as the directory when the location is station corridor.
+
+Instead of taking the directory:
+	say "You don't dare do anything that looks like vandalism with this many cameras around."
 
 The Dining Area is a region.  Food Court and Reserve Bank Bistro Paris and I Have No Mouth and The Sheep Look Up and Tacos Terriff and Apollo's are in the Dining Area.
 
@@ -3912,7 +3918,6 @@ Instead of going up in the Food Court, try going west instead.
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 The lift scanners are unimportant stuff in the Lift Lobby.
 The bouncelifts are in the Lift Lobby. The bouncelifts are scenery.  The bouncelifts are plural-named.  The description of the bouncelifts is "A bank of vertical gravtech lift tubes along the north wall.  Access to them is controlled by lift scanners, which require a working and authorized MitKlein signature to pass."
-
 
 Instead of going up in the Lift Lobby:
 	now instantiate is true;
@@ -4086,7 +4091,7 @@ Before going west in Atrium Ledge:
 		say "You can't maneuver through the wreckage of the window with the stiff cable trailing out behind you." instead.
 
 Instead of examining down in Atrium Ledge:
-	say "You look carefully over the edge.  The Main Lobby can be seen some thirty floors down, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  A crowd of people, most seated facing a speaker's podium, occupy the Main Lobby floor. It's a long way down.";
+	say "You look carefully over the edge.  The Main Lobby can be seen some thirty floors down, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  To one side is a smaller separate bouncelift column which leads to the rooftop semiballistic shuttle pads; there is an entry vestibule for it on the Main Lobby level.  A crowd of people, most seated facing a speaker's podium, occupy the Main Lobby floor. It's a long way down.";
 	rule succeeds.
 
 Instead of examining up in Atrium Ledge:
@@ -4136,5 +4141,5 @@ Instead of examining up in the Atrium Airspace:
 
 Instead of examining down in the Atrium Airspace:
 	now instantiate is true;
-	say "The Main Lobby can be seen below, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  A crowd of people, most seated facing a speaker's podium, occupy the Main Lobby floor. It's a long way down.";
+	say "The Main Lobby can be seen below, with the Lift Lobby visible one level below that.  The bouncelift column descends to the Main Lobby, plunging through the floor to terminate in the Lift Lobby.  To one side is a smaller separate bouncelift column which leads to the rooftop semiballistic shuttle pads; there is an entry vestibule for it on the Main Lobby level.  A crowd of people, most seated facing a speaker's podium, occupy the Main Lobby floor. It's a long way down.";
 	rule succeeds.
