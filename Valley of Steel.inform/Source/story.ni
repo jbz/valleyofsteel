@@ -1596,7 +1596,7 @@ Check an actor blocking (this is the block blocking rule):
 	If the noun is a person:
 		try attacking the noun instead;
 	otherwise:
-		say "You can't block that." instead;
+		say "You can't block [the noun]." instead;
 	stop the action.
 	
 
@@ -3017,6 +3017,8 @@ Instead of entering the transit web:
 	now instantiate is true;
 	say "A barrier fence with closed autodoors blocks your way." instead.
 
+Instead of examining up in a transitStation, say "The ceiling is of slightly weathered duramex."
+Instead of examining up in the Transit Capsule, say "The Capsule's ceiling is just out of reach, lined with glowing scripplepaint."
 
 The Voodoo Subway is a thing.  The Voodoo Subway is a backdrop. The Voodoo Subway is large. The description is "A fifty-person maglev Transit Capsule.  The front window is dark, indicating that the capsule is running on automatic.  The Magfield causes a slight bluish glow around the bottom of the capsule.  Its doors are precisely level with the platform."
 
@@ -3123,9 +3125,9 @@ Transit Stop ends when turn count is transitTurn.
 
 When Transit Stop ends:
 	if the location is the Station of the Capsule:
-		say "[capsuleDepartureMessage of the Capsule]";
+		say "[capsuleDepartureMessage of the Capsule].";
 	otherwise if the location is the Transit Capsule:
-		say "[capsuleDepartureMessage of the Capsule]";
+		say "[capsuleDepartureMessage of the Capsule].";
 	Now the station of the Capsule is the Capsule;
 	remove the Voodoo Subway from play;
 	update backdrop positions.
@@ -3157,7 +3159,7 @@ Transit Platform ends when the location is not a transitStation.
 
 Section 2 - The Capsule
 
-The Transit Capsule is a room.  The Transit Capsule is unmapped. The Capsule has a room called the station.  The station of the Capsule is the Capsule.  The Transit Capsule has some text called capsuleArrivalMessage.  The capsuleArrivalMessage is "[if the location is a transitStation]A light grows in the tunnel.  [end if]With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into [the station of the Capsule] and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule."  The Transit Capsule has some text called capsuleDepartureMessage.  The capsuleDepartureMessage is "The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel."
+The Transit Capsule is a room.  The Transit Capsule is unmapped. The Capsule has a room called the station.  The station of the Capsule is the Capsule.  The Transit Capsule has some text called capsuleArrivalMessage.  The capsuleArrivalMessage is "[if the location is a transitStation]A light grows in the tunnel.  [end if]With a deep thrumming and the whoosh of displaced air, the Transit Capsule slides smoothly into [the station of the Capsule] and comes to a stop, hovering in the Web.  The doors slide open and a few commuters enter and exit the capsule."  The Transit Capsule has some text called capsuleDepartureMessage.  The capsuleDepartureMessage is "The capsule doors slide shut.  The humming noice increases in volume, and the capsule slides out of the station, gathering speed as it goes, and slides into the tunnel"
 
 The description of the Transit Capsule is "A fifty-person maglev Transit capsule.  You're standing, holding on to a strap.  [if the station of the Capsule is the capsule]A deep hum resonates through your bones, indicating that the Vectorfield is active.  Outside the narrow windows, the tunnel is dark.  Occasional blurry streaks show lights flashing past the moving Capsule.[otherwise]Through the windows you can see the [station of the Capsule].[end if]"
 
@@ -3394,6 +3396,8 @@ The flagstones is here.  The flagstones is scenery.  The flagstones is plural-na
 Understand "stones" as the flagstones when the location is Front Path.
 Check looking under the flagstones:
 	try pushing the flagstones instead.
+
+Instead of examining down in Front Path, try examining the flagstones instead.
 
 Instead of going inside in Front Path, try going east instead.
 
@@ -3963,10 +3967,17 @@ Instead of taking the directory:
 
 The Dining Area is a region.  Food Court and Reserve Bank Bistro Paris and I Have No Mouth and The Sheep Look Up and Tacos Terriff and Apollo's are in the Dining Area.
 
-Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Hundreds of people are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles, nondescript gray matte shedding scuff marks with the determination of the designed servant into nanogrout channels in between.  During the short nighttime lull, the floor will seem to creep slightly as the nanogrout slowly flows the daytime grime along the channels to dispose of it into the walls."  
+Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Hundreds of people are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles."  
 There is a trash can in the Food Court.
 The foodtables are unimportant stuff in the Food Court.  Understand "tables" as the foodtables when the location is Food Court.
+The tile floor is scenery in the Food Court.  The description of the tile floor is "The floor is made of duramex tiles, nondescript gray matte shedding scuff marks with the determination of the designed servant into nanogrout channels in between.  During the short nighttime lull, the floor will seem to creep slightly as the nanogrout slowly flows the daytime grime along the channels to dispose of it into the walls."
+
+Understand "floor" as the tile floor when the location is Food Court. 
+Understand "tiles" as the tile floor when the location is Food Court.
+
 Instead of going up in the Food Court, try going west instead.
+Instead of examining down in the Dining Area, try examining the tile floor instead.
+Instead of examining up in the Dining Area, say "The ceiling is two levels up, peppered with DayBrite(™) lighting fixtures which make it difficult to see any detail through the glare."
 
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 The lift scanners are unimportant stuff in the Lift Lobby.

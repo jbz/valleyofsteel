@@ -15,7 +15,7 @@ Welcome to the future.  Every citizen has been scanned, chipped, folded, spindle
 
 Valley of Steel
 A tale of the surveillance society by The Custodian of http://everything2.com
-Release 2 / Serial number 130523 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+Release 2 / Serial number 130524 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
 
 Green Residential Park
 Primrose Street ends here in a small circular cul-de-sac.  You&apos;re in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
@@ -52,7 +52,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="188">NO</temporary>
+    <temporary score="361">NO</temporary>
     <children>
       <child nodeId="node-0x69da50" />
     </children>
@@ -67,7 +67,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x69daa0" />
     </children>
@@ -98,7 +98,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8aa20" />
     </children>
@@ -129,7 +129,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8aa70" />
     </children>
@@ -164,7 +164,7 @@ There is a quiet tone from your phone and you feel a short vibration, indicating
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6ad98d0" />
     </children>
@@ -205,7 +205,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6ad9920" />
     </children>
@@ -222,7 +222,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8acb0" />
     </children>
@@ -237,7 +237,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8ad00" />
     </children>
@@ -274,7 +274,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8ad50" />
     </children>
@@ -305,7 +305,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8ada0" />
     </children>
@@ -336,7 +336,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6b8adf0" />
     </children>
@@ -351,7 +351,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08950" />
     </children>
@@ -370,7 +370,7 @@ In the latch is a cotter pin.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6ad9990" />
     </children>
@@ -389,7 +389,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08900" />
     </children>
@@ -404,7 +404,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e088b0" />
     </children>
@@ -419,7 +419,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08840" />
     </children>
@@ -434,7 +434,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e087d0" />
     </children>
@@ -449,7 +449,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08760" />
     </children>
@@ -464,7 +464,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e086f0" />
     </children>
@@ -479,7 +479,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08a00" />
     </children>
@@ -494,7 +494,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e089a0" />
     </children>
@@ -509,7 +509,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e084e0" />
     </children>
@@ -524,7 +524,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08470" />
     </children>
@@ -539,7 +539,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08400" />
     </children>
@@ -554,7 +554,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08390" />
     </children>
@@ -569,7 +569,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08320" />
     </children>
@@ -588,7 +588,7 @@ You have the sudden feeling that you&apos;re being followed, but have no idea by
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e082b0" />
     </children>
@@ -611,7 +611,7 @@ You can go north, east to Back Yard, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08240" />
     </children>
@@ -634,7 +634,7 @@ You can go north, east to Bedroom, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e081d0" />
     </children>
@@ -661,7 +661,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08160" />
     </children>
@@ -676,7 +676,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e080f0" />
     </children>
@@ -703,7 +703,7 @@ You can go south and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08080" />
     </children>
@@ -724,7 +724,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08620" />
     </children>
@@ -739,7 +739,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e08570" />
     </children>
@@ -754,7 +754,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e085c0" />
     </children>
@@ -775,7 +775,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07dd0" />
     </children>
@@ -790,7 +790,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07d60" />
     </children>
@@ -805,7 +805,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07cf0" />
     </children>
@@ -820,7 +820,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07c80" />
     </children>
@@ -839,7 +839,7 @@ You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07c10" />
     </children>
@@ -856,7 +856,7 @@ The tip cools rapidly, fading to a silver-gray.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07ba0" />
     </children>
@@ -873,7 +873,7 @@ solder: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07b30" />
     </children>
@@ -900,7 +900,7 @@ You can go north to Home Office and east to Hall from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07ac0" />
     </children>
@@ -919,7 +919,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07a50" />
     </children>
@@ -938,7 +938,7 @@ Opening the side panel reveals the safety limiter!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e079e0" />
     </children>
@@ -953,7 +953,7 @@ Opening the side panel reveals the safety limiter!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07970" />
     </children>
@@ -976,7 +976,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07900" />
     </children>
@@ -991,7 +991,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07890" />
     </children>
@@ -1006,7 +1006,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07820" />
     </children>
@@ -1029,7 +1029,7 @@ It&apos;s 8:00 PM.  The curfew is now in effect for this neighborhood.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e077b0" />
     </children>
@@ -1048,7 +1048,7 @@ You examine the now-fried microwave, musing to yourself that if only there was a
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e07740" />
     </children>
@@ -1063,96 +1063,10 @@ You examine the now-fried microwave, musing to yourself that if only there was a
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="159">NO</temporary>
+    <temporary score="265">NO</temporary>
     <children>
       <child nodeId="node-0x6e076d0" />
-      <child nodeId="node-0x7061b30" />
     </children>
-  </item>
-  <item nodeId="node-0x7061b30">
-    <command xml:space="preserve">gonear lost camera</command>
-    <result xml:space="preserve">Government Square North
-The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads out of sight atop the surrounding buildings.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
-
-The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
-
-It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here.
-
-You can go north, south, southeast, east, and west from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="159">YES</temporary>
-    <children>
-      <child nodeId="node-0x6aafeb0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6aafeb0">
-    <command xml:space="preserve">look up</command>
-    <result xml:space="preserve">The sky is difficult to see past the glare of the streetlights, but a few of the brightest stars - and possibly planets - are visible in its depths.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="159">YES</temporary>
-    <children>
-      <child nodeId="node-0x6e8250" />
-    </children>
-  </item>
-  <item nodeId="node-0x6e8250">
-    <command xml:space="preserve">look streetlights</command>
-    <result xml:space="preserve">The area is served by a number of familiar tall metal streetlights.  Their bright LED arrays illuminate the area against the night, casting a few faint shadows.  Obvious surveillance cameras protrude from the top of their vertical poles, several meters overhead.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="159">YES</temporary>
-    <children>
-      <child nodeId="node-0x203b60" />
-    </children>
-  </item>
-  <item nodeId="node-0x203b60">
-    <command xml:space="preserve">look surveillance cameras</command>
-    <result xml:space="preserve">An array of obvious sensors placed strategically around the region.  You can&apos;t help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="159">YES</temporary>
-    <children>
-      <child nodeId="node-0x6af7140" />
-    </children>
-  </item>
-  <item nodeId="node-0x6af7140">
-    <command xml:space="preserve">look</command>
-    <result xml:space="preserve">Government Square North
-The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads out of sight atop the surrounding buildings.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
-
-The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
-
-It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here.
-
-You can go north, south, southeast, east, and west from here.
-
-There is a Public Surveillance Notice here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="159">YES</temporary>
-    <children>
-      <child nodeId="node-0x2093a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x2093a0">
-    <command xml:space="preserve">block cameras</command>
-    <result xml:space="preserve">That&apos;s not a verb I recognize.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="158">YES</temporary>
   </item>
   <item nodeId="node-0x6e076d0">
     <command xml:space="preserve">n</command>

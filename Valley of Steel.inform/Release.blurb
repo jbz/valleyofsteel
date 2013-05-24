@@ -1,25 +1,25 @@
 ! Blurb file created by Inform build 6G60
 
-status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/jbz/Projects/Valley/Valley of Steel.inform/Build/StatusCblorb.html"
+status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/jbz/Projects/valley/Valley of Steel.inform/Build/StatusCblorb.html"
 
 
 ! Identification
 
-project folder "/Users/jbz/Projects/Valley/Valley of Steel.inform"
-release to "/Users/jbz/Projects/Valley/Valley of Steel Materials/Release"
+project folder "/Users/jbz/Projects/valley/Valley of Steel.inform"
+release to "/Users/jbz/Projects/valley/Valley of Steel Materials/Release"
 
 ! Blorb instructions
 
 storyfile leafname "Valley of Steel.gblorb"
-storyfile "/Users/jbz/Projects/Valley/Valley of Steel.inform/Build/output.ulx" include
-ifiction "/Users/jbz/Projects/Valley/Valley of Steel.inform/Metadata.iFiction" include
-cover "/Users/jbz/Projects/Valley/Valley of Steel Materials/Cover.png"
-picture 1 "/Users/jbz/Projects/Valley/Valley of Steel Materials/Cover.png"
+storyfile "/Users/jbz/Projects/valley/Valley of Steel.inform/Build/output.ulx" include
+ifiction "/Users/jbz/Projects/valley/Valley of Steel.inform/Metadata.iFiction" include
+cover "/Users/jbz/Projects/valley/Valley of Steel Materials/Cover.png"
+picture 1 "/Users/jbz/Projects/valley/Valley of Steel Materials/Cover.png"
 
 ! Placeholder variables
 
 placeholder [IFID] = "37AA294D-33AF-419F-898F-4507572208E2"
-placeholder [RELEASE] = "1"
+placeholder [RELEASE] = "2"
 placeholder [YEAR] = "2012"
 placeholder [TITLE] = "Valley of Steel"
 placeholder [AUTHOR] = "The Custodian of http://everything2.com"
@@ -30,21 +30,21 @@ placeholder [BLURB] = "In a pervasive surveillance society, you'll dare to strik
 source
 solution
 ifiction
-auxiliary "/Users/jbz/Projects/Valley/Valley of Steel Materials/valleyofsteel.pdf" "Original Story"
+auxiliary "/Users/jbz/Projects/valley/Valley of Steel Materials/valleyofsteel.pdf" "Original Story"
 auxiliary "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/IntroductionToIF.pdf" "Introduction to IF"
 
 ! Website instructions
 
 placeholder [ENCODEDSTORYFILE] = "Valley of Steel.gblorb.js"
-template path "/Users/jbz/Projects/Valley/Valley of Steel Materials/Templates"
+template path "/Users/jbz/Projects/valley/Valley of Steel Materials/Templates"
 template path "/Users/jbz/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/Templates"
 interpreter "Quixe" "g"
-base64 "/Users/jbz/Projects/Valley/Valley of Steel.inform/Build/output.ulx" to "/Users/jbz/Projects/Valley/Valley of Steel Materials/Release/interpreter/Valley of Steel.gblorb.js"
+base64 "/Users/jbz/Projects/valley/Valley of Steel.inform/Build/output.ulx" to "/Users/jbz/Projects/valley/Valley of Steel Materials/Release/interpreter/Valley of Steel.gblorb.js"
 
 ! Website instructions
 
-template path "/Users/jbz/Projects/Valley/Valley of Steel Materials/Templates"
+template path "/Users/jbz/Projects/valley/Valley of Steel Materials/Templates"
 template path "/Users/jbz/Library/Inform/Templates"
 template path "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/Templates"
 css
