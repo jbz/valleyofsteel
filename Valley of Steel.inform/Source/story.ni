@@ -36,6 +36,7 @@ When play begins:
 	repeat with target running through doodles:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
 	Move the Public Surveillance Notice backdrop to all panopticon rooms;
+	Move the surveillance cameras backdrop to all panopticon rooms;
 	snoozing starts at 2:00 AM;
 	curfew message happens at 7:55 PM;
 	activate the Table of General Hints;
@@ -619,6 +620,8 @@ A Klein Blaster is a kind of component.  A Klein Blaster is portable.  A Klein B
 
 A disposable camera is a kind of component. A disposable camera is small. A disposable camera can be assembled or disassembled.  A disposable camera can be working or fried.  A disposable camera is usually assembled.  A disposable camera is usually working.  A disposable camera always has item-id "M4". A disposable camera has some text called the Contents.  The Contents of a disposable camera is usually "blank". The description of a disposable camera is "A cheap piece of integral electronics, made cheaper by the fact that any portable or phone has a perfectly good camera in it.  It has a built-in flash, and is typically linked to a cell phone or other handheld for displaying and storing photos.[if disassembled]  This camera has been cracked open, revealing its internal electronics.  A capacitor (for the flash unit) and battery are available, as are numerous circuit connection points.[end if]"
 
+Instead of opening a disposable camera:
+	say "You don't have the strength in your fingers to open [the noun]."
 
 
 [objects - specific]
@@ -3174,12 +3177,29 @@ After examining the spacescraper for the first time:
 	
 
 [streetlights]
-The streetlights is a backdrop.  The streetlights is plural-named.  [The streetlights is scenery.  The streetlights is fixed in place.] The description of the streetlights is "The area is served by a number of familiar tall metal streetlights.  [if evening is happening]Their bright LED arrays shine against the darkening sky.[otherwise if night is happening]Their bright LED arrays illuminate the area against the night, casting a few faint shadows."
+The streetlights is a backdrop.  The streetlights is plural-named.  [The streetlights is scenery.  The streetlights is fixed in place.] The description of the streetlights is "The area is served by a number of familiar tall metal streetlights.  [if evening is happening]Their bright LED arrays shine against the darkening sky.[otherwise if night is happening]Their bright LED arrays illuminate the area against the night, casting a few faint shadows.[end if]  Obvious surveillance cameras protrude from the top of their vertical poles, several meters overhead."
 
 Understand "streetlight" as the streetlights.
 Understand "street light" as the streetlights.
 
 Instead of climbing the streetlights, say "The poles are too slick.  You struggle for a moment before giving up."
+
+
+[surveillance cameras]
+The surveillance cameras is a backdrop.  The surveillance cameras is plural-named.  The description of the surveillance cameras is "[one of]A collection of dark glass domed objects, all placed out of reach with good fields of view.[or]An array of obvious sensors placed strategically around the region.[or]Almost comically obvious cameras which look more like old-style closed-circuit TV cameras than anything else.[sticky random]  You can't help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice."
+
+Does the player mean opening the surveillance cameras: it is unlikely.
+Does the player mean taking the surveillance cameras: it is unlikely.
+Does the player mean and-attaching the surveillance cameras: it is unlikely.
+
+Understand "cameras" as the surveillance cameras.
+
+Instead of taking the surveillance cameras:
+	say "They're far out of reach."
+
+Instead of attacking the surveillance cameras:
+	say "You wind up for your attack before remembering that you very much don't want to be noticed. Cold sweat trickling down your spine at the thought of the cameras['] current imagery being flagged for Homeland Security, you desist and look away."
+	
 
 
 [sky]
