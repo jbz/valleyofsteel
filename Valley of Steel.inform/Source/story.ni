@@ -877,20 +877,26 @@ Instead of closing the car key:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution camera is used for recording the identity of suspects brought in.  It can either record to a local server, or to a standard Memory chip placed in its memory slot.[if the ID camera is fixed in place] It is securely attached to the countertop with a chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution holocamera used by the police for recording suspects' identities.  It can either record to a local server if one is available, or to a standard Memory chip placed in its memory slot.[if the ID camera is fixed in place] It is securely attached to the countertop with a security chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
 The film slot is a container.  The film slot is part of the ID camera.  The film slot is unopenable and open. The carrying capacity of the film slot is 1.  The description of the film slot is "A slot for a standard Memory chip.[unless empty] A chip is currently in the slot.[end if]".
 
 Check inserting into the film slot:
 	unless the noun is a memory chip, say "That won't fit." instead.
 
+Understand "memory slot" as the film slot when the player is carrying the ID camera.
+
 Instead of inserting into the id camera:
 	try inserting the noun into the film slot instead.
 
+Instead of opening the ID camera:
+	say "[The noun] is a sealed unit."
+
 Understand "the chain" as the camera chain.
+Understand "security chain" as the camera chain.
 
 Check cutting the camera chain with the tag remover:
-	say "Looking around to check for watchers, you snip through the ID chain with the tag remover!";
+	say "Looking around to check for watchers, you snip through the ID camera security chain with the tag remover!";
 	now the ID camera is portable;
 	rule succeeds.
 
@@ -902,6 +908,7 @@ Check taking the ID camera:
 		say "The camera is chained down securely." instead;
 	otherwise:
 		continue the action.
+
 
 
 The tag remover is in the sales drawer.  The tag remover is a thing.  The tag remover is small. The description is "This is a combination antitheft tag remover and wirecutter, useful for removing antitheft tags or pesky labels from products."
@@ -1579,6 +1586,19 @@ Before jumping:
 		say "You look at the nearby surveillance notice and decide not to do anything unusual." instead;
 	otherwise:
 		continue the action.
+		
+[blocking]	
+Blocking is an action applying to one visible thing.
+Understand "block [something]" as blocking.
+Understand "interfere with [something]" as blocking.
+
+Check an actor blocking (this is the block blocking rule):
+	If the noun is a person:
+		try attacking the noun instead;
+	otherwise:
+		say "You can't block that." instead;
+	stop the action.
+	
 
 [washing][code lifted from Em Short's Modern Conveniences extension]
 Understand "take shower" or "take a shower" or "take bath" or "take a bath" or "bathe" or "wash" as bathing. Bathing is an action applying to nothing.
@@ -1915,7 +1935,7 @@ A disassembly rule:
 	if the noun is a disposable camera:
 		unless the noun is carried, try taking the noun;
 		unless the second noun is the multitool:
-			say "You can't disassemble the camera with that." instead;
+			say "You can't disassemble [the noun] with that." instead;
 		otherwise:
 			disassemble the noun;
 			rule succeeds;
@@ -3186,7 +3206,7 @@ Instead of climbing the streetlights, say "The poles are too slick.  You struggl
 
 
 [surveillance cameras]
-The surveillance cameras is a backdrop.  The surveillance cameras is plural-named.  The description of the surveillance cameras is "[one of]A collection of dark glass domed objects, all placed out of reach with good fields of view.[or]An array of obvious sensors placed strategically around the region.[or]Almost comically obvious cameras which look more like old-style closed-circuit TV cameras than anything else.[sticky random]  You can't help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice."
+The surveillance cameras is a backdrop.  The surveillance cameras is plural-named.  The description of the surveillance cameras is "[one of]A collection of dark glass domed objects, all placed out of reach with good fields of view.[or]An array of obvious sensors placed strategically around the region.[or]Almost comically obvious cameras which look more like old-style closed-circuit TV cameras than anything else.[sticky random]  You can't help remembering your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice."
 
 Does the player mean opening the surveillance cameras: it is unlikely.
 Does the player mean taking the surveillance cameras: it is unlikely.
@@ -3196,6 +3216,12 @@ Understand "cameras" as the surveillance cameras.
 
 Instead of taking the surveillance cameras:
 	say "They're far out of reach."
+
+Understand "obscure [something]" as blocking.
+Understand "cover [something]" as blocking.
+
+Instead of blocking the surveillance cameras:
+	say "There are too many of them, and they're out of reach.  Their placement is very efficient."
 
 Instead of attacking the surveillance cameras:
 	say "You wind up for your attack before remembering that you very much don't want to be noticed. Cold sweat trickling down your spine at the thought of the cameras['] current imagery being flagged for Homeland Security, you desist and look away."
@@ -3784,7 +3810,7 @@ The govcars is in Government Square North and Government Square South.
 Understand "groundcars" and "vehicles" and "flitter" and "flitters" and "car" and "cars" as the govcars when the govcars is in the location.
 Instead of entering the govcars, say "They're moving. You'd be injured."
 Instead of climbing the govcars, say "They're moving. You'd be injured."
-
+Instead of blocking the govcars, say "They're moving.  You'd be injured."
 
 Government Square North is north of Government Square South.  The description is "The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads out of sight atop the surrounding buildings.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building."
 

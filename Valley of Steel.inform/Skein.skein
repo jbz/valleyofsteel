@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Skein rootNode="node-0x69db10" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Zoom</generator>
-  <activeNode nodeId="node-0xbb54800" />
+  <activeNode nodeId="node-0x69db10" />
   <item nodeId="node-0x69db10">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
@@ -52,11 +52,8 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="57">NO</temporary>
+    <temporary score="188">NO</temporary>
     <children>
-      <child nodeId="node-0x6a2c650" />
-      <child nodeId="node-0x6a56670" />
-      <child nodeId="node-0x6e286f0" />
       <child nodeId="node-0x69da50" />
     </children>
   </item>
@@ -70,7 +67,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x69daa0" />
     </children>
@@ -101,7 +98,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8aa20" />
     </children>
@@ -132,7 +129,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8aa70" />
     </children>
@@ -167,7 +164,7 @@ There is a quiet tone from your phone and you feel a short vibration, indicating
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6ad98d0" />
     </children>
@@ -208,7 +205,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6ad9920" />
     </children>
@@ -225,7 +222,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8acb0" />
     </children>
@@ -240,7 +237,7 @@ pamphlet: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8ad00" />
     </children>
@@ -277,7 +274,7 @@ The automatic door slides closed.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8ad50" />
     </children>
@@ -308,7 +305,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8ada0" />
     </children>
@@ -339,7 +336,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6b8adf0" />
     </children>
@@ -354,7 +351,7 @@ There is a Public Surveillance Notice here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08950" />
     </children>
@@ -373,7 +370,7 @@ In the latch is a cotter pin.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6ad9990" />
     </children>
@@ -392,7 +389,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08900" />
     </children>
@@ -407,7 +404,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e088b0" />
     </children>
@@ -422,7 +419,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08840" />
     </children>
@@ -437,7 +434,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e087d0" />
     </children>
@@ -452,7 +449,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08760" />
     </children>
@@ -467,7 +464,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e086f0" />
     </children>
@@ -482,7 +479,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08a00" />
     </children>
@@ -497,7 +494,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e089a0" />
     </children>
@@ -512,7 +509,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e084e0" />
     </children>
@@ -527,7 +524,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08470" />
     </children>
@@ -542,7 +539,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08400" />
     </children>
@@ -557,7 +554,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08390" />
     </children>
@@ -572,7 +569,7 @@ A quiet tone from your phone indicates that you have unread SMS messages.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08320" />
     </children>
@@ -591,7 +588,7 @@ You have the sudden feeling that you&apos;re being followed, but have no idea by
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e082b0" />
     </children>
@@ -614,7 +611,7 @@ You can go north, east to Back Yard, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08240" />
     </children>
@@ -637,7 +634,7 @@ You can go north, east to Bedroom, and west from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e081d0" />
     </children>
@@ -664,7 +661,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08160" />
     </children>
@@ -679,7 +676,7 @@ You can go north through the Apartment door (closed) to Front Lobby, south to Ha
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e080f0" />
     </children>
@@ -706,7 +703,7 @@ You can go south and east to Entry from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08080" />
     </children>
@@ -727,7 +724,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08620" />
     </children>
@@ -742,7 +739,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e08570" />
     </children>
@@ -757,7 +754,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e085c0" />
     </children>
@@ -778,7 +775,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07dd0" />
     </children>
@@ -793,7 +790,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07d60" />
     </children>
@@ -808,7 +805,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07cf0" />
     </children>
@@ -823,7 +820,7 @@ Taken.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07c80" />
     </children>
@@ -842,7 +839,7 @@ You fashion the broadcast chip and the attack memory chip into a Klein Blaster!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07c10" />
     </children>
@@ -859,7 +856,7 @@ The tip cools rapidly, fading to a silver-gray.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07ba0" />
     </children>
@@ -876,7 +873,7 @@ solder: Done.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07b30" />
     </children>
@@ -903,7 +900,7 @@ You can go north to Home Office and east to Hall from here.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07ac0" />
     </children>
@@ -922,7 +919,7 @@ The Green Residential curfew will begin in five minutes.  You&apos;ll need to be
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07a50" />
     </children>
@@ -941,7 +938,7 @@ Opening the side panel reveals the safety limiter!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e079e0" />
     </children>
@@ -956,7 +953,7 @@ Opening the side panel reveals the safety limiter!
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07970" />
     </children>
@@ -979,7 +976,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07900" />
     </children>
@@ -994,7 +991,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07890" />
     </children>
@@ -1009,7 +1006,7 @@ A few moments later there is a loud BING! and the microwave stops.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07820" />
     </children>
@@ -1032,7 +1029,7 @@ It&apos;s 8:00 PM.  The curfew is now in effect for this neighborhood.
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e077b0" />
     </children>
@@ -1051,7 +1048,7 @@ You examine the now-fried microwave, musing to yourself that if only there was a
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e07740" />
     </children>
@@ -1066,10 +1063,96 @@ You examine the now-fried microwave, musing to yourself that if only there was a
 &gt;</commentary>
     <played>YES</played>
     <changed>NO</changed>
-    <temporary score="1829">NO</temporary>
+    <temporary score="159">NO</temporary>
     <children>
       <child nodeId="node-0x6e076d0" />
+      <child nodeId="node-0x7061b30" />
     </children>
+  </item>
+  <item nodeId="node-0x7061b30">
+    <command xml:space="preserve">gonear lost camera</command>
+    <result xml:space="preserve">Government Square North
+The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads out of sight atop the surrounding buildings.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here.
+
+You can go north, south, southeast, east, and west from here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="159">YES</temporary>
+    <children>
+      <child nodeId="node-0x6aafeb0" />
+    </children>
+  </item>
+  <item nodeId="node-0x6aafeb0">
+    <command xml:space="preserve">look up</command>
+    <result xml:space="preserve">The sky is difficult to see past the glare of the streetlights, but a few of the brightest stars - and possibly planets - are visible in its depths.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="159">YES</temporary>
+    <children>
+      <child nodeId="node-0x6e8250" />
+    </children>
+  </item>
+  <item nodeId="node-0x6e8250">
+    <command xml:space="preserve">look streetlights</command>
+    <result xml:space="preserve">The area is served by a number of familiar tall metal streetlights.  Their bright LED arrays illuminate the area against the night, casting a few faint shadows.  Obvious surveillance cameras protrude from the top of their vertical poles, several meters overhead.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="159">YES</temporary>
+    <children>
+      <child nodeId="node-0x203b60" />
+    </children>
+  </item>
+  <item nodeId="node-0x203b60">
+    <command xml:space="preserve">look surveillance cameras</command>
+    <result xml:space="preserve">An array of obvious sensors placed strategically around the region.  You can&apos;t help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="159">YES</temporary>
+    <children>
+      <child nodeId="node-0x6af7140" />
+    </children>
+  </item>
+  <item nodeId="node-0x6af7140">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Government Square North
+The north half of Government Square is surrounded on three sides by roadway.  Groundcars trundle back and forth, and the occasional flitter whines down to or screams up from flitter pads out of sight atop the surrounding buildings.  The hospital driveway is to the southeast, across the road; the hospital entrance to the east and the police station to the west.  To the north is the steps to the Civil Center, the local government office building.
+
+The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
+
+It seems a tourist has left behind a cheap disposable camera, which rests on the sidewalk here.
+
+You can go north, south, southeast, east, and west from here.
+
+There is a Public Surveillance Notice here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="159">YES</temporary>
+    <children>
+      <child nodeId="node-0x2093a0" />
+    </children>
+  </item>
+  <item nodeId="node-0x2093a0">
+    <command xml:space="preserve">block cameras</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognize.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="158">YES</temporary>
   </item>
   <item nodeId="node-0x6e076d0">
     <command xml:space="preserve">n</command>
@@ -9816,617 +9899,5 @@ Would you like to RESTART, RESTORE a saved game, QUIT, or UNDO the last command?
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="1478">NO</temporary>
-  </item>
-  <item nodeId="node-0x6e286f0">
-    <command xml:space="preserve">l streetlights</command>
-    <result xml:space="preserve">The area is served by a number of familiar tall metal streetlights.  Their bright LED arrays shine against the darkening sky.  Obvious surveillance cameras protrude from the top of their vertical poles, several meters overhead.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a28120" />
-      <child nodeId="node-0xbb64500" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb64500">
-    <command xml:space="preserve">look up</command>
-    <result xml:space="preserve">The sky is a deep blue, with colors fading into the reds towards the western horizon behind the streetlights.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a206a0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a206a0">
-    <command xml:space="preserve">l streetlights</command>
-    <result xml:space="preserve">The area is served by a number of familiar tall metal streetlights.  Their bright LED arrays shine against the darkening sky.  Obvious surveillance cameras protrude from the top of their vertical poles, several meters overhead.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbbc43c0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbbc43c0">
-    <command xml:space="preserve">l cameras</command>
-    <result xml:space="preserve">A collection of dark glass domed objects, all placed out of reach with good fields of view.  You can&apos;t help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbca0b70" />
-    </children>
-  </item>
-  <item nodeId="node-0xbca0b70">
-    <command xml:space="preserve">take cameras</command>
-    <result xml:space="preserve">They&apos;re far out of reach.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbba10f0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbba10f0">
-    <command xml:space="preserve">kick cameras</command>
-    <result xml:space="preserve">You wind up for your attack before remembering that you very much don&apos;t want to be noticed. Cold sweat trickling down your spine at the thought of the cameras&apos; current imagery being flagged for Homeland Security, you desist and look away.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbba1050" />
-    </children>
-  </item>
-  <item nodeId="node-0xbba1050">
-    <command xml:space="preserve">x cameras</command>
-    <result xml:space="preserve">A collection of dark glass domed objects, all placed out of reach with good fields of view.  You can&apos;t help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb35c40" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb35c40">
-    <command xml:space="preserve">gonear kitchen</command>
-    <result xml:space="preserve">Kitchen
-This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don&apos;t cook for themselves much.  The built-in sink takes up most of the available counter, with the microwave oven occupying almost all of the rest.  The refrigerator hulks along the opposite wall.
-
-You can see a thermos (closed) here.
-
-You can go north and east from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6ae13d0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6ae13d0">
-    <command xml:space="preserve">x surveillance cameras</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a25e00" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a25e00">
-    <command xml:space="preserve">rules</command>
-    <result xml:space="preserve">Rules tracing now switched on. Type &quot;rules off&quot; to switch it off again, or &quot;rules all&quot; to include even rules which do not apply.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbba1b00" />
-    </children>
-  </item>
-  <item nodeId="node-0xbba1b00">
-    <command xml:space="preserve">x surveillance cameras</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb80a50" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb80a50">
-    <command xml:space="preserve">x cameras</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a7c160" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a7c160">
-    <command xml:space="preserve">gonear park</command>
-    <result xml:space="preserve">[Rule &quot;determine visibility ceiling rule&quot; applies.]
-[Rule &quot;room description heading rule&quot; applies.]
-Green Residential Park
-[Rule &quot;room description body text rule&quot; applies.]
-Primrose Street ends here in a small circular cul-de-sac.  You&apos;re in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park&apos;s entrance.
-
-[Rule &quot;room description paragraphs about objects rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-The Reserve Bank Spacescraper is visible in the distance, rising over the low skyline.
-
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention player&apos;s supporter in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention scenery in room descriptions rule&quot; applies.]
-[Rule &quot;don&apos;t mention undescribed items in room descriptions rule&quot; applies.]
-[Rule &quot;set pronouns from items in room descriptions rule&quot; applies.]
-[Rule &quot;offer items to writing a paragraph about rule&quot; applies.]
-[Rule &quot;use initial appearance in room descriptions rule&quot; applies.]
-[Rule &quot;describe what&apos;s on scenery supporters in room descriptions rule&quot; applies.]
-[Rule &quot;check new arrival rule&quot; applies.]
-[Rule &quot;explosive residue rule&quot; applies.]
-[Rule &quot;exits rule&quot; applies.]
-[Rule &quot;darkness hides exits rule&quot; applies.]
-You can go [Rule &quot;darkness hides exits rule&quot; applies.]
-south from here.
-
-[Rule &quot;list notable events rule&quot; applies.]
-[Rule &quot;other people looking rule&quot; applies.]
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a570d0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a570d0">
-    <command xml:space="preserve">rules off</command>
-    <result xml:space="preserve">Rules tracing now switched off. Type &quot;rules&quot; to switch it on again.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb79d90" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb79d90">
-    <command xml:space="preserve">purloin lost camera</command>
-    <result xml:space="preserve">[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb7bf90" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb7bf90">
-    <command xml:space="preserve">purloin maintenance camera</command>
-    <result xml:space="preserve">[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb312d0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb312d0">
-    <command xml:space="preserve">look cameras</command>
-    <result xml:space="preserve">A collection of dark glass domed objects, all placed out of reach with good fields of view.  You can&apos;t help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbbca1f0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbbca1f0">
-    <command xml:space="preserve">gonear kitchen</command>
-    <result xml:space="preserve">Kitchen
-This kitchen is decorated in a style some four decades old, which is probably when it was last renovated.  It is fairly clean, likely reflecting the fact that the occupants don&apos;t cook for themselves much.  The built-in sink takes up most of the available counter, with the microwave oven occupying almost all of the rest.  The refrigerator hulks along the opposite wall.
-
-You can see a thermos (closed) here.
-
-You can go north and east from here.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a56350" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a56350">
-    <command xml:space="preserve">look cameras</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbc7b470" />
-    </children>
-  </item>
-  <item nodeId="node-0xbc7b470">
-    <command xml:space="preserve">look camera</command>
-    <result xml:space="preserve">Which do you mean, the maintenance camera or the lost camera?
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x622b70" />
-    </children>
-  </item>
-  <item nodeId="node-0x622b70">
-    <command xml:space="preserve">purloin 3 broadcast chips</command>
-    <result xml:space="preserve">[Purloined.]
-[Purloined.]
-[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6abcc70" />
-    </children>
-  </item>
-  <item nodeId="node-0x6abcc70">
-    <command xml:space="preserve">look chips</command>
-    <result xml:space="preserve">You can&apos;t use multiple objects with that verb.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb4b6b0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb4b6b0">
-    <command xml:space="preserve">examine chips</command>
-    <result xml:space="preserve">You can&apos;t use multiple objects with that verb.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb6ddf0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb6ddf0">
-    <command xml:space="preserve">examine broadcast chips</command>
-    <result xml:space="preserve">You can&apos;t use multiple objects with that verb.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6aae1c0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6aae1c0">
-    <command xml:space="preserve">open camera</command>
-    <result xml:space="preserve">Which do you mean, the maintenance camera or the lost camera?
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb52c20" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb52c20">
-    <command xml:space="preserve">open maintenance camera</command>
-    <result xml:space="preserve">That&apos;s not something you can open.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb3ce80" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb3ce80">
-    <command xml:space="preserve">open maintenance camera with tool</command>
-    <result xml:space="preserve">You pry open the maintenance camera with the pliers in your multitool, ignoring the sound of breaking plastic.
-
-There is a quiet tone from your phone and you feel a short vibration, indicating that an SMS message has arrived.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb40b50" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb40b50">
-    <command xml:space="preserve">undo</command>
-    <result xml:space="preserve">Kitchen
-[Previous turn undone.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb5e710" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb5e710">
-    <command xml:space="preserve">undo</command>
-    <result xml:space="preserve">Kitchen
-[Previous turn undone.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb20c60" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb20c60">
-    <command xml:space="preserve">actions</command>
-    <result xml:space="preserve">Actions listing on.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6ab5340" />
-    </children>
-  </item>
-  <item nodeId="node-0x6ab5340">
-    <command xml:space="preserve">open maintenance camera</command>
-    <result xml:space="preserve">[opening the maintenance camera]
-That&apos;s not something you can open.
-[opening the maintenance camera - failed the can&apos;t open unless openable rule]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="54">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a183f0" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a183f0">
-    <command xml:space="preserve">open maintenance camera with tool</command>
-    <result xml:space="preserve">[opening the maintenance camera with the multitool]
-You pry open the maintenance camera with the pliers in your multitool, ignoring the sound of breaking plastic.
-[opening the maintenance camera with the multitool - succeeded]
-
-There is a quiet tone from your phone and you feel a short vibration, indicating that an SMS message has arrived.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="53">YES</temporary>
-  </item>
-  <item nodeId="node-0x6a28120">
-    <command xml:space="preserve">l camera</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="4">YES</temporary>
-    <children>
-      <child nodeId="node-0x6a59850" />
-    </children>
-  </item>
-  <item nodeId="node-0x6a59850">
-    <command xml:space="preserve">l surveillance camera</command>
-    <result xml:space="preserve">I only understood you as far as wanting to look the Public Surveillance Notice.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="3">YES</temporary>
-  </item>
-  <item nodeId="node-0x6a56670">
-    <command xml:space="preserve">purloin lost camera</command>
-    <result xml:space="preserve">[Purloined.]
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="57">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb0f050" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb0f050">
-    <command xml:space="preserve">open lost camera</command>
-    <result xml:space="preserve">You don&apos;t have the strength in your fingers to open the lost camera.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="57">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb54800" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb54800">
-    <command xml:space="preserve">open lost camera with tool</command>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="56">YES</temporary>
-  </item>
-  <item nodeId="node-0x6a2c650">
-    <command xml:space="preserve">l streelights</command>
-    <result xml:space="preserve">You can&apos;t see any such thing.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="9">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb5f380" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb5f380">
-    <command xml:space="preserve">l streetlights</command>
-    <result xml:space="preserve">The area is served by a number of familiar tall metal streetlights.  Their bright LED arrays shine against the darkening sky.  Obvious surveillance cameras protrude from the top of their vertical poles, several meters overhead.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="9">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb262c0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb262c0">
-    <command xml:space="preserve">x cameras</command>
-    <result xml:space="preserve">A collection of dark glass domed objects, all placed out of reach with good fields of view.  You can&apos;t help remember your training, which convinced you that these things are like cockroaches - if you can see a few of them, a horde of them are waiting and watching just beneath your notice.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="9">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb24260" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb24260">
-    <command xml:space="preserve">take cameras</command>
-    <result xml:space="preserve">You start to reach for the cameras, then remember you are trying to remain incognito and desist.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="9">YES</temporary>
-    <children>
-      <child nodeId="node-0xbb2aae0" />
-    </children>
-  </item>
-  <item nodeId="node-0xbb2aae0">
-    <command xml:space="preserve">kick cameras</command>
-    <result xml:space="preserve">You start to reach for the cameras, then remember you are trying to remain incognito and desist.
-
-&gt;</result>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="8">YES</temporary>
   </item>
 </Skein>
