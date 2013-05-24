@@ -2673,9 +2673,30 @@ Instead of the player trying giving the blue jacket to Roberto Velez:
 Every turn when the player can see Roberto Velez and the location is The Proletariat Bar:
 	if a random chance of 1 in 5 succeeds, say "[one of]Roberto shuffles his feet.[or]Roberto takes a swig of his beer.[or]Roberto stands and goes to the bar for some peanuts, returning to the table.[or]Roberto examines his jacket sleeve and sighs.[as decreasingly likely outcomes]".
 
-[Garb-oh attendant]
+[Shopkeeper]
 In Garb-oh is a woman called the shopkeeper.  The description of the shopkeeper is "[if Shoplifting is happening]The shopkeeper is standing with the police and the shopper near the doors, gesticulating angrily and haranguing both the police and shopper.[otherwise] The shopkeeper is a somewhat frumpy older lady.  You can't help but wonder if she has been deliberately selected for her appearance so as to present a contrast with the merchandise."
 
+Instead of speech when the noun is the shopkeeper:
+	if the topic understood includes "jacket/shirt/pants/clothes":
+		say "The shopkeeper nods.  'The latest fashions, available at reasonable prices.'";
+	otherwise if the topic understood includes "buy/purchase/sell/money/cash":
+		say "The shopkeeper says 'All of our transactions are handled by the sales counter's Mitsui-Klein readers.'  She points to the sales counter.  'If you have a purchase, your Mitsui-Klein will cause our shopsystems to summon staff.'";
+	otherwise if the topic understood includes "mitsui-klein/mitsui/klein/mitklein/encapsulation/capsule":
+		say "She looks at you suspiciously.  'Everyone has one, obviously.  Why wouldn't they?'";
+	otherwise if the topic understood includes "tags/antitheft/security/sensor/sensors":
+		say "She glares at you.  'Of course we have security tags on our merchandise.  You wouldn't believe the problems we had with shoplifting, even with the cameras, and the police don't seem interested in using all that footage to actually catch criminals.  Lord knows what they [italic type]do[roman type] use it for.  Anyway, don't try to pull those tags off - unless you have the matching tag remover tool, all you'll do is damage the goods!'";
+	otherwise if the topic understood includes "police":
+		say "She shakes her head.  'They won't patrol in the store, no matter how much I ask them to, but their response time since we put the security system in place has been quite impressive.'";
+	otherwise if the topic understood includes "cameras/camera/surveillance":
+		say "She nods firmly.  'It's a much safer world with those cameras in it.  I'm glad that the government is concerned enough about our safety to go to the trouble.'";
+	otherwise if the topic understood includes "shopper/woman":
+		say "You get an old-fashioned look.  'Please do not harrass the other shoppers.  We're recording all events in the store in case anyone complains.'";
+	otherwise:
+		say "The shopkeeper shakes her head, moving away.  'I'm quite busy.  Please examine our wares at your leisure.'"
+
+
+
+[Shopper]
 In Garb-oh is a woman called the shopper.  The shopper can be carryingSwag or notcarryingSwag.  The shopper is notcarryingSwag.  The shopper is wearing the shoulder bag.  The description of the shopper is "[if Shoplifting is happening]In tears, the shopper stands near the police officers, protesting her innocence and trading angry accusations with the shopkeeper.[otherwise] The shopper is a young woman wearing large headphones, loose clothes. She is bouncing her head in what is probably the rhythm of the song she is listening to, and seems to be paying very little attention to her surroundings.  Every once in a while she pulls an item from a rack and holds it up in front of a mirror before returning it to its place.  She is wearing a large shoulder bag."
 
 The shoulder bag is a container.  The shoulder bag is open.  The description is "An open-topped satchel with a carrying strap meant to be strung over one shoulder.[if the shopper is wearing the shoulder bag]  It is currently over the shoulder of a woman shopper."
