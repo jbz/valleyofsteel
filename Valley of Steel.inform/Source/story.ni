@@ -1229,7 +1229,7 @@ Check inserting into the refrigerator:
 
 
 [microwave]
-The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is scenery. The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box].[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
+The microwave oven is a device.  The microwave oven is in the Kitchen.  The microwave oven is scenery. The microwave oven is fixed in place.  The microwave oven can be working or fried.  The microwave oven is working.  The description is "[if working]A microwave oven of perhaps a cubic foot capacity with a transparent door.  It is a relatively smart oven, able to determine the proper setting for whatever is placed in it using a plethora of sensors.  There is a single button (marked 'COOK') on the front. A side panel sports a lurid warning.[otherwise]A microwave oven of perhaps a cubic foot capacity.  The side panel is melted shut, the interior is scorched, and the plastic around the edges slightly melted.[end if][if the cook box is open]  The door is ajar.[end if][unless the cook box is empty]  The oven contains [a list of objects in the cook box].[end if][if the side panel is open]  The service panel is bent open on the side.[end if]"
 
 The cook box is a container.  The cook box is part of the microwave oven. The cook box is transparent and fixed in place.  The cook box is openable and closed.  The printed name of the cook box is "oven".  The carrying capacity of the cook box is 4.  The cook box is scenery.
 
@@ -1555,7 +1555,17 @@ Carry out waiting for subway:
 			follow the turn sequence rules.
 		
 Report waiting for subway:
-	say "The Capsule has arrived.[run paragraph on][if the watch is worn by the player]  The time is [time of day].[end if]"
+	say "The Capsule has arrived[if the watch is worn by the player].  The time is [time of day][end if]."
+
+[To let the player use 'it' right after waiting for the subway, so they can 'enter it' when it arrives]
+To set the/-- pronoun it to (O - an object): (- LanguagePronouns-->3 = {O}; -). 
+To set the/-- pronoun him to (O - an object): (- LanguagePronouns-->6 = {O}; -). 
+To set the/-- pronoun her to (O - an object): (- LanguagePronouns-->9 = {O}; -). 
+To set the/-- pronoun them to (O - an object): (- LanguagePronouns-->12 = {O}; -). 
+
+After waiting for subway: 
+  set pronoun it to the Voodoo Subway.
+
 
 
 [sleeping]
@@ -1782,6 +1792,12 @@ Understand "solder [something] onto [something]" as combining it with.
 [Understand "combine [something] and [something]" as combining it with.
 Understand "solder [something] and [something]" as combining it with.
 Understand "connect [something] and [something]" as combining it with.]
+
+[Disambiguate lazy command 'solder attack to chip', maybe? Doesn't seem to work.]
+[
+Does the player mean combining a broadcast chip with itself: it is very unlikely. 
+Does the player mean combining a memory chip with itself: it is very unlikely.
+]
 
 The combining it with action has an object called the resultant-item. 
 
@@ -2160,6 +2176,7 @@ Rule for kleinhacking something (called target):
 			say "With the door open, the hacked microwave keeps increasing its power as energy is lost to the air.  You feel an incredible burst of noise behind your forehead!  Static, bits of music, and above all the shriek of data transfer!  Just before you feel you'll go mad from the noise, there is a stutter, and it stops.  Blessed silence falls inside your skull.  There is a smell of smoke as the microwave goes dead.[paragraph break]You examine the now-fried microwave, musing to yourself that if only there was a way to make a portable version of this hack, you might be able to fight your way clear of this whole mess.";
 			now the mitklein is hacked;
 			now the player is clear;
+			now the microwave is fried;
 			now the side panel is fried;
 			now the side panel is closed;
 			now the side panel is unopenable;
@@ -3041,7 +3058,7 @@ Instead of entering the transit web:
 Instead of examining up in a transitStation, say "The ceiling is of slightly weathered duramex."
 Instead of examining up in the Transit Capsule, say "The Capsule's ceiling is just out of reach, lined with glowing scripplepaint."
 
-The Voodoo Subway is a thing.  The Voodoo Subway is a backdrop. The Voodoo Subway is large. The description is "A fifty-person maglev Transit Capsule.  The front window is dark, indicating that the capsule is running on automatic.  The Magfield causes a slight bluish glow around the bottom of the capsule.  Its doors are precisely level with the platform."
+The Voodoo Subway is a thing.  The Voodoo Subway is a backdrop. The Voodoo Subway is large. The printed name of the Voodoo Subway is "Capsule". The description is "A fifty-person maglev Transit Capsule.  The front window is dark, indicating that the capsule is running on automatic.  The Magfield causes a slight bluish glow around the bottom of the capsule.  Its doors are precisely level with the platform."
 
 Instead of taking the Voodoo Subway:
 	say "You can't take that.  If you want to board the capsule, try using ENTER.".
@@ -3058,6 +3075,9 @@ Understand "the capsule" as the Voodoo Subway.
 Understand "capsule" as the Voodoo Subway.
 Understand "train" as the Voodoo Subway.
 Understand "subway" as the Voodoo Subway.
+Understand "doors" as the Voodoo Subway when the location is the station of the capsule.
+Does the player mean entering the Voodoo Subway:  It is likely.
+Understand "doors" as an autodoor when the location is a transitStation.
 
 
 Section 1 - Scenes
