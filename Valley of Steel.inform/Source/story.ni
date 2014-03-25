@@ -684,10 +684,10 @@ Understand "charge" as the breaching charge.
 
 The breaching charge is on the metal door.
 
-The Fire Axe is on the wall rack.  The description is "Made of metal and painted red save for the blade, this one-piece tool is for emergency use by safety personnel."
-Instead of inserting the Fire Axe into the backpack, say "The axe is far too large to fit in there."
+The fire axe is on the wall rack.  The description is "Made of metal and painted red save for the blade, this one-piece tool is for emergency use by safety personnel."
+Instead of inserting the fire axe into the backpack, say "The axe is far too large to fit in there."
 
-After taking the Fire Axe for the first time:
+After taking the fire axe for the first time:
 	say "This axe is large enough to run afoul of local weapons laws.  It would be a bad idea to let it be seen where the police are watching."
 
 The multitool is carried by the player.  The multitool is small. The description is "Your pocket multitool.  Has various pliers and attachments and, in a pinch, can probably do 80 percent of what a full toolbox could.  One exception is that in order to remain legal, it doesn't have any cutting edges larger than your fingernail.  You are paranoid that one day you'll forget and try to get on an airplane with it and despite that fact that'll be the last you'll see of it, so you've etched a PO Box address and 'BUSINESS REPLY MAIL' onto it."
@@ -802,7 +802,7 @@ Understand "pack" as the cryopack.
 
 After opening the cryopack: 
 	if the cryopack is operating:
-		say "You open the cryopack. A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up.";
+		say "You open the cryopack. A small cloud of chill and condensation escapes from the cryopack into the surrounding air.  The green LED on it goes out; a red one lights up[if the cryopack contains the skin sample]. There is a skin sample inside the cryopack.[otherwise].[end if]";
 	continue the action.
 
 Report opening the cryopack:
@@ -822,13 +822,13 @@ Before wearing the skin sample, say "Fortunately it's sticky enough to adhere to
 
 The biogen feedstock is a biosample.  The biogen feedstock is in the feed slot. The description of the biogen feedstock is "This is a small cube of material which resembles freeze-dried beef.  It is a standard supply unit for biotech synthesizers."
 
-The lens case is a container.  The lens case is in the delivery slot. The lens case is small. The lens case has carrying capacity 1. The lens case is openable.  The lens case is closed and transparent.  The description of the lens case is "A small clear plastic cylinder, full of preservative liquid."
+The lens case is a container.  The lens case is in the delivery slot. The lens case is small. The lens case has carrying capacity 1. The lens case is openable.  The lens case is closed and transparent.  The description of the lens case is "A small clear plastic cylinder with a built-in rest for a contact lens inside."
 
 Check inserting into the lens case:
 	unless the noun is the contact lens, say "That won't go in there!" instead;
 	continue the action.	
 
-The contact lens is wearable. The contact lens is tiny. The description of the contact lens is "Larger than a regular contact lens, this example is discolored around the edges although clear in the middle."
+The contact lens is wearable. The contact lens is tiny. The description of the contact lens is "Larger than a regular contact lens, this example is discolored around the edges although clear in the middle. It's still small enough that you're afraid to drop it, for fear you'd never find it again."
 Instead of examining the contact lens when the player is wearing the contact lens, say "While it's in your eye?  That'd be a neat trick!"
 Instead of dropping the contact lens:
 	say "Oh, no! The contact lens slips from your fingers and flutters away![line break]";
@@ -836,7 +836,7 @@ Instead of dropping the contact lens:
 	
 The tissue sampler is in the ambulance.  The tissue sampler is portable.  The tissue sampler has some text called tissueDonor.  The tissueDonor is "blank". The description is "This is a tissue sampler, used by hospital and emergency medical technicians for scanning skin or tissue in order to permit a tissue generator to produce compatible skin grafts. It is flat and translucent, and is intended to be laid against the skin to be replicated."
 
-The thermos is a container.  The thermos is on the vending system.  The thermos is openable and closed.  The thermos is portable.  The thermos has carrying capacity 4. The description is "A stainless steel vacuum flask, this all-metal thermos excels at keeping hot things hot and cold things cold."
+The thermos is a container.  The thermos is on the vending system.  The thermos is openable and closed.  The thermos is portable.  The thermos has carrying capacity 4. The description is "A stainless steel vacuum flask, this all-metal thermos excels at keeping hot things hot and cold things cold.  It should be very durable in addition to making an excellent sealed container - even the top is steel."
 
 The flitterkey is a thing.  The flitterkey is small. The flitterkey can be either working or fried.  The flitterkey is working.  The flitterkey has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the ballistic plastic of the flitter key begins to melt."  The description is "the flitterkey is a scuffed, hardened ballistic plastic transponder.[if fried] It looks like it has been partially melted; scorched electronics poke through the uneven plastic shell."
 
@@ -954,6 +954,12 @@ Instead of unlocking the tablet computer:
 		say "You don't have the password." instead;
 	otherwise:
 		say "It's not locked." instead.
+
+Instead of switching on the tablet computer:
+	say "It's already on." instead.
+	
+Instead of switching off the tablet computer:
+	say "It's an always-on model." instead.
 
 Instead of reading the tablet computer:
 	try examining the screen instead.
@@ -1117,6 +1123,11 @@ A counter is a kind of supporter.  It is scenery. It is fixed in place. The desc
 
 A foodstore is a kind of room.  The description of a foodstore is "Standard food service establishment with a counter."
 A counter is in every foodstore.
+
+[foodstand]
+A foodstand is a kind of backdrop.  The description of a foodstand is "A self-contained serving area."
+
+Instead of entering a foodstand, say "You can't go behind the counter." instead.
 
 
 [autodoors]
@@ -1543,7 +1554,7 @@ Check waiting for subway:
 
 Carry out waiting for subway:
 	if the station of the Capsule is the location:
-		say "It's already here.";
+		say "It's already here.";l surveillanc
 		continue the action;
 	otherwise:
 		let the target turn be the turn count + 60;
@@ -1563,6 +1574,22 @@ After waiting for subway:
   set pronoun it to the Voodoo Subway.
 
 
+[THIS DOESN'T WORK YET - maybe make it an activity? http://inform7.com/learn/man/doc286.html
+[waiting for station]
+Waiting for station is an action applying to one thing.
+Understand "frotz [room]" as waiting for station.
+
+Check waiting for station:
+	unless the noun is a room, say "That's not a place." instead;
+	unless the location is the Transit Capsule, say "You're not aboard Transit." instead;
+	unless the noun is a transitStation, say "The Transit system doesn't go there." instead.
+	
+Carry out waiting for station:
+	if the station of the Capsule is the noun:
+		say "You're already there." instead;
+	otherwise:
+		while the station of the Capsule is not the noun:
+			follow the turn sequence rules.]
 
 [sleeping]
 Instead of sleeping:
@@ -1604,6 +1631,9 @@ Check an actor blocking (this is the block blocking rule):
 	otherwise:
 		say "You can't block [the noun]." instead;
 	stop the action.
+	
+[buying]
+Instead of buying, say "You have no funds, and even if [the noun] was available for sale, [if the mitklein is unhacked]you don't dare allow your MItKlein to be scanned.[otherwise]your MitKlein is dead.[end if]"
 	
 
 [washing][code lifted from Em Short's Modern Conveniences extension]
@@ -2013,6 +2043,7 @@ Check sampling:
 	unless the player is holding the tissue sampler, say "You don't have anything to scan [the noun] with." instead;
 	unless the noun is a person or the noun is a part of a person, say "That's not made of tissue." instead;
 	if the noun is an eye, say "You can't sample anything except skin." instead;
+	if the noun is a person and the noun is not the player, say "You can't just scan other people's body parts.  That's basically identity theft." instead;
 	unless the noun is visible, say "You don't see [the noun]." instead.
 	
 Setting action variables for sampling:
@@ -2025,6 +2056,23 @@ Carry out sampling:
 Report sampling:
 	say "[if the actor is the player]You press your palm to the tissue sample plate; it glows briefly.[otherwise][the actor] presses a palm against the tissue sample plate; it glows briefly."
 
+
+
+
+[Palming]
+Palming is an action applying to one visible thing.
+Understand "palm [something]" or "lay palm on/against [something]" or "touch palm to/against [something]" or "place palm on [something]" as palming.
+
+Check palming:
+	unless the noun is the vestibule door lock or the noun is the tissue sampler or the noun is the Maintenance Door:
+		say "Nothing happens." instead.
+		
+Carry out palming:
+	if the noun is the tissue sampler, try sampling the actor instead;
+	if the noun is the Maintenance Door, try going west instead;
+	if the noun is the vestibule door lock, say "Nothing happens." instead;
+	say "Nothing happens."
+	
 
 
 [Arming] 
@@ -2211,6 +2259,7 @@ Rule for Rappelling:
 	let L be entry 1 in rappelling stations;
 	move the player to L;
 	rotate rappelling stations backwards.
+
 
 
 [Synthesizing activity]
@@ -2546,19 +2595,27 @@ Section 10 - NPCs
 A server is a kind of person.  A server is always scenery. The description of a server is "A slightly harrassed-looking food service worker, intent on trading meals for funds.  [one of]He[or]She[sticky random] is busy serving customers."
 Report examining a server:
 	stop.
-Two servers are in every foodstore.
+A server is in every foodstore.
+
+[bystander]
+A bystander is a kind of person.  A bystander is always scenery.  The description of a bystander is "You see a [one of]young[or]middle-aged[or]elderly[or]harrassed-looking[or]worried[or]smiling[or]blank-faced[or]distracted[or]indeterminate[as decreasingly likely outcomes] [one of]office worker[or]executive[or]student[or]tech worker[or]delivery worker[purely at random] [one of]with a messenger bag[or]with a briefcase[or]juggling some packages[or]towing a travel case[or]with some flowers[or]with a child[or]intent on their destination[or]eating a snack[or]carrying a newspaper[or]reading from a handheld[or]answering a text[purely at random]."
+
+Report examining a bystander:
+	stop.
+	
+Understand "man" as a bystander.
+Understand "woman" as a bystander.
+Understand "person" as a bystander.
+Understand "people" as a bystander.
+
 
 [customers]
-A customer is a kind of person.  A customer is always scenery. The description of a customer is "Customers seeking a quick meal."
-Report examining a customer:
-	stop.
+A customer is a kind of bystander.
+
 Some customers are in every foodstore.
 
 [commuters]
-A commuter is a kind of person.  A commuter is always scenery.  The description of a commuter is "A [one of]young[or]middle-aged[or]elderly[or]harrassed-looking[or]worried[or]smiling[or]blank-faced[or]distracted[or]indeterminate[as decreasingly likely outcomes] [one of]man[or]woman[or]office worker[or]executive[or]student[or]tech worker[or]delivery worker[purely at random] [one of]with a messenger bag[or]with a briefcase[or]juggling some packages[or]towing a travel case[or]with some flowers[or]with a child[or]intent on their destination[or]eating a snack[or]carrying a newspaper[or]reading from a handheld[or]answering a text[purely at random] [one of]hurries[or]walks swiftly[or]runs[or]jogs[or]marches[or]swerves[or]meanders[or]sashays[as decreasingly likely outcomes] past you [one of]and is gone[or]before vanishing[or]before disappearing into the crowd[or]before slipping out of sight[or]on their way out of the area[as decreasingly likely outcomes]."
-
-Report examining a commuter:
-	stop.
+A commuter is a kind of person.  A commuter is always scenery.  The description of a commuter is "A [one of]young[or]middle-aged[or]elderly[or]harrassed-looking[or]worried[or]smiling[or]blank-faced[or]distracted[or]indeterminate[as decreasingly likely outcomes] [one of]office worker[or]executive[or]student[or]tech worker[or]delivery worker[purely at random] [one of]with a messenger bag[or]with a briefcase[or]juggling some packages[or]towing a travel case[or]with some flowers[or]with a child[or]intent on their destination[or]eating a snack[or]carrying a newspaper[or]reading from a handheld[or]answering a text[purely at random] [one of]hurries[or]walks swiftly[or]runs[or]jogs[or]marches[or]swerves[or]meanders[or]sashays[as decreasingly likely outcomes] past you [one of]and is gone[or]before vanishing[or]before disappearing into the crowd[or]before slipping out of sight[or]on their way out of the area[as decreasingly likely outcomes]."
 
 Instead of touching a commuter:
 	say "You try to reach out into the fast-moving stream of people to intercept them, but they effortlessly dodge your grasp without looking your way and are lost in the crowd."
@@ -2581,16 +2638,14 @@ Instead of attacking a commuter for the third time:
 	say "[bracket]Fine, if you insist…[close bracket] Your attempted attack is easily dodged, but the commuter gives you a hostile stare and shouts for the police.  Officers appear and make a beeline for you at your victim's behest, and one brings out a MitKlein scanner.  When it bleeps a harsh tone, they all look at you with gimlet eyes.";
 	end the story saying "You have been arrested!".
 	
-Understand "man" as a commuter.
+[Understand "man" as a commuter.
 Understand "woman" as a commuter.
 Understand "person" as a commuter.
-Understand "people" as a commuter.
+Understand "people" as a commuter.]
+
 
 [riders]
-A rider is a kind of person.  A rider is always scenery.  The description of a rider is "A [one of]young[or]middle-aged[or]elderly[or]harrassed-looking[or]worried[or]smiling[or]blank-faced[or]distracted[or]indeterminate[as decreasingly likely outcomes] [one of]man[or]woman[or]office worker[or]executive[or]student[or]tech worker[or]delivery worker[purely at random] [one of]with a messenger bag[or]with a briefcase[or]juggling some packages[or]towing a travel case[or]with some flowers[or]with a child[or]intent on their destination[or]eating a snack[or]carrying a newspaper[or]reading from a handheld[or]answering a text[purely at random]."
-
-Report examining a rider:
-	stop.
+A rider is a kind of bystander.
 
 Instead of touching a rider:
 	say "You start to reach out into the crowd of people, but realize you don't want to cause a disturbance and desist."
@@ -3299,7 +3354,7 @@ The portal is in the Transit Capsule.  The portal is scenery.  The portal is plu
 
 Understand "window" and "windows" as the portal when the location is the Transit Capsule.
 
-The description of the Transit Capsule is "A fifty-person maglev Transit capsule.  You're standing, holding on to a strap.  [if the station of the Capsule is the capsule]A deep hum resonates through your bones, indicating that the Vectorfield is active.  Outside the narrow windows, the tunnel is dark.  Occasional blurry streaks show lights flashing past the moving Capsule.[otherwise]Through the windows you can see the [station of the Capsule].[end if] Several transit riders share the Capsule with you."
+The description of the Transit Capsule is "A fifty-person maglev Transit capsule.  You're standing, holding on to a strap.  [if the station of the Capsule is the capsule]A deep hum resonates through your bones, indicating that the Vectorfield is active.  Outside the narrow windows, the tunnel is dark.  Occasional blurry streaks show lights flashing past the moving Capsule.[otherwise]Through the windows you can see the [station of the Capsule].[end if] Several riders share the Capsule with you."
 
 Instead of exiting when the player is in the Capsule:
 	if the station of the Capsule is the Capsule:
@@ -3389,7 +3444,7 @@ Section 3 - Map
 
 GreenResidential is a region.  Front Lobby is in GreenResidential. Entry is in GreenResidential. Home Office is in GreenResidential. Kitchen is in GreenResidential. Hall is in GreenResidential. Bedroom is in GreenResidential. Bathroom is in GreenResidential. Drug Den is in GreenResidential.  Green Residential Station is in GreenResidential.
 
-ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Cedar is in ResidentialOutside. East Cedar Street is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. Green Residential Park is in ResidentialOutside.  Side Yard is in ResidentialOutside.  Back Yard is in ResidentialOutside.
+ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primrose & Station is in ResidentialOutside. South Primrose Lane is in ResidentialOutside. Front Path is in ResidentialOutside. Drug Market is in ResidentialOutside. Green Residential Park is in ResidentialOutside.  Side Yard is in ResidentialOutside.  Back Yard is in ResidentialOutside.
 
 The Spacescraper is in ResidentialOutside.  The streetlights is in ResidentialOutside.  The sky is in ResidentialOutside.
 
@@ -3421,9 +3476,9 @@ After going down from Green Residential Station:
 Green Residential Station is above Green Residential Station Door.  The description of Green Residential Station is "This is a utilitarian shelter intended mostly to keep the rain out of the Transit System.  A stairway leads down to the autodoor leading to the Transit platform and an exit leads east to the street."
 The stairway is unimportant stuff in Green Residential Station. Understand "stairs" as the stairway when the location is Green Residential Station.
 
-Primrose & Cedar is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station entrance is to the west.  Primrose Lane continues to the south, and Cedar Street continues to the east."
+Primrose & Station is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station entrance is to the west.  Primrose Lane continues to the south."
 
-Green Residential Park is north of Primrose & Cedar. The description is "Primrose Street ends here in a small circular cul-de-sac.  You're in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park's entrance."
+Green Residential Park is north of Primrose & Station. The description is "Primrose Street ends here in a small circular cul-de-sac.  You're in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park's entrance."
 The curfew sign is in Green Residential Park.  The curfew sign is scenery.  The curfew sign is fixed in place.  The description is "A metal sign on a metal pole, it reads 'NOTE: PARK CLOSED DURING GREEN RESIDENTIAL AREA CURFEW - 8:00PM to 5:00 AM - NO LOITERING.'"
 The greenery is unimportant stuff in Green Residential Park.  The printed name of the greenery is "trees".  The description of the greenery is "A small number of manicured trees, scattered around the park."
 Understand "trees" as the greenery when the location is Green Residential Park.
@@ -3433,14 +3488,7 @@ The fences is unimportant stuff in Green Residential Park.
 The cul-de-sac is unimportant stuff in Green Residential Park. Understand "street" as the cul-de-sac when the location is Green Residential Park.
 
 
-East Cedar Street is east of Primrose & Cedar.  The description is "Cedar Street comes to an end in a cul-de-sac here.  There are residential buildings to the north, east and south.  Typical for the area, they are three-family houses with common entrances.  Their lawns are neatly trimmed."
-
-The residential buildings are a backdrop.  The residential buildings are in East Cedar Street.  The description is "A set of residential buildings with neatly trimmed lawns."
-Understand "houses" as residential buildings when the location is East Cedar Street.
-Understand "lawns" as residential buildings when the location is East Cedar Street.
-Understand "lawn" as residential buildings when the location is East Cedar Street.
-
-South Primrose Lane is south of Primrose & Cedar.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence's front path."
+South Primrose Lane is south of Primrose & Station.  South Primrose Lane can be reported or unreported.  South Primrose Lane is unreported. The description is "Primrose Lane continues to the north.  To the south is a boarded-up empty house; sumac plants can be seen peeking over the top of the dilapidated fencing.  The fence has a plastic tarp strung behind it which prevents you from seeing much of the house.  To the west is a single-family home with a large warning sign and an enormous dog on the front lawn.  To the east is a three-family residence's front path."
 The lawn is unimportant stuff in South Primrose Lane.
 Some sumac plants are in South Primrose Lane.  The sumac plants are scenery.  The description of the sumac plants is "You can see the tops of a few trees over the top of the fence.  Their leaves are greenish red, waving out of reach in the slight breeze."
 
@@ -3894,7 +3942,7 @@ The Garb-oh door is an autodoor.  The Garb-oh door is west of Green Commercial P
 
 Before going through the Garb-oh door:
 	if the player is thieving:
-		say "As you approach the autodoor, a cyclone light goes off, triggered by the antitheft tag you are carrying!  The attendant hurries over as a policeman rushes in.  The tag is swiftly found!";
+		say "As you approach the autodoor, a cyclone light goes off, triggered by radio emissions from the antitheft system detecting the antitheft tag you are carrying!  The attendant hurries over as a policeman rushes in.  The tag is swiftly found!";
 		end the story saying "You have been arrested!";
 	otherwise:
 		continue the action.
@@ -4119,10 +4167,10 @@ Understand "guide" as the directory.  Understand "sign" as the directory when th
 Instead of taking the directory:
 	say "You don't dare do anything that looks like vandalism with this many cameras around."
 
-The Dining Area is a region.  Food Court and Reserve Bank Bistro Paris and I Have No Mouth and The Sheep Look Up and Tacos Terriff and Apollo's are in the Dining Area.
-
-Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Hundreds of people are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles."  
+Food Court is a room.  Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Dozens of customers are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles."  
 There is a trash can in the Food Court.
+There is a customer in the Food Court.
+There is a server in the Food Court.
 The foodtables are unimportant stuff in the Food Court.  Understand "tables" as the foodtables when the location is Food Court.
 The tile floor is scenery in the Food Court.  The description of the tile floor is "The floor is made of duramex tiles, nondescript gray matte shedding scuff marks with the determination of the designed servant into nanogrout channels in between.  During the short nighttime lull, the floor will seem to creep slightly as the nanogrout slowly flows the daytime grime along the channels to dispose of it into the walls."
 
@@ -4130,8 +4178,30 @@ Understand "floor" as the tile floor when the location is Food Court.
 Understand "tiles" as the tile floor when the location is Food Court.
 
 Instead of going up in the Food Court, try going west instead.
-Instead of examining down in the Dining Area, try examining the tile floor instead.
-Instead of examining up in the Dining Area, say "The ceiling is two levels up, peppered with DayBrite(™) lighting fixtures which make it difficult to see any detail through the glare."
+Instead of examining down in the Food Court, try examining the tile floor instead.
+Instead of examining up in the Food Court, say "The ceiling is two levels up, peppered with DayBrite(™) lighting fixtures which make it difficult to see any detail through the glare."
+
+A foodstand called Reserve Bank Bistro Paris is in Food Court.  "This is the counter-only version of Bistro Paris, a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders a coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappoitnement any gourmand feels when faced with the prospect of eating here.  A sign painted above the counter reads 'Try our Green Commercial One location!'"
+The soggy croissants are unimportant stuff in Food Court.
+
+A foodstand called I Have No Mouth is in Food Court.  "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
+The cones are unimportant stuff in Food Court.  Understand "cups" as the cones when the location is Food Court.
+
+A foodstand called The Sheep Look Up is in Food Court. "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several hungry customers who wait in line."
+Does the player mean examining The Sheep Look Up: it is unlikely.
+
+A foodstand called Tacos Terriff is in Food Court. "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the office set."
+
+A foodstand called Apollo's is in Food Court. "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth."
+The robotic head is a backdrop in Food Court.  The robotic head is scenery.  The robotic head is fixed in place. The description of the robotic head is "Large and chromed silver, this robot's head mounted behind the counter of Apollo's looks like a large helmet with rudimentary features.  Instead of eyes, a red band crosses the face, behind which a bright red light slowly moves back and forth."
+Instead of taking the robotic head:
+	say "It's mounted high behind the counter." instead.
+Instead of pushing the robotic head:
+	try taking the robotic head instead.
+	
+Understand "Apollos" as Apollo's when the location is Food Court.	
+Understand "robot" and "robot head" and "head" as the robotic head when the location is Food Court.
+
 
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 The lift scanners are unimportant stuff in the Lift Lobby.
@@ -4144,7 +4214,7 @@ Instead of going down in the Lift Lobby, try going east instead.
 
 Instead of going north in the Lift Lobby:
 	now instantiate is true;
-	say "The main bouncelifts are much more heavily secured than the public areas of the building.  Your dead MitKlein prevents you from gaining access.".
+	say "The main bouncelifts are much more heavily secured than the public areas of the building.  Your dead MitKlein prevents you from gaining access."
 
 Instead of entering the bouncelifts:
 	try going north.
@@ -4171,31 +4241,14 @@ Check taking the spool:
 Check climbing the railing:
 	say "It nearly encloses the platform.  There's no point." instead.
 
-A foodstore called Reserve Bank Bistro Paris is north of Food Court and east of Maintenance Area and west of I Have No Mouth.  "Bistro Paris is a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders as coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappointment any gourmand feels when faced with the prospect of eating here.  There are two workers behind the counter serving a line of customers. A sign painted onto the counter reads 'Try our Green Commercial One location!'"
-The soggy croissants are unimportant stuff in Reserve Bank Bistro Paris.
 
-A foodstore called I Have No Mouth is northeast of Food Court and east of Reserve Bank Bistro Paris.  "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
-The cones are unimportant stuff in I Have No Mouth.  Understand "cups" as the cones when the location is I Have No Mouth.
-
-A foodstore called The Sheep Look Up is southeast of Food Court and east of Tacos Terriff and south of I Have No Mouth.  "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several hungry customers who wait in line."
-
-A foodstore called Tacos Terriff is west of The Sheep Look Up and south of Food Court.  "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the office set."
-
-A foodstore called Apollo's is west of Tacos Terriff and southwest of Food Court and south of Maintenance Area.  "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth."
-The robotic head is a backdrop in Apollo's.  The robotic head is scenery.  The robotic head is fixed in place. The description of the robotic head is "Large and chromed silver, this robot's head looks like a large helmet with rudimentary features.  Instead of eyes, a red band crosses the face, behind which a bright red light slowly moves back and forth."
-Instead of taking the robotic head:
-	say "It's mounted high behind the counter." instead.
-Instead of pushing the robotic head:
-	try taking the robotic head instead.
-	
-Understand "robot" and "robot head" and "head" as the robotic head when the location is Apollo's.
-
-Maintenance Area is west of Reserve Bank Bistro Paris and northwest of Food Court and north of Apollo's.  Maintenance Area is blind. "This corner of the food court is drab and uninhabited.  A closed door marked 'MAINTENANCE' lurks to the west, and another marked 'RESTROOM' to the north.  The floor and walls are scuffed around the door, no doubt from cleaning implements banging against them on their daily travels."
+Maintenance Area is [west of Reserve Bank Bistro Paris and ]northwest of Food Court[ and north of Apollo's].  Maintenance Area is blind. "This corner of the food court is drab and uninhabited.  A closed door marked 'MAINTENANCE' lurks to the west, and another marked 'RESTROOM' to the north.  The floor and walls are scuffed around the door, no doubt from cleaning implements banging against them on their daily travels."
 
 A restroom called The Food Court Restroom is north of Maintenance Area.  "Bog-standard restroom.  Several stalls offer a minimum of privacy.  A large mirror covers the walls over the sink."
 The Food Court Restroom mirror is a mirror.  The Food Court Restroom mirror is in the Food Court Restroom.  The description is "A wall-covering mirror over the sinks.  The edges are covered in fingerprints, and you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
 
-The Maintenance Door is west of Maintenance Area.  The Maintenance Door is an autodoor. The Maintenance Door is scenery.  The description is "The maintenance closet is sealed by an autodoor.  There is no eye  on this door, but a flat plate above the door handle indicates a palm scanner lock."
+The Maintenance Door is west of Maintenance Area.  The Maintenance Door is an autodoor. The Maintenance Door is scenery.  The description is "The maintenance closet is sealed by an autodoor.  There is no eye scanner on this door, but a flat plate above the door handle indicates a palm scanner lock."
+Understand "palm lock" or "lock" as the maintenance door when the location is Maintenance Area.
 
 Before opening the maintenance door in the Maintenance area:
 	unless the player is handvalid:
@@ -4207,8 +4260,8 @@ Before opening the maintenance door in the Maintenance area:
 		continue the action.
 	
 
-Utility Closet is west of the Maintenance Door. Utility Closet is blind. The description is "The maintenance closet is dimly lit and, ironically, not terribly clean.  There are various cleaning implements and supplies stored on shelves around the walls, a fire equipment wall rack, and a large metal solvents cabinet taking up one wall.  A flourescent light panel flickers wanly in the ceiling. Two doors lead out of the closet, one east and one west."
-The flourescent light panel is unimportant stuff in Utility Closet.  Understand "light" and "panel" as the flourescent light panel when the location is Utility Closet.
+Utility Closet is west of the Maintenance Door. Utility Closet is blind. The description is "The maintenance closet is dimly lit and, ironically, not terribly clean.  There are various cleaning implements and supplies stored on shelves around the walls, a fire equipment wall rack, and a large metal solvents cabinet taking up one wall.  A fluorescent light panel flickers wanly in the ceiling. Two doors lead out of the closet, one east and one west."
+The fluorescent light panel is unimportant stuff in Utility Closet.  Understand "light" and "panel" as the fluorescent light panel when the location is Utility Closet.
 
 The Solvents Cabinet is in the Utility Closet.  [The Solvents Cabinet is a thing.] The Solvents Cabinet is scenery.  The description of the Solvents Cabinet is "A large metal cabinet with several industrial warning icons on it occupies one wall. This cabinet is apparently used to store toxic cleaning and plumbing chemicals.  It seems to be locked."
 
