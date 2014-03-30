@@ -70,7 +70,6 @@ Rule for listing exits while the location is unmapped: do nothing instead.
 
 
 
-
 [Definitions]
 
 Definition: A container is empty if nothing is in it.
@@ -369,7 +368,7 @@ Every turn:
 			say "You collapse, choking on the tear gas.  When the police arrive after it clears, they find you incapacitated and arrest you on suspicion of having set off the grenade!";
 			end the story saying "You have been arrested!";
 		otherwise:
-			say "Billowing clouds of tear gas and smoke make it difficult to see."
+			say "Billowing clouds of tear gas and smoke make it difficult to see.  You can hear screams and crashing as people around you try to flee."
 
 Every turn:
 	if player is surveilled:
@@ -843,6 +842,8 @@ The flitterkey is a thing.  The flitterkey is small. The flitterkey can be eithe
 [car key]
 The car key is a container.  The car key is small. The car key is unopenable. The car key is closed.  The car key has carrying capacity 2.  The car key can be either working or fried.  The car key is working. The car key has some text called fryDescription.  The fryDescription is "With a slight hissing noise, the rubberized plastic of the car key begins to melt." The description is "This 'key' is really a small rubberized, sealed plastic fob which automatically unlocks the car it is paired with when it is within range.  You have no idea where the appropriate car might be, however.[if fried]  It may not do anything ever again, in fact; it looks like it has melted slightly.  Some electronic bits can be seen in the mass of deformed plastic.[otherwise if open] The plastic has been cut away from one end of the key, revealing two component slots."
 
+Understand "fob" as the car key.
+
 Rule for printing room description details of the closed car key: stop.
 
 In the car key is a broadcast chip.
@@ -881,7 +882,7 @@ Instead of closing the car key:
 
 
 [ID camera]
-The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution holocamera used by the police for recording suspects' identities.  It can either record to a local server if one is available, or to a standard Memory chip placed in its memory slot.[if the ID camera is fixed in place] It is securely attached to the countertop with a security chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
+The ID camera is a thing. The ID camera is in Booking.  The ID camera is small. The ID camera is fixed in place.  The ID camera can be working or fried.  The ID camera is working.  The ID camera has some text called the fryDescription.  The fryDescription of the ID camera is "The camera sits almost peacefully for a few seconds before a [bold type]POP[roman type] indicates that something inside it has gone very wrong." The ID camera has some text called Contents.  The Contents of the ID camera is usually "blank". The description is "A battered but serviceable device, this is a high resolution holocamera used by the police for recording suspects' identities.  It can either record to a local server if one is available, or to a standard Memory chip placed in its memory slot.[unless the film slot is empty]  There is a memory chip in the slot.[end if][if the ID camera is fixed in place] It is securely attached to the countertop with a security chain to prevent anyone from walking off with it.[otherwise]. Although it was once chained down, the chain seems to have been cut; a broken piece hangs off the camera."
 The camera chain is part of the ID camera.  The description of the camera chain is "A thin chain, almost a cable.  It has been visibly repaired in the past."
 The film slot is a container.  The film slot is part of the ID camera.  The film slot is unopenable and open. The carrying capacity of the film slot is 1.  The description of the film slot is "A slot for a standard Memory chip.[unless empty] A chip is currently in the slot.[end if]".
 
@@ -892,15 +893,18 @@ Understand "memory slot" as the film slot when the player is carrying the ID cam
 
 Instead of inserting into the id camera:
 	try inserting the noun into the film slot instead.
+	
+Instead of searching the id camera:
+	try searching the film slot instead.
 
 Instead of opening the ID camera:
-	say "[The noun] is a sealed unit."
+	say "The film slot is already open."
 
 Understand "the chain" as the camera chain.
 Understand "security chain" as the camera chain.
 
 Check cutting the camera chain with the tag remover:
-	say "Looking around to check for watchers, you snip through the ID camera security chain with the tag remover!";
+	say "Looking around to check for watchers, you place your back to the surveillance camera and snip through the ID camera security chain with the tag remover!";
 	now the ID camera is portable;
 	rule succeeds.
 
@@ -1025,9 +1029,9 @@ To decide if the tablet computer is netbootable:
 
 The harness is a component.  The harness is in the Police Flitter. The item-id of the harness is "M7". The harness is wearable.  The description of the harness is "A strong harness made of black industrial strapping.  It has an attach point in the center of the back - a set of what appear to be metal locking hooks.  It fastens with sturdy plastic buckles.  It is probably used for safety by police when their flitter doors are open or to lift people into the flitter."
 
-The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, with a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is enclosed by the powered platform]  It's lying near the center of the platform.[end if]"
+The spool is a component.  The spool is on the Powered Platform. The item-id of the spool is "M6". The spool is medium.  The description of the spool is "A metal spool of what appears to be very strong cable, with a winding mechanism at its center.  The mechanism is locked.  There is a carabiner at the end of the cable, but it's locked into the spool.[if the spool is on the powered platform]  It's lying near the center of the platform.[end if]"
 
-The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight.[end if][if the cable is tied]  The end of the cable is looped around the tree trunk, secured with the carabiner.[end if]".
+The descender is a thing.  The descender is in limbo. The descender is wearable. The descender has some text called item-id.  The item-id of the descender is "M8". The description of the descender is "This is a small but strong-looking harness meant to be worn around the torso.  A large spool of narrow but strong-looking cable is attached to it, ending in a spliced loop with a carabiner.[if the player is wearing the descender]  It's currently around your midsection, and is a bit tight.[end if][if the cable is tied]  The end of the cable is looped around the tree trunk, secured with the carabiner.[end if]".
 The cable is a part of the descender.  The cable can be tied or untied.  The description is "A spool of extremely strong cable attached to the descender with a spliced-in carabiner at the end.[if tied]  One end of the cable is looped around the scarred tree and attached with the carabiner."
 
 Understand "carabiner" as the cable.
@@ -1125,7 +1129,11 @@ A foodstore is a kind of room.  The description of a foodstore is "Standard food
 A counter is in every foodstore.
 
 [foodstand]
-A foodstand is a kind of backdrop.  The description of a foodstand is "A self-contained serving area."
+A foodstand is a kind of thing.  A foodstand is always scenery. The description of a foodstand is "A self-contained serving area."
+
+The plural of foodstand is foodstands.
+
+Understand "foodstands" as the plural of foodstand.
 
 Instead of entering a foodstand, say "You can't go behind the counter." instead.
 
@@ -1149,7 +1157,7 @@ Instead of taking the Public Surveillance Notice, say "That's firmly mounted in 
 A trash can is a kind of container.  A trash can is fixed in place.  A trash can is openable. A trash can is usually closed.  A trash can is usually assembled. The description of a trash can is "Painted industrial dark green, the [location] trash can awaits its daily diet of rubbish.  There is a solar panel on it; presumably it reports back to a central system when it is full.[if the solar panel enclosed by the location is open]  The solar panel on the can lid has been pried open.  Vandals!"
 A rubbish is a kind of thing.  A rubbish is fixed in place.  A rubbish is in every trash can.  The indefinite article is "some". The description of a rubbish is "All you'd expect from a cheap public trash can."
 Instead of taking the rubbish, say "It's too disgusting to touch."
-A solar panel is a kind of container.   A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the top, apparently meant to powering something embedded in the trash can beneath it.[if open]  This one has been pried back.[end if]"
+A solar panel is a kind of container.   A solar panel is part of every trash can.  A solar panel is usually closed and assembled.  A solar panel has carrying capacity 1.  A broadcast chip is in every solar panel. The description of a solar panel is "A small (8x8cm) solar panel set into the top, apparently meant to power something embedded in the trash can beneath it.[if open]  This one has been pried back.[end if]"
 
 Understand "trashcan" as a trash can.
 
@@ -1381,7 +1389,7 @@ Instead of switching on the tissue generator:
 	carry out the synthesizing activity.	
 
 [lens crafter]
-The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A A screen on the front presents a menu of options, or a Memory can be inserted into a slot with appropriate specifications."
+The Lens Crafter is in Accessorize.  The Lens Crafter is a device.  The Lens Crafter is fixed in place.  The Lens Crafter can be working or fried. The lens crafter is working. The description of the Lens Crafter is "A floor-standing device used to produce custom-made cosmetic contact lenses (although for an extra fee, they can be made to a prescription).  A screen on the front presents a menu of options, or a Memory with appropriate specifications can be inserted into a data slot ."
 The Lens Menu is part of the Lens Crafter.  The Lens Menu is scenery.  The description is "The menu screen, locked,  displays a password prompt. You don't have the password."
 The delivery slot is a container.  The delivery slot is part of the Lens Crafter.  The delivery slot is open.  The delivery slot is not openable.  The description of the delivery slot is "A slot where the lens crafter delivers its product.  It is shaped to accept a standard lens case."
 The data slot is a container.  The data slot is a part of the Lens Crafter.  The data slot is open and unopenable.  The description of the data slot is "A slot for a standard Memory chip."
@@ -1475,7 +1483,7 @@ Understand "credits" as getting credits.
 Getting credits is an action out of world.
 
 Carry out getting credits:
-	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those.  Andrew Schultz has patiently and heroically labored to point out things I did wrong, even going back and retesting after I fixed them (and all to often, broke other stuff).  In addition uncledavid, Evelin en Biep Durieux, and Klaus Matteus provided invaluable testing.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, use the command ABOUT."
+	say "The real meat of the game's functionality was provided by a series of helpful folks on IRC and on IntFiction.org - GhettoAardvark, OldMiner, Clockmaker, raincomplex, zarf(Andrew Plotkin), maga, climbingstars, Felix Larsson, capmikee, ChrisC, mattw, Skinny Mike, tove, HanonO. Testing was provided by some of those.  Andrew Schultz has patiently and heroically labored to point out things I did wrong, even going back and retesting after I fixed them (and all too often, broke other stuff).  In addition uncledavid, Evelin en Biep Durieux, and Klaus Matteus provided invaluable testing.  They all have my humble thanks.  All errors, of course, are my own.[paragraph break]For information about the game's design and story, use the command ABOUT."
 
 
 [score]
@@ -1484,6 +1492,14 @@ Carry out requesting the score:
 	say "The score is this: you're being hunted, and there's not much good that will come out of small measures and half-successes.  In the end, they will win or you'll be free.";
 	stop.
 	
+
+[xyzzy]
+
+Understand "xyzzy" and "plugh" as easter egging.
+Easter egging is an action out of world.
+
+Carry out easter egging:
+	say "A hollow voice says, [one of]'Plugh cannot help you now.'[or]'Nice try.  Please hold still for the camera.'[or]'Were you expecting a poof of orange smoke?'[or]'There's no mailbox here, but I can find you a maze of twisty passages if you really want.'[purely at random]".
 
 [help]
 Understand "help" as getting help.
@@ -1554,7 +1570,7 @@ Check waiting for subway:
 
 Carry out waiting for subway:
 	if the station of the Capsule is the location:
-		say "It's already here.";l surveillanc
+		say "It's already here.";
 		continue the action;
 	otherwise:
 		let the target turn be the turn count + 60;
@@ -1566,30 +1582,39 @@ Report waiting for subway:
 
 [To let the player use 'it' right after waiting for the subway, so they can 'enter it' when it arrives]
 To set the/-- pronoun it to (O - an object): (- LanguagePronouns-->3 = {O}; -). 
-To set the/-- pronoun him to (O - an object): (- LanguagePronouns-->6 = {O}; -). 
+[To set the/-- pronoun him to (O - an object): (- LanguagePronouns-->6 = {O}; -). 
 To set the/-- pronoun her to (O - an object): (- LanguagePronouns-->9 = {O}; -). 
-To set the/-- pronoun them to (O - an object): (- LanguagePronouns-->12 = {O}; -). 
+To set the/-- pronoun them to (O - an object): (- LanguagePronouns-->12 = {O}; -).]
 
 After waiting for subway: 
   set pronoun it to the Voodoo Subway.
 
 
-[THIS DOESN'T WORK YET - maybe make it an activity? http://inform7.com/learn/man/doc286.html
 [waiting for station]
 Waiting for station is an action applying to one thing.
-Understand "frotz [room]" as waiting for station.
+Understand "wait for [any room]" as waiting for station.
+
+Understand "Green Commercial Station" and "Green Commercial" and "Commercial" as Green Commercial Platform when the location is the Transit Capsule.
+Understand "Green Service Station" and "Green Service" and "Service" and "Government" as Green Service Platform when the location is the Transit Capsule.
+Understand "Reserve Bank Platform" and "Reserve Bank" and "Bank" and "Reserve" as Reserve Bank Station when the location is the Transit Capsule.
+Understand "Green Residential Station" and "Green Residential" and "Residential" as Green Residential Platform when the location is the Transit Capsule.
+
+[These prevent disambiguation queries due to similar room names]
+Does the player mean waiting for station green residential platform: it is very likely.
+Does the player mean waiting for station green service platform: it is very likely.
+Does the player mean waiting for station green commercial platform: it is very likely.
+Does the player mean waiting for station reserve bank station: it is very likely.
 
 Check waiting for station:
-	unless the noun is a room, say "That's not a place." instead;
-	unless the location is the Transit Capsule, say "You're not aboard Transit." instead;
-	unless the noun is a transitStation, say "The Transit system doesn't go there." instead.
+	unless the location is the Transit Capsule, say "You're not aboard a Transit capsule." instead;
+	unless the noun is a room and the noun is a transitStation, say "The Transit system doesn't go there." instead.
 	
 Carry out waiting for station:
 	if the station of the Capsule is the noun:
 		say "You're already there." instead;
 	otherwise:
 		while the station of the Capsule is not the noun:
-			follow the turn sequence rules.]
+			follow the turn sequence rules.
 
 [sleeping]
 Instead of sleeping:
@@ -1935,12 +1960,15 @@ Check attaching it to:
 		say "You can't attach [the noun] to itself." instead.
 		
 Carry out attaching it to:
-	if the noun is the cable:
+	if the noun is the cable: 
 		try tying the cable to the second noun instead;
 	if the noun is the descender:
 		try tying the cable to the second noun instead;
 	if the noun is the harness:
-		try tying the harness to the second noun instead;
+		if the second noun is the spool:
+			try combining the harness with the spool instead;
+		otherwise:
+			try tying the harness to the second noun instead;
 	otherwise if the noun is the breaching charge:
 		try putting the breaching charge on the second noun instead;
 	otherwise if the noun is a Klein Blaster:
@@ -2064,13 +2092,14 @@ Palming is an action applying to one visible thing.
 Understand "palm [something]" or "lay palm on/against [something]" or "touch palm to/against [something]" or "place palm on [something]" as palming.
 
 Check palming:
-	unless the noun is the vestibule door lock or the noun is the tissue sampler or the noun is the Maintenance Door:
+	unless the noun is the vestibule door lock or the noun is the tissue sampler or the noun is the Maintenance Door or the noun is the palm reader or the noun is the ATM:
 		say "Nothing happens." instead.
 		
 Carry out palming:
 	if the noun is the tissue sampler, try sampling the actor instead;
 	if the noun is the Maintenance Door, try going west instead;
 	if the noun is the vestibule door lock, say "Nothing happens." instead;
+	if the noun is the palm reader or the noun is the ATM, try switching on the ATM instead;
 	say "Nothing happens."
 	
 
@@ -2459,7 +2488,7 @@ When Patrol ends:
 			now the item-id of the target is "M0";
 			now the Contents of the target is "flitter";
 			deactivate the Table of Vehicle Hints;
-			say "Your hacked car key beeps softly, and its ready light turns green!";
+			say "Your hacked car key beeps softly!";
 	Now the police flitter is closed;
 	Now the police flitter is locked;
 	Remove the police flitter from play;
@@ -2732,7 +2761,7 @@ Instead of speech when the noun is the bartender:
 		if Roberto Velez is inPlay:
 			say "The bartender looks over at the seated man.  'Him?  He's in here most nights.  If you want to know anything else about him, try asking him.'";
 	otherwise:
-		say "[one of]The bartender looks at you briefly before  shrugging and returning his attention to the glass.[or]The bartender cocks his head as you speak, then shakes his head eloquently.  Looks like he doesn't have anything to say.[or]The bartender seems to be ignoring you.[purely at random]".
+		say "[one of]The bartender looks at you briefly before shrugging and returning his attention to the glass.[or]The bartender cocks his head as you speak, then shakes his head eloquently.  Looks like he doesn't have anything to say.[or]The bartender seems to be ignoring you.[purely at random]".
 
 [Roberto Velez] [See Ex. 205 for spicing up Roberto]
 Roberto Velez is a man in the Proletariat Bar.  The printed name of Roberto Velez is "a man". Roberto Velez can be either preJacket or postJacket. Roberto Velez is preJacket.  Roberto Velez can be known or unknown.   Roberto Velez is unknown.  Roberto Velez can be inPlay or inHolding.  Roberto Velez is inPlay. Roberto Velez can be runningErrand or notrunningErrand.  Roberto Velez is notRunningErrand.  Roberto Velez is wearing the torn jacket.  The description of Roberto Velez is "A medium-height man of middle age and dark but somewhat pasty-looking skin.  His hair, black and cut short, is just beginning to grey at the temples.  His hands are rough and callused.  He is wearing work shoes and dark blue trousers, slightly scuffed.  [if Roberto Velez is wearing the torn jacket]He is wearing a dark blue trade uniform jacket with a long narrow gash at the left shoulder[tagged details].[otherwise]  He is wearing a cheap white button-down shirt."
@@ -2797,7 +2826,7 @@ Instead of the player trying giving the blue jacket to Roberto Velez:
 	now Roberto Velez is runningErrand.
 
 Every turn when the player can see Roberto Velez and the location is The Proletariat Bar:
-	if a random chance of 1 in 5 succeeds, say "[one of]Roberto shuffles his feet.[or]Roberto takes a swig of his beer.[or]Roberto stands and goes to the bar for some peanuts, returning to the table.[or]Roberto examines his jacket sleeve and sighs.[as decreasingly likely outcomes]".
+	if a random chance of 1 in 5 succeeds, say "[if Roberto is unknown]The man [otherwise]Roberto [end if][one of]shuffles his feet.[or]takes a swig of his beer.[or]stands and goes to the bar for some peanuts, returning to the table.[or]examines his jacket sleeve and sighs.[as decreasingly likely outcomes]".
 
 [Shopkeeper]
 In Garb-oh is a woman called the shopkeeper.  The description of the shopkeeper is "[if Shoplifting is happening]The shopkeeper is standing with the police and the shopper near the doors, gesticulating angrily and haranguing both the police and shopper.[otherwise] The shopkeeper is a somewhat frumpy older lady.  You can't help but wonder if she has been deliberately selected for her appearance so as to present a contrast with the merchandise."
@@ -2906,16 +2935,16 @@ Instead of speech when the noun is Sergeant Ramirez:
 		if South Primrose Lane is reported:
 			say "The sergeant stares suspiciously at you.  'You already reported that.  You trying to be funny?'" instead;
 		if the player has been in the Drug Market:
-			say "The sergeant suddenly becomes animated, looking directly at you.  'What?' he barks.  'Drugs?  Where?'  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He picks up the phone and has an animated conversation with someone on the other end, the word 'drugs' and 'extreme' and 'losers' coming up with frequency.  He has lost interest in you.";
 			now South Primrose Lane is reported;
+			say "The sergeant suddenly becomes animated, looking directly at you.  'What?' he barks.  'Drugs?  Where?'  You explain to him that you had seen shifty characters and drugs in the Drug Market.  He picks up the phone and has an animated conversation with someone on the other end, the word 'drugs' and 'extreme' and 'losers' coming up with frequency.  He has lost interest in you." instead;
 		otherwise:
 			say "Sergeant Ramirez snorts.  'Did you actually witness drug trafficking?' he asks.  When you shake your head, he sighs theatrically and goes back to his paperwork.";
 	if the topic understood matches the text "ponyfriend" or the topic understood matches the text "chunky":
-		say "The sergeant shakes his head.  'That guy needs serious help.  I'd stay away from him if I was you.'";
+		say "The sergeant shakes his head.  'That guy needs serious help.  I'd stay away from him if I was you.'" instead;
 	if the topic understood matches the text "curfew":
-		say "Sergeant Ramirez looks at you suspiciously.  'Yeah, Green Residential has a curfew for those that don't live there.  Why?'  He continues to look at you, then shakes his head and returns to his paperwork.";
+		say "Sergeant Ramirez looks at you suspiciously.  'Yeah, Green Residential has a curfew for those that don't live there.  Why?'  He continues to look at you, then shakes his head and returns to his paperwork." instead;
 	if the topic understood matches the text "spacescraper" or the topic understood matches the text "bank" or the topic understood matches the text "reserve":
-		say "The sergeant raises his eyes to the ceiling.  'DHS is all over that place like a cheap suit.  No way a decent cop can even get a snack in the food court there right now.'";
+		say "The sergeant raises his eyes to the ceiling.  'Homeland Security is all over that place like a cheap suit.  No way a decent cop can even get a snack in the food court there right now.'" instead;
 	otherwise:
 		say "[one of]The sergeant snorts and ignores you.[or]'Look, kid, why don't you let me get some work done?'[or]'Yeah, yeah, you and everybody else…'[or]'You want I should have the boys haul you in for bugging me?'[as decreasingly likely outcomes]".
 
@@ -3448,7 +3477,7 @@ ResidentialOutside is a region. ResidentialOutside is in GreenResidential. Primr
 
 The Spacescraper is in ResidentialOutside.  The streetlights is in ResidentialOutside.  The sky is in ResidentialOutside.
 
-Green Residential Platform is a transitStation.  The stationName of Green Residential Platform is "Green Residential".  The stationNumber of Green Residential Platform is 3. The description of Green Residential Platform is "Green Residential's platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west[if the location is the station of the Capsule], where a Transit capsule hovers impatiently.  The capsule doors are open.[otherwise], now empty.[end if]".
+Green Residential Platform is a transitStation.  The stationName of Green Residential Platform is "Green Residential".  The stationNumber of Green Residential Platform is 3. The description of Green Residential Platform is "Green Residential's platform serves mostly residential commuters.  There is an exit at the center of the platform which leads east through a set of closed automatic doors to a stairway leading up to the main station, just next to a large plaque with the name of the station on it.  The platform abuts the Transit web to the west[if the location is the station of the Capsule], where a Transit capsule hovers impatiently.  The capsule doors are open.[otherwise], now empty.[end if][if Green Residential Platform is unvisited][paragraph break][bracket]NOTE: Welcome to Transit.  You can WAIT FOR CAPSULE in stations, and WAIT FOR <station name> on board.[close bracket][end if]".
 Instead of going west in Green Residential Platform, try entering the Transit Web instead.
 
 The Green Residential Station door is east of Green Residential Platform and below Green Residential Station.  The Green Residential Station Door is an autodoor.  The Green Residential Station door is closed. 
@@ -3479,7 +3508,7 @@ The stairway is unimportant stuff in Green Residential Station. Understand "stai
 Primrose & Station is east of Green Residential Station.  The description is "This staid neighborhood intersection of Primrose Lane and Cedar Street fronts the local Transit station, Green Residential.  The station entrance is to the west.  Primrose Lane continues to the south."
 
 Green Residential Park is north of Primrose & Station. The description is "Primrose Street ends here in a small circular cul-de-sac.  You're in a small green park to the north of this, bounded on its three other sides by high fences.  A few trees rise over well-manicured grass.  There is a curfew sign at the park's entrance."
-The curfew sign is in Green Residential Park.  The curfew sign is scenery.  The curfew sign is fixed in place.  The description is "A metal sign on a metal pole, it reads 'NOTE: PARK CLOSED DURING GREEN RESIDENTIAL AREA CURFEW - 8:00PM to 5:00 AM - NO LOITERING.'"
+The curfew sign is in Green Residential Park.  The curfew sign is scenery.  The curfew sign is fixed in place.  The description is "A sturdy metal sign, it reads 'NOTE: PARK CLOSED DURING GREEN RESIDENTIAL AREA CURFEW - 8:00PM to 5:00 AM - NO LOITERING.'"
 The greenery is unimportant stuff in Green Residential Park.  The printed name of the greenery is "trees".  The description of the greenery is "A small number of manicured trees, scattered around the park."
 Understand "trees" as the greenery when the location is Green Residential Park.
 Understand "tree" as the greenery when the location is Green Residential Park.
@@ -3624,8 +3653,18 @@ Understand "loop" as the cotter pin when the cotter pin is visible.
 Rule for printing room description details of the latch: stop.
 
 Instead of key-unlocking the cotter pin:
+	If the cotter pin is in the latch:
+		try removing the cotter pin with the second noun instead;
+	otherwise:
+		now instantiate is true;
+		say "You can't unlock that." instead.	
+	
+Instead of unlocking the cotter pin:
 	now instantiate is true;
-	say "[The noun] can't be locked or unlocked." instead.
+	if the cotter pin is in the latch:
+		say "The cotter pin isn't a lock, but it does seem to be holding this one together." instead;
+	otherwise:
+		say "You can't unlock that." instead.
 
 Instead of removing the cotter pin with the multitool:
 	if the cotter pin is in the latch:
@@ -3849,6 +3888,7 @@ The trees are in Green Commercial Plaza South.  The trees are scenery.  The desc
 Understand "shrub" as the trees.
 Understand "shrubs" as the trees.
 Understand "tree" as the trees.
+Understand "landscaping" as the trees.
 
 Instead of going south in Green Commercial Plaza South:
 	now instantiate is true;
@@ -3864,9 +3904,11 @@ Understand the command "hide" as insert.
 
 Instead of inserting into the palm reader:
 	if the noun is the tissue sampler:
-		say "You carefully fit the tissue sampler into the hollow of the palm reader so that it lies over the read area.";
 		now the tissue sampler is in the palm reader;
 		now the ATM is hacked;
+		say "You carefully fit the tissue sampler into the hollow of the palm reader so that it lies over the read area." instead;
+	if the noun is your palm:
+		try switching on the ATM instead;
 	otherwise:
 		say "You can't put that in the palm reader!".
 
@@ -4167,7 +4209,7 @@ Understand "guide" as the directory.  Understand "sign" as the directory when th
 Instead of taking the directory:
 	say "You don't dare do anything that looks like vandalism with this many cameras around."
 
-Food Court is a room.  Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Dozens of customers are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles."  
+Food Court is a room.  Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Dozens of customers are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles.[paragraph break]The food stands here are Reserve Bank Bistro Paris, I Have No Mouth, The Sheep Look Up, Tacos Terriff and Apollo's."  
 There is a trash can in the Food Court.
 There is a customer in the Food Court.
 There is a server in the Food Court.
@@ -4181,21 +4223,25 @@ Instead of going up in the Food Court, try going west instead.
 Instead of examining down in the Food Court, try examining the tile floor instead.
 Instead of examining up in the Food Court, say "The ceiling is two levels up, peppered with DayBrite(™) lighting fixtures which make it difficult to see any detail through the glare."
 
-A foodstand called Reserve Bank Bistro Paris is in Food Court.  "This is the counter-only version of Bistro Paris, a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders a coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappoitnement any gourmand feels when faced with the prospect of eating here.  A sign painted above the counter reads 'Try our Green Commercial One location!'"
+A foodstand called Reserve Bank Bistro Paris is in Food Court.  The description of Reserve Bank Bistro Paris is "This is the counter-only version of Bistro Paris, a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders a coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappoitnement any gourmand feels when faced with the prospect of eating here.  A sign painted above the counter reads 'Try our Green Commercial One location!'"
 The soggy croissants are unimportant stuff in Food Court.
 
-A foodstand called I Have No Mouth is in Food Court.  "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
+A foodstand called I Have No Mouth is in Food Court.  The description of I Have No Mouth is "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
 The cones are unimportant stuff in Food Court.  Understand "cups" as the cones when the location is Food Court.
 
-A foodstand called The Sheep Look Up is in Food Court. "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several hungry customers who wait in line."
+A foodstand called The Sheep Look Up is in Food Court.  The description of The Sheep Look Up is "The Sheep Look Up is a gyros restaurant, featuring small cartoon sheep heads looking imploringly up from the steam table behind the glass.  Two surly employees are hard at work slicing gyros and constructing sandwiches and lunch platters for the several hungry customers who wait in line."
 Does the player mean examining The Sheep Look Up: it is unlikely.
+The gyros and sandwiches are unimportant stuff in Food Court.
 
-A foodstand called Tacos Terriff is in Food Court. "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the office set."
+A foodstand called Tacos Terriff is in Food Court. The description of Tacos Terriff is "Tacos Terriff is a bare-bones Mexicalitexazonan food joint.  Meat product is scooped into grain-plastic shells and covered with various unidentifiable industrial sauces and shredded veggies.  Despite this, it seems to have a dedicated following, as it is doing land-office business with the office set."
 
-A foodstand called Apollo's is in Food Court. "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth."
+A foodstand called Apollo's is in Food Court. The description of Apollo's is "Apollo's Coffee is done up in fake Ancient Greek, as befits its name. Plastic busts and columns adorn its facade.  For some reason, there is a silver robotic head behind the counter, mounted on the wall, where a red scanning laser moves monotonously back and forth."
+
 The robotic head is a backdrop in Food Court.  The robotic head is scenery.  The robotic head is fixed in place. The description of the robotic head is "Large and chromed silver, this robot's head mounted behind the counter of Apollo's looks like a large helmet with rudimentary features.  Instead of eyes, a red band crosses the face, behind which a bright red light slowly moves back and forth."
+
 Instead of taking the robotic head:
 	say "It's mounted high behind the counter." instead.
+	
 Instead of pushing the robotic head:
 	try taking the robotic head instead.
 	
@@ -4242,10 +4288,11 @@ Check climbing the railing:
 	say "It nearly encloses the platform.  There's no point." instead.
 
 
-Maintenance Area is [west of Reserve Bank Bistro Paris and ]northwest of Food Court[ and north of Apollo's].  Maintenance Area is blind. "This corner of the food court is drab and uninhabited.  A closed door marked 'MAINTENANCE' lurks to the west, and another marked 'RESTROOM' to the north.  The floor and walls are scuffed around the door, no doubt from cleaning implements banging against them on their daily travels."
+Maintenance Area is northwest of Food Court.  Maintenance Area is blind. "This corner of the food court is drab and uninhabited.  A closed door marked 'MAINTENANCE' lurks to the west, and another marked 'RESTROOM' to the north.  The floor and walls are scuffed around the door, no doubt from cleaning implements banging against them on their daily travels."
 
 A restroom called The Food Court Restroom is north of Maintenance Area.  "Bog-standard restroom.  Several stalls offer a minimum of privacy.  A large mirror covers the walls over the sink."
 The Food Court Restroom mirror is a mirror.  The Food Court Restroom mirror is in the Food Court Restroom.  The description is "A wall-covering mirror over the sinks.  The edges are covered in fingerprints, and you note that even the surveillance warning has not prevented a small scrawl of marker graffiti on the left edge."
+There is a trash can in the Food Court Restroom.
 
 The Maintenance Door is west of Maintenance Area.  The Maintenance Door is an autodoor. The Maintenance Door is scenery.  The description is "The maintenance closet is sealed by an autodoor.  There is no eye scanner on this door, but a flat plate above the door handle indicates a palm scanner lock."
 Understand "palm lock" or "lock" as the maintenance door when the location is Maintenance Area.

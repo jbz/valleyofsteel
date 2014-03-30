@@ -32,147 +32,147 @@
     </dict>
     <key>4</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>209</integer>
+        <key>Line</key><integer>208</integer>
         <key>Title</key><string>Section 3 - 'Every Turn' Rules, Timed Events and Global Rules/Grammar</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>5</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>485</integer>
+        <key>Line</key><integer>484</integer>
         <key>Title</key><string>Section 4 - Test Code - Not for release</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>6</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>519</integer>
+        <key>Line</key><integer>518</integer>
         <key>Title</key><string>Section 5 - Portable Objects (non-Scenery)</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>7</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1082</integer>
+        <key>Line</key><integer>1086</integer>
         <key>Title</key><string>Section 6 - Fixed/Scenery Objects</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>8</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>1463</integer>
+        <key>Line</key><integer>1471</integer>
         <key>Title</key><string>Section 7 - Actions/Activities</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>9</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2285</integer>
+        <key>Line</key><integer>2314</integer>
         <key>Title</key><string>Section 8 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>10</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2529</integer>
+        <key>Line</key><integer>2558</integer>
         <key>Title</key><string>Section 9 - Tables</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>11</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2592</integer>
+        <key>Line</key><integer>2621</integer>
         <key>Title</key><string>Section 10 - NPCs</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>12</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>2993</integer>
+        <key>Line</key><integer>3022</integer>
         <key>Title</key><string>Section 11 - Hints</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>13</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3149</integer>
+        <key>Line</key><integer>3178</integer>
         <key>Title</key><string>Chapter 1 - Transit</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>14</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3151</integer>
+        <key>Line</key><integer>3180</integer>
         <key>Title</key><string>Section 0 - Setup</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>15</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3229</integer>
+        <key>Line</key><integer>3258</integer>
         <key>Title</key><string>Section 1 - Scenes</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>16</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3347</integer>
+        <key>Line</key><integer>3376</integer>
         <key>Title</key><string>Section 2 - The Capsule</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>17</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3373</integer>
+        <key>Line</key><integer>3402</integer>
         <key>Title</key><string>Chapter 2 - Global Map</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>18</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3440</integer>
+        <key>Line</key><integer>3469</integer>
         <key>Title</key><string>Chapter 3 - Green Residential</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>19</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3442</integer>
+        <key>Line</key><integer>3471</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>20</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3798</integer>
+        <key>Line</key><integer>3837</integer>
         <key>Title</key><string>Chapter 4 - Green Commercial</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>21</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3800</integer>
+        <key>Line</key><integer>3839</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>22</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3982</integer>
+        <key>Line</key><integer>4024</integer>
         <key>Title</key><string>Chapter 5 - Green Service</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>23</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>3984</integer>
+        <key>Line</key><integer>4026</integer>
         <key>Title</key><string>Section 3 - Map</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>24</key><dict>
         <key>Filename</key><string>/Users/jzimmerman/Projects/valley/Valley of Steel.inform/Source/story.ni</string>
-        <key>Line</key><integer>4137</integer>
+        <key>Line</key><integer>4179</integer>
         <key>Title</key><string>Chapter 6 - Reserve Bank</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
