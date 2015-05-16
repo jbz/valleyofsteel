@@ -32,6 +32,7 @@ The player is in Green Residential Park.
 When play begins:
 	add the list of transitStations to Transit System;
 	sort Transit System in stationNumber order;
+	add the list of foodstands to Food Stands;
 	now newsIndex is a random number from 1 to the number of rows in the Table of Stories;
 	repeat with target running through doodles:
 		now the graffitiIndex of the target is a random number from 1 to the number of rows in the Table of Graffiti;
@@ -4209,7 +4210,8 @@ Understand "guide" as the directory.  Understand "sign" as the directory when th
 Instead of taking the directory:
 	say "You don't dare do anything that looks like vandalism with this many cameras around."
 
-Food Court is a room.  Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Dozens of customers are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles.[paragraph break]The food stands here are Reserve Bank Bistro Paris, I Have No Mouth, The Sheep Look Up, Tacos Terriff and Apollo's."  
+Food Court is a room.  Food Court is west of Station Corridor.  "The center of the Food Court beneath the Reserve Bank spacescraper is a busy place at all times of the day.  Around the periphery are several food stand franchises, some doing a brisk business.  Dozens of customers are here waiting in line at the food stands, sitting at the dozens of tables in the center, or just passing through from the Reserve Bank Station to the Lift Lobby up a ramp to the west or vice versa.  The floor is made of duramex tiles.[paragraph break]The food stands here are [Food Stands]."
+  
 There is a trash can in the Food Court.
 There is a customer in the Food Court.
 There is a server in the Food Court.
@@ -4223,7 +4225,7 @@ Instead of going up in the Food Court, try going west instead.
 Instead of examining down in the Food Court, try examining the tile floor instead.
 Instead of examining up in the Food Court, say "The ceiling is two levels up, peppered with DayBrite(™) lighting fixtures which make it difficult to see any detail through the glare."
 
-A foodstand called Reserve Bank Bistro Paris is in Food Court.  The description of Reserve Bank Bistro Paris is "This is the counter-only version of Bistro Paris, a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders a coq au vin served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappoitnement any gourmand feels when faced with the prospect of eating here.  A sign painted above the counter reads 'Try our Green Commercial One location!'"
+A foodstand called Reserve Bank Bistro Paris is in Food Court.  The description of Reserve Bank Bistro Paris is "This is the counter-only version of Bistro Paris, a well-known faux French eatery offering somewhat soggy croissants and mediocre coffee alongside such wonders as [italic type]coq au vin[roman type] served in white styrofoam.  Sadly, it appears that it does not sell wine, which might go some way towards relieving the disappoitnement any gourmand feels when faced with the prospect of eating here.  A sign painted above the counter reads 'Try our Green Commercial One location!'"
 The soggy croissants are unimportant stuff in Food Court.
 
 A foodstand called I Have No Mouth is in Food Court.  The description of I Have No Mouth is "I Have No Mouth (but Ice Cream) is a popular frozen dessert chain.  Despite the somewhat disturbing corporate artwork and iconography, this counter offers a selection of solid flavors including Chocolate AMmond, PostApocalicks and We've All Gone Tutti-Frutti.  Two scoopers behind the counter are smoothly dishing up cones and cups to a large crowd of midday sweet-seekers."
@@ -4248,6 +4250,7 @@ Instead of pushing the robotic head:
 Understand "Apollos" as Apollo's when the location is Food Court.	
 Understand "robot" and "robot head" and "head" as the robotic head when the location is Food Court.
 
+Food Stands is a list of objects that varies.
 
 Lift Lobby is west of Food Court.  "The Lift Lobby controls underground access to the Reserve Bank spacescraper, beneath the towers of industry and capital made pillars of money and sin.  Hundreds of people rush to and fro through the lobby on their way into or out of the building.  To the north is a large bank of bouncelifts, their liftfields on and glowing faintly blue behind security gates.  Access to the bouncelifts is controlled by Lift Scanners, set above and to the right of each bouncelift entry.  There is no ceiling; several meters up, the room opens out into the street level lobby above.  There is a railing around the perimeter of the floor above; several people are leaning against or over it, watching the flow of commuters below them and around you.  The Atrium, a wide open area extending at least halfway up the spacescraper, is visible above that. There is no way to reach the street lobby from here other than via the bouncelifts. A shallow ramp leads east down to the Food Court.[paragraph break]You can hear the confused murmur of a large crowd coming from the Atrium above." 
 The lift scanners are unimportant stuff in the Lift Lobby.
