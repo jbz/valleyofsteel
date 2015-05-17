@@ -19,6 +19,7 @@ can either download it free of charge or play in a browser.
 #Can I use the code?
 
 Yes.  This code is available under the MIT License.  The only exception is the
-original short story, which remains All Rights Reserved.
+contents of the Valley of Steel Materials/ subdirectory - those are 
+ALL RIGHTS RESERVED (cover art, any original prose).
 
 
