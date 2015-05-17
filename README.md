@@ -14,7 +14,10 @@ be more fun.  I was right.
 #Can I play it?
 
 Sure!  The link at the top of the page is a link to the release page, where you
-can either download it free of charge or play in a browser.
+can either download it free of charge or play in a browser. This repo is mostly
+for me, as it consists of the Inform working directory.  If you want the 
+playable game, I strongly encourage you to go to the link at the top of the
+README, which is the official Inform 'release page.' 
 
 #Can I use the code?
 
