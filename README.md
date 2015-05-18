@@ -25,4 +25,6 @@ Yes.  This code is available under the MIT License.  The only exception is the
 contents of the Valley of Steel Materials/ subdirectory - those are 
 ALL RIGHTS RESERVED (cover art, any original prose).
 
-
+Note that the 'code' that you care about is in one text file, available 
+<a href="https://github.com/jbz/valleyofsteel/tree/master/Valley%20of%20Steel.inform/Source">here</a>
+in the source tree.
